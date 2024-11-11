@@ -92,6 +92,17 @@ youtube-ad.com
 youtube-ads.com
 youtube.ad.com
 youtube.ads.com
+m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
+m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
+m.youtube.com##.typography-title-1
+m.youtube.com##.typography-display-1
+m.youtube.com##.dialog-topbar
+m.youtube.com##.dialog-body-eom
+m.youtube.com##.eom-accept > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##.privacy-terms
+m.youtube.com##.show-more-container
+m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
+m.youtube.com##.feed-nudge-text-container
 m.youtube.com##.eom-accept
 m.youtube.com##.privacy-terms
 m.youtube.com##.eom-customize

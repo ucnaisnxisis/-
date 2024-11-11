@@ -921,6 +921,15 @@ trymask.com
 howtoremoveadblock.com
 blockadblock.com
 nitroscripts.com
+@@flowplayer.com
+bat.bing.com
+static.ads-twitter.com
+www.bricolaj.ro##body > div
+www.bricolaj.ro##.on
+www.bricodepot.ro###back_top
+era-iasi.ro##[href="https://era-iasi.ro/politica-de-confidentialitate/"]
+era-iasi.ro##[href="https://era-iasi.ro/cookie-policy/"]
+lifehacker.com##.px-4.my-24
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
 m.youtube.com##ytm-item-section-renderer:nth-of-type(1) > lazy-list > ytm-reel-shelf-renderer.modern-typography.item:nth-of-type(1)
 m.youtube.com##ytm-reel-shelf-renderer.modern-typography.item

@@ -51,6 +51,17 @@ if(document.getElementById('masthead-ad')) document.getElementById('masthead-ad'
 if(document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer") & & document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer")document.getEtopyTagyName
 if(document.getElementsByTagName("ytd-ad-slot-renderer") & & document.getElementsByTagName("ytd-ad-slot-renderer").length)document.getElementsByTagName("ytd-ad-slot-renderer")[0].
 },500)
+m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
+m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
+m.youtube.com##.typography-title-1
+m.youtube.com##.typography-display-1
+m.youtube.com##.dialog-topbar
+m.youtube.com##.dialog-body-eom
+m.youtube.com##.eom-accept > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##.privacy-terms
+m.youtube.com##.show-more-container
+m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
+m.youtube.com##.feed-nudge-text-container
 youtube.com##.opened
 youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
 ads.doubleclick.net

@@ -43,14 +43,6 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-setInterval(()=>{
-if(document.getElementsByClassName('ytp-ad-preview-container ') & & document.getElementsByClassName('ytp-ad-preview-container ').length){
-document.getElementById('efyt-neinteresat').click()
-}
-if(document.getElementById('masthead-ad')) document.getElementById('masthead-ad').innerHTML ""
-if(document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer") & & document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer")document.getEtopyTagyName
-if(document.getElementsByTagName("ytd-ad-slot-renderer") & & document.getElementsByTagName("ytd-ad-slot-renderer").length)document.getElementsByTagName("ytd-ad-slot-renderer")[0].
-},500)
 m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
 m.youtube.com##.typography-title-1

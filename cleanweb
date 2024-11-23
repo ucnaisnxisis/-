@@ -155,14 +155,36 @@ youtubeads.com
 /v1/log_event
 ||youtube.com/ptracking?
 ||doubleclick.net^
-setInterval(()=>{
-if(document.getElementsByClassName('ytp-ad-preview-container ') & & document.getElementsByClassName('ytp-ad-preview-container ').length){
-document.getElementById('efyt-neinteresat').click()
-}
-if(document.getElementById('masthead-ad')) document.getElementById('masthead-ad').innerHTML ""
-if(document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer") & & document.getElementsByTagName("ytd-player-legacy-desktop-watch-ads-renderer")document.getEtopyTagyName
-if(document.getElementsByTagName("ytd-ad-slot-renderer") & & document.getElementsByTagName("ytd-ad-slot-renderer").length)document.getElementsByTagName("ytd-ad-slot-renderer")[0].
-},500)
+www.dor.ro##[href="https://www.dor.ro/politica-de-cookie-uri/"]
+www.dor.ro##[href="https://www.dor.ro/politica-privind-protectia-si-prelucrarea-datelor-cu-caracter-personal/"]
+www.magiquotes.com##.app-box
+www.magiquotes.com##div.footer-box:nth-of-type(1)
+creditprime.ro##.v-modal
+ro.linkedin.com##li.papabear\:w-auto.papabear\:justify-center.w-50\%.relative.p-1.justify-start.flex-shrink-0.flex.text-color-text-solid-secondary.text-xs.font-sans.li-footer__item:nth-of-type(5)
+ro.linkedin.com##li.papabear\:w-auto.papabear\:justify-center.w-50\%.relative.p-1.justify-start.flex-shrink-0.flex.text-color-text-solid-secondary.text-xs.font-sans.li-footer__item:nth-of-type(4)
+m.olx.ro##.css-11jn7r
+m.olx.ro###banner
+m.olx.ro##.css-pclgxh
+animaxtv.co.kr##[href="/term/privacy"]
+animaxtv.co.kr##.pointer.btn_top
+www.disneyplus.com##li:nth-of-type(2)
+www.disneyplus.com##.flex_row__1emlywy2p.Collection_linksSection__1c4ky6q1.Collection_linksSectionExpanded__1c4ky6q2 > .flex_col__1emlywy2q.Collection_groupDirection_direction_col__1c4ky6q8.Collection__1c4ky6q6 > .flex_col__1emlywy2q.Group_listBase__tx0y2l0.Group_verticalStyles__tx0y2l1.Group_dpFooterGroup__1ve9lw00 > li:nth-of-type(4)
+www.disneyplus.com##li:nth-of-type(6)
+www.disneyplus.com##li:nth-of-type(5)
+chromewebstore.google.com##.yHWa2
+playtech.ro##[href="https://playtech.ro/stiri/politica-de-utilizare-cookie-uri-impact"]
+playtech.ro##[href="https://playtech.ro/stiri/politica-de-confidentialitate-impact"]
+playtech.ro##[href="https://playtech.ro/stiri/termeni-si-conditii-de-utilizare-politica-de-prelucrare-a-datelor-cu-caracter-personal-impact"]
+m.dcnews.ro##div.container-block-300
+m.dcnews.ro##div.container-block-600
+m.ziare.com##[href="https://ziare.com/politica-de-cookie"]
+m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
+www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
+www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
+www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
+fonts.gstatic.com
+fonts.googleapis.com
+static.doubleclick.net
 youtube.com##.opened
 youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
 ads.doubleclick.net

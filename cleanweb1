@@ -129,6 +129,10 @@ m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
 www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
 www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
 www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##button-view-model.slim_video_action_bar_renderer_button.yt-spec-button-view-model:nth-of-type(2) > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##ytm-comment-simplebox-renderer
 fonts.gstatic.com
 fonts.googleapis.com
 static.doubleclick.net

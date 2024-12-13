@@ -123,6 +123,8 @@ youtubeads.com
 /v1/log_event
 ||youtube.com/ptracking?
 ||doubleclick.net^
+m.youtube.com##.eom-accept > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##.eom-accept
 www.info-sud-est.ro##.is-active.cs-scroll-top
 cnsm.org.ro##.pojo-a11y-toolbar-toggle
 clinica-hope.ro##.icon-up-open-big

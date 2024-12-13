@@ -72,8 +72,6 @@ m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-p
 youtube.com##.ytlr-horizontal-list-renderer__items > .yt-virtual-list__container > .yt-virtual-list__item--visible.yt-virtual-list__item--selected.yt-virtual-list__item:has-text(Ad)
 ||googlevideo.com/initplayback?source=youtube*&c=TVHTML5&oad=$xhr,domain=youtube.com
 m.youtube.com##.search-bar-entry-point-voice-search-button.search-bar-entry-point-button > .search-bar-entry-point-icon > .yt-spec-icon-shape.yt-icon-shape
-m.youtube.com##.searchbox-voice-search-wrapper
-m.youtube.com##.icon-microphone_on.mobile-topbar-header-voice-search-button
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ads.youtube.com
 ad.youtube.com
@@ -86,25 +84,6 @@ youtube-ad.com
 youtube-ads.com
 youtube.ad.com
 youtube.ads.com
-m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
-m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
-m.youtube.com##.typography-title-1
-m.youtube.com##.typography-display-1
-m.youtube.com##.dialog-topbar
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-m.youtube.com##.privacy-terms
-m.youtube.com##.show-more-container
-m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-m.youtube.com##.feed-nudge-text-container
-m.youtube.com##.eom-accept
-m.youtube.com##.privacy-terms
-m.youtube.com##.eom-customize
-m.youtube.com##.show-more-container
-m.youtube.com##.eom-customize
-m.youtube.com##.show-more-container
-m.youtube.com##.consent-bump-v2-lightbox-header-eom
-m.youtube.com##ad-slot-renderer
 youtube.com##ad-slot-renderer
 youtube.com###topbar
 youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
@@ -136,11 +115,6 @@ www.youtube.com##.yt-playability-error-supported-renderers.style-scope > .ytd-en
 www.youtube.com###container > .yt-playability-error-supported-renderers.style-scope
 www.youtube.com###error-screen > .yt-playability-error-supported-renderers.style-scope
 www.youtube.com###error-screen
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept
-m.youtube.com##.dialog-topbar
-m.youtube.com##.show-more-container
-m.youtube.com##.privacy-terms
 i1.ytimg.com
 ads.yimg.com
 youtubeads.com
@@ -229,7 +203,6 @@ m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
 www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
 www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
 www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
-fonts.gstatic.com
 static.doubleclick.net
 youtube.com##.opened
 youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope

@@ -135,6 +135,9 @@ m.youtube.com##.privacy-terms
 m.youtube.com##.show-more-container
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
+m.youtube.com##.no-shadow.modernized-nudge.no-trim
+m.youtube.com##.feed-nudge-wrapper
+m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-rendere
 youtube.com##.opened
 www.info-sud-est.ro##.is-active.cs-scroll-top
 cnsm.org.ro##.pojo-a11y-toolbar-toggle

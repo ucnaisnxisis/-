@@ -155,6 +155,44 @@ youtubeads.com
 /v1/log_event
 ||youtube.com/ptracking?
 ||doubleclick.net^
+www.peroz.ro##.footer-top
+www.goethe.de##.ankerNavi
+www.goethe.de##.sitefooter
+ilga.org##[href="https://ilga.org/cookie-policy/"]
+ilga.org##[href="https://ilga.org/privacy-statement/"]
+aurora-retail.com##li.col-6.col-sm-6.col-md-6.col-lg-4.col-xl-12.footer-nav__item:nth-of-type(5)
+aurora-retail.com##li.col-6.col-sm-6.col-md-6.col-lg-4.col-xl-12.footer-nav__item:nth-of-type(6)
+https://l491qny.fallins-girls-meets.com/m1b2nd9?x=3
+www.csid.ro##[href="https://www.csid.ro/politica-de-confidentialitate/"]
+www.purina.ro##[href="/prelucrarea-datelor-cu-caracter-personal"]
+romanialibera.ro###menu-tagdiv-footer-menu-5
+www.nationalgeographic.com##div.GlobalFooter__Menu__List:nth-of-type(1) > div > ul > li.GlobalFooter__Menu__List__Item:nth-of-type(3)
+www.nationalgeographic.com##div.GlobalFooter__Menu__List:nth-of-type(1) > div > ul > li.GlobalFooter__Menu__List__Item:nth-of-type(2)
+www.nationalgeographic.com##div.GlobalFooter__Menu__List:nth-of-type(1) > div > ul > li.GlobalFooter__Menu__List__Item:nth-of-type(5)
+www.nationalgeographic.com##div.GlobalFooter__Menu__List:nth-of-type(1) > div > ul > li.GlobalFooter__Menu__List__Item:nth-of-type(4)
+www.nationalgeographic.com##li.GlobalFooter__Menu__List__Item:nth-of-type(13)
+www.enterpriseappstoday.com###menu-item-23583
+vehicleenquiry.service.gov.uk##li.govuk-footer__inline-list-item:nth-of-type(4)
+vehicleenquiry.service.gov.uk##li.govuk-footer__inline-list-item:nth-of-type(1)
+terapiepentrumiscare.ro###totop
+terapiepentrumiscare.ro##p > [href="/termeni-si-conditii/"]
+www.dentalist.ro###comp-lp9jrdod
+www.ozono.ro###voiceflow-chat
+www.ozono.ro###voiceflow-chat
+maxident.ro###simple-chat-button--container
+maxident.ro##[href="https://maxident.ro/privacy-policy/"] > .elementor-icon-list-text
+www.techmonitor.ai##.catfish
+www.techmonitor.ai###menu-item-409254
+www.techmonitor.ai###menu-item-406748
+zgirls.org##.dbox-donation-button
+zgirls.org##[href="/privacy-policy"]
+play.google.com##div.KvNvKe:nth-of-type(2)
+proton.me##li.sm\:pr-2.sm\:border-purple-200.sm\:border-r.sm\:mr-2:nth-of-type(1)
+anibox.lol###menu-item-1783
+anibox.lol##.floatingchat-container-wrap-mobi
+theconversation.com##a.mb-2:nth-of-type(1)
+zutv.ro##div.ads
+www.nsa.gov##[href="https://www.defense.gov/Legal-Administrative/Privacy-Security/"]
 www.info-sud-est.ro##.is-active.cs-scroll-top
 cnsm.org.ro##.pojo-a11y-toolbar-toggle
 clinica-hope.ro##.icon-up-open-big
@@ -353,7 +391,6 @@ googlesyndication.click
 @@flowplayer.com
 @@jnn-pa.googleapis.com
 @@datatables.net
-@@consent.youtube.com
 d43849fz.xyz
 okaidsotsah.com
 slcgilarcboqyf.com

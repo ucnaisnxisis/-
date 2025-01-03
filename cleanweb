@@ -156,6 +156,14 @@ youtubeads.com
 ||youtube.com/ptracking?
 ||doubleclick.net^
 www.peroz.ro##.footer-top
+www.mozilla.ai##div.content-block:nth-of-type(2) > a.w-inline-block.footer-link-block:nth-of-type(1)
+blog.mozilla.org##.mzp-c-footer-terms > li:nth-of-type(1)
+knowtechie.com##[href="https://knowtechie.com/cookie-policy/"]
+knowtechie.com##.termly-display-preferences
+knowtechie.com##[href="https://knowtechie.com/privacy-policy/"]
+www.ego.ro##.swc__popup_window
+usr-iasi.ro##.text-center.text-white.bg-\[\#002A59\].p-4.right-0.left-0.bottom-0.fixed
+usr.ro##[href="https://usr.ro/informare-prelucrare-date-cu-caracter-personal/"]
 www.goethe.de##.ankerNavi
 www.goethe.de##.sitefooter
 ilga.org##[href="https://ilga.org/cookie-policy/"]

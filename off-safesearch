@@ -56,11 +56,9 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bing.com
 // @grant        none
 // @run-at       document-start
-// @include      /^https://metager.[a-z]*/
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bing.com
 // @grant        none
 // @run-at       document-start
-// @version      1.01
 
 // ==/UserScript==
     var url = window.location.href;

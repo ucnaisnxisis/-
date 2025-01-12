@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Disable safesearch
 // @namespace    https://github.com/H80h23h30rj032jr-32rjw-q3/j3r0j3r-ew-r3r3rfd/edit/main/off-safesearch
-// @version      0.1.5
+// @version      0.1.6
 // @description  Set off safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
 // @author       You
 
@@ -41,7 +41,6 @@
 // @match        https://www.qwant.com/?s=0&t=images&q=*
 // @match        https://www.qwant.com/?s=0&t=web&q=*
 // @match        https://www.qwant.com/?s=0&q=*&t=videos
-// @match        /^https://metager.[a-z]*/
 // @match        https://www.startpage.com/search
 // @match        https://search.brave.com/settings
 // @match        https://search.brave.com/search?q=*&source=web

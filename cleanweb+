@@ -350,6 +350,41 @@ m.facebook.com##div.displayed.m
 m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 ro-ro.facebook.com##div.displayed.m
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+ro-ro.facebook.com##.bottom.fixed-container.m
+www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
+www.instagram.com##.x1vjfegm.x11v4dcs.xr5ldyu.x127lhb5.x7v9bd0.xh8yej3.x13vifvy.x10l6tqk.x17qophe.x5yr21d.xpqogu8
+www.gradyhealth.org##[href="https://www.gradyhealth.org/privacy/"]
+theconversation.com##a.mb-2:nth-of-type(1)
+linuxmint.com##.order-sm-4.col-sm-4.col-md-2 > .widget > .primary-hover.flex-column.nav
+www.digi24.ro##a.footer-bottom-link
+m.facebook.com##.xee5nap.x1rbgqaq.xixxii4.xds687c.xxw3i39
+www.vodafone.ro##.jmNNQc.Footer-style__SecondaryFooter-sc-8b11f8f1-21 > ul
+mobile.telekom.ro##.druid-webchat--css-rctyoi-1cgfb3a.druid__web-chat__root-direction_ltr.druid__web-chat__root-container
+www.ortelmobile.de###toTop
+www.ortelmobile.de##[href="/ro/aspecte-legale/cookies.html"]
+www.ortelmobile.de##div.l-3.m-6.xs-12.col:nth-of-type(2) > .footer-content > ul > li:nth-of-type(4)
+ppay.ro##.textwidget > ul > li > [href="https://ppay.ro/politica-de-confidentialitate/"]
+ppay.ro##.textwidget > ul > li > [href="https://ppay.ro/informatii-gdpr/"]
+europa.eu##[href="https://european-union.europa.eu/web-accessibility-policy_ro"]
+europa.eu##[href="https://european-union.europa.eu/cookies_ro"]
+smartgsm.ro##.left_bottom.ets_wa_whatsapp_block > [href]
+www.mamasurogat.net##.pum-trigger.callback-btn
+www.mamasurogat.net###onc-cb-menu
+m.economictimes.com##div._2BewU:nth-of-type(4)
+@@1074628431.rsc.cdn77.org
+meteofor.ro##.burger-links--footer.burger-links > a.menu-item-wide.menu-item:nth-of-type(2)
+www.3bmeteo.com##[href="/azienda/pubblicita"]
+www.3bmeteo.com##.iubenda-cs-preferences-link
+www.wunderground.com##[href="/company/privacy-policy"]
+www.foreca.ro##[href="https://www.foreca.com/privacy-policy"]
+www.lachainemeteo.com###cookies-config
+www.lachainemeteo.com##.sitemap > li.item:nth-of-type(5)
+www.lachainemeteo.com##.sitemap > li.item:nth-of-type(6)
+www.lachainemeteo.com##li.item:nth-of-type(8)
+oneweather.org##a.footer__link-top.footer__link:nth-of-type(1)
+vremea.io##div.footer_list:nth-of-type(3) > a.footer_item:nth-of-type(3)
 www.peroz.ro##.footer-top
 www.mozilla.ai##div.content-block:nth-of-type(2) > a.w-inline-block.footer-link-block:nth-of-type(1)
 blog.mozilla.org##.mzp-c-footer-terms > li:nth-of-type(1)

@@ -290,9 +290,6 @@ news.emory.edu###StandardFooter
 cals.cornell.edu##[href="https://privacy.cornell.edu/"]
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-https://connect.facebook.net/en_US/fbevents.js
-m.facebook.com##div.displayed.m
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 ro-ro.facebook.com##div.displayed.m
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 ro-ro.facebook.com##.bottom.fixed-container.m
@@ -515,7 +512,6 @@ www.tena.ro##.footer-link-list > li:nth-of-type(2)
 www.tena.ro##.footer-link-list > li:nth-of-type(3)
 urologie-craiova.ro###toTop
 urologie-craiova.ro###site-copyright
-www.facebook.com##.bottom.fixed-container.m
 www.planificaneprevazutul.ro##[href="https://www.planificaneprevazutul.ro/cookie-policy/"]
 www.planificaneprevazutul.ro##[href="https://www.planificaneprevazutul.ro/privacy-policy/"]
 www.certsign.ro##.elementor-section-height-default.elementor-section-full_width.elementor-element-6aa89833.elementor-element.elementor-top-section.elementor-section
@@ -542,9 +538,6 @@ m.dcnews.ro##div.container-block-300
 m.dcnews.ro##div.container-block-600
 m.ziare.com##[href="https://ziare.com/politica-de-cookie"]
 m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
-www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
 fonts.gstatic.com
 static.doubleclick.net
 youtube.com##.opened
@@ -634,7 +627,6 @@ googlesyndication.click
 @@flowplayer.com
 @@jnn-pa.googleapis.com
 @@datatables.net
-www.google.com##.Xjvi4
 @@cdn.intergient.com
 @@rsc.cdn77.org
 @@lewd.ws
@@ -643,16 +635,6 @@ www.google.com##.Xjvi4
 @@ipv4.imgur.map.fastly.net
 @@st.chatango.com
 static.doubleclick.net
-www.facebook.com##div.x1c436fg
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
-www.facebook.com##.xqfms19.x1xka2u1
-www.facebook.com##div.x1xka2u1
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .xod5an3
-www.facebook.com##.x1hq5gj4
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
-www.google.com##.qarstb.o3j99
-www.google.com##a.pHiOh:nth-of-type(1)
 adultgamescollector.com###slideApple
 gamecopyworld.com##b > font > [href]
 www.dlep-iasi.ro###accessibility-toolbar
@@ -697,7 +679,6 @@ newsweek.ro##.z-10.py-2.items-center.justify-center.flex-wrap.flex.w-full.bottom
 stiri.md##[href="/info/confidentialitate"] > .i14unsmb.mocked-styled-11
 stiri.md##[href^="https://sales.simpals.com/ro/bannere-publicitare"]
 lewdzone.com##.text-white.btn-jumptocomment.btn-info.btn
-www.facebook.com##div.xzkaem6.x1n2onr6.__fb-light-mode > .xjx87ck.x1yqm8si.xfk6m8.xh8yej3.x13vifvy.x1rohswg.xixxii4.x1odjw0f.xw2csxc.x17qophe.x5yr21d.x1pq812k.x1ja2u2z.x9f619
 www.spicygaming.net##.wrapper
 ads.samsungads.com
 d43849fz.xyz
@@ -1387,7 +1368,6 @@ www.youtube.com###voice-search-button > .style-scope.ytd-masthead > yt-button-sh
 www.youtube.com##.ytp-cued-thumbnail-overlay-image
 www.youtube.com##.paused-mode.ad-interrupting.ad-showing.ytp-large-width-mode.ytp-hide-info-bar.ytp-fine-scrubbing-exp.ytp-bigboards.ytp-fit-cover-video.ad-created.ytp-cairo-refresh-signature-moments.ytp-cairo-refresh.ytp-ssap.ytp-exp-ppp-update.ytp-modern-caption.ytp-exp-bottom-control-flexbox.ytp-transparent.html5-video-player
 www.youtube.com##ytd-engagement-panel-section-list-renderer.ytd-watch-flexy.style-scope
-suggestqueries-clients6.youtube.com
 static.ads-twitter.com
 m.parintisipitici.ro##div.container-block-300
 rmupdate.com###mvp-foot-wrap
@@ -3369,11 +3349,6 @@ www.cipcosmar.ro###cookieNotice
 epardoseli.ro###cmplz-cookiebanner-container
 www.ejobs.ro##.eButton--Primary.eButton.CookiesPopup__AcceptButton
 ro.concerty.com##.show
-www.google.com##div.yS1nld
-www.google.com##div.eLZYyf
-www.google.com###L2AGLb
-www.google.com##.IczZ4b
-www.google.com##.cG0Dmf.XWlrff
 evenimentulistoric.ro###ado300ap1
 evenimentulistoric.ro###ado300ap2
 evenimentulistoric.ro###ado300ap3
@@ -3672,13 +3647,10 @@ beebom.com##.menu-footer-menu-container
 techrt.com##.wrap
 makeawebsitehub.com###menu-item-10811
 socialander.com###wa
-business.facebook.com##._9bq1
 www.welivesecurity.com##.footer-links.col
 webapps.stackexchange.com###consent-footer-link
 webapps.stackexchange.com##div.site-footer--col > .-list > li
 www.socialmediatoday.com##.second-column > div.footer-links:nth-of-type(1) > .list-no-bullets > li:nth-of-type(1)
-developers.facebook.com##li._8_jp:nth-of-type(5)
-developers.facebook.com##li._8_jp:nth-of-type(2)
 ethical.net##.menu-item-9668.menu-item-object-custom.menu-item-type-custom.menu-item
 matcaliterara.ro###wi-footer
 www.opiniatimisoarei.ro##.mback
@@ -3688,7 +3660,6 @@ beebom.com##.menu-footer-menu-container
 techrt.com##.wrap
 makeawebsitehub.com###menu-item-10811
 socialander.com###wa
-business.facebook.com##._9bq1
 www.welivesecurity.com##.footer-links.col
 webapps.stackexchange.com###consent-footer-link
 webapps.stackexchange.com##div.site-footer--col > .-list > li
@@ -6231,7 +6202,6 @@ imgix.net
 snap.licdn.com
 tr.snapchat.com
 api.appcues.net
-star-mini.c10r.facebook.com
 q.quora.com
 location.services.mozilla.com
 gamoneinterrupted.com
@@ -7118,7 +7088,6 @@ ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
 xml-v4.pwr-ads.com
-star-mini.c10r.facebook.com
 adobe.com
 adage.com
 adtlgc.com
@@ -7214,8 +7183,6 @@ cxsense.com
 www.google.*##^script:has-text(consentCookiePayload)
 www.google.*##+js(acis, document.cookie, YES+)
 google.*##+js(aeld, DOMContentLoaded, CONSENT)
-facebook.com##[aria-label*="Marketplace"]
-facebook.com##Sponsored
 co.uk.edgekey.net
 cdn.optimizely.com
 cumm.top
@@ -7226,7 +7193,6 @@ nest.com
 doubleclick.net
 www.gstatic.vom
 gstatic.vom
-graph.facebook.com
 googleads.g.doubleclick.net
 sltube.org
 mail.tvmetr.ru
@@ -7263,10 +7229,6 @@ trafficjunky.org
 trafficjunky.io
 trafficjunky.xyx
 jsfuel.com
-pix.facebook.com
-facebook.pix.com
-fb.pix.com
-pix.fb.com
 piano.io
 olxro-paiment.com
 olxro-payment.com
@@ -7829,7 +7791,6 @@ ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
 xml-v4.pwr-ads.com
-star-mini.c10r.facebook.com
 yourbestlandever.com
 d3qygewatvuv28.cloudfront.net
 control.kochava.com
@@ -11241,7 +11202,6 @@ www.asculta-radio-live.com###cc
 onlineradiobox.com##.modal--cookies > section
 onlineradiobox.com##.modal--cookies
 onlineradiobox.com##.modal--cookies-backdrop
-www.google.com##.USRMqe
 new.lewd.ninja###gdp4we
 new.lewd.ninja##div.container.is-fullhd:nth-of-type(7) > .box.stargate > div
 onlineradiobox.com##.modal--cookies

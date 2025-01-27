@@ -288,6 +288,51 @@ www.google.com##.Xjvi4
 @@rsc.cdn77.org
 @@lewd.ws
 @@lewd.ninja
+facebook.com##.accept-all.secondary.btn
+facebook.com##div.content-section:nth-of-type(2)
+facebook.com##.manage-settings.mng-btn.secondary.btn
+facebook.com###consent-text
+facebook.com##._yb_1ool5._yb_b9sct
+facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+presamil.ro###pojo-a11y-toolbar
+www.psr.org.ro###colorbox
+www.psr.org.ro###cboxOverlay
+www.jucariishop.ro##p:nth-of-type(1)
+www.jucariishop.ro##.accept_button_cont
+multimasimex.ro##li.item-label-primary.item-with-label > [href="https://multimasimex.ro/politica-de-confidentialitate/"]
+www.telemag.ro##div.col-md-3:nth-of-type(2) > a.subtitle:nth-of-type(2)
+www.telemag.ro##.float
+www.infinity.ro###footer-menu-item-2
+www.infinity.ro##li.vtex-menu-2-x-menuItem--footerMenu--isClosed.vtex-menu-2-x-menuItem--isClosed.list.vtex-menu-2-x-menuItem--footerMenu.vtex-menu-2-x-menuItem:nth-of-type(5)
+www.aden.ro##[href="https://www.aden.ro/politica-de-confidentialitate/"]
+www.aden.ro##[href="https://www.aden.ro/politica-cookie/"]
+www.allmati.ro###menu-footer-informatii-magazin-1 > .menu-item-5909.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+www.allmati.ro###menu-footer-informatii-magazin-1 > .menu-item-5917.menu-item-object-page.menu-item-type-post_type.menu-item
+teamdeals.ro###subscribe-mobile > .modal-dialog > .modal-content > .modal-body
+teamdeals.ro##.btn-lg.btn-default.btn
+teamdeals.ro##.mar15t
+teamdeals.ro###chatContainerMTS
+teamdeals.ro##.goTop
+www.e-jumbo.ro##.modal-cookies-acceptance > .text
+www.e-jumbo.ro##.js-accept.accept-btn
+www.e-jumbo.ro##.title-container
+www.e-jumbo.ro##.icon-arrow-right.terms-link
+ro.dreamstime.com##div.col-6.col-sm-3:nth-of-type(1) > .footer-menu__col > .js-footer-menu-list.footer-menu__list > ul > li:nth-of-type(6)
+www.babyneeds.ro###fluxerAIEmbedBot
+www.babyneeds.ro##[href="/politica-de-utilizare-cookie-uri.htm"]
+www.babyneeds.ro##.cta-price-buttons
+m.nichiduta.ro##.add_prod_to_cart-container
+m.nichiduta.ro###scroll_up
+www.temu.com##.policyNote-2PkZl
+www.domo.ro##li:nth-of-type(10)
+vendigo.ro##._5lPav.aQS3L.ySZw4._4-SzE.awgzd.VS-Ex
+vendigo.ro##li.YSmsd:nth-of-type(4)
+vendigo.ro##div.l-GwW:nth-of-type(2) > ._8QLLW.AESuT.XSWd9.M3v0L > .QF69U.nujFR > li.YSmsd:nth-of-type(3)
+toyjoy.ro##[href="https://toyjoy.ro/politica-de-confidentialitate/"]
+toyjoy.ro##.commercekit-sticky-add-to-cart__content
+toyjoy.ro##.joinchat__button
 service.spreadshirt.com###back-to-top
 apuseni.info##.secondary-color
 apuseni.info##.secondary-footer

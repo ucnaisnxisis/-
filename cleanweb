@@ -155,6 +155,53 @@ youtubeads.com
 /v1/log_event
 ||youtube.com/ptracking?
 ||doubleclick.net^
+||suggestqueries-clients6.youtube.com
+||clients6.youtube.com
+facebook.com##.accept-all.secondary.btn
+facebook.com##div.content-section:nth-of-type(2)
+facebook.com##.manage-settings.mng-btn.secondary.btn
+facebook.com###consent-text
+facebook.com##._yb_1ool5._yb_b9sct
+facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+presamil.ro###pojo-a11y-toolbar
+www.psr.org.ro###colorbox
+www.psr.org.ro###cboxOverlay
+www.jucariishop.ro##p:nth-of-type(1)
+www.jucariishop.ro##.accept_button_cont
+multimasimex.ro##li.item-label-primary.item-with-label > [href="https://multimasimex.ro/politica-de-confidentialitate/"]
+www.telemag.ro##div.col-md-3:nth-of-type(2) > a.subtitle:nth-of-type(2)
+www.telemag.ro##.float
+www.infinity.ro###footer-menu-item-2
+www.infinity.ro##li.vtex-menu-2-x-menuItem--footerMenu--isClosed.vtex-menu-2-x-menuItem--isClosed.list.vtex-menu-2-x-menuItem--footerMenu.vtex-menu-2-x-menuItem:nth-of-type(5)
+www.aden.ro##[href="https://www.aden.ro/politica-de-confidentialitate/"]
+www.aden.ro##[href="https://www.aden.ro/politica-cookie/"]
+www.allmati.ro###menu-footer-informatii-magazin-1 > .menu-item-5909.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+www.allmati.ro###menu-footer-informatii-magazin-1 > .menu-item-5917.menu-item-object-page.menu-item-type-post_type.menu-item
+teamdeals.ro###subscribe-mobile > .modal-dialog > .modal-content > .modal-body
+teamdeals.ro##.btn-lg.btn-default.btn
+teamdeals.ro##.mar15t
+teamdeals.ro###chatContainerMTS
+teamdeals.ro##.goTop
+www.e-jumbo.ro##.modal-cookies-acceptance > .text
+www.e-jumbo.ro##.js-accept.accept-btn
+www.e-jumbo.ro##.title-container
+www.e-jumbo.ro##.icon-arrow-right.terms-link
+ro.dreamstime.com##div.col-6.col-sm-3:nth-of-type(1) > .footer-menu__col > .js-footer-menu-list.footer-menu__list > ul > li:nth-of-type(6)
+www.babyneeds.ro###fluxerAIEmbedBot
+www.babyneeds.ro##[href="/politica-de-utilizare-cookie-uri.htm"]
+www.babyneeds.ro##.cta-price-buttons
+m.nichiduta.ro##.add_prod_to_cart-container
+m.nichiduta.ro###scroll_up
+www.temu.com##.policyNote-2PkZl
+www.domo.ro##li:nth-of-type(10)
+vendigo.ro##._5lPav.aQS3L.ySZw4._4-SzE.awgzd.VS-Ex
+vendigo.ro##li.YSmsd:nth-of-type(4)
+vendigo.ro##div.l-GwW:nth-of-type(2) > ._8QLLW.AESuT.XSWd9.M3v0L > .QF69U.nujFR > li.YSmsd:nth-of-type(3)
+toyjoy.ro##[href="https://toyjoy.ro/politica-de-confidentialitate/"]
+toyjoy.ro##.commercekit-sticky-add-to-cart__content
+toyjoy.ro##.joinchat__button
 service.spreadshirt.com###back-to-top
 apuseni.info##.secondary-color
 apuseni.info##.secondary-footer
@@ -592,6 +639,9 @@ www.google.com##.Xjvi4
 @@rsc.cdn77.org
 @@lewd.ws
 @@lewd.ninja
+@@s.imgur.com
+@@ipv4.imgur.map.fastly.net
+@@st.chatango.com
 static.doubleclick.net
 www.facebook.com##div.x1c436fg
 www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
@@ -1320,7 +1370,6 @@ trymask.com
 howtoremoveadblock.com
 blockadblock.com
 nitroscripts.com
-@@flowplayer.com
 bat.bing.com
 stringer.ro###adrwtsocp-blanket
 www.profit.ro##.scroll-up
@@ -1647,9 +1696,6 @@ www.commitglobal.org##.sm\:items-end.space-y-4.w-full.items-center.flex-col.flex
 newsweek.ro##.z-10.p-4.items-center.justify-center.flex-wrap.flex-col.flex.w-full.bottom-12.text-white.bg-red.fixed
 www.perverttube.com##.content > .top
 www.perverttube.com###list_videos_videos_list_search_result_items > div.item:nth-of-type(4)
-@@s.imgur.com
-@@ipv4.imgur.map.fastly.net
-@@st.chatango.com
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-container
 m.youtube.com##.reel-shelf-items
 m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
@@ -11462,8 +11508,6 @@ www.greenpeace.org##.shown.cookie-notice
 www.jucarii-sexuale.ro##.cc-color-override--1033558147.cc-bottom.cc-theme-block.cc-type-opt-in.cc-floating.cc-window
 quizterra.com##.privacy_popup
 www.scauneonline.ro##.cc-color-override-28635808.cc-left.cc-bottom.cc-theme-block.cc-type-opt-in.cc-floating.cc-window
-m.facebook.com##._56bf._55wo > div > ._2o1n._4n41._3-rk
-m.facebook.com##._56bf._55wo
 madalinliviu.ro##.cookies
 geeki.ro##.cookie-notice-visible.cn-effect-none.cn-position-bottom.cookie-revoke-hidden
 kjcenter.ro##.cookie-notice-visible.cn-effect-fade.cn-position-bottom.cookie-revoke-hidden
@@ -11496,10 +11540,6 @@ www.arcadeprehacks.com##.cc-color-override--71061291.cc-top.cc-theme-block.cc-ty
 3.dk##[class="tre-cookie-disclaimer"]
 4d.rtvslo.si###size-window-cookie
 4players.de###cookpol
-@@||consent.truste.com^$domain=economist.com
-@@||indema.si/*/cookielawinfo.
-@@||nova24tv.si/*/cookielawinfo.js
-@@||tweakers.net^$document
 accuweather.com###eu-cookie-notify-wrap
 actu-environnement.com###informations-cookies
 akka.io##.optanon-alert-box-wrapper:has-text(This site uses cookies)

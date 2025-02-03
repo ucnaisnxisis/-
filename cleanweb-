@@ -147,6 +147,13 @@ facebook.com##._yb_1ool5._yb_b9sct
 facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
+duckduckgo.com###react-ai-button-slot > span
+duckduckgo.com##.footer > div
+robot.ekstrabladet.dk##.toplink
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(9)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(4)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(11)
 presamil.ro###pojo-a11y-toolbar
 www.psr.org.ro###colorbox
 www.psr.org.ro###cboxOverlay

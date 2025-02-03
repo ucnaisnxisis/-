@@ -80,7 +80,13 @@ youtube.com##.ytlr-horizontal-list-renderer__items > .yt-virtual-list__container
 m.youtube.com##.search-bar-entry-point-voice-search-button.search-bar-entry-point-button > .search-bar-entry-point-icon > .yt-spec-icon-shape.yt-icon-shape
 m.youtube.com##.searchbox-voice-search-wrapper
 m.youtube.com##.icon-microphone_on.mobile-topbar-header-voice-search-button
+m.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
+m.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
+m.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_pl_man, false)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.web_enable_ab_rsp_cl, false)
+www.youtube.com##+js(set, yt.config_.EXPERIMENT_FLAGS.ab_pl_man, false)
+||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
 ads.youtube.com
 ad.youtube.com
 youtubead.com
@@ -165,6 +171,14 @@ facebook.com##._yb_1ool5._yb_b9sct
 facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
+duckduckgo.com###react-ai-button-slot > span
+duckduckgo.com##.footer > div
+m.youtube.com##.ytm-bottom-sheet-overlay-container
+robot.ekstrabladet.dk##.toplink
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(9)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(4)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(11)
 presamil.ro###pojo-a11y-toolbar
 www.psr.org.ro###colorbox
 www.psr.org.ro###cboxOverlay

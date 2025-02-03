@@ -102,6 +102,14 @@ m.youtube.com##.eom-accept
 m.youtube.com##.dialog-topbar
 m.youtube.com##.show-more-container
 m.youtube.com##.privacy-terms
+duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
+duckduckgo.com###react-ai-button-slot > span
+duckduckgo.com##.footer > div
+m.youtube.com##.ytm-bottom-sheet-overlay-container
+robot.ekstrabladet.dk##.toplink
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(9)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(4)
+www.texasmonthly.com##li.lg\:mr-5.mb-5:nth-of-type(11)
 www.dor.ro##[href="https://www.dor.ro/politica-de-cookie-uri/"]
 www.dor.ro##[href="https://www.dor.ro/politica-privind-protectia-si-prelucrarea-datelor-cu-caracter-personal/"]
 www.magiquotes.com##.app-box

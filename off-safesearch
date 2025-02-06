@@ -34,7 +34,7 @@
 // @match        https://m.baidu.com/sf/vsearch?pd=video&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b&atn=index
 // @match        https://m.baidu.com/sf/vsearch?pd=tieba&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b
 // @match        https://*.search.yahoo.com/*
-// @match        https://www.ecosia.org/search?method=index&q=*
+// @match        https://www.ecosia.org/search?q=*
 // @match        https://www.ecosia.org/images?q=*
 // @match        https://www.ecosia.org/videos?q=*
 // @match        https://www.ecosia.org/news?q=*

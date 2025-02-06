@@ -303,6 +303,9 @@ m.youtube.com##.ytm-bottom-sheet-overlay-container
 geolocation.onetrust.co
 geolocation.onetrust.com
 cdn.cookielaw.org
+www.ecosia.org##li.search-navigation__item:nth-of-type(3)
+duckduckgo.com##.button_size-xs__Pzg8L.button_ghost__4prhT.button_button__qrSvw.header_aiChatButtonMobile__JbsU1.header_aiChatButton___qF_q
+duckduckgo.com##.has-badge.nav-menu__item
 www.ejobs.ro##.shared-elements-cookies-popup__accept-button.ejobs-button--primary.ejobs-button
 www.ejobs.ro##.jobs-list-page__save-search-sticky
 www.ejobs.ro##a.shared-footer-web-animate-height__link.router-link-exact-active.router-link-active:nth-of-type(7)
@@ -461,7 +464,6 @@ www.tyr-sport.ro##[href="https://www.tyr-sport.ro/ro/content/10-politica-cookie"
 comenzi.farmaciatei.ro##[href="https://comenzi.farmaciatei.ro/politica-de-confidentialitate"]
 www.google.com###sfooter
 duckduckgo.com##[href="/duckduckgo-help-pages/company/advertise-on-duckduckgo-search"]
-duckduckgo.com##.RPL9esU9f8nMDBntEfZQ
 www.youtube.com##a.lb-footer__minimal-link.lb-font--no-crop.lb-font-footnote:nth-of-type(4)
 www.youtube.com###id-panel-3 > .lb-expansion-panel__surface-content > a.lb-footer__standard-menu-link.lb-font-footnote:nth-of-type(2)
 www.mozilla.org##li:nth-of-type(1) > [href="/en-US/advertising/"]
@@ -837,9 +839,6 @@ ectrfiefamabvf.com
 m.ectrfiefamabvf.com
 alfnspcvmlkmod.com
 www.alfnspcvmlkmod.com
-1142232681.rsc.cdn77.org
-rsc.cdn77.org
-cdn77.org
 i2.wp.com
 i3.wp.com
 i4.wp.com
@@ -1084,7 +1083,6 @@ verserpay.com
 www.knxkqwtsa.com
 knxkqwtsa.com
 cryptohotinfo.com
-1862309052.rsc.cdn77.org
 www.tizfzthtjqm.com
 slex.io
 ladeeglulr.net
@@ -2171,10 +2169,6 @@ www.billboard.com##nav.is-expanded.lrv-u-padding-a-1\@mobile-max.lrv-u-height-10
 www.billboard.com##li.lrv-u-color-brand-accent-blue\:hover.lrv-u-padding-t-050.lrv-a-font-primary-s.o-nav__list-item:nth-of-type(6)
 www.billboard.com##li.lrv-u-color-brand-accent-blue\:hover.lrv-u-padding-t-050.lrv-a-font-primary-s.a-subscription-footer-nav__list-item:nth-of-type(4)
 www.billboard.com##li.a-font-primary-xs.lrv-u-color-white.c-label.o-nav__list-item:nth-of-type(3)
-duckduckgo.com##li:nth-of-type(6)
-duckduckgo.com##li:nth-of-type(4)
-duckduckgo.com##li:nth-of-type(3)
-duckduckgo.com##section.sideMenu_section__SRgeu:nth-of-type(4) > .sideMenu_sectionLinks__h1wgl > li:nth-of-type(2)
 www.redbull.com##.footer__billboard > .footer__content > .footer__navigation > .footer__legal > cosmos-text-9-1-1.hydrated.footer__link:nth-of-type(1)
 www.redbull.com##.footer__billboard > .footer__content > .footer__navigation > .footer__legal > cosmos-text-9-1-1.hydrated.footer__link:nth-of-type(2)
 www.ranker.com##a.footer_item__821Gq:nth-of-type(4)
@@ -2183,7 +2177,6 @@ samplefocus.com##li:nth-of-type(4)
 app.dnbacademy.net###section-footer
 www.antidoteaudio.com##.et-l--footer.et-l
 www.lovethatbass.com###menu-item-537 > [href="https://www.lovethatbass.com/privacy-policy/"]
-duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(1)
 dnbeheard.cz##.menu-item-144.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
 www.looperman.com##[href="https://www.looperman.com/help/cookies"]
 www.looperman.com##[href="https://www.looperman.com/help/privacy"]

@@ -171,6 +171,11 @@ facebook.com##._yb_1ool5._yb_b9sct
 facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+duckduckgo.com##.E4_TKgKL7YzziY_dW6E9
+duckduckgo.com##[href="/privacy"]
+www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
+www.patreon.com##button.bdCQnw.sc-furwcr:nth-of-type(2)
+www.patreon.com##.eAPYIl.sc-efQSVx
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div

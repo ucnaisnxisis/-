@@ -443,6 +443,21 @@ m.facebook.com##div.displayed.m
 m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 ro-ro.facebook.com##div.displayed.m
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+www.bing.com##.top.cdxConv
+www.bing.com##.icon.mic_cont
+www.bing.com##.items
+www.bing.com##.b_scopebar > ul > li:nth-of-type(2)
+www.bing.com##.hb_det_cont_top > a.hb_section:nth-of-type(5)
+www.bing.com##.hb_det_cont_top > a.hb_section:nth-of-type(4)
+www.bing.com##.sb_privacy
+www.bing.com###fly_id_rwds_b
+login.live.com###footer
+account.microsoft.com##nav
+account.microsoft.com##.c-uhff-consumer.c-uhff-link
+account.microsoft.com##.c-uhff-ccpa.c-uhff-link
+account.microsoft.com##.glyph-global-nav-button.c-glyph.c-action-trigger
+account.microsoft.com##.x-hidden.cat-logo-button-cont
+search.brave.com##div.svelte-elswzx.desktop-small-regular.block:nth-of-type(3)
 www.peroz.ro##.footer-top
 www.goethe.de##.ankerNavi
 www.goethe.de##.sitefooter

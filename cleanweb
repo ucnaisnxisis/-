@@ -267,41 +267,8 @@ www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-h
 www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-hdkp.pb4-hdkp.ph4-hdkp.ma0-hdkp.pt1.ph3.mt3.ma0.list > li:nth-of-type(18)
 www.walmart.com##li:nth-of-type(15)
 destepti.ro##[href="https://destepti.ro/politica-de-confidentialitate/"]
-facebook.
-facebook.co.
-facebook.ro
-m.facebook.com
-facebook.com
-www.facebook.com
-fb.me
-mbasic.alpha.facebook.com
-www.alpha.facebook.com
-mbasic.beta.facebook.com
-www.beta.facebook.com
-touch.facebook.com
-fbwat.ch
-mobile.facebook.com
-mtouch.facebook.com
-fb.watch
-free.facebook.com
-m.beta.facebook.com
-fb.com
-mbasic.facebook.com
-x.facebook.com
-m.alpha.facebook.com
-p.facebook.com
-web.facebook.com
-facebook.com##.accept-all.secondary.btn
-facebook.com##div.content-section:nth-of-type(2)
-facebook.com##.manage-settings.mng-btn.secondary.btn
-facebook.com###consent-text
-facebook.com##._yb_1ool5._yb_b9sct
-facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 duckduckgo.com##.E4_TKgKL7YzziY_dW6E9
 duckduckgo.com##[href="/privacy"]
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 www.bing.com##.top.cdxConv
 www.bing.com##.icon.mic_cont
 www.bing.com##.items
@@ -5123,7 +5090,6 @@ www.101figurine.ro###myBtn
 www.101figurine.ro##[href="/static/politica-de-utilizare-cookie-uri/"]
 24iasi.ro##.animated.bounceInup.ta_upscr
 colegiuladamachi.ro##[href="https://colegiuladamachi.ro/cookie-policy-eu/"]
-m.facebook.com##.bottom.fixed-container.m
 www.gandul.ro###svp
 proxysite.site##.discord-button
 proxysite.site###showhidebtn
@@ -5947,7 +5913,6 @@ astelus.com##.cli-modal-content.cli-bar-popup
 us.norton.com##.c-footer__legalfooter
 www.youtube.com###redirect-backto-safety-button
 www.tiktok.com##.eyvii9r1.tiktok-9er52i-DivCtaGuideWrapper
-m.facebook.com##.bg-s5.m > .bg-s5.m > .bg-s5.m > div.m
 weebparrel.ro###zak-scroll-to-top
 weebparrel.ro###zak-scroll-to-top
 goldensite.ro##center

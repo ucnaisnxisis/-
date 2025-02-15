@@ -248,14 +248,6 @@ www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-h
 www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-hdkp.pb4-hdkp.ph4-hdkp.ma0-hdkp.pt1.ph3.mt3.ma0.list > li:nth-of-type(18)
 www.walmart.com##li:nth-of-type(15)
 destepti.ro##[href="https://destepti.ro/politica-de-confidentialitate/"]
-facebook.com##.accept-all.secondary.btn
-facebook.com##div.content-section:nth-of-type(2)
-facebook.com##.manage-settings.mng-btn.secondary.btn
-facebook.com###consent-text
-facebook.com##._yb_1ool5._yb_b9sct
-facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div
@@ -438,9 +430,6 @@ news.emory.edu###StandardFooter
 cals.cornell.edu##[href="https://privacy.cornell.edu/"]
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-https://connect.facebook.net/en_US/fbevents.js
-m.facebook.com##div.displayed.m
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 ro-ro.facebook.com##div.displayed.m
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 www.bing.com##.top.cdxConv
@@ -564,7 +553,6 @@ www.gradyhealth.org##[href="https://www.gradyhealth.org/privacy/"]
 theconversation.com##a.mb-2:nth-of-type(1)
 linuxmint.com##.order-sm-4.col-sm-4.col-md-2 > .widget > .primary-hover.flex-column.nav
 www.digi24.ro##a.footer-bottom-link
-m.facebook.com##.xee5nap.x1rbgqaq.xixxii4.xds687c.xxw3i39
 www.vodafone.ro##.jmNNQc.Footer-style__SecondaryFooter-sc-8b11f8f1-21 > ul
 mobile.telekom.ro##.druid-webchat--css-rctyoi-1cgfb3a.druid__web-chat__root-direction_ltr.druid__web-chat__root-container
 www.ortelmobile.de###toTop
@@ -668,9 +656,6 @@ m.dcnews.ro##div.container-block-300
 m.dcnews.ro##div.container-block-600
 m.ziare.com##[href="https://ziare.com/politica-de-cookie"]
 m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
-www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
 static.doubleclick.net
 youtube.com##.opened
 youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
@@ -1437,14 +1422,6 @@ bat.bing.com
 www.google.com##.Xjvi4
 jnn-pa.googleapis.com
 static.doubleclick.net
-www.facebook.com##div.x1c436fg
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
-www.facebook.com##.xqfms19.x1xka2u1
-www.facebook.com##div.x1xka2u1
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .xod5an3
-www.facebook.com##.x1hq5gj4
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 www.google.com##.qarstb.o3j99
 www.google.com##a.pHiOh:nth-of-type(1)
 adultgamescollector.com###slideApple
@@ -1491,7 +1468,6 @@ newsweek.ro##.z-10.py-2.items-center.justify-center.flex-wrap.flex.w-full.bottom
 stiri.md##[href="/info/confidentialitate"] > .i14unsmb.mocked-styled-11
 stiri.md##[href^="https://sales.simpals.com/ro/bannere-publicitare"]
 lewdzone.com##.text-white.btn-jumptocomment.btn-info.btn
-www.facebook.com##div.xzkaem6.x1n2onr6.__fb-light-mode > .xjx87ck.x1yqm8si.xfk6m8.xh8yej3.x13vifvy.x1rohswg.xixxii4.x1odjw0f.xw2csxc.x17qophe.x5yr21d.x1pq812k.x1ja2u2z.x9f619
 www.spicygaming.net##.wrapper
 ads.samsungads.com
 www.mozilla.ai##div.content-block:nth-of-type(2) > a.w-inline-block.footer-link-block:nth-of-type(1)
@@ -5095,7 +5071,6 @@ www.101figurine.ro###myBtn
 www.101figurine.ro##[href="/static/politica-de-utilizare-cookie-uri/"]
 24iasi.ro##.animated.bounceInup.ta_upscr
 colegiuladamachi.ro##[href="https://colegiuladamachi.ro/cookie-policy-eu/"]
-m.facebook.com##.bottom.fixed-container.m
 www.gandul.ro###svp
 proxysite.site##.discord-button
 proxysite.site###showhidebtn
@@ -5919,7 +5894,6 @@ astelus.com##.cli-modal-content.cli-bar-popup
 us.norton.com##.c-footer__legalfooter
 www.youtube.com###redirect-backto-safety-button
 www.tiktok.com##.eyvii9r1.tiktok-9er52i-DivCtaGuideWrapper
-m.facebook.com##.bg-s5.m > .bg-s5.m > .bg-s5.m > div.m
 weebparrel.ro###zak-scroll-to-top
 weebparrel.ro###zak-scroll-to-top
 goldensite.ro##center
@@ -6380,7 +6354,6 @@ imgix.net
 snap.licdn.com
 tr.snapchat.com
 api.appcues.net
-star-mini.c10r.facebook.com
 q.quora.com
 location.services.mozilla.com
 gamoneinterrupted.com
@@ -7267,7 +7240,6 @@ ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
 xml-v4.pwr-ads.com
-star-mini.c10r.facebook.com
 adobe.com
 adage.com
 adtlgc.com
@@ -7363,8 +7335,6 @@ cxsense.com
 www.google.*##^script:has-text(consentCookiePayload)
 www.google.*##+js(acis, document.cookie, YES+)
 google.*##+js(aeld, DOMContentLoaded, CONSENT)
-facebook.com##[aria-label*="Marketplace"]
-facebook.com##Sponsored
 co.uk.edgekey.net
 cdn.optimizely.com
 cumm.top
@@ -7375,7 +7345,6 @@ nest.com
 doubleclick.net
 www.gstatic.vom
 gstatic.vom
-graph.facebook.com
 googleads.g.doubleclick.net
 sltube.org
 mail.tvmetr.ru
@@ -7412,11 +7381,6 @@ trafficjunky.org
 trafficjunky.io
 trafficjunky.xyx
 jsfuel.com
-pix.facebook.com
-facebook.pix.com
-fb.pix.com
-pix.fb.com
-piano.io
 olxro-paiment.com
 olxro-payment.com
 testingmetriksbre.ru

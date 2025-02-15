@@ -189,6 +189,16 @@ www.google.com.hk##a.pHiOh:nth-of-type(1)
 www.google.com.hk##.XDyW0e
 www.google.com##a.pHiOh:nth-of-type(1)
 www.google.com##.XDyW0e
+www.facebook.com##div.displayed.bg-s4.m:nth-of-type(47)
+www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
+www.facebook.com##.xn9wirt.x1cnzs8.x5ib6vp.xc73u3c.x7ep2pv.x9f619
+www.facebook.com##.xl8fo4v.x1fbi1t2.x2lah0s.x78zum5.x6s0dn4.xeuugli.x193iq5w.x1ja2u2z.x1n2onr6.x9f619 > .xtk6v10.x1s688f.xvq8zen.x6prxxf.x41vudc.x4zkp8e.x1943h6x.x1fgarty.x1cpjm7i.x1gmr53x.xhkezso.x1s928wv.x1lliihq.x10flsy6.x1vvkbs.x13faqbe.xeuugli.x193iq5w > .xuxw1ft.xlyipyv.x1n2onr6.x10wlt62.x6ikm8r.x1lliihq
+www.facebook.com##.x1r1pt67.xtvsq51.x1ye3gou.xn6708d.x9f619.xm0m39n.x1qhh985.xcfux6l.x972fbf.x1403ito.x585lrc.x17zwfj4.xi112ho.x1q0g3np.xozqiw3.x6s0dn4.xl56j7k.x1n2onr6.x2lah0s.x78zum5.x1ja2u2z
+www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
+m.facebook.com##div.displayed.bg-s4.m:nth-of-type(47)
+m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+m.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m
+m.facebook.com##.bottom.fixed-container.m
 www.linux.org###INZWLPfZnpS
 news.northeastern.edu##.nunews-toast__dialog
 www.linux.org###TjgTPvNq

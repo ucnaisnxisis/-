@@ -192,6 +192,8 @@ youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
 youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)
 youtube.com###dismissable:has-text(LIVE NOW)
 youtube.com##div.content-wrapper:if(span:has-text(/^Recommended/)) youtube.com###dismissable:has-text(Recommended for you) youtube.com##:xpath(//span[text()='Recommended for you']/parent::a/ancestor::div[contains(concat(' ',normalize-space(@class),' '),' content-wrapper ')])
+m.youtube.com##.consent-bump-v2-lightbox
+@@fonts.gstatic.com
 brave.com##li.lg\:pt-0.max-lg\:first\:pb-1\.5.max-lg\:first\:pt-0.max-lg\:first\:mt-0.py-2.max-lg\:mt-1.lg\:border-none.first\:border-none.border-dark-gray-60.border-t:nth-of-type(5)
 wallpapercave.com###scrollarrow
 www.google.com##[href="/intl/ro/ads"]

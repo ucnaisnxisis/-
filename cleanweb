@@ -60,6 +60,17 @@ ads.doubleclick.net
 static.doubleclick.net
 doubleclick.net
 Ad.doubleclick.net
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+www.thepoc.ro##.show
+@@cloudfront.net
+@@vzlinks.com
+www.redtube.com.br##.content
+www.redtube.com.br##.parental-control-message
+www.redtube.com.br###age_disclaimer_window [src]
+www.redtube.com.br###btn_disagree
+www.redtube.com.br###consent_accept_all
+www.redtube.com.br##.scrollArea
+www.redtube.com.br##.make_selection_title
 youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)
 youtube.com###dismissable:has-text(LIVE NOW)
 youtube.com##div.content-wrapper:if(span:has-text(/^Recommended/)) youtube.com###dismissable:has-text(Recommended for you) youtube.com##:xpath(//span[text()='Recommended for you']/parent::a/ancestor::div[contains(concat(' ',normalize-space(@class),' '),' content-wrapper ')])

@@ -204,9 +204,50 @@ m.facebook.com##div.wbloks_1:nth-of-type(19) > span
 m.facebook.com##div.wbloks_1:nth-of-type(18) > span
 m.facebook.com##div.wbloks_1:nth-of-type(11) > span
 m.facebook.com##div.bg-s4.m:nth-of-type(2) > div.m:nth-of-type(2) > .m
+www.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 www.linux.org###INZWLPfZnpS
 news.northeastern.edu##.nunews-toast__dialog
 www.linux.org###TjgTPvNq
+take.quiz-maker.com##[href="https://www.quiz-maker.com/Security-Privacy"]
+a-z-animals.com###menu-item-24505 > [href="/privacy/"]
+easyscienceforkids.com##[href="https://easyscienceforkids.com/legal/our-website-privacy-policy/"]
+www.kudika.ro##[href="https://www.kudika.ro/gdpr/prelucrarea-datelor-personale.html"]
+quizly.co##[href="https://quizly.co/privacy-policy/"]
+quizly.co##.youzify-fade-out.youzify-is-visible.youzify-scrolltotop
+quizpanda.com##[href="/cookies-policy/"]
+quizpanda.com##[href="/privacy-policy/"]
+quizplus.com##.lg\:hidden.sm\:w-\[160px\].px-2.flex-col.flex.md\:text-sm.text-xs > a.cursor-pointer.hover\:underline.mb-4:nth-of-type(1)
+www.britannica.com##li:nth-of-type(3)
+quizly.co##.quizly-premium
+quizly.co##[href="https://quizly.co/terms/"]
+quizly.co##[href="https://quizly.co/premium/"]
+www.sporcle.com###remove-ads
+www.sporcle.com##.pageFooter-group--legal.pageFooter-group
+www.sporcle.com##.ea-go-orange.extra-section
+lovattspuzzles.com##[href="https://lovattspuzzles.com/privacy-policy/"]
+www.mondaq.com##li.footer-menuItem > [href="/privacy"]
+www.mondaq.com##.message_type_info.message.cookieConsent
+www.roberthalf.com##li:nth-of-type(3)
+www.freepik.com##div.sm\:\$mb-15.\$mb-10:nth-of-type(1)
+www.ketch.com##.bottom.c-footer__ctagroup
+www.ketch.com##.c-navelement-tag__wrapper
+www.ketch.com##div._100.gaprow8.c-mobnav__title
+www.ketch.com###w-dropdown-list-2
+www.ketch.com##a.mobnav.white.e-txt__link:nth-of-type(2)
+www.ketch.com##div.w-dropdown.c-mobilenav__wrap:nth-of-type(3)
+www.ottiliestudio.com##.sqsrte-small
+www.pwc.ch###pgFooter
+www.pie.org##[href="/privacy"]
+www.pie.org##[href="/features/rewards-for-ads"]
+googiehost.com###menu-item-1000089575
+www.producthunt.com##[href="/legal#privacy"]
+www.producthunt.com##[href^="/sponsor"]
+www.clrn.org##.menu-item.page-item-15.page_item
+www.thetechedvocate.org##[href="https://www.thetechedvocate.org/advertise/"]
+www.ekioh.com##[href="/privacy-policy"]
+www.onomeus.ro##.floating-wpp
+www.onomeus.ro##[href="/info/cookies"]
+www.onomeus.ro##[href="/info/confidentialitate"]
 www.msn.com##.accent.article-cont-read-button-on-app
 www.msn.com##.consumption-header
 www.bepanthen.ro##li.menu-item:nth-of-type(6)
@@ -225,8 +266,6 @@ thefamousdesign.ro##[href="https://thefamousdesign.ro/politica-de-confidentialit
 thefamousdesign.ro##[href="https://thefamousdesign.ro/politica-cookies/"]
 www.ziaruldeiasi.ro##div.column:nth-of-type(6)
 www.stirilekanald.ro##.half-circle-right
-||www.facebook.com/cookie/consent||
-m.facebook.com##.bottom.fixed-container.m
 www.techrepublic.com###bottom-footer-fixed-slot
 privacy.samsung.com##.open.scroll
 privacy.samsung.com###main-body > div.container
@@ -673,20 +712,12 @@ extension.usu.edu###back-to-top
 extension.usu.edu##.right-list [href="https://www.usu.edu/privacy/"]
 news.emory.edu###StandardFooter
 cals.cornell.edu##[href="https://privacy.cornell.edu/"]
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 ro-ro.facebook.com##div.displayed.m
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-ro-ro.facebook.com##.bottom.fixed-container.m
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
-www.instagram.com##.x1vjfegm.x11v4dcs.xr5ldyu.x127lhb5.x7v9bd0.xh8yej3.x13vifvy.x10l6tqk.x17qophe.x5yr21d.xpqogu8
 www.gradyhealth.org##[href="https://www.gradyhealth.org/privacy/"]
 theconversation.com##a.mb-2:nth-of-type(1)
 linuxmint.com##.order-sm-4.col-sm-4.col-md-2 > .widget > .primary-hover.flex-column.nav
 www.digi24.ro##a.footer-bottom-link
-m.facebook.com##.xee5nap.x1rbgqaq.xixxii4.xds687c.xxw3i39
 www.vodafone.ro##.jmNNQc.Footer-style__SecondaryFooter-sc-8b11f8f1-21 > ul
 mobile.telekom.ro##.druid-webchat--css-rctyoi-1cgfb3a.druid__web-chat__root-direction_ltr.druid__web-chat__root-container
 www.ortelmobile.de###toTop
@@ -1390,7 +1421,7 @@ revrtb.net
 zombyfairfax.com
 illusiondramaexploration.com
 zombyfairfax.com
-illusiondramaexploration.com
+illusiondramaexploration.cam
 sentry.coinall.ltd
 mezha.media##.b-top
 bitglide.cc
@@ -1815,8 +1846,6 @@ www.clubulcopiilor.ro##div.item:nth-of-type(2)
 quasardance.ro###cm
 quasardance.ro###scroll-top
 quasardance.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-mobile-align-center.elementor-element-34bd543.elementor-element > .elementor-widget-container > .elementor-icon-list-items > li.elementor-icon-list-item > [href]
-www.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-www.facebook.com##.bottom.fixed-container.m
 redactia.ro##div.mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
 redactia.ro##.mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
 redactia.ro##[href="https://redactia.ro/politica-de-confidentialitate/"]

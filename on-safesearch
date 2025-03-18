@@ -62,7 +62,7 @@
 // ==/UserScript==
     var url = window.location.href;
     var safe = "&safe=on";
-    if(url.indexOf(safe) == -1){
+    if(url.indexOf(safe) == 1){
       url += safe;
       window.location = url;
     }
@@ -76,7 +76,7 @@
             cookie : "SRCHHPGUSR",
             is_array : true,
             name : "ADLT",
-            value : "OFF",
+            value : "ON",
             domain : window.location.hostname.split(".").slice(-2).join('.'),
             sameSite : "None",
             separator : "&"
@@ -90,7 +90,7 @@
         },
         yep : { //safesearch is broken but ok
             localStorage : "safeSearch",
-            value : "off",
+            value : "on",
             replaceUrl : "safeSearch"
         },
         yahoo : {
@@ -106,7 +106,7 @@
         you : {
             cookie : "safesearch_guest",
             is_array : false,
-            value : "Off",
+            value : "On",
             domain : false
         },
         ecosia : {

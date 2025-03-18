@@ -62,7 +62,7 @@
 // ==/UserScript==
     var url = window.location.href;
     var safe = "&safe=on";
-    if(url.indexOf(safe) == -1){
+    if(url.indexOf(safe) == 0){
       url += safe;
       window.location = url;
     }
@@ -75,16 +75,16 @@
         bing : {
             cookie : "SRCHHPGUSR",
             is_array : true,
-            name : "ADLT",
+            name : "child",
             value : "On",
-            domain : window.location.hostname.split(".").slice(-2).join('.'),
+            domain : window.location.hostname.split(".").slice(0).join('.'),
             sameSite : "None",
             separator : "&"
         },
         duckduckgo : {
             cookie : "p",
             is_array : false,
-            value : "-2",
+            value : "0",
             domain : false, //duckduckgo doesn't set domain in cookies
             sameSite : "Lax"
         },
@@ -98,7 +98,7 @@
             is_array : true,
             name : "vm",
             value : "p",
-            domain : "search."+window.location.hostname.split(".").slice(-2).join('.'),
+            domain : "search."+window.location.hostname.split(".").slice(0).join('.'),
             sameSite : "None",
             session : true,
             separator : "&"
@@ -107,7 +107,7 @@
             cookie : "safesearch_guest",
             is_array : false,
             value : "On",
-            domain : false
+            domain : true
         },
         ecosia : {
             cookie : "ECFG",
@@ -135,7 +135,7 @@
         startpage : {
             cookie : "preferences",
             is_array : true,
-            name : "disable_family_filter", //I don't know why they formatted cookies like this
+            name : "enable_family_filter", //I don't know why they formatted cookies like this
             value : "1",
             separator: "N",
             equal : "EEE",
@@ -145,7 +145,7 @@
             cookie : "safesearch",
             is_array : false,
             value : "on",
-            domain : false
+            domain : true
         }
     };
 

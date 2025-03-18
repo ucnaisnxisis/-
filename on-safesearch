@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Disable safesearch
+// @name         Enable safesearch
 // @namespace    https://github.com/H80h23h30rj032jr-32rjw-q3/j3r0j3r-ew-r3r3rfd/edit/main/off-safesearch
 // @version      0.1.6
-// @description  Set off safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
+// @description  Set on safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
 // @author       You
 
 // @include      https://*.google.*/search*
@@ -61,7 +61,7 @@
 
 // ==/UserScript==
     var url = window.location.href;
-    var safe = "&safe=off";
+    var safe = "&safe=on";
     if(url.indexOf(safe) == -1){
       url += safe;
       window.location = url;
@@ -76,7 +76,7 @@
             cookie : "SRCHHPGUSR",
             is_array : true,
             name : "ADLT",
-            value : "OFF",
+            value : "On",
             domain : window.location.hostname.split(".").slice(-2).join('.'),
             sameSite : "None",
             separator : "&"
@@ -90,7 +90,7 @@
         },
         yep : { //safesearch is broken but ok
             localStorage : "safeSearch",
-            value : "off",
+            value : "on",
             replaceUrl : "safeSearch"
         },
         yahoo : {
@@ -106,7 +106,7 @@
         you : {
             cookie : "safesearch_guest",
             is_array : false,
-            value : "Off",
+            value : "On",
             domain : false
         },
         ecosia : {
@@ -144,7 +144,7 @@
         brave : {
             cookie : "safesearch",
             is_array : false,
-            value : "off",
+            value : "on",
             domain : false
         }
     };

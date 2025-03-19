@@ -88,6 +88,65 @@ faucetsuperficialalternative.com
 ads.vk.com
 stats.vk-portal.net
 @@vk-portal.net
+www.lambdatest.com##path
+www.lambdatest.com##.embeddedMessagingIconChat
+www.lambdatest.com##.embeddedMessagingConversationButton
+testgrid.io##li:nth-of-type(6)
+testingbot.com###chat-widget
+testingbot.com##[href="https://testingbot.com/privacy"]
+testingbot.com##[href="https://testingbot.com/cookie-policy"]
+www.guru99.com##a.footer-menu1:nth-of-type(2)
+www.guru99.com###pmLink
+www.guru99.com##[href="/privacy-policy"]
+www.testim.io##.show.btt-btn
+www.testim.io##li:nth-of-type(3)
+www.testim.io##[href="https://www.tricentis.com/legal-information/privacy-policy"]
+www.headspin.io##.footer-terms-wp
+smartdust.me##[href="https://smartdust.me/privacy-policy/"]
+www.softwaretestinghelp.com##.mwai-chatbot-container
+www.softwaretestinghelp.com##[href="https://www.softwaretestinghelp.com/advertise-on-software-testing-help/"]
+www.onlinemictest.com##[href="/privacy-policy/"]
+testflight.apple.com##a.footer-mini-legal-link
+www.pcloudy.com##[href="https://www.pcloudy.com/privacy-policy/"]
+kobiton.com##[href="https://kobiton.com/privacy-policy/"]
+assessmenthero.com###cc-main
+assessmenthero.com##.cookie-btn
+assessmenthero.com##li:nth-of-type(1)
+testapp.io##a.footer-nav-link:nth-of-type(4)
+www.publicsafetytesting.com##[href="/privacy-policy"]
+www.immuniweb.com##[href="/pages/privacy.html"]
+ostorlab.co##[href="https://docs.ostorlab.co/privacy/"]
+www.coursera.org##li.lohp-rebrand.rc-SubFooterSection__content-column-link-item:nth-of-type(4)
+www.coursera.org##li.lohp-rebrand.rc-SubFooterSection__content-column-link-item:nth-of-type(12)
+www.testpoint.com##.menu-item-119.menu-item-object-page.menu-item-type-post_type.menu-item
+www.pearsonvue.com##.section.vue-copyright--text.text > p:nth-of-type(2)
+www.pearsonvue.com##.col-xs-12.col-md-6
+www.pearsonvue.com##li:nth-of-type(1)
+www.pearsonvue.com##li:nth-of-type(4)
+abcnews.go.com##.IoboF.vHUJ.cmtRa.YiFgv
+abcnews.go.com##div.fitt-tracker:nth-of-type(2)
+ground.news##.items-center.tablet\:order-1.gap-2.flex
+news.yahoo.com##a._yb_dnyb4s
+news.yahoo.com##li._yb_1cu3v29:nth-of-type(3)
+news.yahoo.com##li._yb_1cu3v29:nth-of-type(2)
+www.aljazeera.com##[href="https://commercial.aljazeera.net/"] > span
+www.aljazeera.com##[href="https://privacy.aljazeera.net/"]
+www.aljazeera.com##[href="/eu-eea-regulatory/"] > span
+www.newsnationnow.com##li:nth-of-type(13)
+www.huffpost.com##.last-focusable-element.left-nav__footer__link
+www.10news.com##div.Navigation.FooterNavigation:nth-of-type(2)
+www.10news.com##li.Navigation-items-item:nth-of-type(15) > .NavigationItem
+www.timesofisrael.com##[href="https://www.timesofisrael.com/advertise/"]
+news.naver.com###goTop
+news.va.gov##li.usa-links-item:nth-of-type(20)
+3news.com##.copyright-inner
+3news.com##.menu-item-409405.menu-item-object-custom.menu-item-type-custom.menu-item > [href]
+3news.com##.collapse-footer-menu
+www.gbnews.com##.expanded.terms > .list > a.list__item:nth-of-type(2)
+www.gbnews.com##.expanded.terms > .list > a.list__item:nth-of-type(1)
+www.gbnews.com##.expanded.about-us > .list > a.list__item:nth-of-type(4)
+www.news5cleveland.com##div.Navigation.FooterNavigation:nth-of-type(2)
+www.news5cleveland.com##li.NavigationItem-items-item:nth-of-type(9)
 www.cloudflare.com##.mt3-ns.mt0.f2.lh-copy.fw4.items-center.flex-wrap.flex.footer-bottom-row-text-links-margin
 www.cloudflare.com###footer-link-GDPR > .fw5.f2.black2
 www.filmedocumentare.com##.tve_empty_dropzone.tve-page-section-in

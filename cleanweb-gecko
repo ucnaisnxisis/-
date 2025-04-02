@@ -213,6 +213,92 @@ ads.vk.com
 stats.vk-portal.net
 @@vk-portal.net
 www.bing.com##li:nth-of-type(4)
+
+www.bing.com###b-scopeListItem-copilotsearch
+www.thumbzilla.com##.bodyText
+www.thumbzilla.com##.bottomText.info span
+www.thumbzilla.com##.buttonUnder18.exitBtn
+www.thumbzilla.com##.logoImg
+www.thumbzilla.com##.rtaDisclaimerWrapper
+www.thumbzilla.com##.bottomText.info
+anime-nexus.ro###ban-message
+www.doc.ro##.content-row-title
+psihoterapieiasi.com##li.site-footer__linklist-item:nth-of-type(6)
+wordpress.org##[href="https://wordpress.org/about/privacy/"]
+www.squirepattonboggs.com##[href="/en/footer/cookie-policy"]
+www.squirepattonboggs.com##.site-footer__links [href="/en/footer/privacy"]
+www.squirepattonboggs.com##.nav-eyebrow
+www.squirepattonboggs.com##li:nth-of-type(8)
+www.termsfeed.com###back_to_top_button
+www.termsfeed.com##[href="/ccpa-opt-out/"]
+www.termsfeed.com##[href="/cookie-consent/"]
+www.termsfeed.com##[href="/privacy-consent/"]
+www.termsfeed.com##[href="/cookies-policy-generator/"]
+www.termsfeed.com##[href="/privacy-policy-generator/"]
+www.iubenda.com##div.mb-4.col:nth-of-type(2)
+www.iubenda.com##.iub-accessibility-btn
+www.debevoise.com###content_0_FooterInterior_rptFooter_aFooterLink_3
+www.debevoise.com###content_0_FooterInterior_rptFooter_aFooterLink_4
+commission.europa.eu##.ecl-site-footer__section--extra-link.ecl-site-footer__section
+www.ai-ecosystem.org##.gRqfAK.consent-banner-buttons
+www.ai-ecosystem.org##.jUcJ2u.undefined.MNUFxS.consent-banner-root
+www.ai-ecosystem.org##svg
+www.ai-ecosystem.org##.wixui-button__label.wJVzSK
+www.newsnow.com##[href="/privacy/cookies/"]
+www.newsnow.com##[href="/privacy-policy/"]
+www.newsnow.com###js-manage-consent
+www.newsnow.com##[href="/advertise/"]
+www.newsnow.com##[href="/publishers/"]
+noi.md##.d-md-none.bottom-banner
+point.md##.daBxUP.sc-1odnp5x-0
+point.md##.gkXKqb.sc-1odnp5x-0
+point.md##.point-ads.mobileBanner.cEocXT.sc-1i4egzi-0
+www.ziarulnational.md##[href="/publicitate/"]
+publicholidays.ro##.copyright
+publicholidays.ro##.phg-ad
+publicholidays.ro##.phgviewportconditional
+publicholidays.ro##.row.footer
+cate-zile.com##li.mr-4
+idays.ro##[href="https://idays.ro/info/gdpr"]
+www.copilul.ro##.menu-mobile
+www.paralela45.ro###coworkers-app
+www.paralela45.ro##div.fixed__call
+www.paralela45.ro##div.col-md-3.col-sm-6:nth-of-type(2) > .footer-col > .list-unstyled > li:nth-of-type(7)
+www.paralela45.ro##div.col-md-3.col-sm-6:nth-of-type(2) > .footer-col > .list-unstyled > li:nth-of-type(6)
+www.paralela45.ro##div.col-md-3.col-sm-6:nth-of-type(2) > .footer-col > .list-unstyled > li:nth-of-type(5)
+ziarulromanesc.at###scroll-to-top
+ziarulromanesc.at##.code-block-1.code-block
+m.ziare.com###ot-sdk-btn
+m.ziare.com##.mmenu-social-media
+iamsport.ro##[href="/politica-de-utilizare-cookies.html"]
+iamsport.ro##[href="/politica-de-confidentialitate.html"]
+golazo.ro##.controller > [href]
+olt-alert.ro##.td-sub-footer-menu.td-pb-span
+ziaruldemaramures.ro##.cky-notice-btn-wrapper > .cky-btn-accept.cky-btn
+ziaruldemaramures.ro###toTop
+ziaruldemaramures.ro###text-6
+www.replicaonline.ro##.cc_dialog_text
+www.replicaonline.ro##.cc_b_ok
+www.replicaonline.ro##.py-3.px-3.simple.light.cc_dialog.cc_css_reboot
+tv8.md##body > div:nth-of-type(4) > div:nth-of-type(1)
+tv8.md##button.MuiButton-text.MuiButton-root.MuiButtonBase-root:nth-of-type(2)
+tv8.md##[src="/_next/static/filles/logoDark.svg"]
+tv8.md##[src="/_next/static/filles/notification.png"]
+www.pandurul.ro###reclama_300_dreapta01
+www.pandurul.ro###reclama300
+www.omgubuntu.co.uk##[href="http://www.omgubuntu.co.uk/privacy-policy"]
+therecord.media##[href="https://www.recordedfuture.com/privacy-policy"]
+socradar.io##.align-center.items-center.justify-center.rounded-lg.bg-white.w-full.flex
+socradar.io###hello_bar
+socradar.io##.\!my-0.duration-450.\!rounded-\[0\].object-center.object-cover.w-\[100\%\]
+9to5linux.com##.darkmysite_processed.darkmysite_style_all.footer-menu-container
+thehackernews.com##[href="/p/privacy-policy.html"]
+thehackernews.com##li:nth-of-type(2)
+www.phoronix.com##[href="/legal"]
+www.securityweek.com##[href="https://www.securityweek.com/privacy-policy/"]
+www.notebookcheck.net###footer
+www.notebookcheck.net##.tx-nbc2fe-incontent-column
+www.helpnetsecurity.com###mainFooter
 www.e-acumulatori.ro##.ckPolicyGomag
 www.e-acumulatori.ro##[href="#top"]
 www.e-acumulatori.ro##[href="https://www.e-acumulatori.ro/politica-de-cookies"]

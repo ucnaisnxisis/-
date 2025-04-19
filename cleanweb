@@ -72,6 +72,22 @@ www.thepoc.ro##.show
 @@animerip.ro
 @@www.mp4upload.com
 @@i0.wp.com
+blog.mozilla.org##[href^="https://www.mozilla.org/privacy/"]
+www.radiooltenia.ro##[href="https://www.radiooltenia.ro/publicitate/"]
+www.radiooltenia.ro##[href="https://www.radiooltenia.ro/politica-de-confidentialitate/"]
+econtact.ro##.tdc-row-content-vert-center.tdc-element-style.td-pb-row.wpb_row.tdi_103.vc_row
+www.kimbino.ro##.py-4.d-lg-none.ad.placeholder
+www.kimbino.ro##.footer-bottom-menu
+www.revistabiz.ro###menu-meniu-footer
+oficiuldestiri.ro##[href="https://oficiuldestiri.ro/cookies"]
+gazarul.ro###backtotop
+gazarul.ro##[href="https://gazarul.ro/politica-de-cookies/"]
+gazarul.ro##[href="https://gazarul.ro/privacy-policy/"]
+anchetaonline.ro##[href="https://anchetaonline.ro/politica-de-confidentialitate/"]
+anchetaonline.ro##.et_pb_bg_layout_light.et_pb_text_align_left.et_pb_text_0_tb_footer.et_pb_text.et_pb_module > .et_pb_text_inner > ul > li:nth-of-type(4)
+www.radioimpuls.ro###ot-sdk-btn
+www.radioimpuls.ro##.col-md-12.col-6.list-unstyled > li.list-inline-item:nth-of-type(3)
+www.radioimpuls.ro##.col-md-12.col-6.list-unstyled > li.list-inline-item:nth-of-type(4)
 scholar.google.ro##[href="//www.google.ro/intl/ro/policies/privacy/"]omegavet.ro##.buttons-wrapperomegavet.ro##[src="/whatsapp.png"]omegavet.ro##.fa-angle-up.faomegavet.ro##.agreemaiar.fileplanet.com##footer
 weheartit.com##.flexbox.copyright-and-legal
 weheartit.com##li.text-small:nth-of-type(4)

@@ -14,6 +14,9 @@
 // @match        https://www.bing.com/search?q=*&FORM=HDRSC1
 // @match        https://www.bing.com/search?q=*
 // @match        https://duckduckgo.com/?q=*
+// @match        https://duckduckgo.com/?q=*&t=ffab&iar=videos&safe=off
+// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=images&iax=images
+// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=web
 // @match        https://duckduckgo.com/?q=*&t=fpas&iar=images
 // @match        https://yep.com/web?q=*
 // @match        https://yep.com/images?gl=RO&q=*

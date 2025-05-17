@@ -18,6 +18,9 @@
 // @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=images&iax=images
 // @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=web
 // @match        https://duckduckgo.com/?q=*&t=fpas&iar=images
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=videos&iax=videos
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=images&iax=images
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=web
 // @match        https://yep.com/web?q=*
 // @match        https://yep.com/images?gl=RO&q=*
 // @match        https://yep.com/news?q=*

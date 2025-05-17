@@ -374,6 +374,31 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 3.33.130.190
 155.102.130.201
 www.fancourier.ro##.my-5.container.newsletter-block
+revista-ferma.ro##[href*="https://www.oros.hu/index.php/hu/"]
+revista-ferma.ro##div.text-center.widget > .revis-target
+ro.vpnmentor.com##.asw-widget-wrap
+legalup.ro###elementor-popup-modal-20638
+www.aiease.ai##.ea-cookies-accept
+www.aiease.ai##.__back-top-1647a03.n-back-top.z-\[999\].xl\:hidden
+paylands.com##.col-lg-7
+www.pluriva.com##.sidebar.col-md-4
+www.avocatnet.ro##.nlwidget_nl_sub
+delicio.ro###elementor-popup-modal-123845
+delicio.ro##.elementor-element-e8ed5da.elementor-element.elementor-top-column.elementor-col-50.elementor-column
+www.mammamia.ro###fancybox-container-1
+www.mammamia.ro##.checkoutContainer.no-gutters.row > .themePrimaryColor
+www.perverttube.com###flirtyBubble
+www.perverttube.com##.sponsor
+www.perverttube.com##.footer-margin
+www.descopera.ro##.single__newsletter
+gustarearegelui.ro###footer
+www.dedeman.ro##.wrapper-newsletter
+www.celmaibuntop.ro##.news
+www.beko.ro##.quick-contact
+mathaus.ro##.js-accept-all-cookies.btn-primary.btn-lg.btn
+mathaus.ro##.cookie-modal__description
+mathaus.ro##.modal-header
+www.profit.ro##.mb-30.card-nl.card
 studentpress.ro###scroll-top
 revista-antreprenorului.ro##.darkmode-toggle
 revista-antreprenorului.ro##.stssm-sticky-wrap

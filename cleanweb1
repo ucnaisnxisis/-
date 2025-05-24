@@ -218,6 +218,40 @@ www.anonymoushackers.net##[href="https://www.anonymoushackers.net/cookies-policy
 www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
 en.m.wikipedia.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
 en.m.wikipedia.org###footer-places-cookiestatement
+webcompat.com##li.footer-item:nth-of-type(6)
+shift.com##.rdbrck.menu-set > .menu-set > a.animate:nth-of-type(3)
+shift.com##.rdbrck.menu-set > .menu-set > a.animate:nth-of-type(1)
+www.rdbrck.com##.md\:block.hidden.mt-3
+www.trustedreviews.com###menu-item-568022
+www.trustedreviews.com###menu-item-568025
+www.trustedreviews.com##[href="https://www.trustedreviews.com/info/editorial-policy"]
+www.trustedreviews.com##[href="https://www.candrmediagroup.com/privacy/"]
+www.debugbar.com###back-to-top
+www.debugbar.com###menu-item-8530 > [href="https://www.debugbar.com/privacy-policy/"]
+www.pcworld.com##[href="https://foundryco.com/idg-ad-choices/"]
+www.pcworld.com###footer_two_image [href="https://www.pcworld.com/newsletters/signup"]
+www.digitaltrends.com##[href="https://www.digitaltrends.com/newsletter/"]
+www.itpro.com##.border-y.border-solid.border-black.mb-5
+www.itpro.com##li.primary-style.has-subnav.navigation__item:nth-of-type(8)
+kinsta.com##[href="https://kinsta.com/legal/"]
+veepn.com##div.footer__column:nth-of-type(3) > .footer-links > .footer-links__list > ul > li.footer-links__item:nth-of-type(3)
+www.ubuntupit.com###menu-item-40304 > [href] > .tdb-menu-item-text
+www.ubuntupit.com###menu-item-40306 > [href] > .tdb-menu-item-text
+aofirs.org##[href="/advertising-opportunities"]
+aofirs.org##.\.footer-newslater.sp-module
+www.downelink.com##[href="https://www.downelink.com/Privacy-Policy/"]
+www.downelink.com###scroll-to-top
+ar.joecomp.com##[href="https://ar.joecomp.com/privacy-policy"]
+www.neogaf.com##[href^="https://www.neogaf.com/index.php"]
+www.techlila.com##.scroll-up
+www.techlila.com###menu-item-27453
+promodome.in##.active.notification-bar
+malwaretips.com##[href="/help/privacy-policy/"]
+malwaretips.com##[href="#top"]
+www.browserstack.com##[href="/blog/tag/newsletter"] > .item-text
+whileint.com###blocksy_ct_newsletter_subscribe-3
+whileint.com##.ct-show.ct-hidden-sm.ct-back-to-top
+whileint.com##li#menu-item-5061.menu-item-5061.menu-item-object-page.menu-item-type-post_type.menu-item:nth-of-type(2)
 proalba.ro##.menu-item-122064.menu-item-object-page.menu-item-type-post_type.menu-item
 proalba.ro##.menu-item-122065.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
 www.emag.ro##[href^="https://www.emag.ro/info/politica-de-utilizare-cookie-uri"]

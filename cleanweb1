@@ -219,6 +219,43 @@ www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
 en.m.wikipedia.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
 en.m.wikipedia.org###footer-places-cookiestatement
 account.proton.me##.p-4.text-center.shrink-0
+spankbang.com###age-check-content > p
+spankbang.com##.age-no-check-button
+spankbang.com###age-check-footer
+spankbang.com##.justify-center.flex > .h-10
+darkreader.org##nav > [href="privacy/"]
+darkreader.org##a.v2-help-header-link:nth-of-type(3)
+www.cinemacity.ro##.noprint.footer.dark
+www.cinemacity.ro##.mobile-banner
+www.cineplexx.ro##a.b-contacts__link
+www.cineplexx.ro##div.footer__main-inner-sub:nth-of-type(1) > .footer__main-inner > .iJcAzH.sc-ibxdXY > li.jDRtfp.sc-RefOD:nth-of-type(2)
+cinemap.ro##.text-center.footer
+www.cine-max.ro##footer
+sweet.tv##div.footer__links_col:nth-of-type(3)
+sweet.tv##.footer__links-title.footer__links_col
+sweet.tv##a.header-seo__burger--mobile-menu-links-link:nth-of-type(3)
+www.netflix.com##.centered.site-footer-wrapper
+www.netflix.com##.btn-large.btn-red.btn-get-started.btn
+sfatulparintilor.ro##[href="https://sfatulparintilor.ro/abonare-newsletter-sfatulparintilor-ro/"]
+verandamall.ro###mc_embed_signup
+puhutv.com##.rfHzl.sc-7321509-0
+www.focussat.ro###spinoco-webchat-plugin
+dinfilme.ro###bottom-footer
+www.tvblog.ro##.td-container-wrap.td-sub-footer-container
+rutube.ru##.wdp-onboardings-inventory-module__popupBody.wdp-popup-module__body
+||fb-cdn.premier.one/files/premier/admin-api/66a0/733e/66a0733eb09d913a14ce365781dbe4ca.png$image
+rutube.ru##noindex
+rutube.ru##section:nth-of-type(9)
+www.noobz.ro##.td-mobile-sub-footer-wrap
+lapsihiatru.ro##.backtoptop
+www.galatia.ro###scrollUp
+galatia.ro##.fa-level-up-alt.fas
+galatia.ro###scrollUp
+libertysteelgroup.com##[href="https://libertysteelgroup.com/ro/privacy-policy/"]
+www.dilema.ro###go-top
+www.dilema.ro###disto_recent_post_widget-2
+obiectivbr.ro###block-anuntonline
+animeterra.ro##.chatbro_messages_scroll_to_last
 cutter.compari.ro##.visible
 cutter.compari.ro##[href="https://www.compari.ro/static/newsletter.html"]
 www.officedirect.ro##[href="newsletter2"]

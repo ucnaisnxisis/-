@@ -219,6 +219,24 @@ www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
 en.m.wikipedia.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
 en.m.wikipedia.org###footer-places-cookiestatement
 account.proton.me##.p-4.text-center.shrink-0
+www.socialplug.io##.floating-btn
+www.socialplug.io##.footer_social-box
+www.socialplug.io##a.footer_link:nth-of-type(7)
+cyberinsider.com##.has-sm-padding-bottom.has-sm-padding-top.has-dark-background.has-background.has-text-color.has-black-background-color.has-white-color.alignfull.wp-block-group
+mullvad.net##li.svelte-5uri70:nth-of-type(3)
+mullvad.net##li.svelte-5uri70:nth-of-type(4)
+mullvad.net##li.svelte-5uri70:nth-of-type(7)
+playtech.ro##.border-grey-100.border-1.border-solid.md\:padding-30.smb\:padding-10.items-center.gap-20.display-flex.single__follow
+foaiatransilvana.ro##.size-full.aligncenter.wp-block-image
+www.intowindows.com##[href="https://www.intowindows.com/privacy/"]
+www.askvg.com##.footer
+www.pcworld.com###menu-item-100000317-footer-primary
+www.pcworld.com##div.primaryFooter-menu-wrap:nth-of-type(4)
+www.pcworld.com##[href="https://foundryco.com/our-brands/pcworld/"]
+www.pcworld.com###menu-item-100029490-menu-1-mobile
+www.techzine.eu###colophon > .container
+www.ghacks.net###site-footer
+windowsforum.com##.p-footer-row-main
 spankbang.com###age-check-content > p
 spankbang.com##.age-no-check-button
 spankbang.com###age-check-footer

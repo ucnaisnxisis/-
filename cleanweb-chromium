@@ -377,6 +377,27 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 foxi.ro###go-top
 sameday.ro###menu-item-12906 > [href="https://mobileapp.sameday.ro/kBMf"]
 sameday.ro##.btn-close-mobile-app
+www.dlsite.com##[href="https://www.dlsite.com/pro/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/pro/mypage/setting/mail"]
+www.dlsite.com##[href="/home/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/books/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/books/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/appx/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/appx/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/maniax/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/maniax/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/bl/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/bl/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/girls/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/girls/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/home/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/home/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/home/mosaic"]
+www.dlsite.com##[href="https://www.dlsite.com/soft/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/soft/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/app/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/app/mypage/setting/mail"]
+dlsite.cc##div.footer-links-group:nth-of-type(1) > a.footer-link:nth-of-type(3)
 lexn.org##.contributions
 redact.dev##div.flex-col.flex:nth-of-type(3)
 efficient.app##.subscribe-form-input

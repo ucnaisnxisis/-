@@ -72,6 +72,9 @@ youtube.com##premium
 youtube.com##show
 www.youtube.com##.ytd-feed-nudge-renderer.style-scope
 www.youtube.com##.YtDislikeButtonViewModelHost
+www.youtube.com###guide-links-secondary
+www.youtube.com###guide-links-primary
+www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 i1.ytimg.com
 m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer

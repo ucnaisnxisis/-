@@ -199,6 +199,9 @@ www.youtube.com###voice-search-button > .style-scope.ytd-masthead > yt-button-sh
 www.youtube.com##.ytp-cued-thumbnail-overlay-image
 www.youtube.com##.paused-mode.ad-interrupting.ad-showing.ytp-large-width-mode.ytp-hide-info-bar.ytp-fine-scrubbing-exp.ytp-bigboards.ytp-fit-cover-video.ad-created.ytp-cairo-refresh-signature-moments.ytp-cairo-refresh.ytp-ssap.ytp-exp-ppp-update.ytp-modern-caption.ytp-exp-bottom-control-flexbox.ytp-transparent.html5-video-player
 www.youtube.com##ytd-engagement-panel-section-list-renderer.ytd-watch-flexy.style-scope
+www.youtube.com###guide-links-secondary
+www.youtube.com###guide-links-primary
+www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 suggestqueries-clients6.youtube.com
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-container
 m.youtube.com##.reel-shelf-items

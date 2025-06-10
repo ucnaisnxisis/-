@@ -261,6 +261,10 @@ stash.games##li.mt-\[10px\]:nth-of-type(2)
 h2o.fandom.com##.global-footer__links > li:nth-of-type(7)
 @@www.youtube-nocookie.com
 signal.group##[href="https://www.signal.org/legal/"]
+openarena.fandom.com##li:nth-of-type(7)
+cloudmp3.cc###footer > .justify-content-center.nav > li.nav-item > .text-white.nav-link
+account.matrix.org##._legal-footer_5mi4k_8 a._link_1v5rz_8
+account.matrix.org##._separator_5mi4k_24
 alexn.org###subscribe
 alexn.org##.contributions > p
 alexn.org###contribute

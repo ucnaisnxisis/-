@@ -202,6 +202,7 @@ www.youtube.com##ytd-engagement-panel-section-list-renderer.ytd-watch-flexy.styl
 www.youtube.com###guide-links-secondary
 www.youtube.com###guide-links-primary
 www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
+www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
 suggestqueries-clients6.youtube.com
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-container
 m.youtube.com##.reel-shelf-items

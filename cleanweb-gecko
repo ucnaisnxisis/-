@@ -416,6 +416,10 @@ www.mozillafoundation.org##li.tw-mb-4:nth-of-type(3)
 www.mozillafoundation.org##.large\:tw-columns-2.link-list.tw-mb-0.tw-list-none.tw-ml-0.tw-p-0 > li:nth-of-type(7)
 orbitbymozilla.com##li:nth-of-type(4)
 ai-bot.cn##footer
+ok.ru##.auth-login_auth-login-banner.h-mod
+ok.ru###scrollToTopVideoLayer
+ericutza.blogspot.com##[href="#"]
+tvprofil.com##[href="/ro/marketing/"]
 blog.nightly.mozilla.org##.small-links li
 floorp.app##nav:nth-of-type(3)
 zen-browser.app##section.gap-2.flex-col.flex:nth-of-type(2)

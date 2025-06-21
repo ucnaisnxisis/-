@@ -454,6 +454,16 @@ multimedia.easeus.com##.float_livechat
 multimedia.easeus.com##[href="https://br.easeus.com/sales-faq/refund-policy.html"]
 multimedia.easeus.com##[href="https://br.easeus.com/privacy.html"]
 zeemo.ai##.policy
+www.bing.com##li:nth-of-type(6)
+www.bing.com##.composer_container
+m.youtube.com##.ytVideoMetadataCarouselViewModelCarouselContainer
+m.youtube.com##.ytCarouselTitleViewModelNavigation
+sur.ly##.footer__container.container
+ruclips.net##.footer-links
+ruclips.net###footer
+ro.101-help.com##.w3-theme-action.w3-button.move-to-top
+ro.101-help.com##.w3-theme.w3-container
+ro.101-help.com###Copyright
 www.duplichecker.com##.text-center.foot-last-zone.col-md-4
 www.duplichecker.com##[href="https://www.duplichecker.com/pt/privacy-policy"]
 www.duplichecker.com##[href="https://www.duplichecker.com/refund-policy"]

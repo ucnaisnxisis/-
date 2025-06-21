@@ -509,6 +509,16 @@ www.sursadesanatate.ro##div.banner.ipad-scroll
 alergologconstanta.ro###toTop
 www.animale.ro##div.s6.xl3.col
 m.askmen.ro##div.s6.col
+www.bing.com##li:nth-of-type(6)
+www.bing.com##.composer_container
+m.youtube.com##.ytVideoMetadataCarouselViewModelCarouselContainer
+m.youtube.com##.ytCarouselTitleViewModelNavigation
+sur.ly##.footer__container.container
+ruclips.net##.footer-links
+ruclips.net###footer
+ro.101-help.com##.w3-theme-action.w3-button.move-to-top
+ro.101-help.com##.w3-theme.w3-container
+ro.101-help.com###Copyright
 m.calificativ.ro##div.row:nth-of-type(1)
 m.ele.ro##div.mdl-cell--4-col.mdl-cell.mdl-mini-footer__left-section:nth-of-type(1)
 m.ele.ro##li:nth-of-type(2)

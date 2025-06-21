@@ -511,6 +511,16 @@ www.electrica.ro##footer
 ai-bot.cn##footer
 ok.ru##.auth-login_auth-login-banner.h-mod
 ok.ru###scrollToTopVideoLayer
+www.bing.com##li:nth-of-type(6)
+www.bing.com##.composer_container
+m.youtube.com##.ytVideoMetadataCarouselViewModelCarouselContainer
+m.youtube.com##.ytCarouselTitleViewModelNavigation
+sur.ly##.footer__container.container
+ruclips.net##.footer-links
+ruclips.net###footer
+ro.101-help.com##.w3-theme-action.w3-button.move-to-top
+ro.101-help.com##.w3-theme.w3-container
+ro.101-help.com###Copyright
 ericutza.blogspot.com##[href="#"]
 ialoc.ro##[href="/confidentialitate"]
 ialoc.ro##.upper-footer

@@ -209,6 +209,36 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
+www.zooland.ro##div.mb-4.col-md-4
+www.suntmamica.ro##.box
+www.suntmamica.ro##li:nth-of-type(6)
+www.suntmamica.ro##div.col-sm-4.col-xs-12:nth-of-type(3)
+naturescu.com##.elementor-section-height-default.elementor-section-full_width.elementor-element-13eaa86c.elementor-element.elementor-inner-section.elementor-section
+uau.ro###topcontrol
+uau.ro##.dark_style.footer-bottom
+semnificatii.ro##.footer-b
+semnificatii.ro##.footer-nav
+knowzone.ro###scroll-to-top
+knowzone.ro##.site-footer-bottom
+knowzone.ro##.footer
+imterpretarivise.ro##.footer
+interpretarevise.ro##.footer-listcontainer
+desprevise.ro##.footer
+desprevise.ro##.menu-footer-container
+dreamgeek.ro##.footer
+dreamgeek.ro##.menu-footer-container
+visexplicat.ro##div.footer-col:nth-of-type(2)
+visexplicat.ro##app-go-to-top
+dictionardevise.ro##.footer
+dictionardevise.ro##li.wp-block-pages-list__item:nth-of-type(5)
+foxi.ro###jl-gdpr
+foxi.ro##.jl_foot_wrap
+www.garbo.ro##.disc
+www.garbo.ro##div.col-md-3.col-6:nth-of-type(1) > .footerList.list-unstyled > li:nth-of-type(2)
+www.garbo.ro##div.col-md-3.col-6:nth-of-type(1) > .footerList.list-unstyled > li:nth-of-type(4)
+www.zodiacool.ro##.in.fade.modal-backdrop
+www.zodiacool.ro##.m-b-0.text-center.col-xs-12.col-md-3
+www.zodiacool.ro###footer3 > li:nth-of-type(4)
 foxi.ro###go-top
 sameday.ro###menu-item-12906 > [href="https://mobileapp.sameday.ro/kBMf"]
 sameday.ro##.btn-close-mobile-app

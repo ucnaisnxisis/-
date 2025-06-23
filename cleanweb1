@@ -209,6 +209,46 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
+vaccination-info.europa.eu##.scrollup
+vaccination-info.europa.eu##.section--legal.section
+cncpic.mai.gov.ro##.footer-declaration
+cncpic.mai.gov.ro###accessibility_settings_toggle
+cncpic.mai.gov.ro###block-meniuutilitar-2 > .nav.clearfix > li.nav-item:nth-of-type(4)
+www.catena.ro##[href="/politica-de-confidentialitate"]
+www.anm.ro###bottom-footer
+www.anm.ro###scroll-up
+agroland.ro##[href="https://agroland.ro/c/politica-de-utilizare-cookie-uri/"]
+agroland.ro###menu-item-289
+agroland.ro###menu-item-292
+www.doctor3d.ro###footerDiv
+www.perfectpet.ro###__EAAPS_PORTAL
+www.mamica.ro###toTop
+www.veterinarladomiciliu.ro##[href="https://www.veterinarladomiciliu.ro/politica-de-confidentialitate-gdpr/"]
+www.duovet.ro##[href="/prelucraredatecaracterpersonal"]
+www.duovet.ro##[href="/politica-cookies"]
+www.zooplus.ro##.footer-bottom-menu--inner
+www.toateanimalele.ro##p:nth-of-type(2)
+www.toateanimalele.ro##.wpb_wrapper > ul
+totuldespremame.ro##.footer-widgets
+totuldespremame.ro##footer
+totuldespremame.ro###menu-item-215724
+www.suub.ro###slide_top
+www.suub.ro###footer
+www.unicef.org##.is-alert-stucked.accent-alert.white-bg.emergency-alert
+www.unicef.org##.mobile-header-end__donate
+www.unicef.org##.footer-right
+legislatie.just.ro##.footer_bottom
+comenzi.farmaciatei.ro##.mt-2.row
+comenzi.farmaciatei.ro###newsletter-right
+comenzi.farmaciatei.ro###newsletter-border
+www.dspph.ro##.default.return-top
+iob.ro##[href="https://www.iob.ro/anunturi"]
+iob.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-align-left.elementor-element-562850b1.elementor-element > .elementor-icon-list-items > li.elementor-icon-list-item > .elementor-icon-list-text
+iob.ro##.menu-item-1165.menu-item-has-children.menu-item-object-custom.menu-item-type-custom.menu-item
+www.infohpv.ro###mh_back_to_top_link
+www.infohpv.ro###footer-menu-item-2194
+www.infohpv.ro##[href="https://www.msdprivacy.com/ro/ro/"]
+idog.ro##ul
 anhcosplay.com###menu-footer-2
 anhcosplay.com##.backto
 mangapark.net##.bottom-4.right-4.hover\:opacity-90.opacity-30.duration-300.ease-in-out.flex-col.flex.fixed

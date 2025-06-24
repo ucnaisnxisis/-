@@ -209,6 +209,31 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
+addons.mozilla.org##.Footer-cookies-link
+addons.mozilla.org##.Footer-copyright
+addons.mozilla.org##.Footer-privacy-link
+addons.mozilla.org##.Notice-dismissible.GetFirefoxBanner.Notice-warning.Notice
+addons.opera.com##.hf--width-holder.hf--bottom-side
+chromewebstore.google.com##footer
+chromewebstore.google.com##.footer
+www.mozilla.org##.moz24-footer-secondary
+www.mozilla.org##div.m24-mzp-l-content-container:nth-of-type(2) > .m24-mzp-l-content > li:nth-of-type(4)
+www.mozilla.ai##.footer-bottom_wrapper
+www.mozilla.ai##.section_signup
+ai-guide.future.mozilla.org###newsletter-section
+ai-guide.future.mozilla.org###footer
+blog.mozilla.org##[href^="https://mozillafoundation.org/"]
+blog.mozilla.org##.ft-c-primary-nav__item--290364.ft-c-primary-nav__sub-menu--1__item.ft-c-primary-nav__sub-menu__item
+www.mozillafoundation.org##.print\:tw-hidden.tw-w-full.tw-z-20.tw-relative.medium\:tw-pb-20.medium\:tw-py-16.tw-pb-12.tw-py-8.tw-bg-green-10.donate-banner
+www.mozillafoundation.org##.align-items-center.d-flex
+www.mozillafoundation.org##.tw-mb-0.tw-body-small.tw-dark
+www.mozillafoundation.org##.tw-py-24.print\:tw-hidden.tw-dark.tw-bg-blue-40
+www.mozillafoundation.org###donate-footer-btn
+www.mozillafoundation.org##.medium\:tw-ml-\[8\.3\%\].tw-justify-between.tw-flex-col.tw-flex.tw-px-8.large\:tw-w-5\/12.medium\:tw-w-6\/12 > .tw-mt-12
+builders.mozilla.org##.gap-6.font-semibold.uppercase.text-xs.justify-between.items-start.flex.col-span-full
+blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
+blueprints.mozilla.ai##.footer-bottom_wrapper
+blueprints.mozilla.ai##.newsletter-new_component
 vaccination-info.europa.eu##.scrollup
 vaccination-info.europa.eu##.section--legal.section
 cncpic.mai.gov.ro##.footer-declaration

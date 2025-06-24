@@ -404,6 +404,8 @@ builders.mozilla.org##.gap-6.font-semibold.uppercase.text-xs.justify-between.ite
 blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
 blueprints.mozilla.ai##.footer-bottom_wrapper
 blueprints.mozilla.ai##.newsletter-new_component
+www.euronews.ro##ul.md\:p-0.md\:border-0.md\:col-span-1.dark\:border-grey-9.p-4.border-grey-2.border-b-\[1px\].col-span-2:nth-of-type(3) > li > .md\:block.grid-cols-2.grid > li:nth-of-type(2)
+romanialibera.ro##.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_248.vc_column
 vaccination-info.europa.eu##.scrollup
 vaccination-info.europa.eu##.section--legal.section
 cncpic.mai.gov.ro##.footer-declaration

@@ -404,6 +404,85 @@ builders.mozilla.org##.gap-6.font-semibold.uppercase.text-xs.justify-between.ite
 blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
 blueprints.mozilla.ai##.footer-bottom_wrapper
 blueprints.mozilla.ai##.newsletter-new_component
+www.petrebogdan.ro##[href="https://www.petrebogdan.ro/politica-confidentialitate/"]
+www.medlife.ro##.js-form-item-email.form-item-email.js-form-type-email.form-item.js-form-item
+www.medlife.ro##.newsletter-header
+www.medlife.ro##label.check-container
+www.medlife.ro###edit-nume-prenume--wrapper
+www.medlife.ro##.form-wrapper.js-form-wrapper.webform-actions.form-actions
+www.gralmedical.ro##.border-radius.newsletter.primary-text-color.col-lg-3
+www.gralmedical.ro##p.ml-3:nth-of-type(2)
+clinicaeminescu100.ro##div:nth-of-type(4)
+clinicaeminescu100.ro##.menu-utile-container > .menu
+clinicaeminescu100.ro##div.mediz-column-15.mediz-item-pdlr.mediz-footer-column:nth-of-type(2)
+affidea.ro###mdtwid_1
+affidea.ro###conversejs
+affidea.ro##div.module-container:nth-of-type(3)
+www.doramedicals.ro###menu-item-568
+medsana.ro##.g-4.justify-content-between.row > div.col-md-6:nth-of-type(1)
+medsana.ro##.footer
+medsana.ro##.d-flex.d-xl-none.sticky-mobile-buttons
+medsana.ro##.markers-buttons
+www.issalute.it###jm-footer
+www.clinica-sante.ro###pojo-a11y-toolbar
+www.clinica-sante.ro##[href="https://www.clinica-sante.ro/protectia-datelor-cu-caracter-personal/"]
+www.clinica-sante.ro##.copyright-wrapper
+www.clinica-sante.ro##.textwidget
+sfantualexandru.ro##.e-child.e-con.e-flex.e-con-full.elementor-element-6e2d6621.elementor-element
+mhospital.ro##[href="https://mhospital.ro/politica-cookie/"]
+mhospital.ro##[href="https://mhospital.ro/politica-de-confidentialitate/"]
+spitalulmonza.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-mobile-align-center.elementor-align-left.elementor-icon-list--layout-inline.elementor-element-a3a1856.elementor-element > .elementor-widget-container
+spitalulmonza.ro###scroll-to-top
+spitalulmonza.ro##.elementor-animation-grow.elementor-size-sm.elementor-button-link.elementor-button
+fmmedident.ro##.theme-02
+fmmedident.ro##.theme-01
+fmmedident.ro##.theme-00
+fmmedident.ro##.theme
+scanmed.ro##.e-child.e-con.e-con-boxed.e-flex.elementor-element-0c8c284.elementor-element
+scanmed.ro##.menu-item-3049.menu-item-object-page.menu-item-type-post_type.menu-item
+interservisan.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-align-left.elementor-element-9496375.elementor-element
+interservisan.ro##.elementor-widget-heading.elementor-widget.elementor-element-b6f3739.elementor-element
+medikali.ro##[href="https://medikali.ro/termeni-si-conditii-pentru-accesarea-serviciilor-medicale/"]
+medikali.ro##[href="https://medikali.ro/politica-de-cookies/"]
+medikali.ro##[href="https://medikali.ro/politica-de-confidentialitate/"]
+www.raspberrypi.com##li.__rptl-footer-item:nth-of-type(12)
+www.raspberrypi.com##li.__rptl-footer-item:nth-of-type(15)
+www.raspberrypi.org##ul.c-footer__nav-list:nth-of-type(3)
+opensource.com##[href="/privacy-policy"]
+pimylifeup.com##[href="https://pimylifeup.com/disclaimer-privacy-policy/"]
+projects.raspberrypi.org##.c-project-footer-policy
+raspberrytips.com##[href="https://raspberrytips.com/privacy-policy/"]
+randomnerdtutorials.com##[href="https://randomnerdtutorials.com/privacy-policy/"]
+makeradvisor.com##[href="https://makeradvisor.com/privacy-policy/"]
+randomnerdtutorials.com##.elementor-popup-modal.dialog-type-lightbox.dialog-type-buttons.dialog-lightbox-widget.dialog-widget
+raspians.com###menu-item-4180
+www.tomshardware.com##li.min-h-8:nth-of-type(4)
+www.tomshardware.com##li.min-h-8:nth-of-type(3)
+www.tomshardware.com##.\!z-\[999999999999999999\].h-screen.bg-\[\#33333370\].z-\[10001\].right-0.left-0.bottom-0.fixed
+realpython.com##.text-wrap-balance.text-center.text-muted.small.mx-4
+ubuntu.com##.p-footer--secondary__nav
+ubuntu.com##.u-fixed-width
+www.piday.org##.footer-bar-align-right.footer-bar-active.grid-parent.grid-container.site-footer
+magazine.raspberrypi.com##.c-slice--red.c-slice
+magazine.raspberrypi.com##li:nth-of-type(11)
+magazine.raspberrypi.com##li:nth-of-type(9)
+magazine.raspberrypi.com##li:nth-of-type(8)
+magazine.raspberrypi.com##div.c-issue-actions__button
+magazine.raspberrypi.com##li.lg\:w-auto.w-full.block:nth-of-type(6)
+magazine.raspberrypi.com##li.lg\:w-auto.w-full.block:nth-of-type(7)
+www.pishop.us##.sb-backtotop
+www.pishop.us##[href="https://www.pishop.us/privacy-policy/"]
+www.tutorialspoint.com##.mb-6.mt-10.text-gray-300.gap-x-2.justify-center.flex-wrap.text-xs.flex.footer-links
+www.londonstockexchange.com##a.gtm-trackable:nth-of-type(3)
+www.londonstockexchange.com##a.gtm-trackable:nth-of-type(2)
+www.londonstockexchange.com##div.mb-md-0.mb-4.footer-links.col-md:nth-of-type(3) > a.gtm-trackable:nth-of-type(4)
+arstechnica.com##[href="https://arstechnica.com/newsletters/"]
+arstechnica.com##li:nth-of-type(7)
+arstechnica.com##.focus\:text-orange-500.hover\:text-orange-500.text-orange-400
+nordvpn.com###Accordion-ryzDy > astro-slot > .Active_tab.Accordion__tab > .block.transition-all.overflow-hidden.Accordion__panel > .py-4.gap-6.flex-col.flex
+nordvpn.com###Accordion-ryzDy > astro-slot > .Accordion__tab
+www.cnet.com##div.md\:mb-4.w-1\/2.mb-6:nth-of-type(12)
+www.cnet.com##div.md\:mb-4.w-1\/2.mb-6:nth-of-type(8)
 www.euronews.ro##ul.md\:p-0.md\:border-0.md\:col-span-1.dark\:border-grey-9.p-4.border-grey-2.border-b-\[1px\].col-span-2:nth-of-type(3) > li > .md\:block.grid-cols-2.grid > li:nth-of-type(2)
 romanialibera.ro##.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_248.vc_column
 vaccination-info.europa.eu##.scrollup

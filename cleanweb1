@@ -234,6 +234,16 @@ builders.mozilla.org##.gap-6.font-semibold.uppercase.text-xs.justify-between.ite
 blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
 blueprints.mozilla.ai##.footer-bottom_wrapper
 blueprints.mozilla.ai##.newsletter-new_component
+www.youtube.com##.ytp-chrome-top
+www.musikblog.de##.pn-wrapper
+www.musikblog.de##.elementor-widget-icon.elementor-widget.elementor-view-default.mb-dark-mode-invert.mb-jump-to-top.elementor-fixed.elementor-widget__width-auto.elementor-element-1598f800.elementor-element
+www.tf1info.fr##.justify-center.flex.FooterNav__Link.jsx-518721462
+mail.proton.me##.border-weak.border-bottom.items-center.p-4.flex-row.flex-nowrap.flex
+www.craiovaforum.ro##.last
+cuisine.journaldesfemmes.fr###appconsent
+www.journaldesfemmes.fr###appconsent
+www.journaldesfemmes.fr###gotop > [href]
+cookieoutlet.com##.page-width.footer__content-top
 www.vremearomania.com##.footer-bottom-line.flex-top
 calarasipress.ro###mvp-foot-top
 www.meteoromania.ro##.onetap-container-toggle

@@ -235,6 +235,75 @@ blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
 blueprints.mozilla.ai##.footer-bottom_wrapper
 blueprints.mozilla.ai##.newsletter-new_component
 www.youtube.com##.ytp-chrome-top
+streamtape.com##div.col-xs-12.col-sm-6.col-md-6.col-lg-3.col-xl-3:nth-of-type(2)
+nordvpn.com##.gap-y-3.gap-x-6.xl\:flex-row.flex-col.flex
+animeaddicts.eu##[href="/policies/privacy-policy"]
+protonvpn.com##.sm\:gap-y-2.sm\:flex-wrap.sm\:flex.text-xs
+freevpnplanet.com###qa-page-footer-link-policy
+overviewvpn.com##div.mb-3.col-lg-3.col-sm-4.col-6:nth-of-type(3) > .mb-lg-0.mb-md-4.list-unstyled > li.lh-lg:nth-of-type(2)
+www.avira.com##[href="https://www.avira.com/en/do-not-sell"]
+www.avira.com##[href="https://www.avira.com/en/privacy-policy/homepage"]
+www.highspeedinternet.com##.footer__copyright.large-padding.border-top.grid-x
+turbovpn.com##.md\:justify-between.md\:flex-row.md\:gap-0.gap-6.flex-col.flex > div:nth-of-type(4)
+www.touchvpn.net##.footer__bottom
+www.twbestvpn.com###colophon
+www.expressvpn.com##.footer-bottom
+www.expressvpn.com##.wrap-snapengage.snap-engage-btn
+www.wired.com##li.navigation__list-item.JsNkg.NavigationListItemWrapper-cxLZKD:nth-of-type(2)
+www.wired.com##li.navigation__list-item.JsNkg.NavigationListItemWrapper-cxLZKD:nth-of-type(1)
+www.wired.com##div.hJninp.OneNavAreaContainer-WBMxY:nth-of-type(2) > div.djpGDH.StyledClickable-cPOaom:nth-of-type(1)
+www.expressvpn.com##.sticky-cta-bkg-white.sticky-cta-light.sticky-cta.wp-block-xv-blocks-sticky-cta-block
+www.cyberghostvpn.com###nav-privacyhub > .menu-link > .menu-text
+www.hotspotshield.com##div.footer-menu.footer__menu:nth-of-type(6)
+brave.com##div.site-footer__column:nth-of-type(4) > div.site-footer__grouping:nth-of-type(1)
+brave.com##div.site-footer__column:nth-of-type(1) > div.site-footer__grouping:nth-of-type(2) > .site-footer__heading
+eonvpn.com##.md_col-span-3.col-span-6
+www.privateinternetaccess.com##div.footer-column.col-md.col-12:nth-of-type(5) > ul.footer-list:nth-of-type(2)
+www.privateinternetaccess.com##div.footer-column.col-md.col-12:nth-of-type(5) > a.footer-heading:nth-of-type(2)
+www.privateinternetaccess.com##.sticky.sticky-cta-experiment-content.sticky-cta-experiment.hide-on-desktop.has-background.custom-container.alignfull.wp-block-common-blocks-background-container-block
+www.privateinternetaccess.com##.wrap-snapengage.snap-engage-btn
+www.tunnelbear.com###signature
+www.tunnelbear.com##li:nth-of-type(6)
+www.tunnelbear.com##li:nth-of-type(7)
+www.tunnelbear.com##.bg-light
+||www.tunnelbear.com/static/img/ai-agent-bear.a190588.svg$image
+www.tunnelbear.com##.view-content > div
+windscribe.com##a.css-hl4y6o:nth-of-type(2)
+windscribe.com###garry-toggle
+www.vpnbook.com##li:nth-of-type(6)
+openvpn.net##.VESFR.Footerstyles__BottomWrapper-gtPvBC
+openvpn.net###launcher
+openvpn.net##body > div > div > div
+www.techradar.com##.border-y.border-solid.border-\[--footer-nav-border-color\].mb-5
+secure-vpn.en.uptodown.com##li:nth-of-type(2)
+secure-vpn.en.uptodown.com##li:nth-of-type(3)
+en.uptodown.com##li:nth-of-type(2)
+en.uptodown.com##li:nth-of-type(3)
+veepn.com##div.footer__column:nth-of-type(3) > .js-exppan-item.footer-links.expansion-panel > .expansion-panel__wrap > .expansion-panel__inner > .footer-links__list > li.footer-links__item:nth-of-type(7)
+veepn.com##div.footer__column:nth-of-type(3) > .js-exppan-item.footer-links.expansion-panel > .expansion-panel__wrap > .expansion-panel__inner > .footer-links__list > li.footer-links__item:nth-of-type(4)
+www.vpnunlimited.com##.footer-main__subscribe.subscribe-footer.subscribe
+www.vpnunlimited.com##[href="https://www.keepsolid.com/dmca-policy"]
+www.namecheap.com##.gb-col-lg-auto
+www.namecheap.com##.gb-col-lg-5
+www.urban-vpn.com###rgbc-slidedown-container
+www.urban-vpn.com###menu-item-7918
+www.safewise.com##.has-background--tertiary-darkest.has-background.row-margin--default.row-padding--default.clwp-row
+www.safewise.com##.grid-container--full-width.grid-container > .grid-margin-x.grid-x > .cell.large-4.small-12
+www.torproject.org##.active.text-white.mt-2.btn-dark.btn-small.btn
+www.torproject.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-light
+www.torproject.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-primary-light
+www.torproject.org##.mt-md-2.mt-3.mb-0.h4.px-md-2.px-0
+www.torproject.org##.mt-5.bg-primary.container
+hidden.wiki###scroll-top
+hidden.wiki##[href="https://hidden.wiki/privacy-policy/"]
+thehiddenwiki.com##[href="https://thehiddenwiki.com/privacy-policy/"]
+threatpicture.com##[href="https://threatpicture.com/privacy-policy/"]
+www.upstandinghackers.com##[href="https://www.upstandinghackers.com/privacy-policy/"]
+www.upstandinghackers.com###ht-back-top
+hiddenwikilink.org###footer-widgets
+hiddenwikilink.org##.site-info
+forestvpn.com##.lg\:space-y-10.lg\:mt-20.sm\:space-y-8.sm\:mt-16.space-y-6.flex-col.flex.mt-12
+forestvpn.com##.lg\:col-span-1.sm\:col-span-2
 www.bancatransilvania.ro##.bt-footer-links-row
 www.bancatransilvania.ro##div.bt-footer-column:nth-of-type(9)
 www.bancatransilvania.ro##.bt-ai-chat-widget

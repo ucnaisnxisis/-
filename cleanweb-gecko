@@ -480,6 +480,23 @@ blueprints.mozilla.ai##.newsletter-new_component
 www.youtube.com##.ytp-chrome-top
 streamtape.com##div.col-xs-12.col-sm-6.col-md-6.col-lg-3.col-xl-3:nth-of-type(2)
 support.signal.org##.footer
+www.emag.ro##[href^="/help/politica-de-utilizare-cookie-uri"]
+www.emag.ro##[href^="/help/prelucrarea-datelor-cu-caracter-personal"]
+www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button
+pypi.org##[href="https://policies.python.org/pypi.org/Privacy-Notice/"]
+pypi.org##[href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/"]
+docsbot.ai##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(1) > div:nth-of-type(1) > ul.space-y-4.mt-4:nth-of-type(2)
+3commas.io##[href="/cookies-notice"]
+3commas.io##div.MenuContainer_menuContainer__Id1xZ:nth-of-type(2)
+3commas.io###__next > div > div > div
+www.altrady.com###w-node-_856cd6fa-afb5-476d-0730-80303a2a031b-5501409d
+pocketoption.com##.po-scroll-btn_scrolled.po-scroll-btn.po-nav-btn
+pocketoption.com##li.po-footer__link-item:nth-of-type(4)
+autobotsignal.io##.row.flex.bubble-r-container.baTaZaRj.Group.bubble-element
+cryptonews.com##a.col-lg-3:nth-of-type(3)
+cryptonews.com##a.col-lg-3:nth-of-type(6)
+www.botstudioo.com###ask-from-ai-button
+www.botstudioo.com##div.rounded-box.items-center.flex-col.flex.h-full.py-3.border-base-400.border:nth-of-type(1)
 ajutor.smartbill.ro###smartbill-scroll-to-top
 mogstation.org##[href="https://mogstation.org/privacy-policy/"]
 www.fh-co.com##[href="https://www.fh-co.com/privacy-policy/"]
@@ -6933,9 +6950,6 @@ womenshealth.de
 wormser-zeitung.de
 woxikon.de
 wa.me
-api.whatsapp.com
-api.whatsapp.com/send?phone=40726666690
-whatsapp.com
 antiblock.org
 thepcspy.com
 removeadblock.com
@@ -13379,7 +13393,6 @@ t.lumupu.xyz
 serving.viewtraff.com
 rocketme.top
 q.reyden-x.com
-dit.whatsapp.net
 cdn.ampproject.org
 vouchanalysistonight.com
 d13k7prax1yi04.cloudfront.net

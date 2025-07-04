@@ -382,6 +382,11 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 www.emag.ro##[href^="/help/politica-de-utilizare-cookie-uri"]Add commentMore actions
 www.emag.ro##[href^="/help/prelucrarea-datelor-cu-caracter-personal"]
 www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button
+pixel.lockn.link
+lokinet.org##.khUQGv.sc-kstqJO
+apps.apple.com##li.link-list__item--a.link-list__item:nth-of-type(3)
+www.linux.org###xNEaeAbyvvDUQREz
+www.linux.org###snCNAlMJjVXIU
 pypi.org##[href="https://policies.python.org/pypi.org/Privacy-Notice/"]
 pypi.org##[href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/"]
 docsbot.ai##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(1) > div:nth-of-type(1) > ul.space-y-4.mt-4:nth-of-type(2)

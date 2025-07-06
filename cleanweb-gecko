@@ -379,6 +379,42 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
+allevents.in##.modal-stack.in.modal-backdrop
+allevents.in##.home-footer3
+www.publi24.ro##div.adult-content-warning
+www.publi24.ro##.js-not-18.cta-btn-primary.cta-btn
+www.publi24.ro##[href^="/marketing/"]
+www.publi24.ro##[href="#"]
+www.pcgamebenchmark.com##.meta
+www.shutterstock.com##div.mui-1ctgbxf-linkContainer.MuiGrid-grid-md-grow.MuiGrid-grid-xs-12.MuiGrid-direction-xs-row.MuiGrid-root:nth-of-type(4) > div.mui-1yj6zev.MuiBox-root:nth-of-type(1) > .mui-1cbf1l2.MuiCollapse-entered.MuiCollapse-vertical.MuiCollapse-root > .mui-17mmtcr-nested.MuiCollapse-vertical.MuiCollapse-wrapper > .mui-9vd5ud.MuiCollapse-vertical.MuiCollapse-wrapperInner > .mui-11fhglq.MuiList-root > a.mui-48w38c-a-inherit.MuiListItem-padding.MuiListItem-gutters.MuiListItem-root:nth-of-type(3)
+www.shutterstock.com##.mui-146xefr.MuiListItem-padding.MuiListItem-gutters.MuiListItem-root
+www.lex.lgbt##.toc__download-app
+www.lex.lgbt###w-node-_6a6a8dce-be9f-5516-9e8d-649779dbd428-79dbd41b > a.text-footer:nth-of-type(3)
+demonicscans.org###footer-container
+demonicscans.org###wrapperFst > p
+
+! 5 iul. 2025 https://www.rewine.ro
+www.rewine.ro##.av_no.av_btn
+www.rewine.ro###link-custom-page-POLITICA\ DE\ COOKIES-2
+www.rewine.ro###link-cms-page-8-2
+www.czechminibreweries.com##div.g-block:nth-of-type(2) > ul
+www.czechminibreweries.com##.active
+queerintheworld.com##[href="https://queerintheworld.com/privacy/"]
+www.newsweek.com##.subscription-btn
+www.newsweek.com##[href="https://advertising.newsweek.com"]
+www.newsweek.com##[href="/announcements"]
+www.newsweek.com##.accordion-footer.footer-subscription-section.footer-item
+www.newsweek.com##.footer-magazine-section.footer-item
+www.newsweek.com##.footer-trending.grid-col-span
+news.harvard.edu##.wp-block-group-is-layout-flex.wp-container-core-group-is-layout-cb46ffcb.is-layout-flex.is-nowrap.is-content-justification-space-between.site-footer__lower.alignwide.wp-block-group
+news.harvard.edu##div.wp-block-column-is-layout-flow.is-layout-flow.wp-block-column:nth-of-type(4)
+www.snopes.com##div.footer_row:nth-of-type(4)
+www.qanonanonymous.com###comp-jb3n1vqe
+www.qanonanonymous.com###BACK_TO_TOP_BUTTON
+www.ccn.com##[href="https://www.ccn.com/privacy-policy/"]
+www.adl.org###block-donationblock
+www.adl.org##[href="https://www.adl.org/privacy-policy"]
+www.adl.org##[href="https://www.adl.org/newsletter-signup"]
 gbatemp.net###footer
 www.ea.com##ea-network-legal
 help.ea.com##.middle-footer-section

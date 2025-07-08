@@ -174,8 +174,26 @@ stats.vk-portal.net
 @@matomo.y8.com
 @@tag.atom.gamedistribution.com
 @@patreon.com
-www.skunkgirl.cc###scrolltop
 @@hlana.gamedistribution.com
+www.skunkgirl.cc###scrolltop
+www.anewnormal.co##.jUcJ2u.Frk6TZ.MNUFxS.consent-banner-root
+chrome-stats.com##[href="https://chrome-stats.com/privacy"] > .text-white
+www.microsoft.com##div.c-uhff-nav-row:nth-of-type(2) > div.c-uhff-nav-group:nth-of-type(3) > .f-bare.c-list > li:nth-of-type(4)
+infoupdate.org##[href="/privacy-policy.php"]
+infoupdate.org##li:nth-of-type(4)
+infoupdate.org##li:nth-of-type(3)
+microsoftedge.microsoft.com##div.headingContainer-192
+lasvegas-games.ro##.text-center.check_for_minors_btns > .me-2.btn-danger.btn
+lasvegas-games.ro##.text-center.check_form_minors_text
+lasvegas-games.ro##.footer-menu.mb-lg-0.mb-3.col-lg-2.col-12
+xbets.ro##center
+mrbit.ro##.r-13qz1uu.r-9jpwak.r-f4gmv6.r-1euycsn.css-175oi2r > div.r-13awgt0.css-175oi2r:nth-of-type(1)
+mrbit.ro##.MainConsentMode-m__overlay--wodlc
+mrbit.ro##._text_1qgqd_1
+mrbit.ro##.r-13qz1uu.r-f4gmv6.r-eqz5dr.r-13awgt0.r-1awozwy.css-175oi2r
+mrbit.ro##.navigation__button-scroll_visible.navigation__button-scroll_without-hover.navigation__button-scroll
+mrbit.ro###notifications-root
+www.euronews.ro##.lg\:w-96.md\:w-80.w-64.z-50.right-4.bottom-4.fixed
 kizi.com##.mt-2.fa-2x.fa-chevron-up.fa
 kizi.com###backtotop-gamepage
 www.y8.com##.hidden-xs.item-embed-toggle.promo-banner--embed-game.promo-banner

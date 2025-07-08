@@ -430,6 +430,24 @@ www.publi24.ro##div.adult-content-warning
 www.publi24.ro##.js-not-18.cta-btn-primary.cta-btn
 www.publi24.ro##[href^="/marketing/"]
 www.publi24.ro##[href="#"]
+www.anewnormal.co##.jUcJ2u.Frk6TZ.MNUFxS.consent-banner-root
+chrome-stats.com##[href="https://chrome-stats.com/privacy"] > .text-white
+www.microsoft.com##div.c-uhff-nav-row:nth-of-type(2) > div.c-uhff-nav-group:nth-of-type(3) > .f-bare.c-list > li:nth-of-type(4)
+infoupdate.org##[href="/privacy-policy.php"]
+infoupdate.org##li:nth-of-type(4)
+infoupdate.org##li:nth-of-type(3)
+microsoftedge.microsoft.com##div.headingContainer-192
+lasvegas-games.ro##.text-center.check_for_minors_btns > .me-2.btn-danger.btn
+lasvegas-games.ro##.text-center.check_form_minors_text
+lasvegas-games.ro##.footer-menu.mb-lg-0.mb-3.col-lg-2.col-12
+xbets.ro##center
+mrbit.ro##.r-13qz1uu.r-9jpwak.r-f4gmv6.r-1euycsn.css-175oi2r > div.r-13awgt0.css-175oi2r:nth-of-type(1)
+mrbit.ro##.MainConsentMode-m__overlay--wodlc
+mrbit.ro##._text_1qgqd_1
+mrbit.ro##.r-13qz1uu.r-f4gmv6.r-eqz5dr.r-13awgt0.r-1awozwy.css-175oi2r
+mrbit.ro##.navigation__button-scroll_visible.navigation__button-scroll_without-hover.navigation__button-scroll
+mrbit.ro###notifications-root
+www.euronews.ro##.lg\:w-96.md\:w-80.w-64.z-50.right-4.bottom-4.fixed
 www.pcgamebenchmark.com##.meta
 www.shutterstock.com##div.mui-1ctgbxf-linkContainer.MuiGrid-grid-md-grow.MuiGrid-grid-xs-12.MuiGrid-direction-xs-row.MuiGrid-root:nth-of-type(4) > div.mui-1yj6zev.MuiBox-root:nth-of-type(1) > .mui-1cbf1l2.MuiCollapse-entered.MuiCollapse-vertical.MuiCollapse-root > .mui-17mmtcr-nested.MuiCollapse-vertical.MuiCollapse-wrapper > .mui-9vd5ud.MuiCollapse-vertical.MuiCollapse-wrapperInner > .mui-11fhglq.MuiList-root > a.mui-48w38c-a-inherit.MuiListItem-padding.MuiListItem-gutters.MuiListItem-root:nth-of-type(3)
 www.shutterstock.com##.mui-146xefr.MuiListItem-padding.MuiListItem-gutters.MuiListItem-root

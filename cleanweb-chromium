@@ -112,6 +112,9 @@ m.youtube.com##.feed-nudge-wrapper
 m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
 m.youtube.com##.typography-title-1
 m.youtube.com##.typography-display-1 > .yt-core-attributed-string
+m.youtube.com##.feed-nudge-text-container
+m.youtube.com##.yt-spec-touch-feedback-shape__fill
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad
 m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune-fetch-response, reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd, , propsToMatch, url:/reel_watch_sequence?)

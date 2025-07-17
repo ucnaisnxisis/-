@@ -106,6 +106,10 @@ m.youtube.com##.dialog-topbar
 m.youtube.com##.show-more-container
 m.youtube.com##.privacy-terms
 www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
+accounts.google.com
+static.doubleclick.ne
+fonts.gstatic.com
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.google.co.uk##a.pHiOh:nth-of-type(1)
 www.google.co.uk##.XDyW0e
 www.google.co.kr##a.pHiOh:nth-of-type(1)

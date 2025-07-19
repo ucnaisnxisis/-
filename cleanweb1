@@ -339,6 +339,7 @@ www.bing.com##.hb_det_cont_top > a.hb_section:nth-of-type(5)
 www.bing.com##.hb_det_cont_top > a.hb_section:nth-of-type(4)
 www.bing.com##.sb_privacy
 www.bing.com###fly_id_rwds_b
+github.com##li:nth-of-type(2)
 login.live.com###footer
 account.microsoft.com##nav
 account.microsoft.com##.c-uhff-consumer.c-uhff-link

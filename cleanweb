@@ -46,6 +46,10 @@ www.cylex.com.ar##div:nth-of-type(5)
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
+m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+m.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 youtube.com##.consent-bump-v2-lightbox
 youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 youtube.com##.no-icon.feed-nudge-content-wrapper
@@ -122,6 +126,7 @@ static.ads-twitter.com
 ||discordapp.co
 ||discord.app
 ||discord.net
+@@googlevideo.com
 @@cloudfront.net
 @@www.lachainemeteo.com
 @@vzlinks.com

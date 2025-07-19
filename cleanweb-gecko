@@ -43,16 +43,14 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-m.youtube.com##.consent-bump-v2-lightbox
-m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
-m.youtube.com##.no-icon.feed-nudge-content-wrapper
-m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-m.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 youtube.com##.consent-bump-v2-lightbox
 youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 youtube.com##.no-icon.feed-nudge-content-wrapper
+m.youtube.com##.consent-bump-v2-lightbox
+m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
+m.youtube.com##.reel-shelf-items
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad
 m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune-fetch-response, reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd, , propsToMatch, url:/reel_watch_sequence?)
@@ -169,6 +167,7 @@ www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+www.instagram.com##.x1n2onr6.xippug5.xg6iff7.xdt5ytf.x78zum5
 www.skunkgirl.cc###scrolltop
 www.online-calculator.com##[href="https://www.online-calculator.com/privacy/"]
 kizi.com##.mt-2.fa-2x.fa-chevron-up.fa

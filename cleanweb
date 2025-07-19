@@ -168,6 +168,14 @@ static.ads-twitter.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+m.facebook.com##.accept-all.secondary.btn
+m.facebook.com##div.content-section:nth-of-type(2)
+m.facebook.com##.manage-settings.mng-btn.secondary.btn
+m.facebook.com###consent-text
+m.facebook.com##._yb_1ool5._yb_b9sct
+m.facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 neave.com##[href="/legal/privacy/"]
 www.furaffinity.net##[href="/privacy"]
 www.furaffinity.net##[href="/advertising"]

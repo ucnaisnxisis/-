@@ -43,75 +43,6 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)
-youtube.com###dismissable:has-text(LIVE NOW)
-youtube.com##div.content-wrapper:if(span:has-text(/^Recommended/)) youtube.com###dismissable:has-text(Recommended for you) youtube.com##:xpath(//span[text()='Recommended for you']/parent::a/ancestor::div[contains(concat(' ',normalize-space(@class),' '),' content-wrapper ')])
-m.youtube.com##.YtDislikeButtonViewModelHost
-youtube.com##ytm-promoted-sparkles-text-search-renderer
-tv.youtube.com##+js(trusted-replace-xhr-response, '"adPlacements"', '"no_ads"', /playlist\?list=|player\?|watch\?[tv]=|youtubei\/v1\/player/)
-!#if !cap_html_filtering
-www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,/, , /playlist\?list=|player\?|watch\?[tv]=|youtubei\/v1\/player/)
-www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?("adSlots"|"adBreakHeartbeatParams")/gms, $1, youtubei/v1/player)
-www.youtube.com##+js(trusted-replace-fetch-response, /"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,/, , player?)
-www.youtube.com##+js(trusted-replace-fetch-response, /"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/, "adBreakHeartbeatParams, player?)
-!#else
-||www.youtube.com/playlist?list=$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
-||www.youtube.com/playlist?list=$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
-||www.youtube.com/watch?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
-||www.youtube.com/watch?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2\,4})\}\]\,//
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adSlots.*?\}\}\]\,"adBreakHeartbeatParams/"adBreakHeartbeatParams/
-!#endif
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.playerAds, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.adPlacements, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.adSlots, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, playerResponse.adPlacements, undefined)
-m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)
-www.youtube.com##+js(json-prune-fetch-response, playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots, , propsToMatch, /playlist?)
-www.youtube.com##+js(json-prune-fetch-response, playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots, , propsToMatch, /player?)
-www.youtube.com##+js(json-prune-xhr-response, playerAds adPlacements adSlots playerResponse.playerAds playerResponse.adPlacements playerResponse.adSlots [].playerResponse.adPlacements [].playerResponse.playerAds [].playerResponse.adSlots, , propsToMatch, /player?)
-youtube.com##.ytlr-horizontal-list-renderer__items > .yt-virtual-list__container > .yt-virtual-list__item--visible.yt-virtual-list__item--selected.yt-virtual-list__item:has-text(Ad)
-||googlevideo.com/initplayback?source=youtube*&c=TVHTML5&oad=$xhr,domain=youtube.com
-www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,/, , /playlist\?list=|player\?|watch\?v=|youtubei\/v1\/player/)
-www.youtube.com##+js(trusted-replace-xhr-response, /"adPlacements.*?("adSlots"|"adBreakHeartbeatParams")/gms, $1, youtubei/v1/player)
-tv.youtube.com##+js(trusted-replace-xhr-response, '"adPlacements"', '"no_ads"', /playlist\?list=|player\?|watch\?v=|youtubei\/v1\/player/)
-www.youtube.com##+js(trusted-replace-fetch-response, /"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,/, , player?)
-www.youtube.com##+js(trusted-replace-fetch-response, /\"adSlots.*?\}\]\}\}\]\,/, , player?)
-!#else
-||www.youtube.com/playlist?list=$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,//
-||www.youtube.com/playlist?list=$xhr,1p,replace=/"adSlots.*?\}\]\}\}\]\,//
-||www.youtube.com/watch?v=$doc,xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,//
-||www.youtube.com/watch?v=$doc,xhr,1p,replace=/"adSlots.*?\}\]\}\}\]\,//
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adPlacements.*?([A-Z]"\}|"\}{2})\}\]\,//
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"adSlots.*?\}\]\}\}\]\,//
-||www.youtube.com/playlist?list=$xhr,1p,replace=/"auxiliaryUi":\{"messageRenderers":\{"bkaEnforcementMessageViewModel.*?e\}\}\}\,//
-||www.youtube.com/playlist?list=$xhr,1p,replace=/("trackingParam":"kx_fmPxhoPZR)[-_0-9A-Za-z]{150}[-_0-9A-Za-z]+?([-_0-9A-Za-z]{43}BwOcCE59TDtslLKPQ-SS"\})/\$1\$2/
-||www.youtube.com/watch?v=$doc,xhr,1p,replace=/"auxiliaryUi":\{"messageRenderers":\{"bkaEnforcementMessageViewModel.*?e\}\}\}\,//
-||www.youtube.com/watch?v=$doc,xhr,1p,replace=/("trackingParam":"kx_fmPxhoPZR)[-_0-9A-Za-z]{150}[-_0-9A-Za-z]+?([-_0-9A-Za-z]{43}BwOcCE59TDtslLKPQ-SS"\})/\$1\$2/
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/"auxiliaryUi":\{"messageRenderers":\{"bkaEnforcementMessageViewModel.*?e\}\}\}\,//
-||www.youtube.com/youtubei/v1/player?$xhr,1p,replace=/("trackingParam":"kx_fmPxhoPZR)[-_0-9A-Za-z]{150}[-_0-9A-Za-z]+?([-_0-9A-Za-z]{43}BwOcCE59TDtslLKPQ-SS"\})/\$1\$2/
-!#endif
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.playerAds, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.adPlacements, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.adSlots, undefined)
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, playerResponse.adPlacements, undefined)
-m.youtube.com,music.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune, playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots important)
-youtube.com##.ytlr-horizontal-list-renderer__items > .yt-virtual-list__container > .yt-virtual-list__item--visible.yt-virtual-list__item--selected.yt-virtual-list__item:has-text(Ad)
-||googlevideo.com/initplayback?source=youtube*&c=TVHTML5&oad=$xhr,domain=youtube.com
-m.youtube.com##.search-bar-entry-point-voice-search-button.search-bar-entry-point-button > .search-bar-entry-point-icon > .yt-spec-icon-shape.yt-icon-shape
-m.youtube.com##.searchbox-voice-search-wrapper
-m.youtube.com##.icon-microphone_on.mobile-topbar-header-voice-search-button
-m.youtube.com##.eom-customize
-m.youtube.com##.show-more-container
-m.youtube.com##.consent-bump-v2-lightbox-header-eom
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept
-m.youtube.com##.dialog-topbar
-m.youtube.com##.privacy-terms
-m.youtube.com##.feed-nudge-wrapper
-m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
-m.youtube.com##.typography-title-1
-m.youtube.com##.typography-display-1 > .yt-core-attributed-string
 m.youtube.com##.feed-nudge-text-container
 m.youtube.com##.yt-spec-touch-feedback-shape__fill
 m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
@@ -139,83 +70,16 @@ ads-youtube.com
 youtube-ad.com
 youtube-ads.com
 youtube.ad.com
-m.youtube.com##ad-slot-renderer
-youtube.com##ad-slot-renderer
-www.youtube.com##ytd-reel-shelf-renderer.ytd-item-section-renderer.style-scope
-youtube.com###topbar
-youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-youtube.com##.ytp-ads
-youtube.com##ads
-youtube.com##stop
-youtube.com##AI
-youtube.com##pc
-youtube.com##detect
-youtube.com##live
-youtube.com##autostop
-youtube.com##antiadblock
-youtube.com##antiadblocker
-youtube.com##c
-youtube.com##list
-youtube.com##stream
-youtube.com##view
-youtube.com##premium
-youtube.com##show
-www.youtube.com##.ytd-feed-nudge-renderer.style-scope
-www.youtube.com##.YtDislikeButtonViewModelHost
 i1.ytimg.com
 ads.yimg.com
 youtubeads.com
-||youtube.com/pagead/
-||youtube.com/api/stats^
-/v1/log_event
-||youtube.com/ptracking?
-||doubleclick.net^
 youtube.com##.opened
-m.youtube.com##.has-dismiss-button.no-icon.is-dark-theme.feed-nudge-content-wrapper
-m.youtube.com##.ytm-bottom-sheet-overlay-renderer-contents > ytm-button-renderer
-m.youtube.com##.typography-title-1
-m.youtube.com##.typography-display-1
-m.youtube.com##.dialog-topbar
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-m.youtube.com##.privacy-terms
-m.youtube.com##.show-more-container
-m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-m.youtube.com##.feed-nudge-text-container
-youtube.com##.opened
-youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
-youtube.com##tp.yt.paper.doalog.ytd.popup.container.style.scope
-youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)
-youtube.com###dismissable:has-text(LIVE NOW)
-youtube.com##div.content-wrapper:if(span:has-text(/^Recommended/)) youtube.com###dismissable:has-text(Recommended for you) youtube.com##:xpath(//span[text()='Recommended for you']/parent::a/ancestor::div[contains(concat(' ',normalize-space(@class),' '),' content-wrapper ')])
-m.youtube.com##.consent-bump-v2-lightbox
-www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-m.youtube.com##.no-icon.feed-nudge-content-wrapper
-m.youtube.com##ytm-item-section-renderer:nth-of-type(1) > lazy-list > ytm-reel-shelf-renderer.modern-typography.item:nth-of-type(1)
-m.youtube.com##ytm-reel-shelf-renderer.modern-typography.item
-m.youtube.com/##.__ns__pop2top.__NoScript_Offscreen_PlaceHolders__
-www.youtube.com##.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-only-default.yt-spec-button-shape-next--enable-backdrop-filter-experiment > yt-touch-feedback-shape > .yt-spec-touch-feedback-shape.yt-spec-touch-feedback-shape--overlay-touch-response > .yt-spec-touch-feedback-shape__fill
-www.youtube.com###voice-search-button > .style-scope.ytd-masthead > yt-button-shape
-www.youtube.com##.ytp-cued-thumbnail-overlay-image
-www.youtube.com##.paused-mode.ad-interrupting.ad-showing.ytp-large-width-mode.ytp-hide-info-bar.ytp-fine-scrubbing-exp.ytp-bigboards.ytp-fit-cover-video.ad-created.ytp-cairo-refresh-signature-moments.ytp-cairo-refresh.ytp-ssap.ytp-exp-ppp-update.ytp-modern-caption.ytp-exp-bottom-control-flexbox.ytp-transparent.html5-video-player
-www.youtube.com##ytd-engagement-panel-section-list-renderer.ytd-watch-flexy.style-scope
-www.youtube.com###guide-links-secondary
-www.youtube.com###guide-links-primary
-www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
-www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
 suggestqueries-clients6.youtube.com
-m.youtube.com##.ytm-bottom-sheet-overlay-renderer-container
-m.youtube.com##.reel-shelf-items
-m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
 accounts.google.com
 static.doubleclick.ne
 fonts.gstatic.com
 github.com##li:nth-of-type(2)
 ads.google.com
-realtimesupport.clients6.google.com##[src*="https://ogs.google.com/widget/callout?prid=19022645&pgid=1151720448&puid=43a541cbad6c87d4&cce=1&bc=1&origin=https%3A%2F%2Fsupport.google.com&cn=callout&pid=117&spid=117&hl=en"]
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
 pagead46.l.doubleclick.co
@@ -8627,7 +8491,6 @@ www.myxxgirl.com##.av_no.av_btn
 www.myxxgirl.com##.ver-menu
 www.myxxgirl.com###modal_content_wrapper > p
 www.myxxgirl.com##strong
-google.com##.GcKpu
 # Desktop browsers
 ||google.*/complete/search?q&cp=0$domain=google.*,important
 ## Mobile browsers
@@ -9301,11 +9164,6 @@ www.cipcosmar.ro###cookieNotice
 epardoseli.ro###cmplz-cookiebanner-container
 www.ejobs.ro##.eButton--Primary.eButton.CookiesPopup__AcceptButton
 ro.concerty.com##.show
-www.google.com##div.yS1nld
-www.google.com##div.eLZYyf
-www.google.com###L2AGLb
-www.google.com##.IczZ4b
-www.google.com##.cG0Dmf.XWlrff
 evenimentulistoric.ro###ado300ap1
 evenimentulistoric.ro###ado300ap2
 evenimentulistoric.ro###ado300ap3
@@ -11132,8 +10990,6 @@ www.animeazu.net###Image2
 www.disney.ro###goc-ft-about > li
 fortareata-otaku.moe###custom_html-11
 infocartea.ro###scroll-to-top
-consent.google.ro##.Qhg5gf
-consent.google.ro##.FCY2lb > form:nth-of-type(1) > .lssxud > .VfPpkd-dgl2Hf-ppHlrf-sM5MNb > .Nc7WLe.LQeN7.DuMIQc.AjY5Oe.nCP5yc.VfPpkd-LgbsSe-OWXEXe-dgl2Hf.VfPpkd-LgbsSe-OWXEXe-k8QpJ.VfPpkd-LgbsSe
 www.mobilegta.net##.ad.box_grey
 steprimo.com##.Share_Btn
 www.youporn.com##.cookie_consent_content
@@ -11381,8 +11237,6 @@ xanimu.com###dclm_modal_screen
 xanimu.com###dclm_modal_content
 browserhow.com###scroll-to-top
 www.xhzb.tw##.am-active.am-no-layout.am-gotop-fixed.am-gotop
-m.youtube.com##.music-metadata-premium-upsell-link
-youtube.com##.music-metadata-premium-upsell-link
 appraw.com##.alt.modal-cover
 appraw.com##.lightboxOverlay
 platinmods.com##a.button.ripple-JsOnly.button--scroll
@@ -11451,14 +11305,6 @@ searchnewsglobal.wordpress.com##.widget_media_image.widget
 aporntv.com##.adver
 m.downloadatoz.com##.back-home
 www.trustiu.com###cookiesdiv
-m.youtube.com##ytm-reel-shelf-renderer
-youtube.com##ytm-reel-shelf-renderer
-youtube.com##.big-shorts-singleton
-m.youtube.com##.big-shorts-singleton
-www.youtube.com##.glue-cookie-notification-bar
-www.youtube.com##.glue-cookie-notification-bar
-m.youtube.com##ytm-reel-shelf-renderer
-m.youtube.com##.big-shorts-singleton
 www.trustiu.com###cookiesdiv
 www.gtabase.com##.cd-is-visible.cd-top
 www.mattca.ro##.amgdprjs-bar-template
@@ -11712,8 +11558,6 @@ www.peroz.ro##+js(json-prune, overlay.cosentBumpV3Renderer)
 www.bugetul.ro##.terms.footer-mare
 astelus.com##.cli-modal-content.cli-bar-popup
 us.norton.com##.c-footer__legalfooter
-www.youtube.com###redirect-backto-safety-button
-youtube.com###redirect-backto-safety-button
 www.tiktok.com##.eyvii9r1.tiktok-9er52i-DivCtaGuideWrapper
 m.facebook.com##.bg-s5.m > .bg-s5.m > .bg-s5.m > div.m
 weebparrel.ro###zak-scroll-to-top
@@ -11733,9 +11577,6 @@ www.anuntul.ro##.cookies-bar
 www.anuntul.ro###btn-back-to-top
 www.jobradar24.ro##.show.modal-backdrop
 duckduckgo.com##.footer--mobile
-www.youtube.com###redirect-backto-safety-button
-www.youtube.com###invalid-token-redirect-warning-text
-youtube.com###invalid-token-redirect-warning-text
 m.ok.ru##.invite-block
 m.soundcloud.com##li:nth-of-type(9)
 ytmp3.cc###footer
@@ -11859,40 +11700,6 @@ news.yahoo.com###module-footer
 community.brave.com###ember12 > div.container:nth-of-type(1)
 www.dozaanimata.ro##.has-single.right-position.chaty-widget
 www.anisearch.com##body > span:nth-of-type(1)
-google.com##^responseheader(set-cookie)    
-google.com##+js(cookie-remover, CONSENT)
-consent.google.com##^responseheader(set-cookie)    
-consent.google.com##+js(cookie-remover, CONSENT)
-consent.google.com##.contentText
-consent.google.com##.saveButtonContainerNarrowScreen > form:nth-of-type(1) > .searchButton.button.basebutton
-consent.google.com##.customButtonContainer
-google.com##.contentText
-google.com##.saveButtonContainerNarrowScreen > form:nth-of-type(1) > .searchButton.button.basebutton
-google.com##.customButtonContainer
-www.google.com##div.VfXErd:nth-of-type(3) > span:nth-of-type(1)
-www.google.com##div.VfXErd:nth-of-type(1) > span:nth-of-type(1)
-www.google.com##.prmo
-www.google.com##div.VfXErd:nth-of-type(2) > span:nth-of-type(2)
-www.google.com##a[href^="https://www.google.com/setprefs"]:nth-of-type(2)
-www.google.com###SIvCob
-www.google.com##[href^="/tools/feedback/survey/xhtml"]
-www.google.com##div.VfXErd:nth-of-type(3) > span:nth-of-type(1)
-www.google.com##div.VpbkVe:nth-of-type(1) > .VfXErd
-www.google.com##div.VpbkVe:nth-of-type(1)
-www.google.com##[href^="/support/websearch/bin/answer.py"]
-www.google.com##[href^="/about"]
-www.google.com##div.VfXErd:nth-of-type(3) > span:nth-of-type(2)
-www.google.com##[href="/intl/ro/policies/terms/"]
-www.google.com##.ads
-www.google.com##div.VpbkVe:nth-of-type(2)
-www.google.com###footer
-www.google.com##div.VfXErd:nth-of-type(1) > span:nth-of-type(1)
-google.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-cosent.google.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-cosent.google.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-google.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-policies.google.com##.BXXR1b.M9Bg4d.ThQiWd.XHsn7e.U26fgb
-policies.google.com##.SGBcfd
 consent.yahoo.com##.accept-all.secondary.btn
 consent.yahoo.com##div.content-section:nth-of-type(2)
 consent.yahoo.com##.manage-settings.mng-btn.secondary.btn

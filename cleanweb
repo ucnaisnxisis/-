@@ -43,24 +43,6 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-m.youtube.com##.consent-bump-v2-lightbox
-m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
-m.youtube.com##.no-icon.feed-nudge-content-wrapper
-m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-m.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
-youtube.com##.consent-bump-v2-lightbox
-youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
-youtube.com##.no-icon.feed-nudge-content-wrapper
-www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
-! Shorts Ad
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune-fetch-response, reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd, , propsToMatch, url:/reel_watch_sequence?)
-! AdDefend
-!#if env_chromium
-lablue.*##+js(nostif, push, 500)
-||doubleclick.net^$script,important,domain=auto-motor-und-sport.de
-!#endif
 4-liga.com,4fansites.de,4players.de,9monate.de##+js(nostif, .call(null), 10)
 aachener-nachrichten.de,aachener-zeitung.de,abendblatt.de,abendzeitung-muenchen.de,about-drinks.com,abseits-ka.de,airliners.de,ajaxshowtime.com,allgemeine-zeitung.de,alpin.de,antenne.de,arcor.de,areadvd.de,areamobile.de,ariva.de,astronews.com,aussenwirtschaftslupe.de,auszeit.bio,auto-motor-und-sport.de,auto-service.de,autobild.de,autoextrem.de,autopixx.de,autorevue.at,az-online.de##+js(nostif, .call(null), 10)
 baby-vornamen.de,babyclub.de,bafoeg-aktuell.de,berliner-kurier.de,berliner-zeitung.de,bigfm.de,bikerszene.de,bildderfrau.de,blackd.de,blick.de,boerse-online.de,boerse.de,boersennews.de,braunschweiger-zeitung.de,brieffreunde.de,brigitte.de,buerstaedter-zeitung.de,buffed.de,businessinsider.de,buzzfeed.at,buzzfeed.de##+js(nostif, .call(null), 10)
@@ -80,9 +62,19 @@ youtube.ad.com
 i1.ytimg.com
 ads.yimg.com
 youtubeads.com
+doubleclick.net
 accounts.google.com
 static.doubleclick.ne
 fonts.gstatic.com
+consent.google.com##.FCY2lb > form:nth-of-type(1)
+consent.google.com##.Qhg5gf
+consent.google.com##.rjfsgd.QzsnAe
+consent.google.com##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(3) > .uScs5d > div > .uScs5d > div:nth-of-type(2)
+consent.google.com##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(4) > .uScs5d > div > .uScs5d > div:nth-of-type(2)
+consent.google.com##form.bBXLMd:nth-of-type(2)
+consent.google.com##.Nw1akf > .J7X4ye
+consent.google.com##.rjfsgd > .cRHNL > .Salxle > div.VfPpkd-dgl2Hf-ppHlrf-sM5MNb
+news.google.com##.i15yh > div:nth-of-type(2)
 ads.google.com
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
@@ -118,6 +110,7 @@ redirector.googlevideo.com
 ad.googlevideo.com
 ads.googlevideo.com
 static.ads-twitter.com
+www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 ||cdn.discordapp.com
 ||discordapp.com
 ||discord.com
@@ -126,7 +119,6 @@ static.ads-twitter.com
 ||discordapp.co
 ||discord.app
 ||discord.net
-@@googlevideo.com
 @@cloudfront.net
 @@www.lachainemeteo.com
 @@vzlinks.com
@@ -168,6 +160,29 @@ static.ads-twitter.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+www.skunkgirl.cc###scrolltop
+www.online-calculator.com##[href="https://www.online-calculator.com/privacy/"]
+kizi.com##.mt-2.fa-2x.fa-chevron-up.fa
+kizi.com###backtotop-gamepage
+www.y8.com##.hidden-xs.item-embed-toggle.promo-banner--embed-game.promo-banner
+www.miniplay.com##[href="https://www.miniplay.com/support/privacy"]
+www.miniplay.com##[href="https://www.miniplay.com/support/cookies"]
+virustotal.com##top
+virustotal.com##scroll-top
+virustotal.com##button
+www.friv.cm##[href="https://www.friv.cm/privacy-policy/"]
+www.friv.cm##.sidebar-ad160x600-right.border-radius.main-game
+www.friv.cm##.sidebar-ad160x600-left.border-radius.main-game
+www.friv.cm###exitpopup-modal
+www.snokido.com##.privacy
+kbhgames.com##[href="https://kbhgames.com/privacy"]
+www.isladejuegos.com###siteFooter
+static.doubleclick.net
+www.instagram.com##._ap30._aj1-._acav._acas._acaq._acap._acan
+m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+162.247.243.39
+3.33.130.190
+155.102.130.201
 neave.com##[href="/legal/privacy/"]
 www.furaffinity.net##[href="/privacy"]
 www.furaffinity.net##[href="/advertising"]
@@ -257,54 +272,6 @@ sfat-avocat.ro##[href="https://sfat-avocat.ro/politica-privind-cookie/"]
 sfat-avocat.ro##[href="https://sfat-avocat.ro/politica-de-confidentialitate/"]
 www.undelucrez.ro##.bubble-button
 www.undelucrez.ro##.footer
-www.online-calculator.com##[href="https://www.online-calculator.com/privacy/"]
-www.skunkgirl.cc###scrolltop
-kizi.com##.mt-2.fa-2x.fa-chevron-up.fa
-kizi.com###backtotop-gamepage
-www.online-calculator.com##[href="https://www.online-calculator.com/privacy/"]
-www.y8.com##.hidden-xs.item-embed-toggle.promo-banner--embed-game.promo-banner
-www.miniplay.com##[href="https://www.miniplay.com/support/privacy"]
-www.miniplay.com##[href="https://www.miniplay.com/support/cookies"]
-virustotal.com##top
-virustotal.com##scroll-top
-virustotal.com##button
-www.friv.cm##[href="https://www.friv.cm/privacy-policy/"]
-www.friv.cm##.sidebar-ad160x600-right.border-radius.main-game
-www.friv.cm##.sidebar-ad160x600-left.border-radius.main-game
-www.friv.cm###exitpopup-modal
-www.snokido.com##.privacy
-kbhgames.com##[href="https://kbhgames.com/privacy"]
-www.isladejuegos.com###siteFooter
-static.doubleclick.net
-k2s.cc##[href="/page/policy"]
-www.instagram.com##._ap30._aj1-._acav._acas._acaq._acap._acan
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-162.247.243.39
-3.33.130.190
-155.102.130.201
-www.emag.ro##[href^="/help/politica-de-utilizare-cookie-uri"]Add commentMore actions
-www.emag.ro##[href^="/help/prelucrarea-datelor-cu-caracter-personal"]
-www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button
-pixel.lockn.link
-lokinet.org##.khUQGv.sc-kstqJO
-apps.apple.com##li.link-list__item--a.link-list__item:nth-of-type(3)
-www.linux.org###xNEaeAbyvvDUQREz
-www.linux.org###snCNAlMJjVXIU
-pypi.org##[href="https://policies.python.org/pypi.org/Privacy-Notice/"]
-pypi.org##[href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/"]
-docsbot.ai##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(1) > div:nth-of-type(1) > ul.space-y-4.mt-4:nth-of-type(2)
-3commas.io##[href="/cookies-notice"]
-3commas.io##div.MenuContainer_menuContainer__Id1xZ:nth-of-type(2)
-3commas.io###__next > div > div > div
-www.altrady.com###w-node-_856cd6fa-afb5-476d-0730-80303a2a031b-5501409d
-pocketoption.com##.po-scroll-btn_scrolled.po-scroll-btn.po-nav-btn
-pocketoption.com##li.po-footer__link-item:nth-of-type(4)
-autobotsignal.io##.row.flex.bubble-r-container.baTaZaRj.Group.bubble-element
-cryptonews.com##a.col-lg-3:nth-of-type(3)
-cryptonews.com##a.col-lg-3:nth-of-type(6)
-www.botstudioo.com###ask-from-ai-button
-www.botstudioo.com##div.rounded-box.items-center.flex-col.flex.h-full.py-3.border-base-400.border:nth-of-type(1)
-gbatemp.net###footer
 allevents.in##.modal-stack.in.modal-backdrop
 allevents.in##.home-footer3
 www.publi24.ro##div.adult-content-warning
@@ -401,6 +368,7 @@ www.ccn.com##[href="https://www.ccn.com/privacy-policy/"]
 www.adl.org###block-donationblock
 www.adl.org##[href="https://www.adl.org/privacy-policy"]
 www.adl.org##[href="https://www.adl.org/newsletter-signup"]
+gbatemp.net###footer
 www.ea.com##ea-network-legal
 help.ea.com##.middle-footer-section
 help.ea.com###qna-bot
@@ -501,6 +469,14 @@ blueprints.mozilla.ai##.newsletter-new_component
 www.youtube.com##.ytp-chrome-top
 streamtape.com##div.col-xs-12.col-sm-6.col-md-6.col-lg-3.col-xl-3:nth-of-type(2)
 support.signal.org##.footer
+www.emag.ro##[href^="/help/politica-de-utilizare-cookie-uri"]
+www.emag.ro##[href^="/help/prelucrarea-datelor-cu-caracter-personal"]
+www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button
+pixel.lockn.link
+lokinet.org##.khUQGv.sc-kstqJO
+apps.apple.com##li.link-list__item--a.link-list__item:nth-of-type(3)
+www.linux.org###xNEaeAbyvvDUQREz
+www.linux.org###snCNAlMJjVXIU
 www.cargus.ro##[href="https://www.cargus.ro/politica-de-confidentialitate/"]
 www.cargus.ro##[href="https://www.cargus.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"]
 simplex.chat##a.menu-link:nth-of-type(3)
@@ -704,8 +680,20 @@ www.definitions.net##[href="privacy.php"]
 www.definitions.net##[href="advertise.php"]
 blsmedical.ro##.scroll-to-target.scroll-top
 ambulanta.si##.col-md-12
-whattocooktoday.com###footer-section
-www.emag.ro##[href="/info/politica-de-utilizare-cookie-uri"]
+pypi.org##[href="https://policies.python.org/pypi.org/Privacy-Notice/"]
+pypi.org##[href="https://policies.python.org/pypi.org/Acceptable-Use-Policy/"]
+docsbot.ai##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(1) > div:nth-of-type(1) > ul.space-y-4.mt-4:nth-of-type(2)
+3commas.io##[href="/cookies-notice"]
+3commas.io##div.MenuContainer_menuContainer__Id1xZ:nth-of-type(2)
+3commas.io###__next > div > div > div
+www.altrady.com###w-node-_856cd6fa-afb5-476d-0730-80303a2a031b-5501409d
+pocketoption.com##.po-scroll-btn_scrolled.po-scroll-btn.po-nav-btn
+pocketoption.com##li.po-footer__link-item:nth-of-type(4)
+autobotsignal.io##.row.flex.bubble-r-container.baTaZaRj.Group.bubble-element
+cryptonews.com##a.col-lg-3:nth-of-type(3)
+cryptonews.com##a.col-lg-3:nth-of-type(6)
+www.botstudioo.com###ask-from-ai-button
+www.botstudioo.com##div.rounded-box.items-center.flex-col.flex.h-full.py-3.border-base-400.border:nth-of-type(1)
 ajutor.smartbill.ro###smartbill-scroll-to-top
 mogstation.org##[href="https://mogstation.org/privacy-policy/"]
 www.fh-co.com##[href="https://www.fh-co.com/privacy-policy/"]
@@ -751,6 +739,8 @@ www.sursazilei.ro##.td-mobile-sub-footer-wrap
 www.wikihow.tech###sliderbox
 www.wikihow.tech##li:nth-of-type(6)
 www.wikihow.tech###footer_newsletter
+whattocooktoday.com###footer-section
+www.emag.ro##[href="/info/politica-de-utilizare-cookie-uri"]
 www.mmogames.com##[href="/privacy-policy"]
 swordartonline.shop##div.menu-item.flex.ux-menu-link:nth-of-type(3)
 wallpaperbat.com##.column.two.row
@@ -1139,6 +1129,14 @@ www.dilmahconservation.org##.cd-fade-out.cd-is-visible.cd-top
 sketchfab.com##.main-footer__copyrights-container
 pmc.ncbi.nlm.nih.gov##.ncbi-dark-background.ncbi-footer
 whalewatchwesternaustralia.com##.pb-lg.footer-bottom > .content.large.wrapper
+www.petrebogdan.ro##[href="https://www.petrebogdan.ro/politica-confidentialitate/"]
+www.medlife.ro##.js-form-item-email.form-item-email.js-form-type-email.form-item.js-form-item
+www.medlife.ro##.newsletter-header
+www.medlife.ro##label.check-container
+www.medlife.ro###edit-nume-prenume--wrapper
+www.medlife.ro##.form-wrapper.js-form-wrapper.webform-actions.form-actions
+www.gralmedical.ro##.border-radius.newsletter.primary-text-color.col-lg-3
+www.gralmedical.ro##p.ml-3:nth-of-type(2)
 www.bestjobs.eu##.translate-x-\[calc\(100\%\)\].duration-500.transition-all.border-b.items-end.flex.z-10.right-0.bottom-0.fixed
 www.euro-market.ro##.ckPolicyGomag
 www.euro-market.ro##.-g-whatsapp
@@ -1239,14 +1237,6 @@ www.vitrinacudulciuri.ro##.driver-overlay-animated.driver-overlay
 www.vitrinacudulciuri.ro##.driverjs-theme.driver-popover
 www.vitrinacudulciuri.ro##.navbar-toggler
 www.vitrinacudulciuri.ro##[href="https://vitrinacudulciuri.ro/privacy"]
-www.petrebogdan.ro##[href="https://www.petrebogdan.ro/politica-confidentialitate/"]
-www.medlife.ro##.js-form-item-email.form-item-email.js-form-type-email.form-item.js-form-item
-www.medlife.ro##.newsletter-header
-www.medlife.ro##label.check-container
-www.medlife.ro###edit-nume-prenume--wrapper
-www.medlife.ro##.form-wrapper.js-form-wrapper.webform-actions.form-actions
-www.gralmedical.ro##.border-radius.newsletter.primary-text-color.col-lg-3
-www.gralmedical.ro##p.ml-3:nth-of-type(2)
 clinicaeminescu100.ro##div:nth-of-type(4)
 clinicaeminescu100.ro##.menu-utile-container > .menu
 clinicaeminescu100.ro##div.mediz-column-15.mediz-item-pdlr.mediz-footer-column:nth-of-type(2)
@@ -1383,29 +1373,6 @@ sensortower.com##div.mui-1fq3yn
 sensortower.com##div.mui-1fq3yn.MuiBox-root:nth-of-type(8)
 romvac.ro##.footer-box.newsletter
 foxi.ro###go-top
-sameday.ro###menu-item-12906 > [href="https://mobileapp.sameday.ro/kBMf"]
-sameday.ro##.btn-close-mobile-app
-www.dlsite.com##[href="https://www.dlsite.com/pro/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/pro/mypage/setting/mail"]
-www.dlsite.com##[href="/home/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/books/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/books/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/appx/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/appx/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/maniax/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/maniax/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/bl/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/bl/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/girls/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/girls/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/home/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/home/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/home/mosaic"]
-www.dlsite.com##[href="https://www.dlsite.com/soft/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/soft/mypage/setting/mail"]
-www.dlsite.com##[href="https://www.dlsite.com/app/guide/privacy"]
-www.dlsite.com##[href="https://www.dlsite.com/app/mypage/setting/mail"]
-www.retrogames.me##[href="https://www.retrogames.me/privacy-policy/"]
 www.zooland.ro##div.mb-4.col-md-4
 www.suntmamica.ro##.box
 www.suntmamica.ro##li:nth-of-type(6)
@@ -1436,12 +1403,35 @@ www.garbo.ro##div.col-md-3.col-6:nth-of-type(1) > .footerList.list-unstyled > li
 www.zodiacool.ro##.in.fade.modal-backdrop
 www.zodiacool.ro##.m-b-0.text-center.col-xs-12.col-md-3
 www.zodiacool.ro###footer3 > li:nth-of-type(4)
-codingjasimweb.com##.e-child.e-con.e-flex.e-con-full.elementor-element-f21b9cd.elementor-element
-codingjasimweb.com##.e-child.e-con.e-flex.e-con-full.elementor-element-4e00358.elementor-element
-duckduckgo.com##.m94aMCA3hTXDNQYZ_qAz
-highzeal.com##.justify-content-center.nav
-www.wix.com##li:nth-of-type(2)
-www.wix.com###BACK_TO_TOP_BUTTON
+k2s.cc##[href="/page/policy"]
+sameday.ro###menu-item-12906 > [href="https://mobileapp.sameday.ro/kBMf"]
+sameday.ro##.btn-close-mobile-app
+spankbang.com###age-check-content > p
+spankbang.com##.age-no-check-button
+spankbang.com###age-check-footer
+spankbang.com##.justify-center.flex > .h-10
+@@encrypted-tbn0.gstatic.com
+www.dlsite.com##[href="https://www.dlsite.com/pro/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/pro/mypage/setting/mail"]
+www.dlsite.com##[href="/home/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/books/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/books/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/appx/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/appx/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/maniax/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/maniax/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/bl/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/bl/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/girls/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/girls/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/home/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/home/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/home/mosaic"]
+www.dlsite.com##[href="https://www.dlsite.com/soft/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/soft/mypage/setting/mail"]
+www.dlsite.com##[href="https://www.dlsite.com/app/guide/privacy"]
+www.dlsite.com##[href="https://www.dlsite.com/app/mypage/setting/mail"]
+dlsite.cc##div.footer-links-group:nth-of-type(1) > a.footer-link:nth-of-type(3)
 www.carbonica.ro##[href="/politica-cookie/"]
 royalmariage.ro###callnowbutton
 royalmariage.ro##[href="https://royalmariage.ro/politica-de-confidentialitate/"]
@@ -1509,6 +1499,21 @@ www.plusind.ro##li.flex-grow-1.nav-item:nth-of-type(1)
 www.plusind.ro###nav-about-tab
 www.plusind.ro###btn-agree-all
 thermocon-coldchain.com##.elementor-section-items-middle.elementor-section-height-default.elementor-section-full_width.elementor-section-content-middle.elementor-section-height-min-height.elementor-element-3faa53b.elementor-element.elementor-top-section.elementor-section
+mysexgamer.com##p.text-center:nth-of-type(1)
+www.m.hentai-gamer.com###foo
+cursedarmor.miraheze.org##.minerva-footer.mw-footer
+smutgamer.com###basePopping
+smutgamer.com###DynamicBackgroundWrapper
+www.dlsite.com###scrollUp
+www.dlsite.com##.footer_nav
+www.dlsite.com##[href="/home-touch/guide/privacy"]
+www.dlsite.com##ul.link_2col_list:nth-of-type(1) > li:nth-of-type(6)
+codingjasimweb.com##.e-child.e-con.e-flex.e-con-full.elementor-element-f21b9cd.elementor-element
+codingjasimweb.com##.e-child.e-con.e-flex.e-con-full.elementor-element-4e00358.elementor-element
+duckduckgo.com##.m94aMCA3hTXDNQYZ_qAz
+highzeal.com##.justify-content-center.nav
+www.wix.com##li:nth-of-type(2)
+www.wix.com###BACK_TO_TOP_BUTTON
 webflow.com###w-node-a7e6b7dd-2e8d-0b93-f3cc-62dfdf92a0b0-df929fd9
 webflow.com###show-cookie-preferences
 webflow.com###w-node-a7e6b7dd-2e8d-0b93-f3cc-62dfdf92a0ac-df929fd9
@@ -1567,15 +1572,6 @@ a-fresh.website##.bg-\[color\:var\(--654963eef0bbc\)\].md\:pr-\[32px\].md\:pb-\[
 a-fresh.website##.z-\[20\].relative.overflow-hidden.pl-\[16px\].pb-\[16px\].pr-\[16px\].pt-\[16px\].mt-\[auto\].bg-opacity-\[100\%\]
 codewatchers.com###footer-subscription
 codewatchers.com###popup-vue
-mysexgamer.com##p.text-center:nth-of-type(1)
-www.m.hentai-gamer.com###foo
-cursedarmor.miraheze.org##.minerva-footer.mw-footer
-smutgamer.com###basePopping
-smutgamer.com###DynamicBackgroundWrapper
-www.dlsite.com###scrollUp
-www.dlsite.com##.footer_nav
-www.dlsite.com##[href="/home-touch/guide/privacy"]
-www.dlsite.com##ul.link_2col_list:nth-of-type(1) > li:nth-of-type(6)
 nutaku-france.com##.active.justify-content-center.align-items-center.d-flex.scroll-top
 69games.xxx###footer_nav
 fr.nutaku.cc##.footer-copyright
@@ -1611,6 +1607,7 @@ vid123.net###totop
 thomastaihei-hgames.net###back-to-top
 www.thumbzilla.com##.footer
 16honeys.com##.tail_bar
+www.retrogames.me##[href="https://www.retrogames.me/privacy-policy/"]
 arcadespot.com##li.nav-item:nth-of-type(6)
 www.myabandonware.com##[href="javascript:void(0);"]
 www.playretrogames.com##[href="https://www.playretrogames.com/privacy.php"]
@@ -1644,7 +1641,6 @@ www.okplayit.com##div:nth-of-type(4)
 www.emu-land.net##li:nth-of-type(2)
 www.nosolobits.com##.footer
 www.chithot.com##.footer-navs.wrap
-dlsite.cc##div.footer-links-group:nth-of-type(1) > a.footer-link:nth-of-type(3)
 ieseanul.ro##.show.inited.trx_addons_icon-up.trx_addons_scroll_to_top
 joynights.org###topcontrol
 www.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
@@ -1654,41 +1650,7 @@ www.mozillafoundation.org##.large\:tw-columns-2.link-list.tw-mb-0.tw-list-none.t
 orbitbymozilla.com##li:nth-of-type(4)
 www.distributie-energie.ro##.cms-scroll-top-icon.cms-scroll-top-arrow
 www.distributie-energie.ro##.on.cms-scroll-top.cms-scroll
-newsweek.ro##.ml-2.rounded-full.leading-none.uppercase.font-condensed.font-bold.py-2.px-4.bg-yellow-300.hover\:text-black.text-black
-newsweek.ro###subscriptions
-www.reteleelectrice.ro##.footer-coppy
-www.reteleelectrice.ro##.malfunctions-type-alert.position-side.block-malfunctions
-www.investenergy.ro###toTop
-www.investenergy.ro###sidebar > [href]
-www.investenergy.ro###sidebar > [src]
-www.stiridiaspora.ro##div:nth-of-type(6)
-www.ppcenergy.ro##.footer-coppy-left
 www.electricafurnizare.ro###wgt-shadow-root
-www.electricafurnizare.ro##.wgt-contrast-element.wgt-link
-www.distributieoltenia.ro###footer
-www.tion.ro##.enewsArticleContent > div:nth-of-type(3)
-www.tion.ro##[href="/mica-publicitate/"]
-www.doctorulzilei.ro##[href="https://whatsapp.com/channel/0029VaMETqT6mYPMBGQNk71Y"]
-delgaz.ro##footer
-spotmedia.ro##[href="https://spotmedia.ro/sustine-arca-jurnalistilor"]
-spotmedia.ro###european-sustainable-energy-week
-spotmedia.ro##.wp-block-embed__wrapper
-spotmedia.ro###ajax-container-mbm-donate-arca-box-payment
-www.constantadeazi.ro##.menu-footer-menu-container
-ittrip.xyz##.p-fixBtnWrap
-detail.chiebukuro.yahoo.co.jp##.footer.riff-Footer
-www.tunesbro.jp##.site-footer-section-4.site-footer-section.site-footer-primary-section-4
-www.neowin.net##.footer
-trend.koregasiritai.com##.footer-bottom-content
-trend.koregasiritai.com##.menu-button.top-menu-button
-brave2049.com##.active-progress.btn-right-side.progress-wrap
-slashdot.org##li:nth-of-type(6)
-slashdot.org##.l-nav-bottom
-www.privacyguides.org##.md-copyright__highlight
-techissuestoday.com##.navbar-collapse.collapse
-cultura-informatica.com##[href="https://cultura-informatica.com/politica-de-cookies/"]
-cultura-informatica.com##[href="https://cultura-informatica.com/politica-de-privacidad/"]
-sigmaos.com##.framer-o8cciv
 www.timesnewroman.ro###menu-footer-menu
 www.timesnewroman.ro##div.col-md-6.col-12:nth-of-type(2) > .footer-widget
 www.timesnewroman.ro###mc4wp-form-2
@@ -1725,67 +1687,19 @@ multimedia.easeus.com##.float_livechat
 multimedia.easeus.com##[href="https://br.easeus.com/sales-faq/refund-policy.html"]
 multimedia.easeus.com##[href="https://br.easeus.com/privacy.html"]
 zeemo.ai##.policy
-www.duplichecker.com##.text-center.foot-last-zone.col-md-4
-www.duplichecker.com##[href="https://www.duplichecker.com/pt/privacy-policy"]
-www.duplichecker.com##[href="https://www.duplichecker.com/refund-policy"]
-www.jitbit.com##.text-gray-400.bg-slate-800
-www.jitbit.com##li:nth-of-type(5)
-www.jitbit.com##.xl\:col-span-1.space-y-6
-www.kuketz-forum.de##[href="https://www.kuketz-forum.de/privacy"]
-theintelligence.com##.footer-small-links.wpb_text_column
-theintelligence.com##section.mobile-only.color_footer-bottom.height_auto.wpb_row.l-section > .i-cf.l-section-h > .valign_middle.type_default.vc_row.g-cols > .stretched.vc_column_container.wpb_column.vc_col-sm-12
-theintelligence.com##div.vc_inner.valign_top.type_default.wpb_row.g-cols:nth-of-type(3)
-theintelligence.com###menu-item-12650
-www.tutoriels-info.com##.copyright
-www.tutoriels-info.com##.icon-page-politique-des-cookies.icon-pages.small-icon
-www.technowize.com###nav_menu-2
-www.technowize.com##.tech_right
-www.technowize.com##[href="https://www.technowize.com/advertise/"]
-www.technowize.com###menu-item-2944
-mspoweruser.com##[href="https://mspoweruser.com/privacy-policy/"]
-softwarerecs.stackexchange.com##div.site-footer--col:nth-of-type(2)
-blog.silverpc.hu###scroll-up
-redactia.ro###footer
-igj.ro##.td-stretch-content.stretch_row_1600.tdc-row
-igj.ro##[href="https://igj.ro/vezi-anunturi"]
-epochtimes-romania.com##.d-md-block.d-none.donationFooter.col-12
-lucrarimanuale.ro##.footer-bar
-www.electrica.ro##footer
-ai-bot.cn##footer
-ok.ru##.auth-login_auth-login-banner.h-mod
-ok.ru###scrollToTopVideoLayer
 www.bing.com##li:nth-of-type(6)
 www.bing.com##.composer_container
+m.youtube.com##.ytVideoMetadataCarouselViewModelCarouselContainer
+m.youtube.com##.ytCarouselTitleViewModelNavigation
 sur.ly##.footer__container.container
 ruclips.net##.footer-links
 ruclips.net###footer
 ro.101-help.com##.w3-theme-action.w3-button.move-to-top
 ro.101-help.com##.w3-theme.w3-container
 ro.101-help.com###Copyright
-ericutza.blogspot.com##[href="#"]
-ialoc.ro##[href="/confidentialitate"]
-ialoc.ro##.upper-footer
-2nicecaffe.com##li.mb-2:nth-of-type(3)
-restaurantguru.com##.footer
-restaurantguru.com##.pierre-assist-button__main.pierre-assist-button
-chicago.eater.com##._1c7i3jt4._1c7i3jt1
-www.thefork.nl##.ej27n6p0.css-4dyoe3
-www.thefork.nl##li.e1gd0mzn0.css-13s4os5
-thesanantoniothings.com##.fl-builder-global-templates-locked.fl-builder-content-90.fl-builder-content
-www.eater.com##._1c7i3jt0
-www.eater.com##.duet--navigation--footer
-microsoftedge.microsoft.com##.c-uhff-base
-microsoftedge.microsoft.com##li:nth-of-type(5)
-microsoftedge.microsoft.com##li:nth-of-type(2)
-www.reddit.com###shreddit-forbidden
-m.ok.ru##[href^="https://ads.vk.com/promo/firstbonus"]
-gogonihon.com##.elementor-widget-heading.elementor-widget.elementor-widget__width-auto.elementor-element-5adde560.elementor-element
-gogonihon.com##.elementor-widget-divider.elementor-widget.elementor-widget-divider--view-line.elementor-element-31b0dc07.elementor-element
-gogonihon.com##.elementor-widget-form.elementor-widget.elementor-button-align-stretch.elementor-widget__width-initial.elementor-element-63b677d2.elementor-element
-gogonihon.com###news1
-gogonihon.com##.elementor-section-height-default.elementor-section-boxed.elementor-element-5496c96c.elementor-element.elementor-top-section.elementor-section
-gogonihon.com##.links.elementor-element-1b1fc30d.elementor-element.elementor-inner-column.elementor-col-25.elementor-column > .elementor-element-populated.elementor-widget-wrap
-www.electricafurnizare.ro###wgt-shadow-root
+www.duplichecker.com##.text-center.foot-last-zone.col-md-4
+www.duplichecker.com##[href="https://www.duplichecker.com/pt/privacy-policy"]
+www.duplichecker.com##[href="https://www.duplichecker.com/refund-policy"]
 www.electricafurnizare.ro##.wgt-contrast-element.menu-footer-info-container
 www.distributie-energie.ro##.on.cms-scroll-top.cms-scroll
 www.ppcenergy.ro##.footer-coppy-left
@@ -1874,6 +1788,213 @@ www.nexles.com##[href="https://www.nexles.com/ro/politica-de-utilizare-cookie-ur
 www.nexles.com##[href="https://www.nexles.com/ro/confidentialitate.html"]
 pescurt.ro##a.dark\:lg\:bg-baseline-900.dark\:bg-baseline-950.dark\:lg\:hover\:bg-baseline-700.dark\:hover\:bg-baseline-800.lg\:bg-baseline-50.py-2.px-5.border-solid.border-b.justify-between.items-center.select-none.cursor-pointer.flex.dark\:border-baseline-900.border-baseline-100.text-m.hover\:bg-baseline-100:nth-of-type(6)
 curierulnational.ro##[href="https://curierulnational.ro/publicitate/"]
+newsweek.ro##.ml-2.rounded-full.leading-none.uppercase.font-condensed.font-bold.py-2.px-4.bg-yellow-300.hover\:text-black.text-black
+newsweek.ro###subscriptions
+www.reteleelectrice.ro##.footer-coppy
+www.reteleelectrice.ro##.malfunctions-type-alert.position-side.block-malfunctions
+www.investenergy.ro###toTop
+www.investenergy.ro###sidebar > [href]
+www.investenergy.ro###sidebar > [src]
+www.stiridiaspora.ro##div:nth-of-type(6)
+www.ppcenergy.ro##.footer-coppy-left
+www.electricafurnizare.ro###wgt-shadow-root
+www.electricafurnizare.ro##.wgt-contrast-element.wgt-link
+www.distributieoltenia.ro###footer
+www.tion.ro##.enewsArticleContent > div:nth-of-type(3)
+www.tion.ro##[href="/mica-publicitate/"]
+www.doctorulzilei.ro##[href="https://whatsapp.com/channel/0029VaMETqT6mYPMBGQNk71Y"]
+delgaz.ro##footer
+spotmedia.ro##[href="https://spotmedia.ro/sustine-arca-jurnalistilor"]
+spotmedia.ro###european-sustainable-energy-week
+spotmedia.ro##.wp-block-embed__wrapper
+spotmedia.ro###ajax-container-mbm-donate-arca-box-payment
+www.constantadeazi.ro##.menu-footer-menu-container
+redactia.ro###footer
+igj.ro##.td-stretch-content.stretch_row_1600.tdc-row
+igj.ro##[href="https://igj.ro/vezi-anunturi"]
+epochtimes-romania.com##.d-md-block.d-none.donationFooter.col-12
+lucrarimanuale.ro##.footer-bar
+www.electrica.ro##footer
+ai-bot.cn##footer
+ialoc.ro##[href="/confidentialitate"]
+ialoc.ro##.upper-footer
+2nicecaffe.com##li.mb-2:nth-of-type(3)
+restaurantguru.com##.footer
+restaurantguru.com##.pierre-assist-button__main.pierre-assist-button
+chicago.eater.com##._1c7i3jt4._1c7i3jt1
+www.thefork.nl##.ej27n6p0.css-4dyoe3
+www.thefork.nl##li.e1gd0mzn0.css-13s4os5
+thesanantoniothings.com##.fl-builder-global-templates-locked.fl-builder-content-90.fl-builder-content
+www.eater.com##._1c7i3jt0
+www.eater.com##.duet--navigation--footer
+microsoftedge.microsoft.com##.c-uhff-base
+microsoftedge.microsoft.com##li:nth-of-type(5)
+microsoftedge.microsoft.com##li:nth-of-type(2)
+www.reddit.com###shreddit-forbidden
+revistasufletului.net##.revista
+revistasufletului.net##[href="https://revistasufletului.net/privacy-policy/"]
+inarelationship.ro##[href="/politica-de-confidentialitate/"]
+inarelationship.ro###scroll_up
+sursademotivatie.ro##.tdc-element-style.td-pb-row.wpb_row.tdi_162.vc_row
+facerealumii.ro##[href="https://facerealumii.ro/doneaza/"]
+www.revistasufletului.net##[href="https://www.revistasufletului.net/privacy-policy/"]
+accept-romania.ro##.td-container-wrap.td-sub-footer-container
+facerealumii.ro##.simplemodal-container
+facerealumii.ro##.simplemodal-overlay
+www.stiridirecte.ro##section
+m.ele.ro##.mdl-grid.mdl-mini-footer
+www.adoptiicaini.ro###colophon
+www.adoptiicaini.ro###simple-chat-button--container
+www.georgecosbuc.eu##[href="https://www.julesverne.cc/cd.php"]
+www.georgecosbuc.eu##center:nth-of-type(2)
+stiridebine.ro##.td-container-wrap.td-sub-footer-container
+www.lapunkt.ro##.mab-widget.widget
+www.123urban.ro##.td-container-wrap.td-sub-footer-container
+www.loribalogh.ro##[href="http://www.sperantatv.ro"]
+www.loribalogh.ro##[href="http://solascriptura.ro"]
+www.loribalogh.ro###media_image-3
+www.loribalogh.ro###media_image-5
+esentedesucces.ro###ht-back-top
+esentedesucces.ro##.esent-la-sfarsitul-articolului
+www.revistasufletului.net##.distribuie
+7flamme.com###us-slider
+7flamme.com##[href="/privacy"]
+ro.411answers.com###colophon
+legalup.ro##.elementor-icon-list-items
+legalup.ro##.elementor-element-73de0586.elementor-element.elementor-top-column.elementor-col-33.elementor-column
+legalbadger.org##.tdc-element-style.td-pb-row.wpb_row.tdi_19.vc_row
+gdprcomplet.ro###cst-foot-hide
+gdprcomplet.ro##.footer-position-default.site-footer
+drepturisociale.ro###bloglo-scroll-top
+bloggerilaschimb.ro###scroll-up
+www.simplucredit.ro##li:nth-of-type(4)
+www.simplucredit.ro##[href="/politica-de-cookie-uri/"]
+hackernoon.com##li.mb-2:nth-of-type(7)
+hackernoon.com##li.mb-2:nth-of-type(10)
+hackernoon.com##li.mb-2:nth-of-type(3)
+hackernoon.com##.text-panelTxt.text-2xl.hn-bell.hn
+crypto28.ro###back-to-top
+crypto28.ro##div.footer-extra:nth-of-type(2)
+surfshark.com##[href="/privacy"]
+cssi.us##[href="https://cssi.us/privacy-policy/"]
+mid.wowlazy.com##li.menu-item:nth-of-type(3)
+gizmodo.com###menu-footer
+www.crxsoso.com##.el-backtop
+www.3kjs.com##.scroll-top.tools-icon
+www.neowin.net##[href="/advertising/"]
+www.neowin.net##[href="/subscribe/"]
+www.cloudwards.net##section:nth-of-type(2)
+techbriefly.com##.widget_nav_menu.footer_widget
+techbriefly.com###privacy-policy
+techbriefly.com##.sf-with-ul
+smallusefultips.com##[href="https://smallusefultips.com/privacy-policy/"]
+www.forbes.com##.smP7p--o
+www.forbes.com##._7DLV83EX
+www.forbes.com##li.primary.ocPoioVz.QpfB0oZe:nth-of-type(16)
+www.forbes.com##._0Y0YyXFC
+www.ublock-origin.com###menu-bottom
+extensionstores.com###colophon
+dataconomy.com##[href="https://dataconomy.com/privacy/"]
+www.kippel01.com##[href="https://www.kippel01.com/publicidad.html"]
+www.kippel01.com##[href="https://www.kippel01.com/politica-de-cookies.html"]
+www.kippel01.com##div.container:nth-of-type(2)
+ok.ru##.auth-login_auth-login-banner.h-mod
+ok.ru###scrollToTopVideoLayer
+ittrip.xyz##.p-fixBtnWrap
+detail.chiebukuro.yahoo.co.jp##.footer.riff-Footer
+www.tunesbro.jp##.site-footer-section-4.site-footer-section.site-footer-primary-section-4
+www.neowin.net##.footer
+trend.koregasiritai.com##.footer-bottom-content
+trend.koregasiritai.com##.menu-button.top-menu-button
+brave2049.com##.active-progress.btn-right-side.progress-wrap
+slashdot.org##li:nth-of-type(6)
+slashdot.org##.l-nav-bottom
+www.privacyguides.org##.md-copyright__highlight
+techissuestoday.com##.navbar-collapse.collapse
+cultura-informatica.com##[href="https://cultura-informatica.com/politica-de-cookies/"]
+cultura-informatica.com##[href="https://cultura-informatica.com/politica-de-privacidad/"]
+sigmaos.com##.framer-o8cciv
+www.jitbit.com##.text-gray-400.bg-slate-800
+www.jitbit.com##li:nth-of-type(5)
+www.jitbit.com##.xl\:col-span-1.space-y-6
+www.kuketz-forum.de##[href="https://www.kuketz-forum.de/privacy"]
+theintelligence.com##.footer-small-links.wpb_text_column
+theintelligence.com##section.mobile-only.color_footer-bottom.height_auto.wpb_row.l-section > .i-cf.l-section-h > .valign_middle.type_default.vc_row.g-cols > .stretched.vc_column_container.wpb_column.vc_col-sm-12
+theintelligence.com##div.vc_inner.valign_top.type_default.wpb_row.g-cols:nth-of-type(3)
+theintelligence.com###menu-item-12650
+www.tutoriels-info.com##.copyright
+www.tutoriels-info.com##.icon-page-politique-des-cookies.icon-pages.small-icon
+www.technowize.com###nav_menu-2
+www.technowize.com##.tech_right
+www.technowize.com##[href="https://www.technowize.com/advertise/"]
+www.technowize.com###menu-item-2944
+mspoweruser.com##[href="https://mspoweruser.com/privacy-policy/"]
+softwarerecs.stackexchange.com##div.site-footer--col:nth-of-type(2)
+blog.silverpc.hu###scroll-up
+ericutza.blogspot.com##[href="#"]
+tvprofil.com##[href="/ro/marketing/"]
+blog.nightly.mozilla.org##.small-links li
+floorp.app##nav:nth-of-type(3)
+zen-browser.app##section.gap-2.flex-col.flex:nth-of-type(2)
+www.auchan.ro##li.vtex-menu-2-x-menuItem--isOpen.list.vtex-menu-2-x-menuItem:nth-of-type(3) > .overflow-hidden > .pl4.flex.w-100.vtex-menu-2-x-submenuAccordion--lvl2.vtex-menu-2-x-submenuAccordion > .vtex-menu-2-x-menuContainerNav--footerLvl2.vtex-menu-2-x-menuContainerNav > .flex-column.mv0.pl0.flex.list.vtex-menu-2-x-menuContainer--footerLvl2.vtex-menu-2-x-menuContainer > li.vtex-menu-2-x-menuItem--footerLvl2--isClosed.vtex-menu-2-x-menuItem--isClosed.list.vtex-menu-2-x-menuItem--footerLvl2.vtex-menu-2-x-menuItem:nth-of-type(3) > .pv2.mh6.vtex-menu-2-x-styledLinkContainer--footerLvl2.vtex-menu-2-x-styledLinkContainer > .c-on-base.t-small.pointer.no-underline.vtex-menu-2-x-styledLink--footerLvl2.vtex-menu-2-x-styledLink
+carrefour.ro##.popup-notifications
+www.mobygames.com##[href="/info/privacy/"]
+stash.games##li.mt-\[10px\]:nth-of-type(2)
+h2o.fandom.com##.global-footer__links > li:nth-of-type(7)
+signal.group##[href="https://www.signal.org/legal/"]
+openarena.fandom.com##li:nth-of-type(7)
+tvprofil.com##[href="/ro/privacy/"]
+darkq.net##.td-pb-row.wpb_row.tdi_126.tdc_zone
+www.menspaces.com##[href="https://www.menspaces.com/privacy-policy/"]
+anunturi.gay##.age-gate__subheadline
+anunturi.gay##.age-gate__headline
+anunturi.gay##.age-gate__submit--no.age-gate__submit
+anunturi.gay###footer
+theodosie.ro###glt-translate-trigger
+m.wcostream.tv##.ui-corner-all.ui-shadow.ui-btn
+anilist.co##[href="/terms"]
+www.anisearch.com##[href="faq/privacy"]
+thetvdb.com##div.col-sm-3.col-xs-12:nth-of-type(3)
+vidbox.to##nav.sm\:space-y-0.sm\:space-x-4.sm\:flex-row.space-y-2.flex-col.flex:nth-of-type(1) > a.hover\:text-red-500.transition-colors:nth-of-type(2)
+vidbox.to##.z-50.md\:right-4.md\:bottom-4.right-4.bottom-16.fixed
+subf2m.co##footer
+animeschedule.net##footer
+www.bilibili.tv##.footer
+www.bilibili.tv##.bstar-header__openapp
+freecouchtuner.com##.cCvLSLqxZsgDDaAyaNOt
+skdesu.com###menu-footer
+moviemaker.minitool.com##.page-footer
+bestdroidplayer.com##.menu-footer-container > .menu
+bestdroidplayer.com##.widget_nav_menu.widget
+moviemaker.minitool.com##.footer-copyright-wrapper
+fossbytes.com###secondary
+fossbytes.com###footer-menu
+fossbytes.com##.ft-ro-lstyle-plain.ft-ro-m-dir-row.ft-ro-t-dir-default.ft-ro-collapse-normal.ft-ro-dir-row.site-footer-row-mobile-column-layout-row.site-footer-row-tablet-column-layout-default.site-footer-row-column-layout-row.site-footer-row-columns-1.site-footer-row.site-middle-footer-inner-wrap
+myanimelist.net##footer
+iprovpn.com##.text-white.p-4
+iprovpn.com##.modal-content > [src]
+iprovpn.com##.mt-3.btnGenreal
+iprovpn.com##div.col-sm-2:nth-of-type(3)
+tme.net##.site-footer
+geekculture.co##.gridlove-copyright
+hayamablog.org###footer
+hayamablog.org###pagetop
+www.crunchyroll.com##.content-wrapper--MF5LS
+labtechs-notes.com###footer
+labtechs-notes.com##.menu-button.top-menu-button
+moviemaker.minitool.com##.article-comments
+www.guru99.com##.ft-ro-lstyle-normal.ft-ro-m-dir-default.ft-ro-t-dir-default.ft-ro-collapse-normal.ft-ro-dir-column.site-footer-row-mobile-column-layout-row.site-footer-row-tablet-column-layout-default.site-footer-row-column-layout-center-wide.site-footer-row-columns-3.site-footer-row.site-middle-footer-inner-wrap
+www.gogoanimes.app##footer
+hobsoft.com###cb-row--footer-bottom
+hobsoft.com###scroll-to-top
+animesama.us##footer
+m.ok.ru##[href^="https://ads.vk.com/promo/firstbonus"]
+gogonihon.com##.elementor-widget-heading.elementor-widget.elementor-widget__width-auto.elementor-element-5adde560.elementor-element
+gogonihon.com##.elementor-widget-divider.elementor-widget.elementor-widget-divider--view-line.elementor-element-31b0dc07.elementor-element
+gogonihon.com##.elementor-widget-form.elementor-widget.elementor-button-align-stretch.elementor-widget__width-initial.elementor-element-63b677d2.elementor-element
+gogonihon.com###news1
+gogonihon.com##.elementor-section-height-default.elementor-section-boxed.elementor-element-5496c96c.elementor-element.elementor-top-section.elementor-section
+gogonihon.com##.links.elementor-element-1b1fc30d.elementor-element.elementor-inner-column.elementor-col-25.elementor-column > .elementor-element-populated.elementor-widget-wrap
 www.musicindustryhowto.com##.textwidget
 we-xpats.com##.beyond\:pl-\[80px\].tablet\:pl-\[40px\].pl-\[16px\].py-\[12px\]
 top40weekly.com###footer-menu
@@ -2017,188 +2138,6 @@ yumetwins.com##.e1b7iani15.css-1jt55q9
 jpop-lyrics-translation.amebaownd.com##.owndbarHeader--loaded.owndbarHeader
 itopchart.com###page_top
 itopchart.com##div.wrapper:nth-of-type(2)
-revistasufletului.net##.revista
-revistasufletului.net##[href="https://revistasufletului.net/privacy-policy/"]
-inarelationship.ro##[href="/politica-de-confidentialitate/"]
-inarelationship.ro###scroll_up
-sursademotivatie.ro##.tdc-element-style.td-pb-row.wpb_row.tdi_162.vc_row
-facerealumii.ro##[href="https://facerealumii.ro/doneaza/"]
-www.revistasufletului.net##[href="https://www.revistasufletului.net/privacy-policy/"]
-accept-romania.ro##.td-container-wrap.td-sub-footer-container
-facerealumii.ro##.simplemodal-container
-facerealumii.ro##.simplemodal-overlay
-www.stiridirecte.ro##section
-m.ele.ro##.mdl-grid.mdl-mini-footer
-www.adoptiicaini.ro###colophon
-www.adoptiicaini.ro###simple-chat-button--container
-www.georgecosbuc.eu##[href="https://www.julesverne.cc/cd.php"]
-www.georgecosbuc.eu##center:nth-of-type(2)
-stiridebine.ro##.td-container-wrap.td-sub-footer-container
-www.lapunkt.ro##.mab-widget.widget
-www.123urban.ro##.td-container-wrap.td-sub-footer-container
-www.loribalogh.ro##[href="http://www.sperantatv.ro"]
-www.loribalogh.ro##[href="http://solascriptura.ro"]
-www.loribalogh.ro###media_image-3
-www.loribalogh.ro###media_image-5
-esentedesucces.ro###ht-back-top
-esentedesucces.ro##.esent-la-sfarsitul-articolului
-www.revistasufletului.net##.distribuie
-7flamme.com###us-slider
-7flamme.com##[href="/privacy"]
-www.whistleout.com##.affix.bg-white.bottom-strip.sticky
-www.avantaje.ro##.clearfix
-www.avantaje.ro##.col-sm-6
-www.avantaje.ro##footer
-dentestet.ro##.Footer_active__MazNb.Footer_title__LlqE2
-dentestet.ro##div.Footer_column__Hg_ZC:nth-of-type(4)
-www.de4kids.ro##div.mb-lg-0.mb-5.text-lg-left.text-center.col-lg-2.col-12:nth-of-type(5)
-greendental.ro###cmsms_row_6853718083407
-familydent.ro###chaty-widget-0
-www.ortodent.ro##[href="https://www.ortodent.ro/politica-de-confidentialitate/"]
-dentalview.ro###rk-wid-ff9388105ee2ef1949066ec5f5348b7e
-dentalview.ro##.fixed-mobile-section
-dentalview.ro##[href="https://dentalview.ro/protectia-datelor/"]
-dentalview.ro##[href="https://dentalview.ro/politica-de-confidentialitate/"]
-www.dental-med.ro##.chatiframe
-llldental.ro##.lvd-mobile-bar
-llldental.ro##.footer-menu
-cris-smile.ro##.elementor-element-4f5a0911.elementor-element.elementor-inner-column.elementor-col-25.elementor-column
-cris-smile.ro##.e-child.e-con.e-flex.e-con-full.elementor-element-ff74c5a.elementor-element
-dentstore.ro##.float
-dentstore.ro##div.wrapper.col-xs-12.col-sm-3:nth-of-type(3)
-www.clinicadentaplus.ro##.footer_bottom_holder
-dentesse.ro##.avada-footer-scripts
-dentesse.ro##[href="/politica-de-confidentialitate/"]
-dentesse.ro##[href="/politica-de-cookie/"]
-lemaclinic.com##.qlwapp
-www.cliniciimplantdentar.ro##a.butverde
-terapeuti.ro##[href="https://focuspsy.ro/caut-colegi/"]
-terapeuti.ro##.fb.box
-www.infodentis.com###myBtn
-swissdent.ro##.back-top.scrollUp
-dental.grammstore.ro##.modal-overlay
-dental.grammstore.ro##.modal-content-body
-dental.grammstore.ro##[href="/politica-de-confidentialitate/"]
-dental.grammstore.ro##.elementor-element-70de4b0.elementor-element.elementor-inner-column.elementor-col-33.elementor-column
-dental.grammstore.ro##.elementor-shortcode
-dental.grammstore.ro##.elementor-widget-icon-box.elementor-widget.elementor-vertical-align-top.elementor-mobile-position-top.elementor-view-default.elementor-mobile_extra-position-top.elementor-position-left.elementor-element-1e44fb7.elementor-element > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content > .elementor-icon-box-description
-dental.grammstore.ro##.elementor-widget-icon-box.elementor-widget.elementor-vertical-align-top.elementor-mobile-position-top.elementor-view-default.elementor-mobile_extra-position-top.elementor-position-left.elementor-element-1e44fb7.elementor-element > .elementor-widget-container > .elementor-icon-box-wrapper
-dental.grammstore.ro##.elementor-element-5772ba3.elementor-element.elementor-inner-column.elementor-col-33.elementor-column > .elementor-element-populated.elementor-widget-wrap
-dentoart.ro##.hOjHAc.Box-sc-14017gv-0
-dentoart.ro##.cQXpkC.ScrollToTop__Wrapper-sc-5az1by-0
-dentoart.ro##.iMUwiW.Flex-qy7acb-0
-www.dentalwest.ro##div.quick_contact_phone
-www.dentalwest.ro##.quick_contact_email
-www.dentalwest.ro##div.col-xl-4.col-md-4.col-12:nth-of-type(1)
-www.omniadental.ro##.menu-item-1454.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
-www.omniadental.ro###callnowbutton
-www.5dent.ro##.shadow.bg-light.gdpr.fixed-bottom
-denttaglio.ro##a.lvd-mobile-bar-dot
-denttaglio.ro##[href="https://denttaglio.ro/politica-de-confidentialitate/"]
-denttaglio.ro##.lvd-button-group
-www.dentalexcellence.ro##.mobile-bottom
-www.dentalexcellence.ro##.hide-cookie-icon.position-bottom-right.layout-custom-width.sgcc-main-wrapper
-www.abceurodent.ro###ht-ctc-chat
-www.denterraclinic.ro###cn_holder
-www.denterraclinic.ro##.totop
-www.denterraclinic.ro##footer.darktheme
-www.denterraclinic.ro##footer
-ro.411answers.com###colophon
-legalup.ro##.elementor-icon-list-items
-legalup.ro##.elementor-element-73de0586.elementor-element.elementor-top-column.elementor-col-33.elementor-column
-legalbadger.org##.tdc-element-style.td-pb-row.wpb_row.tdi_19.vc_row
-gdprcomplet.ro###cst-foot-hide
-gdprcomplet.ro##.footer-position-default.site-footer
-drepturisociale.ro###bloglo-scroll-top
-bloggerilaschimb.ro###scroll-up
-www.simplucredit.ro##li:nth-of-type(4)
-www.simplucredit.ro##[href="/politica-de-cookie-uri/"]
-hackernoon.com##li.mb-2:nth-of-type(7)
-hackernoon.com##li.mb-2:nth-of-type(10)
-hackernoon.com##li.mb-2:nth-of-type(3)
-hackernoon.com##.text-panelTxt.text-2xl.hn-bell.hn
-crypto28.ro###back-to-top
-crypto28.ro##div.footer-extra:nth-of-type(2)
-surfshark.com##[href="/privacy"]
-cssi.us##[href="https://cssi.us/privacy-policy/"]
-mid.wowlazy.com##li.menu-item:nth-of-type(3)
-gizmodo.com###menu-footer
-www.crxsoso.com##.el-backtop
-www.3kjs.com##.scroll-top.tools-icon
-www.neowin.net##[href="/advertising/"]
-www.neowin.net##[href="/subscribe/"]
-www.cloudwards.net##section:nth-of-type(2)
-techbriefly.com##.widget_nav_menu.footer_widget
-techbriefly.com###privacy-policy
-techbriefly.com##.sf-with-ul
-smallusefultips.com##[href="https://smallusefultips.com/privacy-policy/"]
-www.forbes.com##.smP7p--o
-www.forbes.com##._7DLV83EX
-www.forbes.com##li.primary.ocPoioVz.QpfB0oZe:nth-of-type(16)
-www.forbes.com##._0Y0YyXFC
-www.ublock-origin.com###menu-bottom
-extensionstores.com###colophon
-dataconomy.com##[href="https://dataconomy.com/privacy/"]
-www.kippel01.com##[href="https://www.kippel01.com/publicidad.html"]
-www.kippel01.com##[href="https://www.kippel01.com/politica-de-cookies.html"]
-www.kippel01.com##div.container:nth-of-type(2)
-tvprofil.com##[href="/ro/marketing/"]
-blog.nightly.mozilla.org##.small-links li
-floorp.app##nav:nth-of-type(3)
-zen-browser.app##section.gap-2.flex-col.flex:nth-of-type(2)
-www.auchan.ro##li.vtex-menu-2-x-menuItem--isOpen.list.vtex-menu-2-x-menuItem:nth-of-type(3) > .overflow-hidden > .pl4.flex.w-100.vtex-menu-2-x-submenuAccordion--lvl2.vtex-menu-2-x-submenuAccordion > .vtex-menu-2-x-menuContainerNav--footerLvl2.vtex-menu-2-x-menuContainerNav > .flex-column.mv0.pl0.flex.list.vtex-menu-2-x-menuContainer--footerLvl2.vtex-menu-2-x-menuContainer > li.vtex-menu-2-x-menuItem--footerLvl2--isClosed.vtex-menu-2-x-menuItem--isClosed.list.vtex-menu-2-x-menuItem--footerLvl2.vtex-menu-2-x-menuItem:nth-of-type(3) > .pv2.mh6.vtex-menu-2-x-styledLinkContainer--footerLvl2.vtex-menu-2-x-styledLinkContainer > .c-on-base.t-small.pointer.no-underline.vtex-menu-2-x-styledLink--footerLvl2.vtex-menu-2-x-styledLink
-carrefour.ro##.popup-notifications
-www.mobygames.com##[href="/info/privacy/"]
-stash.games##li.mt-\[10px\]:nth-of-type(2)
-h2o.fandom.com##.global-footer__links > li:nth-of-type(7)
-@@www.youtube-nocookie.com
-signal.group##[href="https://www.signal.org/legal/"]
-openarena.fandom.com##li:nth-of-type(7)
-tvprofil.com##[href="/ro/privacy/"]
-darkq.net##.td-pb-row.wpb_row.tdi_126.tdc_zone
-www.menspaces.com##[href="https://www.menspaces.com/privacy-policy/"]
-anunturi.gay##.age-gate__subheadline
-anunturi.gay##.age-gate__headline
-anunturi.gay##.age-gate__submit--no.age-gate__submit
-anunturi.gay###footer
-theodosie.ro###glt-translate-trigger
-m.wcostream.tv##.ui-corner-all.ui-shadow.ui-btn
-anilist.co##[href="/terms"]
-www.anisearch.com##[href="faq/privacy"]
-thetvdb.com##div.col-sm-3.col-xs-12:nth-of-type(3)
-vidbox.to##nav.sm\:space-y-0.sm\:space-x-4.sm\:flex-row.space-y-2.flex-col.flex:nth-of-type(1) > a.hover\:text-red-500.transition-colors:nth-of-type(2)
-vidbox.to##.z-50.md\:right-4.md\:bottom-4.right-4.bottom-16.fixed
-subf2m.co##footer
-animeschedule.net##footer
-www.bilibili.tv##.footer
-www.bilibili.tv##.bstar-header__openapp
-freecouchtuner.com##.cCvLSLqxZsgDDaAyaNOt
-skdesu.com###menu-footer
-moviemaker.minitool.com##.page-footer
-bestdroidplayer.com##.menu-footer-container > .menu
-bestdroidplayer.com##.widget_nav_menu.widget
-moviemaker.minitool.com##.footer-copyright-wrapper
-fossbytes.com###secondary
-fossbytes.com###footer-menu
-fossbytes.com##.ft-ro-lstyle-plain.ft-ro-m-dir-row.ft-ro-t-dir-default.ft-ro-collapse-normal.ft-ro-dir-row.site-footer-row-mobile-column-layout-row.site-footer-row-tablet-column-layout-default.site-footer-row-column-layout-row.site-footer-row-columns-1.site-footer-row.site-middle-footer-inner-wrap
-myanimelist.net##footer
-iprovpn.com##.text-white.p-4
-iprovpn.com##.modal-content > [src]
-iprovpn.com##.mt-3.btnGenreal
-iprovpn.com##div.col-sm-2:nth-of-type(3)
-tme.net##.site-footer
-geekculture.co##.gridlove-copyright
-hayamablog.org###footer
-hayamablog.org###pagetop
-www.crunchyroll.com##.content-wrapper--MF5LS
-labtechs-notes.com###footer
-labtechs-notes.com##.menu-button.top-menu-button
-moviemaker.minitool.com##.article-comments
-www.guru99.com##.ft-ro-lstyle-normal.ft-ro-m-dir-default.ft-ro-t-dir-default.ft-ro-collapse-normal.ft-ro-dir-column.site-footer-row-mobile-column-layout-row.site-footer-row-tablet-column-layout-default.site-footer-row-column-layout-center-wide.site-footer-row-columns-3.site-footer-row.site-middle-footer-inner-wrap
-www.gogoanimes.app##footer
-hobsoft.com###cb-row--footer-bottom
-hobsoft.com###scroll-to-top
-animesama.us##footer
 thegww.com##.et_pb_bg_layout_light.et_pb_text_align_left.et_pb_text_1_tb_footer.et_pb_text.et_pb_module
 www.any-video-converter.com##.footer-about-box
 www.any-video-converter.com##.toTopImg
@@ -2959,17 +2898,6 @@ wise.com##div.footer-title.text-md-left.text-xs-center.col-md-3:nth-of-type(3)
 chestiiutile.com##.default-button.scroll-up
 lumeapacanelelor.ro##.vc_col-sm-12.vc_column_container.wpb_column
 thegadgetist.ro###toTop
-www.educatieprivata.ro##.visible.returning
-dexonline.ro##.pollModal
-ortodoxinfo.ro###hwasd
-www.google.ro##.AG96lb
-www.google.ro###L2AGLb
-www.anonymoushackers.net##.page-item-2135.page_item > [href]
-www.anonymoushackers.net##[href="https://www.anonymoushackers.net/cookies-policy/"]
-www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
-en.m.wikipedia.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
-en.m.wikipedia.org###footer-places-cookiestatement
-account.proton.me##.p-4.text-center.shrink-0
 www.anime-planet.com##[href="/privacypolicy"]
 honeysanime.com##[href="https://honeysanime.com/advertising/"]
 honeysanime.com##.fz10.left-column
@@ -3057,11 +2985,6 @@ www.pcworld.com###menu-item-100029490-menu-1-mobile
 www.techzine.eu###colophon > .container
 www.ghacks.net###site-footer
 windowsforum.com##.p-footer-row-main
-spankbang.com###age-check-content > p
-spankbang.com##.age-no-check-button
-spankbang.com###age-check-footer
-spankbang.com##.justify-center.flex > .h-10
-@@encrypted-tbn0.gstatic.com
 darkreader.org##nav > [href="privacy/"]
 darkreader.org##a.v2-help-header-link:nth-of-type(3)
 www.cinemacity.ro##.noprint.footer.dark
@@ -3086,6 +3009,64 @@ rutube.ru##.wdp-onboardings-inventory-module__popupBody.wdp-popup-module__body
 rutube.ru##noindex
 rutube.ru##section:nth-of-type(9)
 www.noobz.ro##.td-mobile-sub-footer-wrap
+www.whistleout.com##.affix.bg-white.bottom-strip.sticky
+www.avantaje.ro##.clearfix
+www.avantaje.ro##.col-sm-6
+www.avantaje.ro##footer
+dentestet.ro##.Footer_active__MazNb.Footer_title__LlqE2
+dentestet.ro##div.Footer_column__Hg_ZC:nth-of-type(4)
+www.de4kids.ro##div.mb-lg-0.mb-5.text-lg-left.text-center.col-lg-2.col-12:nth-of-type(5)
+greendental.ro###cmsms_row_6853718083407
+familydent.ro###chaty-widget-0
+www.ortodent.ro##[href="https://www.ortodent.ro/politica-de-confidentialitate/"]
+dentalview.ro###rk-wid-ff9388105ee2ef1949066ec5f5348b7e
+dentalview.ro##.fixed-mobile-section
+dentalview.ro##[href="https://dentalview.ro/protectia-datelor/"]
+dentalview.ro##[href="https://dentalview.ro/politica-de-confidentialitate/"]
+www.dental-med.ro##.chatiframe
+llldental.ro##.lvd-mobile-bar
+llldental.ro##.footer-menu
+cris-smile.ro##.elementor-element-4f5a0911.elementor-element.elementor-inner-column.elementor-col-25.elementor-column
+cris-smile.ro##.e-child.e-con.e-flex.e-con-full.elementor-element-ff74c5a.elementor-element
+dentstore.ro##.float
+dentstore.ro##div.wrapper.col-xs-12.col-sm-3:nth-of-type(3)
+www.clinicadentaplus.ro##.footer_bottom_holder
+dentesse.ro##.avada-footer-scripts
+dentesse.ro##[href="/politica-de-confidentialitate/"]
+dentesse.ro##[href="/politica-de-cookie/"]
+lemaclinic.com##.qlwapp
+www.cliniciimplantdentar.ro##a.butverde
+terapeuti.ro##[href="https://focuspsy.ro/caut-colegi/"]
+terapeuti.ro##.fb.box
+www.infodentis.com###myBtn
+swissdent.ro##.back-top.scrollUp
+dental.grammstore.ro##.modal-overlay
+dental.grammstore.ro##.modal-content-body
+dental.grammstore.ro##[href="/politica-de-confidentialitate/"]
+dental.grammstore.ro##.elementor-element-70de4b0.elementor-element.elementor-inner-column.elementor-col-33.elementor-column
+dental.grammstore.ro##.elementor-shortcode
+dental.grammstore.ro##.elementor-widget-icon-box.elementor-widget.elementor-vertical-align-top.elementor-mobile-position-top.elementor-view-default.elementor-mobile_extra-position-top.elementor-position-left.elementor-element-1e44fb7.elementor-element > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content > .elementor-icon-box-description
+dental.grammstore.ro##.elementor-widget-icon-box.elementor-widget.elementor-vertical-align-top.elementor-mobile-position-top.elementor-view-default.elementor-mobile_extra-position-top.elementor-position-left.elementor-element-1e44fb7.elementor-element > .elementor-widget-container > .elementor-icon-box-wrapper
+dental.grammstore.ro##.elementor-element-5772ba3.elementor-element.elementor-inner-column.elementor-col-33.elementor-column > .elementor-element-populated.elementor-widget-wrap
+dentoart.ro##.hOjHAc.Box-sc-14017gv-0
+dentoart.ro##.cQXpkC.ScrollToTop__Wrapper-sc-5az1by-0
+dentoart.ro##.iMUwiW.Flex-qy7acb-0
+www.dentalwest.ro##div.quick_contact_phone
+www.dentalwest.ro##.quick_contact_email
+www.dentalwest.ro##div.col-xl-4.col-md-4.col-12:nth-of-type(1)
+www.omniadental.ro##.menu-item-1454.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+www.omniadental.ro###callnowbutton
+www.5dent.ro##.shadow.bg-light.gdpr.fixed-bottom
+denttaglio.ro##a.lvd-mobile-bar-dot
+denttaglio.ro##[href="https://denttaglio.ro/politica-de-confidentialitate/"]
+denttaglio.ro##.lvd-button-group
+www.dentalexcellence.ro##.mobile-bottom
+www.dentalexcellence.ro##.hide-cookie-icon.position-bottom-right.layout-custom-width.sgcc-main-wrapper
+www.abceurodent.ro###ht-ctc-chat
+www.denterraclinic.ro###cn_holder
+www.denterraclinic.ro##.totop
+www.denterraclinic.ro##footer.darktheme
+www.denterraclinic.ro##footer
 lapsihiatru.ro##.backtoptop
 www.galatia.ro###scrollUp
 galatia.ro##.fa-level-up-alt.fas
@@ -3095,6 +3076,17 @@ www.dilema.ro###go-top
 www.dilema.ro###disto_recent_post_widget-2
 obiectivbr.ro###block-anuntonline
 animeterra.ro##.chatbro_messages_scroll_to_last
+www.educatieprivata.ro##.visible.returning
+dexonline.ro##.pollModal
+ortodoxinfo.ro###hwasd
+www.google.ro##.AG96lb
+www.google.ro###L2AGLb
+www.anonymoushackers.net##.page-item-2135.page_item > [href]
+www.anonymoushackers.net##[href="https://www.anonymoushackers.net/cookies-policy/"]
+www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
+en.m.wikipedia.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+en.m.wikipedia.org###footer-places-cookiestatement
+account.proton.me##.p-4.text-center.shrink-0
 cutter.compari.ro##.visible
 cutter.compari.ro##[href="https://www.compari.ro/static/newsletter.html"]
 www.officedirect.ro##[href="newsletter2"]
@@ -3161,8 +3153,6 @@ www.ubetoo.com##[href="#"]
 www.ubetoo.com##li.mr-lg-3.mb-2:nth-of-type(2)
 webthemez.com##[href="/privacy-policy"]
 webthemez.com##[href="/advertise"]
-www.techworm.net###tdi_57
-www.techworm.net##.td-footer-template-wrap
 glaad.org##.ts-button3.ts-button-a.ts-button
 www.hearstnetworks.com##.nav-link--privacy-policy.nav-link
 www.hearstnetworks.com##.nav-link--cookie-notice.nav-link
@@ -3408,6 +3398,8 @@ whatismyip.org###footer-navigation
 2ip.ua##.parent.dropdown.deeper.item-478
 2ip.ua##.active.current.item-443
 whoer.net##[href="/refund_policy"]
+www.techworm.net###tdi_57
+www.techworm.net##.td-footer-template-wrap
 multimedia.easeus.com##[href="https://www.easeus.com/do-not-sell.htm"]
 multimedia.easeus.com##[href="https://www.easeus.com/privacy.htm"]
 www.the-next-tech.com##[href="https://www.the-next-tech.com/advertise-with-us/"]
@@ -3747,6 +3739,7 @@ ecompedia.ro##.ask-button
 www.patreon.com##.fIVbmB.sc-da9c4ab0-4
 www.patreon.com##button.cm-TOsLDU.cm-UsNHpA.cm-dupTbP.cm-zbhPFN.cm-DFAJDB.cm-lCfmZu.cm-bephWK.cm-bcdZOb.cm-LNraKM.cm-dMgEsi:nth-of-type(2)
 www.fancourier.ro##.my-5.container.newsletter-block
+www.pinterest.com##.Hsu.iyn.zI7.p6V.hjq._co.MIw
 www.msn.com##nurturing-coach-mark
 www.patreon.com##.fIVbmB.sc-da9c4ab0-4
 www.patreon.com##button.cm-TOsLDU.cm-UsNHpA.cm-dupTbP.cm-zbhPFN.cm-DFAJDB.cm-lCfmZu.cm-bephWK.cm-bcdZOb.cm-LNraKM.cm-dMgEsi:nth-of-type(2)
@@ -3755,7 +3748,6 @@ soundcloud.com##a.sc-link-secondary:nth-of-type(2)
 soundcloud.com##.cookie-manager.sc-link-secondary
 soundcloud.com##a.sc-link-secondary:nth-of-type(10)
 soundcloud.com##a.sc-link-secondary:nth-of-type(9)
-www.pinterest.com##.Hsu.iyn.zI7.p6V.hjq._co.MIw
 www.patreon.com##button.Button_paddingLabelOnlyMd__TipcG.Button_sizeMd__4LyP2.Button_themePrimaryFilled__5_T4f.cjoCkl.sc-furwcr:nth-of-type(2)
 www.tiktok.com##.eegew6e4.css-1clrjuw-DivJustWatchedButtonContainer
 www.canva.com###credential_picker_container
@@ -5440,6 +5432,77 @@ static.veevcdn.co
 1asb.com
 tracking.pretrackings.com
 zotsurdothaurtu.net
+www.timeout.com##.navigation_manage_cookies._listItem_1qytq_38
+www.timeout.com##li._listItem_1qytq_38:nth-of-type(5)
+www.planmyjapan.com###footer
+www.planmyjapan.com##.menu-item-9620.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+jw-webmagazine.com##[href="https://www.inbound-platform.com/en/privacy/"]
+traveler-japan.com##.l-footer
+www.gotokyo.org###tmp_func_fixed
+www.gotokyo.org##.active.ptop
+www.gotokyo.org##.fnavi > li:nth-of-type(2)
+jw-webmagazine.com##.c-sidebar
+www.japanhighlights.com##[href="/privacy"]
+www.japanhighlights.com##.info_tm_button
+tokyocheapo.com##[href="https://fasttrainltd.com/"]
+tokyocheapo.com##[href="https://tokyocheapo.com/privacy-policy/"]
+tokyocheapo.com##.footer__scroll-up
+www.japan-guide.com##.site_footer__about_jg_links
+www.japan-guide.com##.l-margin_breakout--both-padding.l-margin_breakout--both.l-margin_breakout.site_footer__section--newsletter.site_footer__section
+japonpedia.com##.tdi_107.vc_widget_sidebar.td_block_wrap.wpb_wrapper
+japonpedia.com##.td-fix-index.td_mod_wrap
+japonpedia.com##.tdi_20_ada.td-fix-index.tds-title1.tds-title
+afuncouple.com##.site-footer-row-mobile-layout-default.site-footer-row-tablet-layout-default.site-footer-row-layout-standard.site-footer-focus-item.site-footer-row-container.site-middle-footer-wrap
+afuncouple.com###kt-scroll-up
+www.japanmanifest.com##div.ml-4.my-3.d-inline:nth-of-type(4)
+www.japanmanifest.com###back-to-top
+thetouristchecklist.com##[href="https://thetouristchecklist.com/privacy-policy/"]
+thetruejapan.com##.gb-container-0f87c806.gb-container > .gb-inside-container
+akihabaraelectrictown.com##.menu
+www.travellens.co##.elementor-widget-ts-advanced-list.elementor-widget.elementor-element-9e5d807.elementor-element
+www.travellens.co##li.menu-item:nth-of-type(5)
+www.travelinjapan.net##.l-footer__foot
+www.travelinjapan.net##.p-fixBtnWrap
+www.yokogaomag.com##[href="/privacy-policy"]
+japanswitch.com##.ast-builder-grid-row-container-inner
+wikitravel.org##.minerva-footer.mw-footer
+nipponrama.com##.bde-column.bde-column-20120-106
+flipjapanguide.com##.et_section_regular.et_pb_section_1_tb_footer.et_pb_section
+japaninsides.com##[href="https://japaninsides.com/privacy-policy"]
+japaninsides.com##[href="https://japaninsides.com/newsletter"]
+namu.wiki##._0T4DZ6fZ > p
+namu.wiki##ul.N9vasW-p:nth-of-type(2)
+japambience.com##.pagetop_btn.menu-item
+japambience.com##.l-footer__nav
+matcha-jp.com##[href="https://matcha-jp.com/en/privacy-policy"]
+matcha-jp.com##.top-ad-bottom-section
+www.kanpai-japan.com###f_r_e_e
+tabiiro.jp##.btn-pagetop
+tabiiro.jp##[href="https://media.brangista.com/privacy/"]
+tabiiro.jp##.about.menuBlock > .menu > li:nth-of-type(6)
+japonismo.com##.ct-show.ct-back-to-top
+japonismo.com##[href="https://japonismo.com/politica-de-privacidad"]
+japonismo.com##.wp-elements-0a76a973f79edf54957411a19362743f.has-link-color.has-text-color.has-palette-color-8-color.wp-block-list > li:nth-of-type(4)
+akiba.or.jp##.footer
+furansujapon.com##.elementor-widget-nav-menu.elementor-widget.elementor-nav-menu--dropdown-none.elementor-nav-menu__align-center.elementor-element-b0f23d7.elementor-element
+blog.japanwondertravel.com##.menu-button.top-menu-button
+blog.japanwondertravel.com##.footer-bottom-content
+www.agoda.com##.Sticky__stickyFooter--2ff54.Sticky__fixed--34EQv.Sticky__containerHeader--1tCXG.Sticky__containerFooter--11Gw_
+udx.jp##.opened.wovn-modal-background
+udx.jp###page-top
+udx.jp##li:nth-of-type(12)
+udx.jp##[href="https://www.nttud.co.jp/information_security/index.html"]
+udx.jp##[href="https://www.nttud.co.jp/statement.html"]
+www.outlooktraveller.com###olkoverdiv
+www.outlooktraveller.com###footer-link
+www.outlooktraveller.com##li.menu-m__menu-item__Zj0zc:nth-of-type(9)
+www.outlooktraveller.com##[href="https://www.outlookbusiness.com/economy-and-policy"]
+www.japan.travel##.column-legal.mod-footer-sitemap-column
+www.lonelyplanet.com##.pb-0.md\:pointer-events-none.md\:cursor-default.md\:pt-0.pt-5.items-center.justify-between.flex.w-full.jsx-21109142f51e79b3
+www.lonelyplanet.com##.border-black-200.md\:border-t-0.border-t.fn-3.jsx-21109142f51e79b3
+www.tsunagujapan.com###f_privacy
+www.tsunagujapan.com##.btn_page_top
+www.tsunagujapan.com##li.sub_nav_item--index.sub_nav_item:nth-of-type(5)
 www.wowbiz.ro###onetrust-group-container
 www.wowbiz.ro###onetrust-consent-sdk
 www.bugetul.ro##div.gap-\[1\.567rem\].flex-col.flex:nth-of-type(2)
@@ -5560,8 +5623,17 @@ www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-h
 www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-hdkp.pb4-hdkp.ph4-hdkp.ma0-hdkp.pt1.ph3.mt3.ma0.list > li:nth-of-type(18)
 www.walmart.com##li:nth-of-type(15)
 destepti.ro##[href="https://destepti.ro/politica-de-confidentialitate/"]
+www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 www.patreon.com##button.bdCQnw.sc-furwcr:nth-of-type(2)
 www.patreon.com##.eAPYIl.sc-efQSVx
+facebook.com##.accept-all.secondary.btn
+facebook.com##div.content-section:nth-of-type(2)
+facebook.com##.manage-settings.mng-btn.secondary.btn
+facebook.com###consent-text
+facebook.com##._yb_1ool5._yb_b9sct
+facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div
@@ -5764,6 +5836,11 @@ cals.cornell.edu##[href="https://privacy.cornell.edu/"]
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 https://connect.facebook.net/en_US/fbevents.js
+m.facebook.com##div.displayed.m
+m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+ro-ro.facebook.com##div.displayed.m
+ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+ro-ro.facebook.com##.bottom.fixed-container.m
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
@@ -5772,6 +5849,7 @@ www.gradyhealth.org##[href="https://www.gradyhealth.org/privacy/"]
 theconversation.com##a.mb-2:nth-of-type(1)
 linuxmint.com##.order-sm-4.col-sm-4.col-md-2 > .widget > .primary-hover.flex-column.nav
 www.digi24.ro##a.footer-bottom-link
+m.facebook.com##.xee5nap.x1rbgqaq.xixxii4.xds687c.xxw3i39
 www.vodafone.ro##.jmNNQc.Footer-style__SecondaryFooter-sc-8b11f8f1-21 > ul
 mobile.telekom.ro##.druid-webchat--css-rctyoi-1cgfb3a.druid__web-chat__root-direction_ltr.druid__web-chat__root-container
 www.ortelmobile.de###toTop
@@ -5816,6 +5894,7 @@ hobbygames.ro###launcher
 www.dakimakura.ro###ZY6-q8O9qUGrS3fukXcFj
 www.jucariishop.ro##.accept_button_cont
 www.jucariishop.ro##p:nth-of-type(1)
+www.google.com###arc-srp_
 www.fruugo.ro##.js-consent-btn-accept.btn-success.btn
 www.fruugo.ro##.mb-32
 www.intrenoifievorba.ro###gc-backtotop
@@ -5901,77 +5980,6 @@ anibox.lol###menu-item-1783
 anibox.lol##.floatingchat-container-wrap-mobi
 theconversation.com##a.mb-2:nth-of-type(1)
 zutv.ro##div.ads
-www.timeout.com##.navigation_manage_cookies._listItem_1qytq_38
-www.timeout.com##li._listItem_1qytq_38:nth-of-type(5)
-www.planmyjapan.com###footer
-www.planmyjapan.com##.menu-item-9620.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
-jw-webmagazine.com##[href="https://www.inbound-platform.com/en/privacy/"]
-traveler-japan.com##.l-footer
-www.gotokyo.org###tmp_func_fixed
-www.gotokyo.org##.active.ptop
-www.gotokyo.org##.fnavi > li:nth-of-type(2)
-jw-webmagazine.com##.c-sidebar
-www.japanhighlights.com##[href="/privacy"]
-www.japanhighlights.com##.info_tm_button
-tokyocheapo.com##[href="https://fasttrainltd.com/"]
-tokyocheapo.com##[href="https://tokyocheapo.com/privacy-policy/"]
-tokyocheapo.com##.footer__scroll-up
-www.japan-guide.com##.site_footer__about_jg_links
-www.japan-guide.com##.l-margin_breakout--both-padding.l-margin_breakout--both.l-margin_breakout.site_footer__section--newsletter.site_footer__section
-japonpedia.com##.tdi_107.vc_widget_sidebar.td_block_wrap.wpb_wrapper
-japonpedia.com##.td-fix-index.td_mod_wrap
-japonpedia.com##.tdi_20_ada.td-fix-index.tds-title1.tds-title
-afuncouple.com##.site-footer-row-mobile-layout-default.site-footer-row-tablet-layout-default.site-footer-row-layout-standard.site-footer-focus-item.site-footer-row-container.site-middle-footer-wrap
-afuncouple.com###kt-scroll-up
-www.japanmanifest.com##div.ml-4.my-3.d-inline:nth-of-type(4)
-www.japanmanifest.com###back-to-top
-thetouristchecklist.com##[href="https://thetouristchecklist.com/privacy-policy/"]
-thetruejapan.com##.gb-container-0f87c806.gb-container > .gb-inside-container
-akihabaraelectrictown.com##.menu
-www.travellens.co##.elementor-widget-ts-advanced-list.elementor-widget.elementor-element-9e5d807.elementor-element
-www.travellens.co##li.menu-item:nth-of-type(5)
-www.travelinjapan.net##.l-footer__foot
-www.travelinjapan.net##.p-fixBtnWrap
-www.yokogaomag.com##[href="/privacy-policy"]
-japanswitch.com##.ast-builder-grid-row-container-inner
-wikitravel.org##.minerva-footer.mw-footer
-nipponrama.com##.bde-column.bde-column-20120-106
-flipjapanguide.com##.et_section_regular.et_pb_section_1_tb_footer.et_pb_section
-japaninsides.com##[href="https://japaninsides.com/privacy-policy"]
-japaninsides.com##[href="https://japaninsides.com/newsletter"]
-namu.wiki##._0T4DZ6fZ > p
-namu.wiki##ul.N9vasW-p:nth-of-type(2)
-japambience.com##.pagetop_btn.menu-item
-japambience.com##.l-footer__nav
-matcha-jp.com##[href="https://matcha-jp.com/en/privacy-policy"]
-matcha-jp.com##.top-ad-bottom-section
-www.kanpai-japan.com###f_r_e_e
-tabiiro.jp##.btn-pagetop
-tabiiro.jp##[href="https://media.brangista.com/privacy/"]
-tabiiro.jp##.about.menuBlock > .menu > li:nth-of-type(6)
-japonismo.com##.ct-show.ct-back-to-top
-japonismo.com##[href="https://japonismo.com/politica-de-privacidad"]
-japonismo.com##.wp-elements-0a76a973f79edf54957411a19362743f.has-link-color.has-text-color.has-palette-color-8-color.wp-block-list > li:nth-of-type(4)
-akiba.or.jp##.footer
-furansujapon.com##.elementor-widget-nav-menu.elementor-widget.elementor-nav-menu--dropdown-none.elementor-nav-menu__align-center.elementor-element-b0f23d7.elementor-element
-blog.japanwondertravel.com##.menu-button.top-menu-button
-blog.japanwondertravel.com##.footer-bottom-content
-www.agoda.com##.Sticky__stickyFooter--2ff54.Sticky__fixed--34EQv.Sticky__containerHeader--1tCXG.Sticky__containerFooter--11Gw_
-udx.jp##.opened.wovn-modal-background
-udx.jp###page-top
-udx.jp##li:nth-of-type(12)
-udx.jp##[href="https://www.nttud.co.jp/information_security/index.html"]
-udx.jp##[href="https://www.nttud.co.jp/statement.html"]
-www.outlooktraveller.com###olkoverdiv
-www.outlooktraveller.com###footer-link
-www.outlooktraveller.com##li.menu-m__menu-item__Zj0zc:nth-of-type(9)
-www.outlooktraveller.com##[href="https://www.outlookbusiness.com/economy-and-policy"]
-www.japan.travel##.column-legal.mod-footer-sitemap-column
-www.lonelyplanet.com##.pb-0.md\:pointer-events-none.md\:cursor-default.md\:pt-0.pt-5.items-center.justify-between.flex.w-full.jsx-21109142f51e79b3
-www.lonelyplanet.com##.border-black-200.md\:border-t-0.border-t.fn-3.jsx-21109142f51e79b3
-www.tsunagujapan.com###f_privacy
-www.tsunagujapan.com##.btn_page_top
-www.tsunagujapan.com##li.sub_nav_item--index.sub_nav_item:nth-of-type(5)
 www.nsa.gov##[href="https://www.defense.gov/Legal-Administrative/Privacy-Security/"]
 casutadinpovesti.ro##[href="https://casutadinpovesti.ro/politica-de-cookies/"]
 magazin.agricover.ro###Block__MasterFooterColumnThree > .dw-mod.footer__content > .dw-mod.u-margin-bottom.footer-links > li.dw-mod.footer-links__item:nth-of-type(3)
@@ -6026,6 +6034,9 @@ m.dcnews.ro##div.container-block-300
 m.dcnews.ro##div.container-block-600
 m.ziare.com##[href="https://ziare.com/politica-de-cookie"]
 m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
+www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
+www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
+www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
 www.info-sud-est.ro##.is-active.cs-scroll-top
 cnsm.org.ro##.pojo-a11y-toolbar-toggle
 clinica-hope.ro##.icon-up-open-big
@@ -6079,6 +6090,11 @@ prodeee.ro##.et-l--footer.et-l
 ssyoutube.com##.widget__text
 ssyoutube.com##.go-top-arrow
 www.medlife.ro###druid-wrapper
+m.youtube.com##.icon-avatar_logged_out
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##button-view-model.slim_video_action_bar_renderer_button.yt-spec-button-view-model:nth-of-type(2) > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##ytm-comment-simplebox-renderer
 fonts.gstatic.com
 fonts.googleapis.com
 static.doubleclick.net
@@ -6096,7 +6112,7 @@ pubtrky.com
 udvvqigup.com
 chatbro.com
 geozo.com
-https://cinepub.us10.list-manage.com
+cinepub.us10.list-manage.com
 y06ney2v.xyz
 ynowfnga.ski
 ynowfnga.skin
@@ -7178,12 +7194,14 @@ newsweek.ro##.z-10.py-2.items-center.justify-center.flex-wrap.flex.w-full.bottom
 stiri.md##[href="/info/confidentialitate"] > .i14unsmb.mocked-styled-11
 stiri.md##[href^="https://sales.simpals.com/ro/bannere-publicitare"]
 lewdzone.com##.text-white.btn-jumptocomment.btn-info.btn
+www.facebook.com##div.xzkaem6.x1n2onr6.__fb-light-mode > .xjx87ck.x1yqm8si.xfk6m8.xh8yej3.x13vifvy.x1rohswg.xixxii4.x1odjw0f.xw2csxc.x17qophe.x5yr21d.x1pq812k.x1ja2u2z.x9f619
 www.spicygaming.net##.wrapper
 ads.samsungads.com
 stringer.ro###adrwtsocp-blanket
 www.profit.ro##.scroll-up
 www.google.com##.ig2Tkd.LkIdQb.RsW3Ke.RMagM.KlOMXb.MjJqGe.cd29Sd.kM7Sgc
 ro.pinterest.com##.Jea.KS5.Lfz.V92.XiG.imm.mQ8.pXK.zI7.iyn.Hsu
+www.youtube.com##.branding-img.iv-click-target
 x.com##.css-175oi2r.r-kemksi.r-153w4nv.r-5kkj8d
 x.com##.css-175oi2r.r-l5o3uw.r-qo02w8.r-yz1j6i
 lewdgames.to##[src*="https://lewdgames.to/wp-content/uploads/2024/11/GAMING1-900x250-SASUNA-REAL-SEDUCE1.gif"]
@@ -7257,6 +7275,8 @@ www.clubulcopiilor.ro##div.item:nth-of-type(2)
 quasardance.ro###cm
 quasardance.ro###scroll-top
 quasardance.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-mobile-align-center.elementor-element-34bd543.elementor-element > .elementor-widget-container > .elementor-icon-list-items > li.elementor-icon-list-item > [href]
+www.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+www.facebook.com##.bottom.fixed-container.m
 redactia.ro##div.mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
 redactia.ro##.mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
 redactia.ro##[href="https://redactia.ro/politica-de-confidentialitate/"]
@@ -7523,6 +7543,9 @@ portapps.io##.cd-fade-out.cd-is-visible.cd-top
 18adultgames.com##.age-gate__submit--no.age-gate__submit
 18adultgames.com##.age-gate__heading
 portapps.io##.cd-is-visible.cd-top
+www.google.com##a.pHiOh:nth-of-type(2)
+www.google.com##.iTjxkf.KxwPGc > a.pHiOh
+accounts.google.com##li.qKvP1b:nth-of-type(2) > .TrZEUc.AVAq4d
 reddit.com##article[aria-label*="trump"i]
 reddit.com##article[aria-label~="vance"i]
 reddit.com##article[aria-label*="harris"i]
@@ -12544,6 +12567,7 @@ spotmedia.ro##div.mbm-adszone-container-margin.mbm-min-height-620.mbm-aotd-super
 spotmedia.ro###mah-adoceanthinkdigitalronlipiidjqr
 williamsinstitute.law.ucla.edu##.pojo-a11y-toolbar-right
 williamsinstitute.law.ucla.edu###font-size-buttons
+faq.whatsapp.com###header-notices
 weebparrel.ro##.eu-cookies-bar-cookies-settings-call-position-right.eu-cookies-bar-cookies-settings-call-container
 weebparrel.ro##.eu-cookies-bar-cookies-bar-settings-wrap
 weebparrel.ro##.eu-cookies-bar-cookies-bar-position-bottom_left.eu-cookies-bar-cookies-bar-wrap

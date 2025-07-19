@@ -213,81 +213,8 @@ m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-co
 accounts.google.com
 static.doubleclick.ne
 fonts.gstatic.com
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.google.com##[href="/intl/ro/ads"]
-www.google.com##div.VfXErd:nth-of-type(3)
-www.google.com###gws-output-pages-elements-homepage_additional_languages__als
-www.google.at###pushdown
-www.google.be###pushdown
-www.google.co.uk###pushdown
-www.google.com###pushdown
-www.google.cz###pushdown
-www.google.de###pushdown
-www.google.es###pushdown
-www.google.fr###pushdown
-www.google.gr###pushdown
-www.google.ie###pushdown
-www.google.it###pushdown
-www.google.nl###pushdown
-www.google.pl###pushdown
-www.google.pt###pushdown
-www.google.ru###pushdown
-www.google.si###pushdown
-support.google.com###onebar-privacy-policy
-google.com##[class="gb_hb gb_kb gb_xa"]
-google.com##[class="gb_ib gb_lb gb_ya"]
-google.dk##.fbar
-www.google.com##.USRMqe
-www.google.com##.cookie-section
-www.google.com##.cookie-section
-consent.google.com##.FCY2lb > form:nth-of-type(1)
-consent.google.com##.Qhg5gf
-consent.google.com##.rjfsgd.QzsnAe
-consent.google.com##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(3) > .uScs5d > div > .uScs5d > div:nth-of-type(2)
-consent.google.com##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(4) > .uScs5d > div > .uScs5d > div:nth-of-type(2)
-consent.google.com##form.bBXLMd:nth-of-type(2)
-consent.google.com##.Nw1akf > .J7X4ye
-consent.google.com##.rjfsgd > .cRHNL > .Salxle > div.VfPpkd-dgl2Hf-ppHlrf-sM5MNb
-news.google.com##.i15yh > div:nth-of-type(2)
+github.com##li:nth-of-type(2)
 ads.google.com
-www.google.com##.GZ7xNe
-www.google.com###L2AGLb
-www.google.com##.cG0Dmf.XWlrff
-www.google.com##.qIBnUc
-www.google.com###gksS1d
-www.google.com##.Xjvi4
-www.google.com##.qarstb.o3j99
-www.google.com##a.pHiOh:nth-of-type(1)
-www.google.co.uk##a.pHiOh:nth-of-type(1)
-www.google.co.uk##.XDyW0e
-www.google.co.kr##a.pHiOh:nth-of-type(1)
-www.google.co.kr##.XDyW0e
-www.google.co.jp##a.pHiOh:nth-of-type(1)
-www.google.co.jp##.XDyW0e
-www.google.ru##a.pHiOh:nth-of-type(1)
-www.google.ru##.XDyW0e
-www.google.ro##a.pHiOh:nth-of-type(1)
-www.google.ro##.XDyW0e
-www.google.hu##a.pHiOh:nth-of-type(1)
-www.google.co.hu##.XDyW0e
-www.google.it##a.pHiOh:nth-of-type(1)
-www.google.it##.XDyW0e
-www.google.es##a.pHiOh:nth-of-type(1)
-www.google.es##.XDyW0e
-www.google.ch##a.pHiOh:nth-of-type(1)
-www.google.ch##.XDyW0e
-www.google.cn##a.pHiOh:nth-of-type(1)
-www.google.cn##.XDyW0e
-www.google.us##a.pHiOh:nth-of-type(1)
-www.google.us##.XDyW0e
-www.google.com.hk##a.pHiOh:nth-of-type(1)
-www.google.com.hk##.XDyW0e
-www.google.com##a.pHiOh:nth-of-type(1)
-www.google.com##.XDyW0e
-www.google.com##.Xjvi4
-news.google.com##.ghN9W
-support.google.com##[src*="https://ogs.google.com/widget/callout?prid=19022645&pgid=1151720448&puid=43a541cbad6c87d4&cce=1&bc=1&origin=https%3A%2F%2Fsupport.google.com&cn=callout&pid=117&spid=117&hl=en"]
-ogs.google.com##[src*="https://ogs.google.com/widget/callout?prid=19022645&pgid=1151720448&puid=43a541cbad6c87d4&cce=1&bc=1&origin=https%3A%2F%2Fsupport.google.com&cn=callout&pid=117&spid=117&hl=en"]
 realtimesupport.clients6.google.com##[src*="https://ogs.google.com/widget/callout?prid=19022645&pgid=1151720448&puid=43a541cbad6c87d4&cce=1&bc=1&origin=https%3A%2F%2Fsupport.google.com&cn=callout&pid=117&spid=117&hl=en"]
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
@@ -713,7 +640,6 @@ builders.mozilla.org##.gap-6.font-semibold.uppercase.text-xs.justify-between.ite
 blueprints.mozilla.ai##div.footer_top_link-wrapper:nth-of-type(3)
 blueprints.mozilla.ai##.footer-bottom_wrapper
 blueprints.mozilla.ai##.newsletter-new_component
-www.youtube.com##.ytp-chrome-top
 streamtape.com##div.col-xs-12.col-sm-6.col-md-6.col-lg-3.col-xl-3:nth-of-type(2)
 support.signal.org##.footer
 www.cargus.ro##[href="https://www.cargus.ro/politica-de-confidentialitate/"]
@@ -1971,8 +1897,6 @@ ok.ru##.auth-login_auth-login-banner.h-mod
 ok.ru###scrollToTopVideoLayer
 www.bing.com##li:nth-of-type(6)
 www.bing.com##.composer_container
-m.youtube.com##.ytVideoMetadataCarouselViewModelCarouselContainer
-m.youtube.com##.ytCarouselTitleViewModelNavigation
 sur.ly##.footer__container.container
 ruclips.net##.footer-links
 ruclips.net###footer
@@ -2368,7 +2292,6 @@ carrefour.ro##.popup-notifications
 www.mobygames.com##[href="/info/privacy/"]
 stash.games##li.mt-\[10px\]:nth-of-type(2)
 h2o.fandom.com##.global-footer__links > li:nth-of-type(7)
-@@www.youtube-nocookie.com
 signal.group##[href="https://www.signal.org/legal/"]
 openarena.fandom.com##li:nth-of-type(7)
 tvprofil.com##[href="/ro/privacy/"]
@@ -3179,8 +3102,6 @@ thegadgetist.ro###toTop
 www.educatieprivata.ro##.visible.returning
 dexonline.ro##.pollModal
 ortodoxinfo.ro###hwasd
-www.google.ro##.AG96lb
-www.google.ro###L2AGLb
 www.anonymoushackers.net##.page-item-2135.page_item > [href]
 www.anonymoushackers.net##[href="https://www.anonymoushackers.net/cookies-policy/"]
 www.anonymoushackers.net##[href="https://www.anonymoushackers.net/"]
@@ -4060,7 +3981,6 @@ www.loncolor.ro##.py-40.site-newsletter
 tunsori-fashion.ro###toTop
 iphone-v1.eva.ro##.fb_like_container
 yve.ro###menu-item-226875
-gstatic.com
 www.viva.ro##.lazyload.text-center.d-flex.newsletter-tmp__content
 www.businessinsider.com##.tech-memo.component-container
 www.businessinsider.com##.newsletter-dynamic
@@ -5648,7 +5568,6 @@ www.vpnunlimited.com##[href="https://www.keepsolid.com/privacy-policy"]
 www.vpnunlimited.com##[href="https://www.keepsolid.com/fair_use_policy"]
 newpipe.net##[href="/legal/privacy/"]
 cloufront.net
-i.imgur.com
 tegleebs.com
 isolatedovercomepasted.com
 jaojyueolcxh.com
@@ -5674,12 +5593,10 @@ musictherapy.ro##[href="/politica-de-confidentialitate/"]
 elitaromaniei.ro##.ss-ic.s_stk
 lumeacartii.ro##[href="https://lumeacartii.ro/politica-de-utillizare-cookies/"]
 lumeacartii.ro##.tdb-header-align.td_block_template_1.td-pb-border-top.tdi_92.tdb_mobile_horiz_menu.td_block_wrap
-stats.wp.com
 1cartepesaptamana.ro##.hide-button-on-mobile.scrooltotop
 citate.top##.footer-bottom.row
 booknation.ro##[href="https://booknation.ro/confidentialitate-si-cookie/"]
 www.capital.ro##.trv
-www.youtube.com##tp-yt-paper-dialog:has([href^= "/premium"])
 anime-nexus.ro##.show.fade.modal-backdrop
 votcorect.ro###footer_x2
 dozadesanatate.ro##[href="/politica-de-publicitate/"]
@@ -5711,7 +5628,6 @@ news.northeastern.edu##.nunews-toast__dialog
 www.linux.org###TjgTPvNq
 lokeanwelcomingcommittee.tumblr.com##.tmblr-iframe--loaded.tmblr-iframe--gdpr-banner.tmblr-iframe
 pli.io
-i.imgur.com
 trycloudflare.com
 axn.ro##.et_pb_row--with-menu.et_pb_row_3_tb_footer.et_pb_row
 webdesignerdepot.com##li:nth-of-type(5)
@@ -5809,7 +5725,6 @@ account.microsoft.com##.c-uhff-ccpa.c-uhff-link
 account.microsoft.com##.glyph-global-nav-button.c-glyph.c-action-trigger
 account.microsoft.com##.x-hidden.cat-logo-button-cont
 search.brave.com##div.svelte-elswzx.desktop-small-regular.block:nth-of-type(3)
-m.youtube.com##.ytm-bottom-sheet-overlay-container
 geolocation.onetrust.co
 geolocation.onetrust.com
 cdn.cookielaw.org
@@ -5972,10 +5887,7 @@ www.tyr-sport.ro##.show-gdpr-modal
 www.tyr-sport.ro##[href="https://www.tyr-sport.ro/ro/content/9-politica-de-confidentialitate"]
 www.tyr-sport.ro##[href="https://www.tyr-sport.ro/ro/content/10-politica-cookie"]
 comenzi.farmaciatei.ro##[href="https://comenzi.farmaciatei.ro/politica-de-confidentialitate"]
-www.google.com###sfooter
 duckduckgo.com##[href="/duckduckgo-help-pages/company/advertise-on-duckduckgo-search"]
-www.youtube.com##a.lb-footer__minimal-link.lb-font--no-crop.lb-font-footnote:nth-of-type(4)
-www.youtube.com###id-panel-3 > .lb-expansion-panel__surface-content > a.lb-footer__standard-menu-link.lb-font-footnote:nth-of-type(2)
 www.mozilla.org##li:nth-of-type(1) > [href="/en-US/advertising/"]
 www.mozilla.org##.moz24-footer-terms [href="/en-US/privacy/websites/"]
 www.themoviedb.org##[href^="/privacy-policy"]
@@ -6245,9 +6157,6 @@ www.magiquotes.com##div.footer-box:nth-of-type(1)
 creditprime.ro##.v-modal
 ro.linkedin.com##li.papabear\:w-auto.papabear\:justify-center.w-50\%.relative.p-1.justify-start.flex-shrink-0.flex.text-color-text-solid-secondary.text-xs.font-sans.li-footer__item:nth-of-type(5)
 ro.linkedin.com##li.papabear\:w-auto.papabear\:justify-center.w-50\%.relative.p-1.justify-start.flex-shrink-0.flex.text-color-text-solid-secondary.text-xs.font-sans.li-footer__item:nth-of-type(4)
-m.olx.ro##.css-11jn7r
-m.olx.ro###banner
-m.olx.ro##.css-pclgxh
 animaxtv.co.kr##[href="/term/privacy"]
 animaxtv.co.kr##.pointer.btn_top
 www.disneyplus.com##li:nth-of-type(2)
@@ -6318,11 +6227,6 @@ prodeee.ro##.et-l--footer.et-l
 ssyoutube.com##.widget__text
 ssyoutube.com##.go-top-arrow
 www.medlife.ro###druid-wrapper
-m.youtube.com##.icon-avatar_logged_out
-m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
-m.youtube.com##button-view-model.slim_video_action_bar_renderer_button.yt-spec-button-view-model:nth-of-type(2) > .yt-spec-button-shape-next__button-shape-wiz-class > .yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
-m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-m.youtube.com##ytm-comment-simplebox-renderer
 fonts.gstatic.com
 fonts.googleapis.com
 static.doubleclick.net
@@ -7429,9 +7333,7 @@ www.spicygaming.net##.wrapper
 ads.samsungads.com
 stringer.ro###adrwtsocp-blanket
 www.profit.ro##.scroll-up
-www.google.com##.ig2Tkd.LkIdQb.RsW3Ke.RMagM.KlOMXb.MjJqGe.cd29Sd.kM7Sgc
 ro.pinterest.com##.Jea.KS5.Lfz.V92.XiG.imm.mQ8.pXK.zI7.iyn.Hsu
-www.youtube.com##.branding-img.iv-click-target
 x.com##.css-175oi2r.r-kemksi.r-153w4nv.r-5kkj8d
 x.com##.css-175oi2r.r-l5o3uw.r-qo02w8.r-yz1j6i
 lewdgames.to##[src*="https://lewdgames.to/wp-content/uploads/2024/11/GAMING1-900x250-SASUNA-REAL-SEDUCE1.gif"]
@@ -7484,7 +7386,6 @@ xmessage.app##.welcome-text
 ro.farmpornvideo.com##.footer-info
 www.b1tv.ro##.font-size-14.display-flex > .menu-item-1025969.menu-item-object-page.menu-item-type-post_type.menu-item
 www.hentai-foundry.com###footer
-www.google.com##div:nth-of-type(2) > a.Fx4vi:nth-of-type(1)
 www.indiegogo.com##.logoAndCurrencyMobile
 www.indiegogo.com##.active.jump-to-top-button
 psihoterapieiasi.com###worldphonecallbutton
@@ -7516,7 +7417,6 @@ www.observatorcultural.ro##.HCCC__content
 amaltea.ro##.bottom
 www.croxyproxy.com###feedbackTab
 www.croxyproxy.com###footer
-m.youtube.com##ytm-player-error-message-renderer
 github.com##.BackToTop--visible.BackToTop
 www.commitglobal.org##.sm\:items-end.space-y-4.w-full.items-center.flex-col.flex
 newsweek.ro##.z-10.p-4.items-center.justify-center.flex-wrap.flex-col.flex.w-full.bottom-12.text-white.bg-red.fixed
@@ -7592,7 +7492,6 @@ genius.com##a.jYocGU.PageFootermobile__Link-iowlas-2:nth-of-type(5)
 apis.google.com
 ing.ro##.widget-displayed
 ing.ro###footer-cookie-settings-trigger
-www.google.com##div.fbar:nth-of-type(3)
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"]
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-confidentialitate/"]
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-cookie/"]
@@ -7773,9 +7672,6 @@ portapps.io##.cd-fade-out.cd-is-visible.cd-top
 18adultgames.com##.age-gate__submit--no.age-gate__submit
 18adultgames.com##.age-gate__heading
 portapps.io##.cd-is-visible.cd-top
-www.google.com##a.pHiOh:nth-of-type(2)
-www.google.com##.iTjxkf.KxwPGc > a.pHiOh
-accounts.google.com##li.qKvP1b:nth-of-type(2) > .TrZEUc.AVAq4d
 reddit.com##article[aria-label*="trump"i]
 reddit.com##article[aria-label~="vance"i]
 reddit.com##article[aria-label*="harris"i]

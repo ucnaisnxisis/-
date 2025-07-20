@@ -164,6 +164,81 @@ www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+www.youtube.com##.ytd-rich-section-renderer.style-scope
+www.youtube.com##.shortsLockupViewModelHost
+www.facebook.com##[href^="/privacy/policy/"]
+www.facebook.com##[href="/privacy/cookie_settings/"]
+www.facebook.com##[href^="/ad_campaign/landing.php"]
+www.facebook.com##[href="/policies/cookies/"]
+www.facebook.com##li:nth-of-type(23)
+soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
+gombis.ro##a.modal-link:nth-of-type(2)
+www.gameology.ro##.ckPolicyGomag
+www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]
+www.gameology.ro##.lightbox
+www.gameology.ro##[href="https://www.gameology.ro/politica-de-confidentialitate"]
+www.gameology.ro##.newsletter.col
+www.gameology.ro###ft_max
+gokid.ro###aocmp-re-access-button
+gokid.ro##[href="https://gokid.ro/newsletter-gokid/"]
+www.jocurile.us##a.footer-link:nth-of-type(4)
+www.scribd.com##li:nth-of-type(5)
+www.scribd.com##li:nth-of-type(4)
+www.scribd.com##div.GridColumn-module_extended_xxs_2__1MEQR.GridColumn-module_extended_xs_2__C9iyY.GridColumn-module_extended_s_2__-n3HH.GridColumn-module_extended_m_2__9nXEO.GridColumn-module_extended_l_2__iqMJD.GridColumn-module_extended_xl_2__QYBNc.GridColumn-module_extended_xl2_2__A8qwF.GridColumn-module_extended_xl3_2__mt-u-.GridColumn-module_extended_xl4_2__1yIW6.GridColumn-module_hide_below_s__Lbw11.GridColumn-module_wrapper__soqyu:nth-of-type(3) > .Footer-module_columnList__fqabA > li:nth-of-type(2)
+www.romaniacurata.ro###custom_html-10
+www.noua.info##a.privacy-span:nth-of-type(1)
+click.ro##.childs-open.svelte-12xgs6r.item > .svelte-12xgs6r.childs > a.svelte-12xgs6r.child:nth-of-type(1)
+click.ro##a.svelte-12xgs6r.child:nth-of-type(3)
+www.stiripesurse.ro##.header-top
+publimix.ro##footer
+dilemaveche.ro###scrollUp
+dilemaveche.ro##li.svelte-jxipsg.subItem:nth-of-type(2)
+dilemaveche.ro##li.svelte-jxipsg.subItem:nth-of-type(6)
+dilemaveche.ro##li.svelte-jxipsg.subItem:nth-of-type(1)
+www.g4media.ro##.donate-wrapper
+stiri.md##.active.b1bgc4iq.mocked-styled-138
+stiri.md##.b6zvjxj.stiri-ads.add-empty
+stiri.md##.b1dn3z8p.mocked-styled-142
+stiri.md##div.w1hskl65.mocked-styled-145
+stiri.md##[href="/info/confidentialitate"]
+stiri.md##.w1ehy753.mocked-styled-143
+stiri.md##[href*="https://sales.simpals.com/ro"]
+point.md##.bGKkYz.sc-2lx4wp-7
+point.md##.ahweb.sc-7sfw5e-0
+point.md##div.bUbisx.pl4gpy-0
+andreicismaru.ro###menu-footer
+andreicismaru.ro##.cd-fade-out.cd-is-visible.cd-top
+ro.wikiquote.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+ro.wikiquote.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement"]
+teleskop.ro##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(2) > .md\:mt-0.mt-10
+teleskop.ro##.xl\:mt-0.mt-10
+ro.pinterest.com##div.zI7.pXK.V92:nth-of-type(1)
+www.stiridecluj.ro##div.widget:nth-of-type(6)
+old.tribuna.ro##.collapse.navbar-collapse > ul.navbar-nav.nav:nth-of-type(1) > li:nth-of-type(4)
+old.tribuna.ro##div.row_with_margin.row:nth-of-type(3) > .col-lg-12
+old.tribuna.ro##p.hidden-xs.text-center.scr-banner
+old.tribuna.ro##div.row_with_margin.row:nth-of-type(5)
+old.tribuna.ro##.collapse.navbar-collapse > ul.navbar-nav.nav:nth-of-type(1) > li:nth-of-type(2)
+rgnpress.ro###menu-item-12225
+depositphotos.com##._xAe7c
+depositphotos.com##._nCRj7
+www.zf.ro###bellPopup
+www.zf.ro##[href="https://www.zf.ro/newsletter-abonare"]
+www.zf.ro##.container
+www.zf.ro##div:nth-of-type(7)
+www.zf.ro##div:nth-of-type(13)
+www.zf.ro##div:nth-of-type(15)
+www.cugirinfo.ro##[href="https://www.cugirinfo.ro/confidentialitate-si-politica-de-cookies"]
+www.monitoruldegalati.ro##.coloana-3-0.col-md-4.col-12
+www.monitoruldegalati.ro##.bannergroup.mod-banners
+www.constantatv.ro###toTop
+www.ziarulprofit.ro##.menu
+www.ebihoreanul.ro##[href="https://www.ebihoreanul.ro/politica_de_cookie"] > span
+www.ebihoreanul.ro##[href="https://www.ebihoreanul.ro/anunturi-adp"]
+www.ebihoreanul.ro##ul.ptop5 [href="https://www.ebihoreanul.ro/anunturi"]
+www.ebihoreanul.ro##[href="https://www.ebihoreanul.ro/advertorial"]
+noi.md##.richBanner.no_mobile
+noi.md###scroller
 www.skunkgirl.cc###scrolltop
 www.online-calculator.com##[href="https://www.online-calculator.com/privacy/"]
 kizi.com##.mt-2.fa-2x.fa-chevron-up.fa

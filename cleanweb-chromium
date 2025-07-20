@@ -46,6 +46,10 @@ www.cylex.com.ar##div:nth-of-type(5)
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
+www.youtube.com##.ytd-rich-section-renderer.style-scope
+www.youtube.com##.shortsLockupViewModelHost
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
 m.youtube.com##.yt-spec-touch-feedback-shape__fill
 m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
@@ -116,17 +120,6 @@ redirector.googlevideo.com
 ad.googlevideo.com
 ads.googlevideo.com
 static.ads-twitter.com
-www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-developers.facebook.com##li._8_jp:nth-of-type(3)
-developers.facebook.com##li._8_jp:nth-of-type(4)
-www.facebook.com##div.x1c436fg
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
-www.facebook.com##.xqfms19.x1xka2u1
-www.facebook.com##div.x1xka2u1
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .xod5an3
-www.facebook.com##.x1hq5gj4
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 ||cdn.discordapp.com
 ||discordapp.com
 ||discord.com
@@ -176,8 +169,17 @@ www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-www.youtube.com##.ytd-rich-section-renderer.style-scope
-www.youtube.com##.shortsLockupViewModelHost
+www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
+developers.facebook.com##li._8_jp:nth-of-type(3)
+developers.facebook.com##li._8_jp:nth-of-type(4)
+www.facebook.com##div.x1c436fg
+www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
+www.facebook.com##.xqfms19.x1xka2u1
+www.facebook.com##div.x1xka2u1
+www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .xod5an3
+www.facebook.com##.x1hq5gj4
+www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
+www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 www.facebook.com##[href^="/privacy/policy/"]
 www.facebook.com##[href="/privacy/cookie_settings/"]
 www.facebook.com##[href^="/ad_campaign/landing.php"]

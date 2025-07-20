@@ -43,7 +43,15 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
+m.youtube.com##.consent-bump-v2-lightbox
+m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
+www.youtube.com##.ytd-rich-section-renderer.style-scope
+www.youtube.com##.shortsLockupViewModelHost
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+m.youtube.com##.feed-nudge-text-container
+m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.yt-spec-touch-feedback-shape__fill
 m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
@@ -78,10 +86,6 @@ doubleclick.net
 accounts.google.com
 static.doubleclick.ne
 fonts.gstatic.com
-m.youtube.com##.consent-bump-v2-lightbox
-m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-github.com##li:nth-of-type(2)
-news.google.com##.i15yh > div:nth-of-type(2)
 ads.google.com
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
@@ -164,13 +168,12 @@ www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-www.youtube.com##.ytd-rich-section-renderer.style-scope
-www.youtube.com##.shortsLockupViewModelHost
 www.facebook.com##[href^="/privacy/policy/"]
 www.facebook.com##[href="/privacy/cookie_settings/"]
 www.facebook.com##[href^="/ad_campaign/landing.php"]
 www.facebook.com##[href="/policies/cookies/"]
 www.facebook.com##li:nth-of-type(23)
+github.com##li:nth-of-type(2)
 soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag

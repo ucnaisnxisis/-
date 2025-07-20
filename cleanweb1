@@ -133,6 +133,8 @@ m.youtube.com##.eom-accept
 m.youtube.com##.dialog-topbar
 m.youtube.com##.show-more-container
 m.youtube.com##.privacy-terms
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
 youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)
 youtube.com###dismissable:has-text(LIVE NOW)
 youtube.com##div.content-wrapper:if(span:has-text(/^Recommended/)) youtube.com###dismissable:has-text(Recommended for you) youtube.com##:xpath(//span[text()='Recommended for you']/parent::a/ancestor::div[contains(concat(' ',normalize-space(@class),' '),' content-wrapper ')])

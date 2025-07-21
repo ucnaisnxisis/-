@@ -198,6 +198,8 @@ web.archive.org###footer-navigation > ul > li:nth-of-type(2)
 web.archive.org##li:nth-of-type(8)
 web.archive.org##.ad1
 web.archive.org##[src="https://web.archive.org/web/20141230115515im_/http://www.hackedadultgames.com/pinkvisualgames-horz-39.gif"]
+web.archive.org##div.css3.box1.ad2 > div > [href^="https://web.archive.org/web/20141229154152/http://www.pinkvisualgames.com/"]
+web.archive.org##div.css3.box1.ad2:nth-of-type(4)
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
 www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]

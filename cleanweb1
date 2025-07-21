@@ -385,6 +385,9 @@ www.facebook.com##[href^="/ad_campaign/landing.php"]
 www.facebook.com##[href="/policies/cookies/"]
 www.facebook.com##li:nth-of-type(23)
 soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
+web.archive.org##div.widget > div
+web.archive.org###footer-navigation > ul > li:nth-of-type(2)
+web.archive.org##li:nth-of-type(8)
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
 www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]

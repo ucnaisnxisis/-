@@ -388,6 +388,8 @@ soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-in
 web.archive.org##div.widget > div
 web.archive.org###footer-navigation > ul > li:nth-of-type(2)
 web.archive.org##li:nth-of-type(8)
+web.archive.org##.ad1
+web.archive.org##[src="https://web.archive.org/web/20141230115515im_/http://www.hackedadultgames.com/pinkvisualgames-horz-39.gif"]
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
 www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]

@@ -53,6 +53,7 @@ m.youtube.com##.reel-shelf-items
 m.youtube.com##.opened
 m.youtube.com##.yt-spec-touch-feedback-shape__fill
 m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+m.youtube.com##.consent-bump-v2-lightbox
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope

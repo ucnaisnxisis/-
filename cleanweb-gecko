@@ -183,12 +183,16 @@ static.ads-twitter.com
 @@hlana.gamedistribution.com
 @@patreon.com
 @@fonts.gstatic.com
-secure.euroavocatura.ro###topcontrol
 m.facebook.com##footer
+m.facebook.com###pageFooter
 www.facebook.com##footer
+www.facebook.com###pageFooter
+www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 www.google.com###sfooter
 www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
+secure.euroavocatura.ro###topcontrol
+genshin.hoyoverse.com##a.decorate-SiS6EF.link-34dgkH:nth-of-type(1)
 web.archive.org##div.widget > div
 web.archive.org###footer-navigation > ul > li:nth-of-type(2)
 web.archive.org##li:nth-of-type(8)

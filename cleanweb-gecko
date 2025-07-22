@@ -188,21 +188,6 @@ m.facebook.com##footer
 www.facebook.com##footer
 www.google.com###sfooter
 www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-developers.facebook.com##li._8_jp:nth-of-type(3)
-developers.facebook.com##li._8_jp:nth-of-type(4)
-www.facebook.com##div.x1c436fg
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .x1rg5ohu
-www.facebook.com##.xqfms19.x1xka2u1
-www.facebook.com##div.x1xka2u1
-www.facebook.com##.x2b8uid.x8vdgqj.x17p1517.x1gja9t.xxqbpr > .xod5an3
-www.facebook.com##.x1hq5gj4
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1ye3gou.x1s14bel.xn6708d.x1xy6bms.x17qophe.xds687c.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
-www.facebook.com##[href^="/privacy/policy/"]
-www.facebook.com##[href="/privacy/cookie_settings/"]
-www.facebook.com##[href^="/ad_campaign/landing.php"]
-www.facebook.com##[href="/policies/cookies/"]
-www.facebook.com##li:nth-of-type(23)
 soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
 web.archive.org##div.widget > div
 web.archive.org###footer-navigation > ul > li:nth-of-type(2)
@@ -5661,22 +5646,10 @@ www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-h
 www.walmart.com##.footer-list.justify-center-hdkp.flex-wrap-hdkp.flex-hdkp.pt3-hdkp.pb4-hdkp.ph4-hdkp.ma0-hdkp.pt1.ph3.mt3.ma0.list > li:nth-of-type(18)
 www.walmart.com##li:nth-of-type(15)
 destepti.ro##[href="https://destepti.ro/politica-de-confidentialitate/"]
-www.facebook.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 www.patreon.com##button.bdCQnw.sc-furwcr:nth-of-type(2)
 www.patreon.com##.eAPYIl.sc-efQSVx
-facebook.com##.accept-all.secondary.btn
-facebook.com##div.content-section:nth-of-type(2)
-facebook.com##.manage-settings.mng-btn.secondary.btn
-facebook.com###consent-text
-facebook.com##._yb_1ool5._yb_b9sct
-facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-https://connect.facebook.net/en_US/fbevents.js
-ro-ro.facebook.com##div.displayed.m
-ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-ro-ro.facebook.com##.bottom.fixed-container.m
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
 www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
@@ -5963,7 +5936,6 @@ www.tena.ro##.footer-link-list > li:nth-of-type(2)
 www.tena.ro##.footer-link-list > li:nth-of-type(3)
 urologie-craiova.ro###toTop
 urologie-craiova.ro###site-copyright
-www.facebook.com##.bottom.fixed-container.m
 www.planificaneprevazutul.ro##[href="https://www.planificaneprevazutul.ro/cookie-policy/"]
 www.planificaneprevazutul.ro##[href="https://www.planificaneprevazutul.ro/privacy-policy/"]
 www.certsign.ro##.elementor-section-height-default.elementor-section-full_width.elementor-element-6aa89833.elementor-element.elementor-top-section.elementor-section
@@ -6132,9 +6104,6 @@ m.dcnews.ro##div.container-block-300
 m.dcnews.ro##div.container-block-600
 m.ziare.com##[href="https://ziare.com/politica-de-cookie"]
 m.ziare.com##[href="https://ziare.com/politica-de-confidentialitate"]
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
-www.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
-www.facebook.com##.bg-s4.m > .bg-s4.m > .bg-s4.m > div.m
 www.info-sud-est.ro##.is-active.cs-scroll-top
 cnsm.org.ro##.pojo-a11y-toolbar-toggle
 clinica-hope.ro##.icon-up-open-big
@@ -7289,7 +7258,6 @@ newsweek.ro##.z-10.py-2.items-center.justify-center.flex-wrap.flex.w-full.bottom
 stiri.md##[href="/info/confidentialitate"] > .i14unsmb.mocked-styled-11
 stiri.md##[href^="https://sales.simpals.com/ro/bannere-publicitare"]
 lewdzone.com##.text-white.btn-jumptocomment.btn-info.btn
-www.facebook.com##div.xzkaem6.x1n2onr6.__fb-light-mode > .xjx87ck.x1yqm8si.xfk6m8.xh8yej3.x13vifvy.x1rohswg.xixxii4.x1odjw0f.xw2csxc.x17qophe.x5yr21d.x1pq812k.x1ja2u2z.x9f619
 www.spicygaming.net##.wrapper
 ads.samsungads.com
 stringer.ro###adrwtsocp-blanket
@@ -9559,13 +9527,10 @@ beebom.com##.menu-footer-menu-container
 techrt.com##.wrap
 makeawebsitehub.com###menu-item-10811
 socialander.com###wa
-business.facebook.com##._9bq1
 www.welivesecurity.com##.footer-links.col
 webapps.stackexchange.com###consent-footer-link
 webapps.stackexchange.com##div.site-footer--col > .-list > li
 www.socialmediatoday.com##.second-column > div.footer-links:nth-of-type(1) > .list-no-bullets > li:nth-of-type(1)
-developers.facebook.com##li._8_jp:nth-of-type(5)
-developers.facebook.com##li._8_jp:nth-of-type(2)
 ethical.net##.menu-item-9668.menu-item-object-custom.menu-item-type-custom.menu-item
 matcaliterara.ro###wi-footer
 www.opiniatimisoarei.ro##.mback
@@ -9575,13 +9540,10 @@ beebom.com##.menu-footer-menu-container
 techrt.com##.wrap
 makeawebsitehub.com###menu-item-10811
 socialander.com###wa
-business.facebook.com##._9bq1
 www.welivesecurity.com##.footer-links.col
 webapps.stackexchange.com###consent-footer-link
 webapps.stackexchange.com##div.site-footer--col > .-list > li
 www.socialmediatoday.com##.second-column > div.footer-links:nth-of-type(1) > .list-no-bullets > li:nth-of-type(1)
-developers.facebook.com##li._8_jp:nth-of-type(5)
-developers.facebook.com##li._8_jp:nth-of-type(2)
 ethical.net##.menu-item-9668.menu-item-object-custom.menu-item-type-custom.menu-item
 matcaliterara.ro###wi-footer
 www.opiniatimisoarei.ro##.mback
@@ -12075,7 +12037,6 @@ imgix.net
 snap.licdn.com
 tr.snapchat.com
 api.appcues.net
-star-mini.c10r.facebook.com
 q.quora.com
 location.services.mozilla.com
 gamoneinterrupted.com
@@ -12951,8 +12912,6 @@ ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
 xml-v4.pwr-ads.com
-star-mini.c10r.facebook.com
-adobe.com
 adage.com
 adtlgc.com
 ad.mail.ru
@@ -13016,8 +12975,6 @@ locked7.com
 locked8.com
 locked9.com
 locked10.com
-ads.facebook.com
-ad.facebook.com
 alwaysisobar.com
 www.abx4.com
 acezip.net
@@ -13047,8 +13004,6 @@ cxsense.com
 www.google.*##^script:has-text(consentCookiePayload)
 www.google.*##+js(acis, document.cookie, YES+)
 google.*##+js(aeld, DOMContentLoaded, CONSENT)
-facebook.com##[aria-label*="Marketplace"]
-facebook.com##Sponsored
 co.uk.edgekey.net
 cdn.optimizely.com
 cumm.top
@@ -13059,7 +13014,6 @@ nest.com
 doubleclick.net
 www.gstatic.vom
 gstatic.vom
-graph.facebook.com
 googleads.g.doubleclick.net
 sltube.org
 mail.tvmetr.ru
@@ -13096,11 +13050,6 @@ trafficjunky.org
 trafficjunky.io
 trafficjunky.xyx
 jsfuel.com
-pix.facebook.com
-facebook.pix.com
-fb.pix.com
-pix.fb.com
-piano.io
 olxro-paiment.com
 olxro-payment.com
 testingmetriksbre.ru
@@ -13661,7 +13610,6 @@ ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
 xml-v4.pwr-ads.com
-star-mini.c10r.facebook.com
 yourbestlandever.com
 d3qygewatvuv28.cloudfront.net
 control.kochava.com
@@ -17495,7 +17443,6 @@ eveningtelegraph.co.uk,thecourier.co.uk##.notification
 evm.dk###cookies-acc
 express.co.uk###cmp-container-id
 extremoduro.com,robe.es###dvCookie.cookiesms
-facebook.com##.pam.fbPageBanner._3d9x.uiBoxGray.bottomborder
 fatbeehive.com##div[style^="background-color: #000;"]
 fcbarcelona.com###notificacio-cookies
 fcomputer.dk###jumper_cookies

@@ -3757,7 +3757,6 @@ www.mardo.ro##div.mkdf-row-grid-section-wrapper:nth-of-type(4) > .mkdf-row-grid-
 www.mardo.ro##div.mkdf-row-grid-section-wrapper:nth-of-type(3) > .mkdf-row-grid-section
 www.mardo.ro##div.mkdf-row-grid-section-wrapper:nth-of-type(2) > .mkdf-row-grid-section
 www.mardo.ro##div.mkdf-row-grid-section-wrapper:nth-of-type(1) > .mkdf-row-grid-section
-www.mardo.ro##div.mkdf-row-grid-section-wrapper:nth-of-type( ) > .mkdf-row-grid-section
 www.hydoll.net###s-chat-plugin
 www.hydoll.net##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-mobile-align-left.elementor-element-31be204a.elementor-element > .elementor-widget-container > .elementor-icon-list-items > li.elementor-icon-list-item:nth-of-type(6) > .nturl
 www.hydoll.net##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-icon-list--layout-traditional.elementor-mobile-align-left.elementor-element-31be204a.elementor-element > .elementor-widget-container > .elementor-icon-list-items > li.elementor-icon-list-item:nth-of-type(6)
@@ -4270,7 +4269,6 @@ anchetaonline.ro##.et_pb_bg_layout_light.et_pb_text_align_left.et_pb_text_0_tb_f
 www.radioimpuls.ro###ot-sdk-btn
 www.radioimpuls.ro##.col-md-12.col-6.list-unstyled > li.list-inline-item:nth-of-type(3)
 www.radioimpuls.ro##.col-md-12.col-6.list-unstyled > li.list-inline-item:nth-of-type(4)
-scholar.google.ro##[href="//www.google.ro/intl/ro/policies/privacy/"]omegavet.ro##.buttons-wrapperomegavet.ro##[src="/whatsapp.png"]omegavet.ro##.fa-angle-up.faomegavet.ro##.agreemaiar.fileplanet.com##footer
 weheartit.com##.flexbox.copyright-and-legal
 weheartit.com##li.text-small:nth-of-type(4)
 www.ifiasa.com###BACK_TO_TOP_BUTTON
@@ -5669,7 +5667,6 @@ facebook.com###consent-text
 facebook.com##._yb_1ool5._yb_b9sct
 facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-facebook.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div
@@ -10925,7 +10922,6 @@ gokid.ro##[href="https://gokid.ro/contact/"]
 ziarulamprenta.ro###menu-item-251258
 www.jocurinoi.ro###sticky
 www.jocurinoi.ro##.show
-cosplaymania.ro##[href="https://cosplaymania.ro/politica-cookies/"]||sibiucityapp.ro/packs/media/modules/website/images/icons/cd-top-arrow-90743aba0ac10b8f5587fef09c4dc430.svg$image
 sibiucityapp.ro###gotop_btn
 sibiucityapp.ro##[href="/pages/cookies-policy/fragment"]
 japanese.centre.ubbcluj.ro##[href="https://japanese.centre.ubbcluj.ro/politica-de-cookie-uri/"]
@@ -11105,7 +11101,6 @@ dragontea.ink##+js(nosiif, _0x)
 dragontea.ink##+js(ra, style, body > div, stay)
 dragontea.ink##html, body:style(overflow: visible !important;)
 dragontea.ink##iframe[id^="google_ads_iframe"]
-dragontea.ink##+js(rpnt, script, "}});, "}}); window.setTimeout(function(){let t=document.querySelectorAll(".reading-content .page-break.no-gaps img");for(let e=0;e<t.length;e++){let a=t[e].getAttribute("id").toString();entschluesselteid=CryptoJSAesJson.decrypt(a\,"releasethestormy888")\,t[e].setAttribute("id"\,a)\,a=t[e].getAttribute("data-src").toString()\,t[e].setAttribute("data-src"\,CryptoJSAesJson.decrypt(a\,"releasethestormy888"))\,t[e].classList.add("wp-manga-chapter-img")\,t[e].classList.add("img-responsive")\,t[e].classList.add("lazyload")\,t[e].classList.add("effect-fade")}}\,1e3);)
 www.ansa.it###iubenda-cs-banner
 www.ansa.it##.iubenda-cs-fix-height.iubenda-cs-visible.iubenda-cs-branded.iubenda-cs-no-heading.iubenda-cs-slidein.iubenda-cs-overlay.iubenda-cs-center.iubenda-cs-default-floating.iubenda-cs-black
 www.ansa.it##.iubenda-cs-container
@@ -11806,8 +11801,6 @@ consent.yahoo.com###consent-text
 consent.yahoo.com##._yb_1ool5._yb_b9sct
 consent.yahoo.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 consent.yahoo.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-consent.yahoo.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-consent.yahoo.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 yahoo.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 yahoo.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.yahoo.com##.List\(n\).Colmc\(2\).Pb\(10px\).P\(0\).Mt\(32px\).Mx\(0\)
@@ -12237,8 +12230,6 @@ redactia.ro##li.mrf-customFooter__linkItem:nth-of-type(7)
 appuals.com##.show-top-button.go-to-top-button
 www.ionos.com##.btn-top.btn
 www.computerhope.com###tt
-www.techradar.com##li:nth-of-type
-www.techradar.com##li:nth-of-type11
 www.sandiegouniontribune.com##div.sm\:w-1\/2.w-35:nth-of-type(1)
 appuals.com##.show-top-button.go-to-top-button
 xanimu.com###dclm_modal_content_wrapper > p
@@ -15311,7 +15302,6 @@ www.a7la-home.com##amp-social-share.i-amphtml-unresolved.amp-unresolved.i-amphtm
 www.a7la-home.com##.sticky_social
 www.mapbox.com###cookie-consent-widget
 www.couponxoo.com##.show.cookiealert.text-center.alert
-www.furaffinity.net###cookie-notificationhttps://blog.thousandeyes.com
 blog.thousandeyes.com###pop-div005274250650429013
 blog.thousandeyes.com###pop-div208907635215274129
 www.opendemocracy.net##.cc-color-override-10616020.cc-bottom.cc-theme-edgeless.cc-type-info.cc-floating.cc-window
@@ -16310,7 +16300,6 @@ www.a7la-home.com##amp-social-share.i-amphtml-unresolved.amp-unresolved.i-amphtm
 www.a7la-home.com##.sticky_social
 www.mapbox.com###cookie-consent-widget
 www.couponxoo.com##.show.cookiealert.text-center.alert
-www.furaffinity.net###cookie-notificationhttps://blog.thousandeyes.com
 blog.thousandeyes.com###pop-div005274250650429013
 blog.thousandeyes.com###pop-div208907635215274129
 www.opendemocracy.net##.cc-color-override-10616020.cc-bottom.cc-theme-edgeless.cc-type-info.cc-floating.cc-window
@@ -17101,7 +17090,6 @@ mega.io##.common-dialogs
 rapidgator.net###cookie-dlg
 mega.io##div.fm-dialog-overlay:nth-of-type(141)
 mega.io##div.fm-dialog-overlay:nth-of-type(16)
-mega.io##div.fm-dialog-overlay:nth-of-type
 mega.io##.common-dialogs
 tor.stackexchange.com##.ff-sans.ps-fixed.z-nav-fixed.ws4.sm\:w-auto.p32.sm\:p16.bg-black-750.fc-white.bar-lg.b16.l16.r16.js-consent-banner
 www.delimano.ro###cookie-monster
@@ -17845,7 +17833,6 @@ www.sentres.com##.cookies-eu
 www.tf1.fr##.banner_cookies
 www.theguardian.com##.site-message--cookies.site-message--banner.js-site-message.site-message
 www.vobadirekt.de##.lightbox--cookie-consent
-www.vobadirekt.de##:xpath(//*[contains(@class, "darken-layer") and /*//*[contains(@class, "lightbox--cookie-consent")]])
 www.wykop.pl##DIV[class="annotation type-alert type-permanent lspace m-reset-position closableContainer"]
 zenska.si#@##cookie-bar
 zonaforo.meristation.com##.inner

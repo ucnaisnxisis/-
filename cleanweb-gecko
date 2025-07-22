@@ -398,7 +398,6 @@ www.isladejuegos.com###siteFooter
 static.doubleclick.net
 k2s.cc##[href="/page/policy"]
 www.instagram.com##._ap30._aj1-._acav._acas._acaq._acap._acan
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
@@ -5672,6 +5671,16 @@ facebook.com###consent-text
 facebook.com##._yb_1ool5._yb_b9sct
 facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+https://connect.facebook.net/en_US/fbevents.js
+ro-ro.facebook.com##div.displayed.m
+ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+ro-ro.facebook.com##.bottom.fixed-container.m
+www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
+www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
+www.instagram.com##.x1vjfegm.x11v4dcs.xr5ldyu.x127lhb5.x7v9bd0.xh8yej3.x13vifvy.x10l6tqk.x17qophe.x5yr21d.xpqogu8
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div
@@ -5867,23 +5876,10 @@ extension.usu.edu###back-to-top
 extension.usu.edu##.right-list [href="https://www.usu.edu/privacy/"]
 news.emory.edu###StandardFooter
 cals.cornell.edu##[href="https://privacy.cornell.edu/"]
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-https://connect.facebook.net/en_US/fbevents.js
-m.facebook.com##div.displayed.m
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-ro-ro.facebook.com##div.displayed.m
-ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-ro-ro.facebook.com##.bottom.fixed-container.m
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
-www.instagram.com##.x1vjfegm.x11v4dcs.xr5ldyu.x127lhb5.x7v9bd0.xh8yej3.x13vifvy.x10l6tqk.x17qophe.x5yr21d.xpqogu8
 www.gradyhealth.org##[href="https://www.gradyhealth.org/privacy/"]
 theconversation.com##a.mb-2:nth-of-type(1)
 linuxmint.com##.order-sm-4.col-sm-4.col-md-2 > .widget > .primary-hover.flex-column.nav
 www.digi24.ro##a.footer-bottom-link
-m.facebook.com##.xee5nap.x1rbgqaq.xixxii4.xds687c.xxw3i39
 www.vodafone.ro##.jmNNQc.Footer-style__SecondaryFooter-sc-8b11f8f1-21 > ul
 mobile.telekom.ro##.druid-webchat--css-rctyoi-1cgfb3a.druid__web-chat__root-direction_ltr.druid__web-chat__root-container
 www.ortelmobile.de###toTop
@@ -10841,7 +10837,6 @@ www.101figurine.ro###myBtn
 www.101figurine.ro##[href="/static/politica-de-utilizare-cookie-uri/"]
 24iasi.ro##.animated.bounceInup.ta_upscr
 colegiuladamachi.ro##[href="https://colegiuladamachi.ro/cookie-policy-eu/"]
-m.facebook.com##.bottom.fixed-container.m
 www.gandul.ro###svp
 proxysite.site##.discord-button
 proxysite.site###showhidebtn
@@ -11658,7 +11653,6 @@ www.bugetul.ro##.terms.footer-mare
 astelus.com##.cli-modal-content.cli-bar-popup
 us.norton.com##.c-footer__legalfooter
 www.tiktok.com##.eyvii9r1.tiktok-9er52i-DivCtaGuideWrapper
-m.facebook.com##.bg-s5.m > .bg-s5.m > .bg-s5.m > div.m
 weebparrel.ro###zak-scroll-to-top
 weebparrel.ro###zak-scroll-to-top
 goldensite.ro##center
@@ -17340,8 +17334,6 @@ www.greenpeace.org##.shown.cookie-notice
 www.jucarii-sexuale.ro##.cc-color-override--1033558147.cc-bottom.cc-theme-block.cc-type-opt-in.cc-floating.cc-window
 quizterra.com##.privacy_popup
 www.scauneonline.ro##.cc-color-override-28635808.cc-left.cc-bottom.cc-theme-block.cc-type-opt-in.cc-floating.cc-window
-m.facebook.com##._56bf._55wo > div > ._2o1n._4n41._3-rk
-m.facebook.com##._56bf._55wo
 madalinliviu.ro##.cookies
 geeki.ro##.cookie-notice-visible.cn-effect-none.cn-position-bottom.cookie-revoke-hidden
 kjcenter.ro##.cookie-notice-visible.cn-effect-fade.cn-position-bottom.cookie-revoke-hidden

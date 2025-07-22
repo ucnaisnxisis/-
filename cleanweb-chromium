@@ -50,6 +50,10 @@ www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com###topbar
+m.youtube.com##.dialog-body-eom
+m.youtube.com##.eom-accept
+m.youtube.com##.privacy-terms
+m.youtube.com##.dialog-topbar
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
 www.youtube.com##.ytd-rich-section-renderer.style-scope

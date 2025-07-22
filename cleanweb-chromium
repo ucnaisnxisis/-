@@ -219,6 +219,7 @@ emag.ro##rect:nth-of-type(2)
 www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button > div
 www.emag.ro##div.js-footer-group.col-sm-3:nth-of-type(4)
 www.emag.ro##.footer-copy
+www.emag.ro##[href="/info/politica-de-utilizare-cookie-uri"]
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
 www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]
@@ -400,9 +401,6 @@ m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 162.247.243.39
 3.33.130.190
 155.102.130.201
-www.emag.ro##[href^="/help/politica-de-utilizare-cookie-uri"]Add commentMore actions
-www.emag.ro##[href^="/help/prelucrarea-datelor-cu-caracter-personal"]
-www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button
 pixel.lockn.link
 lokinet.org##.khUQGv.sc-kstqJO
 apps.apple.com##li.link-list__item--a.link-list__item:nth-of-type(3)
@@ -655,8 +653,6 @@ www.dollsclub.de###collapseFooter1 > .footer-column-content-inner > .list-unstyl
 www.oksexdoll.com##.mt-3.subscribe
 www.oksexdoll.com##.back-to-up
 www.oksexdoll.com##[href="https://www.oksexdoll.com/privacy.html"]
-www.emag.ro##button.fw-semibold.fs-14.btn-primary.btn-lg.btn.position-relative:nth-of-type(2)
-www.emag.ro##.text-center.mb-7.px-5.fs-16
 m.olx.ro###tippy
 m.olx.ro###tippy-1
 m.olx.ro###tippy-2
@@ -3175,7 +3171,6 @@ spankbang.com###age-check-content > p
 spankbang.com##.age-no-check-button
 spankbang.com###age-check-footer
 spankbang.com##.justify-center.flex > .h-10
-@@encrypted-tbn0.gstatic.com
 darkreader.org##nav > [href="privacy/"]
 darkreader.org##a.v2-help-header-link:nth-of-type(3)
 www.cinemacity.ro##.noprint.footer.dark
@@ -4082,8 +4077,6 @@ www.emag.ro##.sticky.jsg-back-to-top.sticky-button
 blog.eurosender.com###kt-scroll-up
 www.eshopwedrop.ro###goTop
 gls-group.com##div#top_link.to-top.top-link
-www.emag.ro##.text-decoration-none.text-neutral-darkest.bg-neutral-lighter.p-2.position-fixed.align-items-center.flex-column.d-flex.acc-toolbox-open-button
-www.emag.ro##.gtm_tnchfgdtyq.emag-help-btn.jsg-emag-help-btn
 www.cargus.ro##.desktop-chat-button
 www.cargus.ro##.offer-sidebar-container
 www.cargus.ro##.contact-sidebar-container

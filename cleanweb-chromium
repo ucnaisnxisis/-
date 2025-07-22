@@ -210,6 +210,15 @@ web.archive.org##.ad1
 web.archive.org##[src="https://web.archive.org/web/20141230115515im_/http://www.hackedadultgames.com/pinkvisualgames-horz-39.gif"]
 web.archive.org##div.css3.box1.ad2 > div > [href^="https://web.archive.org/web/20141229154152/http://www.pinkvisualgames.com/"]
 web.archive.org##div.css3.box1.ad2:nth-of-type(4)
+emag.ro##svg
+emag.ro##.text-center.col-xs-12
+emag.ro##.lf-show
+emag.ro##.cookie-banner-buttons.col-lg-2.col-md-3.col-sm-4.col-xs-12
+emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button path
+emag.ro##rect:nth-of-type(2)
+www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button > div
+www.emag.ro##div.js-footer-group.col-sm-3:nth-of-type(4)
+www.emag.ro##.footer-copy
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
 www.gameology.ro##[href="https://www.gameology.ro/politica-de-cookies"]

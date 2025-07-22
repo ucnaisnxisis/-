@@ -53,12 +53,13 @@ www.youtube.com###topbar
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
+www.youtube.com##.reel-shelf-items
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##.shortsLockupViewModelHost
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 m.youtube.com##.feed-nudge-text-container
-m.youtube.com##.consent-bump-v2-lightbox
+m.youtube.com##.reel-shelf-items
 m.youtube.com##.yt-spec-touch-feedback-shape__fill
 m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)

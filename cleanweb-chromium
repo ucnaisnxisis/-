@@ -56,6 +56,7 @@ m.youtube.com##.privacy-terms
 m.youtube.com##.dialog-topbar
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
+m.youtube.com##.reel-shelf-items
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##.shortsLockupViewModelHost
 www.youtube.com###guide-links-primary

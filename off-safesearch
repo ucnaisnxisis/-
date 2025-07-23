@@ -242,5 +242,8 @@
         } else {
             location.reload();
         }
+if (!document.cookie.match("(^|;)\\s*CONSENT=YES\\+")) {
+  document.cookie="CONSENT=YES+;domain=" + window.location.host.match("\.google\..+$")[0];
+}
     }
 })();

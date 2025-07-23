@@ -262,5 +262,4 @@
             console.log("FATTO");
             return true;
         }
-    }
 })();

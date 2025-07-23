@@ -222,6 +222,8 @@ static.ads-twitter.com
 @@hlana.gamedistribution.com
 @@patreon.com
 @@fonts.gstatic.com
+www.google.com###sfooter
+www.google.com##a.pHiOh:nth-of-type(1)
 ro-ro.facebook.com##._4-u8._5058._4-u2
 ro-ro.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 ro-ro.facebook.com##footer
@@ -244,7 +246,55 @@ www.facebook.com##div.xx6bls6.xso031l.x1q0q8m5.x1nb4dca
 www.facebook.com##.xn9wirt.x1cnzs8.x106a9eq.x1xnnf8n.x7ep2pv.x9f619
 www.facebook.com##.x1r1pt67.xtvsq51.x1g0dm76.xpdmqnj.x9f619.x14e42zd.x1qhh985.x10w94by.x972fbf.x5fzff1.xws8118.x1b1wa69.x14ldlfn.x1q0g3np.xozqiw3.x6s0dn4.xl56j7k.x1n2onr6.x2lah0s.x78zum5.x1ja2u2z
 m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-www.google.com###sfooter
+business.facebook.com##._9bka._4sea
+business.facebook.com###u_0_z_ot
+business.facebook.com###u_0_y_iI
+facebook.en.softonic.com##div.OMlpov.PigimL.rxEyu2:nth-of-type(2)
+facebook.apponic.com##div.column:nth-of-type(3)
+facebook.apponic.com##[href="https://www.apponic.com/privacy/"]
+www.facebook.com##._gbmComponentLayerContainer__mobileAlignCenter._9d-y._ambg
+www.facebook.com###u_0_35_Sc > ._9bvd
+www.meta.com##._9o-3
+www.meta.com##._9o-f
+www.meta.com##._3ixn
+www.meta.com##div.xtv8dzd.x137v6ai.xjfzuef.xv9pgs7.xo2o5nc.xrm89us.xvfq796.x16z6d8x.x12ep9av.x1m0qbcn.xb8ui12.x1a02dak.x2lah0s.x1iyjqo2.x1l7klhg.x78zum5:nth-of-type(4) > div.xfzd5jt.xpu8j0z.xwy3nlu.x1yhw3ld.x1reuy37.x174qce6.x15dkgw3.x9i2r8e.x1wx46er.x1n2gxj2.xu9dp86.x18i85vq.x2lah0s.x1c4vz4f.xdl72j9.x9f619.xh8yej3.x193iq5w:nth-of-type(2) > div:nth-of-type(2) > .x1iymm2a
+www.meta.com##div.xfzd5jt.xpu8j0z.xwy3nlu.x1yhw3ld.x1reuy37.x174qce6.x15dkgw3.x9i2r8e.x1wx46er.x1n2gxj2.xu9dp86.x18i85vq.x2lah0s.x1c4vz4f.xdl72j9.x9f619.xh8yej3.x193iq5w:nth-of-type(3) > div:nth-of-type(2)
+about.fb.com##.site-info
+about.fb.com###menu-2022-footer-col-1-2-our-actions-1
+about.fb.com###nav_menu-37
+auth.meta.com##.xc8cyl1.x1bumbmr.x1xila8y.x1d9i5bo.x7a1id4.xbe3n85.xqbgfmv.xtvsq51.x9f619.x14e42zd.x1qhh985.x10w94by.x972fbf.x1q0g3np.xozqiw3.x6s0dn4.xl56j7k.x1n2onr6.x2lah0s.x78zum5.x1ja2u2z
+auth.meta.com##.xy5w88m.x1iyjqo2.x1odjw0f.x1oyok0e.x1n2onr6.xwo3gff.xx8ngbg.xjx87ck.x1yqm8si.xfk6m8.x1rohswg.x1pq812k.x1ja2u2z.x6ikm8r.xdt5ytf.x78zum5.x5lxg6s.x1q594ok.xb57i2i
+prod.auth.meta.com##.x13zrc24.x1l90r2v.x193iq5w.x2lah0s.xdt5ytf.x78zum5.x9f619.x1ja2u2z.x1n2onr6
+beta.auth.meta.com##.x13zrc24.x1l90r2v.x193iq5w.x2lah0s.xdt5ytf.x78zum5.x9f619.x1ja2u2z.x1n2onr6
+www.meta.com##.x1163qoy.x1hx08fk.x1xzm06s
+www.meta.com##.x14z7tpn.x1dshhg4.x137jj4x.x1yhw3ld.x1reuy37.x174qce6.x15dkgw3.x9i2r8e.x1wx46er.x11b69tj.xu9dp86.x10rn61k.x2lah0s.x1c4vz4f.xdl72j9.x9f619.xh8yej3.x193iq5w
+www.meta.ai##.x64bnmy.xule2z1.x1iyjqo2.x1e4zzel.x1odjw0f.x1oyok0e.x1n2onr6.xwo3gff.xx8ngbg.xjx87ck.x1yqm8si.xfk6m8.x1rohswg.x1pq812k.x1ja2u2z.x6ikm8r.xdt5ytf.x78zum5.x5lxg6s.x1q594ok.xb57i2i
+www.meta.ai##.xh8yej3.x1n2onr6.xod5an3.xp1r0qw.xtqikln.xdt5ytf.x78zum5.x6s0dn4
+www.meta.ai##.x1vjfegm.x1n2onr6.__fb-dark-mode
+ai.meta.com##._8xde._7es3
+ai.meta.com###u_0_1o_AD
+investor.atmeta.com##[href="https://www.facebook.com/privacy/explanation"]
+about.fb.com##.menu-2022-footer-col-2-2-smart-glasses-container
+about.fb.com###nav_menu-39
+creators.meta.com###u_0_2f_s8
+creators.meta.com##div:nth-of-type(4)
+creators.meta.com##._9xl2
+creators.meta.com##._9o-g > div > div:nth-of-type(3)
+creators.meta.com##._9o-g > div > div
+creators.meta.com##._9o-g
+creators.meta.com##._941h._92q8
+www.meta.com##.x1ffnkcp > .xngbnut.x1yetj9z.xpucvpp.x1wcxulw.x1ffbijf.xnp2e5m.x1ktaemh.xh8yej3.x11t971q.xvc5jky.x9f619
+auth.meta.com##.x13zrc24.x1l90r2v.x193iq5w.x2lah0s.xdt5ytf.x78zum5.x9f619.x1ja2u2z.x1n2onr6
+horizon.meta.com##.xn9wirt.x106a9eq.xx6bls6.x1xnnf8n.x1cnzs8.x65f84u.x9f619 > div.xx6bls6
+horizon.meta.com##span.xzsf02u.xo1l8bm.xvq8zen.x6prxxf.x3x7a5m.xudqn12.x1943h6x.x1fgarty.x1cpjm7i.x1gmr53x.xhkezso.x1s928wv.x1lliihq.x1xmvt09.x1vvkbs.x13faqbe.xeuugli.x193iq5w
+horizon.meta.com##div.xdl72j9.x1iorvi4.xjkvuk6.x135b78x.x11lfxj5.xs83m0k.x1iyjqo2.xeuugli.x193iq5w.xdt5ytf.x78zum5.x1ja2u2z.x1n2onr6.x9f619:nth-of-type(1)
+horizon.meta.com##.x9shiqr.xfi54gi.x7i74fg.x1ow4hk9.x1uvo3pc
+www.facebook.com##._9jwg._4uul._17bk._9v9l._9v9b._9v9k._9v9a._aqx9._5r7f
+www.facebook.com##._9bqz
+www.businessinsider.com##.newsletters-link.label-md-strong
+www.businessinsider.com##.hide-if-subscribed.subscribe-link.label-md-strong
+www.metacareers.com##._aslc._9bh9._9bh3._9bg-._9bhq._9bhp
+www.metacareers.com##._as1r
 www.instagram.com##.x1n2onr6.xg6iff7.xippug5.xdt5ytf.x78zum5
 soundcloud.com##.g-backdrop-filter-grayscale.showBackground.modalWhiteout.g-z-index-overlay.g-opacity-transition.g-z-index-modal-background.modal
 secure.euroavocatura.ro###topcontrol

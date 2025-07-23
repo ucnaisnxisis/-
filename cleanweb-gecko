@@ -57,7 +57,17 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+m.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
+m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
+m.youtube.com###topbar
+m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
+m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
+www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
+www.youtube.com###topbar
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
+www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com##.dialog-body-eom
 www.youtube.com##.eom-accept
 www.youtube.com##.privacy-terms

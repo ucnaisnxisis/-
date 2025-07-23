@@ -241,16 +241,26 @@
             window.location = window.location.toString().replace(new RegExp("([?&])"+cookieSettings[website].replaceUrl+"[^&]*&?"),"$1");
         } else {
             location.reload();
+(function() {
+    'use strict';
+
+    let noisy = null
+    let counter = 10
+
+    const nail = muteConsentBump() || setInterval(() => {
+        counter--;
+        if (!counter) {
+            clearInterval(nail);
         }
-if (!document.cookie.match("(^|;)\\s*CONSENT=YES\\+")) {
-  document.cookie="CONSENT=YES+;domain=" + window.location.host.match("\.google\..+$")[0];
-}
-if (!document.cookie.match("(^|;)\\s*CONSENT=YES\\+")) {
+        muteConsentBump();
+    }, 500);
 
-
-  document.cookie="CONSENT=YES+;domain=" + window.location.host.match("\.youtube\..+$")[0];
-
-
-}
+    function muteConsentBump() {
+        noisy = document.getElementById("consent-bump");
+        if (noisy) {
+            noisy.remove();
+            console.log("FATTO");
+            return true;
+        }
     }
 })();

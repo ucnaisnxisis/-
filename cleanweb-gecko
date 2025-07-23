@@ -56,18 +56,19 @@ m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mon
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
-www.youtube.com###voice-search-button > .ytd-masthead.style-scope
+www.youtube.com##.dialog-body-eom
+www.youtube.com##.eom-accept
+www.youtube.com##.privacy-terms
+www.youtube.com##.dialog-topbar
+www.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
+www.youtube.com##.feed-nudge-text-container
+www.youtube.com##.reel-shelf-items
+www.youtube.com##.opened
+www.youtube.com##.yt-spec-touch-feedback-shape__fill
+www.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+www.youtube.com##.consent-bump-v2-lightbox
 www.youtube.com###voice-search-button
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
-www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-www.youtube.com###topbar
-www.youtube.com##.shortsLockupViewModelHost
-www.youtube.com###guide-links-primary
-www.youtube.com###guide-links-secondary
+www.youtube.com###voice-search-button > .ytd-masthead.style-scope
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad

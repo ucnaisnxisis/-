@@ -62,11 +62,25 @@ m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 m.youtube.com###topbar
 m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-m.youtube.com##^responseheader(set-cookie)    
-m.youtube.com##+js(cookie-remover, CONSENT)
-www.youtube.com##^responseheader(set-cookie)    
-www.youtube.com##+js(cookie-remover, CONSENT)
-www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+m.youtube.com##.reject-all.first.btn
+m.youtube.com##div.content-section:nth-of-type(2)
+m.youtube.com##.manage-settings.mng-btn.secondary.btn
+m.youtube.com###consent-text
+m.youtube.com##._yb_1ool5._yb_b9sct
+m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
+m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+www.youtube.com##.reject-all.first.btn
+www.youtube.com##div.content-section:nth-of-type(2)
+www.youtube.com##.manage-settings.mng-btn.secondary.btn
+www.youtube.com###consent-text
+www.youtube.com##._yb_1ool5._yb_b9sct
+www.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+www.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+www.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com###topbar

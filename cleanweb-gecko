@@ -62,6 +62,10 @@ m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 m.youtube.com###topbar
 m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
+m.youtube.com##^responseheader(set-cookie)    
+m.youtube.com##+js(cookie-remover, CONSENT)
+www.youtube.com##^responseheader(set-cookie)    
+www.youtube.com##+js(cookie-remover, CONSENT)
 www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text

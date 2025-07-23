@@ -56,12 +56,8 @@ m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mon
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
-m.youtube.com##.shortsLockupViewModelHost
-m.youtube.com###guide-links-primary
-m.youtube.com###guide-links-secondary
-www.youtube.com##.shortsLockupViewModelHost
-www.youtube.com###guide-links-primary
-www.youtube.com###guide-links-secondary
+m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 www.youtube.com##.dialog-body-eom
 www.youtube.com##.eom-accept
 www.youtube.com##.privacy-terms

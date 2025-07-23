@@ -222,6 +222,14 @@ static.ads-twitter.com
 @@hlana.gamedistribution.com
 @@patreon.com
 @@fonts.gstatic.com
+www.firefox.com##.mzp-c-footer-legal
+community.mozilla.org###menu-item-94
+blog.mozilla.org##.mzp-c-footer-secondary
+developer.mozilla.org##[href="/en-US/advertising"]
+wiki.mozilla.org##[href="/MozillaWiki:Privacy_policy"]
+www.mediawiki.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement"]
+www.mediawiki.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+linuxreviews.org##[href="/LinuxReviews:Privacy_policy"]
 www.google.com###sfooter
 www.google.com##a.pHiOh:nth-of-type(1)
 ro-ro.facebook.com##._4-u8._5058._4-u2

@@ -72,6 +72,8 @@ m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.
 m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##.reject-all.first.btn
 www.youtube.com##div.content-section:nth-of-type(2)
 www.youtube.com##.manage-settings.mng-btn.secondary.btn

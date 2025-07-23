@@ -5692,7 +5692,6 @@ account.microsoft.com##.c-uhff-consumer.c-uhff-link
 account.microsoft.com##.c-uhff-ccpa.c-uhff-link
 account.microsoft.com##.glyph-global-nav-button.c-glyph.c-action-trigger
 account.microsoft.com##.x-hidden.cat-logo-button-cont
-search.brave.com##div.svelte-elswzx.desktop-small-regular.block:nth-of-type(3)
 geolocation.onetrust.co
 geolocation.onetrust.com
 cdn.cookielaw.org
@@ -7597,14 +7596,9 @@ answers.microsoft.com##div.c-uhff-nav-row:nth-of-type(2) > div.c-uhff-nav-group:
 www.reddit.com##faceplate-tracker:nth-of-type(11)
 www.reddit.com##faceplate-tracker.contents:nth-of-type(2) > .mt-0.list-none.relative
 brave.com##submit-llm-button
-search.brave.com###summarizer-infobox-main
-search.brave.com##.suggestion.llm
-search.brave.com###submit-llm-button
-search.brave.com##.suggestion.desktop-large-regular.t-secondary.llm.svelte-lz5rr5
 brave.com##[href="/ro/privacy/advertiser/"]
 brave.com##h5.site-footer__sub-heading:nth-of-type(2)
 brave.com##.brave-tooltip-parent
-search.brave.com##.svelte-bigf98
 brave.com##[href="/privacy/advertiser/"]
 reddit.com##shreddit-async-loader.theme-beta
 www.reddit.com##shreddit-async-loader.theme-beta
@@ -8434,13 +8428,6 @@ m.sfatulmedicului.ro##header
 www.catalog-hypermarket.ro##div.card.top-a
 drleventercentre.com##.mobile-nav
 hentanime.net##.widget-title
-search.brave.com##section.svelte-1j58eib:nth-of-type(3) > .svelte-1j58eib.info > .svelte-1j58eib.text > .mb-0.t-primary.desktop-default-semibold
-search.brave.com##div.svelte-hx6e41.desktop-large-regular.page:nth-of-type(3)
-search.brave.com##div.svelte-hx6e41.desktop-large-regular.page:nth-of-type(2)
-search.brave.com##div.svelte-13jmp34.block:nth-of-type(2) > div:nth-of-type(10)
-search.brave.com##div.svelte-13jmp34.block:nth-of-type(2) > div:nth-of-type(8)
-search.brave.com##div.svelte-13jmp34.block:nth-of-type(2) > div:nth-of-type(3)
-search.brave.com##div.svelte-13jmp34.block:nth-of-type(1) > div:nth-of-type(1)
 www.edu.ro##.help-bttn > [src]
 www.edu.ro###toTop
 zoso.ro###consent-banner-main
@@ -8466,7 +8453,6 @@ www.digionline.ro##.widget-app-wrapper-android
 www.stiridirecte.ro##.page-item-148095.page_item
 stirr.com##.mb-3.row
 www.tiktok.com##.eyvii9r1.css-ydcqw4-DivCtaGuideWrapper
-search.brave.com##div.svelte-13jmp34.block:nth-of-type(3) > div:nth-of-type(1)
 mwmoe.me##.filter.position-bottom.round.float-right
 mwmoe.me##.modal-body > div > div:nth-of-type(2)
 mwmoe.me##.jb-yellow.colorful-bg.modal-colorful-header > .text-center
@@ -8571,8 +8557,6 @@ en.bab.la##[href="/company/advertising"]
 en.bab.la##footer
 www.tion.ro###myModal
 www.movadocompanystore.com##.footer-links
-search.brave.com##.tooltip--bottom-left.tooltip.subutton-tooltip-wrapper
-search.brave.com##.svelte-1xz7e78.noscript-hide.subutton-wrapper
 www.myxxgirl.com##.av_no.av_btn
 www.myxxgirl.com##.ver-menu
 www.myxxgirl.com###modal_content_wrapper > p
@@ -8646,7 +8630,6 @@ jurnaldesustenabilitate.ro##.tablet-hidden.desktop-hidden.empty-half.empty-space
 jurnaldesustenabilitate.ro##.row-parent.full-width.col-no-gutter.row
 www.playsport.ro##.mg-xs-top-20
 www.soimultaberei.ro###colophon
-search.brave.com##.svelte-1mk2b6m.subutton-wrapper
 www.bing.com###b-scopeListItem-conv
 duckduckgo.com##.is-active.is-icon-only.js-zci-link--chat.js-zci-link.zcm__link
 duckduckgo.com###duckbar_right

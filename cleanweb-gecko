@@ -932,7 +932,6 @@ www.shutdowngames.com##div.bnr_250
 nichegamer.com##div.col-md-3.col-xs-12:nth-of-type(2)
 4chan.org##[href="/advertise"]
 4chan.org##button:nth-of-type(2)
-m.youtube.com##.search-bar-entry-point-more-drawer-button.search-bar-entry-point-button
 visedenoapte.ro###topcontrol
 visedenoapte.ro###menu-footer
 www.thefeed.ro###site-footer
@@ -3264,7 +3263,6 @@ www.freeconvert.com##.freshdesk-widget-placeholder
 www.freeconvert.com##.footer-navigation__links__item--top.visible-in-mobile.nav-item.footer-navigation__links__item
 mp3cut.net##[href="/legal"]
 soundly.cc##li:nth-of-type(4)
-www.youtubetrimmer.com##[href="/privacy/"]
 clideo.com###cookies-consent
 clideo.com##li.appFooterNavigationLink:nth-of-type(3)
 clideo.com##li.appFooterNavigationLink:nth-of-type(2)
@@ -6212,8 +6210,6 @@ pranaromania.ro##[href="https://pranaromania.ro/cookies/"]
 oneplast.ro##.elementor-element-a85d12a.elementor-element.elementor-inner-column.elementor-col-25.elementor-column
 www.digi24.ro##a.footer-bottom-link:nth-of-type(2)
 prodeee.ro##.et-l--footer.et-l
-ssyoutube.com##.widget__text
-ssyoutube.com##.go-top-arrow
 www.medlife.ro###druid-wrapper
 fonts.gstatic.com
 fonts.googleapis.com
@@ -10398,12 +10394,6 @@ www.floaredetei.ro##.hidden-md.hidden-lg.herald-single-mobile-sticky.herald-sing
 casepractice.ro##.rltpopup-show-up.penci-rltpopup-right.penci-rlt-popup
 smartbuyer.ro##.has-center.layout-full-contained.hide-on-desktop.header-top.header--row
 smartbuyer.ro##.builder-item--footer-two-widgets.item--inner
-www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
-www.youtube.com##.opened
-www.youtube.com##.yt-playability-error-supported-renderers.style-scope > .ytd-enforcement-message-view-model.style-scope
-www.youtube.com###container > .yt-playability-error-supported-renderers.style-scope
-www.youtube.com###error-screen > .yt-playability-error-supported-renderers.style-scope
-www.youtube.com###error-screen
 www.peroz.ro##p.gdpr-social-media.gdpr-placeholder
 www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(0)
 www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(1)
@@ -10430,7 +10420,6 @@ dromen.site###colophon
 www.leador.ro##.menu-item-32051.menu-item-object-page.menu-item-type-post_type.menu-item
 conde.ro##.td-container
 www.celiaci.ro##.x-nav
-||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
 metroul.ovio.ro###back-to-top
 sctpiasi.ro##span.footer-navigation.inline-block:nth-of-type(5) > [href="/servicii/promovare"]
 appgallery.huawei.com##.first_lowertexts
@@ -10723,9 +10712,6 @@ www.file.io##.css-1awew03.panel > ul > li:nth-of-type(2)
 www.squadhelp.com##.show.fixed-bar
 www.squadhelp.com##li:nth-of-type(2)
 www.squadhelp.com##li:nth-of-type(3)
-anyutube-youtube-video-download.en.uptodown.com###cookiescript_injected
-anyutube-youtube-video-download.en.uptodown.com##li:nth-of-type(6)
-anyutube-youtube-video-download.en.uptodown.com##li:nth-of-type(4)
 uptodown.com##li:nth-of-type(4)
 uptodown.com##li:nth-of-type(6)
 uptodown.com##cookiescript_injected
@@ -10845,7 +10831,6 @@ www.gandul.ro###svp
 proxysite.site##.discord-button
 proxysite.site###showhidebtn
 www.peroz.ro##.footer-top-nav-link.gdpr-modal-trigger
-accounts.youtube.com/RotateCookiesPage
 jurnaldevest.ro###menu-social-menu-items-2 > .menu-item-52529.tdb-normal-menu.tdb-menu-item.tdb-menu-item-button.menu-item-object-page.menu-item-type-post_type.menu-item > [href] > .tdb-menu-item-text
 jurnaldevest.ro###media_image-41
 jurnaldevest.ro##[href="https://jurnaldevest.ro/cookie-policy/"]
@@ -13101,7 +13086,6 @@ madnessindians.com
 videosworks.com
 rocketme.top
 eyden-x.com
-suggestqueries-clients6.youtube.com
 ratexchange.net
 serverads.net
 silkenthreadiness.info

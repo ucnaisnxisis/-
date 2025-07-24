@@ -75,7 +75,6 @@ m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
 m.youtube.com##ytd-mealbar-promo-renderer
-m.youtube.com##ytd-consent-bump-renderer
 m.youtube.com##tp-yt-iron-overlay-backdrop
 requests.get('https://www.youtube.com/user/YouTube/videos', cookies={'CONSENT': 'PENDING+999'})
 requests.get('https://www.youtube.com/user/YouTube/videos', cookies={'CONSENT': 'YES+cb.20210328-17-p0.en-GB+FX+{}'.format(random.randint(1, 999))})

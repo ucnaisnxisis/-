@@ -54,6 +54,21 @@ m.youtube.com##ytd-mealbar-promo-renderer
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.reel-shelf-items
+consent.youtube.com##.accept-all.secondary.btn
+consent.youtube.com##div.content-section:nth-of-type(2)
+consent.youtube.com##.manage-settings.mng-btn.secondary.btn
+consent.youtube.com###consent-text
+consent.youtube.com##._yb_1ool5._yb_b9sct
+consent.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+consent.youtube.com##.opened
+gstatic.com
+www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
+www.youtube.com###footer > .ytd-guide-renderer.style-scope
+www.youtube.com##.opened
 www.youtube.com##ytd-consent-bump-v2-lightbox
 m.youtube.com##grid-shelf-view-model.ytd-item-section-renderer.ytGridShelfViewModelHost
 ads.youtube.com

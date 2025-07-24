@@ -66,6 +66,7 @@ youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 consent.youtube.com##.opened
 gstatic.com
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
 www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
 www.youtube.com###footer > .ytd-guide-renderer.style-scope
 www.youtube.com##.opened

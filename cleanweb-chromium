@@ -110,6 +110,7 @@ static.doubleclick.ne
 fonts.gstatic.com
 ads.google.com
 consent.youtube.com
+gstatic.com
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
 pagead46.l.doubleclick.co
@@ -152,7 +153,6 @@ static.ads-twitter.com
 ||discordapp.co
 ||discord.app
 ||discord.net
-@@cloudfront.net
 @@www.lachainemeteo.com
 @@vzlinks.com
 @@cdninstagram.com
@@ -193,7 +193,6 @@ static.ads-twitter.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-@@fonts.gstatic.com
 github.com##li:nth-of-type(2)
 www.firefox.com##.mzp-c-footer-legal
 community.mozilla.org###menu-item-94

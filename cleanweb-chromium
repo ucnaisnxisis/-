@@ -62,6 +62,9 @@ youtube.com##ytd-consent-bump-v2-lightbox
 youtube.com##tp-yt-iron-overlay-backdrop
 youtube.com##ytd-consent-bump-renderer
 youtube.com##ytd-mealbar-promo-renderer
+www.youtube.com##ytm-shorts-lockup-view-model-v2.yt-horizontal-list-renderer.shortsLockupViewModelHost
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
+www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
 www.youtube.com##ytd-consent-bump-v2-lightbox
 www.youtube.com##tp-yt-iron-overlay-backdrop
 www.youtube.com##ytd-consent-bump-renderer
@@ -105,8 +108,8 @@ suggestqueries-clients6.youtube.com
 accounts.google.com
 static.doubleclick.ne
 fonts.gstatic.com
-github.com##li:nth-of-type(2)
 ads.google.com
+consent.youtube.com
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
 pagead46.l.doubleclick.co
@@ -191,6 +194,7 @@ static.ads-twitter.com
 @@hlana.gamedistribution.com
 @@patreon.com
 @@fonts.gstatic.com
+github.com##li:nth-of-type(2)
 www.firefox.com##.mzp-c-footer-legal
 community.mozilla.org###menu-item-94
 blog.mozilla.org##.mzp-c-footer-secondary

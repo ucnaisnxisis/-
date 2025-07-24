@@ -55,9 +55,6 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.reel-shelf-items
 www.youtube.com##ytd-consent-bump-v2-lightbox
-www.youtube.com##tp-yt-iron-overlay-backdrop
-www.youtube.com##ytd-consent-bump-renderer
-www.youtube.com##ytd-mealbar-promo-renderer
 m.youtube.com##grid-shelf-view-model.ytd-item-section-renderer.ytGridShelfViewModelHost
 ads.youtube.com
 ad.youtube.com
@@ -121,8 +118,6 @@ static.ads-twitter.com
 ||discordapp.co
 ||discord.app
 ||discord.net
-@@googlevideo.com
-@@cloudfront.net
 @@www.lachainemeteo.com
 @@vzlinks.com
 @@cdninstagram.com
@@ -155,7 +150,6 @@ static.ads-twitter.com
 @@lewd.ws
 @@lewd.ninja
 @@98mbrr0f.com
-@@s.imgur.com
 @@ipv4.imgur.map.fastly.net
 @@st.chatango.com
 @@msgrt.gamedistribution.com
@@ -163,7 +157,6 @@ static.ads-twitter.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-@@fonts.gstatic.com
 www.firefox.com##.mzp-c-footer-legal
 community.mozilla.org###menu-item-94
 blog.mozilla.org##.mzp-c-footer-secondary

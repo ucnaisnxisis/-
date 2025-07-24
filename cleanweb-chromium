@@ -72,6 +72,7 @@ m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial
 m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+m.youtube.com##.reel-shelf-header
 www.youtube.com##.ytd-reel-shelf-renderer.style-scope
 www.youtube.com###guide
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost

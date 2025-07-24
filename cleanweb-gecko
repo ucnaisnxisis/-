@@ -66,6 +66,10 @@ youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 consent.youtube.com##.opened
 gstatic.com
+youtube.com##ytd-consent-bump-v2-lightbox
+youtube.com##tp-yt-iron-overlay-backdrop
+youtube.com##ytd-consent-bump-renderer
+youtube.com##ytd-mealbar-promo-renderer
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope

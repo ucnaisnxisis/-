@@ -74,38 +74,10 @@ m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
-youtube.com##ytd-consent-bump-v2-lightbox
-youtube.com##tp-yt-iron-overlay-backdrop
-youtube.com##ytd-consent-bump-renderer
-youtube.com##ytd-mealbar-promo-renderer
-www.youtube.com##.ytd-reel-shelf-renderer.style-scope
-www.youtube.com###guide
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##.reject-all.first.btn
-www.youtube.com##div.content-section:nth-of-type(2)
-www.youtube.com##.manage-settings.mng-btn.secondary.btn
-www.youtube.com###consent-text
-www.youtube.com##._yb_1ool5._yb_b9sct
-www.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-www.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-www.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
-www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-www.youtube.com###topbar
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-www.youtube.com##.dialog-body-eom
-www.youtube.com##.eom-accept
-www.youtube.com##.privacy-terms
-www.youtube.com##.dialog-topbar
-www.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-www.youtube.com##.feed-nudge-text-container
-www.youtube.com##.reel-shelf-items
-www.youtube.com##.opened
-www.youtube.com##.yt-spec-touch-feedback-shape__fill
-www.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
-www.youtube.com##.consent-bump-v2-lightbox
+www.youtube.com##ytd-consent-bump-v2-lightbox
+www.youtube.com##tp-yt-iron-overlay-backdrop
+www.youtube.com##ytd-consent-bump-renderer
+www.youtube.com##ytd-mealbar-promo-renderer
 www.youtube.com###voice-search-button
 www.youtube.com###voice-search-button > .ytd-masthead.style-scope
 www.youtube.com##.ytd-rich-section-renderer.style-scope

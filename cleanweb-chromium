@@ -73,6 +73,10 @@ m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
+youtube.com##ytd-consent-bump-v2-lightbox
+youtube.com##tp-yt-iron-overlay-backdrop
+youtube.com##ytd-consent-bump-renderer
+youtube.com##ytd-mealbar-promo-renderer
 www.youtube.com##.ytd-reel-shelf-renderer.style-scope
 www.youtube.com###guide
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost

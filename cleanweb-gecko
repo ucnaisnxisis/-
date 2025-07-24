@@ -43,37 +43,14 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept
-m.youtube.com##.privacy-terms
-m.youtube.com##.dialog-topbar
-m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-m.youtube.com##.feed-nudge-text-container
-m.youtube.com##.reel-shelf-items
-m.youtube.com##.opened
-m.youtube.com##.yt-spec-touch-feedback-shape__fill
-m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
-m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
-m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-m.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-m.youtube.com###topbar
-m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-m.youtube.com##.reject-all.first.btn
-m.youtube.com##div.content-section:nth-of-type(2)
-m.youtube.com##.manage-settings.mng-btn.secondary.btn
-m.youtube.com###consent-text
-m.youtube.com##._yb_1ool5._yb_b9sct
-m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
-m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-m.youtube.com##.reel-shelf-header
+m.youtube.com###guide-links-primary
+m.youtube.com###guide-links-secondary
+m.youtube.com##ytd-consent-bump-v2-lightbox
+m.youtube.com##tp-yt-iron-overlay-backdrop
+m.youtube.com##ytd-consent-bump-renderer
+m.youtube.com##ytd-mealbar-promo-renderer
 www.youtube.com##ytd-consent-bump-v2-lightbox
 www.youtube.com##tp-yt-iron-overlay-backdrop
 www.youtube.com##ytd-consent-bump-renderer
@@ -82,6 +59,8 @@ www.youtube.com###voice-search-button
 www.youtube.com###voice-search-button > .ytd-masthead.style-scope
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad

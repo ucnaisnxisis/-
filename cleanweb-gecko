@@ -51,6 +51,9 @@ m.youtube.com##ytd-consent-bump-v2-lightbox
 m.youtube.com##tp-yt-iron-overlay-backdrop
 m.youtube.com##ytd-consent-bump-renderer
 m.youtube.com##ytd-mealbar-promo-renderer
+m.youtube.com##.consent-bump-v2-lightbox
+m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
+m.youtube.com##.reel-shelf-items
 www.youtube.com##ytd-consent-bump-v2-lightbox
 www.youtube.com##tp-yt-iron-overlay-backdrop
 www.youtube.com##ytd-consent-bump-renderer

@@ -70,6 +70,7 @@ www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-rendere
 www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
 www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(5)
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(1)
+www.youtube.com###dialog
 www.youtube.com###subscribe-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 ## Mobile browsers
@@ -108,6 +109,7 @@ m.youtube.com##ytd-mealbar-promo-renderer
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.reel-shelf-items
+m.youtube.com###dialog
 gstatic.com
 m.youtube.com##grid-shelf-view-model.ytd-item-section-renderer.ytGridShelfViewModelHost
 ads.youtube.com

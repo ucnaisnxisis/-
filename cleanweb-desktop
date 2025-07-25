@@ -54,16 +54,7 @@ m.youtube.com##ytd-mealbar-promo-renderer
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.reel-shelf-items
-www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
 www.youtube.com##.ytd-comment-simplebox-renderer.style-scope
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
-www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)
-www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
-www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
-www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(1)
-www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(5)
 consent.youtube.com##.accept-all.secondary.btn
 consent.youtube.com##div.content-section:nth-of-type(2)
 consent.youtube.com##.manage-settings.mng-btn.secondary.btn
@@ -73,8 +64,6 @@ consent.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com###actions
 www.youtube.com###subscribe-button
 www.youtube.com###voice-search-button
 www.youtube.com##yt-button-shape

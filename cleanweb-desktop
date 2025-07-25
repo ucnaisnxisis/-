@@ -70,6 +70,15 @@ www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-rendere
 www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(5)
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(1)
 www.youtube.com###subscribe-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+consent.youtube.com##.accept-all.first.btn
+consent.youtube.com##div.content-section:nth-of-type(2)
+consent.youtube.com##.manage-settings.mng-btn.first.btn
+consent.youtube.com###consent-text
+consent.youtube.com##._yb_1ool5._yb_b9sct
+consent.youtube.com##+js(json-prune, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
+youtube.com##+js(json-prune, ##div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
 m.youtube.com###voice-search-button

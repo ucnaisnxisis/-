@@ -59,6 +59,7 @@ www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.y
 www.youtube.com###topbar
 www.youtube.com##.opened
 www.youtube.com###content-wrapper
+www.youtube.com##yt-button-shape
 www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
 www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)

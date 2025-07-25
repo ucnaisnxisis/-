@@ -43,6 +43,7 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
+m.youtube.com##yt-button-shape
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
 m.youtube.com###guide-links-primary

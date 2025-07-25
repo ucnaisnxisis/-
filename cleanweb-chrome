@@ -88,6 +88,7 @@ www.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com###topbar
+www.youtube.com##yt-button-shape
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com##.dialog-body-eom

@@ -55,35 +55,12 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##.reel-shelf-items
 www.youtube.com##.ytd-comment-simplebox-renderer.style-scope
-consent.youtube.com##.accept-all.secondary.btn
-consent.youtube.com##div.content-section:nth-of-type(2)
-consent.youtube.com##.manage-settings.mng-btn.secondary.btn
-consent.youtube.com###consent-text
-consent.youtube.com##._yb_1ool5._yb_b9sct
-consent.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
-www.youtube.com###subscribe-button
-www.youtube.com###voice-search-button
-www.youtube.com##yt-button-shape
-www.youtube.com###toast
 consent.youtube.com##.opened
 gstatic.com
-youtube.com##ytd-consent-bump-v2-lightbox
-youtube.com##tp-yt-iron-overlay-backdrop
-youtube.com##ytd-consent-bump-renderer
-youtube.com##ytd-mealbar-promo-renderer
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
-www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
-www.youtube.com###topbar
-www.youtube.com##.shortsLockupViewModelHost
-www.youtube.com###guide-links-primary
-www.youtube.com###guide-links-secondary
+www.youtube.com##ytd-consent-bump-v2-lightbox
+www.youtube.com##tp-yt-iron-overlay-backdrop
+www.youtube.com##ytd-consent-bump-renderer
+www.youtube.com##ytd-mealbar-promo-renderer
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad

@@ -75,6 +75,21 @@ www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
+||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
+## Mobile browsers
+||youtube.*/complete/search?q&pq&cp=0$domain=youtube.*,important
+www.youtube.*##div.isv-r[data-rfg]
+www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$=" qa"]
+www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$="review_summary"]
+www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$="third_party_aggregator_ratings"]
+www.youtube.*###footcnt > #fbarcnt
+www.youtube.com##body:style(overflow:auto!important;)
+!#if !env_firefox
+www.youtube.com##[href^="https://consent.youtube.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
+!#endif
+!#if env_firefox
+www.youtube.com##^[href^="https://consent.youtube.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
+!#endif
 consent.youtube.com##.accept-all.first.btn
 consent.youtube.com##div.content-section:nth-of-type(2)
 consent.youtube.com##.manage-settings.mng-btn.first.btn

@@ -73,6 +73,7 @@ www.youtube.com###voice-search-button
 www.youtube.com###voice-search-button > .ytd-masthead.style-scope
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
+www.youtube.com##yt-button-shape
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important

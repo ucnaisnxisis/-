@@ -75,6 +75,15 @@ www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
+consent.youtube.com##.accept-all.first.btn
+consent.youtube.com##div.content-section:nth-of-type(2)
+consent.youtube.com##.manage-settings.mng-btn.first.btn
+consent.youtube.com###consent-text
+consent.youtube.com##._yb_1ool5._yb_b9sct
+consent.youtube.com##+js(json-prune, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
+youtube.com##+js(json-prune, ##div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
 www.youtube.com##.ytd-rich-section-renderer.style-scope
 www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
 ! Shorts Ad

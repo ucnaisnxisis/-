@@ -44,6 +44,7 @@ www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
 m.youtube.com##yt-button-shape
+m.youtube.com###dialog
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
 m.youtube.com###guide-links-primary
@@ -75,6 +76,7 @@ www.youtube.com###voice-search-button > .ytd-masthead.style-scope
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 www.youtube.com##yt-button-shape
+www.youtube.com###dialog
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important

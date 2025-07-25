@@ -64,6 +64,10 @@ consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interst
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com###actions
+www.youtube.com###subscribe-button
+www.youtube.com###voice-search-button
+www.youtube.com##yt-button-shape
 consent.youtube.com##.opened
 gstatic.com
 youtube.com##ytd-consent-bump-v2-lightbox

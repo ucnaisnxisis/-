@@ -106,7 +106,6 @@ suggestqueries-clients6.youtube.com
 static.doubleclick.me
 fonts.gstatic.com
 github.com##li:nth-of-type(2)
-ads.google.com
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
 pagead46.l.doubleclick.co
@@ -188,7 +187,23 @@ static.ads-twitter.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+ads.google.com
 consent.google.com
+developers.google.com##li.devsite-footer-utility-item
+chromewebstore.google.com##footer
+chromewebstore.google.com##.footer
+play.google.com##div.KvNvKe:nth-of-type(2)
+chromewebstore.google.com##.yHWa2
+admanager.google.com
+marketingplatform.google.com
+apis.google.com
+support.google.com##sc-feedback-inline-mobile_dom-mobile-fab
+mtalk.google.com
+adssettings.google.com
+securepubads.g.doubleclick.net
+fundingchoicesmessages.google.com
+fundingchoicesmessages.google.com.ro##.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.tdi_191.vc_column_inner
+play.google.com##.app-translation-bar
 www.firefox.com##.mzp-c-footer-legal
 community.mozilla.org###menu-item-94
 blog.mozilla.org##.mzp-c-footer-secondary
@@ -405,7 +420,6 @@ www.kaspersky.com##.FooterBBB_policyBlock__3qtte
 www.kaspersky.com##.ScrollToTop_arrow__mY4I1.AccesibilityButton_button__B8YTJ
 romanialibera.ro##.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_167.vc_column
 romanialibera.ro##.tdc-element-style.td-pb-row.wpb_row.tdi_156.vc_row
-developers.google.com##li.devsite-footer-utility-item
 www.dozabot.eu##.list-reset.footer-links
 www.tabitatour.ro##.pb-5.text-center.text-dark
 www.tabitatour.ro##Politica-de-Cookies
@@ -667,8 +681,6 @@ addons.mozilla.org##.Footer-copyright
 addons.mozilla.org##.Footer-privacy-link
 addons.mozilla.org##.Notice-dismissible.GetFirefoxBanner.Notice-warning.Notice
 addons.opera.com##.hf--width-holder.hf--bottom-side
-chromewebstore.google.com##footer
-chromewebstore.google.com##.footer
 www.mozilla.org##.moz24-footer-secondary
 www.mozilla.org##div.m24-mzp-l-content-container:nth-of-type(2) > .m24-mzp-l-content > li:nth-of-type(4)
 www.mozilla.ai##.footer-bottom_wrapper
@@ -6060,7 +6072,6 @@ www.techmonitor.ai###menu-item-409254
 www.techmonitor.ai###menu-item-406748
 zgirls.org##.dbox-donation-button
 zgirls.org##[href="/privacy-policy"]
-play.google.com##div.KvNvKe:nth-of-type(2)
 proton.me##li.sm\:pr-2.sm\:border-purple-200.sm\:border-r.sm\:mr-2:nth-of-type(1)
 anibox.lol###menu-item-1783
 anibox.lol##.floatingchat-container-wrap-mobi
@@ -6180,7 +6191,6 @@ www.disneyplus.com##li:nth-of-type(2)
 www.disneyplus.com##.flex_row__1emlywy2p.Collection_linksSection__1c4ky6q1.Collection_linksSectionExpanded__1c4ky6q2 > .flex_col__1emlywy2q.Collection_groupDirection_direction_col__1c4ky6q8.Collection__1c4ky6q6 > .flex_col__1emlywy2q.Group_listBase__tx0y2l0.Group_verticalStyles__tx0y2l1.Group_dpFooterGroup__1ve9lw00 > li:nth-of-type(4)
 www.disneyplus.com##li:nth-of-type(6)
 www.disneyplus.com##li:nth-of-type(5)
-chromewebstore.google.com##.yHWa2
 playtech.ro##[href="https://playtech.ro/stiri/politica-de-utilizare-cookie-uri-impact"]
 playtech.ro##[href="https://playtech.ro/stiri/politica-de-confidentialitate-impact"]
 playtech.ro##[href="https://playtech.ro/stiri/termeni-si-conditii-de-utilizare-politica-de-prelucrare-a-datelor-cu-caracter-personal-impact"]
@@ -6605,7 +6615,6 @@ gomag.ro
 www.macgsm.ro
 admoloco.com
 static.libsym.com
-mtalk.google.com
 video-adblock.com
 vid-adblocker.com
 multiadblock.com
@@ -6617,8 +6626,6 @@ rethines-brocale.com
 historytotell.art
 220t.com
 84gs08xe1.com
-admanager.google.com
-marketingplatform.google.com
 www.cookielaw.org
 leaked-celebrities.com
 cdn1010.tnmr.org
@@ -7499,7 +7506,6 @@ www.contactderanjamente.ro##small
 genius.com##a.jYocGU.PageFootermobile__Link-iowlas-2:nth-of-type(7)
 genius.com##a.jYocGU.PageFootermobile__Link-iowlas-2:nth-of-type(6)
 genius.com##a.jYocGU.PageFootermobile__Link-iowlas-2:nth-of-type(5)
-apis.google.com
 ing.ro##.widget-displayed
 ing.ro###footer-cookie-settings-trigger
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"]
@@ -9272,7 +9278,6 @@ www.oskarvopsea.ro###didomi-notice-agree-button
 www.oskarvopsea.ro##.didomi-popup-notice-logo-container
 www.oskarvopsea.ro##.didomi-popup-notice-text-container
 littlestars.ro###gdpr-cookie-message
-www.google.com###KByQx
 www.cipcosmar.ro##p
 www.cipcosmar.ro###cookieNotice
 epardoseli.ro###cmplz-cookiebanner-container
@@ -11513,7 +11518,6 @@ jurnalul.ro##div.DAGInScrollContainer
 jurnalul.ro##p:nth-of-type(13)
 jurnalul.ro##p:nth-of-type(15)
 www.mai.gov.ro##.pojo-a11y-toolbar-toggle
-support.google.com##sc-feedback-inline-mobile_dom-mobile-fab
 www.g4media.ro##.cd-is-visible.cd-top
 dspiasi.ro###cookie-law-info-again
 financialintelligence.ro###colophon
@@ -12075,7 +12079,7 @@ api.appcues.net
 q.quora.com
 location.services.mozilla.com
 gamoneinterrupted.com
-mtalk.google.com
+thinkwithgoogle.com##.global-toast
 ak583.anime-kage.eu##.center.modal-body > p:nth-of-type(2)
 https://fugcgfilma.com/1980083
 fugcgfilma.com
@@ -12942,7 +12946,6 @@ amazon-adsystem.xyz
 about.ads.microsoft.com
 ads.microsoft.com
 www.adexchanger.com
-adssettings.google.com
 ipv4.imgur.map.fastly.net
 efeagreatasese.info
 tr-cost.com
@@ -12961,8 +12964,6 @@ adtlgc.com
 cxense.com
 scdn.cxense.com
 applets.ebxcdn.com
-securepubads.g.doubleclick.net
-fundingchoicesmessages.google.com
 analytics.afirstsoft.cn
 clearancejoinjavelin.com
 s10.histats.com
@@ -13063,7 +13064,6 @@ physicianurge.com
 o433621.ingest.sentry.io
 123.456.789.999
 s7.addthis.com
-fundingchoicesmessages.google.com
 prebid.the-ozone-project.com
 ichef.bbc.co.uk
 static.files.bbci.co.uk
@@ -14039,7 +14039,6 @@ www.bancibancomate.ro##.fc-secondary-button.fc-vendor-preferences-accept-all.fc-
 www.bancibancomate.ro##.fc-data-preferences-dialog.fc-dialog > .fc-footer-buttons-container > .fc-footer-buttons > .fc-primary-button.fc-confirm-choices.fc-button
 www.bancibancomate.ro##.fc-data-preferences-dialog.fc-dialog > .fc-footer-buttons-container > .fc-footer-buttons
 www.bancibancomate.ro##.fc-data-preferences-dialog.fc-dialog > .fc-footer-buttons-container
-fundingchoicesmessages.google.com.ro##.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.tdi_191.vc_column_inner
 www.coduripostale.net##footer
 www.coduripostale.net##.fc-choice-dialog.fc-dialog > .fc-dialog-content
 www.coduripostale.net##.fc-primary-button.fc-cta-consent.fc-button
@@ -17634,7 +17633,6 @@ perforce.com##ul.optanon-menu.optanon-menu-allow
 phoronix.com#@#.cookies
 picturehouses.co.uk###cookie_message
 pinkladyapples.co.uk###banner-wrapper
-play.google.com##.app-translation-bar
 plesner.com###wt-cookie-box
 pokemon-trainer.com###Notices
 policy.cookiereports.com
@@ -19867,7 +19865,6 @@ ogrtorino.it###__next > div[data-reactroot] > div[data-reactid] > div[class]
 giftsandcare.com###divbottom
 kempa-satellite.com###mc_top_bar
 turbocso.hu###auroraOverlay
-thinkwithgoogle.com##.global-toast
 konicci.cz###fixedBar
 games.fm###cxcx
 malihu.gr###malihu-cookies
@@ -21378,7 +21375,6 @@ ogrtorino.it###__next > div[data-reactroot] > div[data-reactid] > div[class]
 giftsandcare.com###divbottom
 kempa-satellite.com###mc_top_bar
 turbocso.hu###auroraOverlay
-thinkwithgoogle.com##.global-toast
 konicci.cz###fixedBar
 games.fm###cxcx
 malihu.gr###malihu-cookies

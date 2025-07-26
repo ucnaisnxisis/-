@@ -47,60 +47,8 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##ytm-shorts-lockup-view-model.shortsLockupViewModelHost
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
-www.youtube.com##ytm-shorts-lockup-view-model-v2.yt-horizontal-list-renderer.shortsLockupViewModelHost
-www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
-www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
-www.youtube.com##ytd-consent-bump-v2-lightbox
-www.youtube.com##tp-yt-iron-overlay-backdrop
-www.youtube.com##ytd-consent-bump-renderer
-www.youtube.com##ytd-mealbar-promo-renderer
-www.youtube.com###voice-search-button
-www.youtube.com###voice-search-button > .ytd-masthead.style-scope
-www.youtube.com###guide-links-primary
-www.youtube.com###guide-links-secondary
-www.youtube.com##yt-button-shape
-www.youtube.com###dialog
-www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-www.youtube.com##ytd-shelf-renderer.ytd-item-section-renderer.style-scope
-||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
-## Mobile browsers
-||youtube.*/complete/search?q&pq&cp=0$domain=youtube.*,important
-www.youtube.*##div.isv-r[data-rfg]
-www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$=" qa"]
-www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$="review_summary"]
-www.youtube.*###rhs #kp-wp-tab-overview div[data-attrid$="third_party_aggregator_ratings"]
-www.youtube.*###footcnt > #fbarcnt
-www.youtube.com##body:style(overflow:auto!important;)
-!#if !env_firefox
-www.youtube.com##[href^="https://consent.youtube.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
-!#endif
-!#if env_firefox
-www.youtube.com##^[href^="https://consent.youtube.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
-!#endif
-consent.youtube.com##.accept-all.first.btn
-consent.youtube.com##div.content-section:nth-of-type(2)
-consent.youtube.com##.manage-settings.mng-btn.first.btn
-consent.youtube.com###consent-text
-consent.youtube.com##._yb_1ool5._yb_b9sct
-consent.youtube.com##+js(json-prune, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
-consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
-youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, lightbox)
-youtube.com##+js(json-prune, ##div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row)
-www.youtube.com##.ytd-rich-section-renderer.style-scope
-www.youtube.com##+js(nano-stb, resolve(1), *, 0.001)
-! Shorts Ad
-m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(json-prune-fetch-response, reelWatchSequenceResponse.entries.[-].command.reelWatchEndpoint.adClientParams.isAd entries.[-].command.reelWatchEndpoint.adClientParams.isAd, , propsToMatch, url:/reel_watch_sequence?)
-! AdDefend
-!#if env_chromium
-lablue.*##+js(nostif, push, 500)
-||doubleclick.net^$script,important,domain=auto-motor-und-sport.de
-!#endif
-4-liga.com,4fansites.de,4players.de,9monate.de##+js(nostif, .call(null), 10)
-aachener-nachrichten.de,aachener-zeitung.de,abendblatt.de,abendzeitung-muenchen.de,about-drinks.com,abseits-ka.de,airliners.de,ajaxshowtime.com,allgemeine-zeitung.de,alpin.de,antenne.de,arcor.de,areadvd.de,areamobile.de,ariva.de,astronews.com,aussenwirtschaftslupe.de,auszeit.bio,auto-motor-und-sport.de,auto-service.de,autobild.de,autoextrem.de,autopixx.de,autorevue.at,az-online.de##+js(nostif, .call(null), 10)
-baby-vornamen.de,babyclub.de,bafoeg-aktuell.de,berliner-kurier.de,berliner-zeitung.de,bigfm.de,bikerszene.de,bildderfrau.de,blackd.de,blick.de,boerse-online.de,boerse.de,boersennews.de,braunschweiger-zeitung.de,brieffreunde.de,brigitte.de,buerstaedter-zeitung.de,buffed.de,businessinsider.de,buzzfeed.at,buzzfeed.de##+js(nostif, .call(null), 10)
-caravaning.de,cavallo.de,chefkoch.de,cinema.de,clever-tanken.de,computerbild.de,computerhilfen.de,comunio-cl.com,comunio.*,connect.de,chip.de##+js(nostif, .call(null), 10)
-da-imnetz.de,dasgelbeblatt.de,dbna.com,dbna.de,deichstube.de,deine-tierwelt.de,der-betze-brennt.de,derwesten.de,desired.de,dhd24.com,dieblaue24.com,digitalfernsehen.de,dnn.de,donnerwetter.de##+js(nostif, .call(null), 10)
-e-hausaufgaben.de,e-mountainbike.com,eatsmarter.de,echo-online.de,ecomento.de,einfachschoen.me,elektrobike-online.com,eltern.de,epochtimes.de,essen-und-trinken.de,express.de,extratipp.com##+js(nostif, .call(null), 10)
+www.youtube.com#@#+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, , 1000)
 ads.youtube.com
 ad.youtube.com
 youtubead.com

@@ -197,8 +197,6 @@ wiki.mozilla.org##[href="/MozillaWiki:Privacy_policy"]
 www.mediawiki.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement"]
 www.mediawiki.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
 linuxreviews.org##[href="/LinuxReviews:Privacy_policy"]
-www.google.com###sfooter
-www.google.com##a.pHiOh:nth-of-type(1)
 ro-ro.facebook.com##._4-u8._5058._4-u2
 ro-ro.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 ro-ro.facebook.com##footer
@@ -295,7 +293,6 @@ search.brave.com###main > .svelte-6sdecn
 search.brave.com##.svelte-13wgnj1.extra
 search.brave.com##.svelte-13gjko5.noscript-hide.subutton-wrapper
 search.brave.com##.svelte-1lo4kn3.footer
-www.google.com##.XDyW0e
 duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(2)
 gombis.ro##a.modal-link:nth-of-type(2)
 www.gameology.ro##.ckPolicyGomag
@@ -5985,7 +5982,6 @@ hobbygames.ro###launcher
 www.dakimakura.ro###ZY6-q8O9qUGrS3fukXcFj
 www.jucariishop.ro##.accept_button_cont
 www.jucariishop.ro##p:nth-of-type(1)
-www.google.com###arc-srp_
 www.fruugo.ro##.js-consent-btn-accept.btn-success.btn
 www.fruugo.ro##.mb-32
 www.intrenoifievorba.ro###gc-backtotop
@@ -6677,7 +6673,6 @@ betzapdoson.com
 amung.us
 2freethinking.online
 code3.adtlgc.com
-imasdk.googleapis.com
 attr-2p.com
 cookiebot.com
 datatables.net
@@ -8627,22 +8622,6 @@ www.myxxgirl.com##.av_no.av_btn
 www.myxxgirl.com##.ver-menu
 www.myxxgirl.com###modal_content_wrapper > p
 www.myxxgirl.com##strong
-# Desktop browsers
-||google.*/complete/search?q&cp=0$domain=google.*,important
-## Mobile browsers
-||google.*/complete/search?q&pq&cp=0$domain=google.*,important
-www.google.*##div.isv-r[data-rfg]
-www.google.*###rhs #kp-wp-tab-overview div[data-attrid$=" qa"]
-www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="review_summary"]
-www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="third_party_aggregator_ratings"]
-www.google.*###footcnt > #fbarcnt
-www.google.com##body:style(overflow:auto!important;)
-!#if !env_firefox
-www.google.com##[href^="https://policies.google.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
-!#endif
-!#if env_firefox
-www.google.com##^[href^="https://policies.google.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
-!#endif
 www.pornhub.com##.eudsaLink.blackBtn.buttonClass
 www.fapcat.com##.on-top
 iasitvlife.ro##.ays-fpl-modals
@@ -10627,8 +10606,6 @@ www.qmul.ac.uk##.footer__group--three-quarter.footer__group > .footer__nav-links
 theconversation.com##.large-grid-four.grid-five.footer-link-list.community > nav > ul > li:nth-of-type(4)
 theconversation.com##.large-grid-seven.grid-five.footer-link-list.company > nav > ul > li:nth-of-type(6)
 theathletic.com###darken-overlay
-consent.google.ro##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(3) > .uScs5d > div > .uScs5d > div:nth-of-type(2) > .VfPpkd-dgl2Hf-ppHlrf-sM5MNb
-consent.google.ro##div.iWeOse.AaN0Dd.Usd1Ac.KC1dQ.VfPpkd-WsjYwc-OWXEXe-INsAgc.VfPpkd-WsjYwc:nth-of-type(4) > .uScs5d > div > .uScs5d > div:nth-of-type(2)
 www.isitdownrightnow.com##.scrollup
 help.dreamhost.com##.no-nav.topbtn
 nordlayer.com##.CookieConsent_cookieConsent__sqp_Q
@@ -11200,7 +11177,6 @@ forum.mobilissimo.ro###elGuestTerms
 ro.scribd.com##div.GridColumn-module_xxs_2__L2HPM.GridColumn-module_xs_2__lfNOB.GridColumn-module_s_2__1-ptI.GridColumn-module_m_8__3ZSLb.GridColumn-module_l_12__FvEF8.GridColumn-module_xl_12__YZ-Rh.GridColumn-module_hide_above_s__NbVNC.GridColumn-module_hide_above_m__zwIrv.GridColumn-module_hide_above_l__UT1-z.GridColumn-module_hide_above_xl__erar5.GridColumn-module_wrapper__soqyu:nth-of-type(2) > .Footer-module_verticalColumn__-CR6f > .Footer-module_columnList__fqabA > li:nth-of-type(4) > .FooterLink-module_wrapper__V1y4b.TextButton-module_wrapper__ZwW-w > .TextButton-module_content__6x-Ra > .TextButton-module_children__HwxUl
 gadgetreport.ro##.widget_nav_menu.col-4.widget
 gadgetreport.ro##.classic-footer-lower.lower-footer
-||www.google.com/recaptcha/api2/anchor$subdocument
 www.doctoracasa.ro##.grecaptcha-badge
 www.doctoracasa.ro##.backtotop
 www.doctoracasa.ro##[href="/gdpr/"]
@@ -13060,15 +13036,11 @@ cookiepro.xyx
 cookie-cdn.cookiepro.com
 criteo.com
 cxsense.com
-www.google.*##^script:has-text(consentCookiePayload)
-www.google.*##+js(acis, document.cookie, YES+)
-google.*##+js(aeld, DOMContentLoaded, CONSENT)
 co.uk.edgekey.net
 cdn.optimizely.com
 cumm.top
 connect.idocdn.com
 cdn.filimenabrighid.xyz
-csp.withgoogle.com
 nest.com
 doubleclick.net
 www.gstatic.vom
@@ -13097,8 +13069,6 @@ ichef.bbc.co.uk
 static.files.bbci.co.uk
 edigitalsurvey.com
 sb.scorecardresearch.com
-ssl.google-analytics.com
-google-analytics.com
 secure.gravatar.com
 vouchanalysistonight.com
 pugsgivehug.com
@@ -13682,7 +13652,6 @@ cxense.com
 scdn.cxense.com
 applets.ebxcdn.com
 securepubads.g.doubleclick.net
-fundingchoicesmessages.google.com
 rule34video.com##input.button:nth-of-type(2)
 rule34video.com##.heading_title
 www.cartoonpornvideos.com##.grow.py-1.modal-body
@@ -15012,7 +14981,6 @@ www.paginademedia.ro###hai-sus
 www.paginademedia.ro##.text-uppercase.list-inline > li:nth-of-type(10)
 bucovinamedia.ro##.menu-item-16348.td-normal-menu.td-menu-item.menu-item-object-page.menu-item-type-post_type.menu-item > [href="https://bucovinamedia.ro/publicitate/"]
 about.google###cookieBar
-dns.google
 aquaphor.com##.is-show.js-cookies.cookies
 aquaphor.com##.is-show.js-cookies.cookies
 www.nirsoft.net/utils/chrome_cookies_view.html
@@ -16278,7 +16246,6 @@ www.elefant.ro###disabled-cookies-warning
 www.imageskincare.com.ro###ysolCookieInfoBox
 www.remove.bg##body > div:nth-of-type(4)
 www.doizece.ro##.coockieHeader
-www.google.com###Sx9Kwc
 ifworlddesignguide.com##.cnmCC-lightbox-show.cnmCC-lightbox
 www.loveisland.ro##.alert-warning.notification-content.cm-notification-content
 excita.ro##.show.cookiealert.text-center.alert
@@ -17077,7 +17044,6 @@ www.asculta-radio-live.com###cc
 onlineradiobox.com##.modal--cookies > section
 onlineradiobox.com##.modal--cookies
 onlineradiobox.com##.modal--cookies-backdrop
-www.google.com##.USRMqe
 new.lewd.ninja###gdp4we
 new.lewd.ninja##div.container.is-fullhd:nth-of-type(7) > .box.stargate > div
 onlineradiobox.com##.modal--cookies

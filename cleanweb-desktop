@@ -43,11 +43,21 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-www.youtube.com###footer
-www.youtube.com###voice-search-button
 www.youtube.com#@#+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], , 1000)
-www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, , 1000) 
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, , 1000)
 www.youtube.com###subscribe-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+www.youtube.com###footer
+www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
+www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body > div.ytd-consent-bump-v2-lightbox.style-scope.legal-text > .ytd-consent-bump-v2-lightbox.style-scope
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.legal-text
+www.youtube.com###topbar
+www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+www.youtube.com##.ytd-feed-nudge-renderer.style-scope
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+www.youtube.com###voice-search-button
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
 m.youtube.com###voice-search-button

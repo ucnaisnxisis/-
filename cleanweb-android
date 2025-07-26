@@ -43,8 +43,9 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
-m.youtube.com##lightbox
-m.youtube.com###lightbox
+m.youtube.com##.consent-bump-v2-lightbox
+m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
+m.youtube.com##ytm-shorts-lockup-view-model.shortsLockupViewModelHost
 www.youtube.com##ytm-shorts-lockup-view-model-v2.yt-horizontal-list-renderer.shortsLockupViewModelHost
 www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
 www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope

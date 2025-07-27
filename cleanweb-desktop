@@ -57,7 +57,6 @@ www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body
-www.youtube.com###lightbox
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com###voice-search-button
 www.youtube.com##.yt-spec-button-view-model > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
@@ -80,7 +79,6 @@ www.youtube.com###simple-box
 www.youtube.com##.ytp-button.ytp-watch-later-button
 www.youtube.com###hover-overlays
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
-www.youtube.com##.opened
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
@@ -110,7 +108,6 @@ www.youtube.com###simple-box > .ytd-comments-header-renderer.style-scope
 www.youtube.com###like-button > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--override-small-size-icon.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-s.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
 www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
 www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
-www.youtube.com###reason
 www.youtube.com##.yt-player-error-message-renderer.style-scope > yt-button-shape
 www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
 gstatic.com

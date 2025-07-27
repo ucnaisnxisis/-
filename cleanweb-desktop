@@ -80,6 +80,12 @@ www.youtube.com##ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape 
 www.youtube.com###simple-box
 www.youtube.com##.ytp-button.ytp-watch-later-button
 www.youtube.com###hover-overlays
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
+www.youtube.com##.opened
+www.youtube.com##.pause
+www.youtube.com##.paused
+www.youtube.com##paused
+www.youtube.com##pause
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

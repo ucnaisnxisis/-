@@ -79,7 +79,6 @@ www.youtube.com##.yt-core-attributed-string--link-inherit-color.yt-core-attribut
 www.youtube.com##.ytp-button.ytp-watch-later-button
 www.youtube.com###hover-overlays
 www.youtube.com##ytd-popup-container.ytd-app.style-scope
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

@@ -73,6 +73,9 @@ m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
+www.youtube.com##.yt-horizontal-list-renderer.shortsLockupViewModelHost
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
+static.doubleclick.net/instream/ad_status.js
 www.youtube.com###footer
 www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope

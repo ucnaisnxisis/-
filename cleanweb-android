@@ -47,42 +47,10 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##ytm-shorts-lockup-view-model.shortsLockupViewModelHost
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
-www.youtube.com##.yt-horizontal-list-renderer.shortsLockupViewModelHost
-www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
-static.doubleclick.net/instream/ad_status.js
-www.youtube.com###footer
-www.youtube.com###topbar
-www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
-www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2) > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
-www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body > div.ytd-consent-bump-v2-lightbox.style-scope.legal-text > .ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body > div.ytd-consent-bump-v2-lightbox.style-scope > .ytd-consent-bump-v2-lightbox.style-scope.legal-text
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-www.youtube.com###content-wrapper
-www.youtube.com###voice-search-button
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)
-www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
-www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
-www.youtube.com###menu
-www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
-www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
-www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
-www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(1)
-www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
-www.youtube.com###subscribe-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-www.youtube.com##.yt-spec-button-view-model > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
-www.youtube.com###about-these-results > .ytd-search-header-renderer.style-scope > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-trailing.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
-www.youtube.com###placeholder-area > .ytd-comment-simplebox-renderer.style-scope
-www.youtube.com###placeholder-area
-www.youtube.com###simple-box > .ytd-comments-header-renderer.style-scope
-www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--disable-text-ellipsis.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
 www.youtube.com###player-error-message-container > .yt-player-error-message-renderer.style-scope
-www.youtube.com##.ytd-reel-player-overlay-renderer.style-scope.action-container > .ytd-reel-player-overlay-renderer.style-scope
-www.youtube.com##.ytd-popup-container.style-scope > .ytd-modal-with-title-and-button-renderer.style-scope
+www.youtube.com##.consent-bump-v2-lightbox
 ads.youtube.com
 ad.youtube.com
 youtubead.com

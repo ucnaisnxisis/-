@@ -49,9 +49,6 @@ www.youtube.com###subscribe-button-shape > .yt-spec-button-shape-next--enable-ba
 www.youtube.com###footer
 www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body > div.ytd-consent-bump-v2-lightbox.style-scope.legal-text > .ytd-consent-bump-v2-lightbox.style-scope
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com###topbar
 www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##.ytd-feed-nudge-renderer.style-scope

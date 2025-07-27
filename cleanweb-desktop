@@ -59,6 +59,23 @@ www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com###voice-search-button
 www.youtube.com##.yt-spec-button-view-model > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(2)
+www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
+www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(1)
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
+www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+www.youtube.com##.ytd-menu-renderer.style-scope > .yt-spec-icon-shape.yt-icon.style-scope.yt-icon-shape
+www.youtube.com###overflow-menu > .ytd-playlist-panel-renderer.style-scope
+www.youtube.com##.yt-list-view-model-wiz > yt-list-item-view-model.yt-list-item-view-model-wiz
+www.youtube.com##.yt-lockup-metadata-view-model-wiz__menu-button
+www.youtube.com##ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
+www.youtube.com###simple-box
+www.youtube.com##.yt-core-attributed-string--link-inherit-color.yt-core-attributed-string__link--call-to-action-color.yt-core-attributed-string__link
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

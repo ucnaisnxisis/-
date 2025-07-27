@@ -58,6 +58,8 @@ www.youtube.com###footer
 www.youtube.com##.opened
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.logo-aside
 www.youtube.com###topbar
+www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(5)

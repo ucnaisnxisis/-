@@ -57,8 +57,7 @@ www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.legal-text
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-title
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.body
-www.youtube.com##lightbox
-www.youtube.com###.opened
+www.youtube.com###lightbox
 www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 www.youtube.com###voice-search-button
 www.youtube.com##.yt-spec-button-view-model > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
@@ -82,10 +81,6 @@ www.youtube.com##.ytp-button.ytp-watch-later-button
 www.youtube.com###hover-overlays
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 www.youtube.com##.opened
-www.youtube.com##.pause
-www.youtube.com##.paused
-www.youtube.com##paused
-www.youtube.com##pause
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

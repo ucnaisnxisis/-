@@ -44,6 +44,7 @@ www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
 m.youtube.com##.consent-bump-v2-lightbox
+m.yooutube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##ytm-shorts-lockup-view-model.shortsLockupViewModelHost
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
@@ -51,6 +52,7 @@ www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.sty
 www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
 www.youtube.com###player-error-message-container > .yt-player-error-message-renderer.style-scope
 www.youtube.com##.consent-bump-v2-lightbox
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 ads.youtube.com
 ad.youtube.com
 youtubead.com

@@ -47,6 +47,9 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.no-icon.is-dark-theme.feed-nudge-content-wrapper
 m.youtube.com##ytm-shorts-lockup-view-model.shortsLockupViewModelHost
 m.youtube.com##.no-icon.feed-nudge-content-wrapper
+www.youtube.com##.yt-horizontal-list-renderer.shortsLockupViewModelHost
+www.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope > .ytd-reel-shelf-renderer.style-scope
+static.doubleclick.net/instream/ad_status.js
 www.youtube.com#@#+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], , 1000)
 www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, , 1000)
 www.youtube.com###footer

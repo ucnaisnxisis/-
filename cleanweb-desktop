@@ -84,6 +84,11 @@ www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 www.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2) > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
 www.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
+www.youtube.com##.opened
+youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+youtube.com##+js(set, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1);ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog, undefined)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

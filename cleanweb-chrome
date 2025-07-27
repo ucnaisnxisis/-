@@ -46,12 +46,17 @@ www.cylex.com.ar##div:nth-of-type(5)
 m.youtube.com###voice-search-button
 m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
-m.youtube.com###lightbox
-www.youtube.com###footer
+m.youtube.com###guide-links-primary
+m.youtube.com###guide-links-secondary
+m.youtube.com##ytd-consent-bump-v2-lightbox
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+www.youtube.com##ytd-consent-bump-v2-lightbox
 www.youtube.com###voice-search-button
 www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
-www.youtube.com###lightbox
+music.youtube.com###right-content
+music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
 ads.youtube.com
 ad.youtube.com
 youtubead.com

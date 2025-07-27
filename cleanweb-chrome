@@ -49,6 +49,8 @@ m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v
 m.youtube.com###guide-links-primary
 m.youtube.com###guide-links-secondary
 m.youtube.com##ytd-consent-bump-v2-lightbox
+m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 www.youtube.com##ytd-consent-bump-v2-lightbox

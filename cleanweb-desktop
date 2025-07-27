@@ -75,10 +75,8 @@ www.youtube.com##.yt-list-view-model-wiz > yt-list-item-view-model.yt-list-item-
 www.youtube.com##.yt-lockup-metadata-view-model-wiz__menu-button
 www.youtube.com##ytd-button-renderer.ytd-masthead.style-scope > yt-button-shape > .yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
 www.youtube.com###simple-box
-www.youtube.com##.yt-core-attributed-string--link-inherit-color.yt-core-attributed-string__link--call-to-action-color.yt-core-attributed-string__link
 www.youtube.com##.ytp-button.ytp-watch-later-button
 www.youtube.com###hover-overlays
-www.youtube.com##ytd-popup-container.ytd-app.style-scope
 ||youtube.*/complete/search?q&cp=0$domain=youtube.*,important
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope

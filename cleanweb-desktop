@@ -96,6 +96,12 @@ www.youtube.com###consent-text
 www.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+consent.youtube.com###login-banner
+consent.youtube.com##.accept-all.secondary.btn
+consent.youtube.com###consent-text
+consent.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
 gstatic.com

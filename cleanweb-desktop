@@ -344,6 +344,9 @@ www.noua.info##a.privacy-span:nth-of-type(1)
 click.ro##.childs-open.svelte-12xgs6r.item > .svelte-12xgs6r.childs > a.svelte-12xgs6r.child:nth-of-type(1)
 click.ro##a.svelte-12xgs6r.child:nth-of-type(3)
 www.stiripesurse.ro##.header-top
+help.steampowered.com##.footer_content
+steamcommunity.com##.login_bottom_row
+www.aiease.ai##.z-10.\34 md\:flex.hidden.justify-between.flex-col.pt-\[76px\].h-\[100vh\].w-\[252px\].top-0.left-0.fixed.space-y-2.p-4.bg-white > .w-full
 publimix.ro##footer
 dilemaveche.ro###scrollUp
 dilemaveche.ro##li.svelte-jxipsg.subItem:nth-of-type(2)

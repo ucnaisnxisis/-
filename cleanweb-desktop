@@ -154,7 +154,6 @@ consent.youtube.com
 suggestqueries-clients6.youtube.com
 static.doubleclick.me
 fonts.gstatic.com
-github.com##li:nth-of-type(2)
 pagead46.l.doubleclick.net
 pagead46.l.doubleclick.org
 pagead46.l.doubleclick.co
@@ -3623,8 +3622,6 @@ zhuanlan.zhihu.com##.css-16o1dee.Button--withLabel.Button--blue.Button--primary.
 www.kingarthurbaking.com##.footer__legal
 www.kingarthurbaking.com###hsBeaconBtn
 www.kingarthurbaking.com##.region-below-connect.region
-welldeef.github.io###support
-welldeef.github.io###smallSupport
 www.greatamericancookies.com###footer
 ordernew.greatamericancookies.com##.Footer_footer_legal_menu__\+wYg5
 www.greatamericancookies.com##.mobile-links-menu.menu-container
@@ -6104,7 +6101,6 @@ statistica.gov.md##[href="https://statistica.gov.md/ro/politica-de-confidentiali
 statistica.gov.md##.cookielinks.copyright-text
 www.anofm.ro##.pojo-a11y-toolbar-toggle
 www.anofm.ro###menu-meniu-footer-3
-github.com##.BackToTop--visible.BackToTop
 www.france24.com##[href="https://www.francemm.com/en/privacy"]
 www.france24.com##[href="https://www.francemm.com/en/cookies"]
 www.whitehouse.gov###menu-item-34
@@ -7629,7 +7625,6 @@ www.observatorcultural.ro##.HCCC__content
 amaltea.ro##.bottom
 www.croxyproxy.com###feedbackTab
 www.croxyproxy.com###footer
-github.com##.BackToTop--visible.BackToTop
 www.commitglobal.org##.sm\:items-end.space-y-4.w-full.items-center.flex-col.flex
 newsweek.ro##.z-10.p-4.items-center.justify-center.flex-wrap.flex-col.flex.w-full.bottom-12.text-white.bg-red.fixed
 www.perverttube.com##.content > .top
@@ -7673,7 +7668,6 @@ web.archive.org##.goTop
 www.dedeman.ro##.show-button.feedback-button
 www.reginamaria.ro##.rm-modal.block-newsletter-block-modal
 www.animax.co.jp##.pagetop
-d3ward.github.io##.btn-p.gt-link
 rigletboloed.shop
 www.peroz.ro##.footer
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"]
@@ -7873,7 +7867,6 @@ fapforfun.net###scroll-top
 codeberg.org##[href="/codeberg/org/src/PrivacyPolicy.md"]
 librewolf.net##div > [href="/privacy-policy/"]
 librewolf.net##li:nth-of-type(6) > [href="/privacy-policy/"]
-github.com##li.mx-2:nth-of-type(2)
 portapps.io##.cd-fade-out.cd-is-visible.cd-top
 18adultgames.com##.age-gate__submit--no.age-gate__submit
 18adultgames.com##.age-gate__heading
@@ -8641,7 +8634,6 @@ news.sky.com/story/robert-f-kennedy-jr-apologises-for-super-bowl-advert-resembli
 www.tampermonkey.net##.show.clickable.back-to-top
 blog.mozilla.ai###ghost-portal-root
 twitter.com###credential_picker_iframe
-docs.github.com##footer
 stirileprotv.ro##.outer-wrapper
 stirileprotv.ro##.main-container-sticky
 rule34.xxx##.gdprinner
@@ -9424,8 +9416,6 @@ axeetech.com###cookie-law-info-again
 www.casino.org###m-cookie-banner
 www.casino.org##.above-bottom-banner.items-center.flex-col.flex.a-back-to-top
 duo.com##.footer-copyright-row.footer-row.max-width--content
-github.com##cookie-consent-link
-yoric.github.io##.suspension
 a1.ro##.activate-social-media
 m.digi24.ro##.data-app-meta-article.data-app-meta.entry [src]
 ci-en.dlsite.com##.notAdult

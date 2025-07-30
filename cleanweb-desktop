@@ -362,6 +362,15 @@ duckduckgo.com##.footer
 duckduckgo.com###react-ai-button-slot
 duckduckgo.com##.footer
 duckduckgo.com###react-ai-button-slot
+github.com##.footer-session-authentication-links
+github.com##.BackToTop--visible.BackToTop
+github.com##cookie-consent-link
+github.com##.pr-lg-4.mb-5.col-lg-4.col-12
+d3ward.github.io##.btn-p.gt-link
+welldeef.github.io###support
+welldeef.github.io###smallSuppor
+yoric.github.io##.suspension
+docs.github.com##footer
 amfostacolo.ro###topcontrol
 amfostacolo.ro##div.small.m-t-30.col-sm-3:nth-of-type(2)
 romtur.ro##.aikit-chat-widget

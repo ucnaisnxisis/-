@@ -116,8 +116,8 @@ www.youtube.com##ytd-consent-bump-v2-lightbox
 www.youtube.com###voice-search-button
 www.youtube.com##.watch-metadata-refresh
 www.youtube.com##eom-v1-dialog style-scope ytd-consent-bump-v2-lightbox style-scope ytd-consent-bump-v2-lightbox
-www.youtube.com##.v2-lightbox
-www.youtube.com##.v1-lightbox
+www.youtube.com##.v2
+www.youtube.com##.v1
 www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
 www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], opened , 1000)

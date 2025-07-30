@@ -406,6 +406,7 @@ emag.ro##rect:nth-of-type(2)
 www.emag.ro##.bg-light.rounded-circle.d-flex.text-decoration-none.text-neutral-darkest.position-fixed.align-items-center.flex-column.acc-toolbox-open-button > div
 www.emag.ro##div.js-footer-group.col-sm-3:nth-of-type(4)
 www.emag.ro##.footer-copy
+www.dreamstime.com##.show.popup
 gombis.ro##a.modal-link:nth-of-type(2)
 planetanoastra.com##.site-footer
 planetanoastra.com##.menu-item.page-item-341.page_item

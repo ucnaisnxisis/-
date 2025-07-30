@@ -81,6 +81,8 @@ m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
+m.youtube.com###toast
+www.youtube.com###toast
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary

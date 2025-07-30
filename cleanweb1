@@ -138,6 +138,7 @@ m.youtube.com##.dialog-topbar
 m.youtube.com##.show-more-container
 m.youtube.com##.privacy-terms
 m.youtube.com##.reel-shelf-header
+ads.youtube.com##.paused-mode.lightbox-interrupting.lightbox-showing.ytp-large-width-mode.ytp-hide-info-bar.ytp-fine-scrubbing-exp.ytp-bigboards.ytp-fit-cover-video.cookies-created.ytp-cairo-refresh-signature-moments.ytp-cairo-refresh.ytp-ssap.ytp-exp-ppp-update.ytp-modern-caption.ytp-exp-bottom-control-flexbox.ytp-transparent.html5-video-player
 www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
 youtube.com###secundar-inner>#legate .badge-style-type-live-now:upward(ytd-compact-video-render)

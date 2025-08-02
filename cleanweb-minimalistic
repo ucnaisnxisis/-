@@ -81,6 +81,35 @@ m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
+m.youtube.com##.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
+m.youtube.com##.comment-menu.icon-button
+m.youtube.com##div.comment-icons:nth-of-type(2)
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##yt-touch-feedback-shape
+m.youtube.com##.yt-spec-button-shape-next__icon
+m.youtube.com##button-view-model.slim_video_action_bar_renderer_button.yt-spec-button-view-model
+m.youtube.com##.yt-spec-dialog-layout__dialog-layout-content-inner > .secondary-text
+m.youtube.com##.modal-title
+m.youtube.com##.ytWebScrimHostModernOverlay.ytWebScrimHost
+m.youtube.com##.reel-shelf-header
+m.youtube.com##ytm-comments-header-renderer
+m.youtube.com##ytm-menu-item:nth-of-type(4)
+m.youtube.com##ytm-menu-item:nth-of-type(1)
+m.youtube.com##ytm-menu-item:nth-of-type(3)
+m.youtube.com##ytm-menu-item:nth-of-type(5)
+m.youtube.com##ytm-menu-item:nth-of-type(6)
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##.cbox.secondary-text.comment-details
+m.youtube.com##ytm-player-error-message-renderer
+m.youtube.com##ytm-pivot-bar-item-renderer:nth-of-type(3)
+m.youtube.com##.slim_video_action_bar_renderer_button.ytSegmentedLikeDislikeButtonViewModelHost
+m.youtube.com##.ytCarouselItemViewModelHost
+m.youtube.com##.reel-player-overlay-actions
+m.youtube.com##ytm-sentiment-factoid-renderer
+m.youtube.com##.ytm-video-description-infocards-section-subtitle
+m.youtube.com##div.yt-content-metadata-view-model-wiz__metadata-row:nth-of-type(2) > span.yt-core-attributed-string--link-inherit-color.yt-core-attributed-string--white-space-pre-wrap.yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string:nth-of-type(1)
+m.youtube.com##.yt-content-metadata-view-model-wiz__delimiter
+m.youtube.com##.subhead
 www.youtube.com###dislike-button > yt-button-shape
 www.youtube.com##.ytd-comment-engagement-bar.style-scope
 www.youtube.com###hover-overlays
@@ -377,6 +406,9 @@ welldeef.github.io###support
 welldeef.github.io###smallSuppor
 yoric.github.io##.suspension
 docs.github.com##footer
+adguard-dns.io##li.footer__item:nth-of-type(2)
+adguard-dns.io##.backToTopButtonShow_BLAB.backToTopButton_RvS8.theme-back-to-top-button.clean-btn
+uso.kkx.one##li.nav-item:nth-of-type(1)
 amfostacolo.ro###topcontrol
 amfostacolo.ro##div.small.m-t-30.col-sm-3:nth-of-type(2)
 romtur.ro##.aikit-chat-widget

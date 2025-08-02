@@ -418,6 +418,9 @@ duckduckgo.com##.footer
 duckduckgo.com###react-ai-button-slot
 amfostacolo.ro###topcontrol
 amfostacolo.ro##div.small.m-t-30.col-sm-3:nth-of-type(2)
+adguard-dns.io##li.footer__item:nth-of-type(2)
+adguard-dns.io##.backToTopButtonShow_BLAB.backToTopButton_RvS8.theme-back-to-top-button.clean-btn
+uso.kkx.one##li.nav-item:nth-of-type(1)
 romtur.ro##.aikit-chat-widget
 romtur.ro##.footer
 www.infotour.ro##[href="https://www.infotour.ro/confidentialitate/"]

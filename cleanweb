@@ -173,7 +173,7 @@ messages.google.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-@@gstatic.com
+@@encrypted-tbn0.gstatic.com
 www.bing.com###sb_advertise
 www.bing.com###sb_privacy
 www.revouninstaller.com##.footer-menu-new-contact
@@ -978,6 +978,48 @@ filehippo.com##li.I44GA0:nth-of-type(5)
 download.cnet.com##.ADwqCt > li:nth-of-type(5)
 download.cnet.com##li:nth-of-type(4)
 download.cnet.com##div.TtZ0r1:nth-of-type(3)
+www.newsweek.com##.active.breaking-bar
+nypost.com###menu-link-76
+nypost.com###nypost-openweb-conversation
+www.uniladtech.com##li:nth-of-type(1)
+www.uniladtech.com##li:nth-of-type(3)
+www.dexerto.com##li.mb-1:nth-of-type(4)
+www.dexerto.com##.lg\:grid-cols-\[445px_1fr\].gap-y-10.gap-x-32.grid-cols-1.max-w-screen-xl.grid.mx-auto > div
+www.dexerto.com##.lg\:gap-x-16.gap-10.grid-cols-\[repeat\(auto-fit\,minmax\(150px\,1fr\)\)\].grid > div:nth-of-type(2)
+sourceforge.net##[href="/software/vendors/pricing/"]
+www.libhunt.com##.mt-generic.text-sm.flex-columns
+topbusinesssoftware.com###privacy-choices
+topbusinesssoftware.com##a[href^="/software/transfer_site/sf/"]:nth-of-type(1)
+topbusinesssoftware.com##[href^="/software/transfer_site/sdm/"]
+www.digitalking.it###menu-item-15270
+immersivetranslate.com##div.footer__col.col:nth-of-type(2) > .clean-list.footer__items > li.footer__item:nth-of-type(7)
+ltechuk.com##.ir-arriba
+ltechuk.com##.menu-item-19.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+www.nbcnewyork.com##[href^="https://www.nbcuniversal.com/privacy/"]
+www.nbcnewyork.com##[href^="https://together.nbcuni.com/advertise/"]
+abc7ny.com##.SxSmJ.tZYyx
+www.fox5ny.com##[href="https://www.foxlocal.com/privacy/index.html"]
+www.fox5ny.com##[href="http://privacy.fox5ny.com/main/web/main"]
+www.nbcnewyork.com##[href="https://www.nbcnewyork.com/newsletters/"]
+ny1.com##[href="https://go2.spectrumreach.com/bigapple_spectrumnews_tv"]
+ny1.com##[href="https://spectrum.com/policies/your-privacy-rights-opt-out"]
+ny1.com##[href="https://www.spectrum.com/policies/your-privacy-rights-opt-out"]
+ny1.com##[href="https://www.spectrum.com/policies/your-privacy-rights"]
+ny1.com##li:nth-of-type(12)
+ny1.com##.alert-bar
+www.cbsnews.com##[href="https://privacy.paramount.com/en/policy/"]
+www.cbsnews.com##dl.FooterLinks-group:nth-of-type(5)
+pix11.com##li:nth-of-type(12)
+pix11.com##.network-footer-privacy-policy
+apnews.com##div.Page-footer-column:nth-of-type(2)
+apnews.com##.Page-header-end > .Page-header-hamburger-menu-wrapper > .Page-header-hamburger-menu > .Page-header-hamburger-menu-content > .HamburgerNavigation > .HamburgerNavigation-items > .FooterNavigation-items-item
+m.olx.ro##.css-11jn7r
+upornia.com##p
+dolkbjd.com##[href="/policies/privacy-policy"]
+denofangels.com##[href="https://denofangels.com/help/privacy-policy"]
+denofangels.com##[href="/threads/withdoll-adriana-the-circus-girl.683869/#XenForo"]
+denofangels.com##[href="support/supporters"]
+withdoll.com##[href="/infodesk/protection_policy.php"]
 www.medlife.ro##.js-form-item-numele-tau-complet.form-item-numele-tau-complet.js-form-type-textfield.form-item.js-form-item
 www.medlife.ro##.newsletter-section
 dexonline.ro##.order-3.ms-auto.btn-warning.btn

@@ -306,6 +306,24 @@ yoric.github.io##.suspension
 docs.github.com##footer
 adguard-dns.io##li.footer__item:nth-of-type(2)
 adguard-dns.io##.backToTopButtonShow_BLAB.backToTopButton_RvS8.theme-back-to-top-button.clean-btn
+anime-nexus.ro###ban-message
+anime-nexus.ro##.show.fade.modal-backdrop
+anime-nexus.ro###login-square > .text-center.box-content.col-12 > div:nth-of-type(2) > div:nth-of-type(2)
+rafiachmadfr.rf.gd
+sivunvaihto.xyz
+185.27.134.175
+thetoyinsider.com##div.flex-item:nth-of-type(3)
+www.merakiimee.com##.rawa-button
+www.merakiimee.com###bss-window-popup-container
+www.merakiimee.com##.ewck-sn-c
+www.merakiimee.com##.footer__content-bottom
+www.merakiimee.com##.footer-block--newsletter
+thefrillseeker.com##.clear.footer-widgets
+thefrillseeker.com###colophon
+www.ubuy.com.ro##[href="https://www.ubuy.com.ro/en/privacy-policy"]
+www.castmagic.io##a.footer-link:nth-of-type(3)
+www.castmagic.io##.footer_right
+www.castmagic.io##.w-inline-block.blogpost-sticky_wrapper
 ardushop.ro##.gdprModal--visible.gdprModal
 ardushop.ro###scroll_top
 ardushop.ro##.show-gdpr-modal
@@ -5163,7 +5181,6 @@ www.thumbzilla.com##.buttonUnder18.exitBtn
 www.thumbzilla.com##.logoImg
 www.thumbzilla.com##.rtaDisclaimerWrapper
 www.thumbzilla.com##.bottomText.info
-anime-nexus.ro###ban-message
 www.doc.ro##.content-row-title
 psihoterapieiasi.com##li.site-footer__linklist-item:nth-of-type(6)
 wordpress.org##[href="https://wordpress.org/about/privacy/"]
@@ -5863,7 +5880,6 @@ lumeacartii.ro##.tdb-header-align.td_block_template_1.td-pb-border-top.tdi_92.td
 citate.top##.footer-bottom.row
 booknation.ro##[href="https://booknation.ro/confidentialitate-si-cookie/"]
 www.capital.ro##.trv
-anime-nexus.ro##.show.fade.modal-backdrop
 votcorect.ro###footer_x2
 dozadesanatate.ro##[href="/politica-de-publicitate/"]
 dozadesanatate.ro##[href="/legea-cookie-urilor/"]

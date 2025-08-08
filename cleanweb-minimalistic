@@ -167,6 +167,14 @@ consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interst
 consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 music.youtube.com###right-content
 music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
+@@encrypted-tbn0.gstatic.com
+www.google.com##.XDyW0e
+www.google.com##a.pHiOh:nth-of-type(1)
+www.google.com##[href^="/url"]
+www.google.com##a.GHvYu.sjVJQd:nth-of-type(2)
+www.google.com##a.ZYHQ7e.wHYlTd.Fx4vi:nth-of-type(2)
+www.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
+www.google.com###column-1-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
 gstatic.com
 ads.youtube.com
 ad.youtube.com

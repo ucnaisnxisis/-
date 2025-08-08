@@ -267,6 +267,7 @@ messages.google.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
+@@@@encrypted-tbn0.gstatic.com
 accounts.google.com##li.qKvP1b:nth-of-type(2)
 atwar-game.com##a.mini
 atwar-game.com##div.col-md-3.col-sm-4 .dark
@@ -850,7 +851,6 @@ www.miniplay.com##[href="https://www.miniplay.com/support/privacy"]
 www.miniplay.com##[href="https://www.miniplay.com/support/cookies"]
 virustotal.com##top
 virustotal.com##scroll-top
-virustotal.com##button
 www.friv.cm##[href="https://www.friv.cm/privacy-policy/"]
 www.friv.cm##.sidebar-ad160x600-right.border-radius.main-game
 www.friv.cm##.sidebar-ad160x600-left.border-radius.main-game

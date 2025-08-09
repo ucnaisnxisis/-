@@ -329,6 +329,10 @@ www.reddit.com##.bg-neutral-background-weak.p-md.rounded-md.gap-xs.items-center.
 www.reddit.com##.mt-sm.w-full.items-center.flex
 www.reddit.com##.nd\:hidden.block
 www.reddit.com##.mx-md.flex.\!mx-0.mb-md.legal-links
+www.reddit.com##.generic
+www.reddit.com##.button
+www.reddit.com##faceplate-tracker:nth-of-type(3)
+www.reddit.com##.mb-md.mx-md.flex.justify-self-end.legal-links
 accounts.google.com##li.qKvP1b:nth-of-type(2)
 atwar-game.com##a.mini
 atwar-game.com##div.col-md-3.col-sm-4 .dark

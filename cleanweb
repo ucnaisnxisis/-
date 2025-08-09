@@ -175,6 +175,22 @@ messages.google.com
 @@patreon.com
 @@encrypted-tbn0.gstatic.com
 @@fonts.gstatic.com
+hentaisea.com##.top-page
+hentaisea.com###menu-item-23562
+www.bing.com##.feedback-binded.cbtn
+support.reddithelp.com##[href="https://www.reddit.com/policies/privacy-policy"]
+redditinc.com##[href="https://www.reddit.com/policies/privacy-policy"]
+www.bing.com###hb_feedback
+www.reddit.com##faceplate-tracker:nth-of-type(2)
+mega.nz##div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(6)
+mega.nz##.cookies-settings.light
+mega.nz##div.column:nth-of-type(4) > div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(2)
+www.classmates.com##classmates-footer
+www.journaldujapon.com###back-to-top
+kotaku.com##[href="https://kotaku.com/privacy-policy"]
+kotaku.com##[href="https://www.keleops.com/en/contact.html"]
+kotaku.com##[href="#"]
+www.google.com##[href^="https://consent.google.com/d"]
 accounts.google.com##li.qKvP1b:nth-of-type(2)
 atwar-game.com##a.mini
 atwar-game.com##div.col-md-3.col-sm-4 .dark

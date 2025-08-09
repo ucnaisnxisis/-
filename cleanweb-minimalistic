@@ -276,6 +276,59 @@ messages.google.com
 @@hlana.gamedistribution.com
 @@patreon.com
 @@@@encrypted-tbn0.gstatic.com
+hentaisea.com##.top-page
+hentaisea.com###menu-item-23562
+www.bing.com##.feedback-binded.cbtn
+support.reddithelp.com##[href="https://www.reddit.com/policies/privacy-policy"]
+redditinc.com##[href="https://www.reddit.com/policies/privacy-policy"]
+www.bing.com###hb_feedback
+www.reddit.com##faceplate-tracker:nth-of-type(2)
+mega.nz##div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(6)
+mega.nz##.cookies-settings.light
+mega.nz##div.column:nth-of-type(4) > div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(2)
+www.classmates.com##classmates-footer
+www.journaldujapon.com###back-to-top
+kotaku.com##[href="https://kotaku.com/privacy-policy"]
+kotaku.com##[href="https://www.keleops.com/en/contact.html"]
+kotaku.com##[href="#"]
+www.google.com##[href^="https://consent.google.com/d"]
+www.google.com###gb
+www.google.com###og-te
+www.google.com##[href^="https://consent.google.com/d"]
+www.google.com##g-menu-item.GZnQqe.EpPYLd:nth-of-type(7)
+support.google.com##.footer-links-left-container > ul
+support.google.com##.gb_Te
+support.google.com###onebar-privacy-policy > li
+support.google.com###onebar-feedback > li
+policies.google.com##.gb_Te
+one.google.com##a.lqsn6c:nth-of-type(1)
+store.google.com##.gn5mEf.TVRIzb
+store.google.com##div.BWBuS:nth-of-type(2)
+store.google.com##.rIu1vb
+support.google.com##.user-feedback-link
+support.google.com##.need-more-help-container
+www.google.com##.glue-header__cta--drawer.glue-header__cta
+www.google.com##li.glue-footer__global-links-list-item:nth-of-type(1)
+www.google.com###column-4
+www.google.com###column-5-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(1)
+policies.google.com##li.ad72vb:nth-of-type(3)
+transparency.google##li.glue-footer__global-links-list-item:nth-of-type(3)
+www.google.com##span.GHvYu.sjVJQd
+chromewebstore.google.com##.gb_4d.gb_Kd.gb_Fa
+chromewebstore.google.com##.tB5Jxf-xl07Ob-XxIAqe-OWXEXe-oYxtQd > div
+www.reddit.com###login-button
+www.reddit.com##activate-feature
+www.reddit.com##.pl-xs.items-center.flex
+www.reddit.com##.items-center.xs\:mt-0.mt-xs.xs\:w-auto.w-100.flex
+www.reddit.com##div.text-neutral-content-weak.px-md:nth-of-type(2)
+www.reddit.com##.connected.relative.share-dropdown-menu
+www.reddit.com##shreddit-overflow-menu
+www.reddit.com##award-button.s\:block.hidden
+www.reddit.com##.px-sm.items-center.inline-flex.button-plain-weak.text-12.shrink-0.border-md.button
+www.reddit.com##.bg-neutral-background-weak.p-md.rounded-md.gap-xs.items-center.justify-center.flex-col.xs\:flex.hidden
+www.reddit.com##.mt-sm.w-full.items-center.flex
+www.reddit.com##.nd\:hidden.block
+www.reddit.com##.mx-md.flex.\!mx-0.mb-md.legal-links
 accounts.google.com##li.qKvP1b:nth-of-type(2)
 atwar-game.com##a.mini
 atwar-game.com##div.col-md-3.col-sm-4 .dark

@@ -312,8 +312,6 @@ m.facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.facebook.com##.wbloks_112 > div.wbloks_1:nth-of-type(2)
-m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
-m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
 m.facebook.com##div.displayed.bg-s4.m:nth-of-type(9)
 m.facebook.com##div.wbloks_1:nth-of-type(4) > div.wbloks_1:nth-of-type(3)
 www.linkedin.com##.join-form__form-body-agreement

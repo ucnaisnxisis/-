@@ -384,6 +384,28 @@ stats.vk-portal.net
 @@tag.atom.gamedistribution.com
 @@patreon.com
 @@hlana.gamedistribution.com
+github.com##li.mx-2:nth-of-type(2)
+consent.facebook.com###login-banner
+consent.facebook.com##.accept-all.secondary.btn
+consent.facebook.com###consent-text
+consent.facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+consent.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+consent.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.facebook.com###login-banner
+m.facebook.com##.accept-all.secondary.btn
+m.facebook.com###consent-text
+m.facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.facebook.com##.wbloks_112 > div.wbloks_1:nth-of-type(2)
+m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
+m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
+m.facebook.com##div.displayed.bg-s4.m:nth-of-type(9)
+m.facebook.com##div.wbloks_1:nth-of-type(4) > div.wbloks_1:nth-of-type(3)
+www.linkedin.com##.join-form__form-body-agreement
+m.youtube.com##.consent-bump-v2-lightbox
+immersivetranslate.com##[href="https://immersivetranslate.com/docs/PRIVACY/"]
+m.youtube.com##.consent-bump-v2-lightbox
 hentaisea.com##.top-page
 hentaisea.com###menu-item-23562
 www.bing.com##.feedback-binded.cbtn

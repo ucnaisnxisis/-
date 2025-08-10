@@ -110,6 +110,8 @@ m.youtube.com##.ytm-video-description-infocards-section-subtitle
 m.youtube.com##div.yt-content-metadata-view-model-wiz__metadata-row:nth-of-type(2) > span.yt-core-attributed-string--link-inherit-color.yt-core-attributed-string--white-space-pre-wrap.yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string:nth-of-type(1)
 m.youtube.com##.yt-content-metadata-view-model-wiz__delimiter
 m.youtube.com##.subhead
+m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
+www.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
 www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope > .ytd-popup-container.style-scope
 www.youtube.com##.yt-spec-button-shape-with-label
 www.youtube.com###dislike-button > yt-button-shape

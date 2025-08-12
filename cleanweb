@@ -189,6 +189,56 @@ www.reddit.com##faceplate-tracker:nth-of-type(2)
 mega.nz##div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(6)
 mega.nz##.cookies-settings.light
 mega.nz##div.column:nth-of-type(4) > div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(2)
+yuunarii.jimdofree.com##.cc-FloatingButtonBarContainer-right.cc-FloatingButtonBarContainer
+yuunarii.jimdofree.com##[href="//yuunarii.jimdofree.com/j/privacy"]
+www.softpedia.com##.copyright_cnt
+smarttubenext.org##[href="privacy-policy.html"]
+smarttubenext.org##footer > div:nth-of-type(2)
+184.27.218.92
+freetubeapp.io##[href="/privacy.php"]
+www.ggtyler.dev##footer
+private.coffee##[href="privacy.html"]
+theme404.com###kt-scroll-up
+theme404.com##.page-item-9269.menu-item
+geekchamp.com##.floatingchat-container-wrap
+geekchamp.com###menu-item-30653 > .nav-secondary__menu-link > .nav-primary__menu-title
+www.groovypost.com###menu-item-24645
+www.groovypost.com##.menu
+www.groovypost.com###body-main-wrap > .relative.left
+edu.gcfglobal.org###sectionThree
+edu.gcfglobal.org##.footer-logo-box
+auth.gcfglobal.org##[href="https://edu.gcfglobal.org/en/info/privacy-notice/1/"]
+auth.gcfglobal.org##[href="https://edu.gcfglobal.org/en/info/cookie-policy/1/"]
+askai.glarity.app##[href="https://glarity.app/privacy-policy"]
+umatechnology.org##.floatingchat-container
+www.fonedog.com##.top-btn-show.trans-04s.top-btn
+www.fonedog.com##.relative.phone-flex.flex
+www.fonedog.com##.fone20.footer-column-connect.footer-column-title
+www.fonedog.com##.footer-column-company.footer-column > a.trans-04s.footer-column-link:nth-of-type(5)
+apps.apple.com##.medium-show.small-hide
+www.ablebits.com##.a19SectionContainer--Footer.a19SectionContainer
+www.ablebits.com##.b23PopUpOset-Background
+www.thewindowsclub.com##[href="https://www.thewindowsclub.com/privacy-policy"] > span
+www.thunderbird.net##[href="/en-US/privacy"]
+mozilla-firefox.en.softonic.com##.OMlpov.EtNpvF.rxEyu2
+windows101tricks.com##[href="https://windows101tricks.com/privacy-policy/"]
+windows101tricks.com##[href="https://windows101tricks.com/advertise/"]
+www.wikihow.tech###sf
+stackoverflow.com##.md\:mb8.-social.-list
+librewolf.net##a.mobile-hidden.cursor-pointer.p-2.text-current
+macosx.com##[href="/help/privacy-policy/"]
+thelinuxcode.com##.popmake-close.pum-close
+www.cyberciti.biz##[href="https://www.cyberciti.biz/tips/privacy"]
+adblockplus.org##[href="/en/privacy"]
+adblockplus.org##[href="/en/faq-privacy"]
+beebom.com##.footer-container
+windowstip.com##[href="https://windowstip.com/privacy/"]
+windowstip.com##.social
+developer.kaiostech.com##[href="https://www.kaiostech.com/privacy-policy"]
+developer.kaiostech.com##div.footer__items_3gGI:nth-of-type(5)
+www.solveyourtech.com##[href="https://www.solveyourtech.com/privacy-policy/"]
+www.solveyourtech.com##[href="https://www.solveyourtech.com/newsletter-signup/"]
+digicruncher.com###custom_html-4
 www.classmates.com##classmates-footer
 www.journaldujapon.com###back-to-top
 kotaku.com##[href="https://kotaku.com/privacy-policy"]

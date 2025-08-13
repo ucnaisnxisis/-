@@ -355,23 +355,22 @@ transparency.google##li.glue-footer__global-links-list-item:nth-of-type(3)
 www.google.com##span.GHvYu.sjVJQd
 chromewebstore.google.com##.gb_4d.gb_Kd.gb_Fa
 chromewebstore.google.com##.tB5Jxf-xl07Ob-XxIAqe-OWXEXe-oYxtQd > div
-www.reddit.com###login-button
-www.reddit.com##activate-feature
-www.reddit.com##.pl-xs.items-center.flex
-www.reddit.com##.items-center.xs\:mt-0.mt-xs.xs\:w-auto.w-100.flex
-www.reddit.com##div.text-neutral-content-weak.px-md:nth-of-type(2)
-www.reddit.com##.connected.relative.share-dropdown-menu
-www.reddit.com##shreddit-overflow-menu
-www.reddit.com##award-button.s\:block.hidden
-www.reddit.com##.px-sm.items-center.inline-flex.button-plain-weak.text-12.shrink-0.border-md.button
-www.reddit.com##.bg-neutral-background-weak.p-md.rounded-md.gap-xs.items-center.justify-center.flex-col.xs\:flex.hidden
+www.reddit.com##.inline-flex.button.justify-center.items-center.button-brand.px-\[var\(--rem14\)\].button-medium.hover\:no-underline.px-sm
+www.reddit.com##.inline-flex.button.justify-center.items-center.icon.button-plain.px-\[var\(--rem8\)\].button-medium.min-w-\[40px\]
+www.reddit.com##.px-2xs.relative
+www.reddit.com##shreddit-post-overflow-menu
+www.reddit.com##.px-sm.items-center.inline-flex.button-secondary.text-12.font-semibold.border-md.button
 www.reddit.com##.mt-sm.w-full.items-center.flex
+www.reddit.com##.px-sm.items-center.inline-flex.button-plain-weak.text-12.shrink-0.border-md.button
 www.reddit.com##.nd\:hidden.block
-www.reddit.com##.mx-md.flex.\!mx-0.mb-md.legal-links
-www.reddit.com##.generic
-www.reddit.com##.button
-www.reddit.com##faceplate-tracker:nth-of-type(3)
-www.reddit.com##.mb-md.mx-md.flex.justify-self-end.legal-links
+www.reddit.com##.mt-md.gap-2xs.flex-row.flex
+support.reddithelp.com##[href="http://business.reddit.com/"]
+support.reddithelp.com##.is-active.lt-align-items-center.lt-justify-content-center.lt-d-md-flex.lt-d-none.lt-p-0.lt-d-print-none.fa-angle-up.fa-solid.lt-scroll-to-top
+www.reddit.com##.bg-neutral-background-weak.p-md.rounded-md.gap-xs.items-center.justify-center.flex-col.xs\:flex.hidden
+www.reddit.com##.gap-xs.items-center.flex-wrap.gap-\[var\(--rem4\)\].flex.text-neutral-content-weak
+www.reddit.com##.pb-\[env\(safe-area-inset-bottom\)\].bg-ui-modalbackground.font-sans
+www.reddit.com##auth-flow-modal.shadow-sm:nth-of-type(1) > .w-100
+www.reddit.com##auth-flow-modal.shadow-sm
 www.youtube.com##.yt-lp-section-group-view-model__lp-section-group
 www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
 yuunarii.jimdofree.com##.cc-FloatingButtonBarContainer-right.cc-FloatingButtonBarContainer

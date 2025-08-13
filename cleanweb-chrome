@@ -47,11 +47,7 @@ m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
 m.youtube.com###guide-links-primary
 m.youtube.com###guide-links-secondary
-m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
-m.youtube.com##.dialog-body-eom
-m.youtube.com##.eom-accept
 m.youtube.com##.privacy-terms
-m.youtube.com##.dialog-topbar
 m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
 m.youtube.com##.feed-nudge-text-container
 m.youtube.com##.reel-shelf-items
@@ -62,7 +58,6 @@ m.youtube.com###voice-search-button > .ytd-masthead.style-scope
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
 m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-m.youtube.com###topbar
 m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
 m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 m.youtube.com##.reject-all.first.btn

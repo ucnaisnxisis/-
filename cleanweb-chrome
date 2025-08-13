@@ -56,15 +56,9 @@ m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mon
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-m.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
-m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
-m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
-m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
 m.youtube.com##.reject-all.first.btn
 m.youtube.com##div.content-section:nth-of-type(2)
 m.youtube.com##.manage-settings.mng-btn.secondary.btn
-m.youtube.com###consent-text
-m.youtube.com##._yb_1ool5._yb_b9sct
 m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
@@ -72,9 +66,6 @@ m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
-m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
-m.youtube.com##.reel-shelf-header
-m.youtube.com###toast
 www.youtube.com###toast
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 www.youtube.com###guide-links-primary

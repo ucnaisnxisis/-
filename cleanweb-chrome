@@ -236,6 +236,82 @@ www.reddit.com##faceplate-tracker:nth-of-type(2)
 mega.nz##div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(6)
 mega.nz##.cookies-settings.light
 mega.nz##div.column:nth-of-type(4) > div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(2)
+www.makeuseof.com##.social-media
+fourthwall.com##.footer-bottom-wrapper
+www.rankred.com##[href="https://www.rankred.com/privacy-policy/"]
+www.reddit.com##faceplate-tracker:nth-of-type(3) > .mt-0.list-none.relative > .no-underline.bg-transparent.s\:rounded-2.-outline-offset-1.py-2xs.cursor-pointer.hover\:no-underline.hover\:bg-neutral-background-hover.active\:bg-interactive-pressed.hover\:text-secondary-hover.text-secondary.gap-\[0\.5rem\].px-md.relative.justify-between.flex
+europeanconservative.com##.elementor-element-e644966.elementor-element.elementor-top-column.elementor-col-33.elementor-column > .elementor-element-populated.elementor-widget-wrap
+europeanconservative.com##[href="https://europeanconservative.com/privacy-policy/"]
+europeanconservative.com##.elementor-section-height-default.elementor-section-boxed.elementor-section-content-middle.elementor-element-3bd7d8b.elementor-element.elementor-top-section.elementor-section
+www.christiantoday.com##div.p-0.card-body:nth-of-type(3)
+www.christiantoday.com##.bg-transparent.pe-0.ps-0.text-uppercase.fw-light.fs-5.text-white-50.border-0.card-header
+www.christiantoday.com##.ct-footer-newsletter
+www.christiantoday.com##li.border-0.bg-transparent.list-group-item:nth-of-type(5)
+www.christiantoday.com##li.border-0.bg-transparent.list-group-item:nth-of-type(3)
+www.christiantoday.com##li.border-0.bg-transparent.list-group-item:nth-of-type(7)
+www.commondreams.org###sTop_Bar_0_0_18_0_0_14_0_0_2_1
+www.commondreams.org##.bluesky_icons.hamburger-social
+www.thelibertybeacon.com##[href="https://www.thelibertybeacon.com/privacy-policy/"]
+nymag.com##.zephr-overlay
+nymag.com##.active.user-link.user-item.user-subscribe
+www.restorationbulletin.com##a.decoration-underline-ClTkYc.pc-reset.pencraft:nth-of-type(1)
+www.restorationbulletin.com##.size_md-gCDS3o.priority_primary-RfbeYt.buttonStyle-r7yGCK.buttonText-X0uSmG.buttonBase-GK1x3M.pc-reset.pencraft
+www.restorationbulletin.com##.pc-reset.pc-paddingTop-20.pencraft
+www.restorationbulletin.com##.container-rEYFE5.pc-reset.pc-paddingRight-8.pc-paddingLeft-8.pc-gap-24.pc-flexDirection-column.pc-display-flex.pencraft
+www.restorationbulletin.com##.background-qPxN3C
+www.restorationbulletin.com##.subscribeDialog-ApxQJS.pc-borderRadius-md.border-detail-EGrm7T.bg-primary-zk6FDl.pc-reset.pc-boxShadow-xl.pc-flexDirection-column.pc-display-flex.pencraft
+bandcamp.com##.policy
+bandcamp.com##.social
+www.amren.com##.hidden.widget_block.widget
+www.christiantoday.com##.pe-2.border-0.btn-group.ct-hpg-share
+catholicvirginian.org##li:nth-of-type(3) > [href="/subscribe/"]
+catholicvirginian.org##li:nth-of-type(1) > [href="/advertise/"]
+catholicvirginian.org##.site-footer-section-1.site-footer-section.site-footer-above-section-1
+www.theeditors.com##a.decoration-underline-ClTkYc.pc-reset.pencraft:nth-of-type(1)
+www.howtogeek.com##.social-media
+www.the215guys.com##.tab-title
+medium.com##div.m.rt.rs:nth-of-type(7)
+searchengineland.com##[href="https://thirddoormedia.com/generative-ai-policy/"]
+searchengineland.com##[href="https://searchengineland.com/privacypolicy"]
+searchengineland.com##div.col:nth-of-type(5)
+www.coding-dude.com##.show
+www.coding-dude.com##.newsletter-subscription.newsletter
+books.google.ro##[href="/intl/ro/googlebooks/privacy.html"] > nobr
+www.goodreads.com##.gr-col-lg-4.gr-col-md-4
+www.goodreads.com##.gr-col-lg-4.gr-col-md-5
+www.goodreads.com##.responsiveSiteFooter__appLinksColumnBadges
+www.goodreads.com##li.responsiveSiteFooter__linkListItem:nth-of-type(4)
+www.goodreads.com##li.responsiveSiteFooter__linkListItem:nth-of-type(6)
+www.goodreads.com##li.responsiveSiteFooter__linkListItem:nth-of-type(5)
+www.netsourceinc.com##[href="/privacy-policy/"]
+www.seonational.com###pojo-a11y-toolbar
+www.seonational.com##.menu-item-30763.menu-item-object-page.menu-item-type-post_type.menu-item.et_pb_menu_page_id-3661
+moviesanywhere.com##li._1llXr_AcGakFWV4QURPFxy:nth-of-type(3)
+moviesanywhere.com##nav:nth-of-type(3) > ._1-ik-Zv87mNjgHHL3PbyIr > li._1llXr_AcGakFWV4QURPFxy:nth-of-type(1)
+www.dailymotion.com##li.FooterSecondaryList__listItem___GddR8:nth-of-type(2)
+www.dailymotion.com##.FooterSubheader__socialNetworks___DM8CK
+www.dailymotion.com##li.FooterPrimaryList__listItem___gS8s5:nth-of-type(5)
+www.tomshardware.com##li.min-h-8:nth-of-type(6)
+www.thetoptens.com##[href="https://www.thetoptens.com/privacy.asp"]
+www.thetoptens.com##.social
+heartfulhaven.com##[href="https://heartfulhaven.com/privacy-policy/"]
+heartfulhaven.com###block-33
+a-z-animals.com###footer-social-icons-wrapper
+genius.com##.iCgsUJ.SocialLinks__Container-sc-dacba394-2
+genius.com##a.kHvBzX.PageFooter-desktop__Link-sc-caae588f-1:nth-of-type(6)
+genius.com##.optanon-toggle-display.kHvBzX.PageFooter-desktop__Link-sc-caae588f-1
+genius.com##a.kHvBzX.PageFooter-desktop__Link-sc-caae588f-1:nth-of-type(5)
+genius.com##a.kHvBzX.PageFooter-desktop__Link-sc-caae588f-1:nth-of-type(7)
+watch.plex.tv##a.det6jp1c.det6jp1g.t432yj0.w01fra4.w01fra0.w01fra1._1r6wp5u0:nth-of-type(2)
+watch.plex.tv##.t432yj0._18g3b2g5._18g3b2g0._18g3b2g1._1x9vcnm0
+watch.plex.tv##.det6jp2q.det6jp2h.det6jp2g.det6jp3m.det6jp39.det6jp38.det6jp14.det6jp1c.det6jp1g.det6jpi.det6jpl.det6jpk.det6jp1y.det6jp1x.det6jp1w.det6jp8._13usayk0 > .det6jp28.det6jp14.det6jp1c.det6jp1g.det6jpg.det6jp1w.det6jp8._13usayk0
+watch.plex.tv##li.det6jp28.det6jp14.det6jp1c.det6jp1g.det6jpk.det6jp1o.det6jp8._13usayk0:nth-of-type(9)
+www.outerboxdesign.com##div.cell.large-9:nth-of-type(1)
+www.outerboxdesign.com##[href="https://www.outerboxdesign.com/privacy-policy"]
+www.vox.com##li._1ujku672:nth-of-type(7)
+www.vox.com##._149cuuw2._149cuuw9._149cuuw8
+www.vox.com##ul._1ujku671:nth-of-type(2) > li._1ujku672:nth-of-type(3)
+www.vox.com##ul._1ujku671:nth-of-type(2) > li._1ujku672:nth-of-type(1)
 yuunarii.jimdofree.com##.cc-FloatingButtonBarContainer-right.cc-FloatingButtonBarContainer
 yuunarii.jimdofree.com##[href="//yuunarii.jimdofree.com/j/privacy"]
 www.softpedia.com##.copyright_cnt

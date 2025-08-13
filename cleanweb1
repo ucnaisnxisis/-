@@ -417,6 +417,10 @@ www.reddit.com##faceplate-tracker:nth-of-type(2)
 mega.nz##div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(6)
 mega.nz##.cookies-settings.light
 mega.nz##div.column:nth-of-type(4) > div.block:nth-of-type(2) > .links > a.light.clickurl:nth-of-type(2)
+www.digitbin.com###back-to-top
+www.digitbin.com##[href="https://www.digitbin.com/privacy-policy/"]
+portableapps.com##[href="/about/privacy"]
+portapps.io##[href="/privacy/"]
 yuunarii.jimdofree.com##.cc-FloatingButtonBarContainer-right.cc-FloatingButtonBarContainer
 yuunarii.jimdofree.com##[href="//yuunarii.jimdofree.com/j/privacy"]
 www.softpedia.com##.copyright_cnt

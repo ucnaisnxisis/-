@@ -48,14 +48,8 @@ m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v
 m.youtube.com###guide-links-primary
 m.youtube.com###guide-links-secondary
 m.youtube.com##.privacy-terms
-m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
-m.youtube.com##.feed-nudge-text-container
-m.youtube.com##.reel-shelf-items
-m.youtube.com##.yt-spec-touch-feedback-shape__fill
-m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
 m.youtube.com###voice-search-button
 m.youtube.com###voice-search-button > .ytd-masthead.style-scope
-m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##.reject-all.first.btn
 m.youtube.com##div.content-section:nth-of-type(2)
 m.youtube.com##.manage-settings.mng-btn.secondary.btn

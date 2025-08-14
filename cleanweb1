@@ -340,6 +340,12 @@ www.google.com.hk##a.pHiOh:nth-of-type(1)
 www.google.com.hk##.XDyW0e
 www.google.com##a.pHiOh:nth-of-type(1)
 www.google.com##.XDyW0e
+www.mozillafoundation.org##.tw-px-8.large\:tw-w-6\/12.xlarge\:tw-w-5\/12
+blog.mozilla.org##section.mzp-c-footer-section:nth-of-type(4)
+connect.mozilla.org##.section-right
+www.famousbirthdays.com##.site-footer__apps
+www.famousbirthdays.com##.site-footer__bottom.site-footer__row
+teamimouto.bandcamp.com##.compound-button.goto-top-button
 www.bing.com##.top.cdxConv
 www.bing.com##.icon.mic_cont
 www.bing.com##.items

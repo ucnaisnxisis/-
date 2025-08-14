@@ -1,4 +1,9 @@
-www.cylex.com.ve##div:nth-of-type(5)
+! Title: CleanWeb Max (Experimental)
+! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
+! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chrome
+! Caution: Can break websites! Is experimental filter & High
+
+cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)
 www.cylex-uk.co.uk##div:nth-of-type(6)
 www.cylex.com.br##div:nth-of-type(5)

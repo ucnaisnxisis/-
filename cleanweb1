@@ -2,6 +2,7 @@
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chrome
 ! Caution: Can break websites! Is experimental filter & High
+! Info: Personal use, non-comercial, no-copyright claim, individual
 
 cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)

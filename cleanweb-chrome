@@ -2,6 +2,7 @@
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chrome
 ! Caution: Please, do not use this for Firefox; Waterfox; Tor; LibreWolf; Microsoft Edge and Opera. (Only for Ublock Origin Chrome & Brave Browser)
+! Info: Personal use, non-comercial, no-copyright claim, individual
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)

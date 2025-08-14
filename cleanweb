@@ -2,6 +2,7 @@
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb
 ! Caution: Please, do not use this for Chromium (except Microsoft Edge). Only for Ublock Origin Gecko[Firefox,Waterfox,Librewolf,Tor,others Gecko]
+! Info: Personal use, non-comercial, no-copyright claim, individual
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)

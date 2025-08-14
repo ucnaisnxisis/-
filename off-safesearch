@@ -4,6 +4,7 @@
 // @version      0.1.6
 // @description  Set off safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
 // @author       You
+// @Info         Personal use, non-comercial, no-copyright claim, individual
 
 // @include      https://*.google.*/search*
 // @include      https://*.google.*/imgres*

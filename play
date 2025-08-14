@@ -10,6 +10,8 @@
 // @run-at       document-start
 // @downloadURL https://update.greasyfork.org/scripts/371641/Video%20Background%20Play%20Fix.user.js
 // @updateURL https://update.greasyfork.org/scripts/371641/Video%20Background%20Play%20Fix.meta.js
+// @Info Personal use, non-comercial, no-copyright claim, individual
+
 // ==/UserScript==
 
 (function() {

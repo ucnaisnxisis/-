@@ -490,9 +490,18 @@ www.seonational.com###pojo-a11y-toolbar
 www.seonational.com##.menu-item-30763.menu-item-object-page.menu-item-type-post_type.menu-item.et_pb_menu_page_id-3661
 moviesanywhere.com##li._1llXr_AcGakFWV4QURPFxy:nth-of-type(3)
 moviesanywhere.com##nav:nth-of-type(3) > ._1-ik-Zv87mNjgHHL3PbyIr > li._1llXr_AcGakFWV4QURPFxy:nth-of-type(1)
-www.dailymotion.com##li.FooterSecondaryList__listItem___GddR8:nth-of-type(2)
-www.dailymotion.com##.FooterSubheader__socialNetworks___DM8CK
+blog.octabyte.io##.top-link
+www.bitchute.com##.text-grey-9.q-px-md.q-py-md
+vimeo.com##.md\:gap-6.gap-3.flex
+vimeo.com##.gap-1.flex-wrap.flex
+www.dailymotion.com##.FooterSecondaryList__cmpButton___njU7L
+pro.dailymotion.com##.footer__social
+dailymotionadvertising.com##[href="https://legal.dailymotion.com/en/privacy-policy/#9-specific-conditions-applicable-to-dailymotion-secondary-sites"]
+dailymotionadvertising.com##[href="https://legal.dailymotion.com/en/secondary-websites/cookie-policy/"]
+dailymotionadvertising.com##.footer-consent_management
 www.dailymotion.com##li.FooterPrimaryList__listItem___gS8s5:nth-of-type(5)
+www.dailymotion.com##.FooterSubheader__subheader___UsxGN
+www.dailymotion.com##li.FooterSecondaryList__listItem___GddR8:nth-of-type(2)
 www.tomshardware.com##li.min-h-8:nth-of-type(6)
 www.thetoptens.com##[href="https://www.thetoptens.com/privacy.asp"]
 www.thetoptens.com##.social
@@ -6059,10 +6068,6 @@ bravofilms.ro##.lazy-load-loaded.attachment-full.vc_single_image-img.porto-lazyl
 bravofilms.ro##[href="https://bravofilms.ro/politica-de-confidentialitate/"]
 www.paginademedia.ro##[href="/2018/05/politica-de-confidentialitate/"]
 www.movieplex.ro##li.nav-item:nth-of-type(5)
-www.dailymotion.com##li.FooterSecondaryList__listItem___3xG_z:nth-of-type(1)
-pro.dailymotion.com##.consent__description
-pro.dailymotion.com##.verticle-scroll-hover.consent__btn-accept.consent__btn.btn--dark.btn--black.btn--medium.btn
-pro.dailymotion.com##.footer__info
 www.digi-communications.ro###gdpr > .container
 www.digi-communications.ro##ul.footer-list
 informat.ro##.utils.gap-2.flex.row
@@ -15182,12 +15187,6 @@ mditv.ro##.penci-wrap-gprd-law
 mditv.ro##.gdpr-privacy-preferences.gdpr
 mditv.ro##.gdpr-general-confirmation.gdpr
 mditv.ro##.footer-menu-wrap
-www.dailymotion.com##.TCF2Popup__containerButtons___3NPZ9
-www.dailymotion.com##.TCF2Popup__containerScrollable___1_mzW
-www.dailymotion.com##.Overlay__containerActive___2te0I.Overlay__container___2TqtL
-www.dailymotion.com##li.FooterPrimaryList__listItem___1E4c_:nth-of-type(5)
-www.dailymotion.com##li.FooterSecondaryList__listItem___3xG_z:nth-of-type(2)
-www.dailymotion.com##.consentNotGiven.FooterLink__link___1j0-3
 www.janssen.com##.block--nodeblock-6679.block--nodeblock.block
 www.janssen.com##.block--nodeblock-81.block--nodeblock.block
 snspa.ro##.wh-footer.cbp-row

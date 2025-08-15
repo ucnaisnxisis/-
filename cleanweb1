@@ -466,6 +466,22 @@ knowtechie.com##.widget_block.mvp-side-widget
 www.archyde.com###widget-area
 www.archyde.com##.aiomatic-chat-holder
 www.archyde.com###footer-section
+blog.octabyte.io##.top-link
+www.bitchute.com##.text-grey-9.q-px-md.q-py-md
+vimeo.com##.md\:gap-6.gap-3.flex
+vimeo.com##.gap-1.flex-wrap.flex
+www.dailymotion.com##.FooterSecondaryList__cmpButton___njU7L
+pro.dailymotion.com##.footer__social
+dailymotionadvertising.com##[href="https://legal.dailymotion.com/en/privacy-policy/#9-specific-conditions-applicable-to-dailymotion-secondary-sites"]
+dailymotionadvertising.com##[href="https://legal.dailymotion.com/en/secondary-websites/cookie-policy/"]
+dailymotionadvertising.com##.footer-consent_management
+www.dailymotion.com##.FooterSubheader__subheader___UsxGN
+www.dailymotion.com##li.FooterSecondaryList__listItem___GddR8:nth-of-type(2)
+mediazece.ro##[href="https://mediazece.ro/politica-de-confidentialitate/"] > span
+mediazece.ro##[href="https://mediazece.ro/politicile-cookies/"] > span
+mediazece.ro##.mobile-socials
+haveibeenpwned.com##div.col-6:nth-of-type(2) > .mb-0.list-unstyled > li.mb-2:nth-of-type(3)
+haveibeenpwned.com##.p-4.col-lg-3
 www.twincities.com##.colophon
 www.twincities.com###menu-item-4172841 > .expander
 www.twincities.com###menu-item-4172841

@@ -1,7 +1,7 @@
 ! Title: CleanWeb Chrome
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chrome
-! Caution: Please, do not use this for Firefox; Waterfox; Tor; LibreWolf; Microsoft Edge and Opera. (Only for Ublock Origin Chrome & Brave Browser)
+! Caution: Please, do not use this for Firefox; Waterfox; Tor; LibreWolf; Microsoft Edge. (Only for Ublock Origin ChromeChrome & Brave Browser)
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 
 www.cylex.com.ve##div:nth-of-type(5)
@@ -232,6 +232,55 @@ pureinfotech.com##[href="/privacy-policy"]
 www.famousbirthdays.com##.site-footer__apps
 www.famousbirthdays.com##.site-footer__bottom.site-footer__row
 teamimouto.bandcamp.com##.compound-button.goto-top-button
+www.reddit.com##p.bottommenu
+matrix.org##.external-links
+matrix.org##[href="https://matrix.org/legal/privacy-notice/"]
+matrix.org##[href="https://matrix.org/legal/copyright-notice/"]
+matrix.org##li:nth-of-type(3)
+matrix.org##ul:nth-of-type(2) > li:nth-of-type(2)
+www.peppercontent.io##[href="https://www.linkedin.com/company/peppercontent/"] > .text-blue-web-27.\|.lg\:w-6.lg\:h-6.w-3.h-3
+www.peppercontent.io##div.lg\:mb-0.mb-6:nth-of-type(4)
+www.peppercontent.io##.__modalContainer__5L6XH
+www.peppercontent.io##.text-\[\#B1ADD8\].focus\:outline-none.focus\:text-blue-50.hover\:text-blue-50.inline-block
+www.peppercontent.io###top-banner
+www.signal.pl##.row_up.footerMainTop
+www.signal.pl##.js__smoothScroll--added.flex_center.col.js__smoothScroll.js__smoothScrollContainer.scrollBackToTop--radius.scrollBackToTop
+www.signal.pl##li.level1.menuMobile__item:nth-of-type(9)
+signalrgb.com###downloadBtnMobile
+signalrgb.com##div.astro-37FXCHFA.column:nth-of-type(4) > ul.astro-37FXCHFA > li.astro-37FXCHFA:nth-of-type(3)
+www.yougetsignal.com##[href="/privacy-policy.php"]
+angular.dev##.adev-footer-columns > div:nth-of-type(1)
+www.kidmagia.ro###footer-newsletter
+www.kidmagia.ro##div.col-md-3.col-sm-12:nth-of-type(2)
+www.liloo.ro##div.columns.row:nth-of-type(2)
+www.liloo.ro##li:nth-of-type(4)
+www.liloo.ro##p:nth-of-type(3)
+clinicaalegria.ro##[href="https://clinicaalegria.ro/politica-de-confidentialitate/"]
+clinicaalegria.ro##[href="https://clinicaalegria.ro/declaratie-de-cookies/"]
+clinicaalegria.ro##.lg\:items-start.lg\:text-left.text-center.items-center.gap-5.flex-col.flex-shrink-0.flex.lg\:w-96 > .items-center.gap-5.flex
+teleskop.ro##.bg-\[\#3562e3\].duration-200.transition-colors.shadow-\[0_1000px_0_0_hsl\(0_0\%_20\%\)_inset\].py-2.px-3.rounded-full.overflow-hidden.inline-block.mt-2.group
+teleskop.ro##.md\:order-2.space-x-6.flex
+ghidulparintilor.ro###menu-item-120
+ghidulparintilor.ro##[href="https://ghidulparintilor.ro/politica-de-cookies"]
+ghidulparintilor.ro##[href="https://ghidulparintilor.ro/politica-de-confidentialitate"]
+www.smtsol.ro###toTop
+www.smtsol.ro##[href="https://www.smtsol.ro/blog/newsletter"]
+doctorite.ro###scroll-up
+www.meridianclinic.ro##a.footer-link:nth-of-type(3)
+www.meridianclinic.ro##a.footer-link:nth-of-type(2)
+psyhoterapeut.ro###menu-1-44b9546 > .menu-item-1057.menu-item-object-page.menu-item-type-post_type.menu-item > .elementor-item
+psyhoterapeut.ro##.menu-item-1056.menu-item-object-page.menu-item-type-post_type.menu-item
+legalhour.ro##.on.scroll-top
+parintimoderni.ro##[href="https://parintimoderni.ro/publicitate/"]
+parintimoderni.ro##[href="https://parintimoderni.ro/utilizare-cookie-uri/"]
+parintimoderni.ro##[href="https://parintimoderni.ro/politica-de-confidentialitate/"]
+scoala9.ro##[href="/politica-de-cookies"]
+healthbadger.org##[href="https://healthbadger.org/publicitate/"]
+healthbadger.org##.show.scroll-style-1.scroll-to-top
+redactia.ro##[href="https://redactia.ro/politica-de-confidentialitate/"]
+redactia.ro##[href="https://redactia.ro/cookies/"]
+redactia.ro##[href="https://www.facebook.com/StiriRedactia/"]
+romanialibera.ro##.td-pb-span6.tdc-column.vc_column_container.wpb_column.tdi_257.vc_column > .wpb_wrapper
 mihaivasilescublog.ro##.cd-is-visible.cd-top
 www.zi-de-zi.ro##.code-block-ad1.code-block-1.code-block
 cugetliber.ro##[href="https://whatsapp.com/channel/0029Va9kkae5q08VpTI83T1z"]

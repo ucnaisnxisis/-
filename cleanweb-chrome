@@ -214,6 +214,10 @@ i.google.com
 @@patreon.com
 @@encrypted-tbn0.gstatic.com
 @@||dailymotion.com^$ghide
+oldvideo.games##.vue-back-to-top
+oldvideo.games##div.col-span-1:nth-of-type(4) > .space-y-2 > li:nth-of-type(1)
+retrogamesfree.com###back-to-top
+retrogamesfree.com##a.link:nth-of-type(4)
 rds.live##[href="https://rds.live/politica-de-confidentialitate"]
 rds.live##.footer-app
 anime-nexus.ro##.justify-content-end.d-flex.navbar-nav

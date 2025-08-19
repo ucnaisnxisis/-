@@ -444,6 +444,15 @@ rds.live##.appdl
 thecadgeek.com##.ct-drawer-inner
 thecadgeek.com##.author-box-socials
 superuser.com##.md\:mb8.-social.-list
+myhentaicomics.com##.header-spot > center
+myhentaicomics.com##.content-container
+myhentaicomics.com##.featured-manga > center
+myhentaicomics.com##.featured-manga
+myhentaicomics.com##.pagination-image
+myhentaicomics.com##.header-spot
+imhentai.xxx##[href="/advertise/"]
+myhentaimovie.com##li.top-header > [href]
+www.petsrockjoy.io
 m.facebook.com##body:has(div[class*="Styled"][class*="Container"] [data-testid="bbc-logo-wrapper"]) > .fc-consent-root:style(display: flex !important)
 m.facebook.com##body:style(overflow: auto !important;)
 m.facebook.com##.fc-consent-root

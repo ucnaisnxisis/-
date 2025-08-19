@@ -374,6 +374,10 @@ nourishlyq.com
 @@||dailymotion.com^$ghide
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(1)
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(2)
+help.soundcloud.com##[href="https://soundcloud.com/pages/cookies"]
+help.soundcloud.com###launcher
+help.soundcloud.com##.Footer__Top__Link
+help.soundcloud.com##.Footer__Socials
 3dvf.com##.e-child.e-con.e-flex.e-con-full.elementor-element-a24bb8a.elementor-element
 3dvf.com##[href="https://3dvf.com/en/privacy-policy/"]
 3dvf.com##.elementor-widget-heading.elementor-widget.elementor-element-bc9dd84.elementor-element

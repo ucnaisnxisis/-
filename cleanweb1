@@ -361,6 +361,12 @@ www.bing.com##.hb_det_cont_top > a.hb_section:nth-of-type(4)
 www.bing.com##.sb_privacy
 www.bing.com###fly_id_rwds_b
 www.reddit.com##p.bottommenu
+thecadgeek.com##.ct-drawer-inner
+thecadgeek.com##.author-box-socials
+superuser.com##.md\:mb8.-social.-list
+m.facebook.com##body:has(div[class*="Styled"][class*="Container"] [data-testid="bbc-logo-wrapper"]) > .fc-consent-root:style(display: flex !important)
+m.facebook.com##body:style(overflow: auto !important;)
+m.facebook.com##.fc-consent-root
 matrix.org##.external-links
 matrix.org##[href="https://matrix.org/legal/privacy-notice/"]
 matrix.org##[href="https://matrix.org/legal/copyright-notice/"]

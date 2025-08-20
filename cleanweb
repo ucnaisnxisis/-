@@ -309,6 +309,21 @@ retrogamesfree.com##a.link:nth-of-type(4)
 rds.live##[href="https://rds.live/politica-de-confidentialitate"]
 rds.live##.footer-app
 anime-nexus.ro##.justify-content-end.d-flex.navbar-nav
+www.emulatorgames.net##.fs-5.gap-3.d-flex
+www.emulatorgames.net##.col-md-3 > .small.list-unstyled > li.mb-2:nth-of-type(1)
+www.emugames.net##.has-ripple.emu-ripple.emugames-border-rounded.emugames-button.btn-sm.btn
+www.classicemu.com##div.col-span-1:nth-of-type(4) > .space-y-2.mt-4 > li:nth-of-type(3)
+www.classicemu.com##.space-x-4.flex.mt-4
+pcsx2.net##div.footer__col.col.theme-layout-footer-column:nth-of-type(4) > .clean-list.footer__items > li.footer__item:nth-of-type(1)
+pcsx2.net##.alert--warning.alert.admonition_xJq3.theme-admonition-caution.theme-admonition
+howtoretro.com###menu-item-34485
+www.partitionwizard.com##[href="/privacy.html"]
+www.partitionwizard.com##.totop.icon-awe-sort-up
+www.alteredgamer.com##a.footer__link:nth-of-type(3)
+www.malwarebytes.com##.u-flex-col-lg-4.u-flex-column.site-footer__connect
+www.malwarebytes.com###cta-en-us-footernavigation-legal-_legal_privacy_policy-click
+www.malwarebytes.com##.cards__box_content > p > [href]
+www.malwarebytes.com##.kadence-conversion-overlay
 www.olx.ro##.css-1efdvzd
 www.olx.ro##[href="https://ajutor.olx.ro/olxhelpro/s/article/politica-de-confiden%C8%9Bialitate-V30"]
 www.olx.ro##[href="https://ajutor.olx.ro/olxhelpro/s/article/politica-privind-utilizarea-cookies-V17"]

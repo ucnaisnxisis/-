@@ -918,7 +918,6 @@ fwmrm.net
 manifest.googlevideo.com
 l.google.com
 ui.l.google.com
-youtube-ui.l.google.com
 www.youtube-noads.com
 0.0.0.0
 41.193.213.20
@@ -928,6 +927,29 @@ www.youtube-noads.com
 123.456.789.999
 172.217.13.174
 216.58.206.142
+community.se.com##a.link:nth-of-type(2)
+community.se.com##.lia-quilt-column-alley-single.lia-quilt-column-alley > .commonFocusEvent
+community.se.com##.social-icons
+www.humongous.com##.jUcJ2u.undefined.MNUFxS.consent-banner-root
+www.humongous.com##.wixui-rich-text__text.color_34 > .wixui-rich-text__text > .wixui-rich-text__text
+www.greenmangaming.com##.social-media
+www.greenmangaming.com##.terms-and-condition
+www.fanatical.com##.footer-social-platforms
+www.fanatical.com##.social-container > .pb-1
+www.fanatical.com##.email-social-links.footer-links
+yag.im##a.text-purple-700:nth-of-type(2)
+yag.im##a.text-purple-700:nth-of-type(4)
+kids.kiddle.co##[href="https://www.kiddle.co/privacy.php"]
+www.playmeo.com##.col-lg-6.col-xs-8 > .row > div.col-xs-6 > .logos > [href]
+www.playmeo.com##[href="https://www.playmeo.com/privacy-policy/"]
+www.playmeo.com##.social
+8games.net###gotop
+games.kidzsearch.com###p1 td
+games.kidzsearch.com##tr:nth-of-type(4) > td:nth-of-type(1)
+duckduckgo.com##.AqHvr90CPQdpxvM5Hudq._f3aDBGcVsGYEX6faISN
+www.imagesplatform.com##[href="https://www.imagesplatform.com/privacy-policy.php"]
+www.imagesplatform.com##.col-xs-12.col-sm-3
+www.imagesplatform.com##[href="https://www.imagesplatform.com/cookie-policy"]
 blog.octabyte.io##.top-link
 www.bitchute.com##.text-grey-9.q-px-md.q-py-md
 vimeo.com##.md\:gap-6.gap-3.flex

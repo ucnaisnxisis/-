@@ -1327,7 +1327,6 @@ m.facebook.com##.wbloks_112 > div.wbloks_1:nth-of-type(2)
 m.facebook.com##div.displayed.bg-s4.m:nth-of-type(9)
 m.facebook.com##div.wbloks_1:nth-of-type(4) > div.wbloks_1:nth-of-type(3)
 www.linkedin.com##.join-form__form-body-agreement
-m.youtube.com##.consent-bump-v2-lightbox
 immersivetranslate.com##[href="https://immersivetranslate.com/docs/PRIVACY/"]
 www.businessinsider.com##.newsletters-link.label-md-strong
 www.businessinsider.com##.hide-if-subscribed.subscribe-link.label-md-strong

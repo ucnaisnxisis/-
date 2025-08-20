@@ -499,6 +499,21 @@ addons.mozilla.org##.Footer-pocket-link
 www.mozilla.org##.moz24-footer-socials
 www.mozilla.org##.moz24-footer-donate
 www.mozilla.org##.moz24-newsletter-container
+www.emulatorgames.net##.fs-5.gap-3.d-flex
+www.emulatorgames.net##.col-md-3 > .small.list-unstyled > li.mb-2:nth-of-type(1)
+www.emugames.net##.has-ripple.emu-ripple.emugames-border-rounded.emugames-button.btn-sm.btn
+www.classicemu.com##div.col-span-1:nth-of-type(4) > .space-y-2.mt-4 > li:nth-of-type(3)
+www.classicemu.com##.space-x-4.flex.mt-4
+pcsx2.net##div.footer__col.col.theme-layout-footer-column:nth-of-type(4) > .clean-list.footer__items > li.footer__item:nth-of-type(1)
+pcsx2.net##.alert--warning.alert.admonition_xJq3.theme-admonition-caution.theme-admonition
+howtoretro.com###menu-item-34485
+www.partitionwizard.com##[href="/privacy.html"]
+www.partitionwizard.com##.totop.icon-awe-sort-up
+www.alteredgamer.com##a.footer__link:nth-of-type(3)
+www.malwarebytes.com##.u-flex-col-lg-4.u-flex-column.site-footer__connect
+www.malwarebytes.com###cta-en-us-footernavigation-legal-_legal_privacy_policy-click
+www.malwarebytes.com##.cards__box_content > p > [href]
+www.malwarebytes.com##.kadence-conversion-overlay
 www.peppercontent.io##[href="https://www.linkedin.com/company/peppercontent/"] > .text-blue-web-27.\|.lg\:w-6.lg\:h-6.w-3.h-3
 www.peppercontent.io##div.lg\:mb-0.mb-6:nth-of-type(4)
 www.peppercontent.io##.__modalContainer__5L6XH

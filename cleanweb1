@@ -608,6 +608,19 @@ obsproject.com##li:nth-of-type(3)
 www.techlockdown.com##div:nth-of-type(1) > .space-y-4.mt-6 > li:nth-of-type(1)
 m.soundcloud.com##.FooterFootnote_FooterFootnote__2aTLi
 www.soompi.com##.footer-custom-line.row
+genius.com##div.footer:nth-of-type(1)
+genius.com##.u-vertical_margins.u-text_center
+genius.com##.nav_menu-social_section
+mozaart.com##.inside-a
+www.songtell.com##[href="/privacy"]
+rateyourmusic.com##.social_icons
+l-hit.com##.footer-wrapper
+dcslyrics.com##[href="https://dcslyrics.com/privacy-policy/"]
+dcslyrics.com##div:nth-of-type(5)
+dcslyrics.com##div:nth-of-type(3)
+www.letras.mus.br##.footer-apps > div:nth-of-type(1)
+www.letras.mus.br##.footer-apps > div:nth-of-type(2)
+www.xwhos.com##[href="https://www.xwhos.com/privacy_policy.html"]
 www.allkpop.com##[href="/privacy"]
 www.allkpop.com##div.menu_list:nth-of-type(21)
 www.allkpop.com##[href="/advertise"]

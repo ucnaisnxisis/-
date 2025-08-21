@@ -533,6 +533,19 @@ www.hepsiburada.com##.footer__whatsapp
 www.hepsiburada.com##[href="https://www.hepsiburada.com/is-sagligi-ve-guvenligi-cevre-politikamiz"]
 www.hepsiburada.com##[href="https://www.hepsiburada.com/kisisel-verilerin-korunmasi"]
 www.oed.com###AIOverlay
+genius.com##div.footer:nth-of-type(1)
+genius.com##.u-vertical_margins.u-text_center
+genius.com##.nav_menu-social_section
+mozaart.com##.inside-a
+www.songtell.com##[href="/privacy"]
+rateyourmusic.com##.social_icons
+l-hit.com##.footer-wrapper
+dcslyrics.com##[href="https://dcslyrics.com/privacy-policy/"]
+dcslyrics.com##div:nth-of-type(5)
+dcslyrics.com##div:nth-of-type(3)
+www.letras.mus.br##.footer-apps > div:nth-of-type(1)
+www.letras.mus.br##.footer-apps > div:nth-of-type(2)
+www.xwhos.com##[href="https://www.xwhos.com/privacy_policy.html"]
 premiumcard.net##.framer-x8to79
 premiumcard.net##.framer-ooh536
 premiumcard.net##.framer-1tpjix4-container

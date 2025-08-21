@@ -499,6 +499,19 @@ www.axios.com##.border-primary.border-b.py-7.list-none
 www.gbnews.com##.socials
 www.gbnews.com##.expanded.terms > .list > a.list__item:nth-of-type(6)
 www.gbnews.com##.expanded.terms > .list > a.list__item:nth-of-type(7)
+genius.com##div.footer:nth-of-type(1)
+genius.com##.u-vertical_margins.u-text_center
+genius.com##.nav_menu-social_section
+mozaart.com##.inside-a
+www.songtell.com##[href="/privacy"]
+rateyourmusic.com##.social_icons
+l-hit.com##.footer-wrapper
+dcslyrics.com##[href="https://dcslyrics.com/privacy-policy/"]
+dcslyrics.com##div:nth-of-type(5)
+dcslyrics.com##div:nth-of-type(3)
+www.letras.mus.br##.footer-apps > div:nth-of-type(1)
+www.letras.mus.br##.footer-apps > div:nth-of-type(2)
+www.xwhos.com##[href="https://www.xwhos.com/privacy_policy.html"]
 www.news247.gr##.scroll-to-top-container
 www.news247.gr###global_footer__col--follow
 www.news247.gr###menu-item-995274

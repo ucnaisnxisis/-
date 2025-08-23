@@ -465,6 +465,13 @@ www.science.org##[href="/content/page/privacy-policy"]
 www.science.org##ul.mb-0.flex-column.d-flex.footer__sitemap__list.list-unstyled:nth-of-type(7)
 www.cbsnews.com##.ketch-shadow-none.focus-visible\:ketch-outline-none.\!ketch-text-\[--k-banner-description-text-color\].lm\:ketch-text-ketch-lm.md\:ketch-text-ketch-m.ketch-tracking-\[-0\.13px\].ketch-text-left
 www.cbsnews.com###ketch-banner-button-primary
+www.gtabase.com##.highlight-reverse
+www.gtabase.com##[href="/privacy-policy-cookies"]
+www.gtaall.com##[href="/privacy-policy.html"]
+gtaspot.com##.is-active.cs-scroll-top
+gtasaapkpro.com##[href="https://gtasaapkpro.com/privacy-policy"]
+www.gtaall.com##.repost
+www.peroz.ro##.footer-top
 ourworldindata.org##.footer-base__socials
 ourworldindata.org##.footer-base__legal > .footer-link-list > li > .body-3-medium
 ourworldindata.org##.grid-cols-12-full-width.grid.donate-footer

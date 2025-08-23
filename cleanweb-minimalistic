@@ -1436,12 +1436,6 @@ www.telemundopr.com##a.site-header__trending-nav-item:nth-of-type(4)
 www.videobible.com##.et-last-child.et_pb_css_mix_blend_mode_passthrough.et_pb_column_3_tb_footer.et_pb_column_1_4.et_pb_column
 www.videobible.com##.et_section_regular.et_pb_with_background.et_pb_section_1_tb_footer.et_pb_section
 m.digi24.ro##.social-alt.social-end.social
-www.peroz.ro##.page-social-share.page-social
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder
-www.peroz.ro##.footer-top-nav
-peroz.ro###page-social-share.page-social
-peroz.ro###p.gdpr-social-media.gdpr-placeholder
-peroz.ro###footer-top-nav
 fourthwall.com##.footer-bottom-wrapper
 www.rankred.com##[href="https://www.rankred.com/privacy-policy/"]
 www.reddit.com##faceplate-tracker:nth-of-type(3) > .mt-0.list-none.relative > .no-underline.bg-transparent.s\:rounded-2.-outline-offset-1.py-2xs.cursor-pointer.hover\:no-underline.hover\:bg-neutral-background-hover.active\:bg-interactive-pressed.hover\:text-secondary-hover.text-secondary.gap-\[0\.5rem\].px-md.relative.justify-between.flex
@@ -8049,7 +8043,6 @@ www.lachainemeteo.com##.sitemap > li.item:nth-of-type(6)
 www.lachainemeteo.com##li.item:nth-of-type(8)
 oneweather.org##a.footer__link-top.footer__link:nth-of-type(1)
 vremea.io##div.footer_list:nth-of-type(3) > a.footer_item:nth-of-type(3)
-www.peroz.ro##.footer-top
 www.mozilla.ai##div.content-block:nth-of-type(2) > a.w-inline-block.footer-link-block:nth-of-type(1)
 blog.mozilla.org##.mzp-c-footer-terms > li:nth-of-type(1)
 knowtechie.com##[href="https://knowtechie.com/cookie-policy/"]
@@ -9591,7 +9584,6 @@ www.dedeman.ro##.show-button.feedback-button
 www.reginamaria.ro##.rm-modal.block-newsletter-block-modal
 www.animax.co.jp##.pagetop
 rigletboloed.shop
-www.peroz.ro##.footer
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"]
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-de-confidentialitate/"]
 www.fancourier.ro##[href="https://www.fancourier.ro/politica-cookie/"]
@@ -11420,7 +11412,6 @@ www.purina.ro##li.menu-item:nth-of-type(7)
 www.descopera.ro##.height-100
 m.bilibili.com##.confirm.open-app-dialog-btn.launch-app-btn
 m.bilibili.com##.open-app-dialog-header
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder
 playtech.ro##div.mg-bottom-20.height-250
 brainly.ro##.brn-add-question-floating-button-sticky-wrapper.js-react-add-question-floating-button
 www.dbrom.ro##.floating-navigation-title
@@ -12517,22 +12508,6 @@ www.floaredetei.ro##.hidden-md.hidden-lg.herald-single-mobile-sticky.herald-sing
 casepractice.ro##.rltpopup-show-up.penci-rltpopup-right.penci-rlt-popup
 smartbuyer.ro##.has-center.layout-full-contained.hide-on-desktop.header-top.header--row
 smartbuyer.ro##.builder-item--footer-two-widgets.item--inner
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(0)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(1)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(2)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(3)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(4)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(5)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(6)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(7)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(8)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(9)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(10)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(11)
-www.peroz.ro##.gdpr
-www.peroz.ro##gdpr
-www.peroz.ro##.active.gdpr
 www.radiovacanta.ro##[href="https://www.radiovacanta.ro/publicitate"]
 www.cevisez.ro##.icon-angle-up.scrolltop
 www.cevisez.ro##h2
@@ -12951,7 +12926,6 @@ colegiuladamachi.ro##[href="https://colegiuladamachi.ro/cookie-policy-eu/"]
 www.gandul.ro###svp
 proxysite.site##.discord-button
 proxysite.site###showhidebtn
-www.peroz.ro##.footer-top-nav-link.gdpr-modal-trigger
 jurnaldevest.ro###menu-social-menu-items-2 > .menu-item-52529.tdb-normal-menu.tdb-menu-item.tdb-menu-item-button.menu-item-object-page.menu-item-type-post_type.menu-item > [href] > .tdb-menu-item-text
 jurnaldevest.ro###media_image-41
 jurnaldevest.ro##[href="https://jurnaldevest.ro/cookie-policy/"]
@@ -13499,7 +13473,6 @@ stirileprotv.ro##.loading.lazy
 www.sport.ro###gotop
 altex.ro###__next > div.is-hidden-in-mobile-app:nth-of-type(3)
 www.gog.com##.main-footer.footer-microservice
-www.peroz.ro##.footer-top
 news.yahoo.com##li.My\(16px\).native-ad-item.stream-ad
 www.wall-street.ro##.mobile.sharebox.list-unstyled
 www.eusunt.ro##.scroll-arrow
@@ -13736,27 +13709,6 @@ www.radiounirea.ro##.relative.left.mvp-flex-side-wrap
 www.radiounirea.ro##.mvp_ad_widget.widget-container
 okteve.com###gototop
 posturi.live##.mt-3.p-2.colorize.footer
-peroz.ro##hidden
-www.peroz.ro##.gdpr-modal-trigger.gdpr-link
-www.peroz.ro###gdpr > .container
-www.peroz.ro##.footer
-www.peroz.ro##.gdpr-list-item
-www.peroz.ro##.gdpr
-www.peroz.ro##.gdpr-modal-box
-www.peroz.ro##.gdpr-modal
-www.peroz.ro##td
-www.peroz.ro##.gdpr-modal-trigger.gdpr-button
-www.peroz.ro##.gdpr-subtitle
-www.peroz.ro##.gdpr-title
-www.peroz.ro##.footer-top-nav-link.gdpr-modal-trigger
-www.peroz.ro##.footer-top-nav
-www.peroz.ro##.footer-top > .container
-www.peroz.ro##.gdpr-modal-trigger.gdpr-link
-www.peroz.ro##.gdpr-trigger.gdpr-button
-www.peroz.ro##.v-center-container
-www.peroz.ro##span
-www.peroz.ro##+js(json-prune, overlay.cosentBumpV2Renderer)
-www.peroz.ro##+js(json-prune, overlay.cosentBumpV3Renderer)
 www.bugetul.ro##.terms.footer-mare
 astelus.com##.cli-modal-content.cli-bar-popup
 us.norton.com##.c-footer__legalfooter
@@ -14023,16 +13975,6 @@ newsweek.ro##.z-50.shadow.py-3.w-full.bottom-0.text-gb.bg-red.fixed
 newsweek.ro###subscription-banner-mobile
 www.myploiesti.ro##.position-right.sunfw-scrollup
 adevarul.ro##.svelte-1azwx5r.popup
-www.peroz.ro##.active.gdpr
-www.peroz.ro##.article-page-widget-question
-www.peroz.ro##.footer
-peroz.ro###gdpr > .container
-peroz.ro##.footer-top
-peroz.ro##.active.gdpr
-peroz.ro##.footer-top
-peroz.ro##.container > .gdpr-trigger.gdpr-button
-peroz.ro##.gdpr-modal-trigger.gdpr-button
-peroz.ro##.gdpr-modal-trigger.gdpr-link
 www.gandul.ro##.popup__visible.popup
 www.gandul.ro##.cvauto.footer
 newsweek.ro##.mt-4.p-4.bg-white
@@ -16261,26 +16203,6 @@ huff.ro###mvp-foot-wrap
 agora.md##.gap-x-8.auto-cols-max.grid-flow-row.md\:grid-cols-3.dsm\:grid-cols-2.grid-cols-1.grid
 agora.md##.\[\&_a\]\:text-cD52E32.\[\&_a\:hover\]\:underline.mx-auto.d3xl\:w-\[956px\].dxl\:w-\[692px\].md\:w-\[688px\].w-\[366\] > .items-center.flex
 www.cfrcalatori.ro##div.col-md-3:nth-of-type(1)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(3)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(9)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(12)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(2)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(0)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(1)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(4)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(5)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(6)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(7)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(8)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(10)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(11)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(13)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(14)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(15)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(16)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(17)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(18)
-www.peroz.ro##.gdpr-social-media.gdpr-placeholder
 cursdeguvernare.ro##.elementor-section-height-default.elementor-section-boxed.elementor-element-daa3430.elementor-element.elementor-top-section.elementor-section
 economedia.ro##.animated.bounceInup.ta_upscr
 redactia.ro##.mrf-balconLayout_layouts.mrf-balcon-toparticles.mrf-balcones > .mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
@@ -17023,9 +16945,6 @@ www.softpedia.com##div.copyright:nth-of-type(3)
 www.softpedia.com##a.underline:nth-of-type(2)
 tvron.net###gdpr
 www.malavida.com##[href="javascript:NSMv.handleCookiePoliciesLink()"]
-www.peroz.ro##p.gdpr-iframe-fix.gdpr-social-media.gdpr-placeholder:nth-of-type(5)
-www.peroz.ro##p.gdpr-social-media.gdpr-placeholder:nth-of-type(8)
-www.peroz.ro##p.gdpr-iframe-fix.gdpr-social-media.gdpr-placeholder
 www.libertatea.ro###menu-item-2562077 > [href="https://www.libertatea.ro/despre#publicitate"]
 www.csid.ro###menu-item-19616094 > [href="https://www.csid.ro/politica-de-cookies/"]
 www.csid.ro###menu-item-19616095 > [href="https://www.csid.ro/publicitate/"]
@@ -17905,7 +17824,6 @@ miculrinocer.ro##body > .ezmob-footer-desktop.ezo_ad.ezoic-floating-bottom.ezmob
 www.maxdeco.ro##.cookiePolicyGomag
 www.caietul-cristinei.ro###cookie-law-info-bar
 www.apoteca-farmacie.ro###cookie_policy
-www.peroz.ro##.active.gdpr
 www.daily-smile.ro##.cookiePolicyGomag
 dermastore.ro##.notification-wrapper-bottom.notification-wrapper
 www.tpu.ro##.addQuestionOverlay
@@ -18881,7 +18799,6 @@ miculrinocer.ro##body > .ezmob-footer-desktop.ezo_ad.ezoic-floating-bottom.ezmob
 www.maxdeco.ro##.cookiePolicyGomag
 www.caietul-cristinei.ro###cookie-law-info-bar
 www.apoteca-farmacie.ro###cookie_policy
-www.peroz.ro##.active.gdpr
 www.daily-smile.ro##.cookiePolicyGomag
 dermastore.ro##.notification-wrapper-bottom.notification-wrapper
 www.tpu.ro##.addQuestionOverlay

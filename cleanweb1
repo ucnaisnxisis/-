@@ -450,6 +450,24 @@ www.funnygames.ro##li:nth-of-type(7)
 www.funnygames.ro##.container > ul > li:nth-of-type(3)
 www.funnygames.ro##.container > ul > li:nth-of-type(2)
 www.funnygames.ro##.container > ul > li:nth-of-type(1)
+forums.androidcentral.com##.uix_fabBar--active.uix_fabBar
+forums.androidcentral.com##.is-active.js-scrollButtons.u-scrollButtons
+www.theatlantic.com##.ArticleBody_root__2gF81
+www.theatlantic.com##.Footer_bottomContainer__oTVst.Footer_container__w17O5
+www.theatlantic.com##div.Footer_accordionItem__1Y5Bg:nth-of-type(5)
+panorama.ro##.wpd-bubble-count-second
+panorama.ro##svg
+panorama.ro###wpd-bubble-count
+panorama.ro##[href="https://www.facebook.com/panorama.ro"]
+panorama.ro##[href="https://www.linkedin.com/company/panorama-ro/"]
+www.psychologytoday.com##.pt-footer-consent-link
+www.science.org##[href="/content/page/privacy-policy"]
+www.science.org##ul.mb-0.flex-column.d-flex.footer__sitemap__list.list-unstyled:nth-of-type(7)
+www.cbsnews.com##.ketch-shadow-none.focus-visible\:ketch-outline-none.\!ketch-text-\[--k-banner-description-text-color\].lm\:ketch-text-ketch-lm.md\:ketch-text-ketch-m.ketch-tracking-\[-0\.13px\].ketch-text-left
+www.cbsnews.com###ketch-banner-button-primary
+ourworldindata.org##.footer-base__socials
+ourworldindata.org##.footer-base__legal > .footer-link-list > li > .body-3-medium
+ourworldindata.org##.grid-cols-12-full-width.grid.donate-footer
 wordwall.net##div.footer-column:nth-of-type(1)
 coloring-for-adults.com##.sp-cp-footer-contacts-icons
 coloring-for-adults.com##[href="https://coloring-for-adults.com/ro/privacy-policy"]

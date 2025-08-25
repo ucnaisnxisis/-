@@ -311,6 +311,15 @@ coloring-for-adults.com##.sp-cookie-toast
 www.pomu.ro##.Footer-content [href="/legal"]
 www.pomu.ro##.Footer-content [href="https://www.pomu.ro/contact"]
 www.pomu.ro##.Main-SocialNetworks
+vremea.ido.ro###shareit
+www.tameteo.com##.center.sociales
+www.tameteo.com###pAndroid
+www.tameteo.com##.hub.descarga-app.row.card
+www.tameteo.com##.icono-app
+www.meteoprog.com##.footer__appstore
+www.meteocity.com##[href="https://rgpd.digitalprismatech.com/charte-confidentialite-dpp.pdf"]
+www.meteocity.com##[href="/mentions-legales"]
+www.meteocity.com###block-widget
 allwebgames.com##li.links__item:nth-of-type(5)
 www.twinkl.ro##.cookie-consent-popup-container
 www.twinkl.ro##.carousel-container

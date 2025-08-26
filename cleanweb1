@@ -517,6 +517,19 @@ gamebanana.com###CcpaOptoutListItem
 gamebanana.com##ul.Cluster:nth-of-type(1)
 www.mixmods.com.br###randomPost
 www.mixmods.com.br##.gsc-modal-background-image-visible.gsc-modal-background-image
+retro-replay.com###topcontrol
+retro-replay.com###theme-footer
+retro-replay.com##.footer-bottom
+millennialmagazine.com##[href="https://millennialmagazine.com/millennial-magazine-privacy-policy/"]
+millennialmagazine.com##.tve-page-section-out
+millennialmagazine.com##.tcb-window-width.tve-height-update.thrv-page-section.thrv_wrapper
+www.neoseeker.com##.clearfix.text-center.text-small.social
+www.neoseeker.com##.section-spaced.text-center
+www.neoseeker.com##div.text-center.text-small > .inline
+www.neoseeker.com/forums/5568/t305210-problems-on-socom-2-please-help##.text-right.text-small
+www.reddit.com##.justify-center.flex-col.flex
+www.reddit.com##div:nth-of-type(5)
+www.reddit.com##.inline-flex.button.justify-center.items-center.button-primary.px-\[var\(--rem14\)\].button-medium.w-100
 www.libertatea.ro##.fsz-18.radius-4.d-flex.mg-bottom-15.text-center.whatsapp-banner
 www.romaniatv.net##.social-icons
 spotmedia.ro###ajax-container-box-social-urmareste-ne

@@ -349,6 +349,11 @@ www.google.com##.XDyW0e
 www.mozillafoundation.org##.tw-px-8.large\:tw-w-6\/12.xlarge\:tw-w-5\/12
 blog.mozilla.org##section.mzp-c-footer-section:nth-of-type(4)
 connect.mozilla.org##.section-right
+www.virustotal.com##footer
+www.filepuma.com##.gather
+www.filepuma.com##[href="//www.filepuma.com/privacy/"]
+www.filepuma.com##[href="//www.filepuma.com/cookie_policy/"]
+217.20.54.36
 www.famousbirthdays.com##.site-footer__apps
 www.famousbirthdays.com##.site-footer__bottom.site-footer__row
 teamimouto.bandcamp.com##.compound-button.goto-top-button

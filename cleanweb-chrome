@@ -300,6 +300,95 @@ www.virustotal.com##footer
 www.filepuma.com##.gather
 www.filepuma.com##[href="//www.filepuma.com/privacy/"]
 www.filepuma.com##[href="//www.filepuma.com/cookie_policy/"]
+www.mammamia.ro##div.col-md-auto:nth-of-type(3)
+www.mammamia.ro##div.col-md-auto:nth-of-type(4)
+images.google.com##[href="/intl/ro/policies/privacy/"]
+images.google.com##[href="/intl/en-RO/policies/privacy/"]
+images.google.com###footer
+news.northeastern.edu##social-links
+news.northeastern.edu##[href="https://mailchi.mp/northeastern/sign-up-form"]
+news.northeastern.edu##.social-links
+news.northeastern.edu##.skybox__wrapper.bar__wrapper > .social-links
+www.rand.org##.corp.stay-informed.foot-column
+www.rand.org##.legal-links
+www.rand.org##.inner
+www.rand.org##.subscribe
+www.pbs.org##.popup__content
+www.pbs.org##.style-lg_fund_yel_red.popup-large_funding > div
+www.pbs.org##.sidebar--video.sidebar
+www.pbs.org##.post__byline-twitter
+techvirality.com##[href="https://techvirality.com/privacy-policy/"]
+time.com##.mb-4.text-warm-grey-2.text-caption-small.text-center.font-graphik
+time.com##.space-x-4.justify-center.items-center.flex.my-10
+time.com##.xl\:mt-6.justify-end.items-start.flex-1.flex.mt-4
+news.berkeley.edu##.menu--social.menu.social-menu__items
+www.nbcnews.com##.expanded-byline__social.byline-social
+www.technologyreview.com##.headerTemplate__navigation--2567d38a8f10cb9d77886fdac95302f1
+www.technologyreview.com##.homepageStoryCard__buttonsWrapper--193850e7cfd0dfaa5adf23defdcfee00
+www.technologyreview.com##li.siteFooterMenuItem__wrapper--ac4d2b8537d8be78e71f500600b95c14:nth-of-type(4)
+www.technologyreview.com##.footer__socialFollow--4b0cd39c7107504381fe57d31b5d9fcd
+www.technologyreview.com##.headerMenu__list--487e294cb1ce4b5eafe028f4ed13464b > li.headerMenuItem__wrapper--53e4e53b4ba7d3b1e94b34b8d9d8e1d6:nth-of-type(3)
+worldbuilding.stackexchange.com##.md\:mb8.-social.-list
+worldbuilding.stackexchange.com##div.site-footer--col:nth-of-type(2)
+www.scientificamerican.com##div:nth-of-type(3) > .footer-links > li:nth-of-type(6)
+www.scientificamerican.com##div:nth-of-type(3) > .footer-links > li:nth-of-type(4)
+www.scientificamerican.com##.footer-links > li:nth-of-type(8)
+www.scientificamerican.com##.footerSocialMedia-JNmzI
+www.scientificamerican.com##div:nth-of-type(3) > .footer-links > li:nth-of-type(5)
+www.scientificamerican.com##.footerSubscribe-QtEdJ
+www.scientificamerican.com##.flex-8QhDt.right-W53pL
+www.scientificamerican.com##.bannerCta-W1wOC
+www.scientificamerican.com##.flex-8QhDt.center-ZN-Wa
+techxplore.com##.socials-wrapper
+techxplore.com##.form-subscribe
+techxplore.com##[href="https://sciencex.com/help/privacy/"]
+techxplore.com##.sidenav-subscribe-to-news
+www.nytimes.com###masthead-bar-one
+www.cbsnews.com###ketch-banner
+www.cnbc.com##li.CNBCFooter-sectionItem:nth-of-type(3)
+www.cnbc.com##.CNBCFooter-section
+theweek.com##li.leading-8.sm\:my-0\.5.mx-2:nth-of-type(4)
+theweek.com##li.leading-8.sm\:my-0\.5.mx-2:nth-of-type(5)
+theweek.com##.vanilla-blueconic-header-wrapper
+breakingdefense.com##a[href="https://breakingdefense.com/terms-of-service/"]
+breakingdefense.com##.site-footer
+breakingdefense.com##.form-interruptor.newsletter-signup
+againstdata.com##li.nav-item:nth-of-type(2)
+againstdata.com##div.col-md-6:nth-of-type(2)
+againstdata.com##.gap-5.hstack
+ai.stackexchange.com##.-list > li:nth-of-type(11)
+ai.stackexchange.com##.-link.js-gps-track.py4.s-btn__link.s-btn
+ai.stackexchange.com##div.site-footer--col:nth-of-type(2) > .-list > li:nth-of-type(8) > .-link.js-gps-track
+ai.stackexchange.com##div.site-footer--col:nth-of-type(2) > .-list > li:nth-of-type(3)
+www.sciencefocus.com##.footer-subscription-widgets
+www.sciencefocus.com##.footer-social-media-menu
+www.sciencefocus.com##.has-text.menu-button-Newsletters.menu-button
+www.merriam-webster.com##[href="/privacy-policy"]
+www.dictionary.com##[href="https://www.dictionary.com/e/terms/"]
+www.dictionary.com##.vbSs68OR4tDZkfWgvW3r
+www.geeksforgeeks.org###brandingWrapper
+www.collinsdictionary.com##.reseauxMobile
+www.collinsdictionary.com##[href="https://www.collinsdictionary.com/advertising"]
+www.wordreference.com##.first.mobileblock
+www.collinsdictionary.com##[href="https://www.collinsdictionary.com/us/advertising"]
+us.norton.com##.c-socialmediabanner__container
+www.slangsphere.com##[href="https://www.slangsphere.com/privacy-policy-2/"]
+www.slangsphere.com##.cs-col-right.cs-footer__col
+www.slangsphere.com##.is-active.cs-scroll-top
+www.slangsphere.com##.cs-offcanvas__bottombar
+www.crowdstrike.com##.external.cmp-list__item-link
+www.crowdstrike.com###nav-list-footer-misc > li.cmp-list__item:nth-of-type(3)
+www.sentinelone.com##.icons
+www.sentinelone.com##.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+telefon.4id.ro##[href="https://telefon.4id.ro/pagini/confidentialitate.html"]
+www.telefonul-cui.ro##.fixed-bottom
+cumsa.ro##.circle.social
+www.callinsider.ro##p.container-wrapper.tac
+www.callinsider.ro###cookie-agreement
+www.radiosud.ro##.qwsmoothscroll.qt-link-top.qt-btn-ghost.qt-btn-rhombus
+www.radiosud.ro##[href="https://www.radiosud.ro/politica-de-confidentialitate-2/"]
+useit.ro##.social-icons
+ro.androidguias.com###menu-item-226
 217.20.54.36
 3dvf.com##.e-child.e-con.e-flex.e-con-full.elementor-element-a24bb8a.elementor-element
 3dvf.com##[href="https://3dvf.com/en/privacy-policy/"]

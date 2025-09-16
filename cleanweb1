@@ -349,6 +349,17 @@ www.google.com##.XDyW0e
 www.mozillafoundation.org##.tw-px-8.large\:tw-w-6\/12.xlarge\:tw-w-5\/12
 blog.mozilla.org##section.mzp-c-footer-section:nth-of-type(4)
 connect.mozilla.org##.section-right
+www.firefox.com##.mzp-c-callout-cta
+www.firefox.com##.c-footer-section-follow.mzp-c-footer-section
+www.cfrcalatori.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
+www.cfrcalatori.ro##.widget_custom_html.widget.widget_text
+www.cfrcalatori.ro##div.col-md-3:nth-of-type(3)
+bilete.cfrcalatori.ro##.text-center.alert-primary.alert
+www.autogari.ro##li:nth-of-type(2)
+www.autogari.ro##[href="https://www.instagram.com/Autogari.ro"]
+www.autogari.ro##[href="/Publicitate"]
+dentistulmeu.eu##[href="https://dentistulmeu.eu/utilizare-cookies/"]
+dentistulmeu.eu##[href="https://dentistulmeu.eu/politica-de-confidentialitate/"]
 www.virustotal.com##footer
 www.filepuma.com##.gather
 www.filepuma.com##[href="//www.filepuma.com/privacy/"]

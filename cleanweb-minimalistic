@@ -380,6 +380,17 @@ whatspoppin.shopping
 @@||dailymotion.com^$ghide
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(1)
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(2)
+www.firefox.com##.mzp-c-callout-cta
+www.firefox.com##.c-footer-section-follow.mzp-c-footer-section
+www.cfrcalatori.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
+www.cfrcalatori.ro##.widget_custom_html.widget.widget_text
+www.cfrcalatori.ro##div.col-md-3:nth-of-type(3)
+bilete.cfrcalatori.ro##.text-center.alert-primary.alert
+www.autogari.ro##li:nth-of-type(2)
+www.autogari.ro##[href="https://www.instagram.com/Autogari.ro"]
+www.autogari.ro##[href="/Publicitate"]
+dentistulmeu.eu##[href="https://dentistulmeu.eu/utilizare-cookies/"]
+dentistulmeu.eu##[href="https://dentistulmeu.eu/politica-de-confidentialitate/"]
 github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none
 www.b1tv.ro##[href="https://www.b1tv.ro/politica-de-confidentialitate"]
 moovitapp.com##[href="https://moovit.com/legals/privacy-policy/"]

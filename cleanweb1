@@ -351,6 +351,11 @@ blog.mozilla.org##section.mzp-c-footer-section:nth-of-type(4)
 connect.mozilla.org##.section-right
 www.firefox.com##.mzp-c-callout-cta
 www.firefox.com##.c-footer-section-follow.mzp-c-footer-section
+proton.me##.md\:space-y-12.space-y-6 > .gap-2.flex-wrap.flex
+proton.me##.mx-auto.dtc-max-w-3xl
+m.digi24.ro##.active.strip
+github.com###universe_25_2
+@@cra.cz
 www.cfrcalatori.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
 www.cfrcalatori.ro##.widget_custom_html.widget.widget_text
 www.cfrcalatori.ro##div.col-md-3:nth-of-type(3)

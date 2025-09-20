@@ -293,6 +293,23 @@ bilete.cfrcalatori.ro##.text-center.alert-primary.alert
 www.autogari.ro##li:nth-of-type(2)
 www.autogari.ro##[href="https://www.instagram.com/Autogari.ro"]
 www.autogari.ro##[href="/Publicitate"]
+www.dozaanimata.net##.chatbro_header_rotare_to_bottom.chatbro_movable_chat.chatbro_minimized_chat
+www.nytimes.com###dock-container
+proton.me##.animate-enter-top.overflow-hidden.w-full.flex.relative.min-h-12.z-over
+www.bankrate.com###wealth_nudge_slider_Start\ saving\ with\ our\ top\ banking\ products
+www.bankrate.com##.global-footer__social-bar-container
+www.usbank.com##div.primary-link:nth-of-type(10)
+www.usbank.com##div.primary-link:nth-of-type(7)
+www.usbank.com##div.primary-link:nth-of-type(9)
+www.paypal.com##._copyright-section_vepqp_1195._footer-tertiary_vepqp_1110
+www.paypal.com###\32 fgAW2Vjf70d1MZ5EK4hx0
+www.paypal.com##.PP__MobileBanner__Banner_Container
+www.paypal.com##.theme-background-color-light.closing-cta.pullout
+www.cnbc.com##[href="https://www.cnbc.com/select/disclosures/"]
+www.cnbc.com##[href^="https://together.nbcuni.com/advertise/"]
+www.cnbc.com###backToTop
+www.cnbc.com##[href="https://www.cnbc.com/money-matters-newsletter/"]
+www.cnbc.com##[href^="https://www.cnbc.com/application/pro/"]
 dentistulmeu.eu##[href="https://dentistulmeu.eu/utilizare-cookies/"]
 dentistulmeu.eu##[href="https://dentistulmeu.eu/politica-de-confidentialitate/"]
 github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none

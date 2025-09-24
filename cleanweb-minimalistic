@@ -379,6 +379,37 @@ whatspoppin.shopping
 @@@@encrypted-tbn0.gstatic.com
 @@||dailymotion.com^$ghide
 @@cra.cz
+spotmedia.ro##.mbm-follow-on-google-news
+spotmedia.ro##.mbm-social-media-buttons-container-footer
+spotmedia.ro##.mbm-pms-fright.entry-meta
+m.ziare.com##.share-btn.box__section__container
+m.ziare.com##.social-media
+www.contributors.ro##[href="/feed"]
+v9.ro##.mt-2.footer-social-wrapper.d-flex.order-1.order-md-2.col-md-6
+v9.ro##a.text-white:nth-of-type(1)
+www.stiripesurse.ro##.justify-center.gap-1\.5.flex
+www.stiripesurse.ro##div.lg\:gap-\[1\.567rem\].gap-\[18px\].flex-col.flex:nth-of-type(2)
+www.stiripesurse.ro##a.lg\:text-left.text-center.leading-\[22px\].font-medium.text-\[15px\]:nth-of-type(2)
+www.stiripesurse.ro##svg
+www.stiripesurse.ro##.relative.lg\:max-w-\[77\.188rem\].w-full.pb-\[1\.567rem\].pt-\[2\.54rem\].border-b-\[1px\].border-\[\#C0C0C0\].gap-5.flex-col.flex
+www.stiripesurse.ro##.mx-auto.max-w-\[365px\].w-full.md\:hidden
+www.stiripesurse.ro##.mx-auto.max-w-\[365px\].w-full.block
+www.aktual24.ro##[href="https://www.aktual24.ro/politica-de-confidentialitate/"]
+www.aktual24.ro##[href="https://www.aktual24.ro/politica-de-cookie/"]
+www.aktual24.ro##.footer
+psnews.ro##.e-lazyloaded.e-parent.e-con.e-con-boxed.e-flex.elementor-hidden-desktop.elementor-element-b012c6a.elementor-element
+psnews.ro##.elementor-widget-image.elementor-widget.elementor-widget-mobile__width-auto.elementor-element-07ff7bc.elementor-element > .elementor-widget-container
+psnews.ro##[href^="https://play.google.com/store/apps/details"]
+www.antena3.ro##.contact
+www.g4media.ro##.donate-section
+www.bursa.ro##[href="/media-advertising"]
+www.bursa.ro##[href="http://www.anuntbursa.ro"]
+www.bursa.ro##[href="/newsletter"]
+www.gov.ro##.showHidden.shareheader
+www.gov.ro##.detaliiLink
+observatornews.ro##.follow-gnews
+observatornews.ro##.app-button
+observatornews.ro##.app-social
 proton.me##.md\:space-y-12.space-y-6 > .gap-2.flex-wrap.flex
 proton.me##.mx-auto.dtc-max-w-3xl
 www.8bitdo.com##.col-xs-12.col-sm-6.col-md-6

@@ -388,6 +388,16 @@ tor.eff.org##h4
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-primary-light
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-light
 tor.eff.org##.text-left.order-last.footer.bg-dark.container-fluid > .justify-content-center.d-flex.col-12
+kellywhatcould.com##a.text-secondary:nth-of-type(5)
+kellywhatcould.com##a.text-secondary:nth-of-type(4)
+kellywhatcould.com##div.legalSeparator:nth-of-type(4)
+kellywhatcould.com##div.legalSeparator:nth-of-type(3)
+kellywhatcould.com##[href="/privacy"]
+kellywhatcould.com##a.text-secondary:nth-of-type(2)
+alishopzone.com##div:nth-of-type(3) > .space-y-2 > li:nth-of-type(2)
+alishopzone.com##div:nth-of-type(4)
+www.virustotal.com##chat
+www.virustotal.com##button
 www.bricolaj.ro###ftr > .__i > .__c > .__e3.__e
 www.bricolaj.ro##li:nth-of-type(2)
 www.bricolaj.ro##molin-shop-ai

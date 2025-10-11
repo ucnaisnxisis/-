@@ -328,6 +328,22 @@ m.digi24.ro##.link-app-digisport
 www.libertatea.ro##.mg-bottom-15.d-flex-wrap.box-nl-single--stiri.box-nl-single
 www.onlinesport.ro##.footer_gdpr
 www.onlinesport.ro##div:nth-of-type(20)
+www.protectstore.ro##.accessibility-button
+www.protectstore.ro##.footer__bottom-center
+www.protectstore.ro##.footer__block--newsletter.footer__block
+www.protectstore.ro##[href="/info/cookies"]
+www.protectstore.ro##[href="/info/confidentialitate"]
+www.interbabis.ro##.lightbox
+www.interbabis.ro##.__e3.__e
+www.interbabis.ro##.on
+avasting.ro##.blantershow-chat
+avasting.ro##[href="https://avasting.ro/gdpr"]
+avasting.ro##.ib-wrapper--square.social-links
+avasting.ro##[href="https://avasting.ro/confidentialitate"]
+m.digisport.ro##.col-center
+m.digisport.ro##.footer-content-social
+m.digisport.ro##.article-story.article > [href]
+m.digisport.ro##p:nth-of-type(9)
 evz.ro##div.sidebar-widget-two.sidebar-widget:nth-of-type(2)
 www.tribuna.ro###ccm-manage-preferences
 www.tribuna.ro##.ccm-banner-content > p

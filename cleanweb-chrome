@@ -707,7 +707,6 @@ kellywhatcould.com##a.text-secondary:nth-of-type(2)
 alishopzone.com##div:nth-of-type(3) > .space-y-2 > li:nth-of-type(2)
 alishopzone.com##div:nth-of-type(4)
 www.virustotal.com##chat
-www.virustotal.com##button
 www.bricolaj.ro###ftr > .__i > .__c > .__e3.__e
 www.bricolaj.ro##li:nth-of-type(2)
 www.bricolaj.ro##molin-shop-ai

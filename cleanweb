@@ -397,6 +397,30 @@ www.retail-fmcg.ro##.obfx-sharing-bottom.obfx-sharing-left.obfx-sharing
 www.retail-fmcg.ro##.ads
 www.retail-fmcg.ro##.widget_text.widget
 www.retail-fmcg.ro##p:nth-of-type(14)
+www.qbebe.ro##.authorIntro > .ad.aside
+www.qbebe.ro##.ad.aside
+www.qbebe.ro##.gNews.ros.social > p
+www.qbebe.ro###formNewsArticle
+www.qbebe.ro##.qAndAAside.ros.gbutton.gdiv.ask
+www.qbebe.ro###formNewsRight
+www.qbebe.ro##div.ros.gdiv:nth-of-type(17)
+www.qbebe.ro##.ad
+www.kitchenshop.ro##.follow-us.footer-block
+www.kitchenshop.ro##[href="/confidentialitatea-si-securitatea-datelor"]
+oficiuldestiri.ro##.jeg_menu_footer
+bizbrasov.ro##.elementor-widget-html.elementor-widget.elementor-widget__width-initial.elementor-element-70f7c3f.elementor-element
+bizbrasov.ro###menu-1-dbd7d89 > .menu-item-32326.menu-item-object-page.menu-item-type-post_type.menu-item
+bizbrasov.ro##.menu-item-32323.menu-item-object-page.menu-item-type-post_type.menu-item
+bizbrasov.ro###menu-1-dbd7d89 > .menu-item-137778.menu-item-object-custom.menu-item-type-custom.menu-item
+bizbrasov.ro##.block-newsletter
+www.thehome.ro##.footer__blocks--nx2.footer__blocks
+www.thehome.ro##.mkt-popup-subscribe-button
+www.thehome.ro###mkt-popup-content > .mkt-popup-description > p
+www.thehome.ro##.mkt-popup-privacy-policy
+www.thehome.ro##label.mkt-content-input-label
+www.thehome.ro##.mkt-popup-headline
+www.thehome.ro##.mkt-offset-image-0
+hoome.ro###menu-item-662661
 marinbadea.ro###post-newsletter
 marinbadea.ro##div.normal-side.tie-col-sm-4
 marinbadea.ro##div.normal-side.tie-col-md-3:nth-of-type(3)

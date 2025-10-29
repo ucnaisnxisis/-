@@ -607,6 +607,70 @@ adblockluna.com##.installation__action
 www.adaware.com##[href="https://www.adaware.com/adaware-privacy"]
 www.adaware.com##[href="https://www.adaware.com/cookie-policy/"]
 www.adaware.com##[href="https://www.adaware.com/privacy-policy/"]
+www.speedtest.net##[href="/about/privacy"]
+www.speedtest.net##.footer > .container > div.pure-g:nth-of-type(2)
+fast.com###privacy-link
+www.highspeedinternet.com##div.large-3.small-6.cell:nth-of-type(3)
+www.highspeedinternet.com##p:nth-of-type(6)
+speedtest.xfinity.com###xc-footer--ad-choices
+speedtest.xfinity.com###xc-footer--health-privacy-notice
+speedtest.xfinity.com###xc-footer--your-privacy-choices
+speedtest.xfinity.com###xc-footer--privacy-policy
+fiber.google.com##.style_social__aHvSE
+fiber.google.com##div.style_footer__site-links-list-item__bkvuv:nth-of-type(4)
+www.testmyspeed.com##.footer-site-nav > .footer-menu
+www.highspeedinternet.com##.vc_cta3-container
+openspeedtest.com##[href="https://openspeedtest.com/privacy-policy"]
+www.speedtest.org##[href="https://www.speedtest.org/privacy-policy/"]
+speedy-tester.com##.xl\:mt-0.xl\:col-span-2.gap-8.grid-cols-3.grid.mt-16 > div:nth-of-type(3)
+speedy-tester.com##a.hover\:text-gray-700.hover\:bg-gray-50.hover\:border-gray-300.text-gray-500.font-medium.text-base.pr-4.pl-3.py-2.border-transparent.border-l-4.block:nth-of-type(15)
+speedy-tester.com##div.justify-center.flex-row.w-full.flex:nth-of-type(1)
+speedsmart.net##[href="https://speedsmart.net/terms"]
+speedsmart.net##[href="http://facebook.com/SpeedSmart"]
+speedsmart.net##[href="http://twitter.com/speedsmart"]
+speedsmart.net##div.footer_column:nth-of-type(3)
+speedsmart.net##div.nav_menu_header:nth-of-type(4)
+speedsmart.net##a.nav_follow:nth-of-type(8)
+www.verizon.com##[href="https://www.verizon.com/about/privacy/about-our-ads"]
+www.verizon.com##.lqWidgetComp
+www.verizon.com##[href="https://www.verizon.com/legal/notices/legal-notices/"]
+www.verizon.com##[href="https://www.verizon.com/support/residential/announcements/"]
+www.verizon.com##[href="https://www.verizon.com/solutions-and-services/my-verizon-mobile/"]
+www.verizon.com##.gnav20-ribbontext
+speedof.me###menu_privacy
+www.allconnect.com##li.last\:mb-0.mb-16.md\:pl-0.pl-16:nth-of-type(5)
+www.meter.net###copyright
+www.meter.net###promo_android_app_placer > [href] > [src]
+www.bandwidthplace.com##[href="https://www.bandwidthplace.com/do-not-sell-or-share-my-personal-information"]
+www.bandwidthplace.com##[href="https://www.bandwidthplace.com/privacy-policy-terms-and-conditions"]
+speedtestgo.com##div:nth-of-type(4) > ul
+speedtestgo.com###copyright > div > h3
+www.optimum.com##.text-center.list-inline-social
+www.optimum.com##[href="https://www.optimum.com/terms-of-service/privacy/Customer-Privacy/optimum-customer-privacy-policy"]
+www.optimum.com##[href="https://www.optimum.com/your-privacy-choices"]
+ping-test.net##li:nth-of-type(1)
+speedtest-1.com##.two_elementor_element.elementor-widget-heading.elementor-widget.elementor-element-b6dcba9.elementor-element
+speedtest.gcore.com##div.footer-section:nth-of-type(2) > .footer-legal-text
+speedtestmax.com##.elementor-section-height-default.elementor-section-boxed.elementor-element-30d5ebf.elementor-element.elementor-top-section.elementor-section
+www.fireprobe.net##.mb-3.my-2.download-android-top
+www.fireprobe.net##div.col-sm-4.col-12:nth-of-type(3) > .row > div.col-12:nth-of-type(3)
+www.digitaltrends.com##[href^="https://www.youtube.com/channel/UC8wXC0ZCfGt3HaVLy_fdTQw"]
+broadbandnow.com##ul.footer__nav.list-inline:nth-of-type(6)
+broadbandnow.com##[href^="https://compliance.centerfield.com/doNotSell.php"]
+broadbandnow.com##[href="/privacy-policy"]
+www.reviews.org##[href="/about-us/privacy-policy/"] > span
+www.reviews.org##.component-margin--xsmall.social-icons--align-default.social-icons
+www.reviews.org##.row-margin--default.row-padding--default.grid-container--full-width.grid-container > .grid-margin-x.grid-x > div.cell.large-4.small-12:nth-of-type(3)
+www.measurementlab.net##.social-ctn.callout-ctn
+www.measurementlab.net##[href="/privacy/"]
+www.measurementlab.net##ul.footer-links:nth-of-type(4)
+www.measurementlab.net##[href="/policies/"]
+www.fastcompany.com##a.underline:nth-of-type(3)
+www.fastcompany.com##a.underline:nth-of-type(1)
+www.fastcompany.com##a.underline:nth-of-type(4)
+www.fastcompany.com##a.underline:nth-of-type(5)
+www.fastcompany.com##.justify-end.flex.grid-column-3
+fastspeedtest.com##[href="p.php"]
 www.techradar.com##.sm\:visible.sm\:flex.flexisites-social.gap-2.hidden
 www.techradar.com##.mr-auto.ml-0.h-\[44px\].w-\[140px\].my-8.sm\:order-3.block
 www.thesamur.ai##.embedai-logo

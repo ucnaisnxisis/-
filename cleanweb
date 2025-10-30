@@ -280,6 +280,7 @@ adclickad.com
 @@fonts.gstatic.com
 @@||dailymotion.com^$ghide
 @@cra.cz
+@@europalibera.org
 www.digi24.ro##.active.strip
 www.digi24.ro##p.gdpr-iframe-fix.gdpr-social-media.gdpr-placeholder
 www.digi24.ro##.link-app-digisport
@@ -302,6 +303,52 @@ tor.eff.org##h4
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-primary-light
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-light
 tor.eff.org##.text-left.order-last.footer.bg-dark.container-fluid > .justify-content-center.d-flex.col-12
+izotec.ro##div.col-sm-3.col-md-3.col-lg-3.fusion-column:nth-of-type(3)
+izotec.ro###post-5179
+www.spreadshirt.com##.extra-menu.closable.js-message-container.sprd-header__message
+www.spreadshirt.com##.fav-btn.sprd-tile__img-btn
+www.spreadshirt.com##.mp-fixed-button-container
+www.politico.eu##.pl-sp-privacy-settings.menu-item
+www.politico.eu##[href="https://www.politico.eu/podcast/eu-confidential/"]
+eur-lex.europa.eu##div.ecl-site-footer__row:nth-of-type(2) > div.ecl-site-footer__column:nth-of-type(2) > div.ecl-site-footer__section:nth-of-type(3)
+eur-lex.europa.eu##div.ecl-site-footer__section:nth-of-type(2)
+eur-lex.europa.eu##div.ecl-site-footer__row:nth-of-type(1) > div.ecl-site-footer__column:nth-of-type(2) > div.ecl-site-footer__section:nth-of-type(3)
+www.europarl.europa.eu##[href="/privacy-policy/en"]
+freiheitsrechte.org##.site-banner
+freiheitsrechte.org##li.footer__subnavigation-item:nth-of-type(2)
+snppc.ro##.align-items-center.row > div.col-auto:nth-of-type(3)
+snppc.ro##.my-4.fs-4.text-center.invert.social-links
+snppc.ro##.mb-5.border-topX.pt-3X.mt-2X
+www.observatorcultural.ro##.s1.navbar-nav.nav
+www.observatorcultural.ro##[href="https://www.observatorcultural.ro/publicitate/"]
+www.observatorcultural.ro###menu-item-192441
+www.observatorcultural.ro##[href="https://www.observatorcultural.ro/newsletter/"]
+www.observatorcultural.ro##.widget_paypal_donations.widget
+economedia.ro##.caption-big.alignnone.wp-caption
+stiri-de-ultima-ora.ro##.active-progress.btn-right-side.progress-wrap
+stiri-de-ultima-ora.ro##.elementor-section-height-default.elementor-section-boxed.s-dark.elementor-element-c1d9530.elementor-element.elementor-top-section.elementor-section.el-gap-default.has-el-gap
+tv8.md##a.active.jss131
+tv8.md##.jss87
+news.click.md##[href="https://www.click.md/ads"]
+informat.ro###notification
+informat.ro##.p-4.menu-tos > div:nth-of-type(1)
+www.tribuna.ro###menu-item-160396
+www.stiridinsurse.ro##[href="https://www.stiridinsurse.ro/politica-de-confidentialitate/"]
+romania.europalibera.org##.js-overlay-actions.c-mmp__overlay-actions-top.c-mmp__overlay-actions
+romania.europalibera.org##.m-t-md.c-author__btns
+romania.europalibera.org##.podcast-sub
+romaniatvnews.com##[href="https://romaniatvnews.com/advertise/"]
+romaniatvnews.com##[href="https://romaniatvnews.com/privacy-policy/"]
+internationalbusinessleadershipaward.com##.ct-row-max-none.ct-header-fixed-none.elementor-section-height-default.elementor-section-boxed.elementor-section-content-middle.elementor-section-stretched.elementor-element-66f8378a.elementor-element.elementor-top-section.elementor-section
+internationalbusinessleadershipaward.com##.on.scroll-top
+romaniatvnews.com##.widget_block.widget
+voyo.protv.ro##.-nl.c-section
+gandul.com.ro##[href="https://gandul.com.ro/politica-de-confidentialitate/"]
+gandul.com.ro##[href="https://gandul.com.ro/politica-cookies/"]
+gandul.com.ro##.menu-item-2183.menu-item-object-page.menu-item-type-post_type.menu-item
+gandul.com.ro##.menu-item-2184.menu-item-object-page.menu-item-type-post_type.menu-item
+gandul.com.ro##.edge-padding.collapse-sections
+www.sportul.com##div > table > tbody > tr > td > p > table
 dictionary.cambridge.org###sidebarWordList > .lminh100.hflxy.hdf.pr > .lm-auto.hflx1.cm-fc.pr > div.lpb-25.lpt-5.lp-15.tc-bd.han
 dictionary.cambridge.org##div.tc-bd.lb-cm.lbb.lp-15:nth-of-type(2)
 dictionary.cambridge.org##.r2-gap-10.r2-flex-sm

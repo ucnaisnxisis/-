@@ -315,6 +315,47 @@ tor.eff.org##h4
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-primary-light
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-light
 tor.eff.org##.text-left.order-last.footer.bg-dark.container-fluid > .justify-content-center.d-flex.col-12
+www.librarii.ro##.scrollup
+www.librarii.ro##.item-wishlist
+www.librarii.ro##.btn-add-remove-wishlist.item-option
+www.google.com##.mb1nxc
+carturesti.ro##.sub-footer.row
+www.dlink.com##.social-list
+science.nasa.gov##[href="https://www.nasa.gov/nasa-web-privacy-policy-and-important-notices/"]
+science.nasa.gov##.bg-nasa-blue-shade.hds-banner
+www.nasa.gov##[href="https://www.nasa.gov/nasa-web-privacy-policy-and-important-notices/"]
+theskylive.com##.banner-floating-box
+theskylive.com###buttonsbar
+theskylive.com##[href="/privacy"]
+theskylive.com##[href="/about#content-usage-policies"]
+theskylive.com##p:nth-of-type(12)
+theskylive.com##h1:nth-of-type(5)
+svs.gsfc.nasa.gov##a.link-light.link:nth-of-type(1)
+svs.gsfc.nasa.gov##.mb-2.alert-warning.show.fade.alert-dismissible.alert
+svs.gsfc.nasa.gov##.mb-1.gap-2.hstack.list-unstyled
+svs.gsfc.nasa.gov##div.align-items-center.d-flex.col-sm.col-12:nth-of-type(2)
+www.nasa.gov##.bg-nasa-blue-shade.hds-banner
+www.nasa.gov##p.has-text-align-center
+eclipsewise.com##[href="eclipse.html#donation"]
+cdn.privacy-mgmt.com
+cdn.net
+search-api.fie.futurecdn.net
+cdn.mos.cms.futurecdn.net
+search-api.fie.futurecdn.net
+cache.pythia.futureplc.com
+futureplc.com
+futurecdn.net
+notifications.viafoura.com
+cdn.viafoura.net
+viafoura.net
+mgmt.com
+www.space.com###sp_message_container_1362709
+www.space.com##li.min-h-8:nth-of-type(5)
+www.space.com##li.min-h-8:nth-of-type(4)
+www.space.com##.mr-auto.ml-0.h-\[44px\].w-\[140px\].my-8.sm\:order-3.block
+www.space.com##li.min-h-8:nth-of-type(7)
+www.space.com##li.min-h-8:nth-of-type(8)
+www.space.com###viafoura-tray-bell
 www.libertatea.ro##.featured-image-info
 golazo.ro##[href="/politica-de-confidentialitate"]
 golazo.ro##.footer > ul > li:nth-of-type(3)

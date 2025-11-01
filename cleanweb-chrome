@@ -327,6 +327,53 @@ www.tpu.ro##.btn-social-box.btn-facebook
 xat.com###newto
 xat.com##span > [href="#"]
 xat.com##.justify-content-center.d-flex
+ing.ro##.dropdown-list
+ing.ro##div.footer-column:nth-of-type(4)
+ing.ro##.hb > .flex-layout
+www.vodafone.ro##.lg\:tw-gap-7.tw-gap-4.tw-items-center.lg\:tw-flex-row.tw-flex-col.tw-flex
+www.vodafone.ro##.tw-items-center
+www.anevar.ro###socialMenu
+www.anevar.ro###footerMenu
+claritycheck.com##.space-y-4.mt-6 > li:nth-of-type(4)
+claritycheck.com##li:nth-of-type(5)
+claritycheck.com##div.sm\:items-start.flex-col.flex:nth-of-type(2)
+claritycheck.com##.text-default-600.gap-4.flex.\!mt-4
+claritycheck.com##a.hover\:underline.text-primary_cta.z-10:nth-of-type(2)
+sunaromania.com##.container > .d-md-none.d-block
+sunaromania.com##.mt-15.align-items-center.justify-content-center.flex-sm-row.flex-column.d-flex
+sunaromania.com##.pb-md-60.pb-sm-50.pb-40.pt-md-50.pt-sm-40.pt-30 > .text-center
+sunaromania.com##.bg-white.container.homepage-trustpilot-small
+pariurix.com###forum-social-share
+pariurix.com###forum-subscribe
+pariurix.com##div.gap-4.items-center.justify-center.flex:nth-of-type(2)
+pariurix.com###popup-banner-hook
+pariurix.com##.gap-2.items-center.justify-center.flex
+pariurix.com##.bg-secondary.items-center.justify-center.flex.xs\:h-\[120px\].md\:h-\[78px\].footer-bottom-bar
+pariurix.com##.w-full.items-center.justify-between.flex.h-\[104px\].bg-dark-light-500
+sport.netbet.ro##.h-17.flex-row.flex
+sport.netbet.ro##.fixed.mr-2.ml-auto.left-0.right-0.justify-center.items-center.rounded-full.flex.w-8.h-8.cursor-pointer
+www.unibet.ro##.e1pg1gpv0.css-1gnqn6n.e57zfx40
+www.unibet.ro##div.e1pg1gpv0.css-1thcdlx
+www.unibet.ro##div.e1pg1gpv0.css-1thcdlx
+www.betfair.ro##.ssc-ltxt-manageCookies
+www.betfair.ro##.ssc-ltxt-cookiePolicy
+www.betfair.ro##.ssc-ltxt-privacyPolicy
+www.betfair.ro##bf-smart-app-banner-container
+www.888sport.ro##.mobileApps
+www.888sport.ro##div.footerTextBoxWarper.column.large-3.small-12:nth-of-type(3) > .main-footer-site-map > .site-map-group > .site-map-group-list > li.site-map-group-item:nth-of-type(1)
+ro.betano.com##.app-notification
+ro.betano.com##div.sb-footer__common:nth-of-type(1)
+ro.betano.com##li.sb-footer__common__body__item:nth-of-type(10)
+m.casapariurilor.ro##.footer-links
+m.casapariurilor.ro###android-downloader
+m.efortuna.ro###android-downloader
+m.efortuna.ro##.footer-links
+www.betfair.ro##button._9617d728652dd925-secondary._63846a151d1cb526-link._9617d728652dd925-quickLink.dc6829ba1d408a44-buttonLink.dc6829ba1d408a44-link
+www.betfair.ro##a._9617d728652dd925-secondary._63846a151d1cb526-link._9617d728652dd925-quickLink.dc6829ba1d408a44-buttonLink.dc6829ba1d408a44-link:nth-of-type(2)
+winbet.ro##div.footer-section-links.footer-section.d-flex-col:nth-of-type(5) > .footer-container--secondary.footer-container.d-flex-ac > .links.w-100.align-items-stretch.d-flex.m-auto.footer-container__items > div.footer-col:nth-of-type(1) > div.footer-menu:nth-of-type(2) > .footer-menu__list > li.footer-menu__item.text-tabular:nth-of-type(3)
+winbet.ro##li.footer-menu__item.text-tabular:nth-of-type(6)
+winbet.ro##li.footer-menu__item.text-tabular:nth-of-type(7)
+winbet.ro##div.footer-col:nth-of-type(2) > div.footer-menu:nth-of-type(2)
 radionebunya.ro##.maxwp-scroll-top
 radionebunya.ro###media_image-7
 radionebunya.ro##[href="https://radionebunya.ro/politica-cookies/"]

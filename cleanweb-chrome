@@ -316,6 +316,37 @@ tor.eff.org##h4
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-primary-light
 tor.eff.org##.mt-5.offset-sm-0.offset-lx-1.col-sm-6 > .text-light
 tor.eff.org##.text-left.order-last.footer.bg-dark.container-fluid > .justify-content-center.d-flex.col-12
+www.techrepublic.com##.social-links
+itsfoss.com##.flex-col.flex.social-links
+appmus.com##.lg\:hidden.right-4.bottom-4.fixed
+appmus.com##li:nth-of-type(1)
+www.androidauthority.com##.e_Mf
+www.androidauthority.com##.e_Jf
+www.techbloat.com##.floatingchat-container-wrap-mobi
+simeononsecurity.com##.sponsor-button
+simeononsecurity.com###myBtn
+simeononsecurity.com##.social-media-links
+simeononsecurity.com##[href="https://simeononsecurity.com/privacypolicy/"]
+sigmaos.com##.framer-w9gd6i
+www.searchengineinsight.com##.qlwapp
+www.capterra.com##.lg\:grid-cols-4.md\:grid-cols-2.pt-6.border-t.gap-0.grid-cols-1.grid.border-neutral-40
+www.capterra.com##ul.xl\:w-1\/4.lg\:w-1\/3.md\:w-1\/2.gap-y-3.flex-col.list-none.w-full.flex:nth-of-type(2) > li:nth-of-type(6)
+cloudzy.com##div.cky-box-bottom-right.cky-consent-container
+cloudzy.com###elementorStickyAd
+cloudzy.com##.socials
+efficient.app##div.margin-bottom-30.footer-section-right:nth-of-type(4)
+www.clubic.com##.ecvGna.sc-1xjluhs-19
+www.clubic.com##.iWFeHm.sc-1xjluhs-17
+www.clubic.com##div.dOlqMR.sc-1rm214r-7:nth-of-type(2)
+www.profesionalreview.com###site-info
+www.profesionalreview.com##.cl-consent-settings
+guptadeepak.com##.site-footer-nav
+animasmarketing.com##[href="https://policies.google.com/privacy"]
+www.sendsms.ro##.pull-right
+www.sendsms.ro##[href="https://www.sendsms.ro/ro/prelucrarea-datelor-cu-caracter-personal-679-2016-gdpr/"]
+www.sendsms.ro##[href="https://www.sendsms.ro/ro/politica-cookies-3/"]
+slick.ly##[href="/privacy"]
+www.truecaller.com##div:nth-of-type(3)
 izotec.ro##div.col-sm-3.col-md-3.col-lg-3.fusion-column:nth-of-type(3)
 izotec.ro###post-5179
 www.emag.ro##.btn.add-to-favorites

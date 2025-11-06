@@ -2,6 +2,7 @@
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-minimalistic
 ! Info: Personal use, non-comercial, no-copyright claim, individual
+! caution: Please do not use for Chromium browsers! Only Gecko: Firefox;Tor; Waterfox; LibreWolf...
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)
@@ -476,6 +477,19 @@ snapcraft.io##.js-close.p-button--positive
 snapcraft.io##.p-modal
 snapcraft.io##.u-align--right.p-inline-list
 snapcraft.io##li.p-inline-list__item:nth-of-type(2)
+www.fluidplayer.com##.site-footer
+www.erome.com##.fa-inverse.fa-circle-down.fa-solid
+www.hentairider.com##.footer
+www.searchbar.io###go-top
+www.searchbar.io##.menu-item-7.menu-item
+askanydifference.com##.widget-area
+askanydifference.com##[href="https://askanydifference.com/privacy-policy/"]
+hackr.io##div.gap-16.flex:nth-of-type(3)
+hackr.io##a.hover\:underline:nth-of-type(2)
+hackr.io##.gap-16.items-center.justify-between.md\:flex-row.flex-col.flex.py-24
+community.sap.com##.a2a_kit
+community.sap.com##.lia-quilt-row-footer.lia-quilt-row
+devtalk.blender.org##.actions
 hostico.ro###cookies
 hostico.ro##.padb0.pad25.rcenter.g6bg.twelve
 www.tumbex.com##.btn-group-flex.btn-group-justify.blog-brick-body

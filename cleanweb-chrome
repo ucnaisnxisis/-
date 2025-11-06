@@ -1,7 +1,7 @@
 ! Title: CleanWeb Chrome
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chrome
-! Caution: Please, do not use this for Firefox; Waterfox; Tor; LibreWolf; Microsoft Edge. (Only for Ublock Origin ChromeChrome & Brave Browser)
+! Caution: Please, do not use this for Gecko Firefox; Waterfox; Tor; LibreWolf (Only for Ublock Origin Chromium/Microsoft Edge & Brave Browser)
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 
 www.cylex.com.ve##div:nth-of-type(5)
@@ -700,6 +700,19 @@ posturiradio.net##.favorites
 posturiradio.net##[href="https://posturiradio.net/favorites"]
 radio.org.ro##a.favorites-menu-link
 radio.org.ro##.head
+www.fluidplayer.com##.site-footer
+www.erome.com##.fa-inverse.fa-circle-down.fa-solid
+www.hentairider.com##.footer
+www.searchbar.io###go-top
+www.searchbar.io##.menu-item-7.menu-item
+askanydifference.com##.widget-area
+askanydifference.com##[href="https://askanydifference.com/privacy-policy/"]
+hackr.io##div.gap-16.flex:nth-of-type(3)
+hackr.io##a.hover\:underline:nth-of-type(2)
+hackr.io##.gap-16.items-center.justify-between.md\:flex-row.flex-col.flex.py-24
+community.sap.com##.a2a_kit
+community.sap.com##.lia-quilt-row-footer.lia-quilt-row
+devtalk.blender.org##.actions
 myradioonline.ro##.footer-menu
 myradioonline.ro##.h3link
 myradioonline.ro##div.span9:nth-of-type(14)

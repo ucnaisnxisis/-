@@ -316,6 +316,38 @@ www.loveisland.ro##.object-container > span
 www.loveisland.ro##div.ui-front.ui-widget-overlay
 www.loveisland.ro##li.ty-level-0.ty-text-links__item:nth-of-type(5)
 www.loveisland.ro##.newsletter-footer-container
+www.microsoft.com##.f-follow.f-horizontal.m-social.page-social-toolbar-follow
+chatling.ai###chtl-open-chat-icon
+chatling.ai##div.mt-2:nth-of-type(1)
+chatling.ai##div.mt-2:nth-of-type(5)
+chatling.ai##div.mt-2:nth-of-type(6)
+chatling.ai##div.mt-2:nth-of-type(4)
+zapier.com##li:nth-of-type(2)
+zapier.com##.Footer-module_social_ZOmArTUH
+botpenguin.com##.sm\:pt-24.pt-16.mx-auto.container > .sm\:block.hidden.pt-4
+botpenguin.com##.sm\:text-sm.text-grey-333.justify-cente.flex-wrap.sm\:gap-x-4.gap-x-2.sm\:flex.hidden
+botpenguin.com##botpenguin-root
+www.thinkstack.ai##.gap-4.items-center.justify-between.md\:flex-row.flex.flex-col-reverse
+www.thinkstack.ai###thinkstack-chat-window-toggler
+www.hubspot.com##.hsg-footer__social
+www.hubspot.com##.hsg-footer__copyright > ul > li:nth-of-type(2)
+www.appypieagents.ai##[href="https://www.appypie.com/privacy-policy"]
+eu.jotform.com##.jFRFooter-col--apps.cZEiQL.sc-iCfMLu
+eu.jotform.com##[href="/newsletters/"] > .locale
+eu.jotform.com##.fmkUdd.sc-iqseJM
+www.builderbot.app##.sm\:flex-row.dark\:border-white\/5.pt-8.border-zinc-900\/5.border-t.gap-5.justify-between.items-center.flex-col.flex
+www.voiceflow.com##a.footer_link:nth-of-type(5)
+www.voiceflow.com##a.footer_link:nth-of-type(2)
+www.voiceflow.com##.cta-section > .padding-horizontal-section
+selzy.com##.active.scroll-top-v2
+selzy.com##[href="/en/legal/privacy-notice/"]
+selzy.com##.js-manage-cookie
+textcortex.com##.margin-top-40
+textcortex.com##a.footer-link:nth-of-type(4)
+sendpulse.com##.chatbot-mobile-app__btns.footer-top__app-btns
+sendpulse.com##.overflow-hidden.pb-0.section-spacing-sm.chatbot-mobile-app > .container > .vertical-center-flex.row > .order-lg-0.col-lg-6
+www.botpress.com##.footer_social-wrapper
+www.botpress.com##div.column-grid:nth-of-type(4) > .gap-size-small.align-left.flex-vertical > a.w-inline-block.links-footer-item:nth-of-type(2)
 alevia.ro##.cl-dialog
 alevia.ro##.col-footer-bottom-left
 alevia.ro##.col-footer-left

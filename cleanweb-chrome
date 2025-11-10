@@ -311,6 +311,27 @@ www.webpronews.com##[href="https://www.webpronews.com/advertising/"]
 www.wisecleaner.com##[href="/privacy.html"]
 www.wisecleaner.com###to-top
 www.wisecleaner.com##.footer-nav-right
+romspure.cc##.footer-social-networks.mb-4
+romspure.cc##[href="https://romspure.cc/privacy-policy/"]
+www.gamesmen.com.au##.cmsb57-mb-12.cmsb57-justify-around.cmsb57-flex
+www.gamesmen.com.au##.mb-12
+www.gamesmen.com.au##p.mb-4
+www.gamesmen.com.au##.pagebuilder-column-group
+www.gamesmen.com.au##.cmsp2-m-4.cmsp2-font-bold.cmsp2-text-4xl
+wiki.gentoo.org##.three-icons.footerlinks
+wiki.debian.org##[href="https://www.debian.org/legal/privacy"]
+www.wikidata.org##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+www.firefox.com##[href^="https://www.mozilla.org/ro/privacy/firefox/"]
+apps.apple.com###notPurchasedLinks
+apps.apple.com##.svelte-wtmfoi
+kiwix.org###cm
+kiwix.org##.footer-bottom
+kiwix.org##.social-links
+kiwix.org###menu-item-18264
+kiwix.org##[href^="https://play.google.com/store/apps/details"]
+kiwix.org##.download-links [href]
+filebrowser.org##.md-social
+www.zotero.org##li.nav-item:nth-of-type(4)
 www.reginamaria.ro##.presentation-text-area
 www.sfatulmedicului.ro##.social_media
 www.sfatulmedicului.ro###socialBox_widget

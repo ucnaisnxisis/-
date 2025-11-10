@@ -2176,6 +2176,26 @@ www.gds.ro##.td_block_template_1.td-pb-border-top.tdm-content-horiz-left.tdm-blo
 www.gds.ro##[href="https://www.gds.ro/wp-content/uploads/2025/06/regulament-tombola.pdf"]
 www.gds.ro##.widget.td_block_template_2.td-pb-border-top.td-blm-display-vertical.tdi_237.td_block_list_menu.td_block_wrap
 www.gds.ro##[href="/abonamente-gazeta-de-sud"]
+www.githubstatus.com##.color-bg-subtle
+downdetector.com##div.footer__col:nth-of-type(2)
+statusgator.com##.md\:items-end.items-start.gap-7.flex-col.flex.max-md\:mt-6
+bitrise.io##.w-inline-block.is-to-top.button
+bitrise.io##a.footerlinkbottom.footerlink:nth-of-type(2)
+incidenthub.cloud##.CookieConsent_popup__65Noz
+incidenthub.cloud##div:nth-of-type(7)
+incidenthub.cloud##div:nth-of-type(5) > .text-foreground-accent > li.mb-2:nth-of-type(1)
+www.isitdownrightnow.com##a.bottom:nth-of-type(1)
+statussight.com##li:nth-of-type(6)
+shields.io##div.footer__col.col.theme-layout-footer-column:nth-of-type(3)
+isdown.app##.space-y-8.lg\:space-y-0.lg\:space-x-10.px-5.lg\:grid-cols-4.grid-cols-1.grid.max-w-7xl.mx-auto.container > .text-lg
+isdown.app##[href="/privacy"]
+vercel.com##div.geist-footer_group__kmfVW:nth-of-type(4)
+jitpack.io##[href="/w/privacy.html"]
+anonymous.4open.science##.floatingchat-container-wrap
+www.theodinproject.com##.space-x-6.flex
+www.theodinproject.com##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(2) > .md\:mt-0.mt-10 > .space-y-3.mt-4 > li:nth-of-type(2) > .dark\:hover\:text-white.dark\:text-gray-300.hover\:text-gray-900.text-gray-600.leading-6.text-sm
+graphite.com##section.body-sm.basis-1\/2.sm\:flex-1.sm\:gap-4.gap-2.flex-col.flex:nth-of-type(4)
+code.visualstudio.com##div.footer-row > .links
 forum.softpedia.com##[href="https://forum.softpedia.com/privacypolicy/"]
 forum.softpedia.com##[href="javascript:;"]
 forum.softpedia.com##[href^="https://forum.softpedia.com/index.php"]
@@ -14711,7 +14731,6 @@ cookiebot.com
 datatables.net
 klaviyo.com
 nextjs.org
-vercel.com
 brat.ro
 qq.com
 generatesnitrosate.com

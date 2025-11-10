@@ -118,7 +118,7 @@ m.youtube.com##.yt-content-metadata-view-model-wiz__delimiter
 m.youtube.com##.subhead
 m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
-m.youtube.com##.cbox.secondary-text.YtmComentRendererDetails
+m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
 www.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
 www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope > .ytd-popup-container.style-scope
 www.youtube.com##.yt-spec-button-shape-with-label

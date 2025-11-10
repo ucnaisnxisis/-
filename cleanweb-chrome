@@ -88,6 +88,7 @@ m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
 m.youtube.com###toast
+m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
 www.youtube.com###toast
 www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
 www.youtube.com###guide-links-primary

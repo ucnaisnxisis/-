@@ -1,4 +1,4 @@
-! Title: CleanWeb Minimalistic
+! Title: CleanWeb Gecko
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-minimalistic
 ! Info: Personal use, non-comercial, no-copyright claim, individual
@@ -485,6 +485,84 @@ www.voiceflow.com##.cta-section > .padding-horizontal-section
 selzy.com##.active.scroll-top-v2
 selzy.com##[href="/en/legal/privacy-notice/"]
 selzy.com##.js-manage-cookie
+www.scut.com##svg
+www.scut.com##.BackTop_backTopButton__JooOY
+www.scut.com##[href="/politica-confidentialitate"]
+www.scut.com##[href="/politica-cookies"]
+www.scut.com##.NewsletterSection_wrapper__adZm2
+www.scut.com##.Footer_description__GWHXU
+www.scut.com##[href="https://policies.google.com/privacy"]
+policies.google.com##.BXXR1b.M9Bg4d.ThQiWd.XHsn7e.U26fgb
+magnor.ro##.whatsapp-footer
+www.samsungsfour.com##[href="https://www.samsungsfour.com/privacy-policy"]
+www.samsungsfour.com##[href="https://www.samsungsfour.com/cookie-policy"]
+www.samsungsfour.com###nav_menu-4
+termene.ro##.footer3_social-list.w-layout-grid
+termene.ro##.section_blog1-cta
+www.taxinstitute.ro##.socials-box
+www.taxinstitute.ro##.wpulike-heart.wpulike
+www.taxinstitute.ro##.elementor-element-a63efc8.elementor-element.elementor-top-column.elementor-col-33.elementor-column
+www.taxinstitute.ro##.clearfix.icon_left.style_1.middle.elementor-consulting-icon-box.icon_box
+m.ziare.com##.fixed.menu__fixed.menu__news__container.menu__sections__container
+curs.profitpoint.ro##.t-sociallinks
+www.enginyring.com##.tg-widget
+www.enginyring.com##.widget > .widget
+www.enginyring.com##[href="/ro/legal/privacy"]
+www.enginyring.com##.social-white.social.nav
+drleventercentre.com##.social-links
+sam-distribution.ro##.cookie-consent-mode
+diasan.ro##.scroll-top
+diasan.ro##.site-footer-bottom-right-col.col-md-5
+diasan.ro##.header-social-nav.clearfix.list-unstyled
+primoderm.ro###scrollUp
+www.poliana.ro##.footer-menu-wrapper
+adiantmedical.ro##[href="https://adiantmedical.ro/politica-cookie-uri-ue/"]
+adiantmedical.ro##[href="https://adiantmedical.ro/politica-de-confidentialitate/"]
+adiantmedical.ro##.content-right
+www.catenapascupas.ro##.wrapper-container
+www.avantaje.ro##.mg-bottom-20.mg-top-20.newsletter-in-content
+www.avantaje.ro##.mg-bottom-20.btn-google-news
+www.apollohospitals.com###popup
+www.vulgaris-medical.com##.gb-button-text.gb-button-eb49e4ef.gb-button
+msc.arabolea.ro##[href="https://mamisicopilul.ro/newsletter/"]
+www.naturalis.ro##.has-icon.header-newsletter-item
+www.naturalis.ro##[href="https://www.naturalis.ro/politica-de-confidentialitate/"]
+www.naturalis.ro##.follow-icons.social-icons
+www.romedic.ro##[href^="https://play.google.com/store/apps/details"]
+www.romedic.ro###lateral
+ro.infoanimales.net##[href="https://ro.infoanimales.net/buletin-informativ/"]
+consent.google.com##.saveButtonContainerNarrowScreen > form:nth-of-type(1)
+consent.google.com##[href^="https://policies.google.com/privacy"]
+verandamall.ro###ideta_i
+verandamall.ro##.mic-access-tool-general-button
+verandamall.ro###ideta_c
+deseneanimatetv2010.webnode.page###footerMenu
+www.kimdesene.ro##li.elementor-icon-list-item:nth-of-type(5)
+www.kimdesene.ro##li.elementor-icon-list-item:nth-of-type(4)
+desenefaine.net##.alg-cr.jst-sb.rw
+@@videothumbs.me
+@@videocdnmetrika.com
+cdn20.com
+www.disneyplus.com##.dcwn120.zc8ony0
+worldcosplaysummit.jp##.pagetop
+worldcosplaysummit.jp##.ftsns
+worldcosplaysummit.jp##.company
+worldcosplaysummit.jp##.toppage_second_wrap
+www.animax.co.jp##.fixed_x
+www.animax.co.jp##.fixed_totop
+www.penguinresearch.jp##.page_top
+m.bilibili.com##.m-nav-openapp.m-open-app
+m.bilibili.com##.toolbar-wrapper
+m.bilibili.com##.gsl-callapp-dom
+www.setlist.fm###ida > li:nth-of-type(5)
+www.setlist.fm##div.col-md-3.col-sm-6.col-xs-12:nth-of-type(4)
+www.setlist.fm##.bannerContent
+www.setlist.fm##[href="../../help/privacy"]
+www.setlist.fm##[href="../../help/ad-choices"]
+brave.com##div.site-footer__grouping:nth-of-type(1)
+www.wikihow.tech###footer_links
+www.wikihow.tech##.sp_helpful_box.sp_helpful_hoverable.sp_box_hoverable.sp_box
+www.wikihow.tech###article_rating_mobile
 textcortex.com##.margin-top-40
 textcortex.com##a.footer-link:nth-of-type(4)
 sendpulse.com##.chatbot-mobile-app__btns.footer-top__app-btns

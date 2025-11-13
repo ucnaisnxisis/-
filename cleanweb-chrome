@@ -450,6 +450,17 @@ www.wisecleaner.com###to-top
 www.wisecleaner.com##.footer-nav-right
 romspure.cc##.footer-social-networks.mb-4
 romspure.cc##[href="https://romspure.cc/privacy-policy/"]
+pennypinchinmom.com##.site-footer
+pennypinchinmom.com##.userway_buttons_wrapper
+www.drberg.com##.wp-block-group-is-layout-flow.is-layout-flow.footer-bottom.wp-block-group
+www.drberg.com##body > div:nth-of-type(3)
+www.drberg.com##div.wp-block-column-is-layout-flow.is-layout-flow.footer-column.wp-block-column:nth-of-type(4)
+www.tripridetn.org###socket
+iasi-delivery.ro##.hydrated.ios.sc-ion-alert-ios
+iasi-delivery.ro##hrc-download-native-app-widget
+www.brunofood.ro##.footer-menu > li:nth-of-type(2)
+wowffles.ro##.wp-image-458.size-thumbnail.attachment-thumbnail.elementor-animation-grow
+wowffles.ro##[href="https://glovoapp.com/ro/en/iasi/wowffles-ias/"]
 www.gamesmen.com.au##.cmsb57-mb-12.cmsb57-justify-around.cmsb57-flex
 www.gamesmen.com.au##.mb-12
 www.gamesmen.com.au##p.mb-4

@@ -1080,6 +1080,9 @@ www.emag.ro##.navbar-icon.em-heart.em
 www.emag.ro##div.btn-group:nth-of-type(3)
 www.emag.ro##.align-items-center.d-sm-none.header-app-notification
 www.emag.ro##.show.px-0.py-2.js-gdpr-cookie-banner.gdpr-cookie-banner
+www.emag.ro##.yeahIWantThisProduct.btn-block.btn-emag.btn-sm.btn
+www.emag.ro##div.ph-card._card
+www.emag.ro##.stories-section.page-section
 www.tpu.ro##.btn-social-box.btn-facebook
 xat.com###newto
 xat.com##span > [href="#"]

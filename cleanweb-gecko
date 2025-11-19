@@ -417,6 +417,27 @@ www.virustotal.com##.bot
 www.virustotal.com##.messenger
 www.virustotal.com##.click
 hcaptcha.com
+www.asus.com##.community
+www.asus.com##.Footer_menuBox_36LTWcup
+www.asus.com##[src="https://livechat-eu.asus.com/plugin/"]
+www5.lunapic.com##center > a:nth-of-type(3)
+imageresizer.com###zohohc-asap-web-app-main
+getpocket.com##[href^="https://getpocket.com/privacy"]
+pocketoption.com##.top-btn_visible.top-btn
+pocketoption.com##.sidebar__container > .socials
+pocketoption.com##.sidebar__soc-links
+ayaneo.com##.top.box
+ayaneo.com##.article-section > .container
+ayaneo.com##.subscription-nav.bottom-nav
+ayaneo.com##[href="/ayaneo/html/en-US/agreement.html"]
+store.dji.com##a[href^="https://www.dji.com/global/policy"]
+store.dji.com##.index_echat-wrapper__vRjaI
+store.dji.com##.Footer-module__section-item-subscribe___3_5sy.Footer-module__section-item___ee8hm
+store.dji.com##.Footer-module__section-item___ee8hm.Footer-module__footer-social___20AIO
+stri.si.edu##.menu-link-privacy.level-1.leaf.last
+stri.si.edu##.stri-newsletter
+stri.si.edu##.sf-depth-1.link__lime-green
+stri.si.edu##.menu-link-follow-us.active.level-1.expanded.first
 www.luanti.org##[href="/app-privacy-policy/"]
 www.luanti.org##div.is-6-mobile.column:nth-of-type(4)
 www.luanti.org##div.is-6-desktop.is-12-tablet.column > [href]

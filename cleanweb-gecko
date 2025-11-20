@@ -4464,7 +4464,6 @@ www.similarweb.com##li.app-footer__additional-link-item:nth-of-type(7)
 m.date-me.com##center:nth-of-type(2)
 dating-com-meet-new-people.en.softonic.com##.OMlpov.EtNpvF.rxEyu2
 en.softonic.com##div.PDfZX_:nth-of-type(1)
-m.facebook.com##.bottom.fixed-container.m
 www.uar-bna.ro##.bna-nav-item-last
 bjiasi.ro###menu-item-101932
 en.wazaps.com##footer.container
@@ -7604,9 +7603,6 @@ rds.live##.appdl
 thecadgeek.com##.ct-drawer-inner
 thecadgeek.com##.author-box-socials
 superuser.com##.md\:mb8.-social.-list
-m.facebook.com##body:has(div[class*="Styled"][class*="Container"] [data-testid="bbc-logo-wrapper"]) > .fc-consent-root:style(display: flex !important)
-m.facebook.com##body:style(overflow: auto !important;)
-m.facebook.com##.fc-consent-root
 oldvideo.games##.vue-back-to-top
 oldvideo.games##div.col-span-1:nth-of-type(4) > .space-y-2 > li:nth-of-type(1)
 retrogamesfree.com###back-to-top
@@ -8815,6 +8811,9 @@ ro-ro.facebook.com##div._1zor:nth-of-type(8)
 ro-ro.facebook.com##div._1zor:nth-of-type(11)
 ro-ro.facebook.com##div._1zor:nth-of-type(7)
 ro-ro.facebook.com##._9jwg._4uul._17bk._9v9l._9v9b._9v9k._9v9a._aqx9._5r7f
+m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
+m.facebook.com##.nb.m > .bg-s4.m > .bg-s4.m > .bg-s4.m
+m.facebook.com##.wbloks_111 > div.wbloks_1:nth-of-type(2)
 www.puffin.com##footer > div > div
 www.indianetzone.com##.text-center.col-md-12
 creativecommons.org##[href="/privacy"]

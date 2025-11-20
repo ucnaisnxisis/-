@@ -317,6 +317,80 @@ www.virustotal.com##.bubble
 www.virustotal.com##.bot
 www.virustotal.com##.messenger
 www.virustotal.com##.click
+shopius.ro##[src*="https://shopius.ro/wp-content/themes/bootscore-main/img/heart.svg"]
+shopius.ro##.fa-solid.fa-chevron-up
+shopius.ro##.btn.btn-primary.shadow.top-button.position-fixed.zi-1020.visible
+shopius.ro##[href*="https://shopius.ro/protectia-datelor-cu-caracter-personal/"]
+shopius.ro##[href*="https://shopius.ro/politica-cookie/"]
+shopius.ro##.col-md-6.col-lg-2 > .footer_widget.mb-4 > .widget-title.h5
+shopius.ro##.alignnone.size-full.wp-image-15264
+shopius.ro##.alignnone.size-medium.wp-image-15263
+www.petitchef.ro##.fab.fa-youtube
+www.petitchef.ro##.fab.fa-facebook-f
+www.petitchef.ro##.fal.fa-bookmark
+www.petitchef.ro##.btn.btn-block.btn-social-connect.fb-login-btn
+www.petitchef.ro###gsi_428944_505311
+www.petitchef.ro##.col-12.social-connect-or > span
+cookpad.com##a.block.py-xxs:nth-of-type(7)
+cookpad.com##div.mb-md:nth-of-type(3) > .text-cookpad-14.mb-sm.font-semibold
+cookpad.com##.order-3.print\:hidden.md\:order-5 > .btn.btn--cookpad-orange-500
+cookpad.com##.btn.btn--alt.border-cookpad-gray-300.text-center.relative.rounded-lg.py-\[12px\].btn--block.bg-cookpad-black.text-cookpad-gray-300
+cookpad.com##.flex.items-center.my-md
+cookpad.com##li.mb-rg:nth-of-type(4) > .button_to > .btn.btn--alt.border-cookpad-gray-300.text-center.relative.text-cookpad-gray-700.btn--block.bg-cookpad-white.rounded-lg.py-\[12px\]
+cookpad.com##li.mb-rg:nth-of-type(2) > .button_to > .btn.btn--alt.border-cookpad-gray-300.text-center.relative.text-cookpad-gray-700.btn--block.bg-cookpad-white.rounded-lg.py-\[12px\]
+cookpad.com##a.underline:nth-of-type(2)
+cookpad.com##.text-left.mb-sm.text-cookpad-gray-500.text-cookpad-12.mt-rg
+cookpad.com##.text-cookpad-14.mt-md.mb-sm
+cookpad.com##.min-w-max.lg\:min-w-0 > div.mb-md:nth-of-type(2)
+cookpad.com##p.text-cookpad-16.leading-7:nth-of-type(3)
+www.penny.ro##div.ws-column.col-12.flex-column.col-sm-6.col-md-3:nth-of-type(4) > div.ws-text:nth-of-type(2)
+www.penny.ro##div.ws-image-list.col-12:nth-of-type(1) > .ws-image-list__container
+www.penny.ro##div.ws-image-list.col-12:nth-of-type(2) > .ws-image-list__container
+www.penny.ro##div.ws-column.col-12.flex-column.col-sm-6.col-md-3:nth-of-type(4) > div.ws-text:nth-of-type(1)
+wolt.com##.wpt-ui-AppLinks_Root_rr05kqb
+wolt.com##li.cb_typographyClassNameNew_caption_c56.wpt-ui-SettingsItem_Root_rayx5vb:nth-of-type(4)
+wolt.com##li.cb_typographyClassNameNew_caption_c56.byf412r:nth-of-type(3) > .wpt-ui-Footer_BottomLink_b1f18161
+wolt.com##nav.wpt-ui-FooterLinkColumn_Root_rfmlu6o:nth-of-type(5) > .cb_typographyClassNameNew_bodyLabel_c56.wpt-ui-FooterLinkColumn_titleCss_t1v8mkr6.wpt-ui-FooterLinkColumn_TitleButton_t1p0vnn5
+glovoapp.com##div.FooterColumn_column__c3Epo:nth-of-type(3) > div.FooterColumn_item__z67xg:nth-of-type(1)
+glovoapp.com##div.FooterColumn_column__c3Epo:nth-of-type(3) > div.FooterColumn_item__z67xg:nth-of-type(4) > .FooterLink_customLink__MyUlF
+glovoapp.com##div.FooterColumn_column__c3Epo:nth-of-type(3) > div.FooterColumn_item__z67xg:nth-of-type(3) > .FooterLink_customLink__MyUlF
+glovoapp.com##div.FooterColumn_column__c3Epo:nth-of-type(3)
+bolt.eu##.rt-Flex.rt-r-ai-center.rt-r-jc-space-between.xs\:rt-r-jc-start.rt-r-gap-1.xs\:rt-r-gap-6.rt-r-w.xs\:rt-r-w
+bolt.eu##div.rt-Box.sm\:rt-r-min-w:nth-of-type(1) > .rt-reset.rt-BaseButton.rt-r-size-4.rt-variant-solid.rt-high-contrast.rt-Button
+bolt.eu##.rt-Container.rt-r-size-4.rt-r-px-5.rt-r-py
+bolt.eu##section:nth-of-type(14) > section.radix-themes.dark:nth-of-type(1) > .rt-Container.rt-r-size-4.rt-r-px-5.rt-r-pt.md\:rt-r-pt.rt-r-pb-9.md\:rt-r-pb > .rt-ContainerInner > .rt-Flex.rt-r-fd-column.rt-r-ai-center.rt-r-max-w.rt-r-mx > .rt-Heading.rt-r-size-8
+bolt.eu##section.radix-themes.dark:nth-of-type(11) > .rt-Container.rt-r-size-4.rt-r-px-5.rt-r-pt.md\:rt-r-pt > .rt-ContainerInner > .rt-Flex.rt-r-fd-column.rt-r-ai-center.rt-r-max-w.rt-r-mx
+bolt.eu##div.rt-Box.BalancedCards_BalancedCardsCardContainer__mlKO3:nth-of-type(2) > .rt-Box.rt-r-w.md\:rt-r-w.rt-r-h.md\:rt-r-h.rt-r-position-relative.rt-r-overflow-hidden.FeatureCardSingle_FeatureCardSingleContainer__1sG98 > .radix-themes.dark.rt-Box.rt-r-w.rt-r-h > .rt-Flex.rt-r-fd-column.rt-r-jc-start.rt-r-gap-4.rt-r-px-5.md\:rt-r-px-6.rt-r-py-7.rt-r-w.rt-r-h.rt-r-position-relative > .rt-Flex.rt-r-fd-column.rt-r-ai-start.rt-r-gap-2.rt-r-mt-2 > .rt-reset.rt-BaseButton.rt-r-size-4.rt-variant-solid.rt-Button
+www.bringo.ro##.social-media
+www.bringo.ro##.col-lg-8.col-xl-8 > .box
+sweeteria.com.ro##.sticky-icon.link-shop
+sweeteria.com.ro##[href*="https://sweeteria.com.ro/prelucrarea-datelor/"]
+retetefeldefel.ro##.buton-share.buton-share-whatsapp
+retetefeldefel.ro##.buton-share.buton-share-facebook
+nitelashop.ro###collapse-id-4 > .footer-content > div:nth-of-type(1) > div:nth-of-type(1) > div > ul
+nitelashop.ro##[href*="/politica-de-confidentialitate"]
+nitelashop.ro###title-id-4
+nitelashop.ro###wishlist-link
+europeanfoodinternational.ro##[href*="https://europeanfoodinternational.ro/prelucrarea-datelor-cu-caracter-personal/"]
+europeanfoodinternational.ro##div.footer__single__list:nth-of-type(2) > ul > li:nth-of-type(4)
+europeanfoodinternational.ro##.contact-info.contact-social-icons.with-separator
+chefnicolaietomescu.ro##div.col-md-6:nth-of-type(2)
+balkanica.ro##.col-12.pt-3.fs-2 > p
+balkanica.ro##.col-12.pt-3.pb-3
+balkanica.ro##.col-12.pt-3.fs-2
+balkanica.ro###sub-footer
+balkanica.ro##.indicator-arrow.indicator-arrow-one
+balkanica.ro##.indicator-arrow.indicator-arrow-two
+balkanica.ro###fb-access
+b2b.balkanicadistral.com###pCondiciones
+b2b.balkanicadistral.com##.alert.alert-info.fade.in
+balkanica.ro##.mt-3.pl-sm-5.pb-1
+www.petitchef.ro##.form-nl.fnl-bg.fnl-lg.my-5
+www.petitchef.ro##button.btn.btn-outline.open-modal:nth-of-type(2)
+www.petitchef.ro##.btn.btn-outline.btn-fav
+www.petitchef.ro##.btn.btn-outline.btn-print
+www.petitchef.ro##.muf-content > .btn.btn-fav
+www.petitchef.ro##.muf-content > button.btn.open-modal:nth-of-type(2)
 streets-of-ryona-ex.apkrabi.com###btn-page-scroll
 streets-of-ryona-ex.apkrabi.com##[href="https://privacy-policy.apkrabi.com/"]
 streets-of-ryona-ex.apkrabi.com##.LEFT.ctLogoFooter > div

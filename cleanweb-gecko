@@ -364,6 +364,17 @@ attirecideryeah.com
 adclickad.com
 youtube.googleapis.com
 ogads-pa.clients6.google.com
+metrika.yandex.ru
+appmetrica.yandex.ru
+partnerads.ysm.yahoo.com
+log.fc.yahoo.com
+udcm.yahoo.com
+ads.tiktok.com
+business-api.tiktok.com
+ads-sg.tiktok.com
+ads-api.tiktok.com
+click.googleanalytics.com
+afs.googlesyndication.com
 @@www.gstatic.com
 @@wp.com
 @@dmxleo.dailymotion.com
@@ -428,6 +439,10 @@ www.google.com##.gb_Cd
 www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_1 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
 www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_0 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
 www.google.com###KByQx
+www.androidauthority.com##.e_Uf
+www.androidauthority.com##div:nth-of-type(26)
+www.androidauthority.com##.e_9e
+www.androidauthority.com##.e_Sx
 sfat-avocat.ro##.widget_custom_html.footer-widget.widget.takehost-widget.widget_text
 sfat-avocat.ro##.vc_col-sm-6.vc_column_container.abonarenewsletter.wpb_column
 sfaturiavocat.ro##[href="https://sfaturiavocat.ro/politica-de-confidentialitate/"]

@@ -404,6 +404,11 @@ ads-sg.tiktok.com
 ads-api.tiktok.com
 click.googleanalytics.com
 afs.googlesyndication.com
+ads.js
+/pagead.js$domain=adblock.turtlecute.org
+/widget/ads
+adblock.turtlecute.org##.adbox.banner_ads.adsbox
+d3ward.github.io##.textads
 @@www.gstatic.com
 @@wp.com
 @@dmxleo.dailymotion.com

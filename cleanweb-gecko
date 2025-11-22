@@ -3,6 +3,7 @@
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-gecko
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! caution: Please do not use for Chromium browsers! Only Gecko: Firefox;Tor; Waterfox; LibreWolf...
+! Warning: Cleanweb-gecko is not complete, please add also Cleanweb-duo
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)

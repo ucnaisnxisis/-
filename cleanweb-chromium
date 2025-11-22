@@ -1,3 +1,11 @@
+! Title: CleanWeb Chromium
+! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
+! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chromium
+! Info: Personal use, non-comercial, no-copyright claim, individual
+! caution: Please do not use for Gecko browsers! Only Chromium: Brave, Edge, Opera, Vivaldi...
+! Warning: Cleanweb-chromium is not complete, please add also Cleanweb-duo
+
+
 m.youtube.com##.yt-lp-section-group-view-model
 m.youtube.com##.cbox.slim-owner-subscribe-button
 m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost

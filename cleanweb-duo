@@ -1909,34 +1909,25 @@ hentaidude.pro##.age-verification-logo
 hentaidude.cx##[href="https://hentaidude.cx/privacy-policy-2/"]
 hiddenwiki.com##[href="https://hiddenwiki.com/privacy-policy/"]
 www.upstandinghackers.com##.ht-footer3.ht-footer
-
-! 14 nov. 2025 https://www.botosaneanul.ro
 www.botosaneanul.ro##.to-top
 www.botosaneanul.ro##.social-background-footer
 www.botosaneanul.ro##a.text-normal.text-general.text-footer:nth-of-type(6)
 www.botosaneanul.ro##a.text-normal.text-general.text-footer:nth-of-type(2)
 www.botosaneanul.ro##a.text-normal.text-general.text-footer:nth-of-type(4)
 www.botosaneanul.ro##a.text-normal.text-general.text-footer:nth-of-type(9)
-
-! 14 nov. 2025 https://www.stiri.botosani.ro
 www.stiri.botosani.ro##.pull-right.pre-footer-subscribe-box
-
-! 14 nov. 2025 https://www.gazetabt.ro
+killedbygoogle.com##a.Footer_socialLink__WU5Z6:nth-of-type(2)
 www.gazetabt.ro##.social-icons
 www.gazetabt.ro##.widget_custom_html.widget.container-wrapper.widget_text
 www.gazetabt.ro##.content-only.stream-item.stream-item-mag.mag-box
 www.gazetabt.ro##.stream-item-top
 www.gazetabt.ro##[href="https://www.gazetabt.ro/publicitate/"]
-
-! 14 nov. 2025 https://www.glami.ro
 www.glami.ro###backToTop
 www.glami.ro##.buttons_app
 www.glami.ro##.footer__bottom__social
 www.glami.ro##[href="/info/privacy/"]
 www.glami.ro##li:nth-of-type(8)
 www.glami.ro##.c-product-tile__content-top
-
-! 14 nov. 2025 https://ro.factcool.com
 ro.factcool.com##.htOVbe.sc-c9fb3923-0
 ro.factcool.com##.dsDlbU.jsdYSC.sc-c9fb3923-2.sc-b06d436d-0
 ro.factcool.com##.cWUABr.sc-3ca383a8-3
@@ -8821,31 +8812,6 @@ www.journaldujapon.com###back-to-top
 kotaku.com##[href="https://kotaku.com/privacy-policy"]
 kotaku.com##[href="https://www.keleops.com/en/contact.html"]
 kotaku.com##[href="#"]
-www.google.com##[href^="https://consent.google.com/d"]
-www.google.com###gb
-www.google.com###og-te
-www.google.com##[href^="https://consent.google.com/d"]
-www.google.com##g-menu-item.GZnQqe.EpPYLd:nth-of-type(7)
-support.google.com##.footer-links-left-container > ul
-support.google.com##.gb_Te
-support.google.com###onebar-privacy-policy > li
-support.google.com###onebar-feedback > li
-policies.google.com##.gb_Te
-one.google.com##a.lqsn6c:nth-of-type(1)
-store.google.com##.gn5mEf.TVRIzb
-store.google.com##div.BWBuS:nth-of-type(2)
-store.google.com##.rIu1vb
-support.google.com##.user-feedback-link
-support.google.com##.need-more-help-container
-www.google.com##.glue-header__cta--drawer.glue-header__cta
-www.google.com##li.glue-footer__global-links-list-item:nth-of-type(1)
-www.google.com###column-4
-www.google.com###column-5-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(1)
-policies.google.com##li.ad72vb:nth-of-type(3)
-transparency.google##li.glue-footer__global-links-list-item:nth-of-type(3)
-www.google.com##span.GHvYu.sjVJQd
-chromewebstore.google.com##.gb_4d.gb_Kd.gb_Fa
-chromewebstore.google.com##.tB5Jxf-xl07Ob-XxIAqe-OWXEXe-oYxtQd > div
 www.reddit.com##.inline-flex.button.justify-center.items-center.button-brand.px-\[var\(--rem14\)\].button-medium.hover\:no-underline.px-sm
 www.reddit.com##.inline-flex.button.justify-center.items-center.icon.button-plain.px-\[var\(--rem8\)\].button-medium.min-w-\[40px\]
 www.reddit.com##.px-2xs.relative
@@ -9141,8 +9107,6 @@ ads.google.com
 developers.google.com##li.devsite-footer-utility-item
 chromewebstore.google.com##footer
 chromewebstore.google.com##.footer
-play.google.com##div.KvNvKe:nth-of-type(2)
-chromewebstore.google.com##.yHWa2
 admanager.google.com
 marketingplatform.google.com
 apis.google.com
@@ -11373,8 +11337,6 @@ addyosmani.com##.clearfix
 www.tab-tv.com##[href="https://www.tab-tv.com/cookies-policy/"]
 www.tab-tv.com##.tdb-header-align.td_block_template_1.td-pb-border-top.tds_menu_sub_active1.tds_menu_active1.tdi_84.tdb_header_menu.td_block_wrap
 mefmobile.org##.floatingchat-container-wrap
-trends.google.com##a.Fj1eg:nth-of-type(1)
-killedbygoogle.com##a.Footer_socialLink__WU5Z6:nth-of-type(2)
 bsky.app##.r-13awgt0.css-g5y9jx > .r-13awgt0.css-g5y9jx > .css-g5y9jx > div.css-g5y9jx > .css-146c3p1
 www.laptopmag.com##.text-\[var\(--site-header-text-color\,\#333\)\].bg-\[var\(--site-header-background-color\,white\)\].gap-\[var\(--site-header-gap\,0\.65rem\)\].items-center.sm\:mx-auto.sm\:px-0.px-2.max-w-\[min\(970px\,98dvw\)\].align-center.grid.h-\[60px\].relative
 www.laptopmag.com##li.min-h-8:nth-of-type(3)
@@ -11397,11 +11359,6 @@ www.doodles.google##.glue-footer__upper
 www.browsercat.com##.max-b10\:w-full.w-1\/2
 www.browsercat.com##.justify-start.gap-1r.flex.mt-1r4
 www.browsercat.com##div.max-b7\:basis-1\/3.flex-grow.basis-1\/4:nth-of-type(3) > div.\[\&\+\&\]\:mt-1r4:nth-of-type(2)
-edu.google.com##li.gfe-footer__global-languages__global__link:nth-of-type(3)
-edu.google.com##.gfe-footer__social-bar-wrapper
-edu.google.com##.gfe-floating-bar--active.gfe-floating-bar
-cloud.google.com##.r2W5Od.nRhiJb-haF9Wb
-cloud.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
 www.versio.io##.footer-contact.col-md-6.col-lg-3
 www.versio.io##.fadeIn.wow > .container > div > div > div > [href]
 www.wired.com##.article-body__content.kUtTlG.ArticlePageContentBackGround-dcEtzE

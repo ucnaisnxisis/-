@@ -1,8 +1,8 @@
-! Title: CleanWeb Gecko
+! Title: CleanWeb Duo
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
-! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-gecko
+! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-duo
 ! Info: Personal use, non-comercial, no-copyright claim, individual
-! caution: Please do not use for Chromium browsers! Only Gecko: Firefox;Tor; Waterfox; LibreWolf...
+! Warning: Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)
@@ -486,6 +486,148 @@ mega.io##.social-heading.heavy
 mega.io##a.light:nth-of-type(6)
 mega.io##.expanded.accordion > .accordion-content > a.light:nth-of-type(7)
 mega.io##.expanded.accordion > .accordion-content > a.light:nth-of-type(2)
+wolfplaygame.com##.noline.veryblack > tbody > tr > td:nth-of-type(1)
+wolfplaygame.com##table.veryblack:nth-of-type(2) > tbody
+www.wolvden.com##li.nav-item:nth-of-type(3)
+www.cargames.com###moneyNoticeMessage
+www.cargames.com###backToTop
+www.cargames.com##[href="/page/Privacy-Policy"]
+fileproinfo.com##a.me-3.text-muted.text-decoration-none:nth-of-type(4)
+www.lorwolf.com###musicExpandTab
+www.lorwolf.com###footerSmIcons
+www.lorwolf.com##[href="/PrivacyPolicy"]
+www.wajas.com##.cookie-consent
+www.wajas.com##div.footer-links-landing:nth-of-type(3)
+www.wajas.com##[href="home_privacy_policy.php"]
+www.brightestgames.com##[href="https://www.brightestgames.com/privacy-policy"]
+now.gg##.flex.youtube.social-lnk
+now.gg##.flex.tiktok.social-lnk
+now.gg##.flex.social-icons-list
+now.gg##.social-icons-2.perfectCenter.flex
+now.gg##[href^="https://now.gg/terms-and-privacy.html"]
+now.gg##.space-btw.flex.copyright-locale
+now.gg###credential_picker_container
+now.gg##div.FooterInfo:nth-of-type(5)
+wolf-haven.com##[href="https://wolf-haven.com/PrivacyPolicy"]
+wolf-haven.com##[href="https://wolf-haven.com/ParentsNotice"]
+playgama.com##li:nth-of-type(6)
+playclassic.games##._top
+www.appbrain.com##[href="/info/help/privacy/index.html"]
+www.appbrain.com##[href="/info/help/advertiser-resources/google-play-install-attribution.html"]
+www.crazygames.com##div:nth-of-type(45)
+www.crazygames.com##.BackToTop_buttonContainer__GQast
+ro.y8.com##li.sidebar-item:nth-of-type(39)
+ro.y8.com##li.sidebar-item:nth-of-type(36)
+ro.y8.com##li.sidebar-item:nth-of-type(32)
+www.1001games.com##.light.menu
+www.onlinefreegames.com##li.nav-footer--item:nth-of-type(5)
+www.onlinefreegames.com##li.nav-footer--item:nth-of-type(3)
+www.gametop.com##.mb-4.flex-column.nav
+www.gametop.com###sm-block-policies > li.nav-item:nth-of-type(4)
+www.gametop.com###sm-block-policies > li.nav-item:nth-of-type(2)
+transparencyreport.google.com##li.h-c-footer-v2__global-links-list-item--extra.h-c-footer-v2__global-links-list-item:nth-of-type(2)
+transparencyreport.google.com##.back-to-top-v2
+transparencyreport.google.com##div.h-c-footer-v2__site-links-column:nth-of-type(2) > .h-no-bullet.h-c-footer-v2__site-links-list > li.h-c-footer-v2__site-links-list-item:nth-of-type(1)
+publicpolicy.google##li.glue-footer__global-links-list-item:nth-of-type(3)
+publicpolicy.google##.glue-social.kof-social
+lagged.com##[href="https://discord.com/invite/ncdDUwyk3W"]
+www.onlinefreegames.com##li.nav-footer--item:nth-of-type(4)
+8games.net###footer
+8games.net##.border-7.vp-block
+plays.org##.footer-black
+www.247games.com###footer
+www.247games.com##[href="./newsletter/"]
+www.roundgames.net##[href="https://www.youtube.com/c/RoundGames-net"]
+www.roundgames.net##[href="https://www.roundgames.net/privacy-policy/"]
+www.roundgames.net##.td-favorites
+www.roundgames.net##[href="https://www.roundgames.net/my-favorite-games/"]
+www.roundgames.net##[href="https://www.facebook.com/RoundGames.net/"]
+www.roundgames.net##[href="https://twitter.com/RoundGames_net"]
+www.brandinfo.ro###dt_uptop
+www.paginademedia.ro##.text-right.pull-right
+www.paginademedia.ro##.box-newsletter.box
+www.capcut.com##.info-hgwuoZ
+www.capcut.com##li.navigation-links-rzRbxm:nth-of-type(8)
+www.capcut.com##li.navigation-links-rzRbxm:nth-of-type(4)
+www.capcut.com##li.navigation-links-rzRbxm:nth-of-type(3)
+www.capcut.com##.share-zfm0jW
+www.globaldev.ro##.dlab-topbar-left > ul > li:nth-of-type(5)
+www.globaldev.ro##.dlab-topbar-left > ul > li:nth-of-type(4)
+www.globaldev.ro##.dlab-topbar-left > ul > li:nth-of-type(3)
+www.globaldev.ro##.mystickyelement-lists-wrap
+www.globaldev.ro##.fa-chevron-up.fa.scroltop
+www.globaldev.ro###real-accessability-btn
+www.globaldev.ro##.m-b15.footer-col-4.col-sm-12.col-lg-12.col-xl-12.col-md-12
+www.globaldev.ro##[href="https://www.globaldev.ro/prelucrarea-datelor-personale/"]
+www.globaldev.ro###menu-item-3027
+www.globaldev.ro##[href="https://www.globaldev.ro/politica-de-confidentialitate/"]
+www.globaldev.ro###menu-item-2998
+www.atlasgraphics.ro###comp-kmypp12s
+www.atlasgraphics.ro###comp-koojvpjg
+www.atlasgraphics.ro##.dukD6Z.Pg7AcP.bqbmwD.mQxxMq
+www.atlasgraphics.ro##.jUcJ2u.Frk6TZ.MNUFxS.consent-banner-root
+www.predis.ai##.mt-4.row
+www.predis.ai##[href="https://apps.apple.com/in/app/social-media-posts-predis-ai/id6450264767"]
+www.predis.ai##[href^="https://play.google.com/store/apps/details"]
+www.predis.ai##[href="https://predis.ai/privacy/"]
+seofirst.ro##[href="https://seofirst.ro/politica-cookie-uri/"]
+seofirst.ro##[href="https://seofirst.ro/politica-de-confidentialitate/"]
+seofirst.ro###page > .footer-width-fixer
+doads.ro##.menu-item-18371.menu-item-object-page.menu-item-type-post_type.menu-item
+doads.ro##.menu-item-18373.menu-item-object-page.menu-item-type-post_type.menu-item
+www.revistabiz.ro##.social-icons
+www.revistabiz.ro##.buttontop-is-visible.buttontop-fade-out.buttontop-top
+hosterion.ro##[href="https://hosterion.ro/politica-de-confidentialitate"]
+hosterion.ro##.soc
+ideideafaceri.manager.ro##a.bottom_links:nth-of-type(11)
+ideideafaceri.manager.ro##a.bottom_links:nth-of-type(8)
+ideideafaceri.manager.ro##.containerImportante > .first.bottom_links
+ideideafaceri.manager.ro##div.reteaua_rs:nth-of-type(3) > a.bottom_links:nth-of-type(6)
+ideideafaceri.manager.ro##.bottom_news_form
+ideideafaceri.manager.ro##.content_top
+ideideafaceri.manager.ro##.closed
+ideideafaceri.manager.ro##.right_news_form
+vizal.ro##[href="http://vizal.ro/politica-de-confidentialitate/"]
+vizal.ro##[href="https://vizal.ro/politica-privind-cookie-urile-ue/"]
+www.impact-vision.ro###sub-footer
+www.openmediavault.org###menu-item-2430 > [href^="https://www.openmediavault.org/"]
+www.openmediavault.org###menu-item-1557
+www.omv.com##.justify-center.items-center.flex.inner-circle
+www.omv.com##.z-15.cursor-pointer.ease-out.duration-300.transition-all.progress-circle
+www.omv.com##.border-disabled\/20.border-solid.border-t-1.gap-y-10.\32 xl\:gap-x-32.gap-x-24.text-12.pt-24.md\:px-40.px-24.flex-wrap.sm\:justify-center.lg\:items-center.lg\:flex-row.flex-col.flex
+www.rompetrol.ro##.social-links.col-sm-3
+www.rompetrol.ro##.list-unstyled.left > li:nth-of-type(2)
+www.rompetrol.ro##.list-unstyled.left > li:nth-of-type(5)
+www.rompetrol.ro##.social
+www.plinul.ro##.order-md-2.order-1.text-center.col-md-auto.col-12
+www.plinul.ro##.ms-auto.navbar-nav
+www.plinul.ro##a.nav-link:nth-of-type(2)
+www.peco-online.ro##.footer-options-group.position-fixed
+cautarestatii.molromania.ro##[href="/ro/cookies"]
+cautarestatii.molromania.ro##[href="/ro/privacy-policy"]
+molromania.ro##[href="/ro/politica-de-confidentialitate"]
+molromania.ro##[href="/ro/politica-de-cookies"]
+molromania.ro##.animation-loaded.animation-fade-left.animation.social
+mol.hu##.animation-loaded.animation-fade-left.animation.social
+mol.hu##[href="/hu/suti-cookie-tajekoztato"]
+mol.hu##[href="/hu/adatvedelem"]
+mol.hu##.szechenyi-infoblokk-left.szechenyi-infoblokk-container
+molserbia.rs##[href="/sr/politika-privatnosti"]
+molserbia.rs##[href="/sr/obavestenje-o-kolacicima"]
+molserbia.rs##.animation-loaded.animation-fade-left.animation.social
+molcesko.cz##[href="/cz/ochrana-oznamovatelu"]
+molcesko.cz##[href="/cz/soukromi"]
+molcesko.cz##.animation-loaded.animation-fade-left.animation.social
+mol.si##[href="/si/obvestilo-o-piskotkih"]
+mol.si##[href="/si/varovanje-podatkov"]
+mol.si##.animation-loaded.animation-fade-left.animation.social
+peko.ro##li:nth-of-type(1) > .link-hover
+www.oscars.ro###column-id-1692357126185
+www.group-alfa.ro##[href="https://www.group-alfa.ro/politica-de-confidentialitate/"]
+www.group-alfa.ro##[href="https://www.group-alfa.ro/politica-cookies/"]
+www.benzinariile.ro###column-wrap-id-93c1e4ff-5938-46ee-9dea-649a4b756bbd
+www.benzinariile.ro##.align-items-center.d-flex.no-border.social-wrap
+tsvpetroliere.ro##[href="https://tsvpetroliere.ro/politica-de-cookie/"]
 www.androidauthority.com##.e_Uf
 www.androidauthority.com##div:nth-of-type(26)
 www.androidauthority.com##.e_9e

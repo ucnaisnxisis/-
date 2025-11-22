@@ -325,6 +325,46 @@ www.cargames.com###moneyNoticeMessage
 www.cargames.com###backToTop
 www.cargames.com##[href="/page/Privacy-Policy"]
 fileproinfo.com##a.me-3.text-muted.text-decoration-none:nth-of-type(4)
+fireshow.ro##.wd-age-verify-text.reset-last-child
+fireshow.ro##.btn.wd-age-verify-forbidden
+artificii-shop.ro##.cp-short-description.cp_responsive.cp-clear
+artificii-shop.ro##.cp-title.cp_responsive > span
+artificii-shop.ro##.nasa-bot-icons.nasa-bot-icon-wishlist.botbar-wishlist-link
+artificii-shop.ro##.nasa-nav-sc-menu.nasa-menu-inline > .nasa-menu-wrapper > li.menu-item.menu-item-type-post_type.menu-item-object-page.default-menu.root-item.nasa_even:nth-of-type(3) > .nasa-title-menu
+artificii-shop.ro##.elementor-element.elementor-element-54731af4.elementor-widget.elementor-widget-shortcode > .elementor-widget-container
+artificii.market##.columns.small-12.nasa-pp-right.medium-6.large-6.right
+artificii.market###nasa-popup
+artificii.market##div.nasa-age-verification.nasa-flex.jc.flex-column:nth-of-type(1) > .nasa-age-question.nasa-bold.verification-text
+artificii.market##.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.nasa-footer-contact-mail
+artificii.market##.wpcf7-form-control-wrap
+artificii.market##.wpcf7-form.init > p
+racheta-shop.ro##.btn.wd-age-verify-forbidden
+racheta-shop.ro##.wd-age-verify-text.reset-last-child > p.text-center
+racheta-shop.ro##.wd-age-verify-text.reset-last-child > h4.text-center
+racheta-shop.ro##.qlwapp-toggle
+racheta-shop.ro##.elementor-element.elementor-element-741972e.e-con-full.e-flex.e-con.e-child
+racheta-shop.ro##.wd-header-wishlist.wd-tools-element.wd-design-5.without-product-count > [href*="https://racheta-shop.ro/wishlist/"]
+racheta-shop.ro##.elementor-element.elementor-element-df25e9c.elementor-widget.elementor-widget-wd_list > .elementor-widget-container > .wd-list.color-scheme-.wd-fontsize-s.wd-type-without.wd-style-.text-left > .elementor-repeater-item-dbb02c1 > .wd-fill
+racheta-shop.ro##.elementor-element.elementor-element-df25e9c.elementor-widget.elementor-widget-wd_list > .elementor-widget-container > .wd-list.color-scheme-.wd-fontsize-s.wd-type-without.wd-style-.text-left > .elementor-repeater-item-3785923 > .wd-fill
+racheta-shop.ro##.elementor-element.elementor-element-df25e9c.elementor-widget.elementor-widget-wd_list > .elementor-widget-container > .wd-list.color-scheme-.wd-fontsize-s.wd-type-without.wd-style-.text-left > .elementor-repeater-item-3785923 > .wd-list-content.list-content
+racheta-shop.ro##.elementor-element.elementor-element-df25e9c.elementor-widget.elementor-widget-wd_list > .elementor-widget-container > .wd-list.color-scheme-.wd-fontsize-s.wd-type-without.wd-style-.text-left > .elementor-repeater-item-dbb02c1
+racheta-shop.ro##.menu-item.menu-item-wishlist.wd-with-icon.item-level-0 > .woodmart-nav-link
+artificii-online.ro##.wp-block-kadence-listitem.kt-svg-icon-list-item-wrap.kt-svg-icon-list-item-5b4899-b8
+www.e-artificii.ro##.content-redactor > p:nth-of-type(2) > strong > span
+fireshow.ro##.wd-header-wishlist.wd-tools-element.wd-design-5 > [href*="https://fireshow.ro/wishlist/"] > .wd-toolbar-label
+fireshow.ro##.wd-header-wishlist.wd-tools-element.wd-design-5 > [href*="https://fireshow.ro/wishlist/"] > .wd-tools-icon
+fireshow.ro##.wd-header-wishlist.wd-tools-element.wd-design-5 > [href*="https://fireshow.ro/wishlist/"]
+exploziv-show.ro##[href*="/privacy-policy/"] > .elementor-icon-list-text
+exploziv-show.ro##[href*="/politica-cookies/"] > .elementor-icon-list-text
+exploziv-show.ro##div.meta-bottom:nth-of-type(1)
+magazinartificii.ro###accordion-menu-item-2743 > [href*="https://magazinartificii.ro/"]
+artificii-evenimente.online##.input-group-btn > .btn
+artificii-evenimente.online##.form-vertical.post-large--hide.large--hide.medium--hide > .contact-form
+bubuie.ro##.elementor-element.elementor-element-8c049fb.elementor-hidden-desktop.e-flex.e-con-boxed.e-con.e-parent.elementor-sticky.elementor-sticky--active.elementor-section--handles-inside.elementor-sticky--effects.e-lazyloaded > div.e-con-inner:nth-of-type(1) > .elementor-element.elementor-element-9342cff.e-con-full.e-flex.e-con.e-child > .elementor-element.elementor-element-6460b53.elementor-view-default.ob-has-background-overlay.elementor-widget.elementor-widget-icon > .elementor-widget-container > .elementor-icon-wrapper > .elementor-icon > .icon.icon-valentines-heart
+bubuie.ro##.elementor-element.elementor-element-ec44929.elementor-icon-list--layout-traditional.elementor-list-item-link-full_width.ob-has-background-overlay.elementor-widget.elementor-widget-icon-list > .elementor-widget-container > .elementor-icon-list-items > li.elementor-icon-list-item:nth-of-type(4) > [href*="/politica-de-confidentialitate"] > .elementor-icon-list-text
+bubuie.ro##[href*="/politica-cookies"] > .elementor-icon-list-text
+bubuie.ro##.elementor-element.elementor-element-c5cf4ec.e-con-full.e-flex.e-con.e-parent.e-lazyloaded
+bubuie.ro##.ekit_close-side-widget
 www.lorwolf.com###musicExpandTab
 www.lorwolf.com###footerSmIcons
 www.lorwolf.com##[href="/PrivacyPolicy"]

@@ -1,0 +1,152 @@
+m.youtube.com##.yt-lp-section-group-view-model
+m.youtube.com##.cbox.slim-owner-subscribe-button
+m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost
+m.youtube.com##.mobile-topbar-header-sign-in-button
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##.YtmCommentSimpleboxRendererHost
+m.youtube.com##.gradient-trim-1.modernized-nudge.feed-nudge-use-static-column-breakpoint
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##ytm-pivot-bar-item-renderer:nth-of-type(3)
+m.youtube.com##div.item.ytGridShelfViewModelGridShelfRow
+m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
+m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
+m.youtube.com###guide-links-primary
+m.youtube.com###guide-links-secondary
+m.youtube.com##ytd-consent-bump-v2-lightbox
+m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
+m.youtube.com##.dialog-body-eom
+m.youtube.com##.eom-accept
+m.youtube.com##.privacy-terms
+m.youtube.com##.dialog-topbar
+m.youtube.com##ytm-rich-section-renderer.rich-section-single-column:nth-of-type(2)
+m.youtube.com##.feed-nudge-text-container
+m.youtube.com##.reel-shelf-items
+m.youtube.com##.opened
+m.youtube.com##.yt-spec-touch-feedback-shape__fill
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--tonal.yt-spec-button-shape-next
+m.youtube.com###voice-search-button
+m.youtube.com###voice-search-button > .ytd-masthead.style-scope
+m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+m.youtube.com##ul.ytd-consent-bump-v2-lightbox.style-scope
+m.youtube.com##div.ytd-consent-bump-v2-lightbox.style-scope.legal-text
+m.youtube.com###topbar
+m.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.termlinks
+m.youtube.com##ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(2)
+m.youtube.com##.reject-all.first.btn
+m.youtube.com##div.content-section:nth-of-type(2)
+m.youtube.com##.manage-settings.mng-btn.secondary.btn
+m.youtube.com###consent-text
+m.youtube.com##._yb_1ool5._yb_b9sct
+m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
+m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
+m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
+m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
+m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+m.youtube.com##.reel-shelf-header
+m.youtube.com###toast
+m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
+m.youtube.com###global-loader
+m.youtube.com##.search-bar-entry-point-more-drawer-button.search-bar-entry-point-button
+www.youtube.com###toast
+www.youtube.com##.ytd-consent-bump-v2-lightbox.style-scope.eom-v1-dialog
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+www.youtube.com##ytd-consent-bump-v2-lightbox
+www.youtube.com###voice-search-button
+www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
+music.youtube.com###right-content
+music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
+accounts.youtube.com/RotateCookiesPage
+||googlevideo.com/videoplayback$xhr,3p,method=get,domain=www.youtube.com
+www.youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
+www.youtube.com##.opened
+www.youtube.com##.yt-playability-error-supported-renderers.style-scope > .ytd-enforcement-message-view-model.style-scope
+www.youtube.com###container > .yt-playability-error-supported-renderers.style-scope
+www.youtube.com###error-screen > .yt-playability-error-supported-renderers.style-scope
+www.youtube.com###error-screen
+www.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
+consent.youtube.com##form:nth-of-type(1)
+consent.youtube.com##.CqMh6b > div:nth-of-type(2)
+consent.youtube.com##.rjfsgd.K7564e
+www.google.*##^script:has-text(consentCookiePayload)
+www.google.*##+js(acis, document.cookie, YES+)
+google.*##+js(aeld, DOMContentLoaded, CONSENT)
+www.google.com###Q7Ulpb
+www.google.com##.gb_z
+www.google.com##.KojFAc
+www.google.com##.gb_Cd
+www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_1 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
+www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_0 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
+www.google.com###KByQx
+www.google.com##.Lt2Ned.As6eLe.M6hT6.fbar
+www.google.com##a.Fx4vi:nth-of-type(2)
+www.google.com###Odp5De
+www.google.com##.AG96lb
+www.google.com##.cG0Dmf.XWlrff
+www.google.com##.AG96lb
+www.google.com##.IczZ4b
+www.google.com###L2AGLb
+www.google.com##.IczZ4b
+www.google.com###KByQx
+www.google.com##.plR5qb
+www.google.com##.C6AK7c.XVMlrc
+||www.google.com/recaptcha/api2/anchor$subdocument
+support.google.com##sc-feedback-inline-mobile_dom-mobile-fab
+csp.withgoogle.com
+fundingchoicesmessages.google.com.ro##.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.tdi_191.vc_column_inner
+www.google.com###Sx9Kwc
+www.google.com##.USRMqe
+play.google.com##.app-translation-bar
+thinkwithgoogle.com##.global-toast
+policies.google.com##.BXXR1b.M9Bg4d.ThQiWd.XHsn7e.U26fgb
+consent.google.com##.saveButtonContainerNarrowScreen > form:nth-of-type(1)
+www.google.com##.mb1nxc
+fiber.google.com##.style_social__aHvSE
+fiber.google.com##div.style_footer__site-links-list-item__bkvuv:nth-of-type(4)
+www.google.com##.kM7Sgc.cd29Sd.MjJqGe.KlOMXb.RMagM.RsW3Ke.LkIdQb.ig2Tkd
+consent.google.com##.FCY2lb > form:nth-of-type(1)
+consent.google.com##.rjfsgd.pDpm8d
+consent.google.com##.S9VBFf
+news.google.com##.boLjl
+news.google.com##.waNn5b.YOnsCc
+news.google.com##.l1yCcb
+wearos.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
+wearos.google.com##.glue-footer__upper
+wearos.google.com###your-favorite-watch-apps-on-google-play
+myaccount.google.com##a.KlUiRc:nth-of-type(1)
+accounts.google.com##li.qKvP1b:nth-of-type(2)
+www.google.com##a.pHiOh:nth-of-type(1)
+www.google.com##.XDyW0e
+startup.google.com##.glue-footer__upper
+startup.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
+trends.google.com##a.Fj1eg:nth-of-type(1)
+killedbygoogle.com##a.Footer_socialLink__WU5Z6:nth-of-type(2)
+edu.google.com##li.gfe-footer__global-languages__global__link:nth-of-type(3)
+edu.google.com##.gfe-footer__social-bar-wrapper
+edu.google.com##.gfe-floating-bar--active.gfe-floating-bar
+cloud.google.com##.r2W5Od.nRhiJb-haF9Wb
+cloud.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
+developers.google.com##li.devsite-footer-utility-item
+www.google.com###arc-srp_
+play.google.com##div.KvNvKe:nth-of-type(2)
+chromewebstore.google.com##.yHWa2
+# Desktop browsers
+||google.*/complete/search?q&cp=0$domain=google.*,important
+## Mobile browsers
+||google.*/complete/search?q&pq&cp=0$domain=google.*,important
+www.google.*##div.isv-r[data-rfg]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$=" qa"]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="review_summary"]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="third_party_aggregator_ratings"]
+www.google.*###footcnt > #fbarcnt
+www.google.com##body:style(overflow:auto!important;)
+!#if !env_firefox
+www.google.com##[href^="https://policies.google.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
+!#endif
+!#if env_firefox
+www.google.com##^[href^="https://policies.google.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
+!#endif

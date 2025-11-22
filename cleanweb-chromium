@@ -3,7 +3,7 @@
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-chromium
 ! Caution: Please, do not use this for Gecko Firefox; Waterfox; Tor; LibreWolf (Only for Ublock Origin Chromium/Microsoft Edge & Brave Browser)
 ! Info: Personal use, non-comercial, no-copyright claim, individual
-! Warning: Clewanweb-chromium is not complete, please add also Clewanweb-duo
+! Warning: Cleanweb-chromium is not complete, please add also Cleanweb-duo
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)

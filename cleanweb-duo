@@ -357,6 +357,33 @@ fireshow.ro##.wd-header-wishlist.wd-tools-element.wd-design-5 > [href*="https://
 exploziv-show.ro##[href*="/privacy-policy/"] > .elementor-icon-list-text
 exploziv-show.ro##[href*="/politica-cookies/"] > .elementor-icon-list-text
 exploziv-show.ro##div.meta-bottom:nth-of-type(1)
+discuss.privacyguides.net##.ember-view.custom-footer-content
+ublock.org##li.svelte-yjgwpm:nth-of-type(1)
+www.windowscentral.com##.sm\:visible.sm\:flex.flexisites-social.gap-2.hidden
+edgeaddons.com###nav_menu-4
+www.online-tech-tips.com##.newsletter
+geekermag.com##.cookieadmin_accept_btn.cookieadmin_btn
+geekermag.com##.cookieadmin_notice_con
+geekermag.com##.cookieadmin_consent_inside
+geekermag.com##.social-icons
+www.neowin.net##.article-share
+www.crxsoso.com##.intro-help
+gizmodo.com##.content-info
+www.coca-cola.com##.cep-modal-trigger
+www.coca-cola.com##.action-card.responsivegrid.container
+www.bucataras.ro##[href="https://www.bucataras.ro/content/240/politica-de-confidentialitate.html"]
+www.bucataras.ro##[href="https://www.bucataras.ro/content/241/politica-de-utilizare-cookieuri.html"]
+www.bucataras.ro##.fl.footdesc > [href="https://www.bucataras.ro/content/244/activeaza-sau-dezactiveaza-notificarile.html"]
+www.bucataras.ro###ot-sdk-btn
+adblockplus.org##[href="/fr/privacy"]
+adblockplus.org##[href="/fr/faq-privacy"]
+adblockplus.org##[href="/fr/acceptable-ads"]
+adblockplus.org##[href="/pt_BR/acceptable-ads"]
+adblockplus.org##[href="/pt_BR/privacy"]
+adblockplus.org##[href="/de/privacy"]
+adblockplus.org##[href="/de/faq-privacy"]
+adblockplus.org##[href="/de/acceptable-ads"]
+adblockplus.org##[href="/ru/acceptable-ads"]
 magazinartificii.ro###accordion-menu-item-2743 > [href*="https://magazinartificii.ro/"]
 artificii-evenimente.online##.input-group-btn > .btn
 artificii-evenimente.online##.form-vertical.post-large--hide.large--hide.medium--hide > .contact-form

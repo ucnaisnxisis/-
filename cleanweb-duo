@@ -259,19 +259,14 @@ d3ward.github.io##.textads
 pixibay.cc
 static.veevcdn.co
 morphify.net
-@@www.gstatic.com
-@@wp.com
 @@dmxleo.dailymotion.com
 @@www.lachainemeteo.com
 @@vzlinks.com
-@@cdninstagram.com
 @@alejandrocenturyoil.com
 @@vidmoly.to
 @@veev.to
 @@veevcdn.co
 @@plyr.io
-@@chatbro.com
-@@use.fontawesome.com
 @@animerip.ro
 @@www.mp4upload.com
 @@vk-portal.net
@@ -292,17 +287,13 @@ morphify.net
 @@lewd.ninja
 @@98mbrr0f.com
 @@ipv4.imgur.map.fastly.net
-@@st.chatango.com
 @@msgrt.gamedistribution.com
 @@matomo.y8.com
 @@tag.atom.gamedistribution.com
 @@hlana.gamedistribution.com
 @@patreon.com
-@@@@encrypted-tbn0.gstatic.com
 @@cra.cz
 @@europalibera.org
-@@i.imgur.com
-@@olxcdn.com
 geo.dailymotion.com
 consent.dailymotion.com
 www.virustotal.com##div.sub.large-sub
@@ -329,6 +320,17 @@ www.digifm.ro##p:nth-of-type(15)
 www.digifm.ro##.footer-content
 www.digifm.ro##.footer-content
 www.digifm.ro##.social
+www.digifm.ro##.header > .gutter-col-0.container > .flex-nowrap.flex-middle.flex-width.flex > .social
+www.digifm.ro##.social-item-youtube.social-item
+www.digifm.ro##.social-item-instagram.social-item
+www.digifm.ro##.social-item-facebook.social-item
+www.digifm.ro##.instagram.com
+www.digifm.ro##.youtube.com
+www.digifm.ro##.facebook.com
+www.digifm.ro##social
+www.digifm.ro##social-item
+www.digifm.ro##.social-item
+pixelcode.ro
 microsoftedge.microsoft.com###PrivacyLink2
 microsoftedge.microsoft.com##.c01135 > .displayFlexColumn > div.headingContainer-202:nth-of-type(1)
 ublockorigin.app##[href="https://ublockorigin.app/privacy-policy/"]

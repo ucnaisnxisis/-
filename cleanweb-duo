@@ -329,8 +329,6 @@ www.digifm.ro##.youtube.com
 www.digifm.ro##.facebook.com
 www.digifm.ro##.social-item
 www.digifm.ro##.social
-www.digifm.ro##p:nth-of-type(0)
-www.digifm.ro##p:nth-of-type(00)
 www.digifm.ro##p:nth-of-type(1)
 www.digifm.ro##p:nth-of-type(2)
 www.digifm.ro##p:nth-of-type(3)
@@ -340,15 +338,6 @@ www.digifm.ro##p:nth-of-type(6)
 www.digifm.ro##p:nth-of-type(7)
 www.digifm.ro##p:nth-of-type(8)
 www.digifm.ro##p:nth-of-type(9)
-www.digifm.ro##p:nth-of-type(01)
-www.digifm.ro##p:nth-of-type(02)
-www.digifm.ro##p:nth-of-type(03)
-www.digifm.ro##p:nth-of-type(04)
-www.digifm.ro##p:nth-of-type(05)
-www.digifm.ro##p:nth-of-type(06)
-www.digifm.ro##p:nth-of-type(07)
-www.digifm.ro##p:nth-of-type(08)
-www.digifm.ro##p:nth-of-type(09)
 www.digifm.ro##p:nth-of-type(10)
 www.digifm.ro##p:nth-of-type(11)
 www.digifm.ro##p:nth-of-type(12)
@@ -439,7 +428,6 @@ www.digifm.ro##p:nth-of-type(96)
 www.digifm.ro##p:nth-of-type(97)
 www.digifm.ro##p:nth-of-type(98)
 www.digifm.ro##p:nth-of-type(99)
-www.digifm.ro##p:nth-of-type(100)
 pixelcode.ro
 microsoftedge.microsoft.com###PrivacyLink2
 microsoftedge.microsoft.com##.c01135 > .displayFlexColumn > div.headingContainer-202:nth-of-type(1)

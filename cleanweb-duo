@@ -327,9 +327,9 @@ www.digifm.ro##.social-item-facebook.social-item
 www.digifm.ro##.instagram.com
 www.digifm.ro##.youtube.com
 www.digifm.ro##.facebook.com
-www.digifm.ro##social
-www.digifm.ro##social-item
 www.digifm.ro##.social-item
+www.digifm.ro##.social
+www.digifm.ro##p:nth-of-type(8)
 pixelcode.ro
 microsoftedge.microsoft.com###PrivacyLink2
 microsoftedge.microsoft.com##.c01135 > .displayFlexColumn > div.headingContainer-202:nth-of-type(1)
@@ -605,9 +605,6 @@ www.anyrec.io##.flex_box.btn
 www.vidmore.com##.active.gotop
 www.vidmore.com##[href="/ro/company/privacy-policy/"]
 www.vidmore.com##.first_bottom
-www.digifm.ro##.social
-www.digifm.ro##.footer-nav
-www.digifm.ro##.footer-nav
 www.fuq.com##.overflow-y-auto.modal-body
 www.fuq.com###splash-page-title
 www.fuq.com##.modal-footer > p
@@ -2840,8 +2837,6 @@ www.digisport.ro##.hide-sm.widget
 www.digisport.ro##.footer-content-social
 www.digisport.ro##.footer-top
 www.profm.ro##.social
-www.digifm.ro##.social
-www.digifm.ro##a.footer-nav-link:nth-of-type(3)
 github.com###universe_25_day_1_post_event
 github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
 sereneblue.github.io##li.svelte-hu34kn:nth-of-type(5)
@@ -5421,8 +5416,6 @@ www.digi-life.tv##.footer-content-social
 www.digi-life.tv##.header-social
 www.utv.ro##.footer-content-social
 www.profm.ro##.footer-social
-www.digifm.ro##.footer-social
-www.digifm.ro##.footer-content
 www.dancefm.ro##.footer-social
 www.music-channel.ro##.footer-copyright
 www.music-channel.ro##.footer-content-social
@@ -7014,48 +7007,6 @@ www.digi-life.tv##.extra-small.small.widget-digitv
 www.digi-animalworld.tv##.extra-small.small.widget-digitv
 www.digi-life.tv##.widget-digitv-content
 www.dancefm.ro##.social
-www.digifm.ro##p:nth-of-type(11)
-www.digifm.ro##p:nth-of-type(10)
-www.digifm.ro##p:nth-of-type(9)
-www.digifm.ro##p:nth-of-type(8)
-www.digifm.ro##p:nth-of-type(7)
-www.digifm.ro##p:nth-of-type(6)
-www.digifm.ro##p:nth-of-type(5)
-www.digifm.ro##p:nth-of-type(4)
-www.digifm.ro##p:nth-of-type(3)
-www.digifm.ro##p:nth-of-type(2)
-www.digifm.ro##p:nth-of-type(1)
-www.digifm.ro##p:nth-of-type(0)
-www.digifm.ro##p:nth-of-type(19)
-www.digifm.ro##p:nth-of-type(18)
-www.digifm.ro##p:nth-of-type(17)
-www.digifm.ro##p:nth-of-type(16)
-www.digifm.ro##p:nth-of-type(15)
-www.digifm.ro##p:nth-of-type(14)
-www.digifm.ro##p:nth-of-type(13)
-www.digifm.ro##p:nth-of-type(12)
-www.digifm.ro##p:nth-of-type(11)
-www.digifm.ro##p:nth-of-type(20)
-www.digifm.ro##p:nth-of-type(29)
-www.digifm.ro##p:nth-of-type(28)
-www.digifm.ro##p:nth-of-type(27)
-www.digifm.ro##p:nth-of-type(26)
-www.digifm.ro##p:nth-of-type(25)
-www.digifm.ro##p:nth-of-type(24)
-www.digifm.ro##p:nth-of-type(23)
-www.digifm.ro##p:nth-of-type(22)
-www.digifm.ro##p:nth-of-type(21)
-www.digifm.ro##p:nth-of-type(30)
-www.digifm.ro##p:nth-of-type(90)
-www.digifm.ro##p:nth-of-type(80)
-www.digifm.ro##p:nth-of-type(70)
-www.digifm.ro##p:nth-of-type(60)
-www.digifm.ro##p:nth-of-type(50)
-www.digifm.ro##p:nth-of-type(40)
-www.digifm.ro##p:nth-of-type(200)
-www.digifm.ro##p:nth-of-type(100)
-www.digifm.ro##p:nth-of-type(00)
-www.digifm.ro##p:nth-of-type()
 www.profit.ro##.mt-4.mb-4.p-3.rounded.border
 www.profit.ro##.col-xxl-9 > .mb-4.art-meta
 www.profit.ro##.text-center.mx-auto.align-items-center.justify-content-between.d-lg-flex.container-fluid > div
@@ -8347,7 +8298,6 @@ unica.md##.menu-item-205725.menu-item-object-page.menu-item-type-post_type.menu-
 kanald2.ro##.google-news-subscribe.social
 www.stiridecluj.ro##div.widget:nth-of-type(4)
 www.stiridecluj.ro##div.widget:nth-of-type(3)
-www.digifm.ro##.social
 romania.fm##.bde-social-share-button-facebook.bde-social-share-button.js-breakdance-share-button
 romania.fm##.border-animated.bde-div.bde-div-31703-354
 www.b1tv.ro##section.text-center > .social
@@ -22949,7 +22899,6 @@ apk.technologysage.com##.mh-back-to-top
 www.businessinsider.com##.--fade-in.back-to-top.component
 www.gadgetsnow.com##.Gg0bl
 www.gadgetsnow.com##._380lG
-www.digifm.ro##.gdpr-social-media.gdpr-placeholder
 redactia.ro###post-279345 > .mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
 redactia.ro##.entry-content > div.mrf-heightLocked.mrf-adv__wrapper--placeholder.mrf-adv__wrapper:nth-of-type(1)
 redactia.ro##.mrf-heightLocked.mrf-adv__wrapper--bottom.mrf-adv__wrapper--placeholder.mrf-adv__wrapper
@@ -23152,7 +23101,6 @@ www.digi-world.tv##.footer-top
 www.digi-life.tv##.footer-top
 m.digisport.ro##.footer-top
 www.profm.ro##.footer-content
-www.digifm.ro##.footer-content
 www.dancefm.ro##.footer-nav
 www.dancefm.ro##small
 1music.ro##li.tappable.no-icon.menu-item-object-page.menu-item-type-post_type.menu-item:nth-of-type(6)
@@ -25452,7 +25400,6 @@ www.antena3.ro###ribbon
 centruldepresa.ro##.bootstrap.cn-bottom
 centruldepresa.ro##[href="https://centruldepresa.ro/despre-cookies"]
 www.profm.ro##.gdpr-modal-trigger.footer-nav-link
-www.digifm.ro##.gdpr-iframe-fix.gdpr-social-media.gdpr-placeholder
 bucurestiri.ro##[href="https://bucurestiri.ro/cookies/"]
 cluj24.ro###menu-item-29 > [href="https://cluj24.ro/cluj24-ro-politica-privind-utilizarea-cookies"]
 yve.ro##[href="https://yve.ro/prelucrarea-datelor-cu-caracter-personal/"]
@@ -26565,7 +26512,6 @@ m.digisport.ro##.gdpr-modal-trigger.footer-top-content-nav-link
 www.filmnow.ro##.footer-top-nav-link.gdpr-modal-trigger
 www.digi-animalworld.tv##.footer-top-nav-link.gdpr-modal-trigger
 www.utv.ro##.footer-nav-link.gdpr-modal-trigger
-www.digifm.ro##.gdpr-modal-trigger.footer-nav-link
 www.dancefm.ro##.gdpr-modal-trigger.footer-nav-link
 1music.ro###gdpr-modal
 1music.ro##.container
@@ -27784,7 +27730,6 @@ www.weather2umbrella.com##.container-fluid > div.row:nth-of-type(1) > .col-md-16
 comuna.info###divCookieMessage
 www.kanald.ro###site-container > div:nth-of-type(2)
 www.dancefm.ro##.active.gdpr
-www.digifm.ro##.active.gdpr
 www.profm.ro##.active.gdpr
 www.utv.ro##.active.gdpr
 www.digi-life.tv##.active.gdpr

@@ -348,6 +348,60 @@ forms.sonymusicfans.com###campaign-footer
 fuzzy.ro##[href="https://fuzzy.ro/politica-de-confidentialitate/"]
 queenonline.com##[href="https://www.queenonline.com/privacy_policy"]
 queenonline.com##div.text-center.col-xs-12:nth-of-type(2)
+blockerx.net###mobile-app-banner
+blockerx.net###menu-item-178052
+forums.musicplayer.com###elFooterLinks
+forums.musicplayer.com##.cAnnouncementsContent
+www.geeksandbeats.com###sidebar
+www.geeksandbeats.com##.cb_p6_patreon_button
+www.futureproducers.com##[href="/forums/help/privacy-policy/"]
+www.futureproducers.com##li:nth-of-type(6)
+www.futureproducers.com##.is-active.js-scrollButtons.u-scrollButtons
+www.lofimusiconline.com##[href="/privacy-policy.html"]
+www.lofimusiconline.com##.wsite-footer.wsite-elements > div:nth-of-type(3)
+www.lofimusiconline.com##.blog-feed-link
+www.lofimusiconline.com##.wsite-section-elements > div:nth-of-type(2)
+www.lofimusiconline.com##.booButtonXContent > div > div:nth-of-type(2)
+www.lofimusiconline.com##td.wsite-multicol-col:nth-of-type(2)
+www.lofimusiconline.com##td.wsite-multicol-col:nth-of-type(3)
+www.grammy.com##.mt-2.justify-between.flex
+www.elizabethrecords.net##.social-icons-style-knockout.social-icons-shape-square.social-icons-size-small.social-icons-color-.social-icon-alignment-center.sqs-svg-icon--outer
+www.spin.com###scroller
+www.spin.com##.min-\[1400px\]\:top-\[initial\].min-\[1400px\]\:right-\[initial\].min-\[1400px\]\:relative.xl\:w-\[15\%\].justify-center.items-center.h-\[70px\].flex.right-\[20px\].absolute
+www.spin.com##.lg\:w-2\/5.md\:pt-0.md\:pl-12.md\:w-1\/2.pt-10.w-full
+www.spin.com##.xl\:mt-auto.leading-5.text-lg > .text-primary
+www.spin.com##div.lg\:justify-start.justify-center.items-center.flex.mb-5:nth-of-type(2)
+www.spin.com##[href="https://www.spin.com/about-our-ads/"]
+www.spin.com##[href="https://www.spin.com/privacy-policy/"]
+www.ocweekly.com##[href="https://www.ocweekly.com/privacy-policy/"]
+www.ocweekly.com##[href="https://www.ocweekly.com/anonymous-tip/"]
+www.ocweekly.com##.page_item_has_children.page-item-36064.page_item
+www.ocweekly.com##[href="https://www.ocweekly.com/classifieds/"]
+chicagoreader.com##[href="/advertise/"]
+chicagoreader.com##.mb-cta.button
+chicagoreader.com##[href="https://chicagoreader.com/privacy/"]
+chicagoreader.com##[href^="https://store.chicagoreader.com/product/print-subscription/"]
+chicagoreader.com##.wp-block-buttons-is-layout-flex.is-layout-flex.wp-block-buttons
+chicagoreader.com###menu-tertiary
+chicagoreader.com##[href="https://chicagoreader.com/advertise/"]
+slooply.com##[href="https://slooply.com/page/privacy-policy"]
+www.songstuff.com##.menu-item-350400.menu-item-object-custom.menu-item-type-custom.menu-item
+www.songstuff.com##.menu-item-350401.menu-item-object-custom.menu-item-type-custom.menu-item
+jameshawkins.music##.et_pb_row_3-5_1-5_1-5.et_pb_gutters3.et_pb_equal_columns.et_pb_row_2_tb_footer.et_pb_row
+jameshawkins.music##.et_pb_css_mix_blend_mode_passthrough.et_pb_column_4_tb_footer.et_pb_column_1_3.et_pb_column
+jameshawkins.music##.et-last-child.et_pb_css_mix_blend_mode_passthrough.et_pb_column_5_tb_footer.et_pb_column_1_3.et_pb_column
+jameshawkins.music##.et-l--footer.et-l
+www.millennialmind.co##.sidebar-2.sidebar
+blog.soundtrap.com##.social.menu.footer-column
+www.avid.com##li.\!leading-7\.5.\!text-xl.text-white.items-center.flex:nth-of-type(3)
+www.avid.com##.text-base-medium-dark.gap-y-8.flex-wrap.gap-x-8.items-center.justify-center.flex
+hub.fullsail.edu##[href="https://www.fullsail.edu/legal/privacy-policy"]
+loopsauce.com##.opacity-100.px-4.ease-in-out.duration-500.transition-opacity.z-50.justify-center.flex.right-0.left-0.bottom-4.fixed
+loopsauce.com##a.text-sm.transition-colors.hover\:text-emerald-400.text-zinc-500:nth-of-type(2)
+loopsauce.com##.pt-2.space-x-4.flex
+suno.com##.sm\:flex-row.gap-4.flex-col.flex > li:nth-of-type(2)
+suno.com##nav:nth-of-type(2)
+artandmedialaw.com###amp-mobile-version-switcher
 gpstrackershop.com##.loox-pn-bottom_left.loox-pn--no-branding.loox-pn--shown.loox-pn
 gpstrackershop.com##[href^="https://play.google.com/store/apps/details"]
 gpstrackershop.com##[href="https://apps.apple.com/us/app/spacehawk-gps/id6737624150"]

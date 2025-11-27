@@ -158,3 +158,5 @@ www.google.com##[href^="https://policies.google.com/privacy"]:upward([aria-label
 !#if env_firefox
 www.google.com##^[href^="https://policies.google.com/privacy"]:upward([aria-label][aria-modal="true"][role="dialog"])
 !#endif
+fonts.gstatic.com
+gstatic.com

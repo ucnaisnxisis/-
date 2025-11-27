@@ -160,3 +160,4 @@ www.google.com##^[href^="https://policies.google.com/privacy"]:upward([aria-labe
 !#endif
 fonts.gstatic.com
 gstatic.com
+privacy-mgmt.com

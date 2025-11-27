@@ -821,6 +821,23 @@ now.gg###credential_picker_container
 now.gg##div.FooterInfo:nth-of-type(5)
 wolf-haven.com##[href="https://wolf-haven.com/PrivacyPolicy"]
 wolf-haven.com##[href="https://wolf-haven.com/ParentsNotice"]
+www.gta-cheats.com##footer
+gta-cheats.com##nav > [href="privacy.html"]
+gamedevtools.net##[href="https://gamedevtools.net/privacy-policy/"]
+www.gtasanandreas.net##tr:nth-of-type(3)
+www.gtasanandreas.net##[href="https://www.gtanet.com/privacy/"]
+gta.com.ua##footer
+gta.com.ua##.scrollTop
+animeterra.ro##nav.space-y-4:nth-of-type(2) > .space-y-2 > li:nth-of-type(3)
+manga.animeterra.ro##[href="http://revolut.me/florndaq9x"]
+manga.animeterra.ro##[href="https://discord.com/invite/en7WF9gGVk"]
+hentaiterra.ro##.space-y-3.mb-6.text-gray-300
+hentaiterra.ro##.mt-4.text-gray-500.text-xs
+hentaiterra.ro##.transition-colors.rounded-lg.text-white.hover\:bg-gray-700.bg-gray-600.py-2.px-6
+hentaiterra.ro##nav.space-y-4:nth-of-type(2) > .space-y-2 > li:nth-of-type(4)
+hentaiterra.ro##.space-x-4.flex
+hentaiterra.ro##div:nth-of-type(3) > .space-y-1 > a.transition-colors.hover\:bg-white\/10.rounded-lg.px-3.py-3.text-white.gap-3.items-center.flex:nth-of-type(1)
+hentaiterra.ro##a.transition-colors.hover\:bg-white\/10.rounded-lg.px-3.py-3.text-white.gap-3.items-center.flex:nth-of-type(3)
 playgama.com##li:nth-of-type(6)
 playclassic.games##._top
 www.appbrain.com##[href="/info/help/privacy/index.html"]

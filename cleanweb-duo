@@ -268,6 +268,13 @@ pagead.js$domain=adblock.turtlecute.org
 /widget/ads.
 turtlecute.org##.adbox.banner_ads.adsbox
 adblock.turtlecute.org##.adbox.banner_ads.adsbox
+www.22wk.com##[href^="/privacy-policy.html"]
+www.22wk.com##[href^="/Content-Policy.html"]
+www.escapefromtarkov.com##li.legal-list__item:nth-of-type(3)
+csrlm.com##a.after-middle:nth-of-type(3)
+csrlm.com##a.after-middle:nth-of-type(2)
+www.pgames.zone##[href="/privacy.html"]
+www.pgames.zone##.jss142
 github.io##.textads
 d3ward.github.io##.textads
 pixibay.cc

@@ -268,6 +268,9 @@ pagead.js$domain=adblock.turtlecute.org
 /widget/ads.
 turtlecute.org##.adbox.banner_ads.adsbox
 adblock.turtlecute.org##.adbox.banner_ads.adsbox
+desenefaine.com##.social-widget-left
+desenefaine.com##.socialwidgetleft
+desenefaine.com##.share
 www.22wk.com##[href^="/privacy-policy.html"]
 www.22wk.com##[href^="/Content-Policy.html"]
 www.escapefromtarkov.com##li.legal-list__item:nth-of-type(3)

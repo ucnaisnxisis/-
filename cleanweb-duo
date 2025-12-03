@@ -453,6 +453,19 @@ www.ceccarbusinessmagazine.ro##.imghover.shadow
 www.blitz.ro##.mb-30.category--sidebar--social
 www.blitz.ro##[href="https://www.blitz.ro/cluj-napoca#company-feedback-popup"]
 www.blitz.ro##.media
+www.wcostream.tv###star-watch-on
+www.wcostream.tv##[href="/privacy-policy-and-terms"]
+support.google.com##footer >  >  > ul > li:nth-of-type(2)
+support.google.com##.footer-links-left-container > ul > li:nth-of-type(2) > [href*="//www.google.com/intl/en/privacy.html"] > font:nth-of-type(1) > font
+support.google.com###onebar-privacy-policy > li
+glovoapp.com##div.FooterColumn_column__c3Epo:nth-of-type(4)
+glovoapp.com##.DownloadAppContainer_wrapper__Cqcr2
+about.glovoapp.com##.md\:flex.border-opacity-75.border-b-gray-600.border-b.hidden
+about.glovoapp.com##.items-start.mt-10.md\:justify-between.md\:flex-row-reverse.text-gray-500.text-sm.py-10.border-t-gray-700.border-t.flex-col.max-w-7xl.flex.mx-auto
+about.glovoapp.com##.xl\:grid-cols-6.lg\:grid-cols-3.sm\:gap-8.sm\:grid-cols-2.gap-10.grid-cols-1.auto-rows-min.max-w-7xl.grid.mx-auto > div
+about.glovoapp.com##ul.space-y-5:nth-of-type(3) > li:nth-of-type(4)
+ondemand-ro.glovoapp.com##[href="https://glovoapp.com/docs/ro/legal/privacy/"]
+ondemand-ro.glovoapp.com##.MuiFab-primary.MuiFab-sizeSmall.MuiFab-root.MuiButtonBase-root
 www.vedeteblog.com##.list-unstyled > li.mb-2:nth-of-type(1)
 www.vedeteblog.com###LinkList14
 www.vedeteblog.com###HTML22

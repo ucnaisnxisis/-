@@ -394,6 +394,9 @@ www.primatv.ro##.footer-bottom
 www.primaplay.ro##.site-footer > .container-fluid
 primanews.ro##.d-md-block.d-none.social-icon
 primanews.ro##.site-footer
+www.howtogeek.com##.w-quick-action-sidebar
+www.howtogeek.com###threads
+www.howtogeek.com##.w-user-comment-footer-option
 www.medikatv.ro##[href="https://www.medikatv.ro/politica-de-confidentialitate/"]
 www.medikatv.ro##[href="https://www.medikatv.ro/politica-de-colectare-acord-cookie/"]
 www.medikatv.ro##.stacking_default.type_default.valign_top.mobiles-cols_1.tablets-cols_inherit.laptops-cols_inherit.cols_3.via_grid.wpb_row.g-cols > div.vc_column_container.wpb_column:nth-of-type(1)

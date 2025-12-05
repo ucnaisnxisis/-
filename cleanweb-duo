@@ -397,6 +397,33 @@ primanews.ro##.site-footer
 www.howtogeek.com##.w-quick-action-sidebar
 www.howtogeek.com###threads
 www.howtogeek.com##.w-user-comment-footer-option
+zona.store##.elementor-section-height-default.elementor-section-boxed.elementor-section-stretched.elementor-element-3909f79.elementor-element.elementor-top-section.elementor-section
+zona.store##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
+zona.store##[href="/politica-confidentialitate/"]
+zona.store##[href="/politica-cookies/"]
+zona.store##.et_element-top-level.et-content-toTop.et-content-dropdown.wishlist-type1.align-items-center.flex.et_b_header-wishlist.et_element
+mobile.telekom.ro##div.col-sm-6:nth-of-type(1)
+www.totalfirme.ro##.social
+business-review.eu##[href="https://business-review.eu/privacy-policy"]
+business-review.eu##[href="https://business-review.eu/cookie-policy"]
+business-review.eu##.social
+www.paginademedia.ro##a.dropdown-item:nth-of-type(3)
+www.paginademedia.ro##.text-center.box > [href]
+www.manpres.ro##[href="https://www.facebook.com/Manpres"]
+www.manpres.ro##[href="https://www.anunturi-in-ziare-centrale.ro"]
+www.tipografia-global-print.ro##[href="http://www.tipografia-global-print.ro/termeni-si-conditii/#cookies"]
+www.tipografia-global-print.ro##[href="https://www.tipografia-global-print.ro/termeni-si-conditii/#gdpr"]
+www.tipografia-global-print.ro##[href="https://www.tipografia-global-print.ro/#newsletter"]
+www.tipografia-global-print.ro##.media-body > p:nth-of-type(2)
+www.tipografia-global-print.ro###toTop
+www.tipografia-global-print.ro###newsletter
+www.skyscrapercity.com##.p-footer-linkList > li:nth-of-type(4)
+www.skyscrapercity.com##li.vertical-line:nth-of-type(9)
+www.skyscrapercity.com##li:nth-of-type(10)
+www.rbls.ro###evonomix
+www.rbls.ro##[href="https://www.rbls.ro/politica-cookies/"]
+www.rbls.ro##[href="https://www.rbls.ro/politica-de-confidentialitate/"]
+www.linkedin.com##.third-party-join__container
 www.medikatv.ro##[href="https://www.medikatv.ro/politica-de-confidentialitate/"]
 www.medikatv.ro##[href="https://www.medikatv.ro/politica-de-colectare-acord-cookie/"]
 www.medikatv.ro##.stacking_default.type_default.valign_top.mobiles-cols_1.tablets-cols_inherit.laptops-cols_inherit.cols_3.via_grid.wpb_row.g-cols > div.vc_column_container.wpb_column:nth-of-type(1)

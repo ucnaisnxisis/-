@@ -448,6 +448,43 @@ www.newscientist.com##li.SectionNavigation__ListItem:nth-of-type(3)
 www.govloop.com##[href="https://info.govloop.com/ccpa-govloop-request"]
 www.govloop.com##[href="https://www.govloop.com/privacy-policy/"]
 www.mdpi.com##[href="/about/payment"]
+www.filmboxplus.com##[href="/ro/privacy/"]
+www.filmboxplus.com##[href="/ro/cookies/"]
+www.filmboxplus.com##a.\!inline-block
+www.livesoccertv.com##.hide-mobile.fsocial
+www.manutd.com##.footer__menu__links > ul > li:nth-of-type(1)
+www.manutd.com##[href="https://www.manutd.com/en/Help/Privacy-Policy"]
+www.goal.com##[href="https://www.footballco.com/advertise"]
+www.goal.com##[href="/en-us/legal/privacy-policy"]
+www.goal.com##[href^="https://play.google.com/store/apps/details"]
+www.goal.com##section.elements_section___VgY4:nth-of-type(4)
+www.sportingnews.com###new-footer-layout
+sportscriber.com##[href="https://sportscriber.com/privacy-policy/"]
+sportscriber.com##.top
+sportscriber.com##.sgpb-popup-overlay.sgpb-popup-overlay-12683.sgpb-theme-6-overlay
+athlonsports.com##.styles_siteFooterTop__d2czb
+athlonsports.com##.styles_siteFooterLower___RmrO
+www.livesporttv.com##.footer-menu > li:nth-of-type(3)
+manchesterherald.co.uk##div.wp-block-column-is-layout-flow.is-layout-flow.wp-block-column
+manchesterherald.co.uk##[href="https://manchesterherald.co.uk/privacy-policy/"]
+worldsoccertalk.com##a.cursor-pointer.p-\[10px\]
+worldsoccertalk.com##.md\:top-\[55vh\].md\:top-\[45vh\].md\:right-0.md\:fixed.relative
+worldsoccertalk.com##div.justify-center.items-center.flex:nth-of-type(2)
+worldsoccertalk.com##[href="/privacy/"]
+worldsoccertalk.com##[href="/ad-choices/"]
+worldsoccertalk.com##.duration-300.ease-in-out.shadow-\[0_-2px_2px_0_\#0000001a\].h-\[70px\].has-\[\#ActivateBottomStickyNewsBlock\:checked\]\:bottom-\[-70px\].w-full.bg-white.z-\[999\].bottom-0.fixed.md\:block.hidden
+www.roku.com##.container-fluid.footer-section-legal
+www.bleachernation.com##[href="https://www.bleachernation.com/privacy-policy-and-terms-of-use/"]
+www.bleachernation.com##.subscribe-main
+thestreamable.com##.list-style-none
+thestreamable.com##.mt-sm-0.mt-2.col-sm-4.col-12.float-left
+khelnow.com##.mui-eyj16x.MuiBox-root
+khelnow.com##.mui-iur4up.MuiFab-default.MuiFab-sizeMedium.MuiFab-circular.MuiFab-root.MuiButtonBase-root
+khelnow.com##.mui-9r0urq.MuiBox-root.slide-in-right
+khelnow.com##.mui-1lih9it.MuiTypography-caption.MuiTypography-root
+khelnow.com##div.mui-njoo4s.MuiBox-root
+khelnow.com##.mui-1imvgds.MuiBox-root
+khelnow.com##.mui-r8upn7.MuiButton-textSizeMedium.MuiButton-sizeMedium.MuiButton-textPrimary.MuiButton-text.MuiButton-root.MuiButtonBase-root
 www.tvfanatic.com##[href="https://www.tvfanatic.com/privacy-policy/"]
 www.tvfanatic.com##[href^="https://app.termly.io/policy-viewer/policy.html"]
 www.anitrendz.com##li:nth-of-type(2) > .AtFooter_darkColor__efT7J

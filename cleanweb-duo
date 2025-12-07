@@ -384,6 +384,8 @@ www.digifm.ro##.youtube.com
 www.digifm.ro##.facebook.com
 www.digifm.ro##.social-item
 www.digifm.ro##.social
+github.com##cookie-consent-link
+github.com##li:nth-of-type(2)
 18.238.132.123
 www.connect.ro##.footer-reg__social
 luxury.ro##[href="https://luxury.ro/politica-de-confidentialitate/"]

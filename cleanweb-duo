@@ -576,6 +576,10 @@ www.garbo.io##a.footer-link:nth-of-type(5)
 www.garbo.io##.footer-newsletter-bx
 vodo.ro##[href="https://vodo.ro/content/Politica-de-Cookies"]
 vodo.ro##.block
+www.notebookcheck.net##.nbc2journalist_user_socialmedia
+www.patreon.com##.jWKPUa.sc-810246a0-4
+planefinder.net###open-app-container
+planefinder.net##.tw-px-\[16px\].tw-justify-between.tw-flex.tw-mt-\[40px\]
 www2.hm.com##.c92db7
 www2.hm.com##li.da8037:nth-of-type(4)
 www2.hm.com##li.da8037:nth-of-type(7)

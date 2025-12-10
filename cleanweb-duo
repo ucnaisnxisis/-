@@ -387,6 +387,104 @@ www.digifm.ro##.social
 github.com##cookie-consent-link
 github.com##li:nth-of-type(2)
 18.238.132.123
+vp.net##.social-links
+vp.net##[href="/l/en-US/privacy"]
+protonvpn.com##.md\:space-y-12.space-y-6 > .gap-2.flex-wrap.flex
+www.digitalcitizen.ro##.flex-wrap.flex-row.d-flex.nsl-art-container
+www.digitalcitizen.ro##a.col-auto:nth-of-type(4)
+www.digitalcitizen.ro###grm
+www.digitalcitizen.ro##.hidden
+nordvpn.com##.sm\:block.hidden
+ro.vpnmentor.com###scroll
+ro.vpnmentor.com##.social
+ro.vpnmentor.com##[href="https://www.vpnmentor.com/dmca-policy/"]
+www.vpn.com##.brave_popup__step__overlay--closable.brave_popup__step__overlay
+www.vpn.com###privacy_href
+www.independent.co.uk##li.jZKlzH.sc-d5v47r-6:nth-of-type(2)
+www.independent.co.uk###header-laptop-subscribe-button
+www.independent.co.uk###privacy-settings
+www.independent.co.uk##li.lOELE.sc-139f79w-3:nth-of-type(2) > .ljPwHI.sc-2grh3o-0 > li.sc-2grh3o-1:nth-of-type(4)
+www.independent.co.uk##.dfnkHX.sc-97b93f-0
+www.independent.co.uk##.dfRwPg.sc-11l8vmd-2.kSUTGN.sc-15ugjr-1.kLAKry.sc-17n088r-0
+www.hotspotshield.com##.mar-mwi-t
+www.hotspotshield.com###pango_banner
+openvpn.net###footer_your-privacy-settings_btn
+openvpn.net###footer_privacy-policy_btn
+openvpn.net##.XeRoY.sc-jOTjWM
+www.vpnmentor.com###scroll
+www.vpnmentor.com##.social
+www.vpnmentor.com##[href="https://www.vpnmentor.com/privacy-policy/"]
+www.vpnmentor.com##[href="https://www.vpnmentor.com/dmca-policy/"]
+www.cyberghostvpn.com##.wrap-snapengage.snap-engage-btn
+www.touchvpn.net##.footer
+ro.wizcase.com##[href="https://ro.wizcase.com/dmca-policy/"]
+ro.wizcase.com##.call-to-action-disclosure.call-to-action
+veepn.com###support-chat-button
+freevpnplanet.com##.base-modal__layout
+freevpnplanet.com##.page-footer__pre-bottom
+freevpnplanet.com##div:nth-of-type(7)
+privatevpn.com##.flex.mt-2
+privatevpn.com##.md\:mt-0.text-white.font-bold.text-xl.mt-5
+privatevpn.com##.hover\:text-privatePurple-wisteria.text-white.mt-5.termly-display-preferences
+privatevpn.com##nav.text-white:nth-of-type(2) > div:nth-of-type(6)
+www.bitdefender.com##[href="https://www.bitdefender.com/en-us/site/view/legal-privacy-policy-for-home-users-solutions"]
+www.bitdefender.com##.link-wrap__copyright-bottom-link.usercentrics-privacy
+www.bitdefender.com##li.link-wrap__item:nth-of-type(2)
+www.bitdefender.com##.second-row__left-col
+surfshark.com##.items-social
+surfshark.com##._PGlyA
+www.urban-vpn.com##[href="https://www.urban-vpn.com/about-us/privacy/"]
+www.urban-vpn.com##[href="https://www.urban-vpn.com/about-us/ccpa-notice/"]
+windscribe.com##.css-10yhurl
+windscribe.com##.css-2g712p > a.css-ovpfyi:nth-of-type(2)
+www.privateinternetaccess.com##.pr-md-5.col-md-4.col-12
+proprivacy.com##nav > [href="https://proprivacy.com/privacy"]
+proprivacy.com##[href="https://proprivacy.com/cookies-policy"]
+proprivacy.com##[href="https://proprivacy.com/privacy-service/comparison"]
+www.flyvpn.com###j-global-cookie-privacy-notice
+www.flyvpn.com##.col-md-12.col-lg-4
+www.flyvpn.com##[href="/privacy"]
+www.kaspersky.com##.FooterBBB_mainContainer__MZNAN
+www.eset.com###content-flsocial
+hola.org##[href="/legal/privacy"]
+hola.org##[href="/legal/dmca"]
+www.ivpn.net##[href="/en/privacy/"]
+www.ivpn.net##div.footer__column:nth-of-type(5)
+www.v1vpn.com##.gap-12.lg\:grid-cols-4.md\:grid-cols-2.grid-cols-1.grid > div:nth-of-type(3)
+www.safetydetectives.com##.post-comment-like
+www.cnbc.com##[href="/select/disclosures/"]
+www.cnbc.com##.SelectFooter-styles-select-versantPrivacy--v3ST_
+www.cnbc.com##.ExpandedMenu-styles-select-menuSelectMore--Kjbi6 > div:nth-of-type(5)
+www.cnbc.com##div.ExpandedMenu-styles-select-selectMoreInfoSection--tsIg_:nth-of-type(2)
+xvpn.io##.social-platform-list
+xvpn.io##.footer-about-xvpn
+www.highspeedinternet.com##.wpb_content_element.wpb_text_column
+www.engadget.com##.md\:mt-0.mt-8
+www.engadget.com##.gap-x-1.flex-wrap.flex
+www.engadget.com##.privacy-link-privacy-settings.text-\[\#757c84\].leading-\[18px\].font-\[400\].text-\[13px\].gap-\[2px\].inline-flex.mr-\[10px\]
+www.engadget.com##a.text-\[\#757c84\].leading-\[18px\].font-\[400\].text-\[13px\]:nth-of-type(5)
+www.engadget.com##a.text-\[\#757c84\].leading-\[18px\].font-\[400\].text-\[13px\]:nth-of-type(6)
+www.engadget.com##div:nth-of-type(1) > .gap-\[15px\].items-start.flex-col.w-\[150px\].flex > div:nth-of-type(2)
+www.engadget.com##div:nth-of-type(1) > .gap-\[15px\].items-start.flex-col.w-\[150px\].flex > div:nth-of-type(3)
+www.forbes.com##.subscribe-button
+www.forbes.com##[href="http://www.forbesmedia.com/"]
+www.forbes.com##.footer-links > li:nth-of-type(5)
+www.forbes.com##[href^="https://www.forbes.com/consent/editprivacy/"]
+www.forbes.com##[href^="https://preferences-mgr.truste.com/"]
+www.forbes.com##[href="https://www.forbes.com/advisor/privacy-policy/"]
+www.forbes.com##.header-news-letter-wrap
+www.forbes.com###top-level-menu-item-40
+www.forbes.com###top-level-menu-item-37
+www.forbes.com###top-level-menu-item-29
+www.forbes.com###top-level-menu-item-8
+www.fortinet.com##[href="/corporate/about-us/privacy"]
+www.fortinet.com##[href="/corporate/about-us/privacy#npr-ca"]
+www.fortinet.com##.C803-Footer-Social-Channels
+www.fortinet.com##.C802-Footer-Newsletter-Form
+www.totalvpn.com##.default-footer__social
+www.totalvpn.com##div.medium-4.large-3.small-12.default-footer__link-block:nth-of-type(3) > .default-footer__link-block__inner > .default-footer__link-block__links > div:nth-of-type(3)
+vpnoverview.com##.footer__colophon__socials
+vpnoverview.com##[href="https://vpnoverview.com/cookie-statement/"]
 www.paginadepsihologie.ro##.col-4.col.span_1_of_4.footer-box
 www.paginadepsihologie.ro###message-purchased
 www.paginadepsihologie.ro##.gpsihol-7.gpsihol

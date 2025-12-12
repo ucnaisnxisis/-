@@ -420,6 +420,34 @@ www.antenasatelor.ro##.app-links
 www.puterea.ro##.rounded-100.bg-dark-t1.sm\:padding-right-15.video
 www.puterea.ro##.single__social
 ca-ra.org##.scrollup
+surprize.lidl.ro##.py-5.text-center.row-cols-1.socials-container.row
+surprize.lidl.ro##.mt-0.container-fluid
+surprize.lidl.ro##a.lidl-text-blue:nth-of-type(2)
+surprize.lidl.ro##a.lidl-text-blue:nth-of-type(3)
+surprize.lidl.ro##.px-0.order-md-1.text-md-start.text-center.col-md-8.col-12 > a.lidl-text-blue:nth-of-type(1)
+surprize.lidl.ro##.mb-md-0.mb-5.order-md-2.text-md-end.text-center.col-md-4.col-12
+surprize.lidl.ro##.mb-5.justify-content-end.d-flex.list-unstyled
+www.bucataria.lidl.ro##.mdl\:order-8.gap-6.flex-col.flex.order-10.lg\:col-start-1.mdl\:col-start-1.lg\:col-span-6.mdl\:col-span-6.col-span-12
+www.bucataria.lidl.ro##.null.mdl\:order-10.gap-6.flex-col.flex.order-8.lg\:col-start-7.mdl\:col-start-7.lg\:col-span-6.mdl\:col-span-6.col-span-12
+www.bucataria.lidl.ro##.gap-6.justify-center.flex-wrap.flex > a.hover\:underline.active\:underline.focus-within\:underline:nth-of-type(3)
+www.bucataria.lidl.ro##.gap-6.justify-center.flex-wrap.flex > a.hover\:underline.active\:underline.focus-within\:underline:nth-of-type(4) > .text-lidl-color-grayscale_darkest.lg\:font-small_1-base-desktop.font-small_1-base-mobile
+www.bucataria.lidl.ro##.mdl\:pr-8.mdl\:gap-6.mdl\:flex.mdl\:mt-0.gap-2.flex-col.hidden.order-5.mdl\:col-start-7.mdl\:col-span-3 > .gap-4.flex-col.flex > a.hover\:underline.active\:underline.focus-within\:underline:nth-of-type(2)
+www.bucataria.lidl.ro##.mdl\:pr-8.mdl\:gap-6.mdl\:flex.mdl\:mt-0.gap-2.flex-col.hidden.order-5.mdl\:col-start-7.mdl\:col-span-3 > .gap-4.flex-col.flex > a.hover\:underline.active\:underline.focus-within\:underline:nth-of-type(3)
+www.bucataria.lidl.ro##.mdl\:pr-8.mdl\:gap-6.mdl\:mt-0.gap-2.flex-col.flex.mt-4.order-6.mdl\:col-start-10.mdp\:col-start-3.mdl\:col-span-3.mdp\:col-span-8.col-span-12
+www.csid.ro##.relative.single__content-wrapper > div:nth-of-type(3)
+www.csid.ro##.single__content > div.mg-top-20
+ofertecatalog.ro###xtoTop
+ofertecatalog.ro##.col-md-12
+ofertecatalog.ro##.listaprofsoc
+ofertecatalog.ro##.oneword-btn
+ofertecatalog.ro##.xsingle-xoneword
+www.catalog-az.ro##a.hide:nth-of-type(3)
+www.redouble.ro###bottom-footer
+www.banatulazi.ro##[href="https://www.banatulazi.ro/politica-de-confidentialitate/"]
+www.banatulazi.ro##.textwidget [href="https://iuliustown.ro/ro/fidelizare-clienti/fidelity-by-iulius-mall-1850"]
+retim.ro##[href="https://retim.ro/utile-timis/politica-privind-prelucrarea-datelor-cu-caracter-personal/"]
+retim.ro##[href="https://retim.ro/politica-privind-fisierele-cookies/"]
+www.supermercato.ro##.social.col
 www.johnsonsbaby.com##li:nth-of-type(6)
 www.johnsonsbaby.com##li:nth-of-type(5)
 www.johnsonsbaby.com##li:nth-of-type(7)

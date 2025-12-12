@@ -402,6 +402,43 @@ www.imobiliare.ro##.md\:py-2.md\:px-3.p-2.bg-opacity-70.bg-black.rounded-2xl.jus
 www.imobiliare.ro##.\!flex.fixed.lg\:\!hidden.space-x-2.justify-center.w-full.flex.z-40.bottom-8.pointer-events-none.hidden
 www.imobiliare.ro##.pb-3.rounded.w-full.md\:pt-0.pt-8.px-0
 www.imobiliare.ro##.search-listing-open-whatsapp-modal
+www.landrover.ro##.section-white.footer-secondary-nav.section
+www.director-web.ro###Banner\ Mare\ jos
+www.dedeman.ro##.service-banners-block
+dedesign.dedeman.ro##button.font-medium.leading-6.text-sm.\!pl-6.\!pr-4.py-2.justify-between.cursor-pointer.w-full.tablet\:text-base.tablet\:py-4.font-pop.has-\[\>svg\]\:px-3.disabled\:bg-grey-200.active\:bg-orange-600.hover\:bg-orange-400.text-white.rounded-full.bg-orange-500.aria-invalid\:border-destructive.dark\:aria-invalid\:ring-destructive\/40.aria-invalid\:ring-destructive\/20.focus-visible\:ring-\[3px\].focus-visible\:ring-ring\/50.focus-visible\:border-ring.outline-none.\[\&_svg\]\:shrink-0.\[\&_svg\:not\(\[class\*\=\'size-\'\]\)\]\:size-4.\[\&_svg\]\:pointer-events-none.disabled\:opacity-50.disabled\:pointer-events-none.transition-\[color\,box-shadow\].whitespace-nowrap.gap-2.items-center.inline-flex
+dedesign.dedeman.ro##.justify-between.laptop\:flex > div:nth-of-type(2)
+dedesign.dedeman.ro##.right-3.-top-\[44px\].absolute.p-2.z-20
+dedesign.dedeman.ro##div.w-full.tablet\:w-\[calc\(50\%-20px\)\].laptop\:max-w-\[215px\].laptop\:w-\[calc\(33\%-27px\)\]:nth-of-type(3) > .max-h-none.ease-in-out.duration-300.transition-all.overflow-hidden > div.hover\:text-white.font-normal.leading-5.text-sm.py-2.active\:bottom-.font-pop.active\:text-secondary.active\:inset-ring-secondary.text-grey-100:nth-of-type(3)
+dedesign.dedeman.ro##div.w-full.tablet\:w-\[calc\(50\%-20px\)\].laptop\:max-w-\[215px\].laptop\:w-\[calc\(33\%-27px\)\]:nth-of-type(3)
+dedesign.dedeman.ro##.py-10.relative.bg-primary
+www.ziare-reviste.ro##[href="https://www.facebook.com/ziare/"]
+www.ziare-reviste.ro##.bg1_
+www.ziare-reviste.ro##[href="https://www.ziare-reviste.ro/pagini/pub"]
+www.ziare-reviste.ro##[href="https://www.ziare-reviste.ro/pagini/cookie"]
+www.ziare-reviste.ro##[href="#top"]
+www.ziare-reviste.ro##center > div > font
+www.ziare-az.ro##td:nth-of-type(5)
+www.director-web.ro###logo
+www.anahotels.ro##.footer-newsletter-js-form.newsletter-1step-form.m-footer-base_2--bottomForm
+www.anahotels.ro##.footer-social-container
+www.anahotels.ro##[href="/politica-de-confidențialitate"]
+www.visa.co.uk##.vs-footer-social-container
+www.visa.co.uk##div.vs-col-lg:nth-of-type(5)
+www.tranzactii-imobiliare.ro##[href="#top"]
+www.tranzactii-imobiliare.ro##div:nth-of-type(5)
+www.tranzactii-imobiliare.ro##td > [href^="/"]
+www.tranzactii-imobiliare.ro###banner_right
+www.tranzactii-imobiliare.ro##div > div > [href^="https://www.tranzactii-imobiliare.ro/"]
+www.tranzactii-imobiliare.ro##tr:nth-of-type(9) > td > div:nth-of-type(1)
+www.conadi.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-hidden-mobile.elementor-icon-list--layout-inline.elementor-element-3bb3a57.elementor-element > .elementor-widget-container > .elementor-inline-items.elementor-icon-list-items
+www.conadi.ro##.elementor-widget-heading.elementor-widget.elementor-element-b1c94c7.elementor-element
+www.conadi.ro##.elementor-form
+www.ziarereviste.ro##table:nth-of-type(1) > tbody > tr > td:nth-of-type(1) > table:nth-of-type(4)
+www.ziarereviste.ro##table:nth-of-type(5)
+www.ziarereviste.ro##body > table:nth-of-type(1) > tbody > tr > td:nth-of-type(5)
+www.ziarereviste.ro##table:nth-of-type(1) > tbody > tr > td:nth-of-type(1) > table:nth-of-type(1) > tbody > tr:nth-of-type(1)
+www.ziarereviste.ro##body > table > tbody > tr > td > div
+www.ziarereviste.ro##div:nth-of-type(1) > table:nth-of-type(1) > tbody > tr > td:nth-of-type(2)
 usr.ro##.border-shade3.border-t.z-50.p-4.text-white.bg-shade1.right-0.left-0.bottom-0.fixed
 usr.ro##.asw-container
 usr.ro##.pr-2.lg\:max-w-\[240px\].sm\:max-w-\[33\%\].w-full.lg\:gap-6.gap-3.flex-col.flex

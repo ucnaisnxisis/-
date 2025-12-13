@@ -411,6 +411,20 @@ dedesign.dedeman.ro##.right-3.-top-\[44px\].absolute.p-2.z-20
 dedesign.dedeman.ro##div.w-full.tablet\:w-\[calc\(50\%-20px\)\].laptop\:max-w-\[215px\].laptop\:w-\[calc\(33\%-27px\)\]:nth-of-type(3) > .max-h-none.ease-in-out.duration-300.transition-all.overflow-hidden > div.hover\:text-white.font-normal.leading-5.text-sm.py-2.active\:bottom-.font-pop.active\:text-secondary.active\:inset-ring-secondary.text-grey-100:nth-of-type(3)
 dedesign.dedeman.ro##div.w-full.tablet\:w-\[calc\(50\%-20px\)\].laptop\:max-w-\[215px\].laptop\:w-\[calc\(33\%-27px\)\]:nth-of-type(3)
 dedesign.dedeman.ro##.py-10.relative.bg-primary
+tchibo.ro##.empty\:hidden.footer__aside
+tchibo.ro##.shopify-app-block.shopify-block
+tchibo.ro##.text-center.gap-4.v-stack.newsletter-drawer__content
+tchibo.ro##.loloyal-on-mobile.loloyal-launcher-wrapper.boom-launcher
+tchibo.ro##div.footer__block--menu.footer__block:nth-of-type(3) > .gap-3.v-stack > li:nth-of-type(1)
+tchibo.ro##.gap-6.v-stack
+www.espressocafe.ro##.footer-newsletter-02.top-footer-wrapper
+www.espressocafe.ro##[href="https://www.espressocafe.ro/confidentialitate"]
+www.espressocafe.ro##[href="https://www.espressocafe.ro/cookies"]
+www.espressocafe.ro##[href="https://www.espressocafe.ro/wishlist/"]
+www.espressocafe.ro###cdz-mobile-menu > .buton-mobil
+dev-vpn-test1.getadblock.com##.socialIcons
+blokada.org##li.nav-item:nth-of-type(4)
+blokada.org##.my-md.align-items-center.row-grid.row
 www.ziare-reviste.ro##[href="https://www.facebook.com/ziare/"]
 www.ziare-reviste.ro##.bg1_
 www.ziare-reviste.ro##[href="https://www.ziare-reviste.ro/pagini/pub"]

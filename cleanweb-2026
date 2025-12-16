@@ -607,3 +607,125 @@
 ##.BackToTop--visible.BackToTop
 ###BackToTop--visible.BackToTop
 ##BackToTop--visible.BackToTop
+
+##.app-icons
+##app-icons
+###app-icons
+##.newsletter-subscribe-email
+###newsletter-subscribe-email
+###newsletter-subscribe
+##.newsletter-subscribe
+###download-app-card.card
+##.download-app-card.card
+##download-app-card.card
+##[href="/terms"]
+##links
+###links
+##.links
+###w-follow-btn
+##w-follow-btn
+###w-follow-btn
+##.w-like-btn
+###w-like-btn
+##w-like-btn
+##[href="/policies/privacy-policy"]
+##.marketing-content.marketing-HEADER_SUBSCRIPTION_MOBILE
+##.ca-privacy
+##.de-privacy
+##.us-privacy
+##.eu-privacy
+###ca-privacy
+###de-privacy
+###us-privacy
+###eu-privacy
+##ca-privacy
+##de-privacy
+##us-privacy
+##eu-privacy
+
+m.youtube.com##ytm-slim-video-action-bar-renderer
+m.youtube.com##.cbox.slim-owner-subscribe-button
+m.youtube.com##.YtmCommentsHeaderRendererHost
+m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(1)
+m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(2)
+m.youtube.com##.YtmCommentRendererMenu.icon-button
+m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost
+m.youtube.com##.YtmCompactMediaItemMenu
+m.youtube.com##ytm-menu-item:nth-of-type(3)
+m.youtube.com##ytm-menu-item:nth-of-type(1)
+m.youtube.com##ytm-menu-item:nth-of-type(5)
+m.youtube.com##ytm-menu-item:nth-of-type(4)
+m.youtube.com##ytm-setting-category-collection-renderer.ytmSettingCategoryCollectionRendererHost:nth-of-type(2)
+m.youtube.com##ytm-pivot-bar-item-renderer:nth-of-type(3)
+m.youtube.com##.no-shadow.modernized-nudge.no-trim
+m.youtube.com##.navigationLayoutNsFooterWrapper
+www.youtube.com##a.lb-footer__minimal-link.lb-font--no-crop.lb-font-footnote:nth-of-type(4)
+www.youtube.com###id-panel-2 > .lb-expansion-panel__surface-content > a.lb-footer__standard-menu-link.lb-font-footnote:nth-of-type(2)
+www.youtube.com##.lb-footer__social.lb-footer__section
+www.youtube.com##li.lb-header__subnav-item-wrapper:nth-of-type(7)
+m.youtube.com##ytm-video-with-context-renderer.adaptive-feed-item.item > ytm-media-item > .details > .cbox.media-item-info > .media-item-menu > .yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##.feed-nudge-wrapper
+m.youtube.com##.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--text.yt-spec-button-shape-next
+m.youtube.com##.yt-spec-button-shape-with-label--is-overlay.yt-spec-button-shape-with-label
+m.youtube.com##.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+m.youtube.com##.mobile-topbar-header-sign-in-button
+www.youtube.com##a.lb-font--no-crop.lb-font-weight-700.lb-font-headline-1.yth-quicklinks__label:nth-of-type(7)
+blog.youtube##li.yt-footer__nav-section-nav-item:nth-of-type(4)
+blog.youtube###item-nav-3 > .yt-accordion__body.yt-footer__info-section-accordion-body > .yt-footer__info-section-list > li.yt-footer__info-section-list-item:nth-of-type(1)
+blog.youtube###item-top-2
+m.youtube.com##.yt-spec-dialog-layout__dialog-layout-content
+www.google.com##.uQ249e
+www.google.com##.Lt2Ned.As6eLe.M6hT6.fbar > div > a.Fx4vi:nth-of-type(1)
+www.google.com##.JQyAhb.footer__homepage-mobile-settings-row-above-fold.fbar > a.Fx4vi:nth-of-type(2)
+www.google.com##.gb_Ed.gb_Od.gb_Wd.gb_Va
+www.google.com##[href^="/history/privacyadvisor/search/unauth"]
+www.google.com##[href^="/history/optout"]
+www.google.com##g-menu-item.Zt0a5e.EpPYLd:nth-of-type(6)
+www.google.com##[href^="https://accounts.google.com/ServiceLogin"]
+www.google.com##div.MpRg1b:nth-of-type(2)
+www.google.com##a.GHvYu.sjVJQd:nth-of-type(2)
+www.google.com##span.GHvYu.sjVJQd
+www.google.com##.pHx7ld > .kM7Sgc.cd29Sd.xdVOWd.efwPxe.MjJqGe.BZQEXe
+www.google.com##.VfL2Y.mWcf0e
+www.google.com##.OKZdtc
+2gdpr.com##[href="/tos"]
+www.scamadviser.com##.__link.hover-white.text-transform-none.text-white.btn-download.btn
+www.ubuy.com.ro##.col-12.col-lg-6.col-sm-12.col-md-12 > .footer-menu > li:nth-of-type(2)
+m.olx.ro##.css-11jn7r
+m.olx.ro##.css-pclgxh
+m.olx.ro##.css-89dm6x
+m.olx.ro##.css-2itv6r
+m.olx.ro##.css-1sdh5kv
+m.olx.ro##a.css-yfbjg2:nth-of-type(2)
+m.olx.ro##.css-1gl0wmu
+www.ranker.com##a.footer_item__821Gq:nth-of-type(2)
+www.ranker.com##a.footer_item__821Gq:nth-of-type(5)
+www.ranker.com##.undefined.JoinButton_dietMode__pKVZo.JoinButton_main__dnxMM
+www.ranker.com##.AboutRankerBlock_socialContainerVar2___HWEv
+www.ranker.com##a.HamburgerMenuButton_subItem__hK3Bh.HamburgerMenuButton_main__799eU:nth-of-type(6)
+anilist.co##section:nth-of-type(3)
+anilist.co##[href="/forum/thread/2340"]
+www.cbr.com##.w-user-comment-footer-option
+www.cbr.com##.social-media
+www.cbr.com##.align-right > li:nth-of-type(2)
+www.cbr.com##.align-right
+www.cbr.com##div.follow-container.no-label.small.circle.action-btn.btn-fab
+www.cbr.com##.not-liked.i-thumb-on.icon-xlarge.icon.main-icon
+www.ducray.com##.is-visible.js-immersive-modal.c-immersive-modal
+www.ducray.com##.footer-menus__wrap
+www.go4it.ro##.single__wrapper > div:nth-of-type(3)
+www.madonna.com##div.animate--slide-in.scroll-trigger.footer-block--menu.grid__item.footer-block:nth-of-type(3) > .list-unstyled.footer-block__details-content
+duckduckgo.com##.dCHheX5lAQyg9or3mxhu.gz5QTm26P3BLunFHh2f4.RX0c2wqqe6LanzrjR21x
+duckduckgo.com##.RX0c2wqqe6LanzrjR21x
+clickpentrufemei.ro##.svelte-1b5k2iu.legal
+clickpentrufemei.ro##.svelte-1b5k2iu.other
+clickpentrufemei.ro##li.svelte-7zn9i8.subItem:nth-of-type(2)
+clickpentrufemei.ro##li.svelte-7zn9i8.subItem:nth-of-type(4)
+www.britannica.com##.header-topic-britannica-ai-module.tw\:sm\:block
+pagesix.com##[href="https://pagesix.com/privacy-notice/"]
+pagesix.com###menu-link-36
+pagesix.com###menu-link-38
+pagesix.com##.custom-html-widget.textwidget > div > p > [href]
+pagesix.com###menu-link-35
+pagesix.com###menu-link-37
+pagesix.com###menu-link-34

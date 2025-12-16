@@ -838,6 +838,7 @@ www.youtube.com##.yt-lockup-metadata-view-model__menu-button
 www.youtube.com##.ytd-comment-action-buttons-renderer.style-scope
 www.youtube.com##.ytd-comment-engagement-bar.style-scope
 www.youtube.com##.ytFlexibleActionsViewModelAction
+www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
 m.youtube.com##.YtmCommentRendererMenu.icon-button
 m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost
 m.youtube.com##.YtmCompactMediaItemMenu

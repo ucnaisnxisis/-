@@ -829,6 +829,22 @@
 ###consent-text
 ##.consent-text
 ##consent-text
+##.active.strip
+###active.strip
+##active.strip
+##.hide-sm.widget
+###hide-sm.widget
+##hide-sm.widget
+##.footer-top-content-nav-link.ot-sdk-show-settings
+###footer-top-content-nav-link.ot-sdk-show-settings
+##footer-top-content-nav-link.ot-sdk-show-settings
+##.footer-content-social
+###footer-content-social
+##footer-content-social
+##[href="/stiri/politica-de-confidentialitate/"]
+##.app-download-btns
+###app-download-btns
+##app-download-btns
 
 m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
@@ -1100,6 +1116,34 @@ duckduckgo.com##.nav-menu__feedback
 duckduckgo.com##[href="https://duckduckgo.com/privacy"]
 duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(1)
 duckduckgo.com##div.mThctpERmVBzYPx3k1EY:nth-of-type(2) > .cTi0vgftsr27DcxzlHLn > li:nth-of-type(2)
+www.filmnow.ro##a.footer-top-nav-link:nth-of-type(5)
+www.digi-animalworld.tv##a.footer-top-nav-link:nth-of-type(2)
+www.digi-world.tv##a.footer-top-nav-link:nth-of-type(5)
+www.digisport.ro##.hide-sm.widget
+www.digisport.ro##a.footer-top-content-nav-link:nth-of-type(3)
+www.digisport.ro##.footer-top-content-nav-link.ot-sdk-show-settings
+www.digisport.ro##.footer-content-social
+www.digisport.ro##a.footer-top-content-nav-link:nth-of-type(2)
+www.digi.ro##[href="https://www.digi.ro/confidentialitate"]
+www.digi.ro##[href="https://www.digi.ro/politica-de-confidentialitate"]
+www.digi.ro##[href="https://www.digi.ro/protectie-date"]
+www.profm.ro##a.footer-nav-link:nth-of-type(7)
+soundcloud.com##.sc-button-responsive.sc-button-medium.sc-button.sc-button-secondary.sc-button-like
+soundcloud.com##.sc-button-responsive.sc-button-medium.sc-button.sc-button-secondary.sc-button-repost
+soundcloud.com##.sc-button-report.sc-button-tertiary.sc-button-medium.moreActions__button.sc-button
+soundcloud.com##.sc-text-secondary.sc-ministats-likes.sc-ministats-medium.sc-ministats
+soundcloud.com##ul.sc-list-nostyle.headerMenu__list:nth-of-type(2) > li:nth-of-type(1)
+www.meteoblue.com##[href="//content.meteoblue.com/en/about-us/legal/privacy"]
+duckduckgo.com##.AlPVsxUsFt3bnuOvg6hI.wZ4JdaHxSAhGy1HoNVja.ZvcE0ToM7Sfi6iwk7KiJ
+duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(2)
+www.reddit.com##.justify-end.items-center.flex.gap-xs.ps-lg
+www.reddit.com##.pl-xs.items-center.flex
+www.reddit.com##award-button.s\:block.hidden
+www.reddit.com##.connected.relative.share-dropdown-menu
+www.reddit.com##.nd\:hidden.block
+www.reddit.com##faceplate-tracker:nth-of-type(2)
+www.reddit.com##faceplate-tracker:nth-of-type(14) > .mt-0.list-none.relative
+www.reddit.com##.items-center.xs\:mt-0.mt-xs.xs\:w-auto.w-100.flex
 substack.com##.flex-auto-j3S2WA.pc-reset.pc-alignItems-center.pc-justifyContent-center.pc-height-20.pc-width-20.pc-display-flex.pencraft
 substack.com##.size_xs-Q62jAa.priority_tertiary-accent-_S602l.buttonStyle-r7yGCK.buttonText-X0uSmG.buttonBase-GK1x3M.pc-reset.pencraft
 substack.com##.size_sm-G3LciD.priority_primary-RfbeYt.buttonStyle-r7yGCK.buttonText-X0uSmG.buttonBase-GK1x3M.pc-reset.pencraft

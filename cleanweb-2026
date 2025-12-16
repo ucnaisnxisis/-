@@ -817,6 +817,17 @@
 ##us-privacy
 ##eu-privacy
 
+www.youtube.com###actions
+www.youtube.com###subscribe-button-shape
+www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
+www.youtube.com##.yt-lockup-metadata-view-model__menu-button
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)
+www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(4)
 m.youtube.com##ytm-slim-video-action-bar-renderer
 m.youtube.com##.cbox.slim-owner-subscribe-button
 m.youtube.com##.YtmCommentsHeaderRendererHost

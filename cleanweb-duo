@@ -4160,6 +4160,20 @@ unupetrotus.ro###tdi_12
 actualitateaprahoveana.ro##.col-lg-4.col-md-12.col-sm.sidebar-r.t4-col > .module.t4-module
 actualitateaprahoveana.ro##ul:nth-of-type(2)
 transilvania365.ro##[href="https://transilvania365.ro/category/anunturi/"]
+www.reverso.net##.social
+www.reverso.net##[href^="https://www.reverso.net/privacy.aspx"]
+www.reverso.net##[href="javascript:Didomi.preferences.show()"]
+www.reverso.net##.premium-button
+lingvanex.com##[href="https://lingvanex.com/cookies-policy/"]
+lingvanex.com##li > [href="https://lingvanex.com/privacy-policy/"]
+lingvanex.com##.contact-net
+freeonlinetranslator.org##button.cm__btn:nth-of-type(1)
+freeonlinetranslator.org##.cm--right.cm--bottom.cm--box.cm
+translation2.paralink.com##[href="//about.imtranslator.net/privacy-policy/"]
+www.galaxy.ai##.dark\:border-zinc-800.border-zinc-200.border.max-w-full.sm\:w-\[380px\].w-\[75\%\].z-\[9999\].left-4.bottom-4.shadow-lg.rounded-lg.dark\:bg-zinc-900.bg-white.p-4.fixed
+www.galaxy.ai##.h-14.animate-fade-in-down.shadow-lg.text-white.bg-\[\#000000\].z-50.right-0.left-0.top-0.fixed
+www.daytranslations.com##.custom-html-widget.textwidget > div > div:nth-of-type(2)
+www.daytranslations.com##.on
 www.livearad.ro###text-27
 www.livearad.ro###text-31
 www.livearad.ro###text-8

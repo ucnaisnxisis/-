@@ -817,22 +817,27 @@
 ##us-privacy
 ##eu-privacy
 
-www.youtube.com###actions
-www.youtube.com###subscribe-button-shape
-www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--icon-leading.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--overlay.yt-spec-button-shape-next--outline.yt-spec-button-shape-next
-www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
-www.youtube.com##.yt-lockup-metadata-view-model__menu-button
-www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)
+www.youtube.com##ytd-button-renderer.ytd-masthead.style-scope
 www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
-www.youtube.com###guide-links-primary
 www.youtube.com###guide-links-secondary
+www.youtube.com###guide-links-primary
+www.youtube.com##.lpHeaderUpsellBannerViewModelHost
+www.youtube.com##.yt-lp-section-group-view-model
+www.youtube.com###menu
+www.youtube.com##.smartimation--enable-masking.smartimation.ytd-subscribe-button-renderer.style-scope
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(4)
-m.youtube.com##ytm-slim-video-action-bar-renderer
-m.youtube.com##.cbox.slim-owner-subscribe-button
-m.youtube.com##.YtmCommentsHeaderRendererHost
-m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(1)
-m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(2)
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
+www.youtube.com###playlist-actions > .ytd-playlist-panel-renderer.style-scope
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(2)
+www.youtube.com##ytd-compact-link-renderer.yt-multi-page-menu-section-renderer.style-scope:nth-of-type(1)
+www.youtube.com##.ytd-menu-renderer.style-scope
+www.youtube.com##.ytd-rich-section-renderer.style-scope > .ytd-feed-nudge-renderer.style-scope
+www.youtube.com##.yt-lockup-metadata-view-model__menu-button
+www.youtube.com##.ytd-comment-action-buttons-renderer.style-scope
+www.youtube.com##.ytd-comment-engagement-bar.style-scope
+www.youtube.com##.ytFlexibleActionsViewModelAction
 m.youtube.com##.YtmCommentRendererMenu.icon-button
 m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost
 m.youtube.com##.YtmCompactMediaItemMenu

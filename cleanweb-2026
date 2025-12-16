@@ -816,6 +816,19 @@
 ##de-privacy
 ##us-privacy
 ##eu-privacy
+##[href^="https://consent.google.com/d"]
+##onebar-privacy-policy
+##.onebar-privacy-policy
+###onebar-privacy-policy
+##user-feedback-link
+###user-feedback-link
+##.user-feedback-link
+##gfe-footer__social-bar-wrapper
+###gfe-footer__social-bar-wrapper
+##.gfe-footer__social-bar-wrapper
+###consent-text
+##.consent-text
+##consent-text
 
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
 www.youtube.com##.image-overlay-text.shortsLockupViewModelHostShowOverPlayer.shortsLockupViewModelHostOutsideMetadataMenu

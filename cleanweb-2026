@@ -817,6 +817,13 @@
 ##us-privacy
 ##eu-privacy
 
+www.youtube.com##.image-overlay-text.shortsLockupViewModelHostShowOverPlayer.shortsLockupViewModelHostOutsideMetadataMenu
+www.youtube.com##button-view-model.ytSpecButtonViewModelHost:nth-of-type(2)
+www.youtube.com##.ytDislikeButtonViewModelHost > toggle-button-view-model > .ytSpecButtonViewModelHost > .yt-spec-button-shape-with-label
+www.youtube.com##.ytwReelActionBarViewModelHost > .ytLikeButtonViewModelHost
+www.youtube.com##button-view-model.ytSpecButtonViewModelHost:nth-of-type(3)
+www.youtube.com##.ytReelChannelBarViewModelReelSubscribeButton
+www.youtube.com###header > .ytd-item-section-renderer.style-scope
 www.youtube.com##ytd-button-renderer.ytd-masthead.style-scope
 www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
 www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)

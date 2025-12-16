@@ -817,6 +817,7 @@
 ##us-privacy
 ##eu-privacy
 
+www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(3)
 www.youtube.com##.image-overlay-text.shortsLockupViewModelHostShowOverPlayer.shortsLockupViewModelHostOutsideMetadataMenu
 www.youtube.com##button-view-model.ytSpecButtonViewModelHost:nth-of-type(2)
 www.youtube.com##.ytDislikeButtonViewModelHost > toggle-button-view-model > .ytSpecButtonViewModelHost > .yt-spec-button-shape-with-label
@@ -846,6 +847,12 @@ www.youtube.com##.ytd-comment-action-buttons-renderer.style-scope
 www.youtube.com##.ytd-comment-engagement-bar.style-scope
 www.youtube.com##.ytFlexibleActionsViewModelAction
 www.youtube.com##.yt-spec-button-shape-next--enable-backdrop-filter-experiment.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--filled.yt-spec-button-shape-next
+www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
+www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], opened , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, opened , 1000)
+m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.youtube.com##.YtmCommentRendererMenu.icon-button
 m.youtube.com##.yt-page-header-view-model__page-header-flexible-actions--page-header-flexible-actions-margin-top.yt-page-header-view-model__page-header-flexible-actions.ytFlexibleActionsViewModelHost
 m.youtube.com##.YtmCompactMediaItemMenu
@@ -872,6 +879,17 @@ blog.youtube##li.yt-footer__nav-section-nav-item:nth-of-type(4)
 blog.youtube###item-nav-3 > .yt-accordion__body.yt-footer__info-section-accordion-body > .yt-footer__info-section-list > li.yt-footer__info-section-list-item:nth-of-type(1)
 blog.youtube###item-top-2
 m.youtube.com##.yt-spec-dialog-layout__dialog-layout-content
+consent.youtube.com##form:nth-of-type(1)
+consent.youtube.com##.CqMh6b > div:nth-of-type(2)
+consent.youtube.com##.rjfsgd.K7564e
+consent.youtube.com###login-banner
+consent.youtube.com##.accept-all.secondary.btn
+consent.youtube.com###consent-text
+consent.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+consent.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+music.youtube.com###right-content
+music.youtube.com##ytmusic-guide-signin-promo-renderer.ytmusic-guide-renderer.style-scope
 www.google.com##.uQ249e
 www.google.com##.Lt2Ned.As6eLe.M6hT6.fbar > div > a.Fx4vi:nth-of-type(1)
 www.google.com##.JQyAhb.footer__homepage-mobile-settings-row-above-fold.fbar > a.Fx4vi:nth-of-type(2)

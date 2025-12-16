@@ -239,6 +239,9 @@
 ##.m-nav-list--social-links.m-nav-list.o-footer__block--fullwidth.o-footer__block
 ##.social-links
 ##.social-link
+##.social-media
+###social-media
+##.social-media
 ##.js-footer-feedback-btn-wrap
 ##.feedback
 ##.feedback-btn
@@ -582,6 +585,9 @@
 ##.pushmenu-social
 ##pushmenu-social
 ###pushmenu-social
+###cbox.slim-owner-subscribe-button
+##.cbox.slim-owner-subscribe-button
+##cbox.slim-owner-subscribe-button
 ##.is-active.cs-scroll-top
 ##is-active.cs-scroll-top
 ###is-active.cs-scroll-top
@@ -607,7 +613,6 @@
 ##.BackToTop--visible.BackToTop
 ###BackToTop--visible.BackToTop
 ##BackToTop--visible.BackToTop
-
 ##.app-icons
 ##app-icons
 ###app-icons
@@ -628,8 +633,21 @@
 ##.w-like-btn
 ###w-like-btn
 ##w-like-btn
+###div.follow-container.no-label.small.circle.action-btn.btn-fab
+##.div.follow-container.no-label.small.circle.action-btn.btn-fab
+##div.follow-container.no-label.small.circle.action-btn.btn-fab
 ##[href="/policies/privacy-policy"]
 ##.marketing-content.marketing-HEADER_SUBSCRIPTION_MOBILE
+##immortals-cookie-banner
+##.immortals-cookie-banner
+##immortals-cookie-banner
+###koc-chat-container
+##.koc-chat-container
+##koc-chat-container
+[href="/confiden%c8%9bialitate"]
+##is-visible.js-immersive-modal.c-immersive-modal
+###is-visible.js-immersive-modal.c-immersive-modal
+##.is-visible.js-immersive-modal.c-immersive-modal
 ##.ca-privacy
 ##.de-privacy
 ##.us-privacy
@@ -706,12 +724,9 @@ www.ranker.com##a.HamburgerMenuButton_subItem__hK3Bh.HamburgerMenuButton_main__7
 anilist.co##section:nth-of-type(3)
 anilist.co##[href="/forum/thread/2340"]
 www.cbr.com##.w-user-comment-footer-option
-www.cbr.com##.social-media
 www.cbr.com##.align-right > li:nth-of-type(2)
 www.cbr.com##.align-right
-www.cbr.com##div.follow-container.no-label.small.circle.action-btn.btn-fab
 www.cbr.com##.not-liked.i-thumb-on.icon-xlarge.icon.main-icon
-www.ducray.com##.is-visible.js-immersive-modal.c-immersive-modal
 www.ducray.com##.footer-menus__wrap
 www.go4it.ro##.single__wrapper > div:nth-of-type(3)
 www.madonna.com##div.animate--slide-in.scroll-trigger.footer-block--menu.grid__item.footer-block:nth-of-type(3) > .list-unstyled.footer-block__details-content
@@ -729,3 +744,24 @@ pagesix.com##.custom-html-widget.textwidget > div > p > [href]
 pagesix.com###menu-link-35
 pagesix.com###menu-link-37
 pagesix.com###menu-link-34
+www.kompasiana.com##.mb20.banner-center.banner-top
+www.kompasiana.com##.mb20.banner-right-big.banner
+www.kompasiana.com##.mb20.mt20.banner-mgid-read.banner
+www.kompasiana.com##.js-giant-wp-sticky.banner-right.banner
+www.kompasiana.com##.osmplaceonsite.ads-partner-wrap
+www.kompasiana.com##.mt20.banner-rail.banner
+www.kompasiana.com##.mb20.banner-right.banner
+www.kompasiana.com##.mb20.mt20.banner-center.banner-carpet-read.banner
+www.kompasiana.com##a.footerMenu:nth-of-type(5)
+kissanime.com.ru##div.col-xs-12.col-md-6:nth-of-type(2)
+app.trakt.tv##div.svelte-6jaaiz.trakt-footer-bar:nth-of-type(2)
+www.protranslate.net##div.col-6.col-sm-4.col-lg-3:nth-of-type(3) > .footer-menu-list > ul > li:nth-of-type(2)
+www.protranslate.net###cw-bubble-holder
+www.protranslate.net###cw-widget-holder
+drop.download##a.mr-3.px-0.nav-link:nth-of-type(1)
+drop.download##a.mr-3.px-0.nav-link:nth-of-type(3)
+katfile.online##[href="https://katfile.online/privacy_policy.html"]
+animedemons.ro##.transition-opacity.hover\:opacity-100.opacity-80.rounded-sm.justify-center.items-center.flex.h-10.w-10
+animedemons.ro##.items-center.gap-5.flex.border-opacity-40.border-gray-400.sm\:border-s.sm\:pis-8
+animeether.ro##div.announ:nth-of-type(5)
+a-nolimit.ro##.items-center.gap-5.flex.border-opacity-40.border-gray-400.sm\:border-s.sm\:pis-8

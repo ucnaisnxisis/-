@@ -575,6 +575,30 @@ ofertecatalog.ro##.listaprofsoc
 ofertecatalog.ro##.oneword-btn
 ofertecatalog.ro##.xsingle-xoneword
 www.catalog-az.ro##a.hide:nth-of-type(3)
+www.kompasiana.com##.mb20.banner-center.banner-top
+www.kompasiana.com##.mb20.banner-right-big.banner
+www.kompasiana.com##.mb20.mt20.banner-mgid-read.banner
+www.kompasiana.com##.js-giant-wp-sticky.banner-right.banner
+www.kompasiana.com##.osmplaceonsite.ads-partner-wrap
+www.kompasiana.com##.mt20.banner-rail.banner
+www.kompasiana.com##.mb20.banner-right.banner
+www.kompasiana.com##.mb20.mt20.banner-center.banner-carpet-read.banner
+www.kompasiana.com##a.footerMenu:nth-of-type(5)
+kissanime.com.ru##div.col-xs-12.col-md-6:nth-of-type(2)
+app.trakt.tv##div.svelte-6jaaiz.trakt-footer-bar:nth-of-type(2)
+translated.com##[href="/confiden%c8%9bialitate"]
+www.protranslate.net##div.col-6.col-sm-4.col-lg-3:nth-of-type(3) > .footer-menu-list > ul > li:nth-of-type(2)
+www.protranslate.net###cw-bubble-holder
+www.protranslate.net###cw-widget-holder
+drop.download##a.mr-3.px-0.nav-link:nth-of-type(1)
+drop.download##a.mr-3.px-0.nav-link:nth-of-type(3)
+katfile.online##[href="https://katfile.online/privacy_policy.html"]
+animedemons.ro##.transition-opacity.hover\:opacity-100.opacity-80.rounded-sm.justify-center.items-center.flex.h-10.w-10
+animedemons.ro##.items-center.gap-5.flex.border-opacity-40.border-gray-400.sm\:border-s.sm\:pis-8
+animeether.ro##.immortals-cookie-banner
+animeether.ro###koc-chat-container
+animeether.ro##div.announ:nth-of-type(5)
+a-nolimit.ro##.items-center.gap-5.flex.border-opacity-40.border-gray-400.sm\:border-s.sm\:pis-8
 www.redouble.ro###bottom-footer
 www.banatulazi.ro##[href="https://www.banatulazi.ro/politica-de-confidentialitate/"]
 www.banatulazi.ro##.textwidget [href="https://iuliustown.ro/ro/fidelizare-clienti/fidelity-by-iulius-mall-1850"]

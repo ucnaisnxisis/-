@@ -1040,7 +1040,19 @@
 ##antiadblock
 ###antiadblock
 ##.antiadblock
-mysexgamer.com##dialog.preloader
+##popup
+##.popup
+###popup
+##adware
+##.adware
+##adware
+##.Link--outlineOffset.d-block.footer-social-icon
+##.octicon-arrow-up.octicon
+##[href="#hero"]
+##dialog.preloader
+##.BackToTop--visible.BackToTop
+###BackToTop--visible.BackToTop
+##BackToTop--visible.BackToTop
 
 m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
@@ -1312,6 +1324,14 @@ duckduckgo.com##.nav-menu__feedback
 duckduckgo.com##[href="https://duckduckgo.com/privacy"]
 duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(1)
 duckduckgo.com##div.mThctpERmVBzYPx3k1EY:nth-of-type(2) > .cTi0vgftsr27DcxzlHLn > li:nth-of-type(2)
+github.com##[href="#hero"]
+github.com##.text-left.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary
+github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
+github.com##cookie-consent-link
+github.com##.flex-lg-justify-end.flex-items-center.flex-wrap.gapy-1.gapx-6.d-flex.mt-md-0.mt-3.footer-social
+github.com##.color-bg-subtle
+github.com##.pr-lg-4.mb-5.col-lg-4.col-12
+mysexgamer.com##dialog.preloader
 www.filmnow.ro##a.footer-top-nav-link:nth-of-type(5)
 www.digi-animalworld.tv##a.footer-top-nav-link:nth-of-type(2)
 www.digi-world.tv##a.footer-top-nav-link:nth-of-type(5)

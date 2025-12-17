@@ -1053,6 +1053,73 @@
 ##.BackToTop--visible.BackToTop
 ###BackToTop--visible.BackToTop
 ##BackToTop--visible.BackToTop
+##.c-footer__social-media-cont
+##.social-media-cont
+##.footer-social-media
+##.c-footer__legal-container
+##.hidden-xs.order.promo-banner
+##.hidden-promo-banner
+##promo-banner
+###promo-banner
+##.promo-banner
+##ax-newsletter.row
+##newsletter.row
+##.newsletter.row
+##newsletter.row
+##.ax-newsletter.row
+##.newsletter.row
+##newsletter.row
+###ax-newsletter.row
+##.newsletter.row
+###newsletter.row
+##[href="/en/contact/privacy-policy/"]
+##[href="/en/contact/legal-notice/"]
+##[href="/en/contact/newsletter/"]
+##.ne-social-media
+##.asw-menu-btn
+##.c-footer__socialitems
+###c-footer__socialitems
+##c-footer__socialitems
+##.footer__socialitems
+###footer__socialitems
+##footer__socialitems
+##.socialitems
+###socialitems
+##socialitems
+###social-network
+##.social-network
+##social-network
+##.footer__social-nav-list
+###footer__social-nav-list
+##footer__social-nav-list
+##.bubble
+##.click
+##.to-top-btn
+##.to-top-btn btn btn-outline-primary btn-lg btn-circle
+##.btn-lg btn-circle
+##div.sub.large-sub
+##.messenger
+##.bot
+##chat
+##[href="https://publicitate.olx.ro"]
+##[href="https://ajutor.olx.ro/olxhelpro/s/article/politica-privind-utilizarea-cookies-V17"]
+##[href="/anunturi-salvate/search/"]
+##CookieDialogBodyLevelButtonAcceptAll
+###CookieDialogBodyLevelButtonAcceptAll
+##.CookieDialogBodyLevelButtonAcceptAll
+###CookieDialogBodyContent
+##.CookieDialogBodyContent
+##CookieDialogBodyContent
+##cookie-policy-changes
+##.cookie-policy-changes
+###cookie-policy-changes
+##cookie-changes
+##.cookie-changes
+###cookie-changes
+##[href="/confidentialitate"]
+##.menu-item.menu-item-link.uncode-account.tablet-hidden.mobile-hidden
+##.social-menu-link
+##.cmplz-accept-marketing.cmplz-accept-category.cmplz-blocked-content-notice
 
 m.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
 m.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
@@ -1452,6 +1519,80 @@ m.olx.ro##.css-2itv6r
 m.olx.ro##.css-1sdh5kv
 m.olx.ro##a.css-yfbjg2:nth-of-type(2)
 m.olx.ro##.css-1gl0wmu
+www.virustotal.com##div.sub.large-sub
+www.virustotal.com##.bubble
+www.virustotal.com##.bot
+www.virustotal.com##.messenger
+www.virustotal.com##.click
+www.virustotal.com##.to-top-btn btn btn-outline-primary btn-lg btn-circle
+www.virustotal.com##.to-top-btn
+www.virustotal.com##.btn-lg btn-circle
+www.virustotal.com##chat
+virustotal.com##top
+virustotal.com##scroll-top
+www.virustotal.com##footer
+www.avast.com##[href="https://www.avast.com/ro-ro/secureline-vpn"]
+www.bitdefender.com##footer
+www.avira.com##[href="https://www.avira.com/en/privacy-policy/homepage"]
+www.avira.com##[href="https://www.avira.com/en/do-not-sell"]
+www.kaspersky.ro##li.FooterBBB_policyItem__7hs3R:nth-of-type(1)
+www.kaspersky.ro##.FooterBBB_side__xxMEm
+www.kaspersky.ro##.NotificationBanner_container__veuUg
+altex.ro##.py-3\.5.bg-black
+altex.ro##.xl\:bottom-\[200px\].bottom-2.space-y-2.min-w-\[320px\].max-w-\[420px\].sm\:right-\[15px\].right-0.z-10.fixed
+altex.ro##div.lg\:px-2:nth-of-type(5)
+altex.ro##a.sm\:hover\:text-bleu-hover2.text-sm.text-white.lg\:m-0.ml-4.leading-6.w-fit.block:nth-of-type(3)
+altex.ro##div.lg\:w-1\/6.lg\:px-2:nth-of-type(3) > .border-gray-darker.lg\:p-0.lg\:border-b-0.border-b > .lg\:block.hidden.lg\:p-0.pb-6.pt-2\.5.Footer-list > a.sm\:hover\:text-bleu-hover2.text-sm.text-white.lg\:m-0.ml-4.leading-6.w-fit.block:nth-of-type(2)
+altex.ro##div.lg\:w-1\/6.lg\:px-2:nth-of-type(3) > .border-gray-darker.lg\:p-0.lg\:border-b-0.border-b > .lg\:block.hidden.lg\:p-0.pb-6.pt-2\.5.Footer-list > a.sm\:hover\:text-bleu-hover2.text-sm.text-white.lg\:m-0.ml-4.leading-6.w-fit.block:nth-of-type(4)
+altex.ro##div.lg\:w-1\/6.lg\:px-2:nth-of-type(3) > .border-gray-darker.lg\:p-0.lg\:border-b-0.border-b > .lg\:block.hidden.lg\:p-0.pb-6.pt-2\.5.Footer-list > a.sm\:hover\:text-bleu-hover2.text-sm.text-white.lg\:m-0.ml-4.leading-6.w-fit.block:nth-of-type(6)
+altex.ro##.space-y-1\.5.items-center.justify-center.flex-col.flex.lg\:left-16px.lg\:top-15px.left-11px.top-10px.absolute
+www.malwarebytes.com##div.u-flex-col-sm-6.u-flex-col-lg-2.u-flex-column:nth-of-type(1)
+www.malwarebytes.com##[href^="https://apps.apple.com/us/app/malwarebytes-browser-guard/id1577761052"]
+www.malwarebytes.com##[href^="https://play.google.com/store/apps/details"]
+www.malwarebytes.com##p > [href^="https://apps.apple.com/US/app/id1327105431"]
+www.eset.ro##.mt-5.radius-45.p-5.text-white.gradient-teal-mid-to-teal-heavy.col-md-6
+www.avast.com##[href="/ro-ro/privacy-policy"]
+www.avast.com##.btn-icon-left.e-capture.theme-dark.size-md.outline.btn
+www.av-test.org##.clearfix.text-right.ax-social.col-sm-6
+www.av-test.org##div.clearfix.ax-mobile-row:nth-of-type(5) > .col-xs-6 > .ax-drop-down > li:nth-of-type(3)
+www.av-test.org##div.clearfix.ax-mobile-row:nth-of-type(5) > .col-xs-6 > .ax-drop-down > li:nth-of-type(5)
+www.av-test.org##div.clearfix.ax-mobile-row:nth-of-type(5) > .col-xs-6 > .ax-drop-down > li:nth-of-type(6)
+ro.wizcase.com##[href="https://ro.wizcase.com/politica-de-confidentialitate/"]
+ro.safetydetectives.com##li.nav-item:nth-of-type(7)
+antivirus.compari.ro##div.col-lg-3.col-md-3.col-sm-6.col-xs-12:nth-of-type(3)
+ro.norton.com##a.c-footer__legallinks__items:nth-of-type(5)
+www.microsoft.com##.c-uhff-base
+www.microsoft.com##div.c-uhff-nav-row:nth-of-type(2) > div.c-uhff-nav-group:nth-of-type(3) > .f-bare.c-list > li:nth-of-type(2)
+cybernews.com##li.footer__nav-item:nth-of-type(1) > .footer__nav-sub-items > li.footer__nav-sub-item:nth-of-type(4)
+cybernews.com##li.footer__bottom-line-nav-item:nth-of-type(4)
+cybernews.com##li.footer__nav-item:nth-of-type(4) > .footer__nav-sub-items > li.footer__nav-sub-item:nth-of-type(3)
+www.olx.ro##.css-1efdvzd
+www.olx.ro##[href="https://ajutor.olx.ro/olxhelpro/s/article/politica-de-confiden%C8%9Bialitate-V30"]
+www.olx.ro##ul.css-s213mv:nth-of-type(2) > li:nth-of-type(13)
+www.olx.ro##.css-1gjms9p
+www.olx.ro##.css-19f4wvj
+www.olx.ro##.css-89dm6x
+www.olx.ro##.css-1lx5q7o
+pizzeriaalila.ro##[href="https://pizzeriaalila.ro/politica-de-confidentialitate/"]
+pizzeriaalila.ro##[href="https://pizzeriaalila.ro/politica-cookies/"]
+pizzeriaalila.ro##.wishlist-info-widget
+www.dopopoco.ro##.download-apps
+www.dopopoco.ro##.col-xs-6
+www.dopopoco.ro##.menu-footer_menu_3-list
+www.dopopoco.ro##div.flex-column:nth-of-type(3) > span.section-title:nth-of-type(1)
+www.dopopoco.ro##.menu-footer_menu_2-item-25.menu-footer_menu_2-item
+www.dopopoco.ro##.menu-footer_menu_2-item-26.menu-footer_menu_2-item
+www.dopopoco.ro##.mb-3.mt-5
+www.pizzeriarospeto.ro##.app-store
+moaradefoc.ro##div.single-internal-gutter.col-lg-3.column_child.align_left.pos-center.pos-top.wpb_column:nth-of-type(4) > .start_animation.left-t-right.animate_when_almost_visible.font-190552.style-dark.uncol
+moaradefoc.ro##.half-internal-gutter.col-lg-3.column_child.align_left.pos-left.pos-top.wpb_column
+moaradefoc.ro##[href="https://moaradefoc.ro/livrari-domiciliu/politica-de-confidentialitate/"]
+moaradefoc.ro##[href="https://moaradefoc.ro/livrari-domiciliu/produse-preferate/"]
+locations.pizzahut.com##.border-border-gray.border-t.py-6.flex-col.md\:flex-row.flex
+locations.pizzahut.com##.px-4.lg\:w-1\/3.md\:w-1\/2.w-full
+www.pizz-amici.com##.w-col-4.w-col.column-6
+romeoegiuliettafood.com##[href="https://www.instagram.com/romeoegiuliettafood/"]
+romeoegiuliettafood.com##[href="https://www.facebook.com/InnItaliaIasi/"]
 www.ranker.com##a.footer_item__821Gq:nth-of-type(2)
 www.ranker.com##a.footer_item__821Gq:nth-of-type(5)
 www.ranker.com##.undefined.JoinButton_dietMode__pKVZo.JoinButton_main__dnxMM

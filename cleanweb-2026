@@ -1386,7 +1386,81 @@
 ##.social-logo
 ###social-logo
 ##social-logo
+##.x-nav-footer--privacy.lp-block
+##.x-nav-footer--ccpa-privacy.lp-block
+###cmp-app-container
+##.wp-block-social-links-is-layout-flex.is-layout-flex.is-style-pill-shape.has-normal-icon-size.wp-block-social-links
+##.comment-not-liked.comment-likes
+###footer-places-privacy
+##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+##.global-footer__section-social-links.global-footer__section
+###global-footer__section-social-links.global-footer__section
+##global-footer__section-social-links.global-footer__section
+###news-today-popup
+###news-today-popup
+##news-today-popup
+##.news-today-popup
+##.global-footer__content > div:nth-of-type(4)
+##.global-footer__links > li:nth-of-type(7)
+##.mobile-notifications__anon.mobile-notifications
+##.followUs
+###followUs
+##followUs
+##.closed.addToWishList
+###closed.addToWishList
+##closed.addToWishList
+##.discord_b
+##.gap-x-4.justify-between.items-center.w-fit.flex
+##div.col-md-4.col-12.col:nth-of-type(1)
+##.o-btn--medium.o-btn-ghost.o-btn.o-modal-action-button
 
+wordpress.com##.lp-grid__column-span-4\@L.lp-grid__column-span-4
+kpopro.com###infinite-footer
+kpopro.com###block-20 strong
+www.koreaboo.com##h2:nth-of-type(2)
+en.wikipedia.org##a.extiw:nth-of-type(3)
+en.wikipedia.org###footer-places-privacy
+stirileprotv.ro##[href="mailto:publicitate@protv.ro"]
+www.protv.ro##div.col-md-2:nth-of-type(5)
+www.protv.ro##.is-active.link
+carturesti.ro###mic-init-access-tool
+carturesti.ro##[href="/info/politica-confidentialitate"]
+www.nme.com##.\*\:gap-8.\*\:justify-center.\*\:items-center.\*\:flex-wrap.\*\:flex.contents > ul:nth-of-type(1)
+www.nme.com##li:nth-of-type(2) > .ease-in-out.duration-300.transition-colors.text-white.inline-flex.hover\:text-primary
+www.nme.com##li:nth-of-type(1) > .ease-in-out.duration-300.transition-colors.text-white.inline-flex.hover\:text-primary
+www.nme.com##li:nth-of-type(4) > .ease-in-out.duration-300.transition-colors.text-white.inline-flex.hover\:text-primary
+www.soompi.com##[href^="https://support.soompi.com/hc/en-us/requests/new"]
+kpopping.com##.go-plus-horizontal.go-plus
+e-hentai.org##[href="mailto:sales@juicyads.com"]
+www.simply-hentai.com###modal-44 > section
+www.simply-hentai.com##.btn-default.btn
+www.hentai.name##.x-icon
+www.luscious.net##div.o-padding-sides:nth-of-type(1)
+www.luscious.net##.o-flex-center.o-padding-sides.o-flex--multi-line
+www.luscious.net##.o-btn--medium.o-btn-ghost.o-btn.o-modal-action-button
+www.luscious.net##a.footer-module__footer-link--bmjsy:nth-of-type(7)
+www.luscious.net##a.footer-module__footer-link--bmjsy:nth-of-type(8)
+hentaihaven.xxx##.--button-exit.--button
+hentaihaven.xxx##.--modal > p
+hentaihaven.xxx##.--modal > .img-responsive
+hentaihaven.xxx##[href="https://hentaihaven.xxx/privacy-policy/"]
+imhentai.xxx##[href="/advertise/"]
+imhentai.xxx###f_useful_links_ul [href="/register/"]
+imhentai.xxx###f_useful_links_ul > li > [href="/login/"]
+rule34.tube##[href="https://rule34.tube/privacy-policy/"]
+rule34.tube##.footer-nav > a:nth-of-type(2)
+rule34.tube##.footer-nav > a:nth-of-type(3)
+cartoonporn.pro##.nav > li:nth-of-type(3)
+cartoonporn.pro##.nav > li:nth-of-type(2)
+thisvid.com##.footer-nav > ul > li:nth-of-type(5)
+thisvid.com##.footer-nav > ul > li:nth-of-type(6)
+thisvid.com##li.active:nth-of-type(9)
+thisvid.com##li.active:nth-of-type(8)
+thisvid.com##li:nth-of-type(12)
+thisvid.com##.footer-nav > p
+thisvid.com##.tools-right
+thisvid.com##.comment-options
+hentaifreak.org###footer-inside
 www.ozono.ro##[href="https://www.ozono.ro/politica-cookie"]
 www.ozono.ro##.appointment-mobil
 www.umfiasi.ro##li#umffooter:nth-of-type(4)

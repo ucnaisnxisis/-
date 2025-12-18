@@ -1377,6 +1377,33 @@
 ##gnews
 ##[href="/politica-de-confidentialitate.html"]
 ##[href="/politica-de-cookies.html"]
+##.x-nav-footer--privacy.lp-block
+##.x-nav-footer--ccpa-privacy.lp-block
+###cmp-app-container
+##.wp-block-social-links-is-layout-flex.is-layout-flex.is-style-pill-shape.has-normal-icon-size.wp-block-social-links
+##.comment-not-liked.comment-likes
+###footer-places-privacy
+##[href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy"]
+##.global-footer__section-social-links.global-footer__section
+###global-footer__section-social-links.global-footer__section
+##global-footer__section-social-links.global-footer__section
+###news-today-popup
+###news-today-popup
+##news-today-popup
+##.news-today-popup
+##.global-footer__content > div:nth-of-type(4)
+##.global-footer__links > li:nth-of-type(7)
+##.mobile-notifications__anon.mobile-notifications
+##.followUs
+###followUs
+##followUs
+##.closed.addToWishList
+###closed.addToWishList
+##closed.addToWishList
+##.discord_b
+##.gap-x-4.justify-between.items-center.w-fit.flex
+##div.col-md-4.col-12.col:nth-of-type(1)
+##.o-btn--medium.o-btn-ghost.o-btn.o-modal-action-button
 ##.social-logo
 ###social-logo
 ##social-logo

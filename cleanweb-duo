@@ -636,6 +636,70 @@ www.ziare-reviste.ro##[href="#top"]
 www.ziare-reviste.ro##center > div > font
 www.ziare-az.ro##td:nth-of-type(5)
 www.director-web.ro###logo
+search.brave.com###submit-llm-button
+www.ziaruldeiasi.ro##.m__menu-bottom > .m__menu-socials
+www.forumvideochat.com###widget_280
+www.forumvideochat.com###widget_218 > .maxcontainer.flex.flex-justify-between
+www.finalbosu.com##.--framer-cookie-banner-container.--framer-cookie-banner-type-advanced > div:nth-of-type(1)
+adevarul.ro##li.mainItem.svelte-937ibe:nth-of-type(16) > ul.svelte-937ibe > li.svelte-937ibe:nth-of-type(4) > .svelte-937ibe
+adevarul.ro##li.mainItem.svelte-937ibe:nth-of-type(18) > div.svelte-937ibe > .svelte-937ibe
+www.mp4upload.com##[href*="https://www.mp4upload.com/privacy_policy/"]
+animeether.ro##.bookmark
+animeterra.ro##button.group.flex.items-center.gap-2.px-3.sm\:px-4.py-2.rounded-full.transition.bg-neutral-800.hover\:bg-neutral-700:nth-of-type(1)
+animeterra.ro##button.group.flex.items-center.gap-2.px-3.sm\:px-4.py-2.rounded-full.transition.bg-neutral-800.hover\:bg-neutral-700:nth-of-type(2) > .text-sm
+animeterra.ro##button.group.flex.items-center.gap-2.px-3.sm\:px-4.py-2.rounded-full.transition.bg-neutral-800.hover\:bg-neutral-700:nth-of-type(2)
+www.pornhub.com##.js-pwaPrompt.pwa-banner
+www.pornhub.com##.underThumbButtons.clearfix.ctasActionMenu.buttonsUpdated
+www.pornhub.com##.buttonLabel.subscribeBtn.js-noRedirect
+www.pornhub.com##.js_gtm-subscribeEvent.js-noRedirect.gtm-event-video-underplayer.gtm-event-subscribe
+www.fanhub.com##.flex.items-center.justify-center.gap-4.rounded-full.border-2.px-3.py-3.border-link-instagram\/15.hover\:border-link-instagram\/80.active\:border-link-instagram.active\:bg-link-instagram\/15.hover\:bg-link-instagram\/15.transition-color.duration-200.gtm-event-profile-link-click
+onlyfans.com##.g-btn.m-rounded.m-twitter.m-md.m-block.m-mb-16.m-social-btn.m-reset-wcag-link-focus
+onlyfans.com##.g-btn.m-rounded.m-google.m-md.m-block.m-mb-16.m-social-btn.m-reset-wcag-link-focus
+www.youporn.com###modal_consent_accept_all
+xgroovy.com###headMB
+xgroovy.com###headC > .in.is_mobile
+xgroovy.com###headMA > .in.is_mobile
+xgroovy.com##.fluid-custom-buttons > a
+xgroovy.com##.tool-text
+xgroovy.com##.tool-item.web-sh-link.tippy
+xgroovy.com##.mi.playlist_add.tippy_menu
+xgroovy.com##.mi.thumb_down
+xgroovy.com##.toolbar > span.tool-item.tippy:nth-of-type(1)
+xgroovy.com##.tool-item.rate-dislike.tippy > span
+xgroovy.com##.tool-item.rate-like.tippy > span
+xgroovy.com##.tool-item.rate-dislike.tippy
+xgroovy.com##.toolbar
+www.fuq.com##.card.sub.group.relative.block.space-y-1.rating-active > .item-rating-container.opacity-0.top-0.z-10.invisible.delay-500.duration-300.absolute.w-full.aspect-video.justify-center.items-center.bg-black\/50.mt-0.\[\.card\.rating-active_\&\]\:\!flex.\[\.card\.rating-active_\&\]\:\!visible.\[\.card\.rating-active_\&\]\:\!opacity-100 > .item-rating-option.item-rating-negative.text-rose-800.bg-rose-200.size-12.inline-flex.justify-center.text-md.items-center.hover\:rounded.hover\:scale-125.hover\:z-20.duration-100.ease-in-out.cursor-pointer.transition-all.hover\:drop-shadow.hover\:text-lg
+www.fuq.com##.card.sub.group.relative.block.space-y-1.rating-active > .item-rating-container.opacity-0.top-0.z-10.invisible.delay-500.duration-300.absolute.w-full.aspect-video.justify-center.items-center.bg-black\/50.mt-0.\[\.card\.rating-active_\&\]\:\!flex.\[\.card\.rating-active_\&\]\:\!visible.\[\.card\.rating-active_\&\]\:\!opacity-100 > .item-rating-option.item-rating-positive.rounded-l.text-green-800.bg-green-200.size-12.inline-flex.justify-center.text-md.items-center.hover\:rounded.hover\:scale-125.hover\:z-20.duration-100.ease-in-out.cursor-pointer.transition-all.hover\:drop-shadow.hover\:text-lg > .far.fa-thumbs-up
+www.fuq.com##.card.sub.group.relative.block.space-y-1.rating-active > .item-rating-container.opacity-0.top-0.z-10.invisible.delay-500.duration-300.absolute.w-full.aspect-video.justify-center.items-center.bg-black\/50.mt-0.\[\.card\.rating-active_\&\]\:\!flex.\[\.card\.rating-active_\&\]\:\!visible.\[\.card\.rating-active_\&\]\:\!opacity-100 > .item-rating-option.item-rating-none.rounded-r.text-zinc-900.bg-zinc-100.size-12.inline-flex.justify-center.text-md.items-center.hover\:rounded.hover\:scale-125.hover\:z-20.duration-100.ease-in-out.cursor-pointer.transition-all.hover\:drop-shadow.hover\:text-lg > .far.fa-xmark
+www.fuq.com##.card.sub.group.relative.block.space-y-1.rating-active > .item-rating-container.opacity-0.top-0.z-10.invisible.delay-500.duration-300.absolute.w-full.aspect-video.justify-center.items-center.bg-black\/50.mt-0.\[\.card\.rating-active_\&\]\:\!flex.\[\.card\.rating-active_\&\]\:\!visible.\[\.card\.rating-active_\&\]\:\!opacity-100 > .item-rating-option.item-rating-positive.rounded-l.text-green-800.bg-green-200.size-12.inline-flex.justify-center.text-md.items-center.hover\:rounded.hover\:scale-125.hover\:z-20.duration-100.ease-in-out.cursor-pointer.transition-all.hover\:drop-shadow.hover\:text-lg
+www.fuq.com##.card.sub.group.relative.block.space-y-1.rating-active > .item-rating-container.opacity-0.top-0.z-10.invisible.delay-500.duration-300.absolute.w-full.aspect-video.justify-center.items-center.bg-black\/50.mt-0.\[\.card\.rating-active_\&\]\:\!flex.\[\.card\.rating-active_\&\]\:\!visible.\[\.card\.rating-active_\&\]\:\!opacity-100 > .item-rating-option.item-rating-none.rounded-r.text-zinc-900.bg-zinc-100.size-12.inline-flex.justify-center.text-md.items-center.hover\:rounded.hover\:scale-125.hover\:z-20.duration-100.ease-in-out.cursor-pointer.transition-all.hover\:drop-shadow.hover\:text-lg
+www.eporner.com##div.vjs-dock-button:nth-of-type(3) > .vjs-dock-image
+www.eporner.com##div.vjs-dock-button:nth-of-type(3)
+www.eporner.com##div.vjs-dock-button:nth-of-type(2) > .vjs-dock-image
+www.eporner.com##div.vjs-dock-button:nth-of-type(2)
+www.eporner.com##.likedown > small
+www.eporner.com##.likedown > small
+www.eporner.com##.likedown
+www.eporner.com##.likeup
+www.eporner.com##.uvmspn5
+www.eporner.com##.uvmspn6
+www.eporner.com##.uvmspn4
+xhamster.com##.root-64d24.button-bad62
+xhamster.com##li.video-actions__item:nth-of-type(5)
+xhamster.com##.root-64d24.ratingButton-a6242.video-actions__control.rateNo
+xhamster.com##li.video-actions__item:nth-of-type(2)
+xhamster.com##.root-64d24.ratingButton-a6242.video-actions__control.rateYes > .tiny-8643e.primary-8643e.rate-counter.action-title
+xhamster.com##.root-64d24.ratingButton-a6242.video-actions__control.rateYes
+xhamster.com##.xh-icon.heart
+xhamster.com##.video-actions__control.favorites-control
+xhamster.com##li.video-actions__item:nth-of-type(3)
+xhamster.com##li.video-actions__item:nth-of-type(1)
+xhamster.com##.kBaz-KKNSfsp-b.kBaz-KKNSflink-mobile
+xhamster.com##.container-f57ba
+xhamster.com##.underplayer-banner-tooltip > .info-tooltip > .tiny-bold-8643e.primary-8643e.adsLabel-5e8b4
+xhamster.com##.prePopunderLabel-15e4c.mobileBlock-15e4c
+xhamster.com##div.column-cb57f:nth-of-type(1) > .columnMenu-cb57f.menu-cb57f > li.menuItem-cb57f:nth-of-type(4) > .root-48288.primary-48288.menuLink-cb57f
 www.anahotels.ro##.footer-newsletter-js-form.newsletter-1step-form.m-footer-base_2--bottomForm
 www.anahotels.ro##.footer-social-container
 www.anahotels.ro##[href="/politica-de-confidențialitate"]

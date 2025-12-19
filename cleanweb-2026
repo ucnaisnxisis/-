@@ -1759,6 +1759,12 @@ cdn-aff.loomclick.com
 ###share_button
 ###like_button
 ###dislike_button
+###flag_like_this_video
+##.flag_like_this_video
+##flag_like_this_video
+##.flag_dislike_this_video
+###flag_dislike_this_video
+##flag_dislike_this_video
 ###modal-consent-accept-all
 ##modal-consent-accept-all
 ##.modal-consent-accept-all

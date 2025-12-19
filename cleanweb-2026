@@ -1759,6 +1759,25 @@ cdn-aff.loomclick.com
 ###share_button
 ###like_button
 ###dislike_button
+###modal-consent-accept-all
+##modal-consent-accept-all
+##.modal-consent-accept-all
+###modal_consent_accept_all
+##.modal_consent_accept_all
+##modal_consent_accept_all
+##.m__menu-bottom > .m__menu-socials
+##m__menu-socials
+##.m__menu-socials
+###m__menu-socials
+###.js_gtm-subscribeEvent.js-noRedirect.gtm-event-video-underplayer.gtm-event-subscribe
+##.js_gtm-subscribeEvent.js-noRedirect.gtm-event-video-underplayer.gtm-event-subscribe
+##js_gtm-subscribeEvent.js-noRedirect.gtm-event-video-underplayer.gtm-event-subscribe
+###ubscribeEvent.js
+##.subscribeEvent.js
+##subscribeEvent.js
+###subscribeEvent
+##.subscribeEvent
+##subscribeEvent
 ###onebar_parental
 ###onebar_policy
 ###onebar_privacy

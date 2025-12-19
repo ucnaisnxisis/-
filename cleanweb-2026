@@ -1046,9 +1046,6 @@
 ##antiadblock
 ###antiadblock
 ##.antiadblock
-##popup
-##.popup
-###popup
 ##adware
 ##.adware
 ##adware
@@ -1989,6 +1986,8 @@ www.g2a.com##.jrBLeL.WishlistButton_StyledButton-sc-6U48yaKa-0
 www.sexyfuckgames.com###basePopping
 www.sexyfuckgames.com##[href^="https://twitter.com/intent/user"]
 www.sexyfuckgames.com##[href="https://sexyfuck.games"]
+rule34hentai.com##.EdWHDZeJuBNghY > div
+rule34hentai.com##.EdWHDZeJuBNghY
 www.h-suki.com##.header-actions-box > a:nth-of-type(6)
 www.h-suki.com##.footer-right > div.footer-links:nth-of-type(4)
 www.h-suki.com##.footer-right > div.footer-title:nth-of-type(3)

@@ -1793,7 +1793,20 @@ cdn-aff.loomclick.com
 ###back_to_top_v3
 ###back_to_top_v2
 ###back_to_top_v1
+##.voteDown
+##voteDown
+###voteUp
+##.voteDown
+###voteUp
+##voteUp
+##.vote-Down
+##.vote-Up
+##vote-Down
+##vote-Up
+###vote-Down
+###vote-Up
 
+ageofwargame.io##a.link:nth-of-type(4)
 m.youtube.com##.gradient-trim-1.modernized-nudge.feed-nudge-use-static-column-breakpoint
 www.hentaicity.com##.detail-con > div:nth-of-type(2) > span:nth-of-type(2) > div:nth-of-type(1)
 www.hentaicity.com##.detail-con > div:nth-of-type(2)

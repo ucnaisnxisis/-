@@ -2082,6 +2082,57 @@ anysex.com##[href*="https://anysex.com/information/cookies/"]
 anysex.com##.count
 anysex.com##div.item:nth-of-type(41) > .item-menu.tippy_menu > .mi.more_vert
 anysex.com##.item-menu.tippy_menu
+www.digi24.ro##li.footer-bottom-nav-list-item:nth-of-type(2)
+www.libertatea.ro####[href*="https://www.libertatea.ro/newsletter"]
+www.libertatea.ro###menu-item-5250216 > [href*="https://www.libertatea.ro/newsletter"]
+www.dcnews.ro##.footerBottom > div:nth-of-type(3) > div:nth-of-type(1)
+www.dcnews.ro##.footerBottom > div:nth-of-type(3) > div:nth-of-type(2)
+www.dcnews.ro##.footerBottom > div:nth-of-type(3)
+www.dcnews.ro##.clear20
+news.yam.md###hmenu > li:nth-of-type(6) > .b
+news.yam.md###hmenu > li:nth-of-type(7) > .b
+news.yam.md##div:nth-of-type(3) >
+news.yam.md##a.b:nth-of-type(2)
+news.yam.md##li:nth-of-type(9) >  >  >
+www.moldpres.md##.swiper-slide.ui__background-image-center.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-active > .monitor-oficial > .monitor-oficial__inner.ui__display-center.general-wrapper
+www.moldpres.md###swiper-wrapper-fcb9b91d106f01da3 >  >
+www.moldpres.md##.swiper-slide.ui__background-image-center.swiper-slide-visible.swiper-slide-fully-visible.swiper-slide-active > .monitor-oficial
+www.moldpres.md##.index > div.banner-desktop > .banner-red > .swiper-slide.ui__background-image-center > .index__newsletter
+www.moldpres.md###footer >  >  > div:nth-of-type(3) >  > button
+www.moldpres.md###footer >  >  > div:nth-of-type(2) > ul > li:nth-of-type(8) >
+armenpress.am##.rounded-lg.bg-indigo-950.text-white.dark\:bg-night-900.duration-200.flex.gap-x-3.px-6.py-3.font-normal.self-center
+armenpress.am###app >  >  >  >
+armenpress.am##.w-7.-rotate-90.invert.dark\:invert-0.lg\:w-10
+armenpress.am##.mb-10.me-5.rounded-full.bg-white\/60.p-4.shadow-2xl.backdrop-blur-sm.dark\:bg-night-700\/60.lg\:me-10
+armenpress.am##.flex.flex-wrap.items-center.text-white.gap-2.lg\:gap-3.mt-2
+armenpress.am###app >  >  >  > div:nth-of-type(1) >  >  >  > a:nth-of-type(5)
+armenpress.am##a.duration-200.hover\:opacity-50:nth-of-type(5)
+tv8.md##[src*="/_next/static/filles/telegramOriginal.svg"]
+tv8.md##[src*="/_next/static/filles/youtubeOriginal.svg"]
+tv8.md##[src*="/_next/static/filles/instagramOriginal.svg"]
+tv8.md##[src*="/_next/static/filles/corruption.png"]
+tv8.md##[src*="/_next/static/filles/tictokOriginal.svg"]
+tv8.md##[src*="/_next/static/filles/facebookOriginal.svg"]
+tv8.md##[src*="https://tv8.md/resources/2025/10/29/44a6369f-95c0-41c2-ab32-034b1d2d7825_Raporteazauncazdecoruptieelectoraladektop.webp"]
+stirionline.md##.cs-header__button
+stirionline.md##.aligncenter.wp-image-272359.size-full
+sportal365.com###menu-1-e3e23af >  >
+sportal365.com###menu-1-e3e23af > .menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-13270 > .elementor-item
+sportal365.com###menu-1-e3e23af > .menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-869 > .elementor-item
+sportal365.com###menu-1-e3e23af > .menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-868 > .elementor-item
+www.espressocafe.ro##button:nth-of-type(3)
+www.espressocafe.ro##[src*="https://www.espressocafe.ro/images/google-play.webp"]
+www.dm.ro###app >  >  >
+www.dm.ro##li.cf.cg.ch:nth-of-type(2) > div:nth-of-type(1) > .c.g.ck.cl.x.bi
+www.dictie.ro###custom_html-2
+www.dictie.ro##a.mobil:nth-of-type(2)
+www.dictie.ro##a.mobil:nth-of-type(3)
+www.dictie.ro##a.mobil:nth-of-type(4)
+www.dictie.ro###text-5 > .textwidget > center
+ghiseuldecredite.ro##[href*="/politica-de-confidentialitate_9.html"]
+ghiseuldecredite.ro##div.leftSectionsBottom:nth-of-type(15)
+ghiseuldecredite.ro##div:nth-of-type(14) > form
+ghiseuldecredite.ro##.leftSectionsTop.newsletter
 xhamster.com##.block-8ef1d > a.link-8a008:nth-of-type(1) > .text-8a008
 xhamster.com##.block-8ef1d > a.link-8a008:nth-of-type(1)
 hentaila.com##div:nth-of-type(7) > .btn.btn-edge.w-full.font-medium

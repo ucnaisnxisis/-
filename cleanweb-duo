@@ -568,6 +568,17 @@ mopoga.com##li.icon-chevron-right:nth-of-type(3)
 mopoga.com##li.icon-chevron-right:nth-of-type(4)
 mopoga.com##li.icon-chevron-right:nth-of-type(2)
 steam250.com###footer > div:nth-of-type(3)
+tchibo.ro##.empty\:hidden.footer__aside
+tchibo.ro##.shopify-app-block.shopify-block
+tchibo.ro##.text-center.gap-4.v-stack.newsletter-drawer__content
+tchibo.ro##.loloyal-on-mobile.loloyal-launcher-wrapper.boom-launcher
+tchibo.ro##div.footer__block--menu.footer__block:nth-of-type(3) > .gap-3.v-stack > li:nth-of-type(1)
+tchibo.ro##.gap-6.v-stack
+www.espressocafe.ro##.footer-newsletter-02.top-footer-wrapper
+www.espressocafe.ro##[href="https://www.espressocafe.ro/confidentialitate"]
+www.espressocafe.ro##[href="https://www.espressocafe.ro/cookies"]
+www.espressocafe.ro##[href="https://www.espressocafe.ro/wishlist/"]
+www.espressocafe.ro###cdz-mobile-menu > .buton-mobil
 gg.deals##.tippy-initialized.relative.game-action.collection-swal
 steambase.io##.space-x-4.flex-row.flex
 steambase.io##.font-medium.text-blue-400.text-sm.md\:space-x-6.space-x-4.items-center.mx-auto.flex-wrap.flex > li:nth-of-type(1)

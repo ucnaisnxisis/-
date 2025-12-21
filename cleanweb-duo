@@ -432,6 +432,20 @@ aronia-charlottenburg.ro##div:nth-of-type(9)
 ro.abchealthonline.com##[href="https://ro.abchealthonline.com/privacy-policy"]
 euromedic.ro##[href="/politica-de-confidentialitate"]
 euromedic.ro##[href="/politica-de-utilizare-cookies"]
+rule34hentai.com##.show.modal-backdrop
+rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
+www.crunchyroll.com##.footer-seo-section-group
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(6)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(4)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(5)
+www.crunchyroll.com##button.cr-footer-item > .footer-item-text.text--is-m--pqiL-.text--gq6o-
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(8)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(9)
+www.crunchyroll.com##.footer-horizontal-layout--wVaTp
+www.crunchyroll.com##.footer-socials--hycEM
+www.crunchyroll.com##.episode-actions
+www.xvideos.com##.banner-game
+rule34hentai.com##p > [href="#"]
 www.stiridinsanatate.com##.Image_Default
 www.stiridinsanatate.com##.ml-form-align-center
 www.stiridinsanatate.com##[href="politica-de-confidentialitate.php"]

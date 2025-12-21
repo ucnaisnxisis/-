@@ -1955,7 +1955,33 @@ cdn-aff.loomclick.com
 ##feedback
 ###feedback
 ##.feedback
+##.likes.dp-post-likes
+##likes.dp-post-likes
+###likes.dp-post-likes
+###dislikes.dp-post-dislikes
+##dislikes.dp-post-dislikes
+##.dislikes.dp-post-dislikes
+##.entry-meta
+###entry-meta
+##entry-meta
+##.unlike.btn
+###unlike.btn
+##unlike.btn
 
+henvids.com##div.space-y-4:nth-of-type(4) > .space-y-2\.5 > li:nth-of-type(3)
+henvids.com##div.space-y-4:nth-of-type(4) > .space-y-2\.5 > li:nth-of-type(4)
+henvids.com##.gap-3.flex.mt-8
+maiotaku.com##[href="/privacy"]
+maiotaku.com##.txt-right.col-6
+hanime.stream##.entry-meta
+thehentai.net##.msg_amarela
+candy.ai##.md\:bottom-3.relative.gap-7.flex
+candy.ai##.lg\:bottom-\[12px\].lg\:relative.gap-5.text-start.min-w-\[100px\].flex-col.flex.relative
+zhentube.com##[href="https://zhentube.com/privacy-policy/"]
+www.hentaicloud.com##[href="/static/privacy"]
+www.hentaicloud.com##[href="/feedback"]
+www.redtube.com##.video_action_wrap
+eshentai.tv###tiktok
 rule34hentai.com##.show.modal-backdrop
 rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
 www.crunchyroll.com##.footer-seo-section-group

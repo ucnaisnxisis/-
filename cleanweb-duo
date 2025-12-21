@@ -391,6 +391,17 @@ mega.io##.social-heading.heavy
 mega.io##a.light:nth-of-type(6)
 mega.io##.expanded.accordion > .accordion-content > a.light:nth-of-type(7)
 mega.io##.expanded.accordion > .accordion-content > a.light:nth-of-type(2)
+www.brazicraciun.net##.list-inline.social-icons
+www.brazicraciun.net###bannerBrazi
+www.brazicraciun.net###newsletter
+revistacultura.ro###scroll-to-top
+www.empria.ro##.ckPolicyGomag
+www.empria.ro##.lightbox
+www.empria.ro###top
+www.empria.ro##[href="https://www.empria.ro/politica-de-confidentialitate"]
+www.wowbiz.ro##.section-my.article-subscribe
+salapalatului.ro###menu-item-85864
+salapalatului.ro###menu-item-85860
 static.cloudflareinsights.com
 pocu.asoceduciv.ro##div.col-sm-2.col-md-2.col-lg-2.fusion-column:nth-of-type(4)
 pocu.asoceduciv.ro##.to-top-container

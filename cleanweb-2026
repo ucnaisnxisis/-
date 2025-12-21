@@ -87,9 +87,6 @@
 ##A[title="Bookmark on Google History Bookmarks"]
 ##A[title="Digg it!"]
 ##A[title="Follow Us"]
-##ai
-###ai
-##.ai
 ##.text-m-hs-promo-fb-bite
 ##.tool-digg
 ##.tool-twitter
@@ -261,6 +258,7 @@
 ##[href="https://www.protv.ro/gdpr/confidentialitate"]
 ##gdpr
 ##.gdpr
+###gdpr
 ##[href="/politica-cookies/"]
 ##.btn-menu-mobile--sustine.btn-menu-mobile
 ##sustine-btn
@@ -276,7 +274,6 @@
 ##.publicitate
 ##pub
 ##.pub
-##.js-footer-tagline.footer__text
 ##.politica-pentru-cookies
 ##politica-pentru-cookies
 ##.politica-pentru-gdpr
@@ -289,17 +286,8 @@
 ##politica-pentru-reclame
 ##[href="https://www.mediafax.ro/politica-pentru-cookies"]
 ##[href="https://www.mediafax.ro/politica-de-confidentialitate"]
-##.justify-center.gap-1\.5.flex
-##a.lg\:text-left.text-center.leading-\[22px\].font-medium.text-\[15px\]:nth-of-type(3)
-##a.lg\:text-left.text-center.leading-\[22px\].font-medium.text-\[15px\]:nth-of-type(2)
-##rect
-##.rect
-##react
-##.react
 ##.arrow
 ##arrow
-##a.lg\:text-left.text-center.leading-\[22px\].font-medium.text-\[15px\]:nth-of-type(2)
-##.transition-opacity.hover\:opacity-90.cursor-pointer.lg\:right-0.lg\:translate-x-0.right-1\/2.translate-x-1\/2.translate-y-1\/2.-top-\[86\.0665px\].absolute
 ##[href="/privacy"]
 ##[href="/privacy-policy"]
 ###privacy-policy
@@ -323,8 +311,6 @@
 ##.ai-button
 ##.react-ai-button
 ##react-ai-button
-##.optanon-toggle-display
-##optanon-toggle-display
 ##.realitatea-emisiuni-advertiser
 ##realitatea-emisiuni-advertiser
 ###realitatea-emisiuni-advertiser
@@ -651,6 +637,9 @@
 ##.koc-chat-container
 ##koc-chat-container
 [href="/confiden%c8%9bialitate"]
+##confiden%c8%9bialitate
+###confiden%c8%9bialitate
+##.confiden%c8%9bialitate
 ##is-visible.js-immersive-modal.c-immersive-modal
 ###is-visible.js-immersive-modal.c-immersive-modal
 ##.is-visible.js-immersive-modal.c-immersive-modal
@@ -706,12 +695,9 @@
 ##contact-net
 ###contact-net
 ##.contact-net
-##button.cm__btn:nth-of-type(1)
-##.button.cm__btn:nth-of-type(1)
 ##.google-play
 ###google-play
 ##google-play
-##.justify-content-end.d-flex.navbar-nav
 ##nav-menu__feedback
 ###nav-menu__feedback
 ##.nav-menu__feedback
@@ -719,12 +705,6 @@
 ##footer-terms
 ###footer-terms
 ##.footer-terms
-##app-badges
-##.app-badges
-###app-badges
-##.sticky-buttons
-###sticky-buttons
-##sticky-buttons
 ##upliftBtn > .event_internal_link
 ###upliftBtn > .event_internal_link
 ##.upliftBtn > .event_internal_link
@@ -743,12 +723,10 @@
 ###wishlist
 ##wishlist
 ##.wishlist
-##div.text-center.col-md-3:nth-of-type(2)
 ###mktp-sell-with-emag
 ##wishlist-btn-wrapper
 ###wishlist-btn-wrapper
 ##.wishlist-btn-wrapper
-##[href="javascript:OneTrust.ToggleInfoDisplay()"]
 ##chat-bots
 ##.chat-bots
 ###chat.bots
@@ -851,7 +829,6 @@
 ##.app-download-btns
 ###app-download-btns
 ##app-download-btns
-##div:nth-of-type(3) > button
 ##.floating-cta_dialogButton__oYdEE
 ##.floating-cta_dialogButton__
 ##.floating-cta_dialogButton_
@@ -859,10 +836,8 @@
 ###newsletterForm
 ##.newsletterForm
 ##newsletterForm
-##.jet-button__state-hover.jet-button__state
 ##[href="/protectie-date-personale"]
 ##[href="/advertise"]
-##a.gpg-disclaimer-button:nth-of-type(1)
 ##.ads-content-page
 ###ads-content-page
 ##ads-content-page
@@ -931,9 +906,6 @@
 ##.disclaimer-container
 ##[href="/privacy-policy/"]
 ##[href="/out.php"]
-##.line
-###line
-##line
 ##.base_widget.content_warning_widget
 ###base_widget.content_warning_widget
 ##base_widget.content_warning_widget
@@ -957,9 +929,6 @@
 ##.footer-socials-col.auto-col
 ###footer-socials-col.auto-col
 ##footer-socials-col.auto-col
-##.ntkSide1
-###ntkSide1
-##ntkSide1
 ##.scrollspy-btn-circles
 ###scrollspy-btn-circles
 ##scrollspy-btn-circles
@@ -1096,7 +1065,6 @@
 ###footer__social-nav-list
 ##footer__social-nav-list
 ##.bubble
-##.click
 ##.to-top-btn
 ##.to-top-btn btn btn-outline-primary btn-lg btn-circle
 ##.btn-lg btn-circle
@@ -1133,9 +1101,6 @@
 ##BusinessFooterLegal
 ###BusinessFooterLegal
 ##.css-lfao2b.global-footer-bottom-links
-##.mb-4.my-2.rounded.border-dark.border.item
-##.col-xs-12.col-sm-12.col-md-12.col-lg-4.col-xl-4.col-12 > div.my-2.rounded.border-dark.border.item:nth-of-type(1)
-##.space-x-4.flex
 ##.exitx.rescb
 ##.product-action-favorite-button
 ###product-action-favorite-button
@@ -1407,8 +1372,6 @@
 ###closed.addToWishList
 ##closed.addToWishList
 ##.discord_b
-##.gap-x-4.justify-between.items-center.w-fit.flex
-##div.col-md-4.col-12.col:nth-of-type(1)
 ##.o-btn--medium.o-btn-ghost.o-btn.o-modal-action-button
 cdn-aff.loomclick.com
 ##.notFound
@@ -1883,7 +1846,6 @@ cdn-aff.loomclick.com
 ###btn-lg.btn
 ##.btn-lg.btn
 ##btn-lg.btn
-##.standard-location.default.ltr.a11y-toolbar.a11y-responsive
 ##.a11y-toolbar-list
 ###a11y-toolbar-list
 ##a11y-toolbar-list
@@ -1893,9 +1855,6 @@ cdn-aff.loomclick.com
 ##[src="/images/x_white_bg.svg"]
 ##[src="/images/tik_tok_white_bg.svg"]
 ##[src="/images/instagram_white_bg.svg"]
-###recommended-icon
-##recommended-icon
-##.recommended-icon
 ###clean-grid-sidebar-wrapper
 ##.clean-grid-sidebar-wrapper
 ##clean-grid-sidebar-wrapper
@@ -1993,6 +1952,9 @@ cdn-aff.loomclick.com
 ###favourite
 ##.favourite
 ##favourite
+##feedback
+###feedback
+##.feedback
 
 www.digi24.ro###embed-0
 www.digi24.ro##.video-player-embed

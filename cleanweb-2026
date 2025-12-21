@@ -1956,6 +1956,20 @@ cdn-aff.loomclick.com
 ###feedback
 ##.feedback
 
+rule34hentai.com##.show.modal-backdrop
+rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
+www.crunchyroll.com##.footer-seo-section-group
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(6)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(4)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(5)
+www.crunchyroll.com##button.cr-footer-item > .footer-item-text.text--is-m--pqiL-.text--gq6o-
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(8)
+www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(9)
+www.crunchyroll.com##.footer-horizontal-layout--wVaTp
+www.crunchyroll.com##.footer-socials--hycEM
+www.crunchyroll.com##.episode-actions
+www.xvideos.com##.banner-game
+rule34hentai.com##p > [href="#"]
 www.digi24.ro###embed-0
 www.digi24.ro##.video-player-embed
 watch.plex.tv##._13usayk0.det6jp8.det6jp1w.det6jpk.det6jp1g.det6jp1c.det6jp14.det6jp38.det6jp2g

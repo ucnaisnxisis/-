@@ -2629,13 +2629,6 @@ www.cerave.ro##.white.pdp.richtext > p:nth-of-type(2)
 www.cerave.ro##li:nth-of-type(8)
 www.cerave.ro##.menulist > li:nth-of-type(4)
 jojo-portal.com##.visible.st-Pagetop
-www.crunchyroll.com##.footer-wrapper
-www.crunchyroll.com##a.cr-footer-item:nth-of-type(4)
-www.crunchyroll.com##a.cr-footer-item:nth-of-type(5)
-www.crunchyroll.com##a.cr-footer-item:nth-of-type(6)
-www.crunchyroll.com##button.cr-footer-item
-www.crunchyroll.com##a.cr-footer-item:nth-of-type(8)
-www.crunchyroll.com##.footer-seo-section-group > section.cr-footer-seo-section:nth-of-type(2)
 www.viz.com##.pad-t-md--lg.end.o_footer-secondary-nav-col
 www.viz.com##.o_footer-horizontal-nav > li
 jojo-news.com##[href="https://twitter.com/jojo_wiki"]

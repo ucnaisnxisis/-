@@ -5394,6 +5394,44 @@ www.neowin.net##.twitter-link
 www.neowin.net##.article-share
 tweakers.net###bottom
 tweakers.net##.loginLink
+www.indihometv.com##div.col-md-3:nth-of-type(4)
+www.indihometv.com##.footer-item.col-md-3
+nowplayer.now.com##.button_main_log.login_subscribe_btn
+www.jiotv.com##.j-footer-social
+www.jiotv.com##.bannerContainer
+www.jiotv.com##.clickable.input-icon-suffix.input-icon
+cignalplay.com##a.ng-star-inserted:nth-of-type(3)
+cignalplay.com##.footer-meta-data
+www.animax.co.jp##[href="https://www.animax.co.jp/company/privacy-policy"]
+www.animax.co.jp##.o-header-bottom-sns
+nowplayer.now.com##.clearfix.app-download
+www.mncvision.id###whatsapp-area
+www.mncvision.id##footer > .container
+www.mncvision.id##.navbar-collapse.collapsex > .navbar-right.navbar-nav.nav
+medianet.mv##div.col-sm-6.col-md-3.col-lg-3.col-xl-3:nth-of-type(4)
+www.bilibili.tv##.history_nav.bstar-header__popover.bstar-header__dropdown
+www.bilibili.tv##.mylist_nav.bstar-header__popover.bstar-header__dropdown
+www.tataplay.com##.social-section
+www.tataplay.com##section:nth-of-type(6)
+www.tataplay.com##.text-center.mT30.download-app-contr
+www.sun-plaza.ro##[href="https://www.sun-plaza.ro/politica-de-confidentialitate/"]
+www.sun-plaza.ro##[href="https://www.sun-plaza.ro/politica-de-utilizare-cookie-uri/"]
+www.tokopedia.com##.eg8apji0.css-w9emp6-unf-btn
+www.tokopedia.com##.css-vwtriv
+www.tokopedia.com##nav.css-15kyw7z:nth-of-type(6)
+www.tokopedia.com##nav.css-15kyw7z:nth-of-type(5)
+mod.cht.com.tw##footer > div > div:nth-of-type(2)
+mod.cht.com.tw##.top_alert
+www.enmax.com##.cookie-consent_cookie_consent__k6dv_
+www.enmax.com##.footer-middle_join_col__hqx8B
+demonslayer-anime.com##.is-show.btn_pagetop
+demonslayer-anime.com##[href="https://aniplexusa.com/privacy/"]
+www.mytvsuper.com##[href="https://ad.mytvsuper.com/"]
+www.mytvsuper.com##[href="https://promo.mytvsuper.com/en/pics"]
+www.mytvsuper.com##[href="https://promo.mytvsuper.com/en/eu_privacy_overview"]
+www.mytvsuper.com##[href="https://promo.mytvsuper.com/en/eu_privacy_full"] > h3
+www.mytvsuper.com##[href="https://promo.mytvsuper.com/en/tos_im"]
+www.mytvsuper.com##[href="https://promo.mytvsuper.com/en/cookies"]
 support.torproject.org##.px-0.order-lg-1.order-1.col-lg-6.col-12
 support.torproject.org##.rounded-2.text-decoration-none.fw-medium.p-3.border-amber-light-active.border-amber-hover.bg-amber-light-active.bg-amber-hover.btn-amber-30.btn
 support.torproject.org##.w-md-auto.w-100.fw-bold.fs-tiny.rounded-1.mt-md-3.py-13.px-3.btn-secondary.btn

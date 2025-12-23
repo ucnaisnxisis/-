@@ -2031,6 +2031,39 @@ cdn-aff.loomclick.com
 ###cookielaw
 ##cookielaw
 ##.cookielaw
+##footer-social-wrap
+###footer-social-wrap
+##.footer-social-wrap
+##app_store_box
+###app_store_box
+##.app_store_box
+##author-bio
+###author-bio
+##.author-bio
+##flutter-footer-app-link
+###flutter-footer-app-link
+##.flutter-footer-app-link
+##ad-container-sup
+###ad-container-sup
+##.ad-container-sup
+##downloadapp-link
+###downloadapp-link
+##.downloadapp-link
+##footer__aside-top
+###footer__aside-top
+##.footer__aside-top
+##fullscreen-nav-newsletter
+###fullscreen-nav-newsletter
+##.fullscreen-nav-newsletter
+##w-side-navigation-social
+###w-side-navigation-social
+##.w-side-navigation-social
+##.add-to-links
+###add-to-links
+##add-to-links
+###threads
+##.threads
+##threads
 
 henvids.com##div.space-y-4:nth-of-type(4) > .space-y-2\.5 > li:nth-of-type(3)
 henvids.com##div.space-y-4:nth-of-type(4) > .space-y-2\.5 > li:nth-of-type(4)

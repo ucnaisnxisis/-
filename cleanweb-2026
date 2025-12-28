@@ -1161,9 +1161,6 @@
 ##.wpedon_paypalbuttonimage
 ###wpedon_paypalbuttonimage
 ##wpedon_paypalbuttonimage
-##.btop
-###btop
-##btop
 ##.erc-watchlist-header-button-old.state-icon-only.erc-header-tile
 ###erc-watchlist-header-button-old.state-icon-only.erc-header-tile
 ##erc-watchlist-header-button-old.state-icon-only.erc-header-tile
@@ -1846,9 +1843,6 @@ cdn-aff.loomclick.com
 ##.v-fab__container
 ##v-fab__container
 ##.v-row--dense.v-row
-###btn-lg.btn
-##.btn-lg.btn
-##btn-lg.btn
 ##.a11y-toolbar-list
 ###a11y-toolbar-list
 ##a11y-toolbar-list

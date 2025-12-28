@@ -417,6 +417,10 @@ www.imobiliare.ro##.search-listing-open-whatsapp-modal
 www.landrover.ro##.section-white.footer-secondary-nav.section
 www.director-web.ro###Banner\ Mare\ jos
 www.dedeman.ro##.service-banners-block
+ropharma.ro##.grid-col-1.grid-col > .grid-items > .grid-item-2.grid-item
+ropharma.ro##[href="https://ropharma.ro/politica-privind-utilizarea-fisierelor-cookie"]
+ropharma.ro##[href="https://ropharma.ro/politica-de-confidentialitate-privind-utilizarea-datelor-personale"]
+www.ziaruldeiasi.ro##div.column:nth-of-type(4)
 dedesign.dedeman.ro##button.font-medium.leading-6.text-sm.\!pl-6.\!pr-4.py-2.justify-between.cursor-pointer.w-full.tablet\:text-base.tablet\:py-4.font-pop.has-\[\>svg\]\:px-3.disabled\:bg-grey-200.active\:bg-orange-600.hover\:bg-orange-400.text-white.rounded-full.bg-orange-500.aria-invalid\:border-destructive.dark\:aria-invalid\:ring-destructive\/40.aria-invalid\:ring-destructive\/20.focus-visible\:ring-\[3px\].focus-visible\:ring-ring\/50.focus-visible\:border-ring.outline-none.\[\&_svg\]\:shrink-0.\[\&_svg\:not\(\[class\*\=\'size-\'\]\)\]\:size-4.\[\&_svg\]\:pointer-events-none.disabled\:opacity-50.disabled\:pointer-events-none.transition-\[color\,box-shadow\].whitespace-nowrap.gap-2.items-center.inline-flex
 dedesign.dedeman.ro##.justify-between.laptop\:flex > div:nth-of-type(2)
 dedesign.dedeman.ro##.right-3.-top-\[44px\].absolute.p-2.z-20

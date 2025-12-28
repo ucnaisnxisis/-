@@ -904,9 +904,6 @@
 ###pac_choice_exit.btn
 ##pac_choice_exit.btn
 ##[href="/advertisement"]
-###disclaimer-container
-##disclaimer-container
-##.disclaimer-container
 ##[href="/privacy-policy/"]
 ##[href="/out.php"]
 ##.base_widget.content_warning_widget

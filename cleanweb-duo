@@ -3866,6 +3866,47 @@ www.predis.ai##[href="https://apps.apple.com/in/app/social-media-posts-predis-ai
 www.predis.ai##[href^="https://play.google.com/store/apps/details"]
 www.predis.ai##[href="https://predis.ai/privacy/"]
 ziare.com##.social-media
+www.amc.com##[href="https://www.amcnetworks.com/network-privacy-policy/"]
+www.amc.com##[href="/"]
+www.amc.com##.logo-social-container
+www.amc.com##[href="https://www.amcnconnect.com/"]
+www.amc.com##[href="https://www.amcnetworks.com/cookies/"]
+jwx.com##.pwr-footer-company-info__icons
+jwx.com##[href="https://jwx.com/legal/privacy/"]
+jwx.com##[href="https://jwx.com/ad-delivery-platform"]
+reelmind.ai##.mb-4.space-y-2.items-center.flex-col.flex
+fanfinity.ai###age_gate_backdrop
+fanfinity.ai##.md\:mt-12.mt-8
+apatero.com##.mt-auto.border-t
+www.hammerai.com##.px-2.pt-2.w-full.overflow-y-auto
+www.hammerai.com##.box-border.w-full.mt-auto.px-1.mb-2.flex-col.flex
+www.hammerai.com##.right-2.top-2.absolute
+mysexgamer.com##span:nth-of-type(2)
+www.vondy.com##.max-md\:gap-y-8.justify-between.flex-col.flex > .max-md\:w-full.gap-5.flex
+www.ainsfw.ai##a.x_btn_middle.x_btn
+www.makegirl.ai##div.sm\:border-none.pl-6.-ml-6.border-accent.pb-2.border-b-\[1px\].border-l-\[1px\].pt-4.-mt-4:nth-of-type(5) > .space-y-4 > li:nth-of-type(6)
+www.makegirl.ai##div.sm\:border-none.pl-6.-ml-6.border-accent.pb-2.border-b-\[1px\].border-l-\[1px\].pt-4.-mt-4:nth-of-type(5) > .space-y-4 > li:nth-of-type(2)
+www.makegirl.ai##div.sm\:border-none.pl-6.-ml-6.border-accent.pb-2.border-b-\[1px\].border-l-\[1px\].pt-4.-mt-4:nth-of-type(5) > .space-y-4 > li:nth-of-type(3)
+crushon.ai##.lg\:gap-3.sm\:flex.dark\:text-dark3-primary.text-light3-primary.gap-4.items-center.hidden
+crushon.ai##.justify-between.items-center.flex-1.w-full.flex.top-0.left-0.absolute
+crushon.ai##.sm\:right-4.sm\:bottom-\[68px\].justify-center.items-center.cursor-pointer.size-\[40px\].flex.right-3.bottom-3.fixed.group\/backtop
+crushon.ai##.max-sm\:\!hidden.sm\:right-4.sm\:bottom-\[120px\].max-sm\:w-\[208px\].dark\:bg-black-6.\[box-shadow\:0_4px_4px_0_rgba\(0\,0\,0\,0\.25\)\].p-4.bg-white.border-white\/10.border.rounded-\[20px\].items-center.flex-col.flex.z-10.right-3.bottom-\[58px\].fixed
+fap-nation.com###gdrts-unique-id-1
+silktoy.com##[href="https://silktoy.com/privacy-policy/"]
+grandbangauto.com##[href="https://grandbangauto.com/privacy"]
+69games.xxx###flash_rating
+gamcore.com##a.view:nth-of-type(1)
+gamcore.com##a.view:nth-of-type(2)
+steampeek.hu##.jump_to_youtube.btn_alt
+hentaiporn.com##.stars-c
+lewdninja.com##span.meta:nth-of-type(1)
+lewdninja.com##.has-text-warning.meta
+lewdninja.com##.has-text-success.meta
+www.hentaiarea.com##.md\:w-1\/3.w-full
+everlustinglife.com##[href="https://pochemultd.com/privacy-policy-game1"]
+www.cartoonporn.com##[href="https://www.cartoonporn.com/privacy/"]
+www.cartoonporn.com##[href="/cookies/"]
+www.xvideos.com###x-messages-menu
 artificii-shop.ro##.nasa_odd.root-item.default-menu.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
 artificii-shop.ro##.nasa-static-group-btn
 artificii-shop.ro##.nasa-icon-wishlist
@@ -18839,7 +18880,6 @@ www.xnxx.com###disclaimer-over18
 www.xnxx.com###disclaimer-warning-p
 www.xnxx.com###disclaimer-parents-p
 www.xnxx.com###disclaimer-top
-www.xnxx.com##.btn-primary.btn
 www.ixxx.com##.overflow-y-auto.modal-body
 www.ixxx.com##.modal-footer > p
 www.ixxx.com###splash-page-title

@@ -450,6 +450,36 @@ euromedic.ro##[href="/politica-de-confidentialitate"]
 euromedic.ro##[href="/politica-de-utilizare-cookies"]
 rule34hentai.com##.show.modal-backdrop
 rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
+hanime.red##.items-center.mt-1.justify-end.flex
+hentai.tv##.justify-end.flex
+hentai.tv###promo-topbar
+aipenly.com##.space-x-4.flex
+oppai.stream##div.stats-in
+rule34video.com##div.item_info:nth-of-type(2)
+www.eporner.com###cinemaviews1
+xxjap.com##.above-player-avd
+xxjap.com##[href^="http://fhgte.com/tour"]
+xxjap.com##.aside-avd-wrap
+xxjap.com##.main > div:nth-of-type(4)
+xxjap.com##a.list-link:nth-of-type(2)
+xxjap.com##.btn-holder.btn-favourites.favorite-drop
+xxjap.com##.desc.player-tools > .rating-container.col > .tools > div.item:nth-of-type(4)
+xxjap.com##.flag-btn.second.btn
+xxjap.com##.avd-heading.heading
+hentaiworld.stream##[href="https://hentaiworld.stream/privacy-policy-2/"]
+erotic-hentai.com##[href="https://erotic-hentai.com/advertise/"]
+hentaiprn.com##[href="https://hentaiprn.com/privacy-policy/"]
+ohentai.org##[href="https://discord.gg/UD3fFTj"] > li
+ohentai.org##div.sidecontainertitle
+hentai.pro##.header__controls
+hentai4k.com##.footer-nav > [href="https://hentai4k.com/signup/"]
+hentai4k.com##.footer-nav > [href="https://hentai4k.com/login/"]
+www.simply-hentai.com##.fa-w-14.fa-book.svg-inline--fa
+www.simply-hentai.com##.count-col.text-right
+www.luscious.net##.favorite_button-module__favorite-button--cEvGE
+lovehentai.net##.text-left.py-3.flex-column.d-flex > .row
+hentaihaven.io##.fa-heart-o.fa
+hentaihaven.io###sidebar > .clearfix
 www.crunchyroll.com##.footer-seo-section-group
 www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(6)
 www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(4)

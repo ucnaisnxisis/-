@@ -45,6 +45,19 @@
 ##.social-icons
 ###social-icons
 ##social-icons
+##.favorite-btn > [href]
+##ic-share.icon
+###ic-share.icon
+##.ic-share.icon
+###ratings
+##.ratings
+##ratings
+###rates
+##.rates
+##rates
+##vote
+##.vote
+###vote
 ##[href="javascript:Optanon.ToggleInfoDisplay();"]
 ##.politica-de-confidentialitate-a-datelor
 ###politica-de-confidentialitate-a-datelor

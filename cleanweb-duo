@@ -459,6 +459,28 @@ www.veed.io##.gap-\[11px\].justify-start.flex
 www.justanswer.com##.teaserContainer
 help.hbomax.com##[href="http://www.hbomax.com/privacy"]
 help.hbomax.com###ScrollToTop
+www.ispmanager.com##.dark\:text-alm-black.text-white.text-24.gap-x-10.items-center.flex
+www.ispmanager.com##a.max-w-220.w-full:nth-of-type(3)
+www.animenewsnetwork.com##.half.buttons.actionable
+www.mytvsuper.com##.Ads_btbn__P5wpT
+www.mytvsuper.com##.Footer_social_medias__zC3mR
+www.mytvsuper.com##.btn-fav.ic-heart.icon.btn
+www.mytvsuper.com##.ic-share.icon
+uaserials.com##a[href="#"]:nth-of-type(2)
+uaserials.com##.clearfix.comm-rate3
+uaserials.com##.fx-between.fx-row
+uaserials.com##.telegram
+nowplayer.now.com##.favorite-btn > [href]
+gameforge.com##.navbar-padding
+gameforge.com##.ratings
+kizi.com##.d-inline-block.btn-group
+kizi.com##.tooltip.p-1.d-inline-block.btn-rounded.btn-danger.btn.add-favorite
+iogamesio.org##.text-center
+iogamesio.org##.rates
+www.igre123.com##.vote
+www.igre123.com##.f__end > span.tooltip
+www.igre123.com##li.tooltip:nth-of-type(3)
+apkpure.com##[href="https://apkpure.com/privacy-policy.html"]
 community.oneplus.com##[href="/useOfCookies"]
 community.oneplus.com##[href="/privacy-notice"]
 community.oneplus.com##.action-bar

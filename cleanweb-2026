@@ -111,6 +111,27 @@
 ##.yn-share-social
 ##[href^="http://www.stumbleupon.com/submit?url="]
 ##[name="fb_share"]
+##.sns-and-app
+###sns-and-app
+##sns-and-app
+###phone-float-btn
+##.phone-float-btn
+##phone-float-btn
+##a.whatsapp-float-btn
+###a.whatsapp-float-btn
+##.a.whatsapp-float-btn
+###Header-donate
+##.Header-donate
+##Header-donate
+##.breadcrumb-social
+##[href="/terms/how-we-use-cookies"]
+##[href="/terms/terms-privacy"]
+##[href="/donate"]
+##[href="/misc/gdpr/"]
+##[href="/misc/site_policies/privacy/"]
+##.country-select-arrow
+###country-select-arrow
+##country-select-arrow
 ##[onclick^="window.open('http://www.facebook.com/sharer.php?"]
 ##[title="Bookmark on Yahoo!"]
 ##[title="Find us on Facebook"]

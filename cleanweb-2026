@@ -4,6 +4,20 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
 
+###header-donate
+##.header-donate
+##header-donate
+###nav__socialz
+##.nav__socialz
+##nav__socialz
+###socialz
+##.socialz
+##socialz
+##[href="/manage-your-donation"]
+##[href="/more-ways-donate"]
+###donate-button-placeholder
+##.donate-button-placeholder
+##donate-button-placeholder
 ###CookieSiteNotice
 ##.CookieSiteNotice
 ##CookieSiteNotice

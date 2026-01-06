@@ -440,6 +440,48 @@ www.domnuroz.ro##.has-text-align-center.wp-block-heading
 www.domnuroz.ro##p.has-text-align-center:nth-of-type(1)
 www.domnuroz.ro##.wp-block-jetpack-subscriptions.is-style-compact.wp-block-jetpack-subscriptions__supports-newline
 www.deliciu.ro###CookieSiteNotice
+cepa.org##.mt-\[6px\].gap-\[14px\].flex-row.flex
+cepa.org##.my-\[20px\].line-fit.header-line
+cepa.org##.md\:justify-start.justify-center.gap-\[20px\].flex-row.flex
+cepa.org##[href="https://cepa.org/privacy-policy/"]
+figshare.com##li.oXMVv:nth-of-type(8)
+figshare.com##li.oXMVv:nth-of-type(7)
+www.wbur.org###header-donate
+www.wbur.org##.EmailForm_subscribe-footer__muaiy.EmailForm_sub__y_QTc
+www.wbur.org##[href="/inside/privacy-policy"]
+www.wbur.org##div.Footer_ft-nav-cl__I9rCM:nth-of-type(4)
+www.wbur.org##[href^="https://donate.wbur.org/secure/give"]
+www.wbur.org##.Share_shareContainer__ZHMXj
+www.brookings.edu##.menu-item-1690042.menu-item-object-page.menu-item-type-post_type.menu-item
+www.brookings.edu##.hover\:text-medium-blue.duration-quicker.transition-colors.text-small
+www.brookings.edu##.w-full.gap-3.flex-col.flex.md\:max-w-sm.footer-main-content-info-content
+www.brookings.edu##.menu-item-1690024.menu-item-object-page.menu-item-type-post_type.menu-item
+www.france24.com##li.a-header-entry--desktop-only.a-header-entry:nth-of-type(4)
+www.historynewsnetwork.org##.nav__socialz
+www.historynewsnetwork.org##.footer__left
+www.kyivpost.com##[href="https://www.kyivpost.com/pages/cookie-policy"]
+www.kyivpost.com##[href="https://www.kyivpost.com/pages/privacy-policy"]
+www.kyivpost.com##[href="https://www.kyivpost.com/pages/advertising"]
+www.kyivpost.com##[href="https://www.kyivpost.com/pages/newsletter"]
+www.kyivpost.com##div.col.menu:nth-of-type(3) > ul > li:nth-of-type(4)
+www.kyivpost.com##div.col.menu:nth-of-type(3) > ul > li:nth-of-type(3)
+www.kyivpost.com##div.col.menu:nth-of-type(4) > ul > li:nth-of-type(2)
+www.kyivpost.com##div.col.menu:nth-of-type(4) > ul > li:nth-of-type(1)
+www.latimes.com##.sm\:w-1\/3.shrink-0.list-none.w-full.block > .xl\:pl-12\.5.lg\:pl-10.list-none > li.xl\:w-53\.75.lg\:w-\[173px\].md\:w-53\.75.md\:mb-1\.25.mb-2\.5.w-35:nth-of-type(3)
+www.latimes.com##div.clearfix.text-cms-color-brand-text.leading-7\.75.text-lg.font-normal.font-cms-font-brand-text.ct-rich-text-children:nth-of-type(2) > p > a.link:nth-of-type(1)
+www.latimes.com##a.link:nth-of-type(3)
+www.latimes.com##a.link:nth-of-type(2)
+www.latimes.com##a.link:nth-of-type(4)
+www.latimes.com##li:nth-of-type(26)
+www.latimes.com##li:nth-of-type(28)
+www.commondreams.org##.donate-button-placeholder
+www.commondreams.org##.donate-button-ham.sections-list__item--extras.sections-list__item.main-menu-item
+www.commondreams.org##[href="/manage-your-donation"]
+www.commondreams.org##[href="/more-ways-donate"]
+www.stuff.co.nz##li.text-secondary-muted.font-5.leading-0.text-0.font-stuff-sans > [href="/about-us/350113233/stuff-privacy-policy"]
+www.stuff.co.nz##li.text-secondary-muted.font-5.leading-0.text-0.font-stuff-sans:nth-of-type(4)
+www.stuff.co.nz##.md\:justify-between.md\:flex.gap-x-150.items-center.grid-cols-2.grid.my-200 > .gap-x-200.flex
+www.stuff.co.nz##div.gap-6.grid-cols-5.w-full.grid:nth-of-type(2) > div.pb-150.gap-3.flex-col.flex:nth-of-type(4) > .gap-2.flex-col.flex > li:nth-of-type(4)
 intimis.ro##.appearance-button-secondary.btn-secondary.btn
 intimis.ro##div.col-lg-12:nth-of-type(5)
 intimis.ro##.content.module-text2-simple.module-text2.module

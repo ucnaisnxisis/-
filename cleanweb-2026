@@ -4,6 +4,66 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
 
+###footer-top-nav-link.gdpr-modal-trigger
+##.footer-top-nav-link.gdpr-modal-trigger
+##footer-top-nav-link.gdpr-modal-trigger
+##[href="mailto:publicitate@protv.ro"]
+##ot-sdk-btn
+##.ot-sdk-btn
+###ot-sdk-btn
+##.svelte-jxipsg.other
+##.svelte-1hmn32u.other
+##.svelte-z6eb2e.other
+##.footerMenu3
+##.icon_menu_share
+##.pld-common-wrap.pld-like-wrap
+##.pld-common-wrap.pld-dislike-wrap
+##.pld-template-1.pld-like-dislike-wrap
+##.back-top-show.back-top
+##.ot_cookie_settings_btn
+##.subscribe__wp.mm-switch-container
+##[href^="mailto:"]
+    ###backtotop.visible
+###backtotop.visible
+  ###backtotop.visible
+ ###backtotop.visible
+  ###backtotop.visible
+  ##.appstores
+##.appstores
+ ##.appstores
+###appstores
+##.appstores
+##appstores
+###newsletter-form
+##.newsletter-form
+##newsletter-form
+###footer-ey-social-links
+##[href="/ro_ro/legal-and-privacy"]
+##.fSocial
+##.lite.side-form-c
+##.w-popup-campaign
+##[href="/ro/politica-de-confidentialitate"]
+##[href="/ro/cookies"]
+##[href="/info/confidentialitate"]
+##[href="/politica_de_confidentialitate"]
+##[href="/info/cookies"]
+##[href="politica-cookies"]
+###theMarketer-popup-backdrop
+##.widget-newsletter
+##.btn-icon.btn.slider-image__save-wishlist
+##.btn-icon.btn.grid-image__save-wishlist
+###elevenlabs
+##.nl-form.contact-form
+##.whp-cta
+##.t-sociallinks__wrapper
+##.icons__item_rss.icons__item
+##[href="/cookies/"]
+##[href="/advertise/"]
+##[href="/privacy/cookies/"]
+##[href="/publishers/"]
+##[href="/gdpr/"]
+##cookie-consent-link
+##.sp_choice_type_ACCEPT_ALL.pm-button.start-focus.focusable.no-children.message-button.message-component
 ###header-donate
 ##.header-donate
 ##header-donate

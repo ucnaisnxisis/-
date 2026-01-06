@@ -3333,6 +3333,32 @@ duckduckgo.com##.nav-menu__feedback
 duckduckgo.com##[href="https://duckduckgo.com/privacy"]
 duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(1)
 duckduckgo.com##div.mThctpERmVBzYPx3k1EY:nth-of-type(2) > .cTi0vgftsr27DcxzlHLn > li:nth-of-type(2)
+webbrowsertools.com##li.float-r:nth-of-type(3)
+privacytest.securebrowser.com##[href*="https://www.avast.com/privacy-policy"]
+privacytest.securebrowser.com##.down-arrow-lg.fab-icon
+privacytest.securebrowser.com##.fab
+funxtools.com##a.hover\:text-primary.transition-colors:nth-of-type(3)
+privacy.net##[href*="https://privacy.net/cookies-policy/"]
+privacy.net###menu-item-1044 > [href*="https://privacy.net/privacy-policy/"]
+testdev.tools##button.cm__btn:nth-of-type(1)
+testdev.tools##.cm__footer
+testdev.tools##.items-center.flex.justify-between.gap-6.sm\:gap-4
+testdev.tools##.cm.cm--bar.cm--inline.cm--bottom
+testdev.tools##li.transition-all.dark\:text-zinc-400.block.dark\:hover\:text-zinc-200.hover\:text-zinc-800.px-2.py-2.rounded-lg.text-md.text-zinc-500:nth-of-type(2)
+testdev.tools##.cm__footer
+testdev.tools##.cm.cm--bar.cm--inline.cm--bottom
+testdev.tools##li.rounded-lg.transition-all.block.dark\:hover\:text-zinc-200.dark\:text-zinc-400.hover\:text-zinc-800.px-2.py-2.text-md.text-zinc-500:nth-of-type(2) > .flex.items-center.relative
+testdev.tools##li.rounded-lg.transition-all.block.dark\:hover\:text-zinc-200.dark\:text-zinc-400.hover\:text-zinc-800.px-2.py-2.text-md.text-zinc-500:nth-of-type(2)
+networkanalyzer.io##.MuiGrid2-root.MuiGrid2-direction-xs-row.footer-left.mui-1n5khr6 > .download-app-wrapper.qrcode-wrapper > .download-btns
+networkanalyzer.io##.get-started-area.undefined
+www.speedtest.net##.menu-footer.menu-footer-sm.menu-footer-inline > li:nth-of-type(3) > [href*="/about/privacy"]
+www.speedtest.net##[href*="/about/ccpa"]
+www.cyberghostvpn.com##section.pv-sm
+www.cyberghostvpn.com##.snapengage-button
+www.makeuseof.com##.social-media
+www.makeuseof.com##.align-right > li:nth-of-type(5) > .text
+www.makeuseof.com##.align-right > li:nth-of-type(2) > .text
+www.walmart.com##.flex.flex-column.flex-row-hdkp.justify-center.bg-washed-primary
 github.com##[href="#hero"]
 github.com##.text-left.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary
 github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)

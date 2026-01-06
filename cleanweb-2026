@@ -2955,7 +2955,7 @@ m.youtube.com##._yb_1ool5._yb_b9sct
 m.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.youtube.com###+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer
+m.youtube.com###+js(json-prune, overlay.cosentBumpV2Renderer)
 m.youtube.com##ytd-reel-shelf-renderer.ytd-watch-next-secondary-results-renderer.style-scope
 m.youtube.com##grid-shelf-view-model.ytGridShelfViewModelHostHasBottomButton.ytd-item-section-renderer.ytGridShelfViewModelHost
 m.youtube.com##.reel-shelf-header
@@ -2984,7 +2984,7 @@ m.youtube.com##.slim_video_action_bar_renderer_button.ytSegmentedLikeDislikeButt
 m.youtube.com##.ytCarouselItemViewModelHost
 m.youtube.com##.reel-player-overlay-actions
 m.youtube.com##ytm-sentiment-factoid-renderer
-m.youtube.com##.ytm-video-description-infocards-section-subtitl
+m.youtube.com##.ytm-video-description-infocards-section-subtitle
 m.youtube.com##div.yt-content-metadata-view-model-wiz__metadata-row:nth-of-type(2) > span.yt-core-attributed-string--link-inherit-color.yt-core-attributed-string--white-space-pre-wrap.yt-content-metadata-view-model-wiz__metadata-text.yt-core-attributed-string:nth-of-type(1)
 m.youtube.com##.yt-content-metadata-view-model-wiz__delimiter
 m.youtube.com##.subhead
@@ -3304,7 +3304,7 @@ mysexgamer.com##dialog.preloader
 www.filmnow.ro##a.footer-top-nav-link:nth-of-type(5)
 www.digi-animalworld.tv##a.footer-top-nav-link:nth-of-type(2)
 www.digi-world.tv##a.footer-top-nav-link:nth-of-type(5)
-www.gigisport.ro##.hide-sm.widget
+www.digisport.ro##.hide-sm.widget
 www.digisport.ro##a.footer-top-content-nav-link:nth-of-type(3)
 www.digisport.ro##.footer-top-content-nav-link.ot-sdk-show-settings
 www.digisport.ro##.footer-content-social

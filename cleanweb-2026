@@ -2247,7 +2247,21 @@ cdn-aff.loomclick.com
 ###scroller
 ##.scroller
 ##scroller
+##a.Donate
+###a.Donate
+##.a.Donate
+##TopNavDonateButton
+##.TopNavDonateButton
+###TopNavDonateButton
+##[href="/donate?origin=iawww-TopNavDonateButton"]
 
+anime-nexus.ro##.justify-content-end.d-flex.navbar-nav
+anime-nexus.ro###login-square > .text-center.box-content.col-12 > div:nth-of-type(2) > div:nth-of-type(2)
+github.com##.BackToTop--visible.BackToTop
+github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none
+github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
+github.com##.pr-lg-4.mb-5.col-lg-4.col-12
+github.com##li:nth-of-type(2) > .Link.Link--secondary
 unimedia.info##[href="https://unimedia.info/ro/page/publicitate.html"]
 animeterra.ro##.space-x-4.flex
 noi.md##.pb-2.pt-2.p-1.br-ar.d-lg-flex.d-none

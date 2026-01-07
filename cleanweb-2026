@@ -2337,7 +2337,48 @@ cdn-aff.loomclick.com
 ##Manager Confidentialitate Reclame
 ##[href*="/t/privacy"]
 ##[href*="/t/contact_us/"]
+###cookie-section
+##.cookie-section
+##cookie-section
 
+consent.newsnow.com
+
+www.agerpres.ro##.cookie-section
+playtech.ro##>  > div:nth-of-type(3) >
+playtech.ro##.single__follow.display-flex.gap-20.items-center.smb\:padding-10.md\:padding-30.border-solid.border-1.border-grey-100
+adevarul.ro##.reperio.svelte-1wb4m60
+www.libertatea.ro##.footer-container.info > .footer__label
+www.fanatik.ro###menu-item-20240828171201
+www.fanatik.ro##[href*="https://www.fanatik.ro/about-cookies"]
+www.fanatik.ro##[href*="https://www.fanatik.ro/confidentialitate"]
+www.antena3.ro##footer >  >  >
+www.antena3.ro##.footer_copyright > [href*="/page-23.html"]
+www.antena3.ro##.footer_copyright > [href*="/page-22.html"]
+hotnews.ro##.meta-after
+hotnews.ro###menu-item-1958919 > [href*="https://hotnews.ro/newsletter"]
+www.stiripesurse.ro##a.text-\[15px\].font-medium.leading-\[22px\].text-center.lg\:text-left:nth-of-type(3)
+www.stiripesurse.ro##div.flex.flex-col.gap-\[18px\].lg\:gap-\[1\.567rem\]:nth-of-type(3) > .flex.flex-col.gap-4 > a.text-\[15px\].font-medium.leading-\[22px\].text-center.lg\:text-left:nth-of-type(2)
+www.stiripesurse.ro##.flex.flex-col.gap-5.border-\[\#C0C0C0\].border-b-\[1px\].pt-\[2\.54rem\].pb-\[1\.567rem\].w-full.lg\:max-w-\[77\.188rem\].relative
+www.mediafax.ro##.page_wrapper.flex-col.gap-30.mg-bottom-30 > div.container:nth-of-type(1) > .min-h-250
+evz.ro##.col-lg-2.col-md-4.col-sm-6
+evz.ro##.col-lg-3.col-md-4.col-sm-6
+evz.ro##[src*="/wp-content/themes/evz/assets/img/evz_comunicate.gif"]
+evz.ro##.trending-post-inner > div.row.justify-content-center > .col-30 > .sidebar-wrap
+www.newsnow.com##[href="/privacy/cookies/"]
+www.newsnow.com##[href="/privacy-policy/"]
+www.newsnow.com###js-manage-consent
+www.newsnow.com##[href="/advertise/"]
+www.newsnow.com##[href="/publishers/"]
+www.newsnow.com##.u-top-spacer-xl.u-bottom-spacer-l.heading-wrap.heading-wrap--home-teaser > .heading__right > .btn.btn--primary.btn--primary-e.btn--small.u-left-spacer-m.with-tooltip.tooltip--oneline.tooltip--bottom-left
+agerpres.ro##.mt-4.list-group-inline.nav
+agerpres.ro##.mt-2.text-end.justify-content-sm-end.list-group-inline.nav
+agerpres.ro##.mt-3.bg-dark-overlay-3
+wwwb.agerpres.ro##div.footer_r:nth-of-type(3)
+agerpres.ro##li.nav-item:nth-of-type(2)
+video.agerpres.ro###cya11y-container
+foto.agerpres.ro###cya11y-container
+www.agerpres.ro##div.footer_r:nth-of-type(3)
+www.agerpres.ro##div.footer_r:nth-of-type(2) > .row > .col-lg-10 > .ul_footer > li.li_footer:nth-of-type(8)
 eu.githubstatus.com##.mt-md-0.mt-3
 downdetector.com##.showConsentTool
 henvids.com##div.space-y-4:nth-of-type(4) > .space-y-2\.5 > li:nth-of-type(3)

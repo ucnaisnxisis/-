@@ -2343,6 +2343,42 @@ cdn-aff.loomclick.com
 
 consent.newsnow.com
 
+itch.io##.youtube_banner
+tinysecretgames.itch.io##figure >  >
+tinysecretgames.itch.io##[src*="https://img.itch.zone/aW1nLzIwNTAzMjA1LnBuZw==/original/Tt8D%2FQ.png"]
+tinysecretgames.itch.io##p:nth-of-type(13) > strong
+berkili4.itch.io##.formatted_description.user_formatted > p >  >
+berkili4.itch.io##[src*="https://img.itch.zone/aW1nLzEzNjU4MTk0LmpwZw==/original/fdCXNb.jpg"]
+berkili4.itch.io##[src*="https://img.itch.zone/aW1nLzEzNjU4MjI4LmpwZw==/original/Ef28Vs.jpg"]
+berkili4.itch.io##[src*="https://img.itch.zone/aW1nLzE0OTA5NjI4LmpwZw==/original/CL8d8%2F.jpg"]
+nlch.itch.io##[src*="https://img.itch.zone/aW1nLzE3NTkwNzQ4LnBuZw==/original/R%2BSeAP.png"]
+nlch.itch.io##[src*="https://img.itch.zone/aW1nLzE3NTkwNjUyLnBuZw==/original/pskNFc.png"]
+hotgamedev.itch.io##.left_col.column > div.formatted_description.user_formatted:nth-of-type(1) > div
+azienda.itch.io##[src*="https://img.itch.zone/aW1nLzIwNTY2NjAzLnBuZw==/original/RV5KJ0.png"]
+azienda.itch.io##p:nth-of-type(24)
+www.soompi.com##li.footer-list-item:nth-of-type(10)
+www.soompi.com##[href*="https://www.youtube.com/user/soompi"]
+www.soompi.com##div.col.col-12.col-md-4:nth-of-type(1) > .columnize-links.columnize-links-wrapper-lg > ul > li.footer-list-item:nth-of-type(3)
+www.soompi.com##div.col.col-12.col-md-4:nth-of-type(1) > .columnize-links.columnize-links-wrapper-lg > ul > li.footer-list-item:nth-of-type(4)
+www.soompi.com##div.col.col-12.col-md-4:nth-of-type(1) > .columnize-links.columnize-links-wrapper-lg > ul > li.footer-list-item:nth-of-type(2)
+www.soompi.com##div.col.col-12.col-md-4:nth-of-type(1) > .columnize-links.columnize-links-wrapper-lg > ul > li.footer-list-item:nth-of-type(1)
+www.soompi.com##div.col.col-12.col-md-4:nth-of-type(1) > .columnize-links.columnize-links-wrapper-lg
+kpopworld.com###cookiePopup
+kpopworld.com##.panel-nav-social
+rds.live##[href*="https://rds.live/politica-de-confidentialitate"]
+rds.live##.footer-app > [href*="https://rds.live/TV-Online.apk"] > .entered.lazyloaded
+rds.live##.appdl
+www.manutd.com##[href*="/en/Help/Cookie-Policy"]
+www.manutd.com##[href*="https://www.manutd.com/en/Help/Privacy-Policy"]
+www.manutd.com##[href*="https://app.adjust.com/88iacno_eo402dp"]
+apps.apple.com##li.svelte-wtmfoi:nth-of-type(3) > .svelte-wtmfoi
+apps.apple.com##li.product-page-link-item.svelte-13ex1g5:nth-of-type(2) > .product-link-container.svelte-9vfp85 > .svelte-aas302
+www.goal.com##[href*="/en-us/legal/privacy-policy"]
+www.goal.com##[href*="https://www.footballco.com/advertise"]
+www.goal.com##.google-trusted-source-cta_google-trusted-source__0ESyH.google-trusted-source > .google-trusted-source-cta_google-trusted-source-button__nLx7k > .component-image
+www.goal.com##[href*="https://itunes.apple.com/app/goal.com/id518026818"]
+www.goal.com##[href*="https://play.google.com/store/apps/details"]
+www.goal.com##.top_items-list__hV1f4 > li.link_link__AMlEJ:nth-of-type(5) > .link_anchor__DV_3l
 www.agerpres.ro##.cookie-section
 playtech.ro##>  > div:nth-of-type(3) >
 playtech.ro##.single__follow.display-flex.gap-20.items-center.smb\:padding-10.md\:padding-30.border-solid.border-1.border-grey-100

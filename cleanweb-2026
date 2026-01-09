@@ -4,9 +4,6 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
 
-###manage-cookie-settings
-##.manage-cookie-settings
-##manage-cookie-settings
 ###footer-top-nav-link.gdpr-modal-trigger
 ##.footer-top-nav-link.gdpr-modal-trigger
 ##footer-top-nav-link.gdpr-modal-trigger
@@ -2368,6 +2365,11 @@ cdn-aff.loomclick.com
 ###Vtl-WishlistHeaderWrapper
 ##Vtl-WishlistHeaderWrapper
 ##.Vtl-WishlistHeaderWrapper
+###head-favorites-inner
+##.head-favorites-inner
+##head-favorites-inner
+##.footer_subscribe_title
+##[href*="/cookie-policy"]
 
 consent.newsnow.com
 
@@ -2410,7 +2412,6 @@ www.lovense.com##.note
 www.lovense.com##.footer_subscribe_title
 www.lovense.com##[href*="/cookie-policy"]
 adulttoymegastore.co.nz##div.nf-section:nth-of-type(4)
-au.dhgate.com##>  >  >  > a:nth-of-type(3) > ml
 au.dhgate.com##a[href*="https://dg.dhgate.com/buyerdisputesystem/index.html"]:nth-of-type(3) > ml
 au.dhgate.com##.head-favorites-inner
 ie.webuy.com##.mobile-app-content

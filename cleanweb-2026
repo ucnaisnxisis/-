@@ -2343,9 +2343,19 @@ cdn-aff.loomclick.com
 ###cookie-section
 ##.cookie-section
 ##cookie-section
+[href*="/pages/utilizare-cookies"]
+##.jdgm-prev-badge__stars
+###jdgm-prev-badge__stars
+##jdgm-prev-badge__stars
+###btn.btn--text.btn--status.px-lg-6.js-store-lists-add-wishlist
+##.btn.btn--text.btn--status.px-lg-6.js-store-lists-add-wishlist
+##btn.btn--text.btn--status.px-lg-6.js-store-lists-add-wishlist
 
 consent.newsnow.com
 
+voinicel.ro##[href*="/pages/utilizare-cookies"]
+voinicel.ro##div.col-12.col-lg:nth-of-type(2)
+voinicel.ro##.btn.btn--text.btn--status.px-lg-6.js-store-lists-add-wishlist
 itch.io##.youtube_banner
 tinysecretgames.itch.io##figure >  >
 tinysecretgames.itch.io##[src*="https://img.itch.zone/aW1nLzIwNTAzMjA1LnBuZw==/original/Tt8D%2FQ.png"]

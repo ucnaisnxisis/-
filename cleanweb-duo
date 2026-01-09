@@ -417,6 +417,7 @@ emojis.wiki##.space-x-6.flex
 emojitool.com##div.wrap:nth-of-type(4)
 rule34hentai.com##.show.modal-backdrop
 rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
+shiroazu.com##div.mb-3.col-md-4:nth-of-type(3)
 www.crunchyroll.com##.footer-seo-section-group
 www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(6)
 www.crunchyroll.com##section.cr-footer-seo-section:nth-of-type(5) > .section-wrapper > .section-list > a.cr-footer-item:nth-of-type(4)

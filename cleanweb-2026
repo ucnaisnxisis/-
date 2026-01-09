@@ -2416,7 +2416,6 @@ au.dhgate.com##.head-favorites-inner
 ie.webuy.com##.mobile-app-content
 ie.webuy.com##[href*="/policy/cookies"]
 ie.webuy.com##[href*="/policy/privacy"]
-f95zone.to##div.block:nth-of-type(2)
 voinicel.ro##[href*="/pages/utilizare-cookies"]
 voinicel.ro##div.col-12.col-lg:nth-of-type(2)
 voinicel.ro##.btn.btn--text.btn--status.px-lg-6.js-store-lists-add-wishlist

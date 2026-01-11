@@ -2875,6 +2875,36 @@ www.espressocafe.ro##button:nth-of-type(3)
 www.espressocafe.ro##[src*="https://www.espressocafe.ro/images/google-play.webp"]
 www.dm.ro###app >  >  >
 www.dm.ro##li.cf.cg.ch:nth-of-type(2) > div:nth-of-type(1) > .c.g.ck.cl.x.bi
+www.androidauthority.com##.e_Lq
+www.androidauthority.com##.e_Lc.e_O > p
+www.androidauthority.com##.e_vp
+m.apkpure.com##.float-shortcut-button__icon.icon
+m.apkpure.com##.float-shortcut-button.float-button-second
+www.talkandroid.com##div.cs-footer__item:nth-of-type(2)
+www.talkandroid.com###menu-item-385442 > [href*="https://www.talkandroid.com/affiliate-disclosure/"]
+www.talkandroid.com##[href*="https://www.talkandroid.com/advertise/"]
+www.talkandroid.com###menu-item-382770 > [href*="https://www.talkandroid.com/privacy-policy/"]
+novalauncher.com###footerdiv > .row > .col.s12.center
+ibani.stirileprotv.ro##div.share-box.museo:nth-of-type(5) > h5
+ibani.stirileprotv.ro##div.share-box.museo:nth-of-type(5)
+ibani.stirileprotv.ro##div.share-box.museo:nth-of-type(4) > h5
+ibani.stirileprotv.ro##[href*="https://ibani.stirileprotv.ro/promo/rss/"] > [src*="https://d1.a4w.ro/build/design/incont2/images/rss.gif"]
+acasainbucovina.nl##.flex-data > p
+acasainbucovina.nl##.cookie-consent-astronautul-roz.show-astronautul-roz
+www.mega-image.ro##.sc-qvcpuj-0.sc-qvcpuj-1.cWxa-dr.iDELfl.false > .sc-qvcpuj-26.hqWYCx
+www.mega-image.ro##.sc-qvcpuj-0.sc-qvcpuj-1.cWxa-dr.iDELfl.false
+www.mega-image.ro##.sc-e3oax-27.fBPhTj > .sc-ig2pz-2.mIEeM > .sc-qvcpuj-0.sc-qvcpuj-10.cWxa-dr.CiqEx.sc-706vkt-0.cBlznj.false
+www.mega-image.ro##.sc-6t7480-3.LjLTZ > .sc-1imp7z0-2.kKICYn > li:nth-of-type(4) > .sc-5ttvy-0.jopzOq
+www.mega-image.ro##li.sc-odjhk2-3.gCOIQG:nth-of-type(1) > .sc-7v5sc4-0.hnqKox > .sc-7v5sc4-1.iIfywn
+republicabio.ro###aa-cc-fix-icon-body
+republicabio.ro##.footer__subscription.row.mb-25.pt-10.xsx.subscription-form--style-4
+republicabio.ro##li.py-5.py-lg-0:nth-of-type(5) > [href*="/pages/politica-de-confidentialitate"]
+republicabio.ro##li.py-5.py-lg-0:nth-of-type(6) > [href*="/pages/cookies"]
+republicabio.ro##div.carousel__item.col-auto.slick-slide.slick-active:nth-of-type(4) > .dxd.product-collection.d-block > .product-collection__wrapper.mb-30.mb-lg-30 > div.d-flex.flex-column:nth-of-type(1) > .product-collection__content.d-flex.flex-column.align-items-start.mt-15 > .product-collection__control.d-flex.flex-column.w-100 > .product-collection__buttons.d-flex.flex-column.flex-lg-row.align-items-lg-center.flex-wrap.mt-5.mt-lg-10 > .product-collection__buttons-section.d-flex.px-lg-10 > .product-collection__button-add-to-wishlist.mb-10 > .product-page-info__button-add-to-wishlist.pt-9
+republicabio.ro##div.carousel__item.col-auto.slick-slide.slick-active
+eatntrack.ro##.cc-window.cc-floating.cc-type-info.cc-theme-block.cc-bottom.cc-right.cc-color-override--2125747634
+eatntrack.ro##.d-flex.flex-wrap.mt-3.justify-content-center
+republicabio.ro##div.carousel__item.col-auto.slick-slide:nth-of-type(6) > .dxd.product-collection.d-block > .product-collection__wrapper.mb-30.mb-lg-30 > div.d-flex.flex-column:nth-of-type(1) > .product-collection__content.d-flex.flex-column.align-items-start.mt-15 > .product-collection__control.d-flex.flex-column.w-100 > .product-collection__buttons.d-flex.flex-column.flex-lg-row.align-items-lg-center.flex-wrap.mt-5.mt-lg-10 > .product-collection__buttons-section.d-flex.px-lg-10 > .product-collection__button-add-to-wishlist.mb-10
 www.dictie.ro###custom_html-2
 www.dictie.ro##a.mobil:nth-of-type(2)
 www.dictie.ro##a.mobil:nth-of-type(3)

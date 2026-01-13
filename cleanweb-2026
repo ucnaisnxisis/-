@@ -2370,10 +2370,33 @@ cdn-aff.loomclick.com
 ##head-favorites-inner
 ##.footer_subscribe_title
 ##[href*="/cookie-policy"]
+###box_grey.ad
+##.box_grey.ad
+##box_grey.ad
 
 @@en.wikipedia.org
+@@bilibili.tv
+@@bilibili.com
+@@bilibili.net
+@@search.bilibili.net
 consent.newsnow.com
 
+www.animatetimes.com###cookie-agreement
+www.lovelive-anime.jp##.c-circlebtn.c-circlebtn--up
+www.lovelive-anime.jp##.p-share__inner
+www.bilibili.com##.login-btn
+www.bilibili.com##.login-tip
+search.bilibili.com##.login-tip
+search.bilibili.com##.link-item.link-item__right
+third-news.com##.uk-button.share_bluesky.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(3) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_hatena.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(3) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_threads.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(3) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_misskey.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(3) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_pawoo.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(5) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_misskey.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(5) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_pawoo.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(5) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_threads.uk-flex.uk-flex-center.uk-flex-middle
+third-news.com##div.uk-margin-bottom:nth-of-type(5) > .share_button_wrapper.uk-flex.uk-flex-center.uk-flex-middle.uk-flex-space-between > .uk-button.share_hatena.uk-flex.uk-flex-center.uk-flex-middle
 reporterbuzoian.ro##.text-html.widget.container-wrapper
 reporterbuzoian.ro##[href="/ultimele-stiri/anunturi/"]
 reporterbuzoian.ro##[href="/reporter-buzoian-contact/"]
@@ -2575,7 +2598,6 @@ www.crunchyroll.com##.footer-horizontal-layout--wVaTp
 www.crunchyroll.com##.footer-socials--hycEM
 www.crunchyroll.com##.episode-actions
 www.xvideos.com##.banner-game
-
 m.digi24.ro###embed-0
 m.digi24.ro##.video-player-embed
 news.google.com##.zWHNCf > div:nth-of-type(9) > .SFllF.DLwNbc

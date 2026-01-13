@@ -418,7 +418,6 @@
 ##.feedback-btn
 ##.follow__on_google_news
 ##.follow-us
-##.ads
 ##.ad-btn
 ##.follow-ads
 ##.space--textarea
@@ -2509,6 +2508,7 @@ kpopworld.com##.panel-nav-social
 rds.live##[href*="https://rds.live/politica-de-confidentialitate"]
 rds.live##.footer-app > [href*="https://rds.live/TV-Online.apk"] > .entered.lazyloaded
 rds.live##.appdl
+ro.sgames.org##.side-items
 www.manutd.com##[href*="/en/Help/Cookie-Policy"]
 www.manutd.com##[href*="https://www.manutd.com/en/Help/Privacy-Policy"]
 www.manutd.com##[href*="https://app.adjust.com/88iacno_eo402dp"]

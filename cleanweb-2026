@@ -2372,6 +2372,15 @@ cdn-aff.loomclick.com
 ###box_grey.ad
 ##.box_grey.ad
 ##box_grey.ad
+##.terms-privacy.footer-menu-link
+##.commonStyle_PageFavorite.studyGuide_PageFavorite.interior-header__pageFavoritingIcon
+##.google-follow
+###shareit
+##.ct-socials-block
+##.social-buttons.list-inline
+##.newsletter-parent.col-md-4
+##.ad-tiredness-banner
+##.scroll-to-top.fa-arrow-circle-up.fas
 
 @@en.wikipedia.org
 @@bilibili.tv
@@ -2380,6 +2389,63 @@ cdn-aff.loomclick.com
 @@search.bilibili.net
 consent.newsnow.com
 
+www.sparknotes.com###float-icon-mobile
+www.timesnownews.com##.Footer_Otherlinks__n8RFY > ul > li:nth-of-type(3)
+www.timesnownews.com##[href="/info/privacy-policy"]
+www.timesnownews.com##.trending-sticker.TrendingSticker_taajakhabar__MF8T_
+www.timesnownews.com##.Footer_Followus__r9MQ_
+www.timesnownews.com##.SocialShare_followrow__28V_C
+japanese.stackexchange.com##div.site-footer--col:nth-of-type(2)
+japanese.stackexchange.com##.js-primary-footer-links.-list > li:nth-of-type(5)
+neurolaunch.com##.formkit-form.seva-form
+faroutmagazine.co.uk##[href="https://faroutmagazine.co.uk/privacy-policy/"]
+faroutmagazine.co.uk##li.menu-item:nth-of-type(5)
+faroutmagazine.co.uk###menu-footer > li.vert-home.menu-item:nth-of-type(2)
+www.moviefone.com##.footer-google
+www.blinkist.com##div.m\:first\:ml-0.m\:mb-8.m\:w-34.m\:ml-auto:nth-of-type(1) > ul > li.hover\:text-blue.text-sm.font-normal.text-dark-grey.mb-4:nth-of-type(6)
+www.blinkist.com##.m\:col-span-2.m\:mb-10.m\:row-start-2.m\:w-full.flex
+www.blinkist.com##.flex-wrap.text-sm.text-dark-grey.flex > li:nth-of-type(5)
+www.blinkist.com##.flex-wrap.text-sm.text-dark-grey.flex > li:nth-of-type(6)
+www.blinkist.com##.l\:mb-0.mb-4.text-mid-grey.flex
+synopsisandreviews.com###block-29
+synopsisandreviews.com###floating-toc-button
+synopsisandreviews.com##[href="https://synopsisandreviews.com/privacy-policy-2/"]
+theconversation.com##[href^="/europe/newsletters/europe-newsletter-116"]
+theconversation.com##[href="/europe/feeds"]
+theconversation.com##[href="/europe/republishing-guidelines"]
+www.azmovies.net##[href="https://www.azmovies.net/privacy"]
+www.ebsco.com##.gap-6.items-center.justify-between.md\:flex-row.flex-col.flex
+www.ebsco.com##.border-gray-200.border-t.bg-gray-50.py-12.lg\:hidden
+www.ebsco.com##div:nth-of-type(4) > .space-y-2 > .space-y-2.ml-4 > a.transition-colors.hover\:text-\[var\(--color-highlight\)\].dark\:text-white.text-gray-700.text-sm.py-1.block:nth-of-type(5)
+www.enotes.com##a.u-font--xs:nth-of-type(2)
+www.tvtime.com##.my-0.mt-md-3.mt-lg-0.col-3.col-sm-4.col-md-6.col-lg-3
+www.tvtime.com##li.nav-item:nth-of-type(5)
+www.tvtime.com##.col-12.col-md-5.footer_downloadSection__LOGS4
+www.tvtime.com##.comments_like_count__0jy39 > span
+www.probinism.com###menu-item-14994
+www.probinism.com##[href="https://www.probinism.com/privacy-policy-2/"]
+www.ukessays.com##li.mb-sm-0.mb-3.mr-3:nth-of-type(1)
+www.ukessays.com##[href="/contact/fair-use-policy.php"]
+www.ukessays.com##use
+www.charactour.com##[href="/hub/privacy"]
+www.charactour.com##.card__actions
+www.litcharts.com##[href="/privacy/privacy-request"]
+www.litcharts.com##.header-buttons-container
+scholarsbank.uoregon.edu##[href*="https://registrar.uoregon.edu/privacy"]
+scholarsbank.uoregon.edu##[href="https://next.library.uoregon.edu/#"]
+scholarsbank.uoregon.edu###mobile-navbar-toggler > .btn
+pedia.watcha.com##button._button_16bnq_40:nth-of-type(2)
+www.supersummary.com##.css-1qn7nfd.eotrwxb0.MuiGrid2-spacing-xs-4.MuiGrid2-grid-md-auto.MuiGrid2-direction-xs-row.MuiGrid2-container.MuiGrid2-root
+www.supersummary.com##.css-25tch8.e66ux341.MuiButton-colorPrimary.MuiButton-containedSizeMedium.MuiButton-sizeMedium.MuiButton-containedPrimary.MuiButton-contained.MuiButton-root.MuiButtonBase-root
+www.supersummary.com##.css-9nyh24.MuiGrid2-spacing-xs-3.MuiGrid2-direction-md-row.MuiGrid2-direction-xs-column.MuiGrid2-container.MuiGrid2-root
+www.supersummary.com##.css-1fowp4y.MuiBox-root
+thenewbev.com##.u-float-right.g-3.cols.site-footer__signup
+bookanalysis.com##.gb-grid-wrapper-4753855b.gb-grid-wrapper
+bookanalysis.com##[href="https://bookanalysis.com/privacy/"]
+bookanalysis.com##.cp-animated.cp_has_editor.cp-none.cp-field-html-data
+bookanalysis.com###cp_email-5-109618
+bookanalysis.com###cp_button-5-109618
+www.shmoop.com##.bottom-navigation > li:nth-of-type(10)
 www.animatetimes.com###cookie-agreement
 www.lovelive-anime.jp##.c-circlebtn.c-circlebtn--up
 www.lovelive-anime.jp##.p-share__inner

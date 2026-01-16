@@ -2442,6 +2442,10 @@ cdn-aff.loomclick.com
 ###cookiestatement
 ##.footer-places-cookiestatement
 ##cookiestatement
+##.social-link.social-link
+##.gdpr-placeholder.gdpr-social-media
+##gdpr-placeholder.gdpr-social-media
+###gdpr-placeholder.gdpr-social-media
 
 @@en.wikipedia.org
 @@bilibili.tv
@@ -2450,6 +2454,13 @@ cdn-aff.loomclick.com
 @@search.bilibili.net
 consent.newsnow.com
 
+www.digisport.ro##.social-link.social-link
+www.digisport.ro##.col-center
+www.digisport.ro##.gdpr-placeholder.gdpr-social-media
+www.digisport.ro##[src*="https://s.iw.ro/gateway/g/ZmlsZVNvdXJjZT1odHRwcyUzQSUyRiUy/RnN0b3JhZ2UwMWRpZ2lzLnJjcy1yZHMu/cm8lMkZzdG9yYWdlJTJGMjAyNCUyRjAy/JTJGMTklMkYxOTA2ODgyXzE5MDY4ODJf/ZGlnaXNwb3J0LXdoYXRzYXBwLmpwZyZo/YXNoPTlmMDRmYWU3ZWMyYWQxMjEyMDczYWNmMWNkYTQ4ZDk5.jpg"]
+www.digisport.ro##p:nth-of-type(26)
+www.digisport.ro##.article-story.article > [href]
+stirileprotv.ro###pushwooshBellWidget
 as.ro##[src="https://cdn.as.ro/wp-content/themes/antenasportunu/img/icon-comentarii.svg"]
 as.ro##[href="https://aplicatie.as.ro/"]
 as.ro##.reclama-text

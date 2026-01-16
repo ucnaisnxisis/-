@@ -2433,6 +2433,15 @@ cdn-aff.loomclick.com
 ##cookieConsentV4ButtonOpener
 ###cookieConsentV4ButtonOpener
 ##.cookieConsentV4ButtonOpener
+###footer-places-privacy
+##.footer-places-privacy
+##footer-places-privacy
+##footer-places-cookiestatement
+##.cookiestatement
+###footer-places-cookiestatement
+###cookiestatement
+##.footer-places-cookiestatement
+##cookiestatement
 
 @@en.wikipedia.org
 @@bilibili.tv
@@ -2441,6 +2450,17 @@ cdn-aff.loomclick.com
 @@search.bilibili.net
 consent.newsnow.com
 
+as.ro##[src="https://cdn.as.ro/wp-content/themes/antenasportunu/img/icon-comentarii.svg"]
+as.ro##[href="https://aplicatie.as.ro/"]
+as.ro##.reclama-text
+stirileprotv.ro##p:nth-of-type(11)
+universul.net##.custom-html-widget.textwidget > div > div
+simple.wikipedia.org###footer-places-privacy
+simple.wikipedia.org###footer-places-cookiestatement
+www.ussc.gov##[href="/about/privacy-security-and-comment-policy"]
+www.ussc.gov###block-topheadermenu > .menu.clearfix > li.menu-item:nth-of-type(2)
+www.ussc.gov##li.menu-item:nth-of-type(3)
+www.ussc.gov##fieldset
 klap.ro##[href="##.cookieConsentV2ButtonOpenerhttps://klap.ro/politica-de-confidentialitate/"]
 www.rapidgsm.ro##[href="#top"]
 www.rapidgsm.ro##[href="https://www.rapidgsm.ro/politica-de-confidentialitate"]

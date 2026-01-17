@@ -2,7 +2,7 @@
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-2026
 ! Info: Personal use, non-comercial, no-copyright claim, individual
-! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
+! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
 ###footer-top-nav-link.gdpr-modal-trigger
 ##.footer-top-nav-link.gdpr-modal-trigger

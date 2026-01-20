@@ -4,6 +4,18 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+###totop
+##.totop
+##totop
+###mt-2
+###rta-asacp-links
+###advertiser-links
+##.mt-2
+##.rta-asacp-links
+##.advertiser-links
+##mt-2
+##rta-asacp-links
+##advertiser-links
 ###footer-top-nav-link.gdpr-modal-trigger
 ##.footer-top-nav-link.gdpr-modal-trigger
 ##footer-top-nav-link.gdpr-modal-trigger

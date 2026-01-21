@@ -4,6 +4,25 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##[href="/privacy-policy.php"]
+##[href="/en/parental-controls"]
+##[href="/en/child-sexual-abuse"]
+##[href="/en/non-consensual-content"]
+##[href="/en/privacy-notice"]
+##.btn_favorites_watch
+##.mobile-hide.btn.bookmark-link
+##[href="/privacy/"]
+##.add-to-playlist.fa-clock-o.fa
+###report
+##.report
+##report
+###cont_abuse
+##.cont_abuse
+##cont_abuse
+###b-like
+##.b-like
+##b-like
+##[href="https://brave.com/advertiser-privacy/"]
 ###totop
 ##.totop
 ##totop

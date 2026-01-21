@@ -4,6 +4,37 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##.li-wishlist.item
+###CommodityFavoritesBar
+##.fav11657.add-favorites
+##.footer__end-item-social
+##[href="/date-personale"]
+##[href="https://www.gramar.ro/wishlist"]
+##[href="/protejarea-datelor"]
+##[href="/en/info/confidentialitate"]
+##[href="/en/info/cookies"]
+##.product-action--add-to-favorites.product-action
+##[href^="https://api.whatsapp.com/send"]
+##.tap-top
+##.NoScroll
+##[href="/ro/feed-rss.xml"]
+##[href="/wishlist"]
+##.details-wish
+##.details-list-group
+##.toolbox.wishlist-menu.right-menu
+##.newsletter-menu
+##[href="/abonare-newsletter/"]
+##[href="/gdprro/"]
+###zak-scroll-to-top
+##.app-links
+##[href="/politica-de-protectie-a-datelor"]
+##[href="/politica-referitoare-la-cookies"]
+###buttonTop
+##[href="/despre-noi/publicitate"]
+##.privacy-notice-txt
+###accept-privacy-policy
+##.privacy-notice
+###footer-newsletter
 ##[href="/privacy-policy.php"]
 ##[href="/en/parental-controls"]
 ##[href="/en/child-sexual-abuse"]

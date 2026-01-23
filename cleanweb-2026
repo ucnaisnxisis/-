@@ -4,6 +4,18 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##.showMobile.show.scrollUpButton
+###showMobile.show.scrollUpButton
+##showMobile.show.scrollUpButton
+##.ft_footer_social
+###ft_footer_social
+##ft_footer_social
+##[href="/privacy.htm"]
+##.social_icons
+###social_icons
+##social_icons
+##[href="/privacy.htm"]
+##.p-meta
 ##.li-wishlist.item
 ###CommodityFavoritesBar
 ##.fav11657.add-favorites

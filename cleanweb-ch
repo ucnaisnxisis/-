@@ -22,3 +22,8 @@
 @@bilibili.com
 @@bilibili.net
 @@search.bilibili.net
+m.youtube.com##.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--size-m.yt-spec-button-shape-next--icon-only-default
+m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButtonDark > c3-icon > .yt-icon-shape.ytSpecIconShapeHost > div
+m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButtonDark > c3-icon > .yt-icon-shape.ytSpecIconShapeHost
+m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButtonDark
+m.youtube.com##.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--size-s.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--override-small-size-icon

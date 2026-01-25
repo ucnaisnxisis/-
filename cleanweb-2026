@@ -4,6 +4,13 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##+js(aost, document.getElementById, adsBlocked)
+##+js(aost, document.getElementById, consentBlocked)
+##+js(aost, document.getElementById, cookiesBlocked)
+##.is-breaking.o-breaking-alert-wrap
+##.accessibility-button
+##.c-author-social
+##.c-promo-close-modal.o-promo-close-modal
 ###go-to-top.visible
 ##.confirm-age-content
 ##.showMobile.show.scrollUpButton

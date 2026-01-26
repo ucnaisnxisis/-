@@ -1,8 +1,8 @@
-! Title: ☠️CleanWeb Duo☠️
+! Title: ☠️CleanWeb Duo 2020-2025☠️
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-duo
 ! Info: Personal use, non-comercial, no-copyright claim, individual
-! Warning: Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 51.000 rules, github >> Try clewanweb-duo1 in future)
+! Warning: Discontinued in 2026! But usefull. Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 1,99 MB rules, github >> Try clewanweb-duo1)
 
 www.cylex.com.ve##div:nth-of-type(5)
 www.cylex.us.com##div:nth-of-type(6)
@@ -538,6 +538,9 @@ www.spiritus.ro##[href="#sus"]
 club-inot.ro##[href="https://club-inot.ro/politica-de-confidentialitate/"]
 club-inot.ro##[href="https://club-inot.ro/politica-cookie/"]
 club-inot.ro##.elementor-element-4293d2ee.elementor-element.elementor-inner-column.elementor-col-50.elementor-column
+discord.com##a.top-new-link.link-footer:nth-of-type(9)
+discord.com###w-dropdown-list-23 > a.top-new-link.link-footer:nth-of-type(2)
+discord.com###w-dropdown-list-23 > a.top-new-link.link-footer:nth-of-type(3)
 ancatodirica.wordpress.com##.do-not-sell-link
 www.poezie.ro##[href="/includes/policy.php"]
 scoaladeslabit.ro###cya11y-container

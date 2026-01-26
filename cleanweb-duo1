@@ -5,7 +5,76 @@
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-ch (Limit 1,99 MB rules)
 
 @@www.awxcdn.com
-
+@@maps.gstatic.com
+tracking.paysera.com
+www.finradar.ro##button.btn-primary.btn:nth-of-type(1)
+www.finradar.ro##.mb-3.ps-3
+www.finradar.ro##[href="/publicitate"]
+www.finradar.ro##.fa-2x.fa-share-nodes.svg-inline--fa
+www.finradar.ro##.Banner_interscroller__iNGdc
+www.finradar.ro##.mb-3.p-0
+www.conso.ro##.ArticleDetails_googleNews__ATeX2
+www.paysera.ro##div.col-md-4:nth-of-type(3)
+costas-negru.ro##[href="https://costas-negru.ro/politica-de-confidentialitate/"]
+www.expertulbanilor.ro##.t5.row
+www.expertulbanilor.ro##[href="https://www.expertulbanilor.ro/feed/"]
+ing.ro##.custom-linkedin-icon
+ing.ro##.gray-border.items-container
+ing.ro##.btn-nav.mobile-header-cta
+ing.ro##.tabeldan
+www.transfergo.ro##.wp-block-column-is-layout-flow.is-layout-flow.footer__navigation-column--help.footer__navigation-column.wp-block-column > .wp-block-navigation-is-layout-flex.is-layout-flex.wp-block-navigation.has-blue-900-color.has-text-color.footer__navigation-menu > .wp-block-navigation.has-blue-900-color.has-text-color.footer__navigation-menu.wp-block-navigation__container > li.wp-block-navigation-link.wp-block-navigation-item:nth-of-type(2) > .wp-block-navigation-item__content
+tbibank.ro##.footer-bg-second__social
+www.mdlpa.ro##.btn-agree.btn
+www.mdlpa.ro##p:nth-of-type(3)
+www.mdlpa.ro##.cp-overlay
+www.mdlpa.ro###cp-dialog
+www.cec.ro##.spb_overlay.block-cec-actualizaredate-modal
+www.cec.ro##.region-highlighted.region
+www.cec.ro###block-footermobileapp
+salt.bank##aside.salt-footer-amenda-aside
+salt.bank##.salt-footer-amenda-section
+premierenergy.ro###mic-init-access-tool
+premierenergy.ro##div.col-md-3:nth-of-type(4) > .list-footer
+premierenergy.ro##.show.back-to-top-icon
+premierenergy.ro##.modal-dialog
+premierenergy.ro##[href="https://premierenergy.ro/cookies"]
+premierenergy.ro##[href="https://premierenergy.ro/gdpr"]
+horacredit.ro###Cookies-button-acceptAll
+horacredit.ro##.Cookies_contentWrap__atvIa
+||horacredit.ro/images/main-page/welcome/wow-back.webp$image
+horacredit.ro##[src="/theme/icon-eaa.svg"]
+horacredit.ro##.top.accessibilityWidget.AccessibilityWiget_accessibilityWidget__mbmeX
+horacredit.ro##.AppBanner_container__Tm_2m
+horacredit.ro##.Authorize_holder__O55JV
+horacredit.ro##.GetAppInfo_section__x_bTa
+horacredit.ro##.MobileMenu_contactSocial__Z_kLD
+horacredit.ro##.Authorize_policyTab__WdG_r.WithTag_tag__STdUj
+horacredit.ro##.Authorization_policyTab__S9eaV.WithTag_tag__STdUj
+modelacte.ro##[href="https://modelacte.ro/politica-de-confidentialitate/"]
+modelacte.ro##.chat-icon
+www.bancatransilvania.ro##accessi-widget
+secure.bankofamerica.com##.small-centered.foot-row
+www.bankofamerica.com##div.highlight-card.last-row.lowlight:nth-of-type(5)
+www.intesasanpaolo.com##.v-mobile.js-footer-app.footer-app.ga-content
+redfinance.ro##[href="https://www.instagram.com/brokercreditesibiu/"]
+redfinance.ro##[href="https://www.tiktok.com/@brokercreditesibiu"]
+redfinance.ro##[href="https://www.youtube.com/@RedFinance_brokerdecredite"]
+www.manager.ro##.containerImportante > .first.bottom_links
+www.comisarul.ro##div.footer-column:nth-of-type(1)
+www.prosport.ro##.single__follow
+www.go4games.ro##.single__wrapper > div:nth-of-type(3)
+www.garantibbva.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-hidden-desktop.elementor-widget-tablet__width-initial.elementor-widget__width-auto.elementor-tablet-align-center.elementor-align-left.elementor-icon-list--layout-inline.elementor-element-672f382.elementor-element > .elementor-widget-container > .elementor-inline-items.elementor-icon-list-items > li.elementor-inline-item.elementor-icon-list-item
+www.comisarul.ro##.share_button.custom_share_button
+www.comisarul.ro###navSocial
+m.zfcorporate.ro##.pull-left.login-btn
+m.zfcorporate.ro##.freeTrial
+downdetector.ro##section.footer_col:nth-of-type(3)
+downdetector.ro##section.footer_col:nth-of-type(2)
+downdetector.ro##div.footer_col > section:nth-of-type(1)
+downdetector.ro##div.flex-col.flex.h-full.pb-4.pt-4.p-6.dark\:border-black.border-zinc-200.duration-500.transition-colors.rounded-2xl.border.dark\:text-zinc-300.text-zinc-600.dark\:bg-zinc-700.bg-white:nth-of-type(2)
+discord.com##.links__7aac8 > a.anchor_edefb8.anchorUnderlineOnHover_edefb8:nth-of-type(1) > .text-xxs\/normal_cf4812
+m.digi24.ro##[src*="/static/theme-mobile-repo/bin/images/digitv/digitv.jpg"]
+m.digi24.ro##.widget-digitv
 chromewebstore.google.com##.AeBiU-RLmnJb
 chromewebstore.google.com##.AeBiU-LgbsSe.AeBiU-LgbsSe-OWXEXe-Bz112c-M1Soyc.AeBiU-LgbsSe-OWXEXe-dgl2Hf.AeBiU-kSE8rc-FoKg4d-sLO9V-YoZ4jf.NhTFZ.gzhase
 presspay.ro##.sm\:items-center.flex-col.items-start.justify-between.sm\:gap\:4.gap-5.inline-flex.border-secondary.border.rounded-xl.sm\:py-7.py-6.px-7.w-full.bg-theme.brand-theme

@@ -98,14 +98,6 @@ redirector.googlevideo.com
 ad.googlevideo.com
 ads.googlevideo.com
 static.ads-twitter.com
-||cdn.discordapp.com
-||discordapp.com
-||discord.com
-||discordapp.app
-||discordapp.net
-||discordapp.co
-||discord.app
-||discord.net
 enterprise.google.com
 *app.goo.gl
 qr.quickshare.samsungcloud.com

@@ -11,6 +11,12 @@
 ##.accessibility-button
 ##.c-author-social
 ##.c-promo-close-modal.o-promo-close-modal
+###disclaimer-accept_cookies-btn
+##[href="/cookies-policy.php"]
+##.s360-social-sharing
+###ocn-cookie-wrap
+##.btn-favourites
+##.post_rating
 ###go-to-top.visible
 ##.confirm-age-content
 ##.showMobile.show.scrollUpButton

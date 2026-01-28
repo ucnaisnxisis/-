@@ -7,6 +7,15 @@
 ##+js(aost, document.getElementById, adsBlocked)
 ##+js(aost, document.getElementById, consentBlocked)
 ##+js(aost, document.getElementById, cookiesBlocked)
+##.backtoptop
+##[href*="protectia-datelor-personale"]
+##.btn.btnShare
+##.btn.btnReport
+##.rate.rating-container > .wrapped
+##[href="/pages/privacy-policy"]
+##.ba-loy-namespace
+###shopify-section-back_top
+##.smart-bot-container
 ##.is-breaking.o-breaking-alert-wrap
 ##.accessibility-button
 ##.c-author-social

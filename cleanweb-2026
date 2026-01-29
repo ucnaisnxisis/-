@@ -7,6 +7,10 @@
 ##+js(aost, document.getElementById, adsBlocked)
 ##+js(aost, document.getElementById, consentBlocked)
 ##+js(aost, document.getElementById, cookiesBlocked)
+##.scroll-to-target.scroll-to-top
+##.icon-down-arrow
+##.subscribeSocial
+##.bottomFixAd
 ##.backtoptop
 ##[href*="protectia-datelor-personale"]
 ##.btn.btnShare

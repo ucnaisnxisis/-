@@ -7,6 +7,8 @@
 ##+js(aost, document.getElementById, adsBlocked)
 ##+js(aost, document.getElementById, consentBlocked)
 ##+js(aost, document.getElementById, cookiesBlocked)
+##.control.control_likes
+##.control.control_views
 ##.scroll-to-target.scroll-to-top
 ##.icon-down-arrow
 ##.subscribeSocial

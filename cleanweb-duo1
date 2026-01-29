@@ -83,6 +83,78 @@ thatpervert.com##.post_rating
 thatpervert.com##[src="/images/censorship/copywrite.jpg"]
 hentaifreak.org##div.fixed-bottom-menu-item:nth-of-type(4)
 tube.hentaistream.com##[src="https://tube.hentaistream.com/wp-content/plugins/wptouch/themes/default/ads_pages2.php"]
+www.code4.ro##li.space-y-4:nth-of-type(2) > .space-y-4
+www.code4.ro##li.space-y-4:nth-of-type(1) > .space-y-4 > li:nth-of-type(1) > .text-gray-500.hover\:text-gray-900
+www.code4.ro##li.space-y-4:nth-of-type(2) > .text-left.text-sm.font-semibold.tracking-wider.text-gray-400.uppercase.hover\:text-gray-900
+www.code4.ro##.flex.gap-x-4.text-gray-400.md\:order-2
+simpliers.com##.ms-3.btn.btn-xs.btn-info.font-weight-bold.transition-3d-hover.py-1.px-2.text-nowrap
+simpliers.com##.support-button.position-fixed.btn.btn-success.rounded-circle.d-flex.align-items-center.justify-content-center.position-right.shadow.opacity-50
+simpliers.com##.media-body.fs-1.ms-1 > .h6.mb-0 > .text-reset
+simpliers.com##.d-inline-block.bg-light.px-3.py-2.rounded.shadow-dark-lg.follow-us-fixed > .d-flex.align-items-center
+simpliers.com##.row.mb-7
+simpliers.com##.d-inline-block.bg-light.px-3.py-2.rounded.shadow-dark-lg.follow-us-fixed
+simpliers.com##.support-button.position-fixed.btn.btn-success.rounded-circle.d-flex.align-items-center.justify-content-center.position-right.shadow.opacity-50
+simpliers.com##.d-block.h-4rem > .w-100.h-100
+simpliers.com##.d-flex.gap-2.align-items-center.mb-2
+www.quackit.com##.about
+www.tutorialspoint.com##.flex.space-x-4
+bootstrap-cheatsheet.themeselection.com##.col-lg-4.col-12
+bootstrap-cheatsheet.themeselection.com##li.nav-item.col-6.col-sm-auto:nth-of-type(1) > .nav-link.p-2
+bootstrap-cheatsheet.themeselection.com###navbarSupportedContent > .navbar-nav.flex-row.flex-wrap.ms-sm-auto.cheatsheet-social > li.nav-item.col-6.col-sm-auto:nth-of-type(3) > .nav-link.p-2
+bootstrap-cheatsheet.themeselection.com###navbarSupportedContent > .navbar-nav.flex-row.flex-wrap.ms-sm-auto.cheatsheet-social > li.nav-item.col-6.col-sm-auto:nth-of-type(3)
+bootstrap-cheatsheet.themeselection.com##li.nav-item.col-6.col-sm-auto:nth-of-type(1)
+bootstrap-cheatsheet.themeselection.com###navbarSupportedContent > .navbar-nav.flex-row.flex-wrap.ms-sm-auto.cheatsheet-social > li.nav-item.col-6.col-sm-auto:nth-of-type(2) > .nav-link.p-2
+bootstrap-cheatsheet.themeselection.com###navbarSupportedContent > .navbar-nav.flex-row.flex-wrap.ms-sm-auto.cheatsheet-social > li.nav-item.col-6.col-sm-auto:nth-of-type(2)
+bootstrap-cheatsheet.themeselection.com###navbarSupportedContent > .navbar-nav.flex-row.flex-wrap.ms-sm-auto.cheatsheet-social
+www.kavalog.com##[href*="https://www.kavalog.com/politique-de-confidentialite/"]
+www.kavalog.com##[href*="https://www.kavalog.com/avis-de-confidentialite/"] > font:nth-of-type(1) > font
+www.kavalog.com##.menu-item.menu-social.menu-item-type-custom.menu-item-object-custom.menu-item-has-children > .sub-menu
+www.kavalog.com##.menu-item.menu-social.menu-item-type-custom.menu-item-object-custom.menu-item-has-children > a:nth-of-type(1)
+effonline.org##.icon-down-arrow
+effonline.org##.scroll-to-target.scroll-to-top
+effonline.org##.elementor-element.elementor-element-3432c0f.govarnex-footer-link-field.elementor-widget.elementor-widget-heading > .elementor-widget-container > .elementor-heading-title.elementor-size-default
+effonline.org##.mobile-nav__contact.list-unstyled > li
+effonline.org##.mobile-nav__social
+www.timeslive.co.za##.b-footer__social-links-container
+www.timeslive.co.za##div.b-footer__links-group:nth-of-type(2) > .b-footer__links-group-list > li.b-footer__links-group-list-item:nth-of-type(6) > .c-link > font:nth-of-type(1) > font
+www.timeslive.co.za##div.b-footer__links-group:nth-of-type(2) > .b-footer__links-group-list > li.b-footer__links-group-list-item:nth-of-type(12) > .c-link > font:nth-of-type(1) > font
+www.timeslive.co.za##div.b-footer__links-group:nth-of-type(2) > .b-footer__links-group-list > li.b-footer__links-group-list-item:nth-of-type(10) > .c-link > font:nth-of-type(1) > font
+www.timeslive.co.za##div.b-footer__links-group:nth-of-type(2) > .b-footer__links-group-list > li.b-footer__links-group-list-item:nth-of-type(3) > .c-link > font:nth-of-type(1) > font
+www.timeslive.co.za##.arena-share-bar.arena-share-bar__left
+www.thesouthafrican.com###android-popup-content
+www.thesouthafrican.com##.site-footer__inner > div:nth-of-type(3) > .menu-footer-menu-container > .menu > .menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-2155936
+www.thesouthafrican.com##.site-footer__inner > div:nth-of-type(3) > .menu-footer-menu-container > .menu > .menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-2155935
+www.thesouthafrican.com###menu-item-2155935 > [href*="/contact-us"]
+www.thesouthafrican.com###menu-item-2155936 > [href*="/terms-and-conditions"]
+www.ecr.co.za##.py-3.d-flex.justify-content-evenly.flex-wrap.gap-3
+www.ecr.co.za##.px-3.py-4.pb-5.d-flex.align-items-center
+www.teamrankings.com##.footer-term-links > li:nth-of-type(2)
+www.teamrankings.com##.has-right-sidebar > div:nth-of-type(1) > div
+homefinder.com##.Boxstyles__StyledBox-rui__sc-18iq1dl-0.hDvlcJ.Flex__StyledFlex-rui__sc-9llnhl-0.bWyQGQ.styled__StyledNavWrapper-sc-1mf2311-2.gtRdvK > div.Boxstyles__StyledBox-rui__sc-18iq1dl-0.hDvlcJ:nth-of-type(2)
+homefinder.com##.Boxstyles__StyledBox-rui__sc-18iq1dl-0.hDvlcJ.Flex__StyledFlex-rui__sc-9llnhl-0.bWyQGQ.styled__StyledNavWrapper-sc-1mf2311-2.gtRdvK > div.Boxstyles__StyledBox-rui__sc-18iq1dl-0.hDvlcJ:nth-of-type(3)
+www.dailymaverick.co.za##div:nth-of-type(7) > .text-xl.font-georgia.font-light.text-black.px-2.py-2\.5.block
+www.dailymaverick.co.za##.overflow-y-auto.max-h-\[100vh\].pb-\[160px\].text-sm.divide-y.divide-neutral-500.relative > div:nth-of-type(6) > .grid.grid-cols-2.gap-x-2.gap-y-1.pl-2.pb-2 > a.text-sm.font-geist.text-black.px-2.py-2\.5.block:nth-of-type(2)
+www.truyen-hentai.co.uk##.modal-box > p:nth-of-type(2)
+www.truyen-hentai.co.uk##.modal-box > p:nth-of-type(3)
+www.truyen-hentai.co.uk##.modal-box > p:nth-of-type(1)
+www.truyen-hentai.co.uk##[href*="https://www.truyen-hentai.co.uk/gdpr-policy"]
+www.truyen-hentai.co.uk##[href*="https://www.truyen-hentai.co.uk/privacy-policy"]
+www.meme-arsenal.com##.vk-btn.mat-raised-button
+e621.net###tos-warning-decline
+scattoilet.net##center
+casereports.bmj.com##.panel-pane.pane-bmjj-social-icons > .pane-content > .menu
+casereports.bmj.com##.legal-inner > ul > li:nth-of-type(2)
+casereports.bmj.com##.leaf.menu-mlid-15289
+nationaltoday.com##.mobile-nt-share.nt-scrolled
+www.checkiday.com##.mdl-mega-footer__bottom-section > .mdl-mega-footer__link-list
+www.hindustantimes.com##div.htBasicLinks:nth-of-type(1) > .basicLinks > li:nth-of-type(7) > [href*="https://accounts.hindustantimes.com/ht/userplan"]
+www.hindustantimes.com##div.htBasicLinks:nth-of-type(1) > .basicLinks > li:nth-of-type(11) > [href*="https://www.hindustantimes.com/rss"]
+www.hindustantimes.com##.bottomFixAd
+www.hindustantimes.com##.subscribeSocial
+www.hindustantimes.com##.subscribeBox.notLoggedIn
+www.hindustantimes.com##.subscribeInput > label:nth-of-type(1)
+www.hindustantimes.com##.appBtnForMweb
+www.hindustantimes.com##.detailPage.mainStory > .jsx-ebfa89ebbd047586.articleDetail > .jsx-ebfa89ebbd047586.artFlex.artTimeCat > .jsx-ebfa89ebbd047586.artMeta > .jsx-ebfa89ebbd047586.artCategory > .storyBy > .authorSec > span.authorBy:nth-of-type(1) > .byLineAuthor > .socialMain.author > .twitter.author_byline_twitterLink
 www.finradar.ro##button.btn-primary.btn:nth-of-type(1)
 www.finradar.ro##.mb-3.ps-3
 www.finradar.ro##[href="/publicitate"]

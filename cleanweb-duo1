@@ -24,6 +24,136 @@ www.facebook.com##div.m:nth-of-type(26)
 www.facebook.com##div.m:nth-of-type(20) > .native-text.rslh > .f1.a
 www.facebook.com##div.m:nth-of-type(21)
 www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
+m.ziare.com##div.info-news-container.shuffleNotification:nth-of-type(1) > .subscribe-container.subscribe-container-mobile
+www.orange.ro##.qnbskFavo
+m.digi24.ro##.gutter-container-0 > p
+m.digi24.ro##.col-8.col-md-12 > .article.article-alt > .article-content > .link-app-digisport
+news.google.com##.zWHNCf > div:nth-of-type(10) > .SFllF.DLwNbc
+www.e-ziare.ro##ul.nav.navbar-nav:nth-of-type(1) > li:nth-of-type(8) > [href*="index.php"]
+discord.bots.gg##.cookie-banner
+discord.bots.gg##a.footer__link:nth-of-type(3)
+www.powr.io###chtl-open-chat-icon > div
+www.powr.io##.chtl-hovering-message-container > p
+www.powr.io##.chtl-hovering-message-container
+www.powr.io###cthl-hovering-message-close-btn
+www.powr.io##[href*="https://www.powr.io/privacy"] > .text-\[\#6b7f9a\].font-gordita.text-sm.leading-5.mt-4
+www.powr.io##div.text-color8.leading-6.mt-8:nth-of-type(2)
+quidget.ai##.q-btn__img
+quidget.ai##.q-btn.q-btn--80
+quidget.ai##.container.footer_item.text-center.text-\[14px\].items-start.text-neutral-400.lg\:items-end.justify-between.flex.flex-col.lg\:flex-row
+quidget.ai##[href*="https://quidget.ai/privacy-and-cookies-policy/"]
+quidget.ai###book_demo_header_click
+botghost.com##.flex.space-x-6
+botghost.com##.grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-5.gap-8.mb-16 > div:nth-of-type(4) > .space-y-2 > li:nth-of-type(2) > .text-white.hover\:underline.transition-colors.duration-200.text-sm
+www.tawk.to##li.elementor-icon-list-item.elementor-inline-item:nth-of-type(1) > [href*="https://www.tawk.to/legal/"] > .elementor-icon-list-text
+www.tawk.to##li.elementor-icon-list-item.elementor-inline-item:nth-of-type(1)
+peky.app##.flex.flex-col.gap-4.pt-8.items-start > .flex.items-center.gap-4
+www.twik.io##.div-block-20 > div:nth-of-type(1) > a.w-inline-block:nth-of-type(1)
+www.twik.io##.div-block-20 > div:nth-of-type(1) > a.w-inline-block:nth-of-type(2)
+www.twik.io##.div-block-20 > div:nth-of-type(1) > a.w-inline-block:nth-of-type(3) > .image-4
+tinychat.ai##.WelcomePage_messages__wziv_
+tinychat.ai##.Chatbot_logoContainer__vP6MI > [src*="https://tinychat.ai/chatbot/assets/icons/default-logo.svg"]
+tinychat.ai##.Social_container__xiEuU
+scnx.xyz##.mt-8.lg\:mt-4.text-gray-400.text-sm.pt-3.items-center.justify-between.sm\:flex > .lg\:flex > a.undefined.transition.duration-150.hover\:text-gray-300:nth-of-type(1)
+faketextmessage.org##.rounded-xl.border.shadow-sm.transition-all.duration-200.hover\:shadow-md.fixed.left-0.right-0.z-50.mx-4.mb-4.bottom-4.bg-white.text-gray-900.border-gray-200 > .p-6
+faketextmessage.org##.mt-8.p-4.bg-blue-50.rounded-lg
+www.hammerai.com##button.not-draggable.inline-flex.items-center.justify-center.rounded-md.text-xs.md\:text-sm.font-medium.ring-offset-background.transition-colors.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-muted.focus-visible\:ring-offset-2.disabled\:pointer-events-none.text-primary.underline-offset-4.shadow-none.hover\:underline.h-8.py-2.w-full.px-2.md\:px-4.undefined.hover\:bg-muted\/50:nth-of-type(3)
+www.hammerai.com##button.not-draggable.inline-flex.items-center.justify-center.rounded-md.text-xs.md\:text-sm.font-medium.ring-offset-background.transition-colors.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-muted.focus-visible\:ring-offset-2.disabled\:pointer-events-none.text-primary.underline-offset-4.shadow-none.hover\:underline.h-8.py-2.w-full.px-2.md\:px-4.undefined.hover\:bg-muted\/50:nth-of-type(2)
+www.hammerai.com##button.not-draggable.inline-flex.items-center.justify-center.rounded-md.text-xs.md\:text-sm.font-medium.ring-offset-background.transition-colors.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-muted.focus-visible\:ring-offset-2.disabled\:pointer-events-none.text-primary.underline-offset-4.shadow-none.hover\:underline.h-8.py-2.w-full.px-2.md\:px-4.undefined.hover\:bg-muted\/50:nth-of-type(1)
+www.hammerai.com##button.not-draggable.inline-flex.items-center.justify-center.rounded-md.text-xs.md\:text-sm.font-medium.ring-offset-background.transition-colors.focus-visible\:outline-none.focus-visible\:ring-2.focus-visible\:ring-muted.focus-visible\:ring-offset-2.disabled\:pointer-events-none.text-primary.underline-offset-4.shadow-none.hover\:underline.h-8.py-2.w-full.px-2.md\:px-4.undefined.hover\:bg-muted\/50:nth-of-type(4)
+www.hammerai.com##.grid.grid-cols-1.md\:grid-cols-3.gap-8 > div.flex.flex-col:nth-of-type(1) > .flex.flex-col.space-y-3 > a.text-muted-foreground.text-sm.hover\:underline:nth-of-type(4)
+www.hammerai.com##.grid.grid-cols-1.md\:grid-cols-3.gap-8 > div.flex.flex-col:nth-of-type(1) > .font-bold.text-sm.mb-4.uppercase.tracking-wide
+tupperbox.app##.alert-banner.svelte-1tz27wo
+www.midjourney.com##button.text-sm.underline-offset-2.opacity-70.hover\:underline
+www.midjourney.com##a.text-sm.underline-offset-2.opacity-70.hover\:underline:nth-of-type(2)
+quickchat.ai##.grid.grid-flow-col.grid-cols-\[max-content\].items-start.justify-start.gap-x-3
+quickchat.ai###quickchat-bubble
+quickchat.ai###quickchat-message
+www.yollo.ai##.md\:grid.md\:grid-cols-2.md\:gap-8 > div:nth-of-type(1) > .w-full > .mt-6.space-y-4 > li:nth-of-type(2)
+www.yollo.ai##.md\:grid.md\:grid-cols-2.md\:gap-8 > div:nth-of-type(1) > .w-full > .mt-6.space-y-4 > li:nth-of-type(3)
+www.librechat.ai##.flex.flex-row.gap-2.items-center.justify-center.max-w-11\/12.mx-auto
+www.librechat.ai##.grid.grid-cols-2.md\:grid-cols-6.text-base.gap-y-8.gap-x-2 > div:nth-of-type(6) > .flex.flex-col.gap-2 > li:nth-of-type(3)
+www.librechat.ai##.jsx-cb81323c6da5868c.nextra-banner-container
+www.librechat.ai##.grid.grid-cols-2.md\:grid-cols-6.text-base.gap-y-8.gap-x-2 > div:nth-of-type(5) > .pb-2.font-mono.font-bold.text-primary
+www.librechat.ai##.grid.grid-cols-2.md\:grid-cols-6.text-base.gap-y-8.gap-x-2 > div:nth-of-type(5) > .flex.flex-col.gap-2 > li:nth-of-type(1)
+openai.com##div.\@md\:mt-0.\@md\:gap-10.mt-11.flex.w-full.flex-col.gap-11.first\:mt-0:nth-of-type(4) > .flex.flex-col.justify-between > .\@md\:gap-2xs.\@md\:mt-3xs.gap-xs.mt-2xs.flex.flex-col > li:nth-of-type(2)
+openai.com##div.flex.flex-col.justify-between:nth-of-type(4) > .\@md\:gap-2xs.\@md\:mt-3xs.gap-xs.mt-2xs.flex.flex-col > li:nth-of-type(5)
+openai.com##.flex.flex-wrap.justify-center.gap-2
+openai.com##.\@md\:w-auto.\@md\:justify-start.gap-sm.\@md\:gap-2xs.\@lg\:gap-sm.flex.justify-between
+openai.com##.shadow-black-4.bg-tertiary-60.relative.flex.w-full.rounded-\[24px\].p-2.shadow-sm.backdrop-blur-xl
+matchboxbot.xyz##a.px-8.py-3.rounded-full.bg-\[\#325b65\].border.border-\[\#ffffff1a\].text-\[\#f2e7c9\].font-semibold.shadow-md.hover\:bg-\[\#26464e\].transition.hover\:scale-\[1\.06\].hover\:-translate-y-1.duration-200:nth-of-type(2)
+www.atale.ai##.relative.z-10.opacity-0.shadow-black\/5.data-\[loaded\=true\]\:opacity-100.shadow-none.transition-transform-opacity.motion-reduce\:transition-none.\!duration-300.w-\[160px\].rounded-none
+www.atale.ai##.flex.space-x-6
+www.writecream.com##.modal-body.fusion-clearfix
+www.writecream.com###modal-heading-1
+www.writecream.com##[href*="https://play.google.com/store/apps/details"] > .lazy.loaded
+www.writecream.com##[href*="https://apps.apple.com/us/app/id1633842750"] > .lazy.loaded
+www.writecream.com###stickyBottomBar
+www.writecream.com##.gist-messenger-bubble-iframe.sc-bRBYWo.hVYaFm > iframe
+elevenlabs.io##li.tw-px-3.tw-w-full.tw-inline-block.tw-pt-9:nth-of-type(5) > .tw-mt-3 > li:nth-of-type(8) > .tw-block.tw-w-fit.tw-type-xs.tw-font-medium.tw-text-black.hover\:tw-text-gray-500.tw-transition.tw-rounded.tw-outline-none.focus-visible\:tw-outline-focus.focus-visible\:tw-outline-offset-0.tw-px-1\.5.-tw-mx-1\.5.tw-text-left.disabled\:tw-opacity-0
+elevenlabs.io##li.tw-px-3.tw-w-full.tw-inline-block.tw-pt-9:nth-of-type(6)
+elevenlabs.io##li.tw-px-3.tw-w-full.tw-inline-block.tw-pt-9:nth-of-type(7) > .tw-mt-3 > li:nth-of-type(9)
+aifreebox.com##.flex.space-x-6
+www.aiticketbot.com##.scroll-to-top
+www.aiticketbot.com##.btn.btn-primary
+nightbot.tv##._socialFooterContainer_1nade_8 > ._footer_1nade_1.m_7485cace.mantine-Container-root
+nightbot.tv##._actionButton_fxjv1_2 > ._button_1g18y_1 > .mantine-focus-auto.mantine-active._button_md2ph_1.m_77c9d27d.mantine-Button-root.m_87cf2631.mantine-UnstyledButton-root
+www.ionos.com##.nav.justify-content-start.justify-content-md-end.flex-column.flex-md-row.ms-n2.ms-md-0 > li.nav-item:nth-of-type(7) > .nav-link.link-internal
+www.ionos.com##.nav.justify-content-start.justify-content-md-end.flex-nowrap.ms-n2.ms-md-0
+appy.bot##a.text-sm.text-subtext.data-\[active\]\:bg-surface:nth-of-type(5)
+instant.chat##div.footer-column:nth-of-type(3) > .footer-title
+instant.chat##div.footer-column:nth-of-type(3)
+www.autoresponder.ai##.consent-banner-root.MNUFxS.Frk6TZ.jUcJ2u
+www.autoresponder.ai###comp-kleba9uw > .font_9.wixui-rich-text__text > a.wixui-rich-text__text > span.wixui-rich-text__text:nth-of-type(1) > .wixui-rich-text__text
+www.subo.ai##div.footer__section:nth-of-type(4)
+www.subo.ai##div.footer__section:nth-of-type(3) > .footer__section-title.text-white
+www.subo.ai##li.footer__link-item:nth-of-type(5)
+restream.io##.footer__info
+carl.gg##[href*="https://botlabs.gg/gdpr-privacy-notice"] > .footer_title
+carl.gg##[href*="https://botlabs.gg/privacy-policy"] > .footer_title
+carl.gg##[href*="https://botlabs.gg/copyright-dispute-policy"] > .footer_title
+fossabot.com##.flex.items-center.space-x-6.md\:space-x-8
+fossabot.com##div.flex-1.py-6:nth-of-type(2) > ul > li.pt-1:nth-of-type(2) > .text-sm.text-gray-400.hover\:text-white.py-1.lg\:py-0.block.text-center.lg\:text-start
+fossabot.com##.flex.-m-4.justify-center
+bot-hosting.net##[href*="/legal"]
+bot-hosting.net##.link > ul > li:nth-of-type(1)
+bot-hosting.net##li:nth-of-type(4)
+top.gg##div.flex.flex-col.items-start.gap-2:nth-of-type(3)
+top.gg##.nn-cmp-show > .chakra-text.css-eqlxeo
+chatboxai.app##.grid.grid-cols-2.gap-8.sm\:grid-cols-4 > div:nth-of-type(2)
+chatboxai.app##.grid.grid-cols-2.gap-8.sm\:grid-cols-4 > div:nth-of-type(3) > .text-gray-400 > li.mb-4:nth-of-type(1)
+chatboxai.app##.flex.mt-4.space-x-6.sm\:justify-center.sm\:mt-0
+fictionlab.ai##.footer-social-list.AppFooter_followList__SUm_N
+www.capcut.com##li.pEWW_L:nth-of-type(3) > .ayTqch > span
+www.capcut.com##li.pEWW_L:nth-of-type(2) > .ayTqch > span
+www.capcut.com##li.pEWW_L:nth-of-type(7) > .ayTqch > span
+docs.dyno.gg##button.v-btn.v-btn--bottom.v-btn--contained.v-btn--fab.v-btn--fixed.v-btn--left.v-btn--round.theme--dark.v-size--small.primary:nth-of-type(2)
+discordtickets.app##li.md-nav__item:nth-of-type(5) > .md-nav__link
+www.maxai.co##div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-xs-6.MuiGrid-grid-sm-4.MuiGrid-grid-md-2.css-1dvztvt:nth-of-type(3) > .MuiBox-root.css-0 > .MuiStack-root.css-1dqxb4p > span.MuiStack-root.css-118i4iz:nth-of-type(2)
+writify.ai##[href*="https://writify.ai/privacy-policy/"]
+writify.ai##.termly-display-preferences
+raid-helper.dev##a.mx-n2.font-weight-small.grey--text.v-btn.v-btn--plain.v-btn--router.theme--dark.v-size--small:nth-of-type(1) > .v-btn__content
+www.notion.com##.footerSocial_socialList__h7Bi4
+www.notion.com##ul.footerColumn_list__xEsxo:nth-of-type(1) > li.footerColumnItem_footerColumnItem__WBiQ9:nth-of-type(6) > .InlineTextLink_inlineLink__oN8YM.InlineTextLink_colorInherit__oGlTG.InlineTextLink_underlineOnHover__J78xW > .InlineTextLink_linkContent__SYI4r > .typography_typography__Exx2D
+unlimitedai.chat##.flex.items-center.space-x-6.text-muted-foreground
+hix.ai##.cm__body
+hix.ai##.text-sm.hover\:cursor-pointer
+hix.ai##.w-fit.flex.items-center.gap-3.\32 xl\:w-full.\32 xl\:max-w-\[358px\].lg\:mx-auto.lg\:flex-col
+www.bitrix24.eu##.footer-about-menu__link.js-show-gdpr-settings
+www.tidio.com##.css-1xp4b1d.e1xesb4j0
+www.tidio.com##.css-612dii.eadb74c0
+character.ai##a.flex.items-center.hover\:text-foreground.text-sm.text-muted-foreground.p-2:nth-of-type(2)
+character.ai##a.flex.items-center.hover\:text-foreground.text-sm.text-muted-foreground.p-2:nth-of-type(1)
+rochat.ai##.text-\[--text-secondary\].text-xs.font-normal.pt-1.px-2.text-center.min-w-full
+www.voicemod.net##[href*="https://www.voicemod.net/en/privacy/"]
+www.voicemod.net##[href*="https://www.voicemod.net/en/cookies-policy/"]
+www.chatpdf.com##.fixed.bottom-2.left-2.right-2.flex.items-center.z-\[1001\].gap-2\.5.h-18.ps-4.pe-2\.5.rounded-lg.backdrop-blur-sm
+www.chatpdf.com##[href*="https://chat-pdf.notion.site/ChatPDF-Privacy-Policy-45fa3cf8bac8483896eb09b108f0c0f2"]
+www.chatpdf.com##.landing-footer__social-icons
+techcrunch.com##.ads-footer-close-btn
+channelbot.xyz##p.text-lg.text-white
+ticketgg.com##[href*="/ro/privacy-policy"]
+www.blackbox.ai##.framer-t4tt1n > p.framer-text
 www.joypartyplace.com##.second-part.col-md-6.col-sm-12
 ro.yourdoll.com##[href="https://ro.yourdoll.com/privacy-policy/"]
 ro.yourdoll.com##.item-level-0.wd-with-icon.menu-item-wishlist.menu-item

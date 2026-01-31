@@ -7,6 +7,40 @@
 @@www.awxcdn.com
 @@maps.gstatic.com
 @@ypncdn.com
+###voice-search-button
+###voice-search-button > .ytd-masthead.style-scope > yt-button-shape
+rr5---sn-gqn-p5ns.googlevideo.com
+rr3---sn-gqn-p5n6.googlevideo.com
+
+youtube.com##+js(aost, document.getElementById, adsBlocked)
+youtube.com##+js(aost, document.getElementById, consentBlocked)
+youtube.com##+js(aost, document.getElementById, cookiesBlocked)
+youtube.com##+js(aost, ##.KZ9vpc > form:nth-of-type(1))
+youtube.com#@#+js( aost,#@#+js(##.KZ9vpc > form:nth-of-type(1))
+youtube.com#@#+js(aost, ##.KZ9vpc > form:nth-of-type(1) > .lssxud)
+consent.youtube.com#@#+js(aost, ##.KZ9vpc > form:nth-of-type(1) > .lssxud)
+consent.youtube.com#@#+js( aost,#@#+js(##.KZ9vpc > form:nth-of-type(1))
+youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], lightbox , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, lightbox , 1000)
+www.youtube.com#@#+js(trusted-click-element,div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) ytd-consent-bump-v2-lightbox + ytd-button-renderer.ytd-consent-bump-v2-lightbox buton[stil][aria-label][titlu], opened , 1000)
+www.youtube.com##+js(trusted-click-element, ytd-button-renderer.ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next--filled, opened , 1000)
+youtube.com##+js(reject, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1))
+youtube.com##+js(refuse, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1))
+youtube.com#@#+js(click div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+youtube.com##+js(click div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+consent.youtube.com#@#+js(doscument.click div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+consent.youtube.com##+js(document.clicked div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+youtube.com##.opened
+youtube.com###lightbox
+consent.youtube.com##.NeEFsf
+consent.youtube.com##.KZ9vpc > .lssxud
+consent.youtube.com##.crIj3e.K7564e
+consent.youtube.com##+js(aost, document.getElementById, clicked, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+consent.youtube.com##+js(aost, document.getElementById, click, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1)
+consent.youtube.com##+js(aost, document.getElementById, reject, div.ytd-consent-bump-v2-lightbox.style-scope.eom-button-row:nth-of-type(1) > ytd-button-renderer.ytd-consent-bump-v2-lightbox.style-scope:nth-of-type(1))
 www.youtube.com##.ytp-impression-link
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(4)
 www.youtube.com##ytd-guide-entry-renderer.ytd-guide-section-renderer.style-scope:nth-of-type(5)

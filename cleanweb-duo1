@@ -242,6 +242,14 @@ www.powr.io##.chtl-hovering-message-container
 www.powr.io###cthl-hovering-message-close-btn
 www.powr.io##[href*="https://www.powr.io/privacy"] > .text-\[\#6b7f9a\].font-gordita.text-sm.leading-5.mt-4
 www.powr.io##div.text-color8.leading-6.mt-8:nth-of-type(2)
+marypoppins.ro##.e-contact-buttons__content-wrapper
+marypoppins.ro##.e-con-inner--floating-buttons.e-con-inner
+marypoppins.ro##[href="/politica-cookies"]
+www.youtube.com##div.ytd-item-section-renderer.ytGridShelfViewModelGridShelfRow
+www.youtube.com##.yt-shelf-header-layout--disable-horizontal-padding.yt-shelf-header-layout
+www.gamesofdesire.com###disclaimer > div:nth-of-type(2) > div:nth-of-type(2)
+chromewebstore.google.com##.OXdg8b > div > .VfPpkd-dgl2Hf-ppHlrf-sM5MNb
+www.springfarma.com##.towishlist.action
 quidget.ai##.q-btn__img
 quidget.ai##.q-btn.q-btn--80
 quidget.ai##.container.footer_item.text-center.text-\[14px\].items-start.text-neutral-400.lg\:items-end.justify-between.flex.flex-col.lg\:flex-row

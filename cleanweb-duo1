@@ -7,8 +7,8 @@
 @@www.awxcdn.com
 @@maps.gstatic.com
 @@ypncdn.com
-###voice-search-button
-###voice-search-button > .ytd-masthead.style-scope > yt-button-shape
+@@owo.lewd.ninja
+@@xxx.lewd.ninja
 rr5---sn-gqn-p5ns.googlevideo.com
 rr3---sn-gqn-p5n6.googlevideo.com
 
@@ -226,6 +226,8 @@ www.facebook.com##div.m:nth-of-type(26)
 www.facebook.com##div.m:nth-of-type(20) > .native-text.rslh > .f1.a
 www.facebook.com##div.m:nth-of-type(21)
 www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
+lewd.ninja##+js(set, adblock, false)
+lewdninja.com##.is-small.is-info.notification
 m.ziare.com##div.info-news-container.shuffleNotification:nth-of-type(1) > .subscribe-container.subscribe-container-mobile
 www.orange.ro##.qnbskFavo
 m.digi24.ro##.gutter-container-0 > p

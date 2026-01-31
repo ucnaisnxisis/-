@@ -7,6 +7,8 @@
 ##+js(aost, document.getElementById, adsBlocked)
 ##+js(aost, document.getElementById, consentBlocked)
 ##+js(aost, document.getElementById, cookiesBlocked)
+##.age-gate__buttons--no
+###age_leave
 ###voice-search-button
 ###voice-search-button > .ytd-masthead.style-scope > yt-button-shape
 ##.control.control_likes

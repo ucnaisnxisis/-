@@ -259,6 +259,29 @@ www.hentai-gamer.com###index_bg > div:nth-of-type(2) > div:nth-of-type(1) > div:
 adultvisor.com##.age-gate__headline
 adultvisor.com##.age-gate__heading
 adultvisor.com##.FixedWidget__fixed_widget.wp-block-image
+www.mobilissimo.ro##.gnews-follow
+www.mobilissimo.ro###emag_button > p
+www.mobilissimo.ro##[src*="https://mobilissimo.substack.com/embed"]
+www.euractiv.ro##.fa.fa-rss.rss-sectiune
+www.radioresita.ro##.menu__social
+parenting20.ro##h3:nth-of-type(6)
+parenting20.ro##h3:nth-of-type(7)
+parenting20.ro##.footer-email-wrap
+campaniamea.declic.ro##.d-flex.d-md-none.flex-wrap
+angajamentautism.ro###footer-widgets
+angajamentautism.ro###footer-bottom
+angajamentautism.ro##span.ttc-primary.tt-bold-600.tt-font-11:nth-of-type(2)
+angajamentautism.ro##span.ttc-primary.tt-bold-600.tt-font-11:nth-of-type(3)
+asociatia-anais.ro##.header-overlay.show-overlay
+asociatia-anais.ro##.bg-white.b-radius30 > div.row:nth-of-type(3) > p
+asociatia-anais.ro##.bg-white.b-radius30 > div.row:nth-of-type(3) > .btn.btn-pink
+asociatia-anais.ro##.aside-div.modul-doneaza
+asociatia-anais.ro##[href*="https://asociatia-anais.ro/doneaza/"]
+mai.gov.md###popup-icon
+mai.gov.md##.sonar-wave
+mai.gov.md##.icon-list.col-12
+violentaimpotrivafemeilor.ro##.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_individual_full_color.swp_other_full_color.scale-100.scale-
+www.google.com##.Tdc1Lc
 club.steam250.com##p:nth-of-type(3)
 club.steam250.com##h2:nth-of-type(2)
 porngames.games##.text-center

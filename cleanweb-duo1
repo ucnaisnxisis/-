@@ -507,7 +507,16 @@ faphouse.com###cwc-title
 faphouse.com###cw-title
 faphouse.com##.go2275317849
 faphouse.com###cwi
-www.facebook.com##.m.fixed-container.top > div.m:nth-of-type(1) > div.m.bg-s4:nth-of-type(3) > div.m:nth-of-type(2) > div.m:nth-of-type(1)
+comic-con.ro##.cookie-settings-link
+www.daysoftheyear.com##.reminder--status-unset.reminder.pill--primary.pill
+www.daysoftheyear.com##.footer__legal
+www.daysoftheyear.com##.widget--newsletter.widget.card
+www.daysoftheyear.com##li:nth-of-type(6)
+republica.ro##p:nth-of-type(17)
+republica.ro##p:nth-of-type(15)
+republica.ro##p:nth-of-type(16)
+republica.ro##.box.box-article-newsletter
+www.daysoftheyear.com##.section.section--group.section--cards-4.section--rows-2 > .section__cards.even > div.card.card--day.linked:nth-of-type(1) > .card__content > .card__bar > .pill.pill--primary.reminder.reminder--status-unset
 delgaz.ro##.delgaz-chat-bubbles
 delgaz.ro##.delgaz-chatbot-bubble
 www.eon.ro##[href*="/politica-de-utilizare-cookie-uri"]

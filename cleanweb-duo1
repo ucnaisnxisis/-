@@ -229,6 +229,61 @@ www.facebook.com##div.m:nth-of-type(21)
 www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notification
+www.andreearaicu.ro##.footer-social-icons
+wol.jw.org###contentFooterShare
+wol.jw.org###contentFooterPreferences
+www.elle.ro##.newsletter-in-content.mg-top-20.mg-bottom-20
+moldovacrestina.md##div.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_other_full_color.swp_individual_full_color.scale-100.scale-full_width:nth-of-type(1)
+moldovacrestina.md##div.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_other_full_color.swp_individual_full_color.scale-100.scale-full_width:nth-of-type(3)
+moldovacrestina.md##.subscribe-box.mobileVisible
+moldovacrestina.md##.footer-top > .wrapper > .left-col > .btn
+moldovacrestina.md##.footer-top
+republica.ro##.col-xs-12.offset-sm-1.col-sm-5.menu-border-top
+republica.ro##p:nth-of-type(58)
+republica.ro##[href*="https://www.whatsapp.com/channel/0029VaEEilI4Spk9gpyVfe0H"]
+republica.ro##p:nth-of-type(57)
+republica.ro##p:nth-of-type(59)
+astro-urseanu.ro##.bam-social-link.facebook
+astro-urseanu.ro##.fab.fa-youtube
+blockadblock.com##div.col-md-4:nth-of-type(3) > ul > li:nth-of-type(3) > [href*="https://blockadblock.com/adblocking/blockadblock-com-privacy-policy"]
+blockadblock.com##div.col-md-4:nth-of-type(3) > ul > li:nth-of-type(3)
+vremea.ido.ro###h1now > .share3
+vremea.ido.ro###peore > .share3
+www.meteoblue.com##[href*="/ro/user/contact/feedback"]
+www.radioiasi.ro##.menu__social
+www.celsium.ro###installAppContainer
+www.onevent.ro###col-859126298 > .col-inner.text-left
+www.onevent.ro###col-238111422 > div.col-inner.text-left:nth-of-type(1)
+open-meteo.com##.flex.flex-wrap.justify-between.gap-5 > div:nth-of-type(1) > .list-unstyled.text-small.mt-2 > li.mb-1:nth-of-type(5)
+infoiasionline.ro##.td-post-views
+vremea-ro.ro##.scrollup
+weather.com##.PrivacyFeedCard--mainParagraph--rZ7\+Y
+weather.com##.Card--content--IOayG.PrivacyFeedCard--PrivacyFeedCard--EquX5
+www.vremea-acum.ro##.nws-subscribe-form
+www.wunderground.com##.columns.accessibility-icon
+www.wunderground.com##.row.privacy-links
+www.yr.no##.page-footer__links
+www.yr.no##.button.page-header__location-button.page-header__location-favourite
+weawow.com##.app-img2
+weawow.com##.app-footer
+weawow.com##.market-footer > div:nth-of-type(2) > ul > li:nth-of-type(5) > .a-arrow
+weawow.com##.market-footer > div:nth-of-type(2) > ul > li:nth-of-type(3) > .a-arrow
+weawow.com##[href*="https://x.com/weawowcom"]
+weawow.com##.market-address
+weawow.com##.footer-side-menu > ol > li:nth-of-type(10) > [href*="/ro/i/privacy"]
+weawow.com##.footer-side-menu > ol > li:nth-of-type(12) > [href*="/ro/i/cookie"]
+www.ilmeteo.it##.whatsapp_channel
+www.ilmeteo.it###paywall-utility-bar-favorite-button
+www.oradesibiu.ro##.header-widget.above-header-widgets
+www.oradesibiu.ro##a.a2t-link:nth-of-type(3) > .perfmatters-lazy.entered.pmloaded
+www.oradesibiu.ro###ods-2794403522 > .a2t-link > .perfmatters-lazy.entered.pmloaded
+www.oradesibiu.ro##a.a2t-link:nth-of-type(4) > .perfmatters-lazy.entered.pmloaded
+www.oradesibiu.ro###ods-3085130318 > .a2t-link > .perfmatters-lazy.entered.pmloaded
+www.oradesibiu.ro###secondary > .widget.ods-widget > a.a2t-link:nth-of-type(1) > .perfmatters-lazy.entered.pmloaded
+www.oradesibiu.ro##a.a2t-link:nth-of-type(2) > .perfmatters-lazy.entered.pmloaded
+www.dcnews.ro##div.container_fixed_width_900px:nth-of-type(10) > .articol_dec > p
+www.dcnews.ro###navigationMobileApps
+dcnewstv.ro##.footer-menu > ul
 porngameshub.com##.text-dark.border-primary.border.md\:rounded-sm.p-4.justify-between.w-full.flex
 mysexgamer.com##.age
 www.nutaku.net##p > [href="https://discord.gg/ugHkRpaFPt"]

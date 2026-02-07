@@ -1143,16 +1143,6 @@ duckduckgo.com##.nav-menu__feedback
 duckduckgo.com##[href="https://duckduckgo.com/privacy"]
 duckduckgo.com##.ofDl_1VxUG_EKc3b9E3x.XvPRmQVeIoCP5lQhICTv > li:nth-of-type(1)
 duckduckgo.com##div.mThctpERmVBzYPx3k1EY:nth-of-type(2) > .cTi0vgftsr27DcxzlHLn > li:nth-of-type(2)
-github.com##[href="#hero"]
-github.com##.text-left.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary
-github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
-github.com##cookie-consent-link
-github.com##.flex-lg-justify-end.flex-items-center.flex-wrap.gapy-1.gapx-6.d-flex.mt-md-0.mt-3.footer-social
-github.com##.color-bg-subtle
-github.com##.pr-lg-4.mb-5.col-lg-4.col-12
-github.com##li.mx-2:nth-of-type(2) > .Link.Link--secondary
-github.com##li:nth-of-type(2)
-github.com##.js-webauthn-login-emu-control
 www.ozono.ro##.iq-mtb-10.iq-media-blog
 mx.pinterest.com##.sSBu24.qJUqe1.Tjcf3c.FE_3R1.KwViV7.H2DtUH
 mx.pinterest.com##.iHQedX.XC5OnJ.ADXRXN
@@ -2169,7 +2159,6 @@ playmeow.com##.center > .title
 playmeow.com##.assistive-ball
 www.sheer.com##ul.footer__main-links-list:nth-of-type(2) > li.footer__main-links-item:nth-of-type(1) > .footer__main-links
 www.sheer.com##ul.footer__main-links-list:nth-of-type(2) > li.footer__main-links-item:nth-of-type(2) > .footer__main-links
-www.instagram.com##.x6s0dn4.xtqikln.x78zum5.x1q0g3np
 hentaifox.com###offsite_link > .fa.fa-arrow-down
 hentaifox.com##[href*="https://twitter.com/HentaiFox1g"]
 hentaifox.com##.discord_btn
@@ -3235,8 +3224,6 @@ www.digifm.ro##.youtube.com
 www.digifm.ro##.facebook.com
 www.digifm.ro##.social-item
 www.digifm.ro##.social
-github.com##cookie-consent-link
-github.com##li:nth-of-type(2)
 18.238.132.123
 vp.net##.social-links
 vp.net##[href="/l/en-US/privacy"]
@@ -4324,7 +4311,6 @@ psnews.ro##[href="https://psnews.ro/privacy-policy/"]
 psnews.ro##li.elementor-inline-item.elementor-icon-list-item:nth-of-type(1) > [href="#"]
 psnews.ro##.psnew-target
 agerpres.ro##.mt-4.list-group-inline.nav
-www.instagram.com##div.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1xegmmw.x13fj5qh.xod5an3.xbiv7yw.x16uus16.x1ga7v0g.x15mokao.x78zum5.xjbqb8w.x9f619.x1c1uobl.x18d9i69.xyri2b.xexx8yu.xdj266r.html-div
 lumeapolitica.ro##[href="https://lumeapolitica.ro/politica-cookies/"]
 lumeapolitica.ro##[href="https://lumeapolitica.ro/refund_returns/"]
 www.xn--presaliber-qgb.ro###main-content-row
@@ -6140,7 +6126,6 @@ www.decathlon.ro##a.svelte-1jboo0j:nth-of-type(4)
 firmania.ro##.pt-0.flex-col.w-60.flex-initial > a.pb-1.text-base.block.dark\:hover\:text-orange-fadark.hover\:text-orange-fadark
 firmania.ro##.flex-col.flex > .pb-2.flex-initial
 firmania.ro##.pt-0.flex-col.w-60.flex-initial
-github.com##.js-webauthn-login-emu-control
 tv8.md##a.active.jss232
 tv8.md##.jss32
 cursdeguvernare.ro##.elementor-widget-button.elementor-widget.elementor-widget__width-auto.elementor-element-53a16c1.elementor-element
@@ -7522,8 +7507,6 @@ deseneanimatetv2010.webnode.page###footerMenu
 www.kimdesene.ro##li.elementor-icon-list-item:nth-of-type(5)
 www.kimdesene.ro##li.elementor-icon-list-item:nth-of-type(4)
 desenefaine.net##.alg-cr.jst-sb.rw
-@@videothumbs.me
-@@videocdnmetrika.com
 cdn20.com
 www.disneyplus.com##.dcwn120.zc8ony0
 worldcosplaysummit.jp##.pagetop
@@ -7564,8 +7547,6 @@ www.digisport.ro##.hide-sm.widget
 www.digisport.ro##.footer-content-social
 www.digisport.ro##.footer-top
 www.profm.ro##.social
-github.com###universe_25_day_1_post_event
-github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
 sereneblue.github.io##li.svelte-hu34kn:nth-of-type(5)
 www.torproject.org##h4
 www.torproject.org##.text-left.order-last.footer.bg-dark.container-fluid > .justify-content-center.d-flex.col-12
@@ -7601,7 +7582,6 @@ stickofjoy.com###toTop
 stickofjoy.com##.bgImgCenter
 stickofjoy.com##div.fade-in.align-center:nth-of-type(8)
 mhentai.net###scroll-to-top
-www.instagram.com##.xvbhtw8.xf7dkkf.xv54qhq.x11njtxf.x1n2onr6.x18d9i69.xexx8yu.x1h3rv7z.x1lziwak.xat24cr.x14z9mp.xdj266r.xk390pu.x2lah0s.xdt5ytf.x78zum5.x9f619.x1qjc9v5
 ziua.md##div.w_col:nth-of-type(2)
 ziua.md##.has_title.mow_fn_fixed_social_list
 ziua.md##.mow_fn_sidebar
@@ -8434,7 +8414,6 @@ www.gara.store##.Header_cta__voMsv
 iamsport.ro##[href="javascript:Optanon.ToggleInfoDisplay();"]
 www.idrlabs.com###social-btns
 www.idrlabs.com###site-footer
-github.com###universe_25_day_2_post_event
 www.aiminds.com##.sm\:translate-x-0.sm\:left-4.sm\:bottom-4.text-center.transform.-translate-x-1\/2.z-10.left-1\/2.bottom-2.absolute.wt-text-on-subscribe-background-color
 www.aiminds.com##div.space-y-2:nth-of-type(2)
 www.aiminds.com##.sm\:px-6.sm\:items-start.gap-y-4.items-center.flex-col.flex
@@ -10671,7 +10650,6 @@ steamcommunity.com##.header_installsteam_btn_green.header_installsteam_btn
 www.vitalmonster.com##[href^="https://www.instagram.com/vitalmonster__official"]
 www.dentalelite.ro###accessibility_settings_toggle
 www.dentalelite.ro##.footer-legal.col-xl-8.col-12
-github.com###universe_25_3
 bettermedicine.ro##a[href="https://www.bettermedicine.ro/politica-utilizare-cookies/"]
 bettermedicine.ro##[href="https://www.bettermedicine.ro/notificare-gdpr/"]
 m.zf.ro###bellPopup
@@ -12654,7 +12632,6 @@ www.thetechgame.com##.pw-link-btm
 www.patreon.com##.biqHXV.sc-a5e3111c-4
 transfaze.com##a.nav-link:nth-of-type(3)
 transfaze.com##.text-lg-start.text-center.col-xl-3.col-lg-4.col-12 > div.mb-3
-github.com###universe_25_2
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(1)
 developer.mozilla.org##.footer__mozilla > ul > li:nth-of-type(2)
 www.firefox.com##.mzp-c-callout-cta
@@ -12668,7 +12645,6 @@ www.autogari.ro##[href="https://www.instagram.com/Autogari.ro"]
 www.autogari.ro##[href="/Publicitate"]
 dentistulmeu.eu##[href="https://dentistulmeu.eu/utilizare-cookies/"]
 dentistulmeu.eu##[href="https://dentistulmeu.eu/politica-de-confidentialitate/"]
-github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none
 www.b1tv.ro##[href="https://www.b1tv.ro/politica-de-confidentialitate"]
 moovitapp.com##[href="https://moovit.com/legals/privacy-policy/"]
 moovitapp.com##.store-and-links.footer-column
@@ -12712,7 +12688,6 @@ www.virustotal.com##footer
 www.filepuma.com##.gather
 www.filepuma.com##[href="//www.filepuma.com/privacy/"]
 www.filepuma.com##[href="//www.filepuma.com/cookie_policy/"]
-github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none
 www.b1tv.ro##[href="https://www.b1tv.ro/politica-de-confidentialitate"]
 moovitapp.com##[href="https://moovit.com/legals/privacy-policy/"]
 moovitapp.com##.store-and-links.footer-column
@@ -14861,23 +14836,13 @@ ro-ro.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms
 ro-ro.facebook.com##footer
 ro-ro.facebook.com##pageFooter
 ro-ro.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-m.facebook.com##._4-u8._5058._4-u2
-m.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 m.facebook.com##footer
 m.facebook.com###pageFooter
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
-www.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 www.facebook.com##footer
 www.facebook.com###pageFooter
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
-www.facebook.com##._4-u8._5058._4-u2
-www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 www.facebook.com##footer
 www.facebook.com##sfooter
 www.facebook.com##div.xx6bls6.xso031l.x1q0q8m5.x1nb4dca
-www.facebook.com##.xn9wirt.x1cnzs8.x106a9eq.x1xnnf8n.x7ep2pv.x9f619
-www.facebook.com##.x1r1pt67.xtvsq51.x1g0dm76.xpdmqnj.x9f619.x14e42zd.x1qhh985.x10w94by.x972fbf.x5fzff1.xws8118.x1b1wa69.x14ldlfn.x1q0g3np.xozqiw3.x6s0dn4.xl56j7k.x1n2onr6.x2lah0s.x78zum5.x1ja2u2z
-m.facebook.com##.m > .bg-s2.m > div.m:nth-of-type(2)
 business.facebook.com##._9bka._4sea
 business.facebook.com###u_0_z_ot
 business.facebook.com###u_0_y_iI
@@ -14935,11 +14900,6 @@ m.facebook.com###consent-text
 m.facebook.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 m.facebook.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-m.facebook.com##.wbloks_112 > div.wbloks_1:nth-of-type(2)
-m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(3)
-m.facebook.com##.top.fixed-container.m > .m > .bg-s4.m > div.m:nth-of-type(2)
-m.facebook.com##div.displayed.bg-s4.m:nth-of-type(9)
-m.facebook.com##div.wbloks_1:nth-of-type(4) > div.wbloks_1:nth-of-type(3)
 www.linkedin.com##.join-form__form-body-agreement
 immersivetranslate.com##[href="https://immersivetranslate.com/docs/PRIVACY/"]
 github.com##li.mx-2:nth-of-type(2)
@@ -14978,10 +14938,6 @@ duckduckgo.com##.footer
 duckduckgo.com###react-ai-button-slot
 duckduckgo.com##.footer
 duckduckgo.com###react-ai-button-slot
-github.com##.footer-session-authentication-links
-github.com##.BackToTop--visible.BackToTop
-github.com##cookie-consent-link
-github.com##.pr-lg-4.mb-5.col-lg-4.col-12
 d3ward.github.io##.btn-p.gt-link
 welldeef.github.io###support
 welldeef.github.io###smallSuppor
@@ -15748,7 +15704,6 @@ kbhgames.com##[href="https://kbhgames.com/privacy"]
 www.isladejuegos.com###siteFooter
 static.doubleclick.net
 k2s.cc##[href="/page/policy"]
-www.instagram.com##._ap30._aj1-._acav._acas._acaq._acap._acan
 162.247.243.39
 3.33.130.190
 155.102.130.201
@@ -21548,12 +21503,6 @@ www.walmart.com##li:nth-of-type(15)
 destepti.ro##[href="https://destepti.ro/politica-de-confidentialitate/"]
 www.patreon.com##button.bdCQnw.sc-furwcr:nth-of-type(2)
 www.patreon.com##.eAPYIl.sc-efQSVx
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1mp8q08.x13a6bvl.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1uhb9sk.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.xz9dl7a.xsag5q8.xbbxn1n.xxbr6pl.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1yztbdb.xw7yly9.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619 > .x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1e56ztr.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619
-www.instagram.com##.x47corl.xeuugli.x2lwn1j.xl56j7k.x78zum5.x9f619.x1cy8zhl
-www.instagram.com##.x1vjfegm.x11v4dcs.xr5ldyu.x127lhb5.x7v9bd0.xh8yej3.x13vifvy.x10l6tqk.x17qophe.x5yr21d.xpqogu8
 duckduckgo.com##li.L6fj2A3X2mfJl5kE8caF:nth-of-type(1)
 duckduckgo.com###react-ai-button-slot > span
 duckduckgo.com##.footer > div
@@ -23840,8 +23789,6 @@ depozituldeambalaje.ro###menu-item-13734 > [href="https://depozituldeambalaje.ro
 kendama.or.jp###menu-item-414
 allabout-japan.com##[href="https://allabout-japan.com/en/site-policy/"]
 www.myshoppy.ro##footer
-www.instagram.com##div.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1emribx.x1i64zmx.xod5an3.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619:nth-of-type(7)
-www.instagram.com##div.x1nhvcw1.x1oa3qoh.x1qjc9v5.xqjyukv.xdt5ytf.x2lah0s.x1c4vz4f.xryxfnj.x1plvlek.x1n2onr6.x1emribx.x1i64zmx.xod5an3.xo71vjh.x5pf9jr.x13lgxp2.x168nmei.x78zum5.xjbqb8w.x9f619:nth-of-type(8) > .x1roi4f4.x6mezaz.x1hl2dhg.xb5lr1p.xz5fbns.x1fhwpqd > .x18hxmgj.x8viiok.x1wdrske.x10wh9bi.x676frb.x1s3etm8.x1roi4f4.xo1l8bm.x1fhwpqd.x1i0vuye.x1943h6x.x1fgarty.x1cpjm7i.x1gmr53x.xhkezso.x1s928wv.x1vvkbs.x13faqbe.x1fj9vlw.xeuugli.x193iq5w.x1n2onr6.xryxfnj.x1plvlek.x1lliihq
 kendama-europe.com##overlay
 www.istoric-preturi.info##li > [href="/privacy"]
 www.compari.ro##.visible
@@ -32101,7 +32048,6 @@ www.ipgroupplc.com###__cookieWrapper
 www.managingip.com###announcements
 www.livescience.com##.css-54yep6
 www.livescience.com##.css-ssqgu5.qc-cmp-cleanslate
-www.instagram.com##.Yx5HN.RnEpo
 choice.npr.org###content
 www.theaztectheatre.com##.hide-cookie-setting-button.optanon-alert-box-wrapper
 www.netflix.com###cookie-disclosure

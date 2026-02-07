@@ -9,6 +9,11 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+###silktide-wrapper
+##.legal-bar-links
+##.subscribeContent.sectionTabs__subscribeContent
+##.isOpen.mobileInstallBanner
+##.legal-bar-links
 ###voice-search-button
 ###voice-search-button > .ytd-masthead.style-scope > yt-button-shape
 ##.control.control_likes

@@ -319,6 +319,54 @@ www.mobilissimo.ro###emag_button > p
 www.mobilissimo.ro##[src*="https://mobilissimo.substack.com/embed"]
 www.euractiv.ro##.fa.fa-rss.rss-sectiune
 www.radioresita.ro##.menu__social
+incredibilia.ro##.tve-leads-triggered.tve-leads-viewport-triggered.tve-trigger-hide.tl-anim-instant.tve-leads-track-in_content-74.tve-tl-anim.tve-leads-in-content
+incredibilia.ro##.wplogout-cta
+incredibilia.ro##.gb-inside-container
+ghidullegal.ro###__next > div:nth-of-type(1)
+ghidullegal.ro###menu-footer-bottom-menu > li:nth-of-type(3)
+ghidullegal.ro###menu-footer-bottom-menu > li:nth-of-type(2)
+ghidullegal.ro##.col-md-auto
+digitalio.ro##.spc-social-b.spc-social.spc-social-block
+digitalio.ro###smartmag-block-codes-1
+informatia-zilei.ro##[href^="https://informatia-zilei.ro/categoria/ziar-online/"]
+informatia-zilei.ro###menu-1-b168244 > .menu-item-352945.menu-item-object-custom.menu-item-type-custom.menu-item > .elementor-item
+informatia-zilei.ro##.menu-item-343569.menu-item-object-page.menu-item-type-post_type.menu-item
+informatia-zilei.ro##.elementor-section-height-default.elementor-section-boxed.elementor-element-4e164f1.elementor-element.elementor-top-section.elementor-section
+informatia-zilei.ro##.elementor-section-height-default.elementor-section-boxed.elementor-hidden-mobile.elementor-hidden-tablet.elementor-element-c63ad91.elementor-element.elementor-top-section.elementor-section
+informatia-zilei.ro##.elementor-section-height-default.elementor-section-boxed.elementor-hidden-mobile.elementor-element-1f1d306.elementor-element.elementor-top-section.elementor-section
+informatia-zilei.ro##.menu-item-352944.menu-item-object-custom.menu-item-type-custom.menu-item
+informatia-zilei.ro##.active.slide
+www.ro-eid.ro##.justify-center.flex.pb-4.px-3.z-50.w-full.left-0.bottom-0.fixed
+www.ro-eid.ro##.gap-2.sm\:flex-row.flex-col.flex
+www.ro-eid.ro##.mt-6.gap-5.items-center.flex
+www.ro-eid.ro##.hidden.lg\:block > .mt-4
+www.ro-eid.ro##.shadow-lg.text-white.bg-blue-900.rounded-full.py-3.px-4.gap-2.items-center.flex.z-50.right-6.bottom-6.fixed
+www.roeid.ro##[href="https://www.roeid.ro/gdpr"]
+e-juridic.manager.ro##.mg-bottom-20.btn-google-news
+e-juridic.manager.ro##ul.menu
+e-juridic.manager.ro###articleVote
+eidas.gov.ro##.et_pb_css_mix_blend_mode_passthrough.et_pb_column_2_tb_footer.et_pb_column_1_6.et_pb_column
+semnal.eu##[href="https://semnal.eu/politica-de-cookies/"]
+semnal.eu##[href="https://semnal.eu/politica-de-confidentialitate/"]
+www.stiripesurse.ro##.md\:items-center.md\:gap-6.gap-\[1\.25rem\].md\:flex-row.flex-col.md\:py-\[1\.336rem\].md\:border-b-\[1px\].md\:border-t-\[1px\].md\:border-border.flex
+pentrupatrie.mai.gov.ro###back2Top
+www.juridice.ro##div.my-category-box-homepage:nth-of-type(10) > div:nth-of-type(11)
+roeid.ro##[href="https://roeid.ro/gdpr"]
+www.certsign.ro##.menu-item-20438.menu-item-object-page.menu-item-type-post_type.menu-item
+www.certsign.ro##.menu-item-17601.menu-item-object-page.menu-item-type-post_type.menu-item
+www.certsign.ro##.menu-item-17604.menu-item-object-page.menu-item-type-post_type.menu-item
+www.certme.ro##.footer-icons-container
+www.certme.ro##.horizontal.container
+cursdeguvernare.ro##.urmareste
+www.research.gov.ro##.mcid-social-contact-col.elementor-element-2ea49ba.elementor-element.elementor-top-column.elementor-col-25.elementor-column
+www.research.gov.ro##.mcid-social-contact-col.elementor-element-3d65a8b.elementor-element.elementor-top-column.elementor-col-25.elementor-column
+www.research.gov.ro###pojo-a11y-toolbar
+evo.gov.md##div.footerNav.footer__nav:nth-of-type(6)
+evo.gov.md##div.footerNav.footer__nav:nth-of-type(7)
+evo.gov.md###silktide-wrapper
+evo.gov.md##.legal-bar-links
+evo.gov.md##.subscribeContent.sectionTabs__subscribeContent
+evo.gov.md##.isOpen.mobileInstallBanner
 parenting20.ro##h3:nth-of-type(6)
 parenting20.ro##h3:nth-of-type(7)
 parenting20.ro##.footer-email-wrap

@@ -2568,3 +2568,12 @@ cdn-aff.loomclick.com
 ##.gdpr-placeholder.gdpr-social-media
 ##gdpr-placeholder.gdpr-social-media
 ###gdpr-placeholder.gdpr-social-media
+##[href="/datenschutz"]
+##[href="/erklaerung-zur-barrierefreiheit"]
+##[href="/service/newsletter-anmeldung"]
+###cookieconsent\:window
+##.cookieconsent\:window
+##cookieconsent\:window
+###footer__social-and-app
+##.footer__social-and-app
+##footer__social-and-app

@@ -247,6 +247,32 @@ astro-urseanu.ro##.bam-social-link.facebook
 astro-urseanu.ro##.fab.fa-youtube
 blockadblock.com##div.col-md-4:nth-of-type(3) > ul > li:nth-of-type(3) > [href*="https://blockadblock.com/adblocking/blockadblock-com-privacy-policy"]
 blockadblock.com##div.col-md-4:nth-of-type(3) > ul > li:nth-of-type(3)
+the-moon-is-aroace.tumblr.com##.tmblr-iframe.tmblr-iframe--app-cta-button.tmblr-iframe--loaded.open
+asexualspectrumspector.tumblr.com##.tmblr-iframe.tmblr-iframe--app-cta-button.open.tmblr-iframe--loaded
+www.rainbowsocial.ro##.woocommerce-privacy-policy-text > p
+www.reddit.com##.flex.flex-col.gap-md.p-md
+www.instagram.com##.html-div.xdj266r.x14z9mp.xat24cr.x1lziwak.x9f619.xjbqb8w.x78zum5.x15mokao.x1ga7v0g.x16uus16.xbiv7yw.x64bnmy.x13jy36j.x1l90r2v.xyamay9.x1uhb9sk.x1plvlek.xryxfnj.x1c4vz4f.x2lah0s.xdt5ytf.xqjyukv.x1qjc9v5.x1oa3qoh.x13a6bvl.x67bb7w
+www.facebook.com##.m.fixed-container.bottom
+www.dailybusiness.ro##div.mg-top-20.mg-bottom-20:nth-of-type(2) > div
+www.sctpiasi.ro##.social-container
+www.yadvashem.org##.buttonsFollowUsFooter
+gamegeekfusion.com##[href*="https://gamegeekfusion.com/privacy-policy/"]
+roonby.com##.toggle-navigationv2 > .so_i > ul
+roonby.com##.s_so
+voidly.ai##.flex.flex-col.md\:flex-row.items-center.justify-between.gap-4
+voidly.ai##.overflow-hidden.transition-all.duration-200.max-h-48.pb-3 > .space-y-2.pl-1 > li:nth-of-type(3)
+www.animesenpai.net##.ast-post-social-sharing
+www.animesenpai.net##p:nth-of-type(8)
+digital-strategy.ec.europa.eu##.wt-share--menu > a.wt-ecl-link.wt-ecl-link--standalone.wt-ecl-link--icon.wt-ecl-link--icon-before.wt-ecl-social-media-share__link:nth-of-type(1)
+digital-strategy.ec.europa.eu##div.ecl-site-footer__section:nth-of-type(2) > .ecl-site-footer__title
+wonporn.com##center:nth-of-type(1) > center
+wonporn.com##li.adcls:nth-of-type(7)
+wonporn.com##li.adcls_small:nth-of-type(12)
+wonporn.com##li.adcls:nth-of-type(29)
+wonporn.com##li.adcls_small:nth-of-type(38)
+wonporn.com##center:nth-of-type(4) > center
+videosection.com##li.footer-links__item:nth-of-type(7) > .footer-links__link
+videosection.com##li.footer-links__item:nth-of-type(4) > .footer-links__link
 vremea.ido.ro###h1now > .share3
 vremea.ido.ro###peore > .share3
 www.meteoblue.com##[href*="/ro/user/contact/feedback"]

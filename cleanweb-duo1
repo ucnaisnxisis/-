@@ -3918,3 +3918,40 @@ allevents.in##.p-social-links
 allevents.in##.tbdapp.track.box-link
 allevents.in##.ae-btn.ae-btn-primary.ae-btn-lg.follow-action.per-follow-btn.tltp
 allevents.in##.ae-btn.ae-btn-outline-hollow.ae-btn-lg
+searxng.site###backToTop
+www.psychforums.com##[href="https://www.psychforums.com/privacy.php"]
+www.psychforums.com##li.leftside:nth-of-type(4)
+www.psychforums.com##li.leftside:nth-of-type(5)
+www.psychforums.com##a[href="https://www.psychforums.com/contact.php"]:nth-of-type(2)
+animania.de##[href="https://animania.de/datenschutz/"]
+www.redbubble.com##.default_footerLegal__40e171b6
+www.redbubble.com##.styles_paddingM__54ba70e3.default_footerBottom__fd07fb3a.styles_box__54ba70e3
+www.redbubble.com##.default_button__3bb396a0
+www.redbubble.com##ul.styles_list__7e0826d8:nth-of-type(4)
+www.redbubble.com##.SearchResultCard_addToListDesktop__fX11M.styles_box__54ba70e3
+www.redbubble.com##.styles_marginRight025__54ba70e3.styles_box__54ba70e3
+www.amazon.de##.navFooterCopyright.navFooterPadItemLine.navFooterLinkLine.navFooterLine > ul > li:nth-of-type(2)
+www.amazon.de##.navFooterCopyright.navFooterPadItemLine.navFooterLinkLine.navFooterLine > ul > li:nth-of-type(4)
+www.amazon.de##.navFooterCopyright.navFooterPadItemLine.navFooterLinkLine.navFooterLine .nav_last
+www.lemonde.fr##.footer__links--list.footer__links > li.footer__bullet:nth-of-type(4)
+www.lemonde.fr##.footer__links--list.footer__links > li.footer__bullet:nth-of-type(3)
+www.lemonde.fr##.js-paywall.paywall
+www.lemonde.fr##.ds-burger-popin__services > .ds-burger-popin__nav
+www.lemonde.fr##.js-not-connected-subscribe.js-btn-premium.ds-header__top__right__sign-up.ds-btn--s.ds-btn--yellow.ds-btn--primary.ds-btn.ds-link
+esahubble.org##[href="/about/privacy/"]
+edition.cnn.com##.footer__social-and-app
+www.nytimes.com##li.css-19yhb3c
+www.ofzenandcomputing.com##.breakdance-link.bde-text-link.bde-text-link
+help.instagram.com##div.xnpuxes.x1iorvi4.xjkvuk6.x135b78x.x11lfxj5.xs83m0k.x1iyjqo2.xdt5ytf.x1r8uery.x78zum5.x9f619:nth-of-type(5)
+www.bayern-fass.de###footerNavBar
+www.bayern-fass.de###cookieconsent\:window
+utopia.de###menu-social-menu-sidebar-footer
+utopia.de##.privacy-settings-btn
+www.rigk.de##p.fw-bold.h-6:nth-of-type(2)
+www.rigk.de##.swiper-backface-hidden.swiper-horizontal.swiper-initialized.swiper.cta-slider
+www.rigk.de##[href="/service/newsletter-anmeldung"]
+www.radiogong.de###pimcore-navigation-renderer-menu-94
+www.radiogong.de###branchly-chat-widget-container
+markt.gapa.de##.e-child.e-con.elementor-repeater-item-none.elementor-repeater-item-default_padding.e-flex.elementor-repeater-item-none_hover.e-con-full.elementor-element-b71ef06.elementor-element
+markt.gapa.de##[href="/datenschutz"]
+markt.gapa.de##[href="/erklaerung-zur-barrierefreiheit"]

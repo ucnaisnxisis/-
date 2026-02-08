@@ -9,6 +9,20 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+##.gaz-ad--mobile.gaz-ad
+##.items-2.login-options
+##.bottom-note.content-note
+##.openpass.affiliate.custom-button--item
+##.google.affiliate.custom-button--item
+###likeButton
+##.likeButton
+##likeButton
+###dislikeButton
+##.dislikeButton
+##dislikeButton
+###reactions-ready.is-touchscreen.reactions-allowed.content-reactions
+##.reactions-ready.is-touchscreen.reactions-allowed.content-reactions
+##reactions-ready.is-touchscreen.reactions-allowed.content-reactions
 ###silktide-wrapper
 ##.legal-bar-links
 ##.subscribeContent.sectionTabs__subscribeContent

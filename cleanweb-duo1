@@ -6,6 +6,7 @@
 
 @@www.awxcdn.com
 @@maps.gstatic.com
+@@fonts.gstatic.com
 @@youtube.googleapis.com
 @@ypncdn.com
 @@owo.lewd.ninja
@@ -13,6 +14,7 @@
 rr5---sn-gqn-p5ns.googlevideo.com
 rr3---sn-gqn-p5n6.googlevideo.com
 
+youtube.com##c3-toast
 youtube.com##+js(aost, document.getElementById, adsBlocked)
 youtube.com##+js(aost, document.getElementById, consentBlocked)
 youtube.com##+js(aost, document.getElementById, cookiesBlocked)

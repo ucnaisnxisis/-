@@ -473,6 +473,14 @@ www.artvertising.ro##.closed
 www.artvertising.ro##.in.fade.modal-backdrop
 www.artvertising.ro##div.m-t-1 > .m-b-2
 www.artvertising.ro##.m-t-1.m-b-2.container
+18anime.me##.scrollup
+bilete.izanagi.ro##.mt-sm-0.mt-3.text-left.event-info-text.col-md-8.col-12
+bilete.izanagi.ro##div.py-4.justify-content-center.d-flex.row:nth-of-type(3)
+bilete.izanagi.ro##.text-white.col-md-10.col-12
+bilete.izanagi.ro##.py-4.container-fluid
+bilete.izanagi.ro##.scroll-to-checkout.d-md-none.border.rounded-pill.btn-lg.btn-light.btn
+kickasssubtitles.com##div.col-lg-3.col-6:nth-of-type(2) > h6.mb-1
+www.hackedonlinegames.com##a.Popup:nth-of-type(3)
 film-bun.ro##.pt-2.gap-4.flex
 film-bun.ro##div:nth-of-type(4) > .space-y-3 > li:nth-of-type(4)
 emojipedia.org##.gap-4.border-border.border-b.border-t.py-6.sm\:items-center.justify-between.sm\:flex-row.flex-col.flex

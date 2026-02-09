@@ -82,6 +82,8 @@
 ##[href^="https://api.whatsapp.com/send"]
 ##.tap-top
 ##.NoScroll
+##[href="https://www.warp2search.net/imprint/privacy/"
+]
 ##[href="/ro/feed-rss.xml"]
 ##[href="/wishlist"]
 ##.details-wish

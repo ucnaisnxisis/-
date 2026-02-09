@@ -230,7 +230,15 @@ www.facebook.com##div.m:nth-of-type(20) > .native-text.rslh > .f1.a
 www.facebook.com##div.m:nth-of-type(21)
 www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 lewd.ninja##+js(set, adblock, false)
-lewdninja.com##.is-small.is-info.notification
+lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
+portableapps.com##.region-footer-secondcolumn.region
+www.apple.com###footer-directory-column-section-responsibility > li.ac-gf-directory-column-section-item:nth-of-type(5)
+apps.microsoft.com##footer
+apps.apple.com##ul.svelte-ecmrfk
+backlinko.com##.css-1we720e
+backlinko.com##[href^="https://www.semrush.com/company/legal/privacy-policy/"]
+www.appbrain.com##[href="/info/help/publisher-resources/improve-earnings-android-ad-units.html"]
+backlinko.com##[href="/newsletter"]
 www.andreearaicu.ro##.footer-social-icons
 wol.jw.org###contentFooterShare
 wol.jw.org###contentFooterPreferences

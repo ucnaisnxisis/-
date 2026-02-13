@@ -15,6 +15,11 @@
 rr5---sn-gqn-p5ns.googlevideo.com
 rr3---sn-gqn-p5n6.googlevideo.com
 
+github.com##[href="#hero"]
+github.com##cookie-consent-link
+github.com##.color-bg-subtle
+github.com##li:nth-of-type(2)
+github.com##.BackToTop--visible.BackToTop
 youtube.com##c3-toast
 youtube.com##+js(aost, document.getElementById, adsBlocked)
 youtube.com##+js(aost, document.getElementById, consentBlocked)
@@ -3102,16 +3107,6 @@ www.makeuseof.com##.social-media
 www.makeuseof.com##.align-right > li:nth-of-type(5) > .text
 www.makeuseof.com##.align-right > li:nth-of-type(2) > .text
 www.walmart.com##.flex.flex-column.flex-row-hdkp.justify-center.bg-washed-primary
-github.com##[href="#hero"]
-github.com##.text-left.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary
-github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
-github.com##cookie-consent-link
-github.com##.flex-lg-justify-end.flex-items-center.flex-wrap.gapy-1.gapx-6.d-flex.mt-md-0.mt-3.footer-social
-github.com##.color-bg-subtle
-github.com##.pr-lg-4.mb-5.col-lg-4.col-12
-github.com##li.mx-2:nth-of-type(2) > .Link.Link--secondary
-github.com##li:nth-of-type(2)
-github.com##.js-webauthn-login-emu-control
 www.ozono.ro##.iq-mtb-10.iq-media-blog
 mx.pinterest.com##.sSBu24.qJUqe1.Tjcf3c.FE_3R1.KwViV7.H2DtUH
 mx.pinterest.com##.iHQedX.XC5OnJ.ADXRXN
@@ -3611,11 +3606,6 @@ www.play-games.com##div.button-go-top:nth-of-type(2)
 www.play-games.com##button.secondary-nav-button-one-line.secondary-nav-button.sidebarToggleButton:nth-of-type(2)
 anime-nexus.ro##.justify-content-end.d-flex.navbar-nav
 anime-nexus.ro###login-square > .text-center.box-content.col-12 > div:nth-of-type(2) > div:nth-of-type(2)
-github.com##.BackToTop--visible.BackToTop
-github.com##.gap-3.lh-condensed-ultra.flex-items-center.d-flex.list-style-none
-github.com##.gapx-3.color-fg-muted.flex-wrap.d-flex.list-style-none > li:nth-of-type(3)
-github.com##.pr-lg-4.mb-5.col-lg-4.col-12
-github.com##li:nth-of-type(2) > .Link.Link--secondary
 unimedia.info##[href="https://unimedia.info/ro/page/publicitate.html"]
 animeterra.ro##.space-x-4.flex
 noi.md##.pb-2.pt-2.p-1.br-ar.d-lg-flex.d-none
@@ -3777,7 +3767,6 @@ www.stiridinsurse.ro##politica-de-confidentialitate
 www.stiridinsurse.ro##.politica-de-confidentialitate
 www.stiridinsurse.ro###menu-td-menu-3 > .menu-item-34389.tdb-normal-menu.tdb-menu-item.tdb-menu-item-button.menu-item-has-children.menu-item-object-custom.menu-item-type-custom.menu-item
 www.zf.ro##[href="https://www.zf.ro/newsletter-abonare"]
-github.com##cookie-consent-link
 m.ziare.com##[href*="https://ziare.com/servicii/newsletter/breaking-news"] > .subscribe-container.subscribe-container-mobile
 www.recrutaremapn.ro##h6:nth-of-type(2)
 www.recrutaremapn.ro##.social-icon.youtube

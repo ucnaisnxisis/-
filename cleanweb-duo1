@@ -230,6 +230,7 @@ www.facebook.com##div.m:nth-of-type(26)
 www.facebook.com##div.m:nth-of-type(20) > .native-text.rslh > .f1.a
 www.facebook.com##div.m:nth-of-type(21)
 www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
+ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 portableapps.com##.region-footer-secondcolumn.region
@@ -484,6 +485,32 @@ www.springfarma.com##.towishlist.action
 www.bioderma.com.ro##[href="/politica-de-cookie-uri"]
 www.bioderma.com.ro##.show-cookie-management
 tv8.md##.jss51
+www.formaremedicala.ro##.uc-active.vstack.m-2.z-99.end-0.bottom-0.position-fixed.backtotop-wrap
+www.formaremedicala.ro##[href="https://emc.formaremedicala.ro/termeni-si-conditii/"]
+www.comparitech.com##[href="https://www.comparitech.com/contact/advertise/"]
+reek.github.io##ul.listFloat:nth-of-type(2) > li:nth-of-type(3)
+adock.io##[href="/en/privacy-policy-and-cookie-policy"]
+adblockbrowser.org##div.PageFooter_footer-menu__column-item__vljcS
+adblockbrowser.org##.PageFooter_social__dzUAr.PageFooter_footer-menu__column__RpCKE
+adblockbrowser.org##a.PageFooter_footer-menu__column-item__vljcS:nth-of-type(2)
+adblockbrowser.org##.CtaTeaserIntro_cta-teaser-intro--adblock__X4\+Fg.CtaTeaserIntro_cta-teaser-intro__BmaQe .ButtonCta_button-cta-os-wrapper__S-FTE
+scratch.mit.edu##li:nth-of-type(4) > ul > li:nth-of-type(2)
+commission.europa.eu##.ecl-site-footer__list--inline.ecl-site-footer__list > li.ecl-site-footer__list-item:nth-of-type(4)
+commission.europa.eu##.ecl-site-footer__social-media.ecl-social-media-follow--description_inline.ecl-social-media-follow--left.ecl-social-media-follow
+commission.europa.eu##li.ecl-site-footer__list-item:nth-of-type(3)
+www.aclu.org##li.footer-link-list-item:nth-of-type(2)
+www.chilieathonita.ro###spu-bg-18586
+www.chilieathonita.ro##.spu-container
+www.techradar.com##.fixed.z-\[999\].bottom-3.right-3.sm\:bottom-4.sm\:right-4
+www.iplayboy.com##[href*="https://www.playboy.com/privacy-policy"] > font:nth-of-type(1) > font
+www.iplayboy.com##[href*="https://www.playboy.com/your-privacy-rights"] > font:nth-of-type(1) > font
+www.iplayboy.com##ul.col-sm.nav.nav-footer:nth-of-type(3) > li:nth-of-type(1) > .nav.flex-column > li:nth-of-type(6)
+www.iplayboy.com##ul.col-sm.nav.nav-footer:nth-of-type(3) > li:nth-of-type(1) > .nav.flex-column > li:nth-of-type(8)
+www.iplayboy.com##ul.col-sm.nav.nav-footer:nth-of-type(3) > li:nth-of-type(1) > .nav.flex-column > li:nth-of-type(9)
+nte.perfectworld.com##a.bold:nth-of-type(2)
+nte.perfectworld.com##a.bold:nth-of-type(3)
+linktr.ee##.justify-center.items-center.flex-wrap.flex
+guwon.eu###animerage-announcement-overlay
 www.eurosport.ro##.bg-inverse-02.z-50.flex.h-15.items-center
 www.eurosport.ro##.py-tk-space-rs-padding-lg.pr-tk-space-fx-padding-xl.bg-banner-marketing-surface-fill-01.rounded-tk-radius-fx-sm.gap-tk-space-rs-between-elements-xl.flex.h-full.items-center
 www.eurosport.ro##.py-tk-space-fx-padding-md.gap-tk-space-fx-between-elements-lg.flex.flex-col

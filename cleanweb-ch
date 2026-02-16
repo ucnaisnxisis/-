@@ -29,7 +29,23 @@ m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButto
 m.youtube.com##.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--size-s.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--override-small-size-icon
 m.youtube.com##.yt-spec-dialog-layout__dialog-layout-container.yt-spec-dialog-layout__dialog-layout-container--dialog-layout-top-padding
 m.youtube.com###dialog-container
-avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-5.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
-avocatmonac.ro##p.has-text-align-justify:nth-of-type(3)
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-10.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(6)
 avocatmonac.ro##.e-contact-buttons__chat-button.e-contact-buttons__chat-button-shadow.has-size-medium.elementor-animation-grow.has-entrance-animation-duration-normal
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(5)
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(4)
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(3)
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(2)
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(1)
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-9.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-8.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-7.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-6.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-5.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-4.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-3.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-2.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-1.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##.e-contact-buttons
+avocatmonac.ro##chat
 www.sortiraparis.com###footer

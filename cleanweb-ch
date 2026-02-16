@@ -27,5 +27,9 @@ m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButto
 m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButtonDark > c3-icon > .yt-icon-shape.ytSpecIconShapeHost
 m.youtube.com##.ytSearchboxComponentSearchButton.ytSearchboxComponentSearchButtonDark
 m.youtube.com##.yt-spec-button-shape-next.yt-spec-button-shape-next--text.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--size-s.yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--override-small-size-icon
+m.youtube.com##.yt-spec-dialog-layout__dialog-layout-container.yt-spec-dialog-layout__dialog-layout-container--dialog-layout-top-padding
+m.youtube.com###dialog-container
+avocatmonac.ro##.e-contact-buttons.e-contact-buttons-var-5.has-h-alignment-start.has-v-alignment-bottom.has-platform-phone > .e-contact-buttons__chat-button-container
+avocatmonac.ro##p.has-text-align-justify:nth-of-type(3)
+avocatmonac.ro##.e-contact-buttons__chat-button.e-contact-buttons__chat-button-shadow.has-size-medium.elementor-animation-grow.has-entrance-animation-duration-normal
 www.sortiraparis.com###footer
-

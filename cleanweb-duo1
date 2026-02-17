@@ -26,6 +26,8 @@ youtube.com##grid-shelf-view-model.item.ytGridShelfViewModelHost
 youtube.com##.big-shorts-singleton
 youtube.com##.ytSearchboxComponentVoiceSearchWrapper
 youtube.com##.icon-microphone_on.mobile-topbar-header-voice-search-button
+m.youtube.com##.yt-spec-dialog-layout__dialog-layout-asset
+m.youtube.com##.yt-spec-dialog-layout--dialog-layout-responsive.yt-spec-dialog-layout
 youtube.com##c3-toast
 youtube.com##+js(aost, document.getElementById, adsBlocked)
 youtube.com##+js(aost, document.getElementById, consentBlocked)

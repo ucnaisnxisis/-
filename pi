@@ -1,6 +1,6 @@
 ! Title: 🍓CleanWeb Raspberry-Pi / Pi-hole🍓
 ! Description: Clean Ads, Viruses websites/scripts & others problems
-! Homepage https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleanweb-pi
+! Homepage https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/pi
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
@@ -3317,6 +3317,7 @@ parcoverdegrillfry.it
 raumdschots.online
 illuminatelocks.com
 news333.net
+
 
 
 

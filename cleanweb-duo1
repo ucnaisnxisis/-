@@ -281,6 +281,43 @@ www.yadvashem.org##.buttonsFollowUsFooter
 gamegeekfusion.com##[href*="https://gamegeekfusion.com/privacy-policy/"]
 roonby.com##.toggle-navigationv2 > .so_i > ul
 roonby.com##.s_so
+www.librarie.net##[href="/cookies.php"]
+www.librarie.net##body > div:nth-of-type(7)
+expertforum.ro##[href="https://expertforum.ro/doneaza/"]
+expertforum.ro###socialMediaColophon
+expertforum.ro##[href="https://expertforum.ro/date-personale/"]
+expertforum.ro##.openSans
+moldova.unfpa.org##[href="https://www.unfpa.org/unfpa-privacy-policy"]
+www.fragrantica.ro##p:nth-of-type(4)
+www.fragrantica.ro##.duration-200.transition.hover\:scale-105.hover\:shadow-xl.dark\:border-zinc-700.border-zinc-200.border.shadow-lg.rounded-full.dark\:bg-zinc-800.bg-white.p-3.z-50.lg\:rtl\:left-12.lg\:ltr\:right-12.md\:rtl\:left-8.md\:ltr\:right-8.rtl\:left-4.ltr\:right-4.bottom-8.fixed
+www.cuvantul-liber.ro##.widget-text.textwidget > .widget-title
+sjogren.ro###custom_html-3
+sjogren.ro###custom_html-2
+sjogren.ro##.widgets_wrapper
+avocatmonac.ro##.e-con-inner--floating-buttons.e-con-inner
+avocatraulea.ro##.elementor-element-3944cd94.elementor-element.elementor-top-column.elementor-col-50.elementor-column
+blog.avocatbogdanpalade.ro##.o-plain-list.c-footer-list > li.c-nav__item:nth-of-type(1)
+blog.avocatbogdanpalade.ro##div.c-footer__section.o-grid__col--1-3-l.o-grid__col--2-4-m.o-grid__col--4-4-s.o-grid__col--initial-grow.o-grid__col:nth-of-type(3)
+blog.avocatbogdanpalade.ro##.o-plain-list.c-social-icons
+blog.avocatbogdanpalade.ro##.c-subscribe
+avocat-nisteioana.ro###menu-item-2000
+avocat-nisteioana.ro##.widget_cs_social_widget.widget
+carrusel.ro##.wpcom-gifting-banner
+www.banatulazi.ro###text-9
+www.contacthub.ro###menu-item-3265
+e-juridic.manager.ro##.newsletterBox
+www.avocatu.ro##.builder-item--footer-1.item--inner
+www.avocatu.ro##.textwidget > .widget-title
+www.avocatu.ro##p:nth-of-type(7)
+www.clujust.ro##[href="https://www.clujust.ro/oferta-de-publicitate/"]
+www.clujust.ro##[href="https://www.clujust.ro/politica-de-confidentialitate/"]
+www.clujust.ro##.text-html.widget
+www.clujust.ro##.gn-btn
+avocatmonac.ro##.elementor-element.elementor-element-0aed50d.e-flex.e-con-boxed.e-con.e-parent.e-lazyloaded
+www.elefant.ro##.item.active > .row > .col-sm-12 > .hero-teaser-container > .teaser-link > div > picture.hero-teaser > .hero-teaser
+www.libris.ro##.ul-icon-list > li:nth-of-type(2)
+www.libris.ro##.modal-form-newsletter-img-wr
+www.libris.ro###noutatiPopUp
 voidly.ai##.flex.flex-col.md\:flex-row.items-center.justify-between.gap-4
 voidly.ai##.overflow-hidden.transition-all.duration-200.max-h-48.pb-3 > .space-y-2.pl-1 > li:nth-of-type(3)
 www.animesenpai.net##.ast-post-social-sharing

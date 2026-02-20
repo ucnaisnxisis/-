@@ -12,7 +12,6 @@
 @@owo.lewd.ninja
 @@xxx.lewd.ninja
 @@wikipedia.org
-
 github.com##[href="#hero"]
 github.com##cookie-consent-link
 github.com##.color-bg-subtle
@@ -265,6 +264,44 @@ www.andreearaicu.ro##.footer-social-icons
 wol.jw.org###contentFooterShare
 wol.jw.org###contentFooterPreferences
 www.elle.ro##.newsletter-in-content.mg-top-20.mg-bottom-20
+www.cusens.eu##.modal-overlay
+partidulreper.ro##.row-menu-inner.top-menu-cols-1.top-enhanced-split-.top-enhanced-center
+eueducenter.ro##header.bt_bb_headline.bt_bb_dash_none.bt_bb_subheadline.bt_bb_size_extrasmall.bt_bb_align_inherit.bt_bb_animation_no_animation:nth-of-type(3) > .bt_bb_headline_tag > .bt_bb_headline_content > span
+eueducenter.ro##header.bt_bb_headline.bt_bb_dash_none.bt_bb_subheadline.bt_bb_size_extrasmall.bt_bb_align_inherit.bt_bb_animation_no_animation:nth-of-type(3) > .bt_bb_headline_subheadline
+eueducenter.ro##div.bt_bb_icon.bt_bb_color_scheme_6.bt_bb_style_filled.bt_bb_shape_circle.bt_bb_size_small.bt_bb_align_inherit:nth-of-type(18) > .bt_bb_icon_holder
+eueducenter.ro##div.bt_bb_icon.bt_bb_color_scheme_6.bt_bb_style_filled.bt_bb_shape_circle.bt_bb_size_small.bt_bb_align_inherit:nth-of-type(17) > .bt_bb_icon_holder
+eueducenter.ro##div.bt_bb_icon.bt_bb_color_scheme_6.bt_bb_style_filled.bt_bb_shape_circle.bt_bb_size_small.bt_bb_align_inherit:nth-of-type(16) > .bt_bb_icon_holder
+eueducenter.ro##div.bt_bb_icon.bt_bb_color_scheme_6.bt_bb_style_filled.bt_bb_shape_circle.bt_bb_size_small.bt_bb_align_inherit:nth-of-type(15) > .bt_bb_icon_holder
+brainly.ro##div.sg-actions-list__hole.sg-actions-list__hole--space-bellow.brn-footer__links-column:nth-of-type(1) > .sg-content-box.sg-content-box--spaced-top-large > .sg-list.sg-list--spaced-elements > li:nth-of-type(4) > div > .brn-footer__link-element.sg-text.sg-text--xsmall.sg-text--link.sg-text--text-black
+www.booking.ro##[href*="/politica-cookies"]
+www.booking.ro##.btn-solicita-oferta-vertical
+www.businessofapps.com###menu-item-4557 > [href*="https://www.businessofapps.com/advertise/"]
+www.businessofapps.com##[href*="https://www.businessofapps.com/privacy-policy/"]
+www.businessofapps.com###menu-item-99220 > [href*="/ads"]
+www.businessofapps.com###hs-interactives-modal-overlay
+www.businessofapps.com##.footer-social--links
+www.businessofapps.com###socialCopyDropdown
+www.businessofapps.com###menu-item-4557
+www.businessofapps.com###menu-item-29307
+www.directbooking.ro###getbutton-whatsapp
+www.directbooking.ro###divContact_ro > ul:nth-of-type(1) > li:nth-of-type(9) > .green-link
+www.directbooking.ro###divContact_ro > ul:nth-of-type(1) > li:nth-of-type(8) > .green-link
+www.directbooking.ro##footer > .wrap.clearfix > .main-sidebar > div.box:nth-of-type(1) > .box-body > .box-footer
+www.directbooking.ro##footer > .wrap.clearfix > .main-sidebar > div.box:nth-of-type(1) > .box-body > .box-content
+www.directbooking.ro##footer > .wrap.clearfix > .main-sidebar > div.box:nth-of-type(1) > .box-title.black
+www.directbooking.ro##ul.chat-phones:nth-of-type(3)
+www.directbooking.ro##.eightcol
+www.directbooking.ro##.onecol.first > .green-link > [src*="\images\logoaplicatie.png"]
+www.directbooking.ro##.onecol.first > .green-link > [src*="\images\logoaplicatie.png"]
+www.directbooking.ro##.twocol > .green-link > b
+www.directbooking.ro##.offer-like
+romania.directbooking.ro###getbutton-whatsapp
+romania.directbooking.ro##footer > .wrap.clearfix > .main-sidebar > div.box:nth-of-type(1) > .box-title.black
+romania.directbooking.ro##.button.box-action.green.pull-right
+romania.directbooking.ro##footer > .wrap.clearfix > .main-sidebar > div.box:nth-of-type(1) > .box-body > .box-content
+romania.directbooking.ro##ul.chat-phones:nth-of-type(3)
+romania.directbooking.ro##.twocol > .green-link > b
+romania.directbooking.ro##.eightcol
 moldovacrestina.md##div.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_other_full_color.swp_individual_full_color.scale-100.scale-full_width:nth-of-type(1)
 moldovacrestina.md##div.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_other_full_color.swp_individual_full_color.scale-100.scale-full_width:nth-of-type(3)
 moldovacrestina.md##.subscribe-box.mobileVisible

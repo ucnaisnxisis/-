@@ -291,6 +291,99 @@ www.yadvashem.org##.buttonsFollowUsFooter
 gamegeekfusion.com##[href*="https://gamegeekfusion.com/privacy-policy/"]
 roonby.com##.toggle-navigationv2 > .so_i > ul
 roonby.com##.s_so
+www.capital.ro##.col-md-12 > div:nth-of-type(2)
+newmoney.ro##.site-footer-section-1.site-footer-section.site-footer-primary-section-1
+newmoney.ro###menu-item-130432
+newmoney.ro###menu-item-124490
+mediastandard.ro##.scroll-to-top
+radu-tudor.ro###tdi_248
+ocremix.org###elFooterLinks
+forum.zorin.com###zorin-footer
+www.exafol.com##.gap-4.justify-between.items-center.sm\:flex-row.flex-col.flex.p-4.shadow-lg.border-gray-200.border-t.bg-white.z-50.right-0.left-0.bottom-0.fixed
+www.exafol.com##.md\:ml-10.sm\:ml-6.ml-2 > .space-y-2 > li:nth-of-type(3)
+www.exafol.com##.items-center.justify-between.md\:flex-row.flex-col.flex
+www.publish0x.com##li.list-inline-item:nth-of-type(8)
+www.publish0x.com##li.list-inline-item:nth-of-type(7)
+www.publish0x.com##li.list-inline-item:nth-of-type(5)
+www.publish0x.com##.mt-4.recaptcha
+www.publish0x.com##.small.text-danger.editcomment
+www.publish0x.com##div.col-auto:nth-of-type(2)
+www.publish0x.com##div.col-auto:nth-of-type(1)
+techyice.com##[href="https://techyice.com/privacy-policy/"]
+playwright.dev##.backToTopButtonShow_xfvO.backToTopButton_sjWU.theme-back-to-top-button.clean-btn
+playwright.dev##div.footer__col.col.theme-layout-footer-column:nth-of-type(2)
+1password.com##.xlRedesign\:pt-16.xlRedesign\:pb-24.xlRedesign\:px-18.pt-12.pb-12.px-6.items-center.flex-col.max-w-redesignFullWidth.w-full.flex
+1password.com##.py-5.px-6.z-\[500\].relative.visible.light.bg-biscuit-200
+vivaldi.com##.appbtns
+www.torproject.org##.justify-content-center.mx-auto.p-5.col-12.row
+privacybadger.org###primary-nav > ul
+bitwarden.com##a.font-\[300\]\!.dark\:hover\:text-secondary-300.dark\:text-secondary-200.hover\:text-primaryBlue.text-secondary-800.xl\:text-sm\!.text-base\!.no-underline.inline-block.text-sm.z-0.font-medium:nth-of-type(3) > .items-center.flex
+metamask.io##.footer_meta__45mpu
+metamask.io##.legal-link_legal-link__K5t0q > ul > li:nth-of-type(7)
+metamask.io##.legal-link_legal-link__K5t0q > ul > li:nth-of-type(2)
+globalprivacycontrol.org##.layout-module__6XXMma__footer
+raptive.com##nav > .footer-menu--sitemap.footer-menu > .nav-item.menu-item-has-children.menu-item-10716.menu-item-object-page.menu-item-type-post_type.menu-item > .nav-link
+raptive.com##.footer-menu--socials.footer-menu
+raptive.com##.nav-item.menu-item-10175.menu-item-object-page.menu-item-type-post_type.menu-item
+raptive.com##.nav-item.menu-item-312.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+www.people.inc##div.footer__contact-item:nth-of-type(1)
+www.people.inc##li.nav__list-item:nth-of-type(3)
+www.washingtonpost.com##li.wpds-c-laJFlQ:nth-of-type(11)
+www.washingtonpost.com##.wpds-c-coMWjg-iobFYN-css.wpds-c-coMWjg-dZepKe-redDot-true.wpds-c-coMWjg.wpds-c-kSOqLF-eezhJm-cv.wpds-c-kSOqLF-hGNJMA-icon-center.wpds-c-kSOqLF-hZSyid-isOutline-true.wpds-c-kSOqLF-biynoz-density-compact.wpds-c-kSOqLF-uTUwn-variant-primary.wpds-c-kSOqLF
+www.washingtonpost.com###radix-\:rh\: > .wpds-c-gsubXz-ijGjSpR-css.wpds-c-gsubXz > .wpds-c-iYXqXc-kmdfDx-compact-true.wpds-c-iYXqXc > span.wpds-c-PJLV-ftAOXD-hidden-false.wpds-c-PJLV:nth-of-type(9)
+www.eff.org##.take-action
+disconnect.me##div.px-4.w-full.md\:w-1\/2.lg\:w-1\/4:nth-of-type(2) > .mb-10.list-none > li:nth-of-type(2)
+disconnect.me##li:nth-of-type(5)
+disconnect.me##div.px-4.w-full.md\:w-1\/2.lg\:w-1\/4:nth-of-type(3)
+advocacy.consumerreports.org##.cda-footer__bottom
+advocacy.consumerreports.org##.cda-footer__social
+advocacy.consumerreports.org##.cda-footer__mission-buttons_container
+joindeleteme.com###builderwidget-19\#16
+joindeleteme.com###builderwidget-19\#15
+automattic.com##ul.wp-block-navigation.secondary-menu.no-wrap.wp-block-navigation__container:nth-of-type(2)
+brave.com##[href="/brave-ads/"]
+brave.com##div.site-footer__column:nth-of-type(3) > div.site-footer__grouping:nth-of-type(2)
+www.curierat.online###comp-m5bnynsw
+www.curierat.online###comp-m847do64
+economedia.ro##.menu
+economedia.ro##[href="https://economedia.ro/informare-prelucrare-date-personale"]
+economedia.ro##nav.navbar--center.navbar:nth-of-type(2)
+www.itgalaxy.ro###consentSettings
+www.itgalaxy.ro###accessibility-widget
+www.itgalaxy.ro###sales_cb
+www.itgalaxy.ro##.mb-0.responsive-bannerzone
+www.itgalaxy.ro##div.btn-group:nth-of-type(3)
+www.don-men.com##.gmt_google_consent_container
+www.don-men.com##li.col-xs-6:nth-of-type(10)
+www.4swim.ro##button.gdpr_cookie_settings_button
+www.bistriteanul.ro##.td_block_template_1.td-pb-border-top.tdi_118.tdm_block_inline_text.td_block_wrap.tdm_block
+www.sunphoto.ro##a.meniu_jos:nth-of-type(5)
+exis.ro###whatsapp-chat-btn
+exis.ro##li:nth-of-type(7)
+yzzy.ro###whatsappButoonLink
+yzzy.ro##.menu-item-424.menu-item-object-page.menu-item-type-post_type.menu-item
+yzzy.ro##.menu-item-423.menu-item-object-page.menu-item-type-post_type.menu-item
+carturesti.ro##md-menu-item.md-in-menu-bar:nth-of-type(2) > ._md.ng-scope.md-menu
+visitabudhabi.ae##.exploreSection.jss392.MuiBox-root
+visitabudhabi.ae##.footerBottomSection.jss404.MuiBox-root
+visitabudhabi.ae##.backToTopBtn--mobile.jss407.MuiBox-root
+visitabudhabi.ae##.socialMediaSection.jss396.MuiBox-root
+visitabudhabi.ae##a.MuiTypography-colorPrimary.link-btn.MuiLink-underlineHover.MuiLink-root.MuiTypography-root:nth-of-type(2)
+visitabudhabi.ae##.jss354.jss355.MuiBox-root
+www.booking.com###\:rs\: > .b049f18dec.e9f7361569 > li.ee817a4ef2.b14a6d9e99.b2f588b43c.b0bf4dc58f:nth-of-type(1)
+www.booking.com###\:rs\: > .b049f18dec.e9f7361569 > li.ee817a4ef2.b14a6d9e99.b2f588b43c.b0bf4dc58f:nth-of-type(2)
+www.booking.com###\:rs\: > .b049f18dec.e9f7361569 > li.ee817a4ef2.b14a6d9e99.b2f588b43c.b0bf4dc58f:nth-of-type(8)
+www.abudhabi.gov.ae##.smoothScroll.footer__end-link
+www.abudhabi.gov.ae##.footer__follow-us
+www.lonelyplanet.com###footer-section-3 > li:nth-of-type(11)
+www.lonelyplanet.com###footer-section-3 > li:nth-of-type(9)
+www.lonelyplanet.com###footer-section-3 > li:nth-of-type(3)
+www.lonelyplanet.com###footer-section-3 > li:nth-of-type(4)
+www.lonelyplanet.com###FOOTER-SIGNUP
+www.lonelyplanet.com##.astro-qltapzkp.inline-block
+www.lonelyplanet.com##.astro-qltapzkp.text-left.lg\:w-1\/4.md\:w-full
+www.tripadvisor.com##.H.f.ssfLN
+www.tripadvisor.com##.NL._T.FENNA
 www.librarie.net##[href="/cookies.php"]
 www.librarie.net##body > div:nth-of-type(7)
 expertforum.ro##[href="https://expertforum.ro/doneaza/"]

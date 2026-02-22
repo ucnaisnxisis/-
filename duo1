@@ -245,6 +245,35 @@ www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
+www.thepoc.ro###bloghash-scroll-top
+www.thepoc.ro##.sti-mobile-btn.sti-top
+observatornews.ro##.poll-medium-news
+www.centruinchirieri.ro##.scrollup_area
+www.centruinchirieri.ro##.app_container
+www.telefonreclamatii.online##.zox-tit2.zox-post-title-wrap > .zox-post-width
+www.telefonreclamatii.online##.zox100.zoxrel.left.zox-post-body > div
+www.telefonreclamatii.online###menu-item-21668
+www.publi24.ro##.bnav-item-favourites.bnav-item
+www.publi24.ro##.page-subtitle
+www.newconceptliving.ro###nudge-banner
+www.newconceptliving.ro##.back-to
+www.newconceptliving.ro##.font-12.mt-5.sm-text-center.list-inline
+www.newconceptliving.ro##div.col-footer.col-md-4.col-sm-12:nth-of-type(3)
+www.contactonline.ro##aside.ad-container
+www.contactonline.ro###menu-item-5817
+www.romimo.ro##.bnav-item-favourites.bnav-item
+www.romimo.ro##.page-actions-bottom
+www.romimo.ro##.bottom-buttons-group
+www.rador.ro###glt-translate-trigger
+www.politisti.ro###cAnnouncementSidebar
+www.politisti.ro##.cAnnouncementsContent
+consultantavocat.ro##.mfn-cookies
+avocatro.net##.art-footer
+newsflash.ro##.cs-col-right.cs-footer__col
+newsflash.ro##[href="https://newsflash.ro/politica-de-confidentialitate/"]
+tv.apple.com###scrollable-page > .svelte-1xv2vjh
+partyflock.nl##.presencerow
+www.discogs.com##ul.section_Q_62w:nth-of-type(4)
 www.siblondelegandesc.ro##.widget_gcz_simple_social_widget_id.widget
 www.siblondelegandesc.ro##.widget_media_image.widget
 www.siblondelegandesc.ro##.wpulike-heart.wpulike

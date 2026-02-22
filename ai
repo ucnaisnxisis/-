@@ -35,6 +35,16 @@
 ###dislikeButton
 ##.dislikeButton
 ##dislikeButton
+##.mfn-cookies
+##.cAnnouncementsContent
+###cAnnouncementSidebar
+##aside.ad-container
+##.back-to
+##.bnav-item-favourites.bnav-item
+###bloghash-scroll-top
+##.scrollup_area
+##.favourites.bnav-item
+###nudge-banner
 ###reactions-ready.is-touchscreen.reactions-allowed.content-reactions
 ##.reactions-ready.is-touchscreen.reactions-allowed.content-reactions
 ##reactions-ready.is-touchscreen.reactions-allowed.content-reactions

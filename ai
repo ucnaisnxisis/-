@@ -9,6 +9,12 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+###floating-widget
+##.floating-widget
+##floating-widget
+##.sticky_btn
+###sticky_btn
+##sticky_btn
 ##.gaz-ad--mobile.gaz-ad
 ##.items-2.login-options
 ###FOOTER-SIGNUP

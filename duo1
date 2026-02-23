@@ -247,6 +247,80 @@ lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 www.thepoc.ro###bloghash-scroll-top
 www.thepoc.ro##.sti-mobile-btn.sti-top
+washingtoncitypaper.com###text-9 > .textwidget > p:nth-of-type(2)
+www.moneygram.com##.space-x-4.flex-row.flex
+www.moneygram.com###opencx-root
+! 23 feb. 2026 https://shopius.ro
+shopius.ro##body > div:nth-of-type(15)
+shopius.ro##.onetap-container-toggle
+! 23 feb. 2026 https://bakewithshivesh.com
+bakewithshivesh.com##[href="https://bakewithshivesh.com/privacy-policy/"]
+bakewithshivesh.com##[href="https://bakewithshivesh.com/advertise-with-us/"]
+! 23 feb. 2026 https://www.lidl.ie
+www.lidl.ie##li.footer__disclaimer-listelem:nth-of-type(6)
+www.lidl.ie##li.footer__disclaimer-listelem:nth-of-type(2)
+! 23 feb. 2026 https://julies.com.my
+julies.com.my###footer-middle
+julies.com.my###floating-widget
+! 23 feb. 2026 https://www.allrecipes.com
+www.allrecipes.com##.mntl-footer__social
+www.allrecipes.com##.mntl-social-nav.allrecipes-social-nav.mntl-fullscreen-nav__social-nav.comp
+! 23 feb. 2026 https://www.waitrose.com
+www.waitrose.com##div.ReactModalPortal:nth-of-type(4)
+www.waitrose.com###app-banner
+www.waitrose.com##.socialLinks___dBrYM_common.mobileSocialLinks___yfMSb_common
+www.waitrose.com##.siteLinks____DmQP_common > div.gtm___M9D4b_common:nth-of-type(3)
+www.waitrose.com##.appLinks___SZsa8_common.mobileAppLinks___rlksy_common
+! 23 feb. 2026 https://fusiongourmet.com
+fusiongourmet.com##.elementor-element-55d56ec1.elementor-element.elementor-top-column.elementor-col-20.elementor-column
+! 23 feb. 2026 https://www.pnp.co.za
+www.pnp.co.za##.has-components.DeliveryAddressSlot
+www.pnp.co.za##nav > ul > li.ng-star-inserted:nth-of-type(5)
+www.pnp.co.za##li.ng-star-inserted:nth-of-type(4) > .ng-star-inserted.wrapper > .childs > li.ng-star-inserted:nth-of-type(2)
+www.pnp.co.za##li.ng-star-inserted.ng-tns-c4100604037-1.mobile-navigation-ui__list-item:nth-of-type(17)
+! 23 feb. 2026 https://www.asda.com
+www.asda.com##.css-nx3swk
+www.asda.com##li.css-0:nth-of-type(7)
+www.asda.com##.css-g9w9q6.chakra-skeleton
+www.asda.com##.css-192ktoq.chakra-icon
+www.asda.com##.css-msbdq.chakra-link
+! 23 feb. 2026 https://livingsweetmoments.com
+livingsweetmoments.com##[href="https://livingsweetmoments.com/privacy-policy/"]
+! 23 feb. 2026 https://www.walmart.com
+www.walmart.com##.tc.ph3.pa0-hdkp.pt3.pb4 > div
+www.walmart.com##li.mv4:nth-of-type(10)
+! 23 feb. 2026 https://www.carrefouregypt.com
+www.carrefouregypt.com##.justify-between.items-center.w-full.flex.gap-xs.py-xs.px-md.bg-blue-25
+www.carrefouregypt.com##.shadow-lg.p-xs.bg-white.border-primary.border-solid.border-\[3px\].rounded-full.right-md.bottom-20.fixed.text-primary.disabled\:opacity-\[0\.12\].disabled\:pointer-events-none.focus-visible\:ring-1.focus-visible\:outline-none.transition-colors.font-bold.whitespace-nowrap.justify-center.items-center.inline-flex.focus-visible\:ring-ring
+www.carrefouregypt.com##.pb-md.mt-md
+! 23 feb. 2026 https://popnroll.ro
+popnroll.ro##.pop-modal-overlay
+popnroll.ro##a.pop-footer__link:nth-of-type(5)
+popnroll.ro##div.pop-footer__column:nth-of-type(2) > .pop-footer__links > a.pop-footer__link:nth-of-type(3)
+popnroll.ro###pop-newsletter-sticky
+popnroll.ro##.pop-header__mobile-whatsapp
+! 23 feb. 2026 https://www.snackcrate.com
+www.snackcrate.com###equally-ai___init-access-tool
+www.snackcrate.com##[href="https://www.snackcrate.com/privacy-policy/"]
+www.snackcrate.com##.kl-private-reset-css-Xuajs1.go417382439.klaviyo-form-version-cid_1.klaviyo-form.needsclick > .kl-private-reset-css-Xuajs1.needsclick > div.kl-private-reset-css-Xuajs1.needsclick > .kl-private-reset-css-Xuajs1.needsclick
+www.snackcrate.com##.sign-form > .container
+! 23 feb. 2026 https://www.littledebbie.com
+www.littledebbie.com##p.size-14.m-size-14:nth-of-type(2)
+www.littledebbie.com###\31 878298594 > p.size-14.m-size-14
+! 23 feb. 2026 https://giannettiartisans.com
+giannettiartisans.com##[href="https://giannettiartisans.com/privacy-policy/"]
+giannettiartisans.com##.wd-pos-r-t.wd-buttons
+! 23 feb. 2026 https://allegro.pl
+allegro.pl##._6b991_q5GCN._6b991_I-Q1m.mqu1_1.mgn2_12.mli8_k4.mgmw_wo.mp0t_0a.mj7a_8.m389_6m.myre_zn.mqen_m6
+allegro.pl##.b2mt3.m0ux_fp.m31c_kb.mrhf_u8.mrmn_qo.mgmw_u5g.mse2_40.mh36_0.mj7a_0.mvrt_0.mg9e_0.mgn2_13.mqu1_1.b89vd.m09p_40.mjt1_n2.m8qd_vz.m2ha_2.mjir_sv.msts_n7.m0qj_5r.meqh_en.mqen_m6.mqvr_2.mm2b_rf.mtag_rf.mldj_rf.msbw_rf.mdwl_5r.mnyp_5r.mefy_5r.m911_5r.munh_0.mryx_0.m3h2_0.mp4t_0.mli8_k4.mtsp_ib.mp7g_oh.m9qz_yq.mp0t_0a._1e32a_lGuTr
+! 23 feb. 2026 https://www.unwraphappiness.in
+www.unwraphappiness.in##.container-we-a
+www.unwraphappiness.in##.sticky_btn
+! 23 feb. 2026 https://archersfood.com
+archersfood.com##[href="https://archersfood.com/privacy/"]
+! 23 feb. 2026 https://donamariagourmet.com
+donamariagourmet.com##.aos-animate.aos-init.footer-info-col--large.footer-info-col
+donamariagourmet.com##.newsletterPopup-overlay
 observatornews.ro##.poll-medium-news
 www.centruinchirieri.ro##.scrollup_area
 www.centruinchirieri.ro##.app_container

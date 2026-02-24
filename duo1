@@ -246,6 +246,7 @@ ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 github.com##.js-webauthn-login-emu-control
+github.com##cookie-consent-link
 scatsite.com###consent-box > p
 scatsite.com###consent-decline
 scatsite.com###consent-banner
@@ -270,7 +271,17 @@ depscat.com##span.vidoser-meta-item:nth-of-type(1)
 depscat.com##.menu-dots
 depscat.com##[href="/report.html"]
 katitube.com##.lazyloaded
-katitube.com##.contents > div:nth-of-type(2)
+thisvid.com##.view
+fullscatmovies.club##.second.hm-btn
+candy.ai##.gap-\[79px\].flex
+katitube.com##div.icon1.header .lazyloaded
+katitube.com###left-video .lazyloaded
+katitube.com###left-video > div:nth-of-type(2) > div
+katitube.com##[href="https://katitube.com/kati/aicreat_blob.php"]
+katitube.com##div#similar.contents:nth-of-type(5)
+katitube.com##div.icon1.header > h2
+katitube.com##div.cam > [href="https://netnesspb.com/global/linkcamkati.php"]
+scat-porn-xxx.com##span.vidoser-meta-item:nth-of-type(1)
 www.perverttube.com##span:nth-of-type(1)
 www.perverttube.com##span:nth-of-type(2)
 www.perverttube.com##span:nth-of-type(3)

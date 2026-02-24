@@ -264,6 +264,17 @@ community.oneplus.com##.false.follow.default-button.ob-button.el-button
 community.oneplus.com##.post-bar
 windowsforum.com##.wf-copyLink-btn.message-attribution-gadget
 windowsforum.com##.message-attribution-opposite--list.message-attribution-opposite
+www.ryuugames.com##.td-scroll-up-visible.td-scroll-up
+www.ryuugames.com##.td-pb-span12
+wdho.ru##.scrollup
+www.gtainside.com##a[href^="/en/content.php"]:nth-of-type(8)
+www.gtainside.com##[href="/en/cookies.php"]
+www.gtainside.com##.col-lg-2.col-md-2.col-sm-2.col-xs-4 > strong
+gtasnp.com##[href="https://gtasnp.com/help/privacy"]
+y2cv.com##.show.scroll-to-top
+y2cv.com##.py-5.text-light.bg-dark
+stash.games##.lg\:mr-10.col-span-12.md\:col-span-4
+stash.games##div.col-span-12.sm\:col-span-6.md\:col-span-4:nth-of-type(3)
 www.clubic.com##li.gIySyt.sc-4lssos-22
 www.clubic.com##.iQNybX.sc-4lssos-17 > a.un-styled-linked
 www.clubic.com###download-stats

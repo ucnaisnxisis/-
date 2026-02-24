@@ -247,6 +247,40 @@ lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
+www.tqdev.com##[href="/feed"]
+www.tqdev.com##[href="/subscribe"]
+www.tqdev.com##li:nth-of-type(4)
+www.tqdev.com##div.post-content:nth-of-type(2) > ul > li:nth-of-type(3)
+allaboutcookies.org##.mb-4.lg\:gap-5.gap-9.items-center.lg\:justify-end.justify-center.flex
+www.androidpolice.com##.w-heading-options
+www.androidpolice.com##.thread-footer-notes
+helium.computer##div.svelte-1sr6y3t.column:nth-of-type(4)
+community.oneplus.com##.cookie-bottom-wap
+community.oneplus.com##.bottom-nav > li:nth-of-type(8)
+community.oneplus.com##.thread-info-second > div:nth-of-type(3)
+community.oneplus.com##.thread-info-second > div:nth-of-type(1)
+community.oneplus.com##.thread-info-second > .van-popover__wrapper
+community.oneplus.com##.false.follow.default-button.ob-button.el-button
+community.oneplus.com##.post-bar
+windowsforum.com##.wf-copyLink-btn.message-attribution-gadget
+windowsforum.com##.message-attribution-opposite--list.message-attribution-opposite
+www.clubic.com##li.gIySyt.sc-4lssos-22
+www.clubic.com##.iQNybX.sc-4lssos-17 > a.un-styled-linked
+www.clubic.com###download-stats
+www.clubic.com##.jQUGbT.th8vfg-7
+www.clubic.com##.glqbSn.sc-1kkc306-4
+www.technibble.com##.message-attribution-gadget
+www.technibble.com##[href="https://www.technibble.com/privacy-policy/"]
+simplelogin.io##div.mb-sm-0.mb-3.col-sm-6:nth-of-type(1)
+simplelogin.io##ul.mb-0.list-group-borderless.list-group-flush.list-group-white.list-group-transparent.list-group:nth-of-type(7) > li
+simplelogin.io##ul.mb-0.list-group-borderless.list-group-flush.list-group-white.list-group-transparent.list-group:nth-of-type(8)
+simplelogin.io##div.mb-4.col-lg-3.col-sm-4:nth-of-type(3) > .mb-0.list-group-borderless.list-group-flush.list-group-white.list-group-transparent.list-group > li:nth-of-type(4)
+www.privacyguides.org##.md-feedback
+forums.raspberrypi.com##div.__rptl-footer-column:nth-of-type(1)
+forums.raspberrypi.com##li.__rptl-footer-item:nth-of-type(16)
+forums.raspberrypi.com##li.__rptl-footer-item:nth-of-type(17)
+forums.raspberrypi.com##li.__rptl-footer-item:nth-of-type(13)
+www.raspberrypi.com##div.__rptl-footer-column:nth-of-type(1)
 scatsite.com###consent-box > p
 scatsite.com###consent-decline
 scatsite.com###consent-banner

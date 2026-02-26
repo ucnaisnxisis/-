@@ -9,6 +9,25 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+##.hp-newsletter-subscription.paddingBottom-10.box
+##.hp-newsletter-subscription.paddingBottom-9.box
+##.hp-newsletter-subscription.paddingBottom-8.box
+##.hp-newsletter-subscription.paddingBottom-7.box
+##.hp-newsletter-subscription.paddingBottom-6.box
+##.hp-newsletter-subscription.paddingBottom-5.box
+##.hp-newsletter-subscription.paddingBottom-4.box
+##.hp-newsletter-subscription.paddingBottom-3.box
+##.hp-newsletter-subscription.paddingBottom-2.box
+##.hp-newsletter-subscription.paddingBottom-1.box
+##.widget-digitv
+##.gridlove-footer
+##.gridlove-copyright
+##.newsletter-subscription
+##newsletter-subscription
+###newsletter-subscription
+###newsletter-box
+##newsletter-box
+##.newsletter-box
 ##newsletterPopup-overlay
 ###newsletterPopup-overlay
 ##.newsletterPopup-overlay

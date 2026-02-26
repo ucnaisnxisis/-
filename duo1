@@ -17,6 +17,12 @@ github.com##cookie-consent-link
 github.com##.color-bg-subtle
 github.com##li:nth-of-type(2)
 github.com##.BackToTop--visible.BackToTop
+www.peakpx.com###privacy-link
+www.peakpx.com##.footer
+www.peakpx.com###ft
+www.firefox.com##[href="/en-US/privacy/websites/cookie-settings/"]
+www.firefox.com##.fl-footer-section-follow.fl-footer-section
+www.firefox.com##[href^="https://www.mozilla.org/en-US/privacy/websites/"]
 m.youtube.com##.ytSearchboxComponentVoiceSearchWrapper
 m.youtube.com##.icon-microphone_on.mobile-topbar-header-voice-search-button
 m.youtube.com##grid-shelf-view-model.item.ytGridShelfViewModelHost

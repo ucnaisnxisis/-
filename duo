@@ -125,6 +125,14 @@ m.digisport.ro##.social-link.social-link-co
 redactia.ro###sti-mobile-btn-1
 bookbite.ro##div.footer-item.relative:nth-of-type(3) > .list-style-none.footer-links > li:nth-of-type(3)
 bookbite.ro###toPageTop
+iapp.org##.css-1y9sm0n
+iapp.org##.css-1gvw07j.chakra-list__root
+iapp.org##li.chakra-list__item:nth-of-type(4)
+iapp.org##[href="/news/subscriptions"]
+iapp.org##[href="https://iapp.org/l/connect/"]
+iapp.org##.css-1fl9j1i
+www.scoalaioncreanga.ro##.wcag-trigger
+g4food.ro##.menu
 hilio.com##.col-12.col-md-4.col-xl.q-mt-none.footer-column--atlas-apps.column.q-mt-xl.q-pt-none > .footer-column__content
 hilio.com##.col-12.col-md-4.col-xl.q-mt-none.footer-column--atlas-apps.column.q-mt-xl.q-pt-none > .p14.bold.footer-column__title
 hilio.com##p.text-atlas-white:nth-of-type(2)

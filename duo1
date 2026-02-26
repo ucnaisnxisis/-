@@ -299,6 +299,33 @@ www.gtainside.com##a[href^="/en/content.php"]:nth-of-type(8)
 www.gtainside.com##[href="/en/cookies.php"]
 www.gtainside.com##.col-lg-2.col-md-2.col-sm-2.col-xs-4 > strong
 gtasnp.com##[href="https://gtasnp.com/help/privacy"]
+www.qed42.com##.cookie-banner
+www.qed42.com##div.nav:nth-of-type(2)
+userlyticshelp.zendesk.com##.article-votes
+www.whatarecookies.com###cookieconsent_fg
+www.whatarecookies.com###cookieconsent
+trailheadtechnology.com###menu-1-d4f60ef > .menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-privacy-policy.menu-item-99 > .elementor-item
+forum.bubble.io##[href*="https://bubble.io/privacy"]
+www.browserstack.com##.guide-template__social-share-link.guide-template__social-share-link-icon
+support.google.com##.as
+community.f5.com##[href*="https://www.f5.com/company/policies/privacy-compliance-and-practices"]
+community.f5.com##[href*="https://www.f5.com/company/policies/privacy-notice"]
+community.f5.com##[href*="https://privacyportal.onetrust.com/webform/86c88b66-1c6e-4a7d-8530-6d754439e01a/45381ea3-ec70-4d89-a08e-7633b8fdc40a"]
+www.reuters.com##.site-footer-module__misc-links__roECj.site-footer-module__hidden-desktop__ZySLY > .site-footer-module__misc-links__roECj > .link-group-module__list__yrOzI.link-group-module__horizontal__49kD3.link-group-module__align-end__lzSxt > li.link-group-module__item__Za3t6:nth-of-type(1) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-module__with-icon__qlg76.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__black__y9ZH7.text-module__bold__chuBM.text-module__extra_small__8Buss
+www.reuters.com##.site-footer-module__misc-links__roECj.site-footer-module__hidden-tablet-down__1EKEg > .site-footer-module__misc-links__roECj > .link-group-module__list__yrOzI.link-group-module__horizontal__49kD3.link-group-module__align-end__lzSxt > li.link-group-module__item__Za3t6:nth-of-type(8) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-module__with-icon__qlg76.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__black__y9ZH7.text-module__bold__chuBM.text-module__extra_small__8Buss
+www.reuters.com##.site-footer-module__ad-links__bkjb1 > .link-group-module__list__yrOzI.link-group-module__horizontal__49kD3 > li.link-group-module__item__Za3t6:nth-of-type(2) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__black__y9ZH7.text-module__bold__chuBM.text-module__extra_small__8Buss
+www.reuters.com##.site-footer-module__misc-links__roECj.site-footer-module__hidden-tablet-down__1EKEg > .site-footer-module__misc-links__roECj > .link-group-module__list__yrOzI.link-group-module__horizontal__49kD3.link-group-module__align-end__lzSxt > li.link-group-module__item__Za3t6:nth-of-type(1) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-module__with-icon__qlg76.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__black__y9ZH7.text-module__bold__chuBM.text-module__extra_small__8Buss
+www.reuters.com##.site-footer-module__ad-links__bkjb1 > .link-group-module__list__yrOzI.link-group-module__horizontal__49kD3 > li.link-group-module__item__Za3t6:nth-of-type(1) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-module__with-icon__qlg76.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__black__y9ZH7.text-module__bold__chuBM.text-module__extra_small__8Buss
+www.reuters.com##.site-footer-module__social__DUXtl > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__light__ZYtNU.text-module__heading_6__u1KdJ.heading-module__base__p-zaD.heading-module__heading_6_light__klgho.site-footer-module__label__V-VsH
+www.reuters.com##.social-links-module__container__u-Ga0.social-links-module__condensed__eEJwK.social-links-module__wrap-links__Zxr2b
+www.reuters.com##.site-footer-module__stay-informed__3KQuP > .link-group-module__list__yrOzI.link-group-module__vertical__vGvtx > li.link-group-module__item__Za3t6:nth-of-type(3)
+www.reuters.com##.site-footer-module__stay-informed__3KQuP > .link-group-module__list__yrOzI.link-group-module__vertical__vGvtx > li.link-group-module__item__Za3t6:nth-of-type(2)
+www.reuters.com##.site-footer-module__stay-informed__3KQuP > .link-group-module__list__yrOzI.link-group-module__vertical__vGvtx > li.link-group-module__item__Za3t6:nth-of-type(1)
+www.reuters.com##.about > .link-group-module__list__yrOzI.link-group-module__vertical__vGvtx > li.link-group-module__item__Za3t6:nth-of-type(3) > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__default__R2Ckt.link-module__link__INqxZ.link-module__underline_on_hover__YTwYC.link-module__with-icon__qlg76.link-group-module__link__BcHeN > .text-module__text__0GDob.text-module__dark-grey__UFC18.text-module__medium__2Rl30.text-module__heading_6__u1KdJ
+www.biziday.ro##[href*="https://www.biziday.ro/privacy-policy/"]
+tv8.md##.jss127
+tv8.md##div.jss116:nth-of-type(2) > .MuiPaper-root.MuiAccordion-root.Mui-expanded.Mui-disabled.MuiAccordion-rounded.MuiPaper-elevation1.MuiPaper-rounded > .MuiAccordionDetails-root > a.jss121:nth-of-type(5)
+tv8.md##.MuiGrid-root.jss94.MuiGrid-item.MuiGrid-grid-xs-12
 y2cv.com##.show.scroll-to-top
 y2cv.com##.py-5.text-light.bg-dark
 stash.games##.lg\:mr-10.col-span-12.md\:col-span-4

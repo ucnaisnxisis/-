@@ -19,6 +19,20 @@
 ##.hp-newsletter-subscription.paddingBottom-3.box
 ##.hp-newsletter-subscription.paddingBottom-2.box
 ##.hp-newsletter-subscription.paddingBottom-1.box
+##.footer-menu > [href="javascript:void(0)"]
+##.pintxo-elevation-floating.pintxo-popup__content
+##.store
+###ea11y-root
+##.show.fade.modal-backdrop
+###cookie-banner-lgpd
+##.cookie-banner-lgpd
+##cookie-banner-lgpd
+###ads-container
+##.ads-container
+##ads-container
+###newsletter_sec
+##.newsletter_sec
+##newsletter_sec
 ##.widget-digitv
 ##.gridlove-footer
 ##.gridlove-copyright

@@ -320,6 +320,44 @@ www.microsoft.com##.f-follow.f-horizontal.m-social
 hentai0day.com##.rating-container
 hentai0day.com##.tabs-menu > ul > li:nth-of-type(3)
 st-hot-dog-king.itch.io##table
+tornews.com##.text-center.z-40.bg-dark-800.px-4.py-1.w-full.left-0.bottom-0.fixed.ps-cookiebar
+tornews.com##a.md\:text-mf.no-underline.transition-colors.hover\:text-primary.text-foreground:nth-of-type(4)
+tornews.com##.md\:mt-0.mt-4.space-x-4.flex
+tornews.com##div.space-x-2.items-center.flex:nth-of-type(4)
+tornews.com##.mb-16.mt-16
+tornews.com##.text-center.pt-16
+beencrypted.com##.md\:px-6.mt-10.bg-top.bg-cover.bg-no-repeat.bg-footer.relative
+beencrypted.com###ps-featured_block
+beencrypted.com##.gap-2.items-center.flex
+beencrypted.com##.text-center.z-40.py-0\.5.w-full.left-0.bottom-0.fixed.bg-primary-400.ps-cookiebar
+heimdalsecurity.com##.checkbox-footer-container.input-group
+heimdalsecurity.com###subscription-form
+surfshark.com##.show.js-dg-cookie-settings.cookie-settings-item
+surfshark.com##div.legal-row:nth-of-type(1)
+surfshark.com##.cta-image
+open.nytimes.com##div.m.ajz:nth-of-type(4)
+open.nytimes.com##.cv.r.ac.qj.qi.gu.qh
+open.nytimes.com##.uc.cw.ac > div.r.ac:nth-of-type(2)
+open.nytimes.com##.cw.mn.r.ac.aby
+open.nytimes.com##.fp.r.ac
+open.nytimes.com##.agt
+open.nytimes.com##.m.ud
+open.nytimes.com##.bn > .oa.no.nz.ny.fe.ar.aq.ap.nx.an.am.al.fo.aj.ga.ah > svg
+levelup.gitconnected.com##.vd.vc.vb.r.ci.ac.aq.uw.ub
+levelup.gitconnected.com##.m.aeh.aeg > .yf.ye.yd.yc.yb.ya.xz.xy.xx.xw.xv.xu.xt.xs.xr.lr.na.ac.xq > div.yy.yx.yw.yv.yu.yt.ys.yr.yq.yp.yo.yn.ym.sz.yl.yk.yj.ta.yi.yh.yg > .m.ed.zd.zc.zb.za.yz > .ed > .m.rs.ed > .ed.bi > .m.ed > .zq.zp.zo.zn.zm.zl.zk.zj.zi.zh.zg.zf.ze.ed.fz > .cv.ci.ac.zs > .abb.aba.zz.zy.bi.wx.cv.ac > .eb.ab.ec.b.bg > .ag.cw.ac.sr > .adm.adl.r.ac
+www.news.ro##.container-nl
+www.news.ro##[href="/gdpr-politica-de-confidentialitate"]
+www.news.ro##[href="/publicitate"]
+www.news.ro##[href="/gdpr-politica-de-colectare-acord-cookie"]
+www.news.ro##.fixed-bottom
+www.descopera.org##[href="https://www.descopera.org/cookie/"]
+www.descopera.org##[href="https://www.descopera.org/politica-de-confidentialitate/"]
+portokal.ro##.ec-gtm-cookie-directive > div
+portokal.ro##.newsletter-section
+portokal.ro##div.box3-footer:nth-of-type(2)
+portokal.ro##[href="https://portokal.ro/politica-de-confidentialitate"]
+portokal.ro##[href="https://portokal.ro/info-cookies"]
+portokal.ro##.amtheme-backtotop-wrap
 www.gamesthatwerent.com##.jetpack-subscribe-floating-button
 www.gamesthatwerent.com###rss-feed
 www.gamesthatwerent.com###heateor_sss_follow-2

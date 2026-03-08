@@ -367,6 +367,18 @@ emojiterra.com###btt
 emojiterra.com###footer-emojiterra
 emojis.wiki##.space-x-6.flex
 emojitool.com##div.wrap:nth-of-type(4)
+hotnews.ro##.\[\&\>p\:first-child\]\:mt-0.prose-max-w-none.prose-a\:no-underline.prose-a\:text-hotnews-blue.prose-p\:leading-normal.prose-p\:mt-0.prose-p\:mb-4.prose.leading-\[1\.5\].text-hotnews-black.font-jakarta.font-bold.text-xs.max-w-64.min-w-0.flex-1.footer-acf-content
+www.academia.edu##div.StickyCtaFooter-cls1_1US.StickyCtaFooter-cls2_3FL:nth-of-type(2) > .ds2-5-button--icon-only.ds2-5-button--secondary.ds2-5-button--small.sticky-cta-footer__btn.ds2-5-button
+www.academia.edu##div.StickyCtaFooter-cls1_1US.StickyCtaFooter-cls2_3FL:nth-of-type(2)
+www.avocat-tarta.ro##div.lg\:col-span-2:nth-of-type(3) > .space-y-2 > li:nth-of-type(5)
+www.avocat-tarta.ro##.duration-500.slide-in-from-bottom.animate-in.z-50.right-0.left-0.bottom-0.fixed
+www.avocat-tarta.ro##.justify-center.items-center.flex.focus\:ring-offset-2.focus\:ring-gold-400.focus\:ring-2.focus\:outline-none.hover\:scale-110.duration-300.transition-all.hover\:shadow-xl.shadow-lg.rounded-full.text-navy-900.hover\:bg-gold-600.bg-gold-500.h-12.w-12.z-50.right-6.bottom-6.fixed
+www.avocat-tarta.ro##div.lg\:col-span-3 > .gap-3.flex
+avocatdrian.ro##[href="https://avocatdrian.ro/politica-de-confidentialitate-a-datelor-gdpr/"]
+avocatdrian.ro##.menu-item-771.menu-item-object-page.menu-item-type-post_type.menu-item
+avocatdrian.ro##.qlwapp
+avocatdrian.ro##.header-facebook-custom
+www.reddit.com###mtseo-feedback-container
 rule34hentai.com##.show.modal-backdrop
 rule34hentai.com##.show.MSnVQstdFfvpDrIAye.modal
 shiroazu.com##div.mb-3.col-md-4:nth-of-type(3)

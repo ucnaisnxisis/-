@@ -96,6 +96,21 @@ piatti.menu##.mt-8.md\:items-center.md\:justify-center.md\:flex-row.flex-col.fle
 piatti.menu##li:nth-of-type(10)
 piatti.menu##div.md\:gap-8.md\:grid-cols-1.md\:grid:nth-of-type(1) > div > .space-y-2.mt-6 > li:nth-of-type(6)
 piatti.menu##.gap-6.justify-center.flex.right-0.left-0.bottom-6.z-40.absolute
+hotnews.ro##p:nth-of-type(2)
+hotnews.ro##p:nth-of-type(1)
+www.simonatache.ro##[href="https://www.simonatache.ro/politica-de-confidentialitate/"]
+www.storia.ro##[href="https://trai.storia.ro"]
+eximo.ro##.mt-6.space-x-2.justify-start.flex
+eximo.ro##div.md\:col-span-4.lg\:col-span-3:nth-of-type(3) > .mt-6.footer-list.list-none > li.mt-\[10px\]:nth-of-type(2)
+eximo.ro##div.md\:col-span-4.lg\:col-span-3:nth-of-type(3) > .mt-6.footer-list.list-none > li.mt-\[10px\]:nth-of-type(3)
+eximo.ro##.overflow-hidden.dark\:shadow-gray-700.shadow-lg.rounded-xl.py-10.px-6.lg\:px-8.dark\:bg-slate-900.bg-white.-top-40.relative
+www.avocatsorinviziru.ro##.et_block_module.et_pb_module.et_pb_bg_layout_dark.et_pb_text.et_pb_text_6_tb_footer > .et_pb_text_inner [href]
+avocat-popa.ro##.scrollup
+nartea.ro##[href="/expertiza-profesionala-gdpr/"]
+rontract.ro##.menu-item-576.menu-item-object-custom.menu-item-type-custom.menu-item
+rontract.ro###menu-item-575 > .menu-link
+busini.ro###menu-1-ef8c95e > .menu-item-2333.menu-item-object-custom.menu-item-type-custom.menu-item
+busini.ro###menu-1-ef8c95e > .menu-item-2332.menu-item-object-custom.menu-item-type-custom.menu-item
 restaurantguru.com##.btn_like.add_to_wishlist_btn
 www.tripadvisor.co.nz##.MfOiD
 www.slideserve.com##.footer-icon.d-flex.list-unstyled.justify-content-end.col-md-4.nav

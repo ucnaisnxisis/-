@@ -264,6 +264,60 @@ github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
+sirius-distribution.ro###google-consent-mode
+sirius-distribution.ro##tr
+sirius-distribution.ro##[href="politica-utilizare-cookie-uri"]
+sirius-distribution.ro##span > p:nth-of-type(7)
+sirius-distribution.ro##p:nth-of-type(2) > [href^="index.php"]
+sirius-distribution.ro##p:nth-of-type(6)
+sirius-distribution.ro##div.xl-25.lg-25.md-50.sm-100.xs-100.text.column:nth-of-type(4)
+www.miculmester.ro##.suport-consent-bar
+www.miculmester.ro##.footer-menu [href="https://www.miculmester.ro/confidentialitate"]
+accesorii-agricole.ro##[href="https://accesorii-agricole.ro/content/6-cookies"]
+accesorii-agricole.ro##[href="https://accesorii-agricole.ro/identitate"]
+www.apis-blaj.ro##[href="https://www.apis-blaj.ro/politica-de-utilizare-cookie-uri/"]
+www.apis-blaj.ro##.wishlist-count--sticky
+www.apis-blaj.ro##[href="https://www.apis-blaj.ro/politica-de-confidentialitate/"]
+www.apis-blaj.ro##.show-gdpr-cookie
+www.apis-blaj.ro##.header-wishlist-count.block
+www.miculmester.ro##div.product-information-row:nth-of-type(2) > div.row-small-gutter.row:nth-of-type(2)
+www.miculmester.ro##div.product-information-row:nth-of-type(3)
+www.metalochimice.ro###cm
+www.metalochimice.ro##.whatsapp-link
+www.onlinesport.ro##[href="https://www.youtube.com/@onlinesport_ro"]
+www.g4media.ro###g4-ai-chat-root
+unimedia.info##li:nth-of-type(13)
+stiri.md##.lkZoN.MobileDownloadApp__Wrapper-sc-3dcc3e16-0
+stiri.md##.krnZnI.MobileBottomWrapper__Wrapper-sc-c243b654-0
+stiri.md##.heowuR.AppDownload__Wrapper-sc-73862ffe-0
+stiri.md##.ewTecz.CurrentUser__CurrentUserWrapper-sc-cb4a04a9-0
+v2.simpalsid.com##.ModalSocials_socials__nxF9s
+stiri.md##.active.dDWtLA.BackToTop__Button-sc-f7dceec3-0
+news24.ro##[href="https://news24.ro/politica-de-confidentialitate/"]
+news24.ro##[href="https://news24.ro/cookies/"]
+news24.ro##[href="https://articole.psk.ro/"]
+paginadeseriale.ro##.facebook-like-box-pop-up-main.facebook-like-box-pop-up-overlay
+paginadeseriale.ro##.bdaia-post-sharing-top.bdaia-post-sharing
+paginadeseriale.ro##.bdaia-post-sharing-bottom.bdaia-post-sharing
+paginadeseriale.ro###custom_html-2
+paginadeseriale.ro##.bdaia-header-e3-desktop
+paginadeseriale.ro###bdaia-widget-html-7 > .widget-inner
+paginadeseriale.ro###bdaia-widget-facebook-2
+www.paginademedia.ro##section.box-b.box
+www.paginademedia.ro##section.box:nth-of-type(4) > .box-header
+game8.co##.js-bookmark-toggle.p-gameHeader__bookmark
+unimedia.info##.pull-right
+www.bursa.ro##li.active > [href="/rss"]
+www.news.ro##.d-sm-flex.container-newsletter
+edition.cnn.com##div.header__app-download:nth-of-type(4)
+www.bbc.co.uk##.e1xm81sc3.ssrcss-bjja0e-StyledContainer
+www.bbc.co.uk##div.e1mfoezg0.ssrcss-fcf6gd-Container
+www.bbc.co.uk##.e1tieb8l8.ssrcss-1r8cca5-ColouredContainer
+www.bbc.co.uk##.eki2hvo21.ssrcss-sqg48l-GlobalNavigationItem
+redactia.ro##[href="https://www.facebook.com/StiriRedactia/"]
+redactia.ro##p:nth-of-type(2)
+redactia.ro##[href="https://redactia.ro/site-uri-recomandate"]
+redactia.ro##p:nth-of-type(3)
 androidpornapk.com##[href="https://disney.com/"]
 catalog.hathitrust.org##a.svelte-hafoeq:nth-of-type(3)
 catalog.hathitrust.org##div.svelte-hafoeq > a.svelte-hafoeq

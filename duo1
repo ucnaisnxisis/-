@@ -287,6 +287,17 @@ www.metalochimice.ro##.whatsapp-link
 www.onlinesport.ro##[href="https://www.youtube.com/@onlinesport_ro"]
 www.g4media.ro###g4-ai-chat-root
 unimedia.info##li:nth-of-type(13)
+agerpres.ro##.mobile-hide.mt-lg-0.pt-3.col-lg-4 > div.bg-transparent.card:nth-of-type(2)
+www.g4media.ro###g4-ai-chat-root
+actualitate.net##.svelte-wo8a7x.app-link
+www.monitorulsv.ro##.justify-content-center.d-flex.col
+www.impact.ro##[href="https://www.impact.ro/politica-de-cookies"]
+bilete.izanagi.ro###extra_footer
+bilete.izanagi.ro###information_footer
+bilete.izanagi.ro##.d-lg-block.d-none.py-3.col-lg-2.col-md-12
+izanagi.ro###extra_footer
+izanagi.ro###information_footer
+izanagi.ro##.d-lg-block.d-none.py-3.col-lg-2.col-md-12
 stiri.md##.lkZoN.MobileDownloadApp__Wrapper-sc-3dcc3e16-0
 stiri.md##.krnZnI.MobileBottomWrapper__Wrapper-sc-c243b654-0
 stiri.md##.heowuR.AppDownload__Wrapper-sc-73862ffe-0

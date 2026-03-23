@@ -293,6 +293,23 @@ actualitate.net##.svelte-wo8a7x.app-link
 www.monitorulsv.ro##.justify-content-center.d-flex.col
 www.impact.ro##[href="https://www.impact.ro/politica-de-cookies"]
 www.dcmedical.ro##div.section:nth-of-type(3)
+www.presidency.ro###cookie-bar
+www.presidency.ro##.footer-bottom > p:nth-of-type(1)
+www.presidency.ro##.header-social-footer > ul
+www.presidency.ro##.footer-bottom > p:nth-of-type(4)
+www.presidency.ro##.footer-bottom > p:nth-of-type(2) > [href*="https\:\/\/www\.presidency\.ro\/ro\/termeni-si-conditii"]
+www.uniuneaarhitectilor.ro##.col-md-3 > form
+www.uniuneaarhitectilor.ro##.uar-footer-login
+www.uniuneaarhitectilor.ro##.ffb
+gazetadecluj.ro##[href*="https\:\/\/caaries\.ro\/"] > embed
+gazetadecluj.ro##[href*="https\:\/\/visitturda\.app\.link\/download"] > embed
+gazetadecluj.ro##[href*="https\:\/\/www\.salinaturda\.eu\/locatie\/bazin-de-inot-didactic-turda\/"] > embed
+gazetadecluj.ro##[href*="https\:\/\/solarisdevelopment\.ro\/solaris-eden\/"] > embed
+gazetadecluj.ro##.alignnone.size-full.wp-image-104112
+gazetadecluj.ro##[href*="https\:\/\/www\.studiumgreen\.ro\/landing-page\/"] > embed
+gazetadecluj.ro##[href*="https\:\/\/www\.airportcluj\.ro\/informatii-zboruri\/cauta-si-rezerva-un-zbor\/"] > embed
+gazetadecluj.ro##.td-g-rec.td-g-rec-id-content_bottom.tdi_3.td_block_template_1
+gazetadecluj.ro##.td-g-rec.td-g-rec-id-content_top.tdi_2.td_block_template_1
 familyclinic.ro##[href="https://familyclinic.ro/politica-de-confidentialitate/"]
 familyclinic.ro##[href="https://familyclinic.ro/politica-de-cookie-uri/"]
 familyclinic.ro##.elementor-widget-heading.elementor-widget.elementor-element-6c3a119.elementor-element

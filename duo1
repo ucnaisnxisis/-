@@ -264,6 +264,92 @@ github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
+voe.sx##.mt-2.my-4.d-block.text-center
+voe.sx##.mt-3.d-block.text-center.text-secondary.text-uppercase
+voe.sx##a.text-secondary:nth-of-type(4)
+voe.sx##a.text-secondary:nth-of-type(5)
+voe.sx##div.legalSeparator:nth-of-type(4)
+voe.sx##div.legalSeparator:nth-of-type(3)
+www.facebook.com###mount_0_0_Yo > div > div:nth-of-type(1) > .x1ja2u2z.x1n2onr6.x9f619 > div:nth-of-type(4)
+www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
+zenodo.org##[href="https://about.zenodo.org/privacy-policy"]
+stackoverflow.com##div.site-footer--col:nth-of-type(2) > .-list > li:nth-of-type(3)
+view.livresq.com##.jss14
+programiz.pro###cw-bubble-holder
+eduboom.ro##.comment-rating
+eduboom.ro##.comment-actions
+community.appeon.com##[href="https://www.appeon.com/privacy-statement.html"]
+www.purchase.edu##.site-footer-social
+kb.bcit.ca##[href="https://www.bcit.ca/privacy/"]
+kb.bcit.ca##div.g-col:nth-of-type(2)
+kb.bcit.ca##div.g-col:nth-of-type(3)
+www.pcvue.com##[href="https://www.pcvue.com/privacy-policy/"]
+www.pcvue.com##[href="https://www.pcvue.com/privacy-policy-touchvue-snapvue/"]
+www.pcvue.com##.right
+userapps.support.sap.com##.footer-center
+www.dictionary.com##[href="/terms-and-privacy"]
+www.dictionary.com##.social-logo-container
+www.eucast.org###ccm-widget > .ccm-modal-inner > .ccm-modal--body
+www.eucast.org##[href="https://www.escmid.org/privacy-notice/"]
+www.britannica.com##.twitter-icon.social-icon
+gokid.ro##.footer-email-wrap
+gokid.ro##div:nth-of-type(6)
+antonz.org##.footer.container
+www.synology.com##.ga-click-footer-menu-resource_subscribe_to_newsletter
+www.synology.com##s-widget
+scridex.ro##div.wp-block-group-is-layout-flex.wp-container-core-group-is-layout-353c4f5a.is-layout-flex.is-content-justification-stretch.is-vertical.wp-block-group:nth-of-type(2) > .wp-block-group-is-layout-flex.wp-container-core-group-is-layout-ea0cb840.is-layout-flex.is-vertical.wp-block-group > .amp-wp-f48533d.wp-block-navigation-is-layout-flex.wp-container-core-navigation-is-layout-ea0cb840.is-layout-flex.wp-block-navigation.is-vertical.has-small-font-size > .amp-wp-f48533d.wp-block-navigation.is-vertical.has-small-font-size.wp-block-navigation__container > li.wp-block-navigation-link.wp-block-navigation-item.has-small-font-size:nth-of-type(1) > .wp-block-navigation-item__content
+scridex.ro##div.wp-block-group-is-layout-flex.wp-container-core-group-is-layout-353c4f5a.is-layout-flex.is-content-justification-stretch.is-vertical.wp-block-group:nth-of-type(3)
+scridex.ro##li.open-on-hover-click.wp-block-navigation-item.wp-block-pages-list__item:nth-of-type(3)
+www.swatch.com##.m-social.flex-wrap.d-flex.b-footer-social_wrapper
+www.swatch.com##li.m-mobile.b-navigation-list_item:nth-of-type(3)
+www.swatch.com##li.m-mobile.b-navigation-list_item:nth-of-type(4)
+www.audi.com.au##.gHdEBI.social-media__RightAlignedButtonGroup-sc-1c6bb45f-0
+www.audi.com.au##.dRwyhd.legal-links__LegalLinksStyledWrapper-sc-92b3a212-0 > ul > li:nth-of-type(1)
+www.audi.com.au##.fWNmYU.Toolbar-styles__StyledContainer-sc-61a7b296-0
+help.zscaler.com###round-button
+help.zscaler.com##.row.feedback-panel
+click.ro##a.svelte-18a0jpv:nth-of-type(3)
+www.ibm.com##dds-legal-nav-item:nth-of-type(2)
+www.telerik.com##.TLRK-CCPA
+www.telerik.com##li.TK-Footer-List-Horizontal-Item-Effect.TK-Footer-List-Horizontal-Item:nth-of-type(3)
+www.telerik.com##.TK-Footer-List-Social.TK-Footer-List-Horizontal.TK-Footer-List--inner
+www.telerik.com##.col-3.sf_colsIn
+oneuptime.com##.space-y-6 > .gap-4.items-center.flex
+oneuptime.com##div.md\:gap-8.md\:grid-cols-2.md\:grid:nth-of-type(2) > .md\:mt-0.mt-10 > ul.space-y-3.mt-4:nth-of-type(2) > li:nth-of-type(2)
+ag.ny.gov##.tw-bg-light-gray
+www.paypal.com###\36 CLNIbjhAHYrU0vmmYhHJs > ._footer-link_1jad8_1165
+www.paypal.com###wMlZIQEn0OijLLvuS4UdX
+treasurydirect.gov##[href="/legal-information/privacy/"]
+www.rei.com##.ccsite-footer__container.mobile-media-row
+www.rei.com##li.legal__list-item:nth-of-type(3)
+www.rei.com##li.legal__list-item:nth-of-type(2)
+www.rei.com##li.legal__list-item:nth-of-type(4)
+www.rei.com##li.legal__list-item:nth-of-type(5)
+www.americanexpress.com##.axp-footer__dls-module__listLinksInlineSeparator___25k9b.axp-footer__dls-module__margin0___3S0s6 > li:nth-of-type(2)
+www.americanexpress.com##.axp-footer__dls-module__listLinksInlineSeparator___25k9b.axp-footer__dls-module__margin0___3S0s6 > li:nth-of-type(3)
+www.americanexpress.com##div.axp-footer__dls-module__padB___29gTP:nth-of-type(1)
+www.americanexpress.com##.axp-footer__footer__socialLinks___gAAHr.axp-footer__dls-module__colXs12___29EFm.axp-footer__dls-module__col___9B4qP
+www.americanexpress.com##div.axp-footer__dls-module__pad3T___SVukA.axp-footer__dls-module__colMd6___22fwT.axp-footer__dls-module__colLg3___2wVa6.axp-footer__dls-module__col___9B4qP.axp-footer__footer__footerSection___3zipI:nth-of-type(2) > .axp-footer__dls-module__listLinks___DsWOZ.axp-footer__dls-module__margin2T___1dpgR.axp-footer__dls-module__margin0___3S0s6 > li:nth-of-type(6)
+www.americanexpress.com##.axp-footer__dls-module__listLinksInlineSeparator___25k9b.axp-footer__dls-module__margin0___3S0s6 > li:nth-of-type(4)
+apastyle.apa.org##.container > ul > li:nth-of-type(3)
+www.sandc.com##[href="/en/do-not-sell-share-my-information/"]
+www.sandc.com##[href="/en/privacy-notice/"]
+www.sandc.com##div.col-sm-3:nth-of-type(4)
+notion.online###menu-item-2539 > [href="https://notion.online/privacy-policy/"]
+notion.online##.site-footer-open-close__close
+ahrefs.com##div.css-16k596d-col:nth-of-type(2) > div.css-xrs7y7-menu:nth-of-type(2)
+ahrefs.com##div.css-xrs7y7-menu:nth-of-type(2) > .css-1o4xsh9-menuList > div.css-1krlkgw:nth-of-type(8)
+ahrefs.com##div.css-xrs7y7-menu:nth-of-type(2) > .css-1o4xsh9-menuList > div.css-1krlkgw:nth-of-type(9)
+ahrefs.com##.css-1soja3n.css-1vznryd.css-1bjhv8d.css-3sj1cp.css-lb9cx4-stack.css-7aqu6z > .css-zcxndt.css-1soja3n.css-6twsqq.css-1br7676.css-3sj1cp.css-lb9cx4-stack.css-186bnk2
+ahrefs.com##.css-14nrkpd-intercomIcon
+www.symrise.com###c34426
+www.symrise.com##.dAstylere
+www.symrise.com##.active.btn-up
+www.symrise.com##.fixed.social-top
+www.symrise.com##.social-top
+dle.rae.es##.c-site-footer__form
+dle.rae.es##.c-site-footer__icons
+dle.rae.es##.c-box--centered.c-box--primary.c-box
 sirius-distribution.ro###google-consent-mode
 sirius-distribution.ro##tr
 sirius-distribution.ro##[href="politica-utilizare-cookie-uri"]

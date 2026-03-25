@@ -273,6 +273,48 @@ voe.sx##div.legalSeparator:nth-of-type(3)
 www.facebook.com###mount_0_0_Yo > div > div:nth-of-type(1) > .x1ja2u2z.x1n2onr6.x9f619 > div:nth-of-type(4)
 www.facebook.com##.x1u8a7rm.x8hos8a.xixxii4.x1g0dm76.x1s14bel.xpdmqnj.x1xy6bms.x1o0tod.xtijo5x.x9f619.xayqjjm.x1ey2m1c.x2bj2ny.x193iq5w.x2lah0s.xdt5ytf.x78zum5
 zenodo.org##[href="https://about.zenodo.org/privacy-policy"]
+www.iflscience.com##[href="/advertising-policy"]
+www.iflscience.com##[href="/do-not-sell"]
+www.iflscience.com##.mobile-subscribe--cta
+www.iflscience.com##.flex.article__bottom__meta__actions
+www.iflscience.com##.flex-col.flex.follow-button-text-wrapper
+www.iflscience.com##.mobile.hamburger-navigation > nav > ul > li:nth-of-type(6)
+www.sciencefocus.com##.has-text.menu-button-Privacy-policy.menu-button
+www.sciencefocus.com##.has-text.menu-button-Manage-preferences.menu-button.consent-settings-button
+www.sciencefocus.com##.has-text.menu-button-Newsletter.menu-button
+www.sciencefocus.com##.has-text.menu-button-Subscribe-to-BBC-Science-Focus-Magazine.menu-button
+lens.monash.edu##.is-active.gh-scroll-top-btn
+lens.monash.edu##.monash-footer__socialIcons
+lens.monash.edu##[href="#"]
+lens.monash.edu##[href="https://www.monash.edu/privacy-monash"]
+www.medicaldaily.com##div.col-sm-3:nth-of-type(3)
+www.medicaldaily.com##.privacy-settings.leaf
+www.medicaldaily.com##[href^="https://newsletter.ibt.com/"]
+www.medicaldaily.com##.twitter-x-white
+www.medicaldaily.com##[href="/advertising"]
+my.clevelandclinic.org##.bp900\:hidden.my-rem24px.text-center
+www.healthline.com##.css-xgyi9i > div:nth-of-type(2)
+www.sciencealert.com##.menu-main-footer-navigation-container
+www.sciencealert.com##.border-sciencealert-yellow.border-t-3.pt-2.mt-5.justify-between.flex.menu-follow-us
+www.thecut.com##.article-nav-top-right
+www.thecut.com##.secondary-area-social-icons
+www.thecut.com###zephr-zone-footer
+www.thecut.com##.social-section
+medium.com##.u.ea.j.s.r.p.n.l.ap.ao.an.am.al.ak.aj.ai.b.ag.bb.dz.ab.dy
+medium.com##div.ady.cf.j.v:nth-of-type(1)
+medium.com##div.ady.cf.j.v .bi > .ba > span
+medium.com##.zu.zt.zs
+medium.com##.adr.adq.adp.j.cf.v.ak.ado.aba
+medium.com##.e.aca.abz > .vf.ve.vd.vc.vb.va.uz.uy.ux.uw.uv.uu.ut.us.ur.lb.mk.v.uq > div.vy.vx.vw.vv.vu.vt.vs.vr.vq.vp.vo.vn.vm.rl.vl.vk.vj.rm.vi.vh.vg:nth-of-type(3) > .e.ea.wd.wc.wb.wa.vz > .ea > .e.qb.ea > .ea.bd > .e.ea > .wq.wp.wo.wn.wm.wl.wk.wj.wi.wh.wg.wf.we.ea.fw > .cs.cf.v.ws > .xb.xa.wz.wy.bd.ub.cs.v > .dy.u.dz.b.bb > .y.ct.v.rd > .zo.j.v > div:nth-of-type(2) > .j.v.dl.zm.fw > .zo.j.v.zn.ng.gb > div:nth-of-type(1)
+medium.com##.e.aca.abz > .vf.ve.vd.vc.vb.va.uz.uy.ux.uw.uv.uu.ut.us.ur.lb.mk.v.uq > div.vy.vx.vw.vv.vu.vt.vs.vr.vq.vp.vo.vn.vm.rl.vl.vk.vj.rm.vi.vh.vg:nth-of-type(4) > .e.ea.wd.wc.wb.wa.vz > .ea > .e.qb.ea > .ea.bd > .e.ea > .wq.wp.wo.wn.wm.wl.wk.wj.wi.wh.wg.wf.we.ea.fw > .cs.cf.v.ws > .xb.xa.wz.wy.bd.ub.cs.v > .dy.u.dz.b.bb > .y.ct.v.rd > .zo.j.v > div:nth-of-type(2) > .j.v.dl.zm.fw > .zo.j.v.zn.ng.gb > div:nth-of-type(1)
+www.drugs.com##.display-ad-leaderboard
+www.drugs.com##[href="/support/privacy.html"]
+www.drugs.com##[href="#"]
+www.drugs.com##div.ddc-flex-gap-4.ddc-flex-column.ddc-flex.ddc-footer-column:nth-of-type(2) > .ddc-text-size-small.ddc-mg-0.ddc-list-unstyled.ddc-flex-gap-2.ddc-flex-column.ddc-flex > li:nth-of-type(2)
+go.drugbank.com##div.footer-col.col-6.col-sm-6.col-xl-auto:nth-of-type(4) > .footer-list > .list-unstyled > li:nth-of-type(5)
+www.pfarma.ro##li.list-group-item:nth-of-type(12)
+www.pfarma.ro##[href="articole/articol-cookie.html"]
+www.pfarma.ro##[href="articole/politica-confidentialitate-eshop.html"]
 stackoverflow.com##div.site-footer--col:nth-of-type(2) > .-list > li:nth-of-type(3)
 view.livresq.com##.jss14
 programiz.pro###cw-bubble-holder

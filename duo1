@@ -292,6 +292,13 @@ www.medicaldaily.com##.privacy-settings.leaf
 www.medicaldaily.com##[href^="https://newsletter.ibt.com/"]
 www.medicaldaily.com##.twitter-x-white
 www.medicaldaily.com##[href="/advertising"]
+www.commonsense.org###cta-modal-redirect
+www.commonsense.org##.footer-social-share
+www.commonsense.org##[href="https://www.commonsensemedia.org/donate"]
+www.commonsense.org##[href="https://www.commonsensemedia.org/newsletters"]
+www.commonsense.org##a.link:nth-of-type(2)
+www.commonsense.org##i:nth-of-type(2)
+www.commonsense.org##i:nth-of-type(3)
 my.clevelandclinic.org##.bp900\:hidden.my-rem24px.text-center
 www.healthline.com##.css-xgyi9i > div:nth-of-type(2)
 www.sciencealert.com##.menu-main-footer-navigation-container

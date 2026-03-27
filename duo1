@@ -264,6 +264,16 @@ github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
+williamalexander.dev
+@@eprivacy-storage.eu-sharedservices.olxcdn.com
+production-graphql.eu-sharedservices.olxcdn.com
+ninja.data.olxcdn.com
+laquesis.data.olxcdn.com
+m.olx.ro##.css-pclgxh
+m.olx.ro##.css-11jn7r
+m.olx.ro##.css-89dm6x
+m.olx.ro##a.css-yfbjg2:nth-of-type(2)
+login.olx.ro##.css-1qjad4w
 voe.sx##.mt-2.my-4.d-block.text-center
 voe.sx##.mt-3.d-block.text-center.text-secondary.text-uppercase
 voe.sx##a.text-secondary:nth-of-type(4)
@@ -3386,8 +3396,6 @@ angelustv.ro##.elementor-element.elementor-element-3ab3bfae.elementor-widget.ele
 angelustv.ro##.elementor-element.elementor-element-1f17c07.elementor-widget.elementor-widget-text-editor > .elementor-widget-container > p
 angelustv.ro##.elementor-element.elementor-element-45e7f7da.elementor-widget.elementor-widget-heading > .elementor-widget-container
 translate.google.com##.gb_Ed.gb_Od.gb_Wd.gb_Va
-m.olx.ro##.css-8rj0v3
-m.olx.ro##.css-51rwcj
 kawaiicat.md##.cookie-banner
 kawaiicat.md##[href*="protectia-datelor-personale"]
 fashionhub-ro.decorexpro.com##[href*="https://fashionhub-ro.decorexpro.com/legal/personaldata/"]
@@ -5591,13 +5599,6 @@ www.funnygames.ro##li:nth-of-type(2)
 www.funnygames.ro##li:nth-of-type(7)
 www.scamadviser.com##.__link.hover-white.text-transform-none.text-white.btn-download.btn
 www.ubuy.com.ro##.col-12.col-lg-6.col-sm-12.col-md-12 > .footer-menu > li:nth-of-type(2)
-m.olx.ro##.css-11jn7r
-m.olx.ro##.css-pclgxh
-m.olx.ro##.css-89dm6x
-m.olx.ro##.css-2itv6r
-m.olx.ro##.css-1sdh5kv
-m.olx.ro##a.css-yfbjg2:nth-of-type(2)
-m.olx.ro##.css-1gl0wmu
 www.virustotal.com##div.sub.large-sub
 www.virustotal.com##.bubble
 www.virustotal.com##.bot
@@ -5645,13 +5646,6 @@ www.microsoft.com##div.c-uhff-nav-row:nth-of-type(2) > div.c-uhff-nav-group:nth-
 cybernews.com##li.footer__nav-item:nth-of-type(1) > .footer__nav-sub-items > li.footer__nav-sub-item:nth-of-type(4)
 cybernews.com##li.footer__bottom-line-nav-item:nth-of-type(4)
 cybernews.com##li.footer__nav-item:nth-of-type(4) > .footer__nav-sub-items > li.footer__nav-sub-item:nth-of-type(3)
-www.olx.ro##.css-1efdvzd
-www.olx.ro##[href="https://ajutor.olx.ro/olxhelpro/s/article/politica-de-confiden%C8%9Bialitate-V30"]
-www.olx.ro##ul.css-s213mv:nth-of-type(2) > li:nth-of-type(13)
-www.olx.ro##.css-1gjms9p
-www.olx.ro##.css-19f4wvj
-www.olx.ro##.css-89dm6x
-www.olx.ro##.css-1lx5q7o
 pizzeriaalila.ro##[href="https://pizzeriaalila.ro/politica-de-confidentialitate/"]
 pizzeriaalila.ro##[href="https://pizzeriaalila.ro/politica-cookies/"]
 pizzeriaalila.ro##.wishlist-info-widget

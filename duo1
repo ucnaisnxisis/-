@@ -320,6 +320,44 @@ www.socom.mil##a.btn.btn-secondary:nth-of-type(1)
 rocketreach.co##[href*="\/claim-profile"]
 login.microsoftonline.us###ftrPrivacy
 www.ivoox.com###container-app-middle-modal > div:nth-of-type(2)
+imvdb.com##div.span3:nth-of-type(3)
+carturesti.ro##.addToWishListWrapper
+www.researchgate.net##.challenge-captcha
+www.cool-mania.ro##.footer-info__social
+www.cool-mania.ro##.wish-toggler
+microfoane-spion.ro##.site-primary-footer-wrap.ast-builder-grid-row-container.site-footer-focus-item.ast-builder-grid-row-full.ast-builder-grid-row-tablet-full.ast-builder-grid-row-mobile-full.ast-footer-row-stack.ast-footer-row-tablet-stack.ast-footer-row-mobile-stack
+microfoane-spion.ro###menu-item-3517 > .menu-link
+microfoane-spion.ro###menu-item-3518
+microfoane-spion.ro###nav_menu-2 > .widget-title
+microfoane-spion.ro###menu-item-3522
+microfoane-spion.ro##.footer-social-inner-wrap.element-social-inner-wrap.social-show-label-false.ast-social-color-type-custom.ast-social-stack-none.ast-social-element-style-filled
+
+www.secutek.ro###privacy
+www.secutek.ro##[href*="\/rss\/news"]
+www.secutek.ro###box1344 > .box > .box-content > p
+www.iuni.ro##.chat-button
+www.iuni.ro###about_us > li:nth-of-type(4) > [href*="\/info\/despre-cookies"]
+www.secutek.ro###gdpr-cookie-cnt > p
+www.secutek.ro###gdpr-cookie-agree
+decosta.ro##div.col-12.col-sm-6.col-xl-3:nth-of-type(2) > .quick-link.ms-sm-4.ms-xl-0 > ul > li:nth-of-type(2)
+smtsol.ro###cybervoice-popup
+smtsol.ro##.panel-body
+smtsol.ro##.panel-heading
+smtsol.ro##.panel-footer.text-right
+smtsol.ro##.slideOutTab
+smtsol.ro##.swipe-menu > ul > li:nth-of-type(15) > .sws_menu_secundar
+smtsol.ro##.swipe-menu > ul > li:nth-of-type(13) > .sws_menu_secundar
+smtsol.ro##.swipe-menu > ul > li:nth-of-type(14) > .sws_menu_secundar
+smtsol.ro##.swipe-menu > ul > li:nth-of-type(16) > .sws_menu_secundar
+miniprice.ro##.list-inline > li:nth-of-type(3)
+miniprice.ro##.fa.fa-share
+miniprice.ro##div.col-sm-3:nth-of-type(4) > .list-unstyled > li:nth-of-type(4)
+miniprice.ro##div.col-sm-3:nth-of-type(4) > .list-unstyled > li:nth-of-type(3)
+miniprice.ro##div.row:nth-of-type(9) > div.product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12:nth-of-type(12) > .product-thumb.transition > .button-group > button:nth-of-type(2)
+miniprice.ro##div.row:nth-of-type(9) > div.product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12:nth-of-type(11) > .product-thumb.transition > .button-group > button:nth-of-type(2)
+miniprice.ro##div.row:nth-of-type(9) > div.product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12:nth-of-type(10) > .product-thumb.transition > .button-group > button:nth-of-type(2)
+miniprice.ro##div.row:nth-of-type(9) > div.product-layout.col-lg-3.col-md-3.col-sm-6.col-xs-12:nth-of-type(9) > .product-thumb.transition > .button-group > button:nth-of-type(2)
+miniprice.ro##div.button-group > button:nth-of-type(2)
 cults3d.com##.grid.grid--guttered.grid--full\@xm-down > div.grid-cell.grid-cell--1of2:nth-of-type(1) > .grid.grid--guttered.grid--full\@s-down > div.grid-cell.grid-cell--1of2:nth-of-type(2) > .foot-links.foot-links--columns.mt-0\.5 > li:nth-of-type(3)
 cults3d.com##.grid.grid--guttered.grid--full\@xm-down > div.grid-cell.grid-cell--1of2:nth-of-type(2) > .grid.grid--guttered.grid--full\@s-down > div.grid-cell.grid-cell--1of2:nth-of-type(1) > ul.foot-links.foot-links--columns:nth-of-type(1) > li:nth-of-type(2)
 cults3d.com##[src*="https\:\/\/assets\.cults3d\.com\/assets\/social\/smiling-julien-72267c260821f095956be2f31fdff4b5357286dc0a77d1865d5f482a7b0765df\.svg"]

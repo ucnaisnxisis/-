@@ -424,6 +424,36 @@ adrianvintu.net###c_vreau_sa > div:nth-of-type(3) > div:nth-of-type(1)
 adrianvintu.net###c_vreau_sa > div:nth-of-type(3) > div:nth-of-type(2)
 pressone.ro##.footer-mobile.navbar-nav.me-auto.mb-2.mb-lg-0.font-primary.w-100.d-flex.d-lg-none.flex-row.justify-content-end.py-2
 pressone.ro##.btn.btn-sm.btn-outline-light.rounded-pill.px-4.ms-2.d-lg-block.header-cta
+animedemons.ro##.footer-inner
+www.aoi-fansub.com##.footer-inner
+www.mangashop.ro###cookie-consent-banner
+gogoanime.ro##.sosmed
+gogoanime.ro##.surprise
+mtresu.com###nav_menu-4
+www.alltur.ro###cookie-bar > p
+www.alltur.ro##.col-sm-4
+www.alltur.ro##.footer-menu > [href*="\/politica-cookies"]
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro##[src*="https\:\/\/gstatic\.com\/dialogflow-console\/common\/assets\/ccai-favicons\/conversational_agents\.png"]
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+www.alltur.ro###alltur-navi-trigger
+casatimis.ro###toTop
+casatimis.ro##.elementor-column.elementor-col-25.elementor-top-column.elementor-element.elementor-element-f4a0b3c > .elementor-widget-wrap.elementor-element-populated
+casatimis.ro##[href*="\/politica-de-cookie"] > .elementor-icon-list-text
+casatimis.ro##.elementor-element.elementor-element-fb28b15.elementor-list-item-link-inline.elementor-icon-list--layout-traditional.elementor-widget.elementor-widget-icon-list > .elementor-icon-list-items > li.elementor-icon-list-item:nth-of-type(5) > [href*="\/politica-de-abonare-la-newsletter\/"] > .elementor-icon-list-text
+casatimis.ro##.elementor-column.elementor-col-100.elementor-top-column.elementor-element.elementor-element-ec82da0 > .elementor-widget-wrap.elementor-element-populated
+casacutei.ro##.textwidget.custom-html-widget
+casacutei.ro##div.grid.nd_options_grid_6.nd_options_text_align_center_responsive:nth-of-type(1) > div.nd_options_font_size_12.nd_options_display_table.nd_options_float_left:nth-of-type(1) > .nd_options_display_table_cell.nd_options_vertical_align_middle > .nd_options_margin_right_20.nd_options_first_font
+www.eturia.ro##a.Footer__link.Footer__link--btm:nth-of-type(2)
+www.eturia.ro##a.Footer__link.Footer__link--btm:nth-of-type(3)
+www.eturia.ro###newsletterTrigger
+www.eturia.ro##.col-xl-1.order-xl-2.flex-xl-column.text-xl-right.ml-xl-auto.pt-xl-50
+www.eturia.ro###abonare-newsletter
 blog.castle.io##.flex.items-center.gap-2.text-typ-tone.text-base
 blog.castle.io##.shadow-btn.border.border-b-0.border-opac.bg-brand.text-sm.font-medium.text-brand-contrast.px-4.py-1\.5.rounded-theme.md\:px-5.md\:py-2.transition.duration-300.hover\:brightness-105.hover\:shadow-btn-hover.gh-portal-close
 www.rootapp.com##.holder-footer

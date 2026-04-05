@@ -75,6 +75,9 @@ csrlm.com##a.after-middle:nth-of-type(3)
 csrlm.com##a.after-middle:nth-of-type(2)
 www.pgames.zone##[href="/privacy.html"]
 www.pgames.zone##.jss142
+www.actualitate.org##.feedback-container-instance.feedback-container
+www.bilibili.tv##a.login-footer__link:nth-of-type(2)
+search.brave.com##a.svelte-4jwo3w:nth-of-type(5)
 ##.footer-menu > [href="javascript:void(0)"]
 ##.pintxo-elevation-floating.pintxo-popup__content
 wolt.com##li.byf412r.cb_typographyClassNameNew_caption_23d:nth-of-type(3)

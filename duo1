@@ -317,6 +317,12 @@ smarters.ro##.show-support
 smarters.ro##.bb-share-container
 www.solopress.com##[href="https://www.solopress.com/blog/ro/privacy-policy/"]
 www.solopress.com##.footer-email-wrap
+revistasufletului.net##.distribuie
+psiholog.exemple.webage.ro##[href="https://psiholog.exemple.webage.ro/termeni-si-conditii-de-utilizare/"]
+www.alesdonline.ro##.tdi_48.vc_raw_html.td_block_wrap.wpb_wrapper
+www.alesdonline.ro##div.footer-email-wrap:nth-of-type(3)
+phonline.ro###phnotice
+phonline.ro##.top
 wizlogo.com###consentModal
 wizlogo.com##.mt-lg-0.mt-2.text-lg-right.text-center.col-lg-2.col-12
 wizlogo.com##div.col-lg-2.col-md-3.text-md-left.text-center.col-12:nth-of-type(3)

@@ -283,6 +283,39 @@ m.olx.ro##.css-czavxu
 m.olx.ro##.css-1urk9ud
 m.olx.ro##.css-11l6j54
 m.olx.ro##.css-15c6cjx
+www.ziaruldeiasi.ro##p:nth-of-type(4)
+www.livetickets.ro##.ng-star-inserted.button-bar
+www.livetickets.ro##.small.text-muted
+www.livetickets.ro##li:nth-of-type(6)
+ca.linkedin.com##.left-right-divider.contextual-sign-in-modal__divider
+ca.linkedin.com##.w-full.bg-transparent.li-footer
+blog.skywardinsurance.com##[href="https://skywardinsurance.com/privacy-policy/"]
+www.ujmag.ro##.cd-fade-out.cd-is-visible.cd-top
+www.ujmag.ro##.newslatter
+www.maiia.com##[href="/donnees-personnelles"]
+www.maiia.com##[href="/chirurgien-dentiste/07340-serrieres/deak-adriana#"]
+www.maiia.com##.mui-0.MuiBox-root
+www.maiia.com##.mui-uvr5k6.MuiStack-root
+www.pagesjaunes.fr##div.col-sm-4:nth-of-type(3)
+www.pagesjaunes.fr###footer-apropos-Desktop > li > .pj-link.pjts_footer-plan
+www.pagesjaunes.fr##div.col-sm-4 > .item.footer-infos-legales > .cursor-mobile
+chem.ubbcluj.ro##a.btn-link.btn:nth-of-type(2)
+www.bursa.ro##.lazy.zoom.img-responsive
+www.bursa.ro##.img-responsive.lazy
+www.bursa.ro##.img-responsive
+www.hospitalidee.fr##.z-\[9999\].right-4.bottom-4.fixed
+www.hospitalidee.fr##button.hover\:text-white.ml-1
+www.hospitalidee.fr##a.hover\:text-white.ml-1:nth-of-type(2)
+www.hospitalidee.fr##div.space-y-3:nth-of-type(2) > a.hover\:text-white.transition-colors.text-gray-300.block:nth-of-type(3)
+www.hospitalidee.fr##div.space-y-3:nth-of-type(2) > a.hover\:text-white.transition-colors.text-gray-300.block:nth-of-type(5)
+www.librariadelfin.ro##.iconbox-wishlist-item
+www.librariadelfin.ro##[href="https://www.librariadelfin.ro/politica-de-confidentialitate"]
+www.librariadelfin.ro##[href="https://www.librariadelfin.ro/politica-cookie"]
+www.librariadelfin.ro##.toprun > [href]
+teatrulbm.ro##p:nth-of-type(4)
+teatrulbm.ro##.menus_misc
+turdanews.net##div.footer_column.col-md-4:nth-of-type(2)
+turdanews.net##.clearfix.jeg_footer_secondary
 bebelonia.ro##.mystickyelement-lists-wrap
 www.andreirosu.org##.text-right.col-sm-6
 www.andreirosu.org##.cta-slim.pad-sm.container-fluid

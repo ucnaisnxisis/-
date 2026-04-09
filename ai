@@ -29,6 +29,12 @@
 ###stars
 ##.stars
 ##.social-menus
+###star-rating
+##.star-rating
+##star-rating
+##rating-star
+###rating-star
+##.rating-star
 ###ea11y-root
 ##.show.fade.modal-backdrop
 ###cookie-banner-lgpd

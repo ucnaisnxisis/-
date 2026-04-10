@@ -288,6 +288,9 @@ www.profi.ro##.mfp-bg.mfp-zoom.mfp-ready
 furaje-laprovincia.ro##.mcb-column-inner.mfn-module-wrapper.mcb-column-inner-1325745b8.mcb-item-column-inner > .column_attr.mfn-inline-editor.clearfix > p:nth-of-type(2)
 furaje-laprovincia.ro##.mfn-icon-box.mfn-icon-box-bottom.mfn-icon-box-center > .icon-wrapper > .icon-facebook
 furaje-laprovincia.ro##.mfn-icon-box.mfn-icon-box-bottom.mfn-icon-box-center
+www.eucast.org##[href="https://www.escmid.org/privacy-notice/"]
+www.eucast.org##small.main-link:nth-of-type(5)
+www.eucast.org##[href="https://www.escmid.org/disclaimer/"]
 www.liebherr.com##patternlib-footer-website > patternlib-footer-website-block:nth-of-type(1)
 www.liebherr.com##patternlib-footer-website-block:nth-of-type(2)
 www.liebherr.com##[href*="\/ro-ro\/cross-entry-point\/ro-ro-ro\/hau_privacy"] > patternlib-footer-website-link

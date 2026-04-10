@@ -296,6 +296,39 @@ www.liebherr.com##[href*="\/ro-ro\/cross-entry-point\/ro-ro-ro\/hau_accessibilit
 www.liebherr.com##patternlib-sticky-sidebar-item:nth-of-type(4)
 www.liebherr.com###sticky-sidebar-item-star
 g4food.ro###menu-item-120541 > a
+mega.nz##.st-social-block-load
+soundcloud.com##a.sc-link-secondary:nth-of-type(11)
+www.haribo.com##.m-footer__social
+www.haribo.com##.fs-headline-o1.m-footer__legal-links > .o-ui-list > li.m-footer__link-item:nth-of-type(3)
+www.haribo.com##.fs-headline-o1.m-footer__legal-links > .o-ui-list > li.m-footer__link-item:nth-of-type(2)
+docs.python.org##.footer
+www.lerato.ro##[href="https://www.lerato.ro/gdpr-tools"]
+www.lerato.ro##[href="https://www.lerato.ro/dreambox"]
+pkg.go.dev##[href="http://www.google.com/intl/en/policies/privacy/"]
+pkg.go.dev##div.go-Footer-linkColumn:nth-of-type(5)
+pkg.go.dev##.go-Footer-googleLogo
+music.apple.com##li.svelte-1xv2vjh:nth-of-type(3)
+music.apple.com##li.svelte-1xv2vjh:nth-of-type(5)
+userapps.support.sap.com###footer
+teamtreehouse.com##.footer-2026-bottom
+teamtreehouse.com###featurette-1
+www.ecosia.org##div.footer-menu:nth-of-type(5)
+www.ecosia.org##.above-fold-section__button-wrapper
+lesfondamentaux.reseau-canope.fr##.popin-campagne__content
+lesfondamentaux.reseau-canope.fr##.popin-campagne-overlay
+lesfondamentaux.reseau-canope.fr##figure
+lesfondamentaux.reseau-canope.fr##li.separation:nth-of-type(5)
+lesfondamentaux.reseau-canope.fr##.piedPageDroit
+techcommunity.microsoft.com##.custom_widget_MicrosoftFooter_c-uhff-ccpa_qp4x5_213.custom_widget_MicrosoftFooter_c-uhff-link_qp4x5_23
+techcommunity.microsoft.com##.custom_widget_MicrosoftFooter_c-uhff-consumer_qp4x5_215.custom_widget_MicrosoftFooter_c-uhff-link_qp4x5_23
+techcommunity.microsoft.com###c-uhff-footer_privacyandcookies > .custom_widget_MicrosoftFooter_c-uhff-link_qp4x5_23
+techcommunity.microsoft.com##div.custom_widget_MicrosoftFooter_c-uhff-nav-row_qp4x5_113:nth-of-type(2) > div.custom_widget_MicrosoftFooter_c-uhff-nav-group_qp4x5_115:nth-of-type(3) > .custom_widget_MicrosoftFooter_f-bare_qp4x5_155.custom_widget_MicrosoftFooter_c-list_qp4x5_155 > li:nth-of-type(4)
+techcommunity.microsoft.com##.styles_lia-g-ml-40__IZxqX.styles_lia-g-mr-20__8WLMh.styles_align-items-center__OKdH0.styles_d-flex__7__Y_
+techcommunity.microsoft.com##.styles_dropdown__gtmlA.styles_lia-g-pl-20__l3G_m.styles_ml-auto__atS7h
+sentry.io##a.text-white.font-sans.hover\:underline.uppercase.leading-\[18px\].text-sm.font-medium.no-underline:nth-of-type(3)
+sentry.io##.gap-4.justify-between.items-center.flex.lg\:w-7\/12.w-full .items-center.gap-6.flex
+sentry.io###main-content > section.z-0.overflow-x-clip.relative:nth-of-type(2)
+www.eucast.org##.ccm-root
 eggcellent.ro##.footer-block__details-content.list-unstyled > li:nth-of-type(4) > .link.link--text.list-menu__item.list-menu__item--link
 eggcellent.ro##.footer-block__details-content.list-unstyled > li:nth-of-type(5) > .link.link--text.list-menu__item.list-menu__item--link
 eggcellent.ro##.icons
@@ -2776,8 +2809,6 @@ www.pcvue.com##.right
 userapps.support.sap.com##.footer-center
 www.dictionary.com##[href="/terms-and-privacy"]
 www.dictionary.com##.social-logo-container
-www.eucast.org###ccm-widget > .ccm-modal-inner > .ccm-modal--body
-www.eucast.org##[href="https://www.escmid.org/privacy-notice/"]
 www.britannica.com##.twitter-icon.social-icon
 gokid.ro##.footer-email-wrap
 gokid.ro##div:nth-of-type(6)

@@ -290,6 +290,8 @@ www.youtube.com##.ytp-fullscreen-grid
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-medium-round.ytp-ce-website.ytp-ce-element
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-left-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-right-quad.ytp-ce-medium-round.ytp-ce-channel-that.ytp-ce-channel.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-large-round.ytp-ce-video.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-right-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
 www.floridelux.ro##ul:nth-of-type(4)
 gokid.ro###menu-item-81004
 mindblower.ro##.ckContentBlocked

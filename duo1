@@ -339,6 +339,17 @@ soundcloud.com##a.sc-link-secondary:nth-of-type(11)
 www.haribo.com##.m-footer__social
 www.haribo.com##.fs-headline-o1.m-footer__legal-links > .o-ui-list > li.m-footer__link-item:nth-of-type(3)
 www.haribo.com##.fs-headline-o1.m-footer__legal-links > .o-ui-list > li.m-footer__link-item:nth-of-type(2)
+happytowander.com##[href="https://happytowander.com/privacy/"]
+www.tripadvisor.com##.LBYOD
+www.tripadvisor.com##.avWgf.GKNIJ.Z1._Q
+www.japan.travel##.mod-web-survey-footer-for-chatbot.mod-web-survey-footer__new-v2.mod-web-survey-footer
+www.twowanderingsoles.com##.footer
+www.twowanderingsoles.com###row-775229900
+www.twowanderingsoles.com###footer
+gzjpblog.com##[href="https://gzjpblog.com/privacy-policy-2/"]
+hellonihon.net##[href="https://hellonihon.net/privacy-policy/"]
+hellonihon.net##.author-follows.profile-follows
+int.japanesetaste.com##.wishlist-header-link
 docs.python.org##.footer
 www.lerato.ro##[href="https://www.lerato.ro/gdpr-tools"]
 www.lerato.ro##[href="https://www.lerato.ro/dreambox"]

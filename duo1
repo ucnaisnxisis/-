@@ -374,6 +374,61 @@ www.gambleaware.org##.js-gleap.gleap
 gamesnostalgia.com##p:nth-of-type(3)
 arcadespot.com##a.btn-dark.btn-sm.btn:nth-of-type(3)
 www.floridelux.ro##ul:nth-of-type(4)
+www.retrogames.me##.vote-buttons
+classicgamezone.com##.mb-4.space-x-8.items-center.flex
+classicgamezone.com##.ease-out.duration-500.transition-all.scale-100.translate-y-0.opacity-100.gap-3.flex-col.sm\:flex.hidden.z-50.bottom-6.right-6.fixed
+classicgamezone.com##.text-white.duration-200.transition-all.rounded-full.hover\:bg-gray-600.bg-gray-700.py-2.px-4
+www.gog.com##.wishlist-button-item.wrapper
+www.g2a.com###a5848d04-e43f-4166-983e-ddba0acf9639
+www.g2a.com##.md\:self-end
+www.g2a.com##li.gap-y-0\.5.flex-col.flex:nth-of-type(7)
+www.g2a.com##div:nth-of-type(4) > .gap-2.flex-col.flex.text-xl > li.gap-y-0\.5.flex-col.flex:nth-of-type(2)
+www.g2a.com##div:nth-of-type(4) > .gap-2.flex-col.flex.text-xl > li.gap-y-0\.5.flex-col.flex:nth-of-type(3)
+www.eurogamer.net##.compact.small.supporter.inline_icon.button
+www.eurogamer.net##.footer-nav--helpful.footer-nav > .nav-links > li:nth-of-type(10)
+www.capcom-games.com##.official
+emulatorgamer.com##.border-retro-bg-card.border-t.p-4
+emulatorgamer.com##.mb-6.gap-4.items-center.flex-wrap.flex > .relative
+emulatorgamer.com##.pb-0.pt-2.px-3.w-full.md\:block.hidden
+mlpforums.com###btnMoveToTop
+psprices.com##nav.space-y-4:nth-of-type(2) > .space-y-3 > li:nth-of-type(2)
+psprices.com##nav.space-y-4:nth-of-type(3) > .space-y-3 > li:nth-of-type(1)
+psprices.com##nav.space-y-4:nth-of-type(3) > .space-y-3 > li:nth-of-type(3)
+psprices.com##.gap-2.flex-col.flex.right-4.z-\[99999999\].fixed
+www.ebay.com##.x-watch-heart
+www.ebay.com##.PRyD.YesX
+www.ebay.com##.KnBF.Cc6E > div
+www.ebay.com##.watch-redesign.x-watch-action.vim
+www.ebay.com##.gh-notifications
+www.ebay.com##.z-1.top-100.right-100.absolute
+store.playstation.com##.pdp-star-rating
+store.playstation.com##.psw-c-bg-0 > .psw-ally-indicator.psw-content-link.psw-link
+store.playstation.com##.psw-with-icon.psw-solid-button.psw-secondary-button.psw-button-sizing--icon-only.psw-button-sizing--medium.psw-button-sizing.psw-l-line-center.psw-t-button.psw-b-0.psw-button.psw-m-l-4
+www.kinguin.net##.hhskbb.sc-d5rkj3-5 > .container > .row
+www.kinguin.net##[href="https://policies.google.com/privacy"]
+www.kinguin.net##[href="https://www.youtube.com/t/terms"]
+www.kinguin.net##div.row.ffSkll.RIbZg.sc-d5rkj3-14.sc-d5rkj3-11:nth-of-type(3)
+www.kinguin.net##.cwGDOn.sc-kNxgZW
+www.kinguin.net##div.col-3:nth-of-type(3)
+www.kinguin.net##.container.c-panel--empty.review-list-component.khGLa.sc-cbod1z-1
+www.kinguin.net##.fQPIMf.sc-kUdmhA
+www.kinguin.net##.gznMzP.sc-kUdmhA
+www.kinguin.net##.bIJEyR.sc-1mju66u-5
+www.kinguin.net##.hMrXfN.sc-gmgFlS
+www.kinguin.net##.cwzSrP.sc-cdaca-d
+www.kinguin.net##.KiJPt.sc-gRtvSG
+www.arcade-projects.com##[href="/help/privacy-policy/"]
+www.arcade-projects.com##.message-attribution-gadget
+retroarcadia.blog##.wpcom-gifting-banner
+retroarcadia.blog##.is-spotify-podcast-badge.wp-block-image
+www.etsy.com##.header-button.reduced-margin-xs.wt-btn--icon.wt-btn--transparent.wt-btn.wt-tooltip__trigger--icon-only.wt-tooltip__trigger
+www.gamestop.com##.border-gray-300.border-t.border-0.border-solid.sm\:text-left.text-center.mx-auto.sm\:px-8.sm\:py-4.py-10.lg\:w-full.w-240.cf-wrapper.cf-error-footer
+www.pushsquare.com##[href="https://www.pushsquare.com/advertising"]
+www.pushsquare.com##.showConsentTool
+www.pushsquare.com##[href="https://www.pushsquare.com/privacy"]
+www.comicsandcocktails.co.uk##.content-removed.medium-6.large-4.small-12.dmRespCol.u_1614189253
+www.gamesmen.com.au##[href="https://www.gamesmen.com.au/privacy"]
+www.3djuegos.com##.tac.pie_siguenos_a
 gokid.ro###menu-item-81004
 mindblower.ro##.ckContentBlocked
 mindblower.ro##[href="https://mindblower.ro/confidentialitate"]

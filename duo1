@@ -264,6 +264,53 @@ github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
+safety.google##.glue-footer__upper
+safety.google##li.glue-footer__global-links-list-item:nth-of-type(3)
+myactivity.google.com##.gDoSB
+www.google.com##a.EdI4ib:nth-of-type(2)
+www.google.com##a.EdI4ib:nth-of-type(4)
+wallet.google.com##.kAVNYb.yN7yAf > .fndTZ > .Nv69B > .V2qvRd.P2Hi5d.bwNLcf.r6B9Fd.VfPpkd-rymPhb > li.VfPpkd-rymPhb-Tkg0ld:nth-of-type(2)
+business.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
+business.google.com##.glue-footer__upper
+business.google.com###column-1-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(1)
+business.google.com###column-1-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
+business.google.com###column-3-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(3)
+business.google.com###column-3-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(5)
+business.google.com###column-3-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(4)
+business.google.com###column-4-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(5)
+business.google.com###column-4-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(4)
+business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(5)
+business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(4)
+business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
+chat.google.com##.sTlgvc
+www.google.com##button.ZqLNQd.Hk4XGb.tUdUte.ZiKfbc:nth-of-type(3)
+www.google.com##.UjoA5b.ZqLNQd.Hk4XGb.tUdUte.ZiKfbc
+gemini.google.com##.policies
+gemini.google.com##.ng-star-inserted.variant-footer.footer
+calendar.google.com##a.PTIB6e:nth-of-type(2)
+calendar.google.com##.erDb5d
+meet.google.com##.uHkg2c.TZFSLb
+photos.google.com##div.xWzMBf:nth-of-type(1)
+photos.google.com##.JJpMec
+translate.google.com##.OwOEge
+translate.google.com##div.GR2kEe:nth-of-type(2) > a.yJWPX:nth-of-type(1)
+docs.google.com###docs-star > .goog-inline-block.docs-icon
+docs.google.com##a.ogb-link.docs-homescreen-leftmenu-tos-link:nth-of-type(1)
+docs.google.com###\:9
+www.google.com##a.XpM3J:nth-of-type(2)
+www.google.com##span.XpM3J
+myadcenter.google.com##div.VfPpkd-dgl2Hf-ppHlrf-sM5MNb:nth-of-type(3)
+myadcenter.google.com##div.VfPpkd-dgl2Hf-ppHlrf-sM5MNb:nth-of-type(1)
+classroom.google.com##.N6nSod
+artsandculture.google.com##.TDPAJf
+artsandculture.google.com##ul.l85kI:nth-of-type(4) > li:nth-of-type(4)
+artsandculture.google.com##a.Hb54hd:nth-of-type(1)
+about.google##ul.glue-no-bullet.glue-footer__global-links:nth-of-type(1)
+www.youtube.com##.ytSpecIconBadgeShapeIcon > .ytIconWrapperHost > .ytSpecIconShapeHost.yt-icon-shape > div
+www.youtube.com##.ytSpecIconBadgeShapeIcon > .ytIconWrapperHost > .ytSpecIconShapeHost.yt-icon-shape
+www.youtube.com##.ytSpecIconBadgeShapeStyleOverlay.ytSpecIconBadgeShapeTypeNotification.ytSpecIconBadgeShapeHost
+www.youtube.com###icon > .yt-icon-button.style-scope
+www.youtube.com##.ytd-notification-topbar-button-renderer.style-scope
 williamalexander.dev
 @@eprivacy-storage.eu-sharedservices.olxcdn.com
 production-graphql.eu-sharedservices.olxcdn.com

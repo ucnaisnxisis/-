@@ -368,6 +368,27 @@ www.thegamer.com###threads
 www.thegamer.com###menu-features > li.sidenav-elements:nth-of-type(2)
 www.thegamer.com##.w-side-navigation-social
 www.ign.com##.scrolled.sidebar-back-to-top.jsx-1192436910.jsx-2509706801.stack
+humoq.com##[href="/privacy-statement"]
+humoq.com##.ifiSocial.ifiTwitter
+humoq.com##.rate
+humoq.com##.ifiSocial.ifiFacebook
+humoq.com##.ifiSocial.ifiPinterest
+humoq.com##.ifiSocial.ifiWhatsapp
+www.misjuegos.com##li:nth-of-type(3)
+www.misjuegos.com##li:nth-of-type(2)
+www.misjuegos.com##.is-blocked.is-hidden-touch.game-slot-tall-container.is-skyscraper.slot-container
+www.misjuegos.com##.is-block-ultrawide.is-hidden.has-slot.section
+www.misjuegos.com##section.has-slot.section:nth-of-type(6)
+www.misjuegos.com##li:nth-of-type(1)
+www.misjuegos.com##li:nth-of-type(7)
+www.unlockedgameswtf.com###footerwrap
+gamezzang.com##.js-rmp-rating-widget.rmp-rating-widget
+www.bombitjuegos.com##.games2
+bombitonline.org##.w-5.h-5.lucide-share-2.lucide-share2.lucide
+bombitonline.org##button.hover\:shadow-md.shadow-sm.disabled\:cursor-not-allowed.disabled\:opacity-70.duration-200.transition-all.hover\:bg-muted\/80.justify-center.items-center.flex.rounded-full.p-2.text-primary:nth-of-type(2)
+bombitonline.org##button.text-primary.hover\:shadow-md.shadow-sm.disabled\:cursor-not-allowed.disabled\:opacity-70.duration-200.transition-all.hover\:bg-muted\/80.justify-center.items-center.flex.rounded-full.p-2:nth-of-type(3)
+bombitonline.org##.mt-auto.pb-6.md\:pt-8.pt-6.text-primary-foreground.dark\:bg-slate-800.bg-primary
+zoagame.com##.post-rating-wrap
 screenrant.com##li:nth-of-type(5)
 www.arte.tv##li.ds-1a7hm5l:nth-of-type(2)
 www.arte.tv##li.ds-1a7hm5l:nth-of-type(1)

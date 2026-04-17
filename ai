@@ -71,6 +71,11 @@
 ###AgreeCookies
 ##.AgreeCookies
 ##AgreeCookies
+##.animate-cookie-banner-in.bg-card
+##.print\:hidden.z-50.right-0.left-0.bottom-0.fixed.cookie-consent
+##.position-fixed.d-lg-none.scroll-to-top
+##[href="javascript:conditii()"]
+##[href="javascript:cookie()"]
 ##.ifiSocial.ifiTwitter
 ###ifiSocial.ifiTwitter
 ##ifiSocial.ifiTwitter

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Disable safesearch
 // @namespace    https://github.com/H80h23h30rj032jr-32rjw-q3/j3r0j3r-ew-r3r3rfd/edit/main/off-safesearch
-// @version      0.1.6
+// @version      0.1.7
 // @description  Set off safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
 // @author       You
 // @Info         Personal use, non-comercial, no-copyright claim, individual
@@ -14,19 +14,10 @@
 // @match        https://www.bing.com/news/search?q=*&FORM=HDRSC7
 // @match        https://www.bing.com/search?q=*&FORM=HDRSC1
 // @match        https://www.bing.com/search?q=*
-// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=news&iar=news
-// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=web
-// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=images&iax=images
-// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=videos&iax=videos
-// @include      https://duckduckgo.com/?q=*
-// @include      https://duckduckgo.com/?q=*&t=ffab&iar=videos&safe=off
-// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=images&iax=images
-// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=web
-// @match        https://duckduckgo.com/?q=*&t=fpas&iar=images
-// @match        https://duckduckgo.com/?t=ffab&q=*&ia=videos&iax=videos
-// @match        https://duckduckgo.com/?t=ffab&q=*&ia=images&iax=images
-// @match        https://duckduckgo.com/?t=ffab&q=*&ia=web
-
+// @match        https://duckduckgo.com/?q=*&ia=web
+// @match        https://duckduckgo.com/?q=*&ia=news&iar=news
+// @match        https://duckduckgo.com/?q=*&ia=images&iax=images
+// @match        https://duckduckgo.com/?q=*&iar=videos
 // @match        https://yep.com/web?q=*
 // @match        https://yep.com/images?gl=RO&q=*
 // @match        https://yep.com/news?q=*

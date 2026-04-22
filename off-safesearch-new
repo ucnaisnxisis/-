@@ -1,23 +1,24 @@
 // ==UserScript==
 // @name         Disable safesearch
 // @namespace    https://github.com/H80h23h30rj032jr-32rjw-q3/j3r0j3r-ew-r3r3rfd/edit/main/off-safesearch
-// @version      0.1.7
+// @version      0.1.8
 // @description  Set off safesearch on Bing, DuckDuckGo, Yep, You, Yahoo, Ecosia, Qwant, Metager, Startpage, brave
 // @author       You
 // @Info         Personal use, non-comercial, no-copyright claim, individual
 
-// @include      https://*.google.*/search*
-// @include      https://*.google.*/imgres*
-// @match        https://www.bing.com/search?*
+// @include      https://*.google.*/search*&safe=off&ia=web
+// @include      https://*.google.*/imgres*&safe=off&ia=web
+// @match        https://www.bing.com/search?*&safe=off&ia=web
 // @match        https://www.bing.com/images/search?q=*&FORM=HDRSC3
 // @match        https://www.bing.com/videos/search?q=*&FORM=HDRSC4
 // @match        https://www.bing.com/news/search?q=*&FORM=HDRSC7
 // @match        https://www.bing.com/search?q=*&FORM=HDRSC1
 // @match        https://www.bing.com/search?q=*
-// @match        https://duckduckgo.com/?q=*&ia=web
-// @match        https://duckduckgo.com/?q=*&ia=news&iar=news
-// @match        https://duckduckgo.com/?q=*&ia=images&iax=images
-// @match        https://duckduckgo.com/?q=*&iar=videos
+// @match        https://duckduckgo.com/?q=*&safe=off&ia=images&iax=images&iaxm=maps
+// @match        https://duckduckgo.com/?q=*&safe=off&ia=web
+// @match        https://duckduckgo.com/?q=*&safe=off&ia=images&iax=images
+// @match        https://duckduckgo.com/?q=*&iar=news&safe=off&ia=news
+// @match        https://duckduckgo.com/?q=*&iar=videos&safe=off
 // @match        https://yep.com/web?q=*
 // @match        https://yep.com/images?gl=RO&q=*
 // @match        https://yep.com/news?q=*
@@ -36,20 +37,20 @@
 // @match        https://www.baidu.com/from=844b/s?word=*&ts=0&t_kt=0&ie=utf-8&fm_kl=021394be2f&rsv_iqid=9247584279662534986&sa=ib&ms=1
 // @match        https://m.baidu.com/sf/vsearch?pd=video&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b&atn=index
 // @match        https://m.baidu.com/sf/vsearch?pd=tieba&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b
-// @match        https://*.search.yahoo.com/*
-// @match        https://www.ecosia.org/search?q=*
-// @match        https://www.ecosia.org/images?q=*
-// @match        https://www.ecosia.org/videos?q=*
-// @match        https://www.ecosia.org/news?q=*
+// @match        https://*.search.yahoo.com/*&safe=off&ia=web
+// @match        https://www.ecosia.org/search?q=*&safe=off&ia=web
+// @match        https://www.ecosia.org/images?q=*&safe=off&ia=web
+// @match        https://www.ecosia.org/videos?q=*&safe=off&ia=web
+// @match        https://www.ecosia.org/news?q=*&safe=off&ia=web
 // @match        https://www.qwant.com/?s=0&t=images&q=*
 // @match        https://www.qwant.com/?s=0&t=web&q=*
 // @match        https://www.qwant.com/?s=0&q=*&t=videos
 // @match        https://www.startpage.com/search
 // @match        https://search.brave.com/settings
 // @match        https://search.brave.com/search?q=*&source=web
-// @match        https://search.brave.com/images?q=*
-// @match        https://search.brave.com/videos?q=*
-// @match        https://search.brave.com/goggles?q=*
+// @match        https://search.brave.com/images?q=*&safe=off&ia=web
+// @match        https://search.brave.com/videos?q=*&safe=off&ia=web
+// @match        https://search.brave.com/goggles?q=*&safe=off&ia=web
 // @match        https://search.brave.com/news?q=*&source=web
 // @match        https://www.dogpile.com/serp?q=*&sc=Hn0qr1PRkJ8920
 // @match        https://www.dogpile.com/serp?qc=images&q=*&sc=eBU7ec0hh9xy20

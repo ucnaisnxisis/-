@@ -328,6 +328,8 @@ ko-fi.com##.kfds-left-mrgn-8.kfds-srf-rounded.kfds-font-bold.kfds-btn-tertiary-l
 ko-fi.com##.profile-page-tile.text-center.pn-flex.p-16 > .kfds-lyt-width-100 > .pull-right
 ko-fi.com##.cky-banner-bottom.cky-consent-container
 imgbb.com##.footer
+element.io##.footer__col--mast_right.footer__col
+element.io##a.link-2:nth-of-type(2)
 www.theverge.com##li._1sdloqz0:nth-of-type(13)
 www.newscientist.com##.MobileSubscribeButton
 www.newscientist.com##.BottomNav__ButtonWrapper

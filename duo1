@@ -262,6 +262,8 @@ lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
+wiki.xat.com##[href="/Redirect:Privacy"]
+xat.com###promoframe
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
 safety.google##.glue-footer__upper

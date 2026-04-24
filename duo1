@@ -322,6 +322,17 @@ almarsguides.com##[href="/PrivacyPolicy.cfm"]
 radio.garden##._playTabBarContainer_ta4bf_139
 web.archive.org##.add-favorites
 www.peroz.ro##.article-page-widget-question
+old.reddit.com###jumpToContent
+ntr-games.com###age-gate-no
+ntr-games.com##.age-gate__text
+ntr-games.com##.age-gate__fineprint
+ntr-games.com##[href="https://ntr-games.com/ads/"]
+www.gameskinny.com##.wp-block-gamurs-footer-nav__website-info__socials
+www.gameskinny.com##[href="https://www.gameskinny.com/privacy-policy/"]
+xatradio.com##a.duration-150.transition-colors.hover\:text-white.text-gray-400:nth-of-type(1)
+demco.ro##section.information-nav--responsive.information-nav:nth-of-type(2) > div > .information-nav__list > li.information-nav__item:nth-of-type(2)
+demco.ro##section.information-nav--responsive.information-nav:nth-of-type(2) > div > .information-nav__list > li.information-nav__item:nth-of-type(3)
+demco.ro##.page-footer-container__side.cms-typography
 ko-fi.com##.footer-mini
 ko-fi.com##.dropdown
 ko-fi.com##.kfds-left-mrgn-8.kfds-srf-rounded.kfds-font-bold.kfds-btn-tertiary-light

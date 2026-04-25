@@ -346,6 +346,29 @@ ko-fi.com##.kfds-left-mrgn-8.kfds-srf-rounded.kfds-font-bold.kfds-btn-tertiary-l
 ko-fi.com##.profile-page-tile.text-center.pn-flex.p-16 > .kfds-lyt-width-100 > .pull-right
 ko-fi.com##.cky-banner-bottom.cky-consent-container
 imgbb.com##.footer
+m.youtube.com##ytm-slim-video-action-bar-renderer
+m.youtube.com##.ytSpecButtonShapeNextIcon
+m.youtube.com##.YtmCommentRendererMenu.icon-button
+m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(2)
+m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(1)
+m.youtube.com##div.YtmCommentRendererIcons:nth-of-type(3)
+m.youtube.com##.ytFlexibleActionsViewModelJustifyContentStart.ytPageHeaderViewModelFlexibleActionsMarginTop.ytPageHeaderViewModelFlexibleActions.ytFlexibleActionsViewModelHost
+m.youtube.com##.mobile-topbar-header-sign-in-button
+m.youtube.com##.ytSpecButtonShapeNextIconButton.ytSpecButtonShapeNextSizeL.ytSpecButtonShapeNextOverlay.ytSpecButtonShapeNextText.ytSpecButtonShapeNextHost
+m.youtube.com##.ytSpecButtonShapeNextIconButton.ytSpecButtonShapeNextSizeL.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextText.ytSpecButtonShapeNextHost
+m.youtube.com##button-view-model.ytSpecButtonViewModelHost > .ytSpecButtonShapeNextIconLeading.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextOutline.ytSpecButtonShapeNextHost
+m.youtube.com##.ytGridShelfViewModelHost > div
+m.youtube.com##.ytShelfHeaderLayoutDisableHorizontalPadding.ytShelfHeaderLayoutHost
+m.youtube.com##.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextFilled.ytSpecButtonShapeNextHost
+m.youtube.com##yt-tab-shape.ytTabShapeHostClickable.ytTabShapeHost:nth-of-type(3)
+mailtemp.co##.show.go-up
+smailpro.com##div.space-y-4:nth-of-type(3)
+temp-mail.io##.lg\:mb-8.mb-5.gap-3.flex-wrap.flex
+temp-mail.io##div.gap-3.flex-col.flex:nth-of-type(3) > a.hover\:underline:nth-of-type(5)
+temp-mail.app##.lg\:text-right.lg\:justify-self-end.gap-2.flex-col.flex > a.block:nth-of-type(1)
+temp-mail.app##.py-16 > .container
+maildrop.cc##.hover\:cursor-pointer.p-2.items-center.-translate-x-2.inline-flex.group
+tempmail.so##div.space-y-2.flex-col.flex.text-base.shrink-0:nth-of-type(4) > a.block:nth-of-type(4)
 element.io##.footer__col--mast_right.footer__col
 element.io##a.link-2:nth-of-type(2)
 www.theverge.com##li._1sdloqz0:nth-of-type(13)

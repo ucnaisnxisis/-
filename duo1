@@ -264,6 +264,8 @@ github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 wiki.xat.com##[href="/Redirect:Privacy"]
 xat.com###promoframe
+/pagead.js$domain=adblock.turtlecute.org
+/widget/ads.
 duckduckgo.com##.TccjmKV6RraCaCw5L9gd
 itch.io##.base_widget.content_warning_widget
 safety.google##.glue-footer__upper
@@ -361,6 +363,15 @@ m.youtube.com##.ytGridShelfViewModelHost > div
 m.youtube.com##.ytShelfHeaderLayoutDisableHorizontalPadding.ytShelfHeaderLayoutHost
 m.youtube.com##.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextFilled.ytSpecButtonShapeNextHost
 m.youtube.com##yt-tab-shape.ytTabShapeHostClickable.ytTabShapeHost:nth-of-type(3)
+m.youtube.com##.ytSpecTouchFeedbackShapeFill
+m.youtube.com##.ytSpecTouchFeedbackShapeStroke
+m.youtube.com##.ytSpecTouchFeedbackShapeHost.ytSpecTouchFeedbackShapeTouchResponse
+m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon > .yt-icon-shape.ytSpecIconShapeHost > div
+m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon > .yt-icon-shape.ytSpecIconShapeHost
+m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon
+m.youtube.com##.ytSpecButtonShapeNextHost.ytSpecButtonShapeNextText.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconOnlyDefault.ytSpecButtonShapeNextEnableBackdropFilterExperiment
+m.youtube.com##.ytSearchboxComponentVoiceSearchWrapper
+adblock.turtlecute.org###gt-link
 mailtemp.co##.show.go-up
 smailpro.com##div.space-y-4:nth-of-type(3)
 temp-mail.io##.lg\:mb-8.mb-5.gap-3.flex-wrap.flex

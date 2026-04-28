@@ -82,6 +82,16 @@
 ##.rate
 ###rate
 ##rate
+##.c-social__links
+##.position-sticky.col-lg-auto
+##.social-list
+##.ipsSocialIcons
+###yotpo_testimonials_btn
+###etheme-socials-12
+###sales-booster-popup
+##[href="/pages/politica-de-confiden%C8%9Bialitate"]
+##.otGroupButton
+##.d-lg-block.d-none.block-wishlist
 ##div.site_footer_social
 ###div.site_footer_social
 ##.div.site_footer_social

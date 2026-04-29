@@ -262,8 +262,14 @@ lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
-wiki.xat.com##[href="/Redirect:Privacy"]
+xat.com##.xbanner.mb-3.text-center
 xat.com###promoframe
+xat.com##div.col-sm > .container-fluid
+xat.com##.justify-content-center.d-flex
+xat.com###space16
+wiki.xat.com##[href="/Redirect:Privacy"]
+forum.xat.com##.ipsSocialIcons
+forum.xat.com##.ipsFooterLinks
 /pagead.js$domain=adblock.turtlecute.org
 /widget/ads.
 adblock.turtlecute.org##.adbox.banner_ads.adsbox
@@ -336,8 +342,6 @@ www.peroz.ro##.article-page-widget-question
 old.reddit.com###jumpToContent
 tvron.ro###theme-btn
 tvchannels.live###text-3
-xat.com###promoframe
-xat.com###space16
 www.happycards.ro###cookie_GDPR
 www.happycards.ro##.descarca-aplicatia-invitatii
 viataverdeviu.ro###yls
@@ -812,8 +816,6 @@ asiadreamradio.torontocast.stream###shape_102
 trundlejapan.com##.cm--right.cm--bottom.cm--box.cm
 xatimg.com##div.mb-4.col-md:nth-of-type(1) > .mb-0.list-unstyled > li:nth-of-type(2)
 xatimg.com##.ripple-surface.mt-2.btn-rounded.btn-info.btn
-forum.xat.com##.ipsSocialIcons
-forum.xat.com##.ipsFooterLinks
 chat.chatbotapp.ai##[href="https://chatbotapp.ai/privacy"]
 chat.chatbotapp.ai##.md\:gap-4.md\:mt-0.gap-0.flex-col.w-full.flex.mt-6.text-base-black
 chat.chatbotapp.ai##.gap-4.justify-center.items-center.w-full.flex.my-4

@@ -21,6 +21,189 @@
 ##.hp-newsletter-subscription.paddingBottom-1.box
 ##.footer-menu > [href="javascript:void(0)"]
 ##.pintxo-elevation-floating.pintxo-popup__content
+##.ad
+##.ads
+##.adsbox
+##.advert
+##.advertisement
+##.banner-ad
+##.sponsored
+##.sponsor
+##.ad-container
+##.adslot
+##.ad-wrapper
+##.ad-unit
+##.ad-banner
+##.ad-area
+##.promoted
+##.promotion
+##.ad-placeholder
+##.sticky-ad
+##.ad-inline
+##.ad-block
+##.ad-top
+##.ad-bottom
+##.ad-left
+##.ad-right
+##.adframe
+##.adbox
+##.cookie-consent
+##.cookie-banner
+##.cookie-notice
+##.newsletter-popup
+##.subscription-popup
+##.modal-promo
+##.promo-banner
+##.floating-ad
+##.overlay-ad
+##.lead-gen
+##.ad
+##.ads
+##.adsbox
+##.advert
+##.advertisement
+##.banner-ad
+##.sponsored
+##.sponsor
+##.promoted
+##.promotion
+##.promo
+##.promo-banner
+##.promotion-box
+##.ad-container
+##.adslot
+##.ad-wrapper
+##.ad-unit
+##.ad-banner
+##.ad-area
+##.ad-placeholder
+##.sticky-ad
+##.ad-inline
+##.ad-block
+##.adframe
+##.adbox
+##.native-ad
+##.native-ads
+##.sponsored-content
+##.recommended
+##.recommended-content
+##.widget-ad
+##.inline-ad
+##.top-ad
+##.bottom-ad
+##.left-ad
+##.right-ad
+##.cookie-consent
+##.cookie-banner
+##.cookie-notice
+##.newsletter-popup
+##.subscription-popup
+##.modal-promo
+##.promo-overlay
+##.floating-ad
+##.overlay-ad
+##.lead-gen
+##.signup-overlay
+##.exit-intent
+##.popup-ad
+##.interstitial
+##.ad-modal
+##.paywall-overlay
+##.paywall
+##.ad        /* elemente generale de tip ad /
+##.ads       / multiple reclame /
+##.adsbox    / cutii cu reclame /
+##.advert
+##.advertisement
+##.banner-ad
+##.sponsored / conținut sponsorizat /
+##.sponsor
+##.promoted
+##.promotion
+##.promo
+##.promo-banner
+##.promotion-box
+##.ad-container
+##.adslot
+##.ad-wrapper
+##.ad-unit
+##.ad-banner
+##.ad-area
+##.ad-placeholder
+##.sticky-ad
+##.ad-inline
+##.ad-block
+##.adframe
+##.adbox
+##.native-ad
+##.native-ads
+##.sponsored-content / articole sponsorizate */
+##.recommended
+##.recommended-content
+##.widget-ad
+##.inline-ad
+##.top-ad
+##.bottom-ad
+##.left-ad
+##.right-ad
+[class*="ad-"] { display: none !important; }
+[class*="-ad"] { display: none !important; }
+[id*="ad-"] { display: none !important; }
+[id*="-ad"] { display: none !important; }
+[class*="sponsor"] { display: none !important; }
+[class*="promot"] { display: none !important; }
+[id*="sponsor"] { display: none !important; }
+[role="complementary"] { display: none !important; }  /* poate ascunde sidebar-uri utile /
+[role="banner"] { display: none !important; }         / poate ascunde header-uri */
+iframe[src*="ad"] { display: none !important; }
+iframe[src*="ads"] { display: none !important; }
+iframe[src*="doubleclick"] { display: none !important; }
+iframe[src*="adservice"] { display: none !important; }
+[aria-label*="Advertisement"] { display: none !important; }
+[data-ad*] { display: none !important; }
+[class*="ad-"] { display: none !important; }
+[id*="ad-"] { display: none !important; }
+[id*="ads"] { display: none !important; }
+[title*="ad"] { display: none !important; }
+[alt*="ad"] { display: none !important; }
+[data-ad*] { display: none !important; }
+[data-ads*] { display: none !important; }
+[data-ad-client*] { display: none !important; }
+[data-sponsored*] { display: none !important; }
+[aria-label*="ad"] { display: none !important; }
+[aria-label*="advert"] { display: none !important; }
+[href*="adserver"] { display: none !important; }
+[href*="ads"] { display: none !important; }
+iframe[src*="ad"] { display: none !important; }
+iframe[src*="ads"] { display: none !important; }
+iframe[src*="doubleclick"] { display: none !important; }
+iframe[src*="adservice"] { display: none !important; }
+iframe[src*="pubads"] { display: none !important; }
+[class*="ad-"] { display: none !important; }    /* orice clasă care conține "ad-" /
+[class="-ad"] { display: none !important; }
+[id*="ad-"] { display: none !important; }
+[id*="-ad"] { display: none !important; }
+[class*="sponsor"] { display: none !important; }
+[class*="promot"] { display: none !important; } /* acoperă "promo", "promoted" /
+[id="sponsor"] { display: none !important; }
+[role="complementary"] { display: none !important; }  /* ATENȚIE: poate ascunde sidebars /
+[role="banner"] { display: none !important; }         / ATENȚIE: poate ascunde header-uri */
+[title*="ad"] { display: none !important; }          /* titluri care includ "ad" /
+[alt="ad"] { display: none !important; }            /* imagini cu text "ad" /
+[data-ad] { display: none !important; }
+[data-ads*] { display: none !important; }
+[data-ad-client*] { display: none !important; }
+[data-sponsored*] { display: none !important; }
+[aria-label*="ad"] { display: none !important; }
+[aria-label*="advert"] { display: none !important; }
+[href*="adserver"] { display: none !important; }
+[href*="ads"] { display: none !important; }
+iframe-uri și surse comune (blochează iframe-urile ce conțin reclame)
+iframe[src*="ad"] { display: none !important; }
+iframe[src*="ads"] { display: none !important; }
+iframe[src*="doubleclick"] { display: none !important; }
+iframe[src*="adservice"] { display: none !important; }
+iframe[src*="pubads"] { display: none !important; }
 ##.store
  #ad-container
 #ad-container

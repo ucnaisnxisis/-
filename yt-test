@@ -1,0 +1,13 @@
+// ==UserScript==
+// @name         Hide YouTube Cookie Banner
+// @match        *://*.youtube.com/*
+// @grant        none
+// ==/UserScript==
+(function(){
+  const hide = () => {
+    const selectors = ['.yt-consent-bump-renderer', 'ytd-consent-bump-v2-lightbox', 'div[id^="consent"]'];
+    selectors.forEach(s => document.querySelectorAll(s).forEach(el => el.remove()));
+  };
+  hide();
+  new MutationObserver(hide).observe(document.documentElement, {childList:true, subtree:true});
+})();

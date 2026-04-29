@@ -270,6 +270,16 @@ xat.com###space16
 wiki.xat.com##[href="/Redirect:Privacy"]
 forum.xat.com##.ipsSocialIcons
 forum.xat.com##.ipsFooterLinks
+www.libertateapentrufemei.ro##.newsletter-in-content
+||pagead2.googlesyndication.com/pagead/js/*$script,domain=~google.com
+||googlevideo.com//pagead/$third-party
+ ||youtube.com/api/stats/ads?
+ytp-ad-module##.ad-showing
+www.youtube.com##.ytp-ad-module
+www.youtube.com##.ad-container
+www.posta-romana.ro##.txtaC.fn.footer-boxes.has-social.col-xs-12.col-sm-12.col-md-2
+youtube.com##.yt-consent-bump-renderer
+m.youtube.com##.yt-consent-bump-renderer
 /pagead.js$domain=adblock.turtlecute.org
 /widget/ads.
 adblock.turtlecute.org##.adbox.banner_ads.adsbox

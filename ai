@@ -19,6 +19,9 @@
 ##.hp-newsletter-subscription.paddingBottom-3.box
 ##.hp-newsletter-subscription.paddingBottom-2.box
 ##.hp-newsletter-subscription.paddingBottom-1.box
+##.save-icon-favorite.icon-favorite.icon
+##.mm-myrecipes-favorite__link
+##.relative.p-0.MuiIconButton-sizeMedium.MuiIconButton-root.MuiButtonBase-root
 ##.footer-menu > [href="javascript:void(0)"]
 ##.pintxo-elevation-floating.pintxo-popup__content
 ##.ad

@@ -5244,6 +5244,50 @@ bilete.izanagi.ro###extra_footer
 bilete.izanagi.ro###information_footer
 bilete.izanagi.ro##.d-lg-block.d-none.py-3.col-lg-2.col-md-12
 izanagi.ro###extra_footer
+pixlr.com##ul:nth-of-type(5)
+facem.declic.ro##[href="https://www.declic.ro/politica-de-confidentialitate"]
+facem.declic.ro##[href="https://www.declic.ro/alatura-te-comunitatii-declic/"]
+facem.declic.ro##[href="https://facem.declic.ro/campaigns/doneaza-pentru-comunitatea-declic-site"]
+romaniachat.ro##li.nav-item:nth-of-type(2)
+cuplu.eu###cwt_to_top_scrollup
+chatcuweb.net###recent-posts-2 > ul > li:nth-of-type(1)
+chatcuweb.net##.masonry-brick.widget_text.widget
+chatcuweb.net##.sfsi_outr_div
+www.chetuieste.ro##[href="politica-de-confidentialitate.html"]
+www.chat-ro.ro##a[href="termeni.html"]:nth-of-type(2)
+y99.in##[href="https://y99.in/privacy.html"]
+y99.in##div.col-sm-2:nth-of-type(5)
+meetyou.me##.w3-light-grey.w3-button
+www.sentimente.com##[href="https://www.sentimente.com/terms/privacy-policy"]
+www.sentimente.com##.clearfix.footer__links.list-unstyled > li:nth-of-type(4)
+www.sentimente.com##[href="https://www.sentimente.com/terms/cookies-policy"]
+www.sentimente.com##.clearfix.footer__links.list-unstyled > li:nth-of-type(5)
+www.sentimente.com##.btn-connect-notext.oauthConnect.btn-connect.btn-google.btn
+romaniairc.ro##.small.list-unstyled > li:nth-of-type(2)
+www.radioclick.ro##.footer-inner
+www.radioclick.ro##[href="https://www.radioclick.ro/privacy-policy/"]
+www.elmaz.com##.leftApp
+romania-chat.soft112.com##div.col-md-3.col-12:nth-of-type(4)
+romania-chat.soft112.com##[href="https://www.soft112.com/policy.html"]
+romania-chat.soft112.com##.stars-rating
+romania-chat.soft112.com##.text-lg-end.text-center.col-lg-3.col-12 .align-middle
+romania-chat.soft112.com###aside-area > .mx-auto > .text-center
+romania-chat.soft112.com##div.me-3.d-inline-block:nth-of-type(3)
+www.datememe.com##.input-group
+www.datememe.com##.promo-area
+chatapropo.ro##div.col-sm-6.col-lg-3:nth-of-type(2) > .single-footer-widget > .footer-nav > li:nth-of-type(4)
+www.wizzair.com##.chatbot-widget
+www.mondly.com##.cvuLVn.dAzKMc.bVzWtr.l365bz-1.sc-17v8kkv-4.sc-17v8kkv-2
+www.mondly.com##div.iKcwLp.bVzWtr.sc-17v8kkv-4.sc-17v8kkv-2:nth-of-type(4) > a.jyfxCF.kvp9u3-1:nth-of-type(2)
+www.mondly.com##.kZGAiy.sc-1xoqdsi-0
+www.mondly.com##.ceHZSZ.sc-7mwmvi-9.hpMiHh.sc-1gevzjw-1
+www.wireclub.com##[href="/about/terms"]
+romaniachat.org##a.mx-2.text-decoration-none.text-white-50:nth-of-type(2)
+chatdesire.ro##.grey.grid.grid-6
+chatdesire.ro##div.grid.grid-3:nth-of-type(2)
+www.casapariurilor.ro##span > ul > li:nth-of-type(3)
+www.casapariurilor.ro##[href="https://casino.casapariurilor.ro/pagina/privacy-policy"]
+www.casapariurilor.ro##.clearfix.boxes-middle
 izanagi.ro###information_footer
 izanagi.ro##.d-lg-block.d-none.py-3.col-lg-2.col-md-12
 stiri.md##.lkZoN.MobileDownloadApp__Wrapper-sc-3dcc3e16-0

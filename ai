@@ -24,6 +24,21 @@
 ##.relative.p-0.MuiIconButton-sizeMedium.MuiIconButton-root.MuiButtonBase-root
 ##.footer-menu > [href="javascript:void(0)"]
 ##.pintxo-elevation-floating.pintxo-popup__content
+###site-wide-notification_1-0
+###site-wide-notification
+###partnerBanner
+###togglePartnerButton
+##[href="/donatiicard"]
+##[href="/publicitate"]
+##[href="/reclame"]
+##[href="/cookies-policy/"]
+##[href="/cookies-privacy/"]
+###kt-scroll-up
+##.likes
+##.dislikes
+##.ERSRatings
+##.rating-box
+##.wprm-user-rating-summary
 ##.ad
 ##.ads
 ##.adsbox

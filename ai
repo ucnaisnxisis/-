@@ -19,6 +19,12 @@
 ##.hp-newsletter-subscription.paddingBottom-3.box
 ##.hp-newsletter-subscription.paddingBottom-2.box
 ##.hp-newsletter-subscription.paddingBottom-1.box
+##.cookie-banner
+##.cookieconsent
+##.cc-banner, ##.gdpr-banner
+##.cookie-notice
+##.eu-cookie-law
+##.qc-cmp2-container
 ##.save-icon-favorite.icon-favorite.icon
 ##.mm-myrecipes-favorite__link
 ##.relative.p-0.MuiIconButton-sizeMedium.MuiIconButton-root.MuiButtonBase-root

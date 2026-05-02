@@ -28,6 +28,12 @@
 ||cookielaw.org^
 ||quantcast.mgr.consensu.org^
 ||consenticompanion.*^
+||cookieconsent.^ ||cookie-banner.^
+||cookie-law-info.^ ||cookiebot.^
+||cookie-script.^ ||ccpa-consent.^
+||cookieNotice.^ ||gdpr-consent.^
+||eu-cookie.^ ||cookie-control.^
+||cookie-choices.^ ||clarity.microsoft.com^ ||cookielaw.org^ ||quantcast.mgr.consensu.org^ ||consenticompanion.*^
 @@||consentmanager.cmp|consent|cookie^$document,redirect=no
 imgur.com##[href="https://imgur.com/privacy"]
 imgur.com##.Footer-app

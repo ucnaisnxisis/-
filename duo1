@@ -374,6 +374,17 @@ www.peroz.ro##.article-page-widget-question
 old.reddit.com###jumpToContent
 tvron.ro###theme-btn
 tvchannels.live###text-3
+amongusplay.online##[href="/privacy.php"]
+www.juridice.ro##div.my-category-box-homepage:nth-of-type(10) > div:nth-of-type(20)
+www.senat.ro##.list > li:nth-of-type(6)
+context.ro##.avada-footer-scripts
+context.ro##.ftext2.fusion-text-10.fusion-text
+context.ro##.ftext2.fusion-text-9.fusion-text
+apti.ro###block-block-22
+apti.ro###block-node-syndicate
+romania.europalibera.org##div.wsw__embed:nth-of-type(6)
+spotmedia.ro##.elementor-element-mbm-footer-1-main-right-side.elementor-element.elementor-inner-column.elementor-col-50.elementor-column
+spotmedia.ro##.mbm-author-post-box-bio-info-social-media
 www.happycards.ro###cookie_GDPR
 www.happycards.ro##.descarca-aplicatia-invitatii
 viataverdeviu.ro###yls

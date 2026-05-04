@@ -143,13 +143,10 @@
 ##.ad-modal
 ##.paywall-overlay
 ##.paywall
-##.ad        /* elemente generale de tip ad /
-##.ads       / multiple reclame /
-##.adsbox    / cutii cu reclame /
 ##.advert
 ##.advertisement
 ##.banner-ad
-##.sponsored / conținut sponsorizat /
+##.sponsored
 ##.sponsor
 ##.promoted
 ##.promotion

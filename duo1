@@ -13,6 +13,7 @@
 @@xxx.lewd.ninja
 @@wikipedia.org
 @@i.imgur.com
+@@gamedock.io
 ||cookieconsent.^
 ||cookie-banner.^
 ||cookie-law-info.^
@@ -385,6 +386,23 @@ apti.ro###block-node-syndicate
 romania.europalibera.org##div.wsw__embed:nth-of-type(6)
 spotmedia.ro##.elementor-element-mbm-footer-1-main-right-side.elementor-element.elementor-inner-column.elementor-col-50.elementor-column
 spotmedia.ro##.mbm-author-post-box-bio-info-social-media
+www.realitatea.net##div.my-4.justify-center.md\:flex.hidden
+realitateastar.net##.gap-x-6.items-center.lg\:flex.hidden .gap-x-3.items-center.flex .duration-200.transition-colors.hover\:opacity-70.dark\:text-theme-ui-d-menu-text.text-theme-ui-menu-text
+realitateastar.net##.gap-4.items-center.justify-between.sm\:flex-row.flex-col.flex.border-theme-secondary-700.border-t.pt-8.mt-8 > .gap-x-6.flex
+www.mediafax.ro###single__extra > .gap-10.flex-col
+romanialibera.ro##.footer
+romanialibera.ro##.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.tdi_258.vc_column_inner
+romanialibera.ro##.td-pb-span4.tdc-inner-column.vc_column_container.wpb_column.tdi_264.vc_column_inner
+romanialibera.ro##.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_245.vc_column
+stiri.md##.kzQAMD.InfoBlock__SocialBlock-sc-9e38315d-2
+keygames.com##.is-blocked.is-billboard.slot-container
+keygames.com##.is-blocked.is-hidden-touch.game-slot-tall-container.is-skyscraper.slot-container
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-medium-round.ytp-ce-channel-that.ytp-ce-channel.ytp-ce-element
+mail.google.com##a.l9:nth-of-type(2)
+proton.me##astro-island:nth-of-type(3)
+proton.me##li.xl\:border-gray-300\/60.xl\:ps-6.xl\:border-s.xl\:-ms-6.max-md\:hidden.first\:border-transparent:nth-of-type(7) > .space-y-4.mt-4 > li:nth-of-type(7)
+vremea.ido.ro###prom2
+vremea.ido.ro###prom1
 www.happycards.ro###cookie_GDPR
 www.happycards.ro##.descarca-aplicatia-invitatii
 viataverdeviu.ro###yls

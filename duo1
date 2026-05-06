@@ -518,6 +518,15 @@ www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-left-quad.ytp-
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-right-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-right-quad.ytp-ce-large-round.ytp-ce-video.ytp-ce-element
 www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-right-quad.ytp-ce-medium-round.ytp-ce-website.ytp-ce-element
+www.youtube.com##.no-transition.yt-upsell-dialog-renderer.style-scope
+www.youtube.com###content > .yt-upsell-dialog-renderer.style-scope
+www.youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
+m.youtube.com##.no-transition.yt-upsell-dialog-renderer.style-scope
+m.youtube.com###content > .yt-upsell-dialog-renderer.style-scope
+m.youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
+youtube.com##.no-transition.yt-upsell-dialog-renderer.style-scope
+youtube.com###content > .yt-upsell-dialog-renderer.style-scope
+youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
 www.google.com##.plR5qb
 www.google.com##.C6AK7c.XVMlrc
 www.google.com###L2AGLb

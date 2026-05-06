@@ -468,6 +468,62 @@ vremea.ido.ro###prom1
 www.happycards.ro###cookie_GDPR
 www.happycards.ro##.descarca-aplicatia-invitatii
 viataverdeviu.ro###yls
+www.miniplay.com##aside > .widget
+www.1001games.com##.page-footer__right__links > li:nth-of-type(2)
+www.1001games.com##.page-footer__right__links > li:nth-of-type(3)
+www.snokido.com###logfav
+www.silvergames.com##.thumbs
+www.silvergames.com###icon_share
+nano-games.io##.game-play-icon-like.game-play-icon
+nano-games.io##dt
+www.1001jocuri.ro##.icon-heart-o.icon
+www.1001jocuri.ro##button.has-floating-label.btn-rate.xs.btn--transparent.btn
+www.1001jocuri.ro###btnFavorite
+www.funnygames.ro##.is-blocked.is-hidden-touch.game-slot-tall-container.is-skyscraper.slot-container
+www.funnygames.ro##.is-blocked.is-billboard.slot-container
+www.agame.com##.right-content > div.game-button-wrapper.top.ui-tooltip-wrapper
+www.miniplay.com###voteGameFalse
+www.miniplay.com###voteGameTrue
+gombis.ro##.css-ads-1.css-4
+gombis.ro##.css-ads-2.css-4
+www.girlsgogames.com##[href="https://www.girlsgogames.com/privacy_policy"]
+www.pomu.ro##.Banners-lateral--derecha.Banners-lateral
+www.bombitjogos.com##.games2
+www.bombitjogos.com###bio_ep > [href]
+www.silvergames.com##.thumbs_big
+jocuririx.com##[href="https://jocuririx.com/p/privacy-policy"]
+spectator.com##.container.comments-container
+spectator.com###menu-item-327597
+spectator.com###menu-item-327645
+vx.spectator.com###template-container
+6jeux.fr###gpw > div.padded
+ro.y8.com##.fav-part
+www.scientia.ro##div.card.sidebar-right:nth-of-type(4)
+www.daciamedicalcenter.ro##.wpd-not-rated
+www.daciamedicalcenter.ro##.wpd-comment-footer
+www.farmaciiledona.ro###cookie-accept-all-btn
+www.farmaciiledona.ro##.show
+www.farmaciiledona.ro##.ssk-sm.ssk-left.ssk-sticky
+www.farmaciiledona.ro##div.cardz.col-lg-3.col-md-6.col-12:nth-of-type(2)
+www.farmaciiledona.ro##[href="https://www.farmaciiledona.ro/politica-de-confidentialitate/"]
+ro.globalvoices.org##.a11y-dialog-widget > p:nth-of-type(2)
+ro.globalvoices.org##div.a11y-dialog-section:nth-of-type(3)
+www.drmax.ro##div.footer-links__subsection:nth-of-type(2)
+www.medichub.ro##.fContact.col-md-3
+semneletimpului.ro##[href="https://semneletimpului.ro/politica-cookie-uri-ue"]
+semneletimpului.ro##[href="https://semneletimpului.ro/declaratie-de-confidentialitate-ue"]
+medsurgeindia.com##.ms-modal-left
+medsurgeindia.com##.ms-form
+medsurgeindia.com##.mt-5.text-center
+medsurgeindia.com##.fc.gt-block
+sexedu.eduskills.plus##.nav-item.firstItem
+onlearn.ro##[href="https://onlearn.ro/politica-de-confidentialitate/"]
+onlearn.ro###cb-row--footer-desktop-bottom > .footer-content-wrap.footer-bottom-inner.footer--row-inner > .container > .row.row--wrapper.hfg-grid-bottom.nv-footer-content.hfg-grid > .left.hfg-slot
+idtherapy.ro##.elementor-widget-image.elementor-widget.programpop.elementor-fixed.elementor-element-b8017c5.elementor-element
+idtherapy.ro##.elementor-widget-button.elementor-widget.elementor-align-justify.elementor-element-1bd82bf.elementor-element
+www.printesaurbana.ro##.tag-link-position-38.tag-link-123.tag-cloud-link
+www.scientia.ro##.item-642.nav-item
+www.scientia.ro##.item-641.nav-item
 creator.tv##[href*="\/politica-de-confidentialitate-si-cookie-uri\/"]
 creator.tv##.alert.alert-error
 www.psihologie-psihiatrie.ro##[href*="https\:\/\/www\.facebook\.com\/pages\/Cabinete-Psihologie-si-Psihiatrie-Romania\/514542942055892"]

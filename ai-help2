@@ -1,0 +1,623 @@
+// ==UserScript==
+// @name         Ai Helper new
+// @namespace    http://tampermonkey.net/
+// @version      2026-05-07
+// @description  try to take over the world!
+// @author       You
+// @match        https://*/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
+(function () {
+  'use strict';
+
+  const DEBUG = true;
+  const DRY_RUN = false;
+
+  function log(...a) { if (DEBUG) console.log('[reject]', ...a); }
+  function warn(...a) { if (DEBUG) console.warn('[reject]', ...a); }
+  function err(...a) { if (DEBUG) console.error('[reject]', ...a); }
+
+  // =========================================================
+  // STRICT PATTERNS
+  // =========================================================
+
+  const rejectPatterns = [
+    // RO
+    /\b(respinge|resping|refuz|refuză|dezactivez|dezactivează|nu accept|nu vreau|nu permit|nu sunt de acord|nu multumesc|nu mulțumesc)\b/i,
+    /\b(respinge( toate| tot)?|refuz( toate| tot)?|respinge modulele|cookies|cookie|18+|I am 18+|INTRĂ - Am 18+ ani sau mai mult|Drept|refuz modulele)\b/i,
+
+    // EN
+    /\b(reject|reject all|decline|refuse|deny|opt-?out|Straight|essential only|only essential|accept only essential|18+|over18_enter|no thanks)\b/i
+  ];
+
+  const NEGATIVE_WORDS =
+    /\b(reject|decline|deny|refuse|opt-?out|essential only|only essential|respinge|resping|refuz|respinge|resping)\b/i;
+
+  function normalize(s) {
+    try {
+      return (s || '')
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .trim();
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function elementTextCandidates(el) {
+    if (!el) return [];
+
+    const out = [];
+
+    try {
+      out.push(el.innerText);
+      out.push(el.textContent);
+
+      if (el.getAttribute) {
+        out.push(el.getAttribute('aria-label'));
+        out.push(el.getAttribute('title'));
+        out.push(el.getAttribute('value'));
+        out.push(el.getAttribute('data-testid'));
+      }
+    } catch (e) {}
+
+    return out.filter(Boolean).map(normalize);
+  }
+
+  // =========================================================
+  // VISIBILITY
+  // =========================================================
+
+  function isStrictlyVisible(el) {
+    if (!el || !el.getBoundingClientRect) return false;
+
+    try {
+      const rect = el.getBoundingClientRect();
+
+      if (rect.width < 8 || rect.height < 8) return false;
+
+      const style = getComputedStyle(el);
+
+      if (
+        style.display === 'none' ||
+        style.visibility === 'hidden' ||
+        parseFloat(style.opacity) === 0
+      ) {
+        return false;
+      }
+
+      if (style.pointerEvents === 'none') return false;
+
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      if (
+        cx < 0 ||
+        cy < 0 ||
+        cx > window.innerWidth ||
+        cy > window.innerHeight
+      ) {
+        return false;
+      }
+
+      const topEl = document.elementFromPoint(
+        Math.min(Math.max(0, cx), window.innerWidth - 1),
+        Math.min(Math.max(0, cy), window.innerHeight - 1)
+      );
+
+      if (!topEl) return false;
+
+      if (
+        !el.contains(topEl) &&
+        !topEl.contains(el)
+      ) {
+        const topStyle = getComputedStyle(topEl);
+
+        if (topStyle.pointerEvents !== 'none') {
+          return false;
+        }
+      }
+
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // =========================================================
+  // CMP DETECTION
+  // =========================================================
+
+  function detectCMP() {
+
+    // OneTrust
+    if (window.OneTrust || document.querySelector('#onetrust-banner-sdk')) {
+      return 'onetrust';
+    }
+
+    // Cookiebot
+    if (document.querySelector('#CybotCookiebotDialog')) {
+      return 'cookiebot';
+    }
+
+    // Quantcast
+    if (document.querySelector('[mode="primary"]')) {
+      return 'quantcast';
+    }
+
+    // Didomi
+    if (window.Didomi || document.querySelector('#didomi-host')) {
+      return 'didomi';
+    }
+
+    return null;
+  }
+
+  async function handleCMP(name) {
+    try {
+
+      // =====================================================
+      // ONETRUST
+      // =====================================================
+
+      if (name === 'onetrust') {
+
+        const selectors = [
+          '#onetrust-reject-all-handler',
+          '.onetrust-close-btn-handler',
+          'button[aria-label*="Reject"]'
+        ];
+
+        for (const sel of selectors) {
+          const el = document.querySelector(sel);
+
+          if (el && isStrictlyVisible(el)) {
+            log('OneTrust reject found');
+            return cautiousClick(el);
+          }
+        }
+      }
+
+      // =====================================================
+      // COOKIEBOT
+      // =====================================================
+
+      if (name === 'cookiebot') {
+
+        const selectors = [
+          '#CybotCookiebotDialogBodyButtonDecline',
+          '#CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll'
+        ];
+
+        for (const sel of selectors) {
+          const el = document.querySelector(sel);
+
+          if (el && isStrictlyVisible(el)) {
+            log('Cookiebot reject found');
+            return cautiousClick(el);
+          }
+        }
+      }
+
+      // =====================================================
+      // DIDOMI
+      // =====================================================
+
+      if (name === 'didomi') {
+
+        const selectors = [
+          '#didomi-notice-disagree-button',
+          '.didomi-components-button--color'
+        ];
+
+        for (const sel of selectors) {
+          const el = document.querySelector(sel);
+
+          if (el && isStrictlyVisible(el)) {
+            log('Didomi reject found');
+            return cautiousClick(el);
+          }
+        }
+      }
+
+    } catch (e) {
+      err('handleCMP', e);
+    }
+
+    return false;
+  }
+
+  // =========================================================
+  // BUTTON DETECTION
+  // =========================================================
+
+  function looksLikeRejectButton(el) {
+
+    if (!el) return false;
+
+    try {
+
+      const tag = (el.tagName || '').toLowerCase();
+
+      const role = el.getAttribute?.('role') || '';
+
+      const allowed =
+        tag === 'button' ||
+        tag === 'input' ||
+        role === 'button';
+
+      if (!allowed) return false;
+
+      const href = el.getAttribute?.('href');
+
+      if (
+        href &&
+        /^https?:\/\//i.test(href)
+      ) {
+        return false;
+      }
+
+      const texts =
+        elementTextCandidates(el).join(' | ');
+
+      if (!texts) return false;
+
+      for (const rx of rejectPatterns) {
+        if (rx.test(texts)) {
+          return true;
+        }
+      }
+
+      // safer metadata matching
+
+      const metaAttrs = [
+        'data-consent',
+        'data-cookie',
+        'data-cookieconsent'
+      ];
+
+      const attrValues = metaAttrs
+        .map(a => el.getAttribute?.(a) || '')
+        .join(' ')
+        .toLowerCase();
+
+      if (NEGATIVE_WORDS.test(attrValues)) {
+        return true;
+      }
+
+      // stricter classes
+
+      const cls =
+        (el.className || '').toString().toLowerCase();
+
+      const id =
+        (el.id || '').toString().toLowerCase();
+
+      const attrText = cls + ' ' + id;
+
+      if (NEGATIVE_WORDS.test(attrText)) {
+        return true;
+      }
+
+    } catch (e) {}
+
+    return false;
+  }
+
+  // =========================================================
+  // IGNORE REGIONS
+  // =========================================================
+
+  function isInIgnoredRegion(el) {
+
+    const ign = [
+      'header',
+      'footer',
+      'nav',
+      'aside',
+      'article'
+    ];
+
+    let p = el;
+
+    for (let i = 0; i < 8 && p; i++, p = p.parentElement) {
+
+      if (!p.tagName) break;
+
+      if (ign.includes(p.tagName.toLowerCase())) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  function wait(ms) {
+    return new Promise(res => setTimeout(res, ms));
+  }
+
+  // =========================================================
+  // CLICKING
+  // =========================================================
+
+  function simulatePointerClick(el) {
+
+    try {
+
+      const opts = {
+        bubbles: true,
+        cancelable: true,
+        view: window
+      };
+
+      el.dispatchEvent(new PointerEvent('pointerdown', opts));
+      el.dispatchEvent(new MouseEvent('mousedown', opts));
+
+      el.dispatchEvent(new PointerEvent('pointerup', opts));
+      el.dispatchEvent(new MouseEvent('mouseup', opts));
+
+      el.dispatchEvent(new MouseEvent('click', opts));
+
+      return true;
+
+    } catch (e) {
+      return false;
+    }
+  }
+
+  async function clickElementSafe(el) {
+
+    if (!el) return false;
+
+    try {
+
+      try {
+        el.scrollIntoView({
+          block: 'center',
+          inline: 'center'
+        });
+      } catch (e) {}
+
+      await wait(100);
+
+      try {
+        el.focus?.();
+      } catch (e) {}
+
+      if (simulatePointerClick(el)) {
+        return true;
+      }
+
+      try {
+        el.click?.();
+        return true;
+      } catch (e) {}
+
+    } catch (e) {
+      err('clickElementSafe', e);
+    }
+
+    return false;
+  }
+
+  // =========================================================
+  // NO RED OUTLINE ANYMORE
+  // =========================================================
+
+  async function cautiousClick(el) {
+
+    if (!el) return false;
+
+    try {
+
+      await wait(250);
+
+      if (!isStrictlyVisible(el)) {
+        return false;
+      }
+
+      if (DRY_RUN) {
+        log('DRY RUN', elementTextCandidates(el));
+        return true;
+      }
+
+      return await clickElementSafe(el);
+
+    } catch (e) {
+      err('cautiousClick', e);
+      return false;
+    }
+  }
+
+  // =========================================================
+  // CANDIDATES
+  // =========================================================
+
+  const CONTAINER_SELECTOR = [
+    '[id*="cookie"]',
+    '[class*="cookie"]',
+    '[id*="consent"]',
+    '[class*="consent"]',
+    '[role="dialog"]',
+    '[aria-modal="true"]'
+  ].join(',');
+
+  function candidateElements() {
+
+    try {
+
+      const selector =
+        CONTAINER_SELECTOR +
+        ' button, ' +
+        CONTAINER_SELECTOR +
+        ' input, ' +
+        CONTAINER_SELECTOR +
+        ' [role="button"]';
+
+      const els =
+        Array.from(document.querySelectorAll(selector));
+
+      return els.filter(el => !isInIgnoredRegion(el));
+
+    } catch (e) {
+      err('candidateElements', e);
+      return [];
+    }
+  }
+
+  // =========================================================
+  // MAIN
+  // =========================================================
+
+  const tried = new Set();
+
+  let lastClickTime = 0;
+
+  async function tryRejectOnce() {
+
+    // CMP first
+
+    const cmp = detectCMP();
+
+    if (cmp) {
+      const ok = await handleCMP(cmp);
+
+      if (ok) {
+        log('CMP handled:', cmp);
+        return true;
+      }
+    }
+
+    const all = candidateElements();
+
+    for (const el of all) {
+
+      const signature =
+        el.tagName +
+        '|' +
+        (el.id || '') +
+        '|' +
+        normalize(el.innerText);
+
+      if (tried.has(signature)) {
+        continue;
+      }
+
+      if (tried.size > 5000) {
+        tried.clear();
+      }
+
+      tried.add(signature);
+
+      if (!isStrictlyVisible(el)) {
+        continue;
+      }
+
+      if (!looksLikeRejectButton(el)) {
+        continue;
+      }
+
+      const now = Date.now();
+
+      if (now - lastClickTime < 300) {
+        await wait(300);
+      }
+
+      log('Reject candidate:', elementTextCandidates(el));
+
+      const ok = await cautiousClick(el);
+
+      lastClickTime = Date.now();
+
+      if (ok) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  // =========================================================
+  // LOOP
+  // =========================================================
+
+  let attempts = 0;
+
+  const maxAttempts = 8;
+
+  async function tryLoop() {
+
+    try {
+
+      if (attempts >= maxAttempts) {
+        return;
+      }
+
+      attempts++;
+
+      const found = await tryRejectOnce();
+
+      if (found) {
+        log('Success');
+        observer.disconnect();
+        return;
+      }
+
+      setTimeout(
+        tryLoop,
+        1200 + attempts * 700
+      );
+
+    } catch (e) {
+      err('tryLoop', e);
+    }
+  }
+
+  // =========================================================
+  // OBSERVER
+  // =========================================================
+
+  const observer = new MutationObserver(() => {
+
+    if (attempts >= maxAttempts) {
+      return;
+    }
+
+    clearTimeout(observer._timer);
+
+    observer._timer = setTimeout(() => {
+      tryLoop();
+    }, 400);
+  });
+
+  // =========================================================
+  // START
+  // =========================================================
+
+  tryLoop();
+
+  try {
+
+    observer.observe(
+      document.documentElement || document.body,
+      {
+        childList: true,
+        subtree: true
+      }
+    );
+
+  } catch (e) {
+    warn('observer failed', e);
+  }
+
+  // manual retry
+
+  window.__rejectCookiesRetry = () => {
+    attempts = 0;
+    tryLoop();
+  };
+
+})();

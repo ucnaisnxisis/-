@@ -1,0 +1,390 @@
+// ==UserScript==
+// @name         Reject Cookies (robust)
+// @namespace    http://tampermonkey.net/
+// @version      0.2
+// @description  Click common "reject" buttons with improved robustness and logging
+// @match        *://*/*
+// @match        https://m.youtube.com/; https://yahoo.com/
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(function() {
+  'use strict';
+
+  const DEBUG = true;
+  const DRY_RUN = false; // setează true pentru testare fără click-uri reale
+
+  function log(...a){ if (DEBUG) console.log('[reject]', ...a); }
+  function warn(...a){ if (DEBUG) console.warn('[reject]', ...a); }
+  function err(...a){ if (DEBUG) console.error('[reject]', ...a); }
+
+  const rejectTexts = [
+    'respinge folosirea cookies in scopurile descrise',
+    'respinge folosirea cookies în scopurile descrise',
+    'respinge folosirea cookie-urilor in scopurile descrise',
+    'respinge folosirea cookie-urilor și a altor date in scopurile descrise',
+    'nu multumesc!',
+    'nu ma abonez',
+    'da, am peste 18 ani',
+    'am 18+ ani',
+    '18+',
+    'respinge modulele cookies optionale',
+    'respinge modulele cookies',
+    'respinge tot',
+    'i am 18 or older - enter',
+    'intră - am 18 ani sau mai mult',
+    'i am 18+',
+    'i am 18',
+    'over18_enter',
+    'accept only essential cookies'
+  ].map(s => s.toLowerCase());
+
+  function normalize(s){ try { return (s||'').toString().toLowerCase().replace(/\s+/g,' ').trim(); } catch(e){ return ''; } }
+
+  function elementTextCandidates(el){
+    if(!el) return [];
+    const out = [];
+    try {
+      out.push(el.innerText, el.textContent);
+      if (el.getAttribute){
+        out.push(el.getAttribute('aria-label'));
+        out.push(el.getAttribute('title'));
+        out.push(el.getAttribute('value'));
+        out.push(el.getAttribute('data-testid'));
+      }
+    } catch(e){}
+    return out.filter(Boolean).map(normalize);
+  }
+
+  function isStrictlyVisible(el){
+    if (!el || !el.getBoundingClientRect) return false;
+    try {
+      const rect = el.getBoundingClientRect();
+      if (rect.width < 8 || rect.height < 8) return false;
+      const style = window.getComputedStyle ? window.getComputedStyle(el) : {};
+      if (style && (style.display === 'none' || style.visibility === 'hidden' || parseFloat(style.opacity) === 0)) return false;
+      if (style.pointerEvents === 'none') return false;
+      if (parseInt(style.zIndex||0) < 0) return false;
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top + rect.height/2;
+      const inViewport = cx >= 0 && cy >= 0 && cx <= (window.innerWidth||document.documentElement.clientWidth) && cy <= (window.innerHeight||document.documentElement.clientHeight);
+      if (inViewport){
+        const topEl = document.elementFromPoint(Math.min(Math.max(0, cx), window.innerWidth-1), Math.min(Math.max(0, cy), window.innerHeight-1));
+        if (!topEl) return false;
+        if (!el.contains(topEl) && !topEl.contains(el)) return false;
+        return true;
+      }
+      return false;
+    } catch(e){ return false; }
+  }
+
+  // --- Patterns with Romanian-specific filters + English fallbacks ---
+  const rejectPatterns = [
+    // română: verbe și expresii uzuale (diacritice incluse)
+    /\b(respinge|refuz|refuză|dezactivez|dezactivează|anulează|anuleaz[ăa]|renunț[ăa]|renunta|nu accept|nu vreau|nu permit|nu permit[ ]?cookie|nu sunt de acord|nu sunt de acord cu|nu-mi|nu imi|nu mulțumesc|nu multumesc)\b/i,
+    // română: expresii tipice "refuză tot" / "respinge toate"
+    /\b(refuz[ea]? (toate|tot)|respinge( toate| tot)?|refuz[ea]? modulele|respinge modulele|respinge tot)\b/i,
+    // română: varianțe fără diacritice
+    /\b(respinge|refuz|dezactivez|anuleaza|renunt|nu accept|nu vreau|nu permit|nu sunt de acord|nu multumesc)\b/i,
+    // română: peste 18 / intrare
+    /\b(am (?:peste )?18 ani|sunt major|sunt peste 18|am 18 ani)\b/i,
+    // engleză: păstrează câteva expresii importante
+    /\b(refuse|decline|deny|reject|reject all|accept only essential|only essential|essential only|do not accept|no thanks|no thanks!)\b/i
+  ];
+
+  function looksLikeRejectButton(el){
+    if (!el) return false;
+    try {
+      const tag = (el.tagName||'').toLowerCase();
+      const role = (el.getAttribute && el.getAttribute('role')) || '';
+      const candidateRoles = ['button','link','switch'];
+      if (!(tag === 'button' || tag === 'a' || tag === 'input' || candidateRoles.includes(role) || el.getAttribute && (el.getAttribute('data-consent')||el.getAttribute('data-cookie')))) {
+        return false;
+      }
+
+      // avoid typical nav links that navigate away
+      const href = el.getAttribute && el.getAttribute('href');
+      if (href && !href.startsWith('javascript:') && /^https?:\/\//i.test(href)) return false;
+
+      const texts = elementTextCandidates(el).join(' | ');
+      if (texts) {
+        for (const rx of rejectPatterns){
+          if (rx.test(texts)) return true;
+        }
+      }
+
+      // prefer explicit meta attributes
+      const metaAttrs = ['data-consent','data-cookie','data-action','data-role','aria-controls','aria-describedby','data-cookieconsent'];
+      if (metaAttrs.some(a => el.getAttribute && el.getAttribute(a))) return true;
+
+      // classes/ids with cookie/consent but not generic words
+      const cls = (el.className||'').toString().toLowerCase();
+      const id = (el.id||'').toString().toLowerCase();
+      const attrText = cls + ' ' + id + ' ' + (el.getAttribute && (el.getAttribute('data-action')||''));
+      if (/\b(cookie|consent|refuse|refuz|decline|deny|reject|opt-?out|optout)\b/i.test(attrText)) return true;
+
+    } catch(e){}
+    return false;
+  }
+
+  // ignore elements inside these regions (header/footer/nav etc)
+  function isInIgnoredRegion(el){
+    const ign = ['header','footer','nav','aside','figure','figcaption','article'];
+    let p = el;
+    for (let i=0;i<8 && p; i++, p=p.parentElement){
+      if (!p.tagName) break;
+      if (ign.includes(p.tagName.toLowerCase())) return true;
+    }
+    return false;
+  }
+
+  function wait(ms){ return new Promise(res => setTimeout(res, ms)); }
+
+  function simulatePointerClick(el){
+    try{
+      const opts = { bubbles: true, cancelable: true, view: window };
+      el.dispatchEvent(new PointerEvent('pointerdown', opts));
+      el.dispatchEvent(new MouseEvent('mousedown', opts));
+      el.dispatchEvent(new PointerEvent('pointerup', opts));
+      el.dispatchEvent(new MouseEvent('mouseup', opts));
+      el.dispatchEvent(new MouseEvent('click', opts));
+      return true;
+    } catch(e){ return false; }
+  }
+
+  async function clickElementSafe(el){
+    if (!el) return false;
+    try {
+      try { el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'auto' }); } catch(e){}
+      await wait(120);
+      try { el.focus && el.focus(); } catch(e){}
+      if (simulatePointerClick(el)) return true;
+      try {
+        const ev = new MouseEvent('click', { view: window, bubbles: true, cancelable: true });
+        el.dispatchEvent(ev);
+        return true;
+      } catch(e){}
+      try { if (typeof el.click === 'function') { el.click(); return true; } } catch(e){}
+    } catch(e){ err('clickElementSafe error', e); }
+    return false;
+  }
+
+  // cautious click: outline + wait + recheck
+  async function cautiousClick(el){
+    if (!el) return false;
+    try {
+      const originalOutline = el.style && el.style.outline;
+      try { el.style.outline = '3px solid rgba(255,0,0,0.45)'; } catch(e){}
+
+      await wait(400);
+
+      // if not still visible, abort
+      if (!isStrictlyVisible(el)) {
+        try { el.style.outline = originalOutline || ''; } catch(e){}
+        log('cautiousClick aborted: not visible after delay', elementTextCandidates(el));
+        return false;
+      }
+
+      // if dry-run, just log and return success (so script thinks it worked)
+      if (DRY_RUN) {
+        log('DRY RUN would click:', elementTextCandidates(el));
+        try { el.style.outline = originalOutline || ''; } catch(e){}
+        return true;
+      }
+
+      const ok = await clickElementSafe(el);
+      try { el.style.outline = originalOutline || ''; } catch(e){}
+      return ok;
+    } catch(e){
+      err('cautiousClick error', e);
+      return false;
+    }
+  }
+
+  // Enhanced toggle attempts for checkboxes/labels/switches
+  async function tryToggleConsent(el){
+    try {
+      if (!el) return false;
+      const tag = (el.tagName||'').toLowerCase();
+      if (tag === 'input') {
+        const type = (el.getAttribute && (el.getAttribute('type')||'')).toLowerCase();
+        if (type === 'checkbox' || type === 'radio') {
+          const id = el.id;
+          if (id) {
+            const lab = document.querySelector('label[for="'+CSS.escape(id)+'"]');
+            if (lab && isStrictlyVisible(lab)) {
+              log('Clicking label for input', id, elementTextCandidates(lab));
+              if (await cautiousClick(lab)) return true;
+            }
+          }
+          let parent = el.parentElement;
+          for (let i=0;i<6 && parent;i++,parent=parent.parentElement) {
+            const pcls = (parent.className||'').toString().toLowerCase();
+            if (/switch|toggle|slider|consent|cookie|control|option/.test(pcls) && isStrictlyVisible(parent)) {
+              log('Clicking wrapper for input', elementTextCandidates(parent));
+              if (await cautiousClick(parent)) return true;
+            }
+          }
+          if (isStrictlyVisible(el)) {
+            log('Clicking input directly', elementTextCandidates(el));
+            if (await cautiousClick(el)) return true;
+          }
+        }
+      }
+
+      if (tag === 'label') {
+        if (isStrictlyVisible(el)) {
+          log('Clicking label element', elementTextCandidates(el));
+          if (await cautiousClick(el)) return true;
+        }
+      }
+
+      const role = (el.getAttribute && el.getAttribute('role')) || '';
+      if (role === 'switch' || el.getAttribute && el.getAttribute('aria-checked') !== null) {
+        if (isStrictlyVisible(el)) {
+          log('Clicking role=switch or aria-checked element', elementTextCandidates(el));
+          if (await cautiousClick(el)) return true;
+        }
+      }
+
+      const nearby = el.querySelectorAll ? el.querySelectorAll('input[type="checkbox"], input[type="radio"], label') : [];
+      for (const n of nearby) {
+        if (await tryToggleConsent(n)) return true;
+      }
+    } catch(e){ err('tryToggleConsent error', e); }
+    return false;
+  }
+
+  const tried = new Set();
+  let lastClickTime = 0;
+  const minClickInterval = 300;
+
+  // container-focused candidate gathering
+  const CONTAINER_SELECTOR = '[id*="cookie"], [class*="cookie"], [id*="consent"], [class*="consent"], [id*="banner"], [class*="banner"], [role="dialog"], [aria-modal="true"]';
+
+  function candidateElements(){
+    try {
+      const inside = Array.from(document.querySelectorAll(CONTAINER_SELECTOR + ' button, ' + CONTAINER_SELECTOR + ' a, ' + CONTAINER_SELECTOR + ' input, ' + CONTAINER_SELECTOR + ' [role="button"], ' + CONTAINER_SELECTOR + ' label'));
+      const global = Array.from(document.querySelectorAll('button, a, input, [role="button"], label'));
+      const topGlobal = global
+        .map(el => {
+          let rect = { width:0, height:0 };
+          try { const r = el.getBoundingClientRect(); rect.width = r.width; rect.height = r.height; } catch(e){}
+          return {el, area: (rect.width||0)*(rect.height||0)};
+        })
+        .sort((a,b)=>b.area-a.area)
+        .slice(0,40)
+        .map(x=>x.el);
+      const combined = Array.from(new Set(inside.concat(topGlobal)));
+      // filter out ones in ignored regions
+      return combined.filter(el => !isInIgnoredRegion(el));
+    } catch(e){
+      err('candidateElements error', e);
+      return [];
+    }
+  }
+
+  async function tryRejectOnce(){
+    try {
+      const all = candidateElements();
+      const mapped = all.map(el => {
+        let rect = { width:0, height:0, top:Infinity };
+        try { rect = el.getBoundingClientRect(); } catch(e){}
+        const area = (rect.width||0)*(rect.height||0);
+        const visible = isStrictlyVisible(el) ? 1 : 0;
+        return { el, area, visible, top: rect.top||0 };
+      });
+      mapped.sort((a,b) => {
+        if (a.visible !== b.visible) return b.visible - a.visible;
+        if (a.visible) return b.area - a.area;
+        return (a.top - b.top);
+      });
+
+      for (const {el, visible} of mapped) {
+        const signature = el.tagName + '|' + (el.id||'') + '|' + (el.className||'') + '|' + normalize(el.innerText || el.textContent || el.getAttribute && el.getAttribute('aria-label') || '');
+        if (tried.has(signature)) continue;
+
+        // skip elements that look like navigation links explicitly
+        const href = el.getAttribute && el.getAttribute('href');
+        if (href && href.trim() && !href.startsWith('javascript:') && /^https?:\/\//i.test(href)) {
+          log('Skipping navigational link', href, elementTextCandidates(el));
+          tried.add(signature);
+          continue;
+        }
+
+        // explicit reject candidates
+        if (looksLikeRejectButton(el)) {
+          const now = Date.now();
+          if (now - lastClickTime < minClickInterval) await wait(minClickInterval - (now - lastClickTime));
+          if (!visible) {
+            try { el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'auto' }); } catch(e){}
+            await wait(180);
+            if (!isStrictlyVisible(el)) { tried.add(signature); continue; }
+          }
+          log('candidate by text/attr', elementTextCandidates(el), el);
+          const ok = await cautiousClick(el);
+          lastClickTime = Date.now();
+          tried.add(signature);
+          if (ok) { log('Clicked explicit reject', signature); return el; }
+        } else {
+          const tag = (el.tagName||'').toLowerCase();
+          if (tag === 'input' || tag === 'label' || (el.getAttribute && (el.getAttribute('role') === 'switch' || el.getAttribute('aria-checked') !== null))) {
+            const now = Date.now();
+            if (now - lastClickTime < minClickInterval) await wait(minClickInterval - (now - lastClickTime));
+            if (!visible) {
+              try { el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'auto' }); } catch(e){}
+              await wait(180);
+              if (!isStrictlyVisible(el)) { tried.add(signature); continue; }
+            }
+            log('candidate by toggle/nearby', elementTextCandidates(el), el);
+            const okToggle = await tryToggleConsent(el);
+            lastClickTime = Date.now();
+            tried.add(signature);
+            if (okToggle) { log('Toggled consent element', signature); return el; }
+          }
+        }
+        tried.add(signature);
+      }
+    } catch(e){ err('tryRejectOnce main error', e); }
+    return null;
+  }
+
+  let attempts = 0;
+  const maxAttempts = 8;
+  const baseInterval = 1200;
+
+  async function tryLoop(){
+    try {
+      if (attempts >= maxAttempts) return;
+      attempts++;
+      const found = await tryRejectOnce();
+      if (found) {
+        log('Success after attempts:', attempts);
+        observer.disconnect();
+        return;
+      }
+      const backoff = baseInterval + attempts * 900;
+      log('No candidate found, backing off', backoff, 'ms');
+      setTimeout(tryLoop, backoff);
+    } catch(e){ err('tryLoop error', e); }
+  }
+
+  const observer = new MutationObserver((mutations) => {
+    try {
+      if (attempts < maxAttempts) {
+        if (observer._scheduled) return;
+        observer._scheduled = true;
+        setTimeout(() => { observer._scheduled = false; tryLoop(); }, 250);
+      }
+    } catch(e){ warn('Mutation observer error', e); }
+  });
+
+  tryLoop();
+  try {
+    observer.observe(document.documentElement || document.body, { childList: true, subtree: true, attributes: false });
+  } catch(e){ warn('Observer attach failed', e); }
+
+  try { window.__rejectCookiesRetry = () => { attempts = 0; tryLoop(); }; } catch(e){}
+
+})();

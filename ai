@@ -9,6 +9,18 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+###banner--gNews
+###feed-back
+###legal.eu-only
+###sgb-google-buttons
+##.banner--gNews
+##.feed-back
+##.legal.eu-only
+##.sgb-google-buttons
+##banner--gNews
+##feed-back
+##legal.eu-only
+##sgb-google-buttons
 ##.hp-newsletter-subscription.paddingBottom-90.box
 ##.hp-newsletter-subscription.paddingBottom-99.box
 ##.hp-newsletter-subscription.paddingBottom-98.box

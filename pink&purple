@@ -26,7 +26,7 @@
 
   /* Dark (purple) */
   --bg-dark-very: #0f0212;
-  --bg-dark: #1b0726;
+  --bg-dark: #4b0082;
   --bg-dark-strong: #2a0d3f;
   --accent-dark: #9b4fd1;
   --link-dark: #c776ff;

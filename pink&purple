@@ -1,0 +1,191 @@
+// ==UserScript==
+// @name         Pink-or-Purple Theme Toggle (Light=Pink, Dark=Purple)
+// @namespace    http://tampermonkey.net/
+// @version      1.2
+// @description  Light => roz, Dark => mov; toggle Ctrl+Shift+P
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const STYLE_ID = 'tm-color-theme-style';
+    // Variabile pentru ambele teme
+    const ROOT_VARS = `
+:root {
+  /* Light (pink) */
+  --bg-light-very: #fff5f8;
+  --bg-light: #ffe4f0;
+  --bg-light-strong: #ffc0db;
+  --accent-light: #ff4da6;
+  --link-light: #b0006a;
+  --text-light: #2b0022;
+  --border-light: rgba(43,0,34,0.12);
+  --button-light: #ffd0e6;
+
+  /* Dark (purple) */
+  --bg-dark-very: #0f0212;
+  --bg-dark: #1b0726;
+  --bg-dark-strong: #2a0d3f;
+  --accent-dark: #9b4fd1;
+  --link-dark: #c776ff;
+  --text-dark: #f5eaff;
+  --border-dark: rgba(167,110,221,0.12);
+  --button-dark: #3a1f57;
+
+  /* Active theme variables (will be set by JS) */
+  --theme-bg: var(--bg-light);
+  --theme-bg-strong: var(--bg-light-strong);
+  --theme-text: var(--text-light);
+  --theme-link: var(--link-light);
+  --theme-accent: var(--accent-light);
+  --theme-border: var(--border-light);
+  --theme-button: var(--button-light);
+}
+`;
+
+    const BASE_CSS = `
+/* Apply theme variables */
+html, body, #container, .container, .content, .main, main {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+/* Force elements with inline/background styles to follow theme */
+*[style*="background"], *[style*="background-color"] {
+  background-color: var(--theme-bg) !important;
+  color: var(--theme-text) !important;
+}
+
+/* Cards and sections */
+div, section, article, header, footer, nav, aside {
+  background-color: transparent !important;
+  color: var(--theme-text) !important;
+}
+
+/* Links and buttons */
+a, a:visited {
+  color: var(--theme-link) !important;
+  text-decoration: underline !important;
+}
+button, input[type="button"], input[type="submit"], .btn {
+  background-color: var(--theme-button) !important;
+  color: var(--theme-text) !important;
+  border-color: var(--theme-border) !important;
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: rgba(255,255,255,0.02) !important;
+  color: var(--theme-text) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: rgba(0,0,0,0.06) !important;
+  color: var(--theme-text) !important;
+}
+
+/* Images: keep but add subtle border */
+img, video, iframe {
+  max-width: 100% !important;
+  border: 2px solid var(--theme-border) !important;
+  background-color: transparent !important;
+}
+
+/* Ensure very-light text becomes readable */
+[style*="color: rgb(255, 255, 255)"], [style*="color: #fff"], [style*="color: #ffffff"] {
+  color: var(--theme-text) !important;
+}
+
+/* High priority */
+`;
+
+    function insertStyle(cssText) {
+        removeStyle();
+        const style = document.createElement('style');
+        style.id = STYLE_ID;
+        style.type = 'text/css';
+        style.appendChild(document.createTextNode(cssText));
+        document.head.appendChild(style);
+    }
+
+    function removeStyle() {
+        const existing = document.getElementById(STYLE_ID);
+        if (existing) existing.remove();
+    }
+
+    // Build full CSS with :root and base rules
+    function buildCss() {
+        return ROOT_VARS + BASE_CSS;
+    }
+
+    // Apply theme by updating CSS variables for active theme
+    function applyTheme(isDark) {
+        const root = document.documentElement;
+        if (isDark) {
+            root.style.setProperty('--theme-bg', getComputedStyle(root).getPropertyValue('--bg-dark') || '#1b0726');
+            root.style.setProperty('--theme-bg-strong', getComputedStyle(root).getPropertyValue('--bg-dark-strong') || '#2a0d3f');
+            root.style.setProperty('--theme-text', getComputedStyle(root).getPropertyValue('--text-dark') || '#f5eaff');
+            root.style.setProperty('--theme-link', getComputedStyle(root).getPropertyValue('--link-dark') || '#c776ff');
+            root.style.setProperty('--theme-accent', getComputedStyle(root).getPropertyValue('--accent-dark') || '#9b4fd1');
+            root.style.setProperty('--theme-border', getComputedStyle(root).getPropertyValue('--border-dark') || 'rgba(167,110,221,0.12)');
+            root.style.setProperty('--theme-button', getComputedStyle(root).getPropertyValue('--button-dark') || '#3a1f57');
+            root.setAttribute('data-color-scheme', 'dark');
+        } else {
+            root.style.setProperty('--theme-bg', getComputedStyle(root).getPropertyValue('--bg-light') || '#ffe4f0');
+            root.style.setProperty('--theme-bg-strong', getComputedStyle(root).getPropertyValue('--bg-light-strong') || '#ffc0db');
+            root.style.setProperty('--theme-text', getComputedStyle(root).getPropertyValue('--text-light') || '#2b0022');
+            root.style.setProperty('--theme-link', getComputedStyle(root).getPropertyValue('--link-light') || '#b0006a');
+            root.style.setProperty('--theme-accent', getComputedStyle(root).getPropertyValue('--accent-light') || '#ff4da6');
+            root.style.setProperty('--theme-border', getComputedStyle(root).getPropertyValue('--border-light') || 'rgba(43,0,34,0.12)');
+            root.style.setProperty('--theme-button', getComputedStyle(root).getPropertyValue('--button-light') || '#ffd0e6');
+            root.setAttribute('data-color-scheme', 'light');
+        }
+        // ensure style exists
+        if (!document.getElementById(STYLE_ID)) insertStyle(buildCss());
+    }
+
+    // Initial insert
+    insertStyle(buildCss());
+
+    // Detect system preference
+    const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    function initFromPref() {
+        const isDark = mq ? mq.matches : false;
+        applyTheme(isDark);
+    }
+    initFromPref();
+
+    // Listen for system changes
+    if (mq && mq.addEventListener) {
+        mq.addEventListener('change', e => applyTheme(e.matches));
+    } else if (mq && mq.addListener) {
+        mq.addListener(e => applyTheme(e.matches));
+    }
+
+    // Manual toggle with Ctrl+Shift+P (overrides system pref while page open)
+    let manualOverride = null; // null = follow system, true=dark, false=light
+    window.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.shiftKey && (e.key === 'P' || e.key === 'p')) {
+            if (manualOverride === null) {
+                // set opposite of current
+                const currentDark = document.documentElement.getAttribute('data-color-scheme') === 'dark';
+                manualOverride = !currentDark;
+            } else {
+                manualOverride = (document.documentElement.getAttribute('data-color-scheme') === 'dark') ? false : true;
+            }
+            applyTheme(manualOverride);
+            console.log('Theme manual override ->', manualOverride ? 'dark(purple)' : 'light(pink)');
+        }
+    }, false);
+
+    // Optional: observe head mutations to re-add style if removed by SPA navigation
+    const obs = new MutationObserver(() => {
+        if (!document.getElementById(STYLE_ID)) insertStyle(buildCss());
+    });
+    obs.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+})();

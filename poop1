@@ -1,0 +1,301 @@
+// ==UserScript==
+// @name         Popup cookie v2 parody
+// @namespace    http://tampermonkey.net/
+// @version      2026-05-08
+// @description  try to take over the world!
+// @author       You
+// @match        https://*/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
+(function() {
+'use strict';
+
+/* CONFIGURABIL */
+const STORAGE_KEY = 'tm_cookie_consent_v2';
+const DEFAULT_EXPIRE_DAYS = 365;
+const BANNER_ID = 'tm-cookie-banner-v2';
+const HIDDEN_CLASS = 'tm-cookie-hidden-v2';
+const SETTINGS_ID = 'tm-cookie-settings-panel-v2';
+const SELECTOR_KEYWORDS = [
+  'cookie', 'cookies', 'consent', 'consim', 'accept', 'decline',
+  'cookie-banner', 'cookie-consent', 'gdpr', 'privacy', 'cookie-policy'
+];
+const SAFE_EMOJI = '💩'; // înlocuit emoji ofensator
+const RATE_LIMIT_MS = 500; // minimal delay între operațiuni DOM pentru performanță
+
+/* UTIL: expirare configurabilă (zile) */
+function msFromDays(days) { return Math.max(1, Number(days) || DEFAULT_EXPIRE_DAYS) * 24 * 60 * 60 * 1000; }
+
+/* STORAGE: fallback dacă localStorage indisponibil -> cookie (anonymized key only) */
+function storageAvailable() {
+  try { const x = '__tm_test__'; localStorage.setItem(x, x); localStorage.removeItem(x); return true; } catch (e) { return false; }
+}
+function setConsent(value, opts = {}) {
+  const expireMs = msFromDays(opts.expireDays);
+  const payload = { value: !!value, ts: Date.now(), expireMs };
+  if (storageAvailable()) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(payload)); return; } catch (e) { /* fallthrough to cookie */ }
+  }
+  // cookie fallback (same-site=lax)
+  const v = encodeURIComponent(JSON.stringify(payload));
+  const date = new Date(Date.now() + expireMs).toUTCString();
+  document.cookie = `${STORAGE_KEY}=${v}; expires=${date}; path=/; SameSite=Lax;`;
+}
+function getConsent() {
+  try {
+    if (storageAvailable()) {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const obj = JSON.parse(raw);
+      if (!obj.ts || !obj.expireMs) return null;
+      if (Date.now() - obj.ts > obj.expireMs) { localStorage.removeItem(STORAGE_KEY); return null; }
+      return obj.value;
+    } else {
+      // cookie parse
+      const m = document.cookie.split(';').map(s => s.trim()).find(s => s.indexOf(STORAGE_KEY + '=') === 0);
+      if (!m) return null;
+      const raw = decodeURIComponent(m.split('=')[1] || '');
+      const obj = JSON.parse(raw);
+      if (!obj.ts || !obj.expireMs) return null;
+      if (Date.now() - obj.ts > obj.expireMs) {
+        // expire cookie
+        document.cookie = `${STORAGE_KEY}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;`;
+        return null;
+      }
+      return obj.value;
+    }
+  } catch (e) { return null; }
+}
+
+/* INJECT STYLE (scoped pentru a evita conflicte) */
+const css = `
+#${BANNER_ID} { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 2147483647; display:flex; gap:12px;
+align-items:center; padding:12px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfbfb); box-shadow:0 8px 24px rgba(0,0,0,0.08);
+font-family: Inter, Roboto, system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; color:#0b1220; max-width:980px; margin:0 auto; }
+#${BANNER_ID} .tm-emoji { font-size:24px; margin-left:6px; }
+#${BANNER_ID} .tm-text { flex:1; font-size:14px; line-height:1.25; }
+#${BANNER_ID} .tm-actions { display:flex; gap:8px; align-items:center; }
+#${BANNER_ID} .tm-btn { padding:8px 12px; border-radius:8px; border:1px solid transparent; background:#111; color:#fff; cursor:pointer; font-weight:600; }
+#${BANNER_ID} .tm-btn.ghost { background:transparent; color:#111; border:1px solid rgba(0,0,0,0.08); font-weight:600; }
+#${BANNER_ID} .tm-btn.reject { background:#f3f4f6; color:#111; border:1px solid rgba(0,0,0,0.06); }
+#${SETTINGS_ID} { margin-left:8px; padding:10px; border-radius:10px; background:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
+.${HIDDEN_CLASS} { display:none !important; opacity:0 !important; pointer-events:none !important; }
+@media (max-width:520px) {
+  #${BANNER_ID} { left:8px; right:8px; bottom:8px; padding:10px; flex-direction:column; align-items:flex-start; }
+  #${BANNER_ID} .tm-actions { width:100%; justify-content:flex-end; }
+}
+`;
+const styleEl = document.createElement('style');
+styleEl.textContent = css;
+(document.head || document.documentElement).appendChild(styleEl);
+
+/* CREARE BANNER (ARIA + accesibil) */
+function createBanner() {
+  if (document.getElementById(BANNER_ID)) return;
+  const wrapper = document.createElement('div');
+  wrapper.id = BANNER_ID;
+  wrapper.setAttribute('role', 'dialog');
+  wrapper.setAttribute('aria-live', 'polite');
+  wrapper.setAttribute('aria-label', 'Informații despre căcații digitali');
+  wrapper.innerHTML = `
+    <div class="tm-emoji" aria-hidden="true">${SAFE_EMOJI}</div>
+    <div class="tm-text">
+      <div style="font-weight:700; margin-bottom:6px;">Folosim căcați pentru a îmbunătăți experiența</div>
+      <div style="font-size:13px; color:#374151;">
+        Putem activa căcații necesari și opționali pentru analiză și personalizare. Poți accepta, respinge sau configura.
+      </div>
+    </div>
+    <div class="tm-actions">
+      <button class="tm-btn reject" id="tm-cookie-reject">Respinge</button>
+      <button class="tm-btn ghost" id="tm-cookie-settings-btn" aria-expanded="false">Setări</button>
+      <button class="tm-btn" id="tm-cookie-accept-btn">Acceptă</button>
+    </div>
+  `;
+  document.body.appendChild(wrapper);
+
+  // cache button refs (avoid null access)
+  const acceptBtn = document.getElementById('tm-cookie-accept-btn');
+  const rejectBtn = document.getElementById('tm-cookie-reject');
+  const settingsBtn = document.getElementById('tm-cookie-settings-btn');
+
+  // focus management: focus pe buton Accept pentru keyboard users
+  if (acceptBtn && typeof acceptBtn.focus === 'function') acceptBtn.focus();
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      setConsent(true);
+      removeCustomBanner();
+      restoreOriginalBanners();
+    });
+  }
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', () => {
+      setConsent(false);
+      removeCustomBanner();
+      restoreOriginalBanners();
+    });
+  }
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', (e) => {
+      toggleSettingsPanel(e.currentTarget);
+    });
+  }
+
+  // close on Escape
+  wrapper.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') { removeCustomBanner(); }
+  });
+
+}
+
+function removeCustomBanner() {
+  const el = document.getElementById(BANNER_ID);
+  if (el) el.remove();
+  const s = document.getElementById(SETTINGS_ID);
+  if (s) s.remove();
+}
+
+/* SETTINGS PANEL (inline, accesibil) */
+function toggleSettingsPanel(toggleButton) {
+  const existing = document.getElementById(SETTINGS_ID);
+  if (existing) { existing.remove(); toggleButton.setAttribute('aria-expanded', 'false'); return; }
+
+  const panel = document.createElement('div');
+  panel.id = SETTINGS_ID;
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-label', 'Setări căcați');
+  panel.style.minWidth = '260px';
+  panel.innerHTML = `
+    <div style="font-weight:700; margin-bottom:8px;">Setări căcați</div>
+    <div style="font-size:13px; color:#374151; margin-bottom:8px;">
+      Activează doar ce dorești. Căcații esențiali rămân activi.
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+      <input type="checkbox" id="tm-opt-analytics" aria-checked="true" checked>
+      Analitică (ex: Google Analytics)
+    </label>
+    <label style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <input type="checkbox" id="tm-opt-personalization" aria-checked="true" checked>
+      Personalizare
+    </label>
+    <div style="display:flex;gap:8px;justify-content:flex-end;">
+      <button class="tm-btn reject ghost" id="tm-settings-cancel">Anulează</button>
+      <button class="tm-btn" id="tm-settings-save">Salvează</button>
+    </div>
+  `;
+  // insert after actions area for visual grouping
+  const actions = document.querySelector('#' + BANNER_ID + ' .tm-actions');
+  if (actions) actions.prepend(panel);
+  else {
+    const banner = document.getElementById(BANNER_ID);
+    if (banner) banner.appendChild(panel);
+  }
+
+  toggleButton.setAttribute('aria-expanded', 'true');
+
+  const cancelBtn = document.getElementById('tm-settings-cancel');
+  const saveBtn = document.getElementById('tm-settings-save');
+
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', () => {
+      panel.remove();
+      toggleButton.setAttribute('aria-expanded', 'false');
+    });
+  }
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      const analytics = !!document.getElementById('tm-opt-analytics').checked;
+      const personalization = !!document.getElementById('tm-opt-personalization').checked;
+      // Simplu: tratăm opt-in combinat; doar dacă oricare este true => consent true
+      const consentValue = analytics || personalization;
+      setConsent(consentValue);
+      panel.remove();
+      removeCustomBanner();
+      restoreOriginalBanners();
+    });
+  }
+
+}
+
+/* DETECTARE BANNERE ORIGINALE: mai robustă, scoring heuristic */
+let lastFind = 0;
+function findAndHideBanners() {
+  const now = Date.now();
+  if (now - lastFind < RATE_LIMIT_MS) return;
+  lastFind = now;
+
+  const candidates = Array.from(document.querySelectorAll('div, section, aside, form, dialog'));
+  for (const n of candidates) {
+    if (!(n instanceof HTMLElement)) continue;
+    if (n.id === BANNER_ID || n.classList.contains(HIDDEN_CLASS)) continue;
+    // ignore small nodes and invisible
+    const style = window.getComputedStyle(n);
+    if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') continue;
+    const rect = n.getBoundingClientRect();
+    if (rect.width < 120 || rect.height < 40) continue;
+
+    const text = (n.innerText || '').toLowerCase();
+    if (!text || text.length < 30) continue;
+
+    // scoring: keyword matches, presence of buttons/links, presence of "accept"/"decline"/"settings" words, location bottom/top
+    let score = 0;
+    for (const k of SELECTOR_KEYWORDS) { if (text.includes(k)) score += 2; }
+    if (text.includes('accept') || text.includes('acceptă') || text.includes('accepts')) score += 2;
+    if (text.includes('decline') || text.includes('respinge')) score += 1;
+    if (n.querySelector('button, a')) score += 1;
+    // position heuristics: banners often near bottom or top
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.bottom >= viewportHeight - 60 || rect.top <= 60) score += 1;
+
+    // if score high enough -> hide
+    if (score >= 3) {
+      n.classList.add(HIDDEN_CLASS);
+      // mark for potential restore with attribute to avoid touching unrelated elements
+      n.setAttribute('data-tm-hidden-by', 'tm-cookie-v2');
+    }
+  }
+
+}
+
+/* RESTORE: doar elemente marcate de noi */
+function restoreOriginalBanners() {
+  const els = Array.from(document.querySelectorAll('[data-tm-hidden-by="tm-cookie-v2"]'));
+  for (const e of els) {
+    e.classList.remove(HIDDEN_CLASS);
+    e.removeAttribute('data-tm-hidden-by');
+  }
+}
+
+/* INITIALIZARE: păstrează comportamento implicit dar refolosește preferința dacă există */
+function init() {
+  const consent = getConsent();
+  if (consent !== null) {
+    // dacă există preferință, nu injectăm banner
+    return;
+  }
+  // încercăm să ascundem bannere initial
+  findAndHideBanners();
+  createBanner();
+}
+
+init();
+
+/* OBSERVER: ascultă DOM mutații, dar cu rate-limit */
+const observer = new MutationObserver((mutations) => {
+  if (getConsent() !== null) { observer.disconnect(); removeCustomBanner(); return; }
+  findAndHideBanners();
+  createBanner();
+});
+observer.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+/* EXPOSARE FUNCȚII PENTRU DEBUG / API (optional) */
+window.__tm_cookie_v2 = {
+  setConsent,
+  getConsent,
+  restoreOriginalBanners,
+  hideOriginalBanners: findAndHideBanners
+};
+
+})();

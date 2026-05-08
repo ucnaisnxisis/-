@@ -1,0 +1,207 @@
+// ==UserScript==
+// @name         Cookie Banner Replace (Emoji 💩)
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Ascunde bannere cookie uzuale și afișează un banner personalizat cu emoji 💩. Preferința se salvează în localStorage (1 an).
+// @author       You
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Configurare rapidă
+    const STORAGE_KEY = 'tm_cookie_consent_v1';
+    const EXPIRE_MS = 365 * 24 * 60 * 60 * 1000; // 1 an
+    const BANNER_ID = 'tm-cookie-banner-emoji';
+    const HIDDEN_CLASS = 'tm-cookie-hidden-original';
+    const SELECTOR_KEYWORDS = [
+        'cookie', 'cookies', 'consent', 'consim', 'accept', 'cookie-banner', 'cookie-consent', 'gdpr', 'privacy'
+    ];
+
+    const style = `
+#${BANNER_ID} {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #fff, #fff);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.06);
+  font-family: Inter, Roboto, Arial, sans-serif;
+  color: #111;
+}
+#${BANNER_ID} .tm-emoji { font-size: 28px; margin-left: 8px; }
+#${BANNER_ID} .tm-text { flex: 1; font-size: 15px; line-height: 1.2; }
+#${BANNER_ID} .tm-actions { display:flex; gap:8px; }
+#${BANNER_ID} .tm-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+#${BANNER_ID} .tm-accept { background:#ffb84d; color:#111; }
+#${BANNER_ID} .tm-settings { background:transparent; color:#111; border:1px solid rgba(0,0,0,0.08); }
+@media (max-width:480px){
+  #${BANNER_ID} { padding:10px; font-size:14px; }
+  #${BANNER_ID} .tm-emoji { font-size:24px; }
+  #${BANNER_ID} .tm-text { font-size:13px; }
+  #${BANNER_ID} .tm-btn { padding:7px 10px; font-size:13px; }
+}
+.${HIDDEN_CLASS} { display: none !important; opacity: 0 !important; pointer-events: none !important; }
+
+`;
+
+    // Utils
+    function setConsent(value) {
+        const payload = { value: !!value, ts: Date.now() };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+    }
+    function getConsent() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return null;
+            const obj = JSON.parse(raw);
+            if (!obj.ts) return null;
+            if (Date.now() - obj.ts > EXPIRE_MS) { localStorage.removeItem(STORAGE_KEY); return null; }
+            return obj.value;
+        } catch (e) { return null; }
+    }
+
+    // Insert style
+    const styleEl = document.createElement('style');
+    styleEl.textContent = style;
+    document.head.appendChild(styleEl);
+
+    // Create custom banner
+    function createBanner() {
+        if (document.getElementById(BANNER_ID)) return;
+        const b = document.createElement('div');
+        b.id = BANNER_ID;
+        b.setAttribute('role', 'dialog');
+        b.setAttribute('aria-live', 'polite');
+
+        b.innerHTML = `
+            <div class="tm-emoji" aria-hidden="true">💩</div>
+            <div class="tm-text">
+              <strong>Folosim căcați</strong><br>
+              Folosim căcați pentru a îmbunătăți experiența și pentru analize. Poți accepta sau să ajustezi setările.
+            </div>
+            <div class="tm-actions">
+              <button class="tm-btn tm-settings" id="tm-cookie-settings" aria-label="Setări cookie">Setări</button>
+              <button class="tm-btn tm-accept" id="tm-cookie-accept" aria-label="Accept căcați">Accept</button>
+            </div>
+        `;
+        document.body.appendChild(b);
+
+        document.getElementById('tm-cookie-accept').addEventListener('click', () => {
+            setConsent(true);
+            removeCustomBanner();
+            restoreOriginalBanners();
+        });
+        document.getElementById('tm-cookie-settings').addEventListener('click', () => {
+            // Simplu fallback: deschide un small settings panel inline
+            showSettingsPanel(b);
+        });
+    }
+
+    function removeCustomBanner() {
+        const el = document.getElementById(BANNER_ID);
+        if (el) el.remove();
+    }
+
+    function showSettingsPanel(container) {
+        // If already open, do nothing
+        if (document.getElementById('tm-cookie-settings-panel')) return;
+        const panel = document.createElement('div');
+        panel.id = 'tm-cookie-settings-panel';
+        panel.style.marginLeft = '12px';
+        panel.style.padding = '10px';
+        panel.style.borderRadius = '8px';
+        panel.style.background = '#f7f7f7';
+        panel.style.boxShadow = '0 4px 12px rgba(0,0,0,0.06)';
+        panel.innerHTML = `
+           <div style="font-size:14px; margin-bottom:8px;"><strong>Setări cookie</strong></div>
+           <label style="display:flex;align-items:center;gap:8px;">
+             <input type="checkbox" id="tm-cookie-analytics" checked>
+             Analitică (ex: Google Analytics)
+           </label>
+           <div style="display:flex;gap:8px;margin-top:8px;">
+             <button id="tm-cookie-save" class="tm-btn tm-accept">Salvează</button>
+             <button id="tm-cookie-cancel" class="tm-btn tm-settings">Anulează</button>
+           </div>
+        `;
+        container.querySelector('.tm-actions').prepend(panel);
+
+        document.getElementById('tm-cookie-cancel').addEventListener('click', () => {
+            panel.remove();
+        });
+        document.getElementById('tm-cookie-save').addEventListener('click', () => {
+            // For simplicity: any saved settings = consent true
+            const analytics = document.getElementById('tm-cookie-analytics').checked;
+            setConsent(analytics);
+            panel.remove();
+            removeCustomBanner();
+            restoreOriginalBanners();
+        });
+    }
+
+    // Heuristic: find likely cookie banners and hide them
+    function findAndHideBanners() {
+        const nodes = Array.from(document.querySelectorAll('div, section, aside, form'));
+        for (const n of nodes) {
+            if (n.classList.contains(HIDDEN_CLASS) || n.id === BANNER_ID) continue;
+            const text = (n.innerText || '').toLowerCase();
+            // skip very short nodes
+            if (text.length < 20) continue;
+            // check keywords
+            let matches = 0;
+            for (const k of SELECTOR_KEYWORDS) {
+                if (text.includes(k)) matches++;
+            }
+            // also detect common cookie buttons like "Accept" near the node
+            const hasBtn = !!n.querySelector('button, a');
+            if (matches >= 1 && hasBtn) {
+                n.classList.add(HIDDEN_CLASS);
+            }
+        }
+    }
+
+    function restoreOriginalBanners() {
+        const els = Array.from(document.querySelectorAll('.' + HIDDEN_CLASS));
+        for (const e of els) e.classList.remove(HIDDEN_CLASS);
+    }
+
+    // Main logic
+    function init() {
+        const consent = getConsent();
+        if (consent !== null) {
+            // If user already set preference, do nothing; but ensure original banners hidden if consent true? We'll remove our banner.
+            return;
+        }
+        // first attempt to hide existing banners that may pop in
+        findAndHideBanners();
+        createBanner();
+    }
+
+    // Run at load and observe for dynamically injected banners
+    init();
+
+    const observer = new MutationObserver((mutations) => {
+        // If consent already set, stop observing
+        if (getConsent() !== null) { observer.disconnect(); removeCustomBanner(); return; }
+        // Hide newly added likely banners
+        findAndHideBanners();
+        // Ensure our custom banner exists
+        createBanner();
+    });
+    observer.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+})();

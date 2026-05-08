@@ -16,7 +16,7 @@
 :root {
   /* Light (pink) */
   --bg-light-very: #fff5f8;
-  --bg-light: #ffe4f0;
+  --bg-light: #FF8DDA;
   --bg-light-strong: #ffc0db;
   --accent-light: #ff4da6;
   --link-light: #b0006a;

@@ -288,6 +288,14 @@ www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
+stirileprotv.ro##.banner--gNews
+click.ro##.childs-open.svelte-juk6dc.item > .svelte-juk6dc.childs > a.svelte-juk6dc.child:nth-of-type(1)
+click.ro##.childs-open.svelte-juk6dc.item > .svelte-juk6dc.childs > a.svelte-juk6dc.child:nth-of-type(3)
+www.churchofjesuschrist.org##feed-back
+www.biblegateway.com##.legal.eu-only
+www.biblegateway.com##li.legal:nth-of-type(6)
+www.biblegateway.com##li.legal:nth-of-type(10)
+www.descopera.ro##.sgb-google-buttons
 github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
 xat.com##.xbanner.mb-3.text-center

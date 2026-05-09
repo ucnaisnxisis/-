@@ -1,9 +1,13 @@
 // ==UserScript==
-// @name         Local Keyword Chat Bot - No TTS (compact minimize)
+// @name         Local Keyword Chat Bot - Lucy.Nyu Chat 1.0
 // @namespace    http://tampermonkey.net/
 // @version      1.9
 // @description  Chat local: fără TTS, animații, max 5 mesaje; bot magenta, user mov puternic; minimizare compactă.
+// @match        https://www.google.com/
+// @match        https://duckduckgo.com/
+// @match        https://bing.com/
 // @match        *://*/*
+// @exclude      youtube.com/
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -16,14 +20,23 @@
         ['cum esti', 'Sunt un bot local, funcționez bine!'],
         [/mulțumesc|merci/i, 'Cu plăcere!'],
         ['timp', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['ceas', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['cat e ceasul', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['cat este ceasul?', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['cat este ora?', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['cat este ceasul', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
         ['pâine', 'Îți place pâinea? Eu nu mănanc, dar știu rețete!'],
         ['ajutor', 'Scrie o întrebare; eu caut cuvinte cheie și răspund.'],
         ['sparkle', 'ああ、とてもきらきらしていますね！'],
-        ['cum te cheama', 'Ma numesc, Lucky din anime-ul Elfen Lied'],
+        ['cum te cheama', 'Ma numesc, Lucy/Nyu din anime-ul Elfen Lied'],
+        ['cum te numesti', 'Ma numesc, Lucy/Nyu din anime-ul Elfen Lied'],
+        ['numele tău', 'Ma numesc, Lucy/Nyu din anime-ul Elfen Lied'],
+        ['numele tau', 'Ma numesc, Lucy/Nyu din anime-ul Elfen Lied'],
+        ['ai 2 nume?', 'Ma numesc, Lucy, este caracterul meu nr1 iar Nyu este caracterul meu nr2. Partea 1, e considerata malefica in timp ce partea mea 2, este blanda.'],
         ['dragut nume','Iți mulțumesc!' ],
         ['anime-nexus','Uite aici link pentru site-ul otaku https://anime-nexus.io/nexus/login' ],
         ['calculator','Sper sa te ajute https://calculator-online.net/' ],
-        ['ai','Uite aici chat, cu un Ai, inteligent https://duck.ai/' ],
+        ['ai-','Uite aici chat, cu un Ai, inteligent https://duck.ai/' ],
         ['yt','Uite aici site-ul: https://www.youtube.com/premium' ],
         ['virus','Scaneaza aici site-urile: https://www.virustotal.com/gui/' ],
         ['Ce retea de socializare recomanzi?','Recomand cu caldura, Signal. Apropo poti instala de pe GooglePlay sau Appstore https://signal.org/download/' ],
@@ -37,6 +50,8 @@
         ['radio','Distractie placuta! https://radio.garden/' ],
         ['arhiva','Felicitari! Ai aici istoria internetului. https://archive.org/' ],
         ['esti fata','Da, darling!🩷' ],
+        ['Ma placi?','Da, iubirea mea 🩷🩷🩷🩷'],
+        ['ma simt singur', 'Imi pare rau! Te rog, nu te teme, ma ai pe mine. 😢'],
     ];
 
     const animations = {
@@ -76,7 +91,12 @@
             </form>
         </div>
     `;
-    document.body.appendChild(container);
+   document.body.appendChild(container);
+    // Schimbă titlul și atributul alt pentru icon
+    const titleEl = document.querySelector('#local-chat-bot .lcb-title');
+    if (titleEl) titleEl.textContent = 'Lucy/Nyu Chat';
+    const iconEl = document.querySelector('#local-chat-bot .lcb-icon');
+    if (iconEl) iconEl.alt = 'Lucy/Nyu icon';
 
     GM_addStyle(`
         #local-chat-bot .lcb-window { position: fixed; right: 20px; bottom: 20px; width: 360px; max-width: 86%; background: #fff0f6; border: 1px solid #ffc0de; border-radius: 12px; box-shadow: 0 8px 24px rgba(255,105,180,0.12); font-family: Arial, sans-serif; z-index: 999999; transition: width .18s ease, height .18s ease; }

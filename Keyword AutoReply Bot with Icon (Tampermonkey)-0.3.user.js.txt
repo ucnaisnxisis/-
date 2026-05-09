@@ -1,0 +1,223 @@
+// ==UserScript==
+// @name         Keyword AutoReply Bot with Icon (Tampermonkey)
+// @namespace    http://tampermonkey.net/
+// @version      0.3
+// @description  Răspunde pe baza de cuvinte-cheie și oferă o iconiță roz "Anime Girl" pentru activare/dezactivare
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const FIELD_SELECTOR = 'input[type="text"], textarea, [contenteditable="true"]';
+    const RESPONSE_CONTAINER_ID = 'tm-keyword-auto-reply';
+    const ICON_ID = 'tm-anime-girl-icon';
+    const DEBOUNCE_MS = 300;
+
+    // Active by default
+    let enabled = false;
+
+    // CONFIGURARE: reguli de răspuns
+    const KEY_RESPONSES = [
+        { match: 'salut', reply: 'Salut și bine ai venit!' },
+        { match: 'mulțumesc', reply: 'Cu plăcere — cu ce te mai pot ajuta?' },
+        { match: /bun(?:ă|ă ziua|ă seara)?/i, reply: 'Bună! Ce pot face pentru tine?' },
+        { match: /vorbește despre (.+)/i, reply: (m) => `Ai cerut: "Vorbește despre ${m[1]}". Iată un scurt răspuns...` },
+    ];
+
+    function normalize(s) { return (s || '').trim().toLowerCase(); }
+
+    function getOrCreateResponseContainer() {
+        let c = document.getElementById(RESPONSE_CONTAINER_ID);
+        if (!c) {
+            c = document.createElement('div');
+            c.id = RESPONSE_CONTAINER_ID;
+            c.style.position = 'fixed';
+            c.style.right = '12px';
+            c.style.bottom = '72px'; // lasă spațiu pentru iconiță
+            c.style.maxWidth = '380px';
+            c.style.zIndex = '999999';
+            c.style.background = 'rgba(0,0,0,0.85)';
+            c.style.color = '#fff';
+            c.style.padding = '10px 12px';
+            c.style.borderRadius = '8px';
+            c.style.fontFamily = 'Segoe UI, Arial, sans-serif';
+            c.style.fontSize = '13px';
+            c.style.boxShadow = '0 6px 18px rgba(0,0,0,0.4)';
+            document.body.appendChild(c);
+        }
+        return c;
+    }
+
+    function showReply(text) {
+        const c = getOrCreateResponseContainer();
+        c.textContent = text || '';
+    }
+
+    function findMatch(text, field) {
+        if (!text) return null;
+        for (const rule of KEY_RESPONSES) {
+            const m = rule.match;
+            if (typeof m === 'string') {
+                if (normalize(text) === normalize(m) || normalize(text).includes(normalize(m))) {
+                    return { rule, matchResult: [m] };
+                }
+            } else if (m instanceof RegExp) {
+                const res = text.match(m);
+                if (res) return { rule, matchResult: res };
+            }
+        }
+        return null;
+    }
+
+    const timeouts = new WeakMap();
+
+    function attachHandlers() {
+        const fields = document.querySelectorAll(FIELD_SELECTOR);
+        fields.forEach(field => {
+            if (field.__tm_keyword_attached) return;
+            field.__tm_keyword_attached = true;
+
+            field.addEventListener('input', (e) => {
+                clearTimeout(timeouts.get(field));
+                const t = setTimeout(() => handleInput(field), DEBOUNCE_MS);
+                timeouts.set(field, t);
+            });
+
+            field.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleInput(field);
+                }
+            });
+        });
+    }
+
+    async function handleInput(field) {
+        if (!enabled) return;
+        let text = field.isContentEditable ? (field.innerText || '') : (field.value || '');
+        text = text.trim();
+        if (!text) {
+            showReply('');
+            return;
+        }
+        const found = findMatch(text, field);
+        if (!found) {
+            showReply('');
+            return;
+        }
+        const { rule, matchResult } = found;
+        try {
+            let reply;
+            if (typeof rule.reply === 'function') reply = await rule.reply(matchResult, field);
+            else reply = rule.reply;
+            showReply(reply);
+        } catch (err) {
+            console.error('Error generating reply:', err);
+            showReply('');
+        }
+    }
+
+    // Iconiță "Anime Girl" roz — SVG inline pentru a fi local
+    function createIcon() {
+        if (document.getElementById(ICON_ID)) return;
+        const btn = document.createElement('button');
+        btn.id = ICON_ID;
+        btn.title = 'Anime Girl — click to toggle bot';
+        btn.style.position = 'fixed';
+        btn.style.right = '12px';
+        btn.style.bottom = '12px';
+        btn.style.width = '56px';
+        btn.style.height = '56px';
+        btn.style.borderRadius = '12px';
+        btn.style.border = 'none';
+        btn.style.cursor = 'pointer';
+        btn.style.zIndex = '1000000';
+        btn.style.display = 'flex';
+        btn.style.alignItems = 'center';
+        btn.style.justifyContent = 'center';
+        btn.style.boxShadow = '0 6px 18px rgba(0,0,0,0.3)';
+        btn.style.transition = 'transform 0.12s ease';
+        btn.style.background = 'linear-gradient(135deg,#ff7ab6,#ff4da6)'; // roz gradient
+        btn.style.color = '#fff';
+        btn.style.fontFamily = 'Segoe UI, Arial, sans-serif';
+        btn.style.fontSize = '11px';
+        btn.style.padding = '6px';
+        btn.style.lineHeight = '1';
+        btn.style.userSelect = 'none';
+
+        // conținut SVG + text
+        btn.innerHTML = `
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="margin-bottom:2px">
+                    <path d="M12 2c-2.21 0-4 1.79-4 4v1H7a2 2 0 00-2 2v1h14V9a2 2 0 00-2-2h-1V6c0-2.21-1.79-4-4-4z" fill="rgba(255,255,255,0.95)"/>
+                    <path d="M6 14v2a4 4 0 004 4h4a4 4 0 004-4v-2H6z" fill="rgba(255,255,255,0.9)"/>
+                </svg>
+                <div style="font-weight:600">Anime</div>
+                <div style="font-size:10px;margin-top:-4px">Girl</div>
+            </div>
+        `;
+
+        // toggle vizual pentru stare
+        function updateVisual() {
+            if (enabled) {
+                btn.style.boxShadow = '0 8px 26px rgba(255,90,160,0.28), 0 2px 6px rgba(0,0,0,0.25)';
+                btn.style.transform = 'scale(1.02)';
+            } else {
+                btn.style.boxShadow = '0 6px 18px rgba(0,0,0,0.3)';
+                btn.style.transform = 'scale(1)';
+            }
+        }
+
+        btn.addEventListener('click', (e) => {
+            enabled = !enabled;
+            updateVisual();
+            // curățăm container când dezactivăm
+            if (!enabled) showReply('');
+            // mică animație
+            btn.animate([{ transform: 'scale(0.96)' }, { transform: 'scale(1)' }], { duration: 120 });
+        });
+
+        // drag support (opțional)
+        let dragging = false, offsetX = 0, offsetY = 0;
+        btn.addEventListener('mousedown', (e) => {
+            dragging = true;
+            offsetX = e.clientX - btn.getBoundingClientRect().left;
+            offsetY = e.clientY - btn.getBoundingClientRect().top;
+            btn.style.transition = 'none';
+        });
+        window.addEventListener('mousemove', (e) => {
+            if (!dragging) return;
+            btn.style.right = 'auto';
+            btn.style.bottom = 'auto';
+            btn.style.left = (e.clientX - offsetX) + 'px';
+            btn.style.top = (e.clientY - offsetY) + 'px';
+        });
+        window.addEventListener('mouseup', () => {
+            if (!dragging) return;
+            dragging = false;
+            btn.style.transition = 'transform 0.12s ease, box-shadow 0.12s ease';
+        });
+
+        document.body.appendChild(btn);
+        updateVisual();
+    }
+
+    // Observe DOM și atașează handleri
+    const observer = new MutationObserver(() => attachHandlers());
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    attachHandlers();
+    createIcon();
+
+    // API util în consola paginii
+    window.__TamperKeywordAutoReply = {
+        KEY_RESPONSES,
+        showReply,
+        addRule: (rule) => { KEY_RESPONSES.push(rule); },
+        clearRules: () => { KEY_RESPONSES.length = 0; },
+        toggle: () => { enabled = !enabled; document.getElementById(ICON_ID) && document.getElementById(ICON_ID).click(); },
+        isEnabled: () => enabled
+    };
+})();

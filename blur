@@ -33,6 +33,24 @@
         "erotic",
         "pornhub",
         "onlyfans"
+        "pee"
+        "scat"
+        "ass"
+        "pussy"
+        "pornografie"
+        "pizde"
+        "chizda"
+        "chizdei"
+        "fut"
+        "fute"
+        "2girls1cup"
+        "pornache"
+        "18+"
+        "funduri"
+        "cururi"
+        "cur"
+        "sexy"
+        "3D"
     ];
 
     // Allowlist: dacă vreun termen apare, elementul este considerat permis (override blocklist).
@@ -49,6 +67,9 @@
         "anime art",
         "cartoon",
         "anime-style"
+        "lolis"
+        "loli"
+        "shota"
     ];
 
     // Setări compatibile cu scriptul anterior

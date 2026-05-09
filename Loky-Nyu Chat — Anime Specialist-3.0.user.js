@@ -1,0 +1,842 @@
+// ==UserScript==
+// @name         Loky/Nyu Chat — Anime Specialist
+// @namespace    http://tampermonkey.net/
+// @version      3.0
+// @description  Un chat bot specializat pe anime, cu evaluări, recomandări personalizate, quiz și watchlist
+// @match        *://www.google.com/*
+// @match        *://google.com/*
+// @match        *://www.bing.com/*
+// @match        *://bing.com/*
+// @match        *://duckduckgo.com/*
+// @match        *://www.duckduckgo.com/*
+// @match        *://search.yahoo.com/*
+// @match        *://www.yahoo.com/*
+// @match        *://yahoo.com/*
+// @match        *://search.brave.com/*
+// @match        *://brave.com/*
+// @match        *://www.brave.com/*
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+// Funcție pentru a evalua expresii matematice în siguranță
+function evaluateMathExpression(expr) {
+    // Înlocuiește ^ cu ** pentru putere (JavaScript folosește **)
+    expr = expr.replace(/\^/g, '**');
+
+    // Verifică dacă expresia conține doar caractere permise
+    if (!/^[0-9+\-*/%^().\s]+$/.test(expr)) {
+        return null; // Expresie invalidă
+    }
+
+    try {
+        // Folosește Function constructor pentru a evalua în siguranță
+        const result = new Function(`return ${expr}`)();
+        if (isNaN(result) || !isFinite(result)) {
+            return null; // Rezultat invalid
+        }
+        return result;
+    } catch (e) {
+        return null; // Eroare la evaluare
+    }
+}
+    // ===== VERIFICARE HOST =====
+    const ALLOWED_HOSTS = [
+        'www.google.com', 'google.com', 'www.bing.com', 'bing.com',
+        'duckduckgo.com', 'www.duckduckgo.com',
+        'search.yahoo.com', 'www.yahoo.com', 'yahoo.com',
+        'search.brave.com', 'brave.com', 'www.brave.com'
+    ];
+    const ALLOW_SUBDOMAINS = true;
+
+    function isSearchHost() {
+        const host = location.hostname.toLowerCase();
+        if (ALLOWED_HOSTS.includes(host)) return true;
+        if (ALLOW_SUBDOMAINS) {
+            return ALLOWED_HOSTS.some(h => host.endsWith('.' + h));
+        }
+        return false;
+    }
+    if (!isSearchHost()) return;
+
+    // ===== TEMA (LIGHT/DARK) =====
+    function isDarkMode() {
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function applyTheme() {
+        const isDark = isDarkMode();
+        const container = document.getElementById('local-chat-bot');
+        if (!container) return;
+        container.className = isDark ? 'dark-mode' : 'light-mode';
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
+    // ===== FUNCȚII PENTRU ANIME =====
+    // Salvează preferințele în localStorage
+    function savePreference(anime, rating) {
+        let preferences = JSON.parse(localStorage.getItem('animePreferences') || '{}');
+        preferences[anime] = rating;
+        localStorage.setItem('animePreferences', JSON.stringify(preferences));
+    }
+
+    // Obține preferințele salvate
+    function getPreferences() {
+        return JSON.parse(localStorage.getItem('animePreferences') || '{}');
+    }
+
+    // Adaugă/șterge din watchlist
+    function toggleWatchlist(anime, action = 'add') {
+        let watchlist = JSON.parse(localStorage.getItem('animeWatchlist') || '[]');
+        if (action === 'add' && !watchlist.includes(anime)) {
+            watchlist.push(anime);
+        } else if (action === 'remove') {
+            watchlist = watchlist.filter(item => item !== anime);
+        }
+        localStorage.setItem('animeWatchlist', JSON.stringify(watchlist));
+        return watchlist;
+    }
+
+    // Obține watchlist-ul
+    function getWatchlist() {
+        return JSON.parse(localStorage.getItem('animeWatchlist') || '[]');
+    }
+
+    // Obține Top 5 Anime
+    function getTopAnime() {
+        const preferences = getPreferences();
+        const sorted = Object.entries(preferences)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5);
+        if (sorted.length === 0) return "Nu ai evaluat încă niciun anime. 😕";
+        let response = "🏆 **Top 5 Anime-uri evaluate:**\n";
+        sorted.forEach(([anime, rating], index) => {
+            response += `${index + 1}. **${anime}**: ${rating}/10 🌟\n`;
+        });
+        return response.trim();
+    }
+
+    // Recomandări personalizate
+    function getPersonalizedRecommendation() {
+        const preferences = getPreferences();
+        const animeList = {
+            // Action
+            "Attack on Titan": { genre: "action", rating: 10 },
+            "Demon Slayer": { genre: "action", rating: 9 },
+            "Jujutsu Kaisen": { genre: "action", rating: 9 },
+            "My Hero Academia": { genre: "action", rating: 8 },
+            "Naruto": { genre: "action", rating: 8 },
+            // Romance
+            "Toradora!": { genre: "romance", rating: 9 },
+            "Fruits Basket": { genre: "romance", rating: 9 },
+            "Your Lie in April": { genre: "romance", rating: 10 },
+            "Kaguya-sama: Love is War": { genre: "romance", rating: 8 },
+            // Horror
+            "Tokyo Ghoul": { genre: "horror", rating: 8 },
+            "Parasyte: The Maxim": { genre: "horror", rating: 8 },
+            "Another": { genre: "horror", rating: 7 },
+            // Slice of Life
+            "Non Non Biyori": { genre: "slice of life", rating: 9 },
+            "K-On!": { genre: "slice of life", rating: 8 },
+            "Barakamon": { genre: "slice of life", rating: 8 },
+            // Isekai
+            "Re:Zero": { genre: "isekai", rating: 9 },
+            "Sword Art Online": { genre: "isekai", rating: 7 },
+            "Mushoku Tensei": { genre: "isekai", rating: 9 },
+            "Overlord": { genre: "isekai", rating: 8 }
+        };
+
+        if (Object.keys(preferences).length > 0) {
+            const genreRatings = {};
+            for (const [anime, rating] of Object.entries(preferences)) {
+                const animeInfo = animeList[anime];
+                if (animeInfo) {
+                    if (!genreRatings[animeInfo.genre]) {
+                        genreRatings[animeInfo.genre] = { total: 0, count: 0 };
+                    }
+                    genreRatings[animeInfo.genre].total += rating;
+                    genreRatings[animeInfo.genre].count += 1;
+                }
+            }
+
+            const genreAverages = {};
+            for (const [genre, data] of Object.entries(genreRatings)) {
+                genreAverages[genre] = data.total / data.count;
+            }
+
+            const bestGenre = Object.entries(genreAverages).sort((a, b) => b[1] - a[1])[0][0];
+            const unratedAnime = Object.entries(animeList)
+                .filter(([anime]) => !preferences[anime])
+                .filter(([anime, info]) => info.genre === bestGenre)
+                .sort(() => Math.random() - 0.5);
+
+            if (unratedAnime.length > 0) {
+                return `Îți place genul **${bestGenre}**! Îți recomand: **${unratedAnime[0][0]}** (notă medie: ${animeList[unratedAnime[0][0]].rating}/10). 🌟`;
+            }
+        }
+
+        const popularAnime = ["Attack on Titan", "Demon Slayer", "Your Lie in April", "Re:Zero"];
+        return `Îți recomand: **${popularAnime.random()}**! 🎬`;
+    }
+
+    // Anime Quiz
+    let quizScore = 0;
+    const quizQuestions = [
+        {
+            question: "Cine este autorul *Death Note*-ului?",
+            answer: ["Ohba", "Tsugumi Ohba"],
+            hint: "Prenumele începe cu T."
+        },
+        {
+            question: "Care este numele real al lui *Saitama* din *One Punch Man*?",
+            answer: ["Caped Baldy"],
+            hint: "Are legătură cu părul și mantia."
+        },
+        {
+            question: "Câte cozi are *Nezuko* din *Demon Slayer*?",
+            answer: ["2"],
+            hint: "E un număr mic."
+        },
+        {
+            question: "Care este numele fratelui lui *Light Yagami*?",
+            answer: ["Misa", "Misa Amane"],
+            hint: "E o fată cu părul blond."
+        },
+        {
+            question: "Ce putere are *Erwin Smith* din *Attack on Titan*?",
+            answer: ["Titanul Colosal", "Colossal Titan"],
+            hint: "E legat de mărime."
+        }
+    ];
+    let currentQuizQuestion = null;
+
+    function startQuiz() {
+        quizScore = 0;
+        currentQuizQuestion = quizQuestions.random();
+        return `🎤 **Anime Quiz**: ${currentQuizQuestion.question} (Răspunde cu: ${currentQuizQuestion.answer.join(" sau ")})`;
+    }
+
+    function checkQuizAnswer(answer) {
+        if (!currentQuizQuestion) return "Niciun quiz în desfășurare. Folosește !quiz pentru a începe. 😕";
+        const userAnswer = answer.trim().toLowerCase();
+        const correctAnswers = currentQuizQuestion.answer.map(a => a.toLowerCase());
+        if (correctAnswers.includes(userAnswer)) {
+            quizScore++;
+            return `✅ Corect! Scor: **${quizScore}**/5. ${startQuiz()}`;
+        } else {
+            return `❌ Greșit! Răspuns corect: **${currentQuizQuestion.answer[0]}**. ${startQuiz()}`;
+        }
+    }
+
+    // Funcție pentru a alege un element aleatoriu dintr-un array
+    Array.prototype.random = function() {
+        return this[Math.floor(Math.random() * this.length)];
+    };
+
+    // ===== REGULI DE RĂSPUNS =====
+    const rules = [
+        // ===== COMENZI SPECIALE =====
+        [/^anime$/i, () => `🎌 **Categorii anime**: acțiune, romance, horror, slice of life, isekai. Întreabă-mă ceva!`],
+        [/^quiz$/i, startQuiz],
+        [/^top$/i, getTopAnime],
+        [/^watchlist$/i, () => {
+            const watchlist = getWatchlist();
+            if (watchlist.length === 0) return "Watchlist-ul tău este gol. Adaugă un anime cu: *Adaugă [nume] la watchlist*. 😊";
+            return `📋 **Watchlist-ul tău**:\n${watchlist.map(anime => `- **${anime}**`).join('\n')}`;
+        }],
+        [/^!ajutor$/i, () => {
+            return `📌 **Comenzi disponibile**:
+- **anime**: Afișează categorii de anime.
+- **quiz**: Întrebări despre anime.
+- **top**: Top 5 anime-uri evaluate.
+- **watchlist**: Afișează watchlist-ul.
+- **recomandă**: Recomandare personalizată.
+- **Evaluează [anime]**: Notează un anime (1-10).
+- **Adaugă [anime] la watchlist**: Adaugă un anime la watchlist.
+- **Șterge [anime] din watchlist**: Șterge un anime din watchlist.`;
+        }],
+
+        // ===== SALUȚI ȘI CONVERSAȚII GENERALE =====
+        [/^(salut|buna|bună|hey|hi|hello|ciao|noroc|servus|bună ziua|bună seara|konnichiwa|ohayou)/i,
+         ["Salut! 😊 Cu ce te pot ajuta?", "Bună! Ce mai faci?", "Konnichiwa! 🎌 Ce anime urmezi acum?"].random()],
+
+        [/^(ce faci|ce mai faci|ce noutăți)/i,
+         ["Mă uit la anime și aștept mesajele tale! 🎬", "Citesc manga și mă gândesc la tine! 📖", "Mă distrez cu un episod din *Attack on Titan*! ⚔️"].random()],
+
+        [/^(cum ești|cum te simți)/i,
+         ["Sunt un bot fericit, ca un personaj din *Clannad*! 😊", "Mă simt ca un *Sasuke* gata de acțiune! 🔥", "Excelent! Ca un *Goku* la putere maximă! ⚡"].random()],
+
+        [/^(cum te cheamă|numele tău|cine ești)/i,
+         ["Sunt Lucy (sau Nyu) din *Elfen Lied*! 🩷", "Mă cheamă *Lucy*, dar poți să mă numești *Nyu*! 😊"].random()],
+
+        // ===== MULȚUMIRI ȘI REACȚII =====
+        [/^(mulțumesc|merci|thanks|thx|mersi|arigato|domo)/i,
+         ["Dōmo arigatō! 😊", "Cu plăcere, *nakama*! 💖", "Oricând, prietene! 🤗"].random()],
+
+        [/^(cat ai dat cu zarul?|zar|zarul|cat e zarul?|cat este zarul|cat ii zarul|zaru)/i,
+         ["Am dat 1!", "Am dat 2*!", "Am dat 3!", "Am dat 4!", "Am dat 5!", "Am dat 6!"].random()],
+
+        [/^(piatra hartie foarfeca?|hai sa jucam piatra hartie sau foarfece|hai sa jucam piatra hartie sau foareca|phf|ce ai ales din phf|ce ai dat din phf?|care este raspunsul dintre phf?)/i,
+         ["Am dat foarfeca ✌️!", "Am dat hartie 🖐*!", "Am dat piatra ✊!"].random()],
+
+        [/^(îmi pare rău|scuze|sorry|sumimasen)/i,
+         ["Nici o problemă, *sensei*! 😌", "Totul e iertat! *Yoroshiku*! 💖", "Nu-ți face griji! 😊"].random()],
+
+        // ===== ÎNTREBĂRI UTILE =====
+        [/^(ora|cât e ora|ce oră e)/i,
+         (msg) => `Ora locală: **${new Date().toLocaleTimeString('ro-RO')}** ⏰`],
+
+        [/^(dat(ă|a)|ce dată e)/i,
+         (msg) => `Astăzi este: **${new Date().toLocaleDateString('ro-RO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}** 📅`],
+
+        // ===== GLUME =====
+        [/^(spune o glumă|glumă|glume)/i,
+         [
+             "De ce programatorii confundă Crăciunul cu Halloween? Pentru că DEC 25 = OCT 31! 🎃🎄",
+             "Ce i-a spus un bit altuia? Ne vedem în *byte*! 💻",
+             "De ce *Naruto* nu folosește telefonul? Pentru că are prea multe *shadow clones*! 📱💨",
+             "Cum îți spune un *One Piece* fan *Bună dimineața*? *Luffy, trezește-te!* 🏴‍☠️",
+             "De ce *Saitama* nu joacă *Among Us*? Pentru că ar câștiga cu un *punch*! 👊"
+         ].random()],
+
+        // ===== FAPTE INTERESANTE =====
+        [/^(spune un fapt|fapt interesant|știi ceva interesant)/i,
+         [
+             "Știai că mierea nu se strică niciodată? Arheologii au găsit miere de 3000 de ani! 🍯",
+             "*Studio Ghibli* a produs *Spirited Away*, care a câștigat un *Oscar*! 🏆",
+             "*One Piece* are peste **1000 de episoade** și încă nu s-a terminat! 🏴‍☠️",
+             "*Death Note* a fost inspirat de ideea că un caiet poate ucide oameni! 📖✨",
+             "Personajul *Goku* din *Dragon Ball* a fost numit după *Sun Wukong* (Regele Maimuțelor)! 🐒"
+         ].random()],
+
+        // ===== SFATURI =====
+        [/^(sfat|un sfat|ce sfat ai)/i,
+         [
+             "Bea apă! E cel mai bun lucru pentru sănătate. 💧",
+             "Urmărește *at least* un episod de anime pe zi pentru o doză de motivație! 🎬",
+             "Dacă te simți obosit, uită-te la un episod din *Slice of Life* (ex: *Non Non Biyori*)! 🌿"
+         ].random()],
+
+        // ===== EMOȚII ȘI SENTIMENTE =====
+        [/^(ma simt singur|sunt singur|mi-e dor|mi-e trist)/i,
+         ["Nu ești singur, sunt aici cu tine, *nakama*! 🤗", "Vorbim noi, e totul bine! *Ganbatte*! 💪", "Mă ai pe mine oricând, ca un *Pokémon* în echipa ta! 🎮"].random()],
+
+        [/^(ești drăguț|ești drăguță|ești frumoasă|ești frumos)/i,
+         ["Arigato! Tu ești și mai *kawaii*! 😘", "Mulțumesc! Ești ca un personaj din *Fruits Basket*! 🍓", "Și tu ești minunat/minunată, ca un *Shounen* protagonist! ⚡"].random()],
+
+        // ===== SECȚIUNE SPECIALIZATĂ PE ANIME =====
+        // --- Citate celebre ---
+        [/^(citat|citează|spune un citat)/i,
+         [
+             "*\"Plus Ultra!\"* — *All Might* (*My Hero Academia*) 💥",
+             "*\"Believe in the me that believes in you!\"* — *Kamina* (*Gurren Lagann*) 🚀",
+             "*\"I’ll leave tomorrow’s problems to tomorrow’s me!\"* — *Saitama* (*One Punch Man*) 👊",
+             "*\"The world is not beautiful, therefore it is.\"* — *Kino* (*Kino no Tabi*) 🌍"
+         ].random()],
+
+        // --- Recomandări de anime ---
+        [/^(recomandă un anime|ce anime să văd|anime bun|!recomandă)/i,
+         getPersonalizedRecommendation],
+
+        [/^(anime de acțiune|shounen)/i,
+         ["*My Hero Academia*, *Naruto*, *Dragon Ball Z* sau *Jujutsu Kaisen*! 💥", "*Demon Slayer* e un must-watch! ⚔️"].random()],
+
+        [/^(anime romantic|romance)/i,
+         ["*Toradora!*, *Fruits Basket* (2019), *Horimiya* sau *Kaguya-sama: Love is War*! 💖", "*Your Name* (film) e o capodoperă! 🎬"].random()],
+
+        [/^(anime horror|groază)/i,
+         ["*Tokyo Ghoul*, *Parasyte: The Maxim*, *Another* sau *Junji Ito Collection*! 👻", "*Elfen Lied* (dar atenție, e dark)! 🩸"].random()],
+
+        [/^(anime slice of life|relaxant)/i,
+         ["*Non Non Biyori*, *A Place Further Than the Universe*, *Barakamon*! 🌿", "*K-On!* e perfect pentru relaxare! ☕"].random()],
+
+        [/^(anime isekai|altă lume)/i,
+         ["*Re:Zero*, *Sword Art Online*, *Mushoku Tensei* sau *Overlord*! 🌌", "*No Game No Life* e super distractiv! 🎮"].random()],
+
+        // --- Fapte despre anime ---
+        [/^(știi ceva despre|fapt anime|curiozități anime)/i,
+         [
+             "*Studio Ghibli* a produs *Spirited Away*, care a câștigat un *Oscar*! 🏆",
+             "*One Piece* are peste **1000 de episoade** și încă nu s-a terminat! 🏴‍☠️",
+             "*Death Note* a fost inspirat de ideea că un caiet poate ucide oameni! 📖✨",
+             "Personajul *Light Yagami* din *Death Note* este considerat unul dintre cei mai inteligenți antagonști! 🧠"
+         ].random()],
+
+        // --- Personaje anime ---
+        [/^(cel mai puternic|cine e cel mai tare)/i,
+         ["*Saitama* din *One Punch Man* (poate omorî oricine cu un pumn)! 👊", "*Goku* la *Ultra Instinct* e aproape invincibil! ⚡", "*Anos Voldigoad* din *Misfit of Demon King Academy* e OP! 👑"].random()],
+
+        [/^(cine e cel mai drăguț|cel mai kawaii)/i,
+         ["*Rem* din *Re:Zero*! 💖", "*Hinata* din *Naruto*! 😊", "*Marin Kitagawa* din *My Dress-Up Darling*! 👗"].random()],
+
+        [/^(cine e cel mai deștept)/i,
+         ["*Light Yagami* din *Death Note*! 🧠", "*L* din *Death Note*! 🕵️‍♂️", "*Shikamaru* din *Naruto*! 🎯"].random()],
+
+        // --- Discuții despre anime ---
+        [/^(care e anime-ul tău preferat)/i,
+         ["*Elfen Lied* (pentru că sunt Lucy! 🩷), dar *Attack on Titan* e și el minunat! ⚔️", "*Steins;Gate* pentru povestea complexă! ⏳"].random()],
+
+        [/^(ce personaj ești)/i,
+         ["Sunt *Lucy* din *Elfen Lied*! 🩷", "Mă simt ca un *Dictator* din *Overlord*! 👑"].random()],
+
+        [/^(ce anime urmezi acum)/i,
+         ["*Jujutsu Kaisen*! 👻", "*Chainsaw Man*! ⛓️", "*Spy x Family*! 🕵️‍♀️"].random()],
+
+        // --- Evaluare anime ---
+        [/^(ce notă dai la|notează|evaluează) (.+)/i, (msg, match) => {
+            const anime = match[2].trim();
+            return `Ce notă (1-10) dai anime-ului **${anime}**? 🌟`;
+        }],
+
+        [/^(nota|rating) (\d+) pentru (.+)/i, (msg, match) => {
+            const rating = parseInt(match[2]);
+            const anime = match[3].trim();
+            if (rating >= 1 && rating <= 10) {
+                savePreference(anime, rating);
+                return `Ai dat nota **${rating}/10** anime-ului **${anime}**! Mulțumesc! 😊`;
+            } else {
+                return "Notă invalidă! Te rog introdu o notă între 1 și 10. 😕";
+            }
+        }],
+
+        // --- Watchlist ---
+        [/^(adaugă|pune) (.+) la watchlist/i, (msg, match) => {
+            const anime = match[2].trim();
+            toggleWatchlist(anime, 'add');
+            return `Ai adăugat **${anime}** la watchlist! 📋`;
+        }],
+
+        [/^(șterge|elimină) (.+) din watchlist/i, (msg, match) => {
+            const anime = match[2].trim();
+            toggleWatchlist(anime, 'remove');
+            return `Ai șters **${anime}** din watchlist! 🗑️`;
+        }],
+
+        // --- Anime Quiz ---
+        [/^(.+)/i, (msg, match) => {
+            if (currentQuizQuestion) {
+                return checkQuizAnswer(match[1]);
+            }
+            return null; // Dacă nu e în quiz, trece la următoarea regulă
+        }],
+
+        // ===== LINK-URI UTILE (ANIME) =====
+        [/anime.?nexus/i, "Uite aici link pentru site-ul otaku: 🎌 https://anime-nexus.io/nexus/login"],
+        [/myanimelist|mal/i, "Uite aici: 📊 https://myanimelist.net/"],
+        [/crunchyroll/i, "Uite aici: 🎬 https://www.crunchyroll.com/"],
+        [/anime planet/i, "Uite aici: 🌍 https://www.anime-planet.com/"],
+        [/kitsu/i, "Uite aici: 📺 https://kitsu.io/"],
+
+        // ===== LINK-URI UTILE (GENERALE) =====
+        [/calculator/i, "Sper să te ajute: 🧮 https://calculator-online.net/"],
+        [/ai|inteligență artificială/i, "Uite aici un chat cu AI inteligent: 🤖 https://duck.ai/"],
+        [/youtube|yt/i, "Uite aici: 📺 https://www.youtube.com/premium"],
+        [/virus|scanare/i, "Scanează aici site-urile: 🛡️ https://www.virustotal.com/gui/"],
+        [/rețea socială|social media/i, "Recomand Signal: 🔒 https://signal.org/download/"],
+        [/matrix|element/i, "Uite aici: 💬 https://app.element.io/"],
+        [/asia.?tv/i, "Vizionare plăcută! 📺 https://www.tvzonehd.com/asiatv"],
+        [/zu.?tv/i, "Spor la vizionat! 🎵 https://rds.live/tv-zu-tv/"],
+        [/github|cod|programare/i, "Multă baftă cu proiectele! 💻 https://github.com/"],
+        [/hartă|google maps/i, "Mult noroc la căutat locații! 🗺️ https://www.google.com/maps"],
+        [/traducere|translate/i, "Uite aici: 🌍 https://translate.google.ro/"],
+        [/radio|muzică/i, "Distracție plăcută! 🎶 https://radio.garden/"],
+        [/arhivă|wayback/i, "Felicitări! Ai aici istoria internetului: 🕰️ https://archive.org/"],
+
+        // ===== RĂSPUNS IMPLICIT =====
+        [/.*/, ["Îmi pare rău, nu am un răspuns pregătit. 😕", "Nu înțeleg. Poți reformula? 🤔", "Hmm, încearcă altă întrebare! 😊"].random()]
+    ];
+
+    // ===== INTERFAȚĂ =====
+    const container = document.createElement('div');
+    container.id = 'local-chat-bot';
+    container.className = isDarkMode() ? 'dark-mode' : 'light-mode';
+    container.innerHTML = `
+        <div class="lcb-window" id="lcb-window">
+            <div class="lcb-header" id="lcb-header">
+                <img class="lcb-icon" src="https://assets.mycast.io/actor_images/actor-lucy-elfen-lied-1121936_large.jpg" alt="Lucy/Nyu icon"/>
+                <span class="lcb-title">Lucy/Nyu Chat</span>
+                <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+                <button id="lcb-close-btn" class="lcb-close" title="Închide chat">×</button>
+            </div>
+            <div class="lcb-body" id="lcb-body"></div>
+            <form id="lcb-form" class="lcb-form">
+                <input id="lcb-input" class="lcb-input" autocomplete="off" placeholder="Scrie un mesaj..." />
+                <button type="submit" class="lcb-send">Trimite</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    // Aplică tema inițială
+    applyTheme();
+
+    // ===== STILURI CSS =====
+    GM_addStyle(`
+        /* Tema light */
+        #local-chat-bot.light-mode .lcb-window {
+            background: #fff0f6;
+            border: 1px solid #ffc0de;
+            box-shadow: 0 8px 24px rgba(255,105,180,0.12);
+        }
+        #local-chat-bot.light-mode .lcb-header {
+            background: linear-gradient(90deg, #ff9acb, #ff77b8);
+            color: #fff;
+        }
+        #local-chat-bot.light-mode .lcb-body {
+            background: #fff0f9;
+        }
+        #local-chat-bot.light-mode .lcb-msg.lcb-bot {
+            background: #ff00a8;
+            color: #ffffff;
+            border: 1px solid rgba(255,0,168,0.9);
+        }
+        #local-chat-bot.light-mode .lcb-msg.lcb-user {
+            background: #6a00d9;
+            color: #ffffff;
+        }
+        #local-chat-bot.light-mode .lcb-input {
+            background: #fff;
+            border: 1px solid #ffc0dd;
+            color: #000;
+        }
+
+        /* Tema dark */
+        #local-chat-bot.dark-mode .lcb-window {
+            background: #2d1b2e;
+            border: 1px solid #ff69b4;
+            box-shadow: 0 8px 24px rgba(255,105,180,0.2);
+        }
+        #local-chat-bot.dark-mode .lcb-header {
+            background: linear-gradient(90deg, #8b008b, #ff1493);
+            color: #fff;
+        }
+        #local-chat-bot.dark-mode .lcb-body {
+            background: #3a223d;
+        }
+        #local-chat-bot.dark-mode .lcb-msg.lcb-bot {
+            background: #ff00a8;
+            color: #ffffff;
+            border: 1px solid rgba(255,0,168,0.7);
+        }
+        #local-chat-bot.dark-mode .lcb-msg.lcb-user {
+            background: #9400d3;
+            color: #ffffff;
+        }
+        #local-chat-bot.dark-mode .lcb-input {
+            background: #1e1e1e;
+            border: 1px solid #ff85c0;
+            color: #fff;
+        }
+
+        /* Stiluri generale */
+        #local-chat-bot .lcb-window {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 360px;
+            max-width: 86%;
+            border-radius: 12px;
+            font-family: Arial, sans-serif;
+            z-index: 999999;
+            transition: width .18s ease, height .18s ease;
+        }
+        .lcb-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            cursor: default;
+            transition: padding .18s ease;
+        }
+        .lcb-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.6);
+            transition: width .18s ease, height .18s ease, margin .18s ease, opacity .18s ease;
+        }
+        .lcb-title {
+            font-weight: 700;
+            font-size: 14px;
+            flex: 1;
+            transition: opacity .18s ease;
+        }
+        .lcb-minimize, .lcb-close {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            line-height: 1;
+            width: 32px;
+            height: 28px;
+            cursor: pointer;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lcb-minimize.compact {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff4da6;
+            font-weight: 700;
+            font-size: 20px;
+            box-shadow: 0 6px 18px rgba(255,77,166,0.12);
+        }
+        .lcb-minimize:hover, .lcb-close:hover {
+            background: rgba(0,0,0,0.12);
+        }
+        .lcb-body {
+            height: 220px;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: opacity .18s ease;
+        }
+        .lcb-form {
+            display: flex;
+            padding: 8px;
+            gap: 6px;
+            transition: opacity .18s ease;
+        }
+        .lcb-input {
+            flex: 1;
+            padding: 8px;
+            border-radius: 8px;
+        }
+        .lcb-send {
+            padding: 8px 10px;
+            background: #ff4da6;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .lcb-msg {
+            margin: 0;
+            max-width: 86%;
+            padding: 8px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        .lcb-bot {
+            float: left;
+            clear: both;
+        }
+        .lcb-user {
+            align-self: flex-end;
+            float: right;
+            clear: both;
+        }
+
+        /* Stare minimizată */
+        .lcb-window.minimized {
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 28px !important;
+            padding: 6px !important;
+            overflow: visible;
+        }
+        .lcb-window.minimized .lcb-header {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lcb-window.minimized .lcb-icon,
+        .lcb-window.minimized .lcb-title,
+        .lcb-window.minimized .lcb-body,
+        .lcb-window.minimized .lcb-form {
+            display: none;
+        }
+        .lcb-window.minimized .lcb-minimize {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ff4da6;
+            color: #fff;
+            font-size: 20px;
+            line-height: 1;
+            box-shadow: 0 8px 20px rgba(255,77,166,0.18);
+        }
+
+        /* Animații */
+        @keyframes lcb-shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            50% { transform: translateX(4px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
+        }
+        @keyframes lcb-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+        @keyframes lcb-sparkle {
+            0% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+            50% { box-shadow: 0 0 12px rgba(255,230,255,0.9); }
+            100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+        }
+        .anim-shake { animation: lcb-shake 500ms ease; }
+        .anim-pulse { animation: lcb-pulse 700ms ease; }
+        .anim-sparkle { animation: lcb-sparkle 900ms ease; border-color: #ffd0e8; }
+    `);
+
+    // ===== LOGICA CHAT-ULUI =====
+    const bodyDiv = document.getElementById('lcb-body');
+    const form = document.getElementById('lcb-form');
+    const input = document.getElementById('lcb-input');
+    const minBtn = document.getElementById('lcb-minimize-btn');
+    const closeBtn = document.getElementById('lcb-close-btn');
+    const lcbWindow = document.getElementById('lcb-window');
+    const lcbHeader = document.getElementById('lcb-header');
+
+    const animations = {
+        'pâine': 'shake',
+        'salut': 'pulse',
+        'sparkle': 'sparkle'
+    };
+
+    function trimMessages(max = 5) {
+        const msgs = bodyDiv.querySelectorAll('.lcb-msg');
+        while (msgs.length > max) {
+            const first = bodyDiv.querySelector('.lcb-msg');
+            if (!first) break;
+            first.remove();
+        }
+    }
+
+    function applyAnimationsToElement(el, message) {
+        const lower = message.toLowerCase();
+        for (const key in animations) {
+            if (lower.includes(key.toLowerCase())) {
+                const cls = 'anim-' + animations[key];
+                el.classList.remove(cls);
+                void el.offsetWidth;
+                el.classList.add(cls);
+                setTimeout(() => el.classList.remove(cls), 1000);
+            }
+        }
+    }
+
+    function appendMessage(text, who = 'bot') {
+        const div = document.createElement('div');
+        div.className = 'lcb-msg ' + (who === 'user' ? 'lcb-user' : 'lcb-bot');
+        div.textContent = text;
+        bodyDiv.appendChild(div);
+        applyAnimationsToElement(div, text);
+        trimMessages(5);
+        bodyDiv.scrollTop = bodyDiv.scrollHeight;
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = input.value.trim();
+        if (!msg) return;
+        appendMessage(msg, 'user');
+        input.value = '';
+
+        // Procesare mesaj
+        let response = null;
+        for (const [pattern, reply] of rules) {
+            if (pattern instanceof RegExp) {
+                const match = msg.match(pattern);
+                if (match) {
+                    response = typeof reply === 'function' ? reply(msg, match) : reply;
+                    if (response !== null) break;
+                }
+            } else if (msg.toLowerCase().includes(pattern.toLowerCase())) {
+                response = typeof reply === 'function' ? reply(msg) : reply;
+                if (response !== null) break;
+            }
+        }
+
+        if (!response) {
+            response = rules.find(rule => rule[0] instanceof RegExp && rule[0].toString() === '/.*/i')[1];
+        }
+
+        setTimeout(() => appendMessage(response, 'bot'), 300);
+        input.focus();
+    });
+
+    // Minimize/Restore
+    function setMinimized(min) {
+        if (min) {
+            lcbWindow.classList.add('minimized');
+            minBtn.textContent = '+';
+            minBtn.classList.add('compact');
+            minBtn.title = 'Restabilește chat';
+        } else {
+            lcbWindow.classList.remove('minimized');
+            minBtn.textContent = '—';
+            minBtn.classList.remove('compact');
+            minBtn.title = 'Minimizează chat';
+            input.focus();
+        }
+    }
+
+    minBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMinimized(!lcbWindow.classList.contains('minimized'));
+    });
+
+    lcbHeader.addEventListener('dblclick', () => {
+        setMinimized(!lcbWindow.classList.contains('minimized'));
+    });
+
+    lcbWindow.addEventListener('click', (e) => {
+        if (lcbWindow.classList.contains('minimized')) {
+            setMinimized(false);
+        }
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        container.remove();
+    });
+
+    // API public
+    window.localChatBot = {
+        send: (text) => {
+            appendMessage(text, 'user');
+            let response = null;
+            for (const [pattern, reply] of rules) {
+                if (pattern instanceof RegExp) {
+                    const match = text.match(pattern);
+                    if (match) {
+                        response = typeof reply === 'function' ? reply(text, match) : reply;
+                        if (response !== null) break;
+                    }
+                } else if (text.toLowerCase().includes(pattern.toLowerCase())) {
+                    response = typeof reply === 'function' ? reply(text) : reply;
+                    if (response !== null) break;
+                }
+            }
+            if (!response) {
+                response = rules.find(rule => rule[0].toString() === '/.*/i')[1];
+            }
+            setTimeout(() => appendMessage(response, 'bot'), 200);
+        },
+        addRule: (pattern, response) => { rules.unshift([pattern, response]); },
+        setForceLang: (lang) => { /* Nu face nimic, nu este necesar */ }
+    };
+
+    // Mesaj de bun venit
+    setTimeout(() => {
+        appendMessage("Salut! Sunt Lucy/Nyu din *Elfen Lied*! 🩷 Scrie *!ajutor* pentru a vedea comenzile disponibile.", 'bot');
+    }, 500);
+
+    // Focus pe input la încărcare
+    input.focus();
+})();

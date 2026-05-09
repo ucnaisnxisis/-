@@ -1,0 +1,215 @@
+// ==UserScript==
+// @name         Censor avansat
+// @namespace    http://tampermonkey.net/
+// @version      2026-05-09
+// @description  try to take over the world!
+// @author       You
+// @match        https://*/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
+(function(){
+    'use strict';
+
+    const mode = "mask"; // "mask" sau "hide"
+    const observeMutations = true;
+    const minWordLengthToMask = 1;
+
+    const censorStyle = "single"; // "partial" | "full" | "single"
+    const censorChar = "*";
+       // --- Liste locale de cuvinte (două liste combinate) ---
+    const badWordsOriginal = [
+        "bou","prosti","prost","proastă","proaste","proastăl","idioat","idiot","idioată",
+        "tâmpit","tampit","tâmpită","tampita","retard","retardat","retardată",
+        "mută","mutu","muț","muţ","orlăn","orlănit",
+        "pizdă","pizda","pizdelă","pizdel","pizde","pi*zda",
+        "futcă","fut","futu","fu**","futut","fute","futesc","futând",
+        "pula","pulă","pula mea","pulamea","pula-ta","pulata","pulii","puli",
+        "pizdă-mamii","pizdamamii",
+        "cur","curul","curva","curvă","curvari","curvari*","curvă*",
+        "curvă","curvari","curvar","curve",
+        "mamă","ma-mă*","mamii","mamă-ta","mama-ta",
+        "muie","muie*","muie-ta","muier","muieri",
+        "futu-ți-mama","futu-ti-mama","futu-ti","futu-ti-*",
+        "dracu","dracu'","drac","dracului","dracu'","dracul",
+        "mă-sii","masii","ma-sii","mă-sii","ma-sii",
+        "naiba","naiba*",
+        "căcat","cacat","căcărează","cacareaza","căcătu","cacatu","kkt","kkk",
+        "doamne-ferește-vulgar","doamneferește",
+        "bă","ba","baaa", "sex", "sexe","sexy","bitch","dick","pussy","pee","poop","popo","scat","shit",
+        "vore","anal","analuri","anale","porn","porno","pornograf","pornografi","pornografiei",
+        "pornografie","pising","hentai","ecchi","18+","orgasm","orgasmul","orgasmuri","orgasmurile"
+    ];
+
+    const badWordsRevised = [
+        "bou","boul",
+        "prost","prosti","proastă","proaste","prostule",
+        "idiot","idioată","idioț","idioți","idioate",
+        "tampit","tâmpit","tampita","tâmpită",
+        "retard","retardat","retardată",
+        "mutu","mută","mut","muț","muţ",
+        "pula","pulă","pule","pulii","puli","puluta",
+        "pizde","pizda","pizdă","pizdelă","pizdelo","pizdăre",
+        "fut","futu","futut","fute","futesc","futut","futând",
+        "fututi","futu-ti","futuți","futu-ți",
+        "muie","muier","muieri","muie-ta",
+        "cur","curul","curva","curvă","curvari","curvar","curve",
+        "curvă-ta","curva-ta",
+        "pizda-mamii","pizdamamii",
+        "drac","dracu","dracul","dracului",
+        "masii","mă-sii","ma-sii","mă-sii",
+        "naiba","naibii",
+        "cacat","căcat","cacatu","căcătu","kkt","kkk",
+        "doamneferește","doamne-ferește",
+        "căţărat","căcată"
+    ];
+
+    const combined = Array.from(new Set(badWordsOriginal.concat(badWordsRevised)
+        .map(s => s.toLowerCase().trim()).filter(Boolean)));
+
+    // --- Lista de înlocuiri: cheie = pattern, valoare = text înlocuitor ---
+    // Suportă '*' ca wildcard. Exemple: "sugi": "bei", "pulă*": "gaura"
+    const replacements = {
+        "sugi": "bei",
+        "suge" : "bea"
+        // adaugă aici alte înlocuiri, ex:
+        // "pulă*": "gaura"
+    };
+
+    // Helper pentru wildcard & whole-word escaping, folosit atât pentru combined cât și pentru replacements
+    function makeWholeWordPatternFromToken(s) {
+        const wildcardPattern = '[\\w\\u00C0-\\u017F-]*';
+        const token = '__WILDCARD__TOKEN__';
+        const withToken = s.replace(/\*/g, token);
+        const escaped = withToken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const body = escaped.replace(new RegExp(token, 'g'), wildcardPattern);
+        // Returnăm un pattern cu captura a cuvântului (pentru a păstra prefixul)
+        return '(?:^|[^A-Za-z0-9\\u00C0-\\u017F])(' + body + ')(?=$|[^A-Za-z0-9\\u00C0-\\u017F])';
+    }
+
+    // Construim pattern-uri pentru blacklist
+    const combinedPatterns = combined.map(makeWholeWordPatternFromToken);
+    const fullPattern = new RegExp(combinedPatterns.join('|'), 'igu');
+
+    // Construim pattern-uri pentru replacements (folosim obiect array pentru a păstra ordinea)
+    const replacementEntries = Object.keys(replacements).map(k => ({ from: k.toLowerCase().trim(), to: replacements[k] }));
+    const replacementPatterns = replacementEntries.map(e => ({
+        pat: new RegExp(makeWholeWordPatternFromToken(e.from), 'igu'),
+        to: e.to
+    }));
+
+    function maskWord(word) {
+        const ch = censorChar || '*';
+        if (censorStyle === "full") return ch.repeat(word.length);
+        if (censorStyle === "single") return ch;
+        if (word.length <= minWordLengthToMask) return ch.repeat(word.length);
+        if (word.length === 1) return ch;
+        if (word.length === 2) return word[0] + ch;
+        if (word.length === 3) return word[0] + ch.repeat(2);
+        return word[0] + ch.repeat(word.length - 2) + word[word.length - 1];
+    }
+
+    // Aplicăm înlocuiri pe un text (folosind aceleași reguli whole-word). Returnează textul modificat.
+    function applyReplacementsToString(s) {
+        let out = s;
+        for (const rp of replacementPatterns) {
+            out = out.replace(rp.pat, function(...args) {
+                const groups = args.slice(1, -2);
+                let matched = null;
+                for (let i = 0; i < groups.length; i++) {
+                    if (groups[i] !== undefined) { matched = groups[i]; break; }
+                }
+                if (matched === null) return args[0];
+                const wholeMatch = args[0];
+                const suffixIndex = wholeMatch.toLowerCase().lastIndexOf(matched.toLowerCase());
+                const prefix = wholeMatch.slice(0, suffixIndex);
+                // Păstrăm același caz (lower/upper) aproximativ: dacă matched e capitalizat, kapitalizează replacer
+                let replacement = rp.to;
+                // simplu: dacă prima literă a matched e upper, facem prima literă a replacement Upper
+                if (matched[0] === matched[0].toUpperCase() && matched[0] !== matched[0].toLowerCase()) {
+                    replacement = replacement.charAt(0).toUpperCase() + replacement.slice(1);
+                }
+                return prefix + replacement;
+            });
+        }
+        return out;
+    }
+
+    function processTextNode(textNode) {
+        const original = textNode.nodeValue;
+        if (!original) return;
+        let text = original;
+        // 1) aplicăm înlocuiri
+        const afterRepl = applyReplacementsToString(text);
+        text = afterRepl;
+
+        // 2) apoi aplicăm mascarea/ascunderea pe bază de blacklist
+        if (mode === "hide") {
+            // verificăm dacă există vreun match; dacă da, ascundem elementul părinte
+            if (fullPattern.test(text)) {
+                const parent = textNode.parentElement;
+                if (parent) parent.style.display = 'none';
+                return;
+            }
+        } else {
+            // resetăm flag-ul .lastIndex pentru regex global înainte de folosit în replace multiple
+            *.lastIndex = 0;
+            const replaced = text.replace(*, *(...args) {
+                const groups = args.slice(1, -2);
+                let matched = null;
+                for (let i = 0; i < groups.length; i++) {
+                    if (groups[i] !== undefined) { matched = groups[i]; break; }
+                }
+                if (matched === null) return args[0];
+                const wholeMatch = args[0];
+                const suffixIndex = wholeMatch.toLowerCase().lastIndexOf(matched.toLowerCase());
+                const prefix = wholeMatch.slice(0, suffixIndex);
+                return prefix + maskWord(matched);
+            });
+            if (replaced !== original) {
+                textNode.nodeValue = replaced;
+                return;
+            }
+        }
+
+        // Dacă s-a făcut doar înlocuirea (fără mască) și text s-a schimbat, salvăm
+        if (text !== original && mode !== "hide") {
+            textNode.nodeValue = text;
+        }
+    }
+
+    * walkAndProcess(root) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                const p = node.parentNode;
+                if (!p) return NodeFilter.FILTER_REJECT;
+                const rejected = ['SCRIPT','STYLE','TEXTAREA','INPUT','CODE','PRE'];
+                if (rejected.includes(p.nodeName)) return NodeFilter.FILTER_REJECT;
+                if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        let n;
+        while (n = walker.nextNode()) processTextNode(n);
+    }
+
+    walkAndProcess(document.body);
+
+    if (observeMutations) {
+        const observer = new MutationObserver(muts => {
+            for (const m of muts) {
+                if (m.type === 'childList') {
+                    m.addedNodes.forEach(n => {
+                        if (n.nodeType === Node.TEXT_NODE) processTextNode(n);
+                        else if (n.nodeType === Node.ELEMENT_NODE) walkAndProcess(n);
+                    });
+                } else if (m.type === 'characterData') {
+                    if (m.target) processTextNode(m.target);
+                }
+            }
+        });
+        observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
+
+})();

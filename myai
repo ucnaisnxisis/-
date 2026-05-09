@@ -1,0 +1,210 @@
+// ==UserScript==
+// @name         Local Keyword Chat Bot - No TTS (compact minimize)
+// @namespace    http://tampermonkey.net/
+// @version      1.9
+// @description  Chat local: fără TTS, animații, max 5 mesaje; bot magenta, user mov puternic; minimizare compactă.
+// @match        *://*/*
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    const rules = [
+        ['salut', 'Salut! Cu ce te pot ajuta?'],
+        ['buna', 'Bună! Ce faci?'],
+        ['cum esti', 'Sunt un bot local, funcționez bine!'],
+        [/mulțumesc|merci/i, 'Cu plăcere!'],
+        ['timp', (msg) => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['pâine', 'Îți place pâinea? Eu nu mănanc, dar știu rețete!'],
+        ['ajutor', 'Scrie o întrebare; eu caut cuvinte cheie și răspund.'],
+        ['sparkle', 'ああ、とてもきらきらしていますね！'],
+        ['cum te cheama', 'Ma numesc, Lucky din anime-ul Elfen Lied'],
+        ['dragut nume','Iți mulțumesc!' ],
+        ['anime-nexus','Uite aici link pentru site-ul otaku https://anime-nexus.io/nexus/login' ],
+        ['calculator','Sper sa te ajute https://calculator-online.net/' ],
+        ['ai','Uite aici chat, cu un Ai, inteligent https://duck.ai/' ],
+        ['yt','Uite aici site-ul: https://www.youtube.com/premium' ],
+        ['virus','Scaneaza aici site-urile: https://www.virustotal.com/gui/' ],
+        ['Ce retea de socializare recomanzi?','Recomand cu caldura, Signal. Apropo poti instala de pe GooglePlay sau Appstore https://signal.org/download/' ],
+        ['matrix','Uite aici link catre site-ul de socializare: https://app.element.io/' ],
+        ['te plac','Ce dragut din partea ta 🩷. Pot zice ca la fel si eu.' ],
+        ['asia tv','Vizionare placuta! https://www.tvzonehd.com/asiatv' ],
+        ['zu tv','Spor la vizionat muzica ta favorita https://rds.live/tv-zu-tv/' ],
+        ['github','Multa bafta, cu munca ta! https://github.com/' ],
+        ['harta','Mult noroc, la localizat lumea! https://www.google.com/maps' ],
+        ['traducere','Ok, uite aici site-ul de tradus: https://translate.google.ro/' ],
+        ['radio','Distractie placuta! https://radio.garden/' ],
+        ['arhiva','Felicitari! Ai aici istoria internetului. https://archive.org/' ],
+        ['esti fata','Da, darling!🩷' ],
+    ];
+
+    const animations = {
+        'pâine': 'shake',
+        'salut': 'pulse',
+        'sparkle': 'sparkle'
+    };
+
+    const config = { forceLang: null };
+
+    function getResponse(message) {
+        const lower = message.toLowerCase();
+        for (const [pattern, response] of rules) {
+            if (pattern instanceof RegExp) {
+                if (pattern.test(message)) return (typeof response === 'function') ? response(message) : response;
+            } else {
+                if (lower.includes(pattern.toLowerCase())) return (typeof response === 'function') ? response(message) : response;
+            }
+        }
+        return "Îmi pare rău, nu am o regulă pentru asta. Încearcă să reformulezi.";
+    }
+
+    // Interfață
+    const container = document.createElement('div');
+    container.id = 'local-chat-bot';
+    container.innerHTML = `
+        <div class="lcb-window" id="lcb-window">
+            <div class="lcb-header" id="lcb-header">
+                <img class="lcb-icon" src="https://assets.mycast.io/actor_images/actor-lucy-elfen-lied-1121936_large.jpg" alt="icon"/>
+                <span class="lcb-title">Local Chat Bot</span>
+                <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+            </div>
+            <div class="lcb-body" id="lcb-body"></div>
+            <form id="lcb-form" class="lcb-form">
+                <input id="lcb-input" class="lcb-input" autocomplete="off" placeholder="Scrie un mesaj..." />
+                <button type="submit" class="lcb-send">Trimite</button>
+            </form>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    GM_addStyle(`
+        #local-chat-bot .lcb-window { position: fixed; right: 20px; bottom: 20px; width: 360px; max-width: 86%; background: #fff0f6; border: 1px solid #ffc0de; border-radius: 12px; box-shadow: 0 8px 24px rgba(255,105,180,0.12); font-family: Arial, sans-serif; z-index: 999999; transition: width .18s ease, height .18s ease; }
+        .lcb-header { display:flex; align-items:center; gap:8px; padding:8px 10px; background:linear-gradient(90deg,#ff9acb,#ff77b8); color:#fff; border-top-left-radius:12px;border-top-right-radius:12px; cursor: default; transition: padding .18s ease; }
+        .lcb-icon { width:36px; height:36px; border-radius:6px; object-fit:cover; border:2px solid rgba(255,255,255,0.6); transition: width .18s ease, height .18s ease, margin .18s ease, opacity .18s ease; }
+        .lcb-title { font-weight:700; font-size:14px; flex:1; transition: opacity .18s ease; }
+        .lcb-minimize { background:transparent; border:none; color:#fff; font-size:18px; line-height:1; width:32px; height:28px; cursor:pointer; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+        .lcb-minimize.compact { width:40px; height:40px; border-radius:50%; background:#ff4da6; font-weight:700; font-size:20px; box-shadow: 0 6px 18px rgba(255,77,166,0.12); }
+        .lcb-minimize:hover { background: rgba(0,0,0,0.12); }
+        .lcb-body { height: 220px; padding: 10px; overflow-y: auto; background: #fff0f9; display:flex; flex-direction:column; gap:6px; transition: opacity .18s ease; }
+        .lcb-form { display:flex; padding:8px; gap:6px; transition: opacity .18s ease; }
+        .lcb-input { flex:1; padding:8px; border:1px solid #ffc0dd; border-radius:8px; background:#fff; }
+        .lcb-send { padding:8px 10px; background:#ff4da6; color:#fff; border:none; border-radius:8px; cursor:pointer;}
+        .lcb-msg { margin:0; max-width:86%; padding:8px 10px; border-radius:10px; display:inline-block; word-break:break-word; }
+        .lcb-bot { background: #ff00a8; color: #ffffff; float:left; clear:both; border:1px solid rgba(255,0,168,0.9); }
+        .lcb-user { align-self:flex-end; background:#6a00d9; color:#ffffff; float:right; clear:both; }
+
+        /* Minimized compact state: show only small circular + */
+        .lcb-window.minimized { width: 56px !important; height: 56px !important; border-radius: 28px !important; padding: 6px !important; overflow: visible; }
+        .lcb-window.minimized .lcb-header { padding: 0; display:flex; align-items:center; justify-content:center; }
+        .lcb-window.minimized .lcb-icon,
+        .lcb-window.minimized .lcb-title,
+        .lcb-window.minimized .lcb-body,
+        .lcb-window.minimized .lcb-form { display: none; }
+        .lcb-window.minimized .lcb-minimize { display:block; width: 40px; height: 40px; border-radius: 50%; background: #ff4da6; color: #fff; font-size: 20px; line-height: 1; box-shadow: 0 8px 20px rgba(255,77,166,0.18); }
+
+        @keyframes lcb-shake { 0% { transform: translateX(0);} 25% { transform: translateX(-4px);} 50% { transform: translateX(4px);} 75% { transform: translateX(-2px);} 100% { transform: translateX(0);} }
+        @keyframes lcb-pulse { 0% { transform: scale(1);} 50% { transform: scale(1.06);} 100% { transform: scale(1);} }
+        @keyframes lcb-sparkle { 0% { box-shadow: 0 0 0 rgba(255,255,255,0);} 50% { box-shadow: 0 0 12px rgba(255,230,255,0.9);} 100% { box-shadow: 0 0 0 rgba(255,255,255,0);} }
+
+        .anim-shake { animation: lcb-shake 500ms ease; }
+        .anim-pulse { animation: lcb-pulse 700ms ease; }
+        .anim-sparkle { animation: lcb-sparkle 900ms ease; border-color: #ffd0e8; }
+    `);
+
+    const bodyDiv = document.getElementById('lcb-body');
+    const form = document.getElementById('lcb-form');
+    const input = document.getElementById('lcb-input');
+    const minBtn = document.getElementById('lcb-minimize-btn');
+    const lcbWindow = document.getElementById('lcb-window');
+    const lcbHeader = document.getElementById('lcb-header');
+
+    function trimMessages(max = 5) {
+        const msgs = bodyDiv.querySelectorAll('.lcb-msg');
+        while (msgs.length > max) {
+            const first = bodyDiv.querySelector('.lcb-msg');
+            if (!first) break;
+            first.remove();
+        }
+    }
+
+    function applyAnimationsToElement(el, message) {
+        const lower = message.toLowerCase();
+        for (const key in animations) {
+            if (lower.includes(key.toLowerCase())) {
+                const cls = 'anim-' + animations[key];
+                el.classList.remove(cls);
+                void el.offsetWidth;
+                el.classList.add(cls);
+            }
+        }
+    }
+
+    function appendMessage(text, who='bot') {
+        const div = document.createElement('div');
+        div.className = 'lcb-msg ' + (who === 'user' ? 'lcb-user' : 'lcb-bot');
+        div.textContent = text;
+        bodyDiv.appendChild(div);
+        applyAnimationsToElement(div, text);
+        trimMessages(5);
+        bodyDiv.scrollTop = bodyDiv.scrollHeight;
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const msg = input.value.trim();
+        if (!msg) return;
+        appendMessage(msg, 'user');
+        const reply = getResponse(msg);
+        setTimeout(() => appendMessage(reply, 'bot'), 300);
+        input.value = '';
+        input.focus();
+    });
+
+    // Minimize toggle
+    function setMinimized(min) {
+        if (min) {
+            lcbWindow.classList.add('minimized');
+            minBtn.textContent = '+';
+            minBtn.classList.add('compact');
+            minBtn.title = 'Restabilește chat';
+        } else {
+            lcbWindow.classList.remove('minimized');
+            minBtn.textContent = '—';
+            minBtn.classList.remove('compact');
+            minBtn.title = 'Minimizează chat';
+            input.focus();
+        }
+    }
+
+    minBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isMin = lcbWindow.classList.contains('minimized');
+        setMinimized(!isMin);
+    });
+
+    // Click on minimized button restores (also dblclick header)
+    lcbHeader.addEventListener('dblclick', () => {
+        const isMin = lcbWindow.classList.contains('minimized');
+        setMinimized(!isMin);
+    });
+
+    // Allow clicking the circular area when minimized to restore
+    lcbWindow.addEventListener('click', (e) => {
+        if (!lcbWindow.classList.contains('minimized')) return;
+        // if clicked inside minimized window, restore
+        setMinimized(false);
+    });
+
+    window.localChatBot = {
+        send: (text) => {
+            appendMessage(text, 'user');
+            const reply = getResponse(text);
+            setTimeout(() => appendMessage(reply, 'bot'), 200);
+        },
+        addRule: (pattern, response) => { rules.unshift([pattern, response]); },
+        setForceLang: (lang) => { config.forceLang = lang; }
+    };
+
+    input.focus();
+})();

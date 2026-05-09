@@ -1,0 +1,225 @@
+// ==UserScript==
+// @name         Anime Girl Regex Replies
+// @namespace    http://tampermonkey.net/
+// @version      1.2
+// @description  Trigger-uri regex -> listă de răspunsuri (aleator) + editare (localStorage). Compatibil Tampermonkey Firefox Android.
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function(){
+  'use strict';
+  const STORAGE_KEY = 'anime_girl_regex_v1';
+  if (document.getElementById('anime-girl-container')) return;
+
+  // Build container
+  const container = document.createElement('div');
+  container.id = 'anime-girl-container';
+  document.body.appendChild(container);
+
+  const style = document.createElement('style');
+  style.textContent = `
+#anime-girl-container { position: fixed; bottom: 18px; right: 18px; z-index:2147483647; font-family: Arial, sans-serif; }
+#anime-girl-button { background: linear-gradient(135deg,#ff8ad6,#ff5bb3); color:#fff; border-radius:50%; width:72px; height:72px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,0.25); cursor:pointer; user-select:none; border:3px solid rgba(255,255,255,0.3); }
+#anime-girl-button span { display:block; font-weight:700; font-size:11px; text-align:center; line-height:1; color:#fff; text-shadow:0 1px 0 rgba(0,0,0,0.2); }
+#anime-girl-panel { margin-bottom:12px; background:white; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15); width:360px; max-width:calc(100vw - 40px); padding:12px; display:none; }
+#anime-girl-panel h3 { margin:0 0 8px 0; font-size:16px; color:#333; }
+.rule { border-radius:8px; background:#fff4fb; padding:8px; margin-bottom:8px; display:flex; gap:8px; align-items:flex-start; }
+.rule .left { flex:1; }
+.rule .right { display:flex; flex-direction:column; gap:6px; }
+.rule pre { white-space:pre-wrap; word-break:break-word; margin:0; font-family:inherit; }
+.small { font-size:12px; color:#666; margin-top:6px; text-align:center; }
+.input-row { display:flex; gap:6px; margin-bottom:8px; }
+.input-row input, .input-row textarea { border:1px solid #ddd; border-radius:6px; padding:6px; }
+.input-row textarea { resize:vertical; min-height:56px; flex:1; }
+.btn { padding:6px 8px; border-radius:6px; border:none; background:#ff5bb3; color:white; cursor:pointer; }
+.btn-ghost { background:#fff; border:1px solid #eee; color:#444; }
+  `;
+  document.head.appendChild(style);
+
+  const panel = document.createElement('div');
+  panel.id = 'anime-girl-panel';
+  panel.innerHTML = `
+<h3 style="color:#ff2fa6;margin-bottom:6px">Anime Girl — Regex Replies</h3>
+
+<div style="font-size:13px;color:#444;margin-bottom:6px">Reguli (regex) → listă de răspunsuri (se alege aleator). Exemplu trigger: ^Salut$</div>
+
+<div id="rules-list"></div>
+
+<div style="border-top:1px solid #f0e6f0;margin-top:8px;padding-top:8px;">
+  <div class="input-row">
+    <input id="new-trigger" type="text" placeholder="Regex trigger (ex: ^Salut$)" />
+    <button id="add-rule" class="btn">Adaugă regulă</button>
+  </div>
+  <div style="margin-bottom:6px">
+    <textarea id="new-responses" placeholder="Răspunsuri (una per linie). Exemple: Bine te-am găsit...\nMmm… îmi tresare inima când te aud."></textarea>
+  </div>
+  <div style="display:flex;gap:6px">
+    <button id="import-json" class="btn-ghost">Import JSON</button>
+    <button id="export-json" class="btn-ghost">Export JSON</button>
+    <button id="clear-all" class="btn-ghost">Șterge toate</button>
+  </div>
+  <div class="small">Regulile și răspunsurile sunt salvate local pe dispozitiv.</div>
+</div>
+
+<div style="border-top:1px solid #f0e6f0;margin-top:8px;padding-top:8px;">
+  <div style="display:flex;gap:6px;">
+    <input id="direct-input" type="text" placeholder="Scrie-i ceva (ex: Salut)" style="flex:1;padding:6px;border-radius:6px;border:1px solid #ddd" />
+    <button id="send-input" class="btn">Trimite</button>
+  </div>
+</div>
+`;
+  container.appendChild(panel);
+
+  const button = document.createElement('div');
+  button.id = 'anime-girl-button';
+  button.title = 'Anime Girl';
+  button.innerHTML = '<span>Anime<br>Girl</span>';
+  container.appendChild(button);
+
+  // Storage helpers
+  function defaultData(){
+    return [
+      { trigger: '^Salut$', responses: ['Bine te-am găsit... inima-mi tresare când te aud.', 'Oh, salut — ce bucurie să te văd pe tine!', 'Mmm… am așteptat vocea ta.'] },
+      { trigger: 'Bun[aă]$', responses: ['Bună, dragul meu… mi-ai lipsit.', 'Salut! Inima mea bate mai repede când ești aici.'] },
+      { trigger: 'Te iubesc', responses: ['Și eu simt ceva special pentru tine…', 'Aww… inima mea zboară când spui asta.'] }
+    ];
+  }
+  function loadData(){
+    try{ const raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : defaultData(); }
+    catch(e){ return defaultData(); }
+  }
+  function saveData(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+
+  let rules = loadData();
+
+  const rulesList = panel.querySelector('#rules-list');
+
+  function renderRules(){
+    rulesList.innerHTML = '';
+    if (!rules.length){
+      rulesList.innerHTML = '<div style="color:#777;padding:6px">Nu există reguli.</div>'; return;
+    }
+    rules.forEach((r, idx) => {
+      const node = document.createElement('div'); node.className='rule';
+      const left = document.createElement('div'); left.className='left';
+      const right = document.createElement('div'); right.className='right';
+      const trig = document.createElement('pre'); trig.textContent = r.trigger;
+      const res = document.createElement('pre'); res.textContent = r.responses.join('\n');
+      left.appendChild(trig); left.appendChild(res);
+      const editBtn = document.createElement('button'); editBtn.textContent='Editează'; editBtn.className='btn';
+      const delBtn = document.createElement('button'); delBtn.textContent='Șterge'; delBtn.className='btn-ghost';
+      const addRespBtn = document.createElement('button'); addRespBtn.textContent='Adaugă răspuns'; addRespBtn.className='btn-ghost';
+
+      editBtn.addEventListener('click', ()=>{
+        const newTrig = prompt('Editează regex trigger:', r.trigger);
+        if (newTrig === null) return;
+        const newRes = prompt('Editează răspunsuri (separate prin \\n):', r.responses.join('\n'));
+        if (newRes === null) return;
+        try { new RegExp(newTrig); }
+        catch(e){ alert('Regex invalid'); return; }
+        r.trigger = newTrig;
+        r.responses = newRes.split('\n').map(s=>s.trim()).filter(Boolean);
+        saveData(rules); renderRules();
+      });
+      delBtn.addEventListener('click', ()=>{
+        if (!confirm('Ștergi regula?')) return;
+        rules.splice(idx,1); saveData(rules); renderRules();
+      });
+      addRespBtn.addEventListener('click', ()=>{
+        const newR = prompt('Adaugă un răspuns pentru "'+r.trigger+'":');
+        if (!newR) return;
+        r.responses.push(newR);
+        saveData(rules); renderRules();
+      });
+
+      right.appendChild(editBtn); right.appendChild(addRespBtn); right.appendChild(delBtn);
+      node.appendChild(left); node.appendChild(right);
+      rulesList.appendChild(node);
+    });
+  }
+
+  // Add new rule
+  panel.querySelector('#add-rule').addEventListener('click', ()=>{
+    const trig = panel.querySelector('#new-trigger').value.trim();
+    const resText = panel.querySelector('#new-responses').value.trim();
+    if (!trig || !resText){ alert('Completează trigger și cel puțin un răspuns.'); return; }
+    try { new RegExp(trig); } catch(e){ alert('Regex invalid'); return; }
+    const responses = resText.split('\n').map(s=>s.trim()).filter(Boolean);
+    rules.push({ trigger: trig, responses });
+    saveData(rules);
+    panel.querySelector('#new-trigger').value=''; panel.querySelector('#new-responses').value='';
+    renderRules();
+  });
+
+  // Export / Import / Clear
+  panel.querySelector('#export-json').addEventListener('click', ()=>{
+    const blob = new Blob([JSON.stringify(rules, null, 2)], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a'); a.href = url; a.download = 'anime_girl_rules.json'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+  panel.querySelector('#import-json').addEventListener('click', ()=>{
+    const txt = prompt('LiPește JSON-ul regulilor aici:');
+    if (!txt) return;
+    try {
+      const parsed = JSON.parse(txt);
+      if (!Array.isArray(parsed)) throw Error('Format invalid');
+      // basic validation
+      for (const p of parsed){
+        if (typeof p.trigger !== 'string' || !Array.isArray(p.responses)) throw Error('Format invalid');
+        new RegExp(p.trigger);
+      }
+      rules = parsed;
+      saveData(rules); renderRules();
+    } catch(e){
+      alert('Import eșuat: ' + (e.message || e));
+    }
+  });
+  panel.querySelector('#clear-all').addEventListener('click', ()=>{
+    if (!confirm('Ștergi toate regulile?')) return;
+    rules = []; saveData(rules); renderRules();
+  });
+
+  // Matching & speaking
+  function pickResponse(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  function respondTo(text){
+    for (const r of rules){
+      let re;
+      try { re = new RegExp(r.trigger, 'i'); } catch(e){ continue; }
+      if (re.test(text)) {
+        speak(pickResponse(r.responses));
+        return;
+      }
+    }
+    speak("Mmm... îmi place cum sună asta. Spune-mi mai multe.");
+  }
+
+  panel.querySelector('#send-input').addEventListener('click', ()=>{
+    const v = panel.querySelector('#direct-input').value.trim();
+    if (!v) return;
+    respondTo(v);
+  });
+  panel.querySelector('#direct-input').addEventListener('keydown', (e)=>{ if (e.key==='Enter') panel.querySelector('#send-input').click(); });
+
+  function speak(text){
+    if ('speechSynthesis' in window){
+      const u = new SpeechSynthesisUtterance(text);
+      const voices = speechSynthesis.getVoices();
+      const ro = voices.find(v=>/ro|romanian/i.test(v.lang)) || voices.find(v=>/female|feminine/i.test(v.name)) || voices[0];
+      if (ro) u.voice = ro;
+      u.lang = ro ? ro.lang : 'ro-RO';
+      u.pitch = 1.1; u.rate = 0.95;
+      speechSynthesis.cancel(); speechSynthesis.speak(u);
+    } else alert(text);
+  }
+
+  // Toggle panel
+  button.addEventListener('click', ()=>{ panel.style.display = panel.style.display === 'none' ? 'block' : 'none'; if (panel.style.display==='block') renderRules(); });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e)=>{ if (!container.contains(e.target) && panel.style.display==='block') panel.style.display='none'; });
+
+  // Init
+  renderRules();
+  window.speechSynthesis && window.speechSynthesis.onvoiceschanged && window.speechSynthesis.onvoiceschanged();
+})();

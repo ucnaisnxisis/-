@@ -51,12 +51,26 @@
         "cur"
         "sexy"
         "3D"
+        "goale"
+        "goi"
+        "anatomie"
+        "anatomy"
+        "fart"
+        "bășini"
+        "basini"
+        "basinos"
+        "bășinoasei"
+        "hentai 3D"
+        "excit"
+        "excitat"
+        "vaginul"
+        "prezervativ"
+        "xxx"
     ];
 
     // Allowlist: dacă vreun termen apare, elementul este considerat permis (override blocklist).
     // Exemplu: "hentai", "anime", "manga" permit conținut anime chiar dacă conține termeni generici din blocklist.
     const ALLOWLIST = [
-        "hentai",
         "hentai manga",
         "anime",
         "manga",
@@ -70,6 +84,12 @@
         "lolis"
         "loli"
         "shota"
+        "2D"
+        "desene"
+        "games"
+        "jocuri"
+        "furry"
+        "succubus"
     ];
 
     // Setări compatibile cu scriptul anterior

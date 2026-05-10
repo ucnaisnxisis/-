@@ -1,0 +1,522 @@
+// ==UserScript==
+// @name         Blocare imagini pentru adulți — capcane personalizabile (Pink list placeholders)
+// @namespace    http://tampermonkey.net/
+// @version      1.9.4
+// @description  Blocare imagini cu Pink list pre-populată cu placeholder-uri (RO) — înlocuiește cu URL-urile tale valide.
+// @match        *://*/*
+// @grant        none
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // CONFIGURABIL de către utilizator (valori inițiale):
+    let ALLOWLIST = ['anime','manga','kawaii','ecchi','anime hentai','anime 18+'];
+    let BLOCKLIST = ['pornhub','xvideos','xhamster','redtube','youporn','xnxx','onlyfans','spankbang','tube8','porn.com'];
+
+    // PINK_LIST pre-populată cu placeholder-uri pentru tipurile cerute.
+    const PINK_LIST = [
+        'https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/08/the-10-cutest-anime-girls-of-the-2020s-ranked.jpg?q=70&fit=crop&w=1600&h=900&dpr=1',
+        'https://i.etsystatic.com/44950930/r/il/dc1f65/6155278277/il_794xN.6155278277_rxpg.jpg',
+        'https://cdn.displate.com/artwork/324x454/2025-02-24/7f4304e7-bab6-4fe8-9ed9-b21790c11f5f.jpg'
+    ];
+
+    let SENSITIVE_TERMS = [
+        'porn','xxx','adult','sex','nude','naked','erotic','boobs','breast','pussy','dick','cock','penis',
+        'vagina','tits','ass','butt','cum','hentai','pornhub','xvideos','xhamster','nsfw','18+','onlyfans',
+        'feces','fecal','shit','poop','caca','crap','stool','dung','excrement',
+        'urine','pee','piss','pissing','wetting','watersports',
+        'fetish','fetishes','fetiș','fisting','bdsm','s&m','sadomasochism',
+        'feet','footfetish','vore','scat','coprophilia','urophilia','kink',
+        'voyeur','bestiality','zoophilia',' incest','gore','blood','vomit','throwup','vomiting'
+    ];
+
+    const SENSITIVE_REGEX = [
+        /\/porn\//i, /\/adult\//i, /nsfw/i, /(\W|^)18(\+|plus)(\W|$)/i,
+        /pornhub/i, /xvideos/i, /xhamster/i, /onlyfans/i, /escort/i, /camgirl/i,
+        /scat/i, /fecal|feces|excrement|coproph/i, /urine|piss|wetting/i
+    ];
+
+    // Opțiuni runtime (valori mutabile)
+    let DEFAULT_MIN_DIM = 40;
+    let BLACKLIST_MIN_DIM = 20;
+    let SCAN_INTERVAL = 900;
+
+    // Fallback intern (SVG) generator
+    function makeTrapSVGMinimal() {
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="#f6f6fb"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#333" font-size="16">Trap image missing</text></svg>`;
+        return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    }
+
+    // TRAP_POOL construit din PINK_LIST (va fi suprascris din setări dacă există)
+    const USER_PINK = PINK_LIST.slice();
+    const TRAP_POOL = (function(){
+        const pool = [];
+        for (const u of USER_PINK) {
+            if (typeof u !== 'string') continue;
+            const t = u.trim();
+            if (!t) continue;
+            pool.push(t);
+        }
+        if (pool.length === 0) {
+            pool.push(makeTrapSVGMinimal());
+            console.warn('TRAP_POOL: no valid Pink List URLs found — using internal fallback SVG. Add valid URLs to PINK_LIST.');
+        }
+        return pool;
+    })();
+
+    const OVERLAY_CSS = `
+    .tm-adult-block-overlay { position: absolute; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.5); color:#fff; font-size:18px; cursor:pointer; z-index:2147483646; border-radius:6px; user-select:none; }
+    .tm-adult-block-wrapper { position: relative; display: inline-block; overflow: hidden; }
+    .tm-trap-img { display:block; width:100%; height:100%; object-fit:cover; cursor:pointer; pointer-events:auto; transition:opacity .2s ease; }
+    .tm-trap-lock { position:absolute; z-index:2147483647; right:6px; top:6px; background:rgba(0,0,0,0.6); color:#fff; border-radius:50%; width:36px; height:36px; display:flex;align-items:center;justify-content:center; font-size:18px; }
+    `;
+
+    document.head.appendChild(Object.assign(document.createElement('style'),{textContent:OVERLAY_CSS}));
+
+    // --- START: UI setări persistente (buton colț dreapta jos + panou cu localStorage) ---
+    const SETTINGS_KEY = '__tmAdultBlock_settings_v1';
+    const DEFAULT_SETTINGS = {
+      allowlist: ALLOWLIST.slice(),
+      blocklist: BLOCKLIST.slice(),
+      pink: TRAP_POOL.slice(),
+      sensitive: SENSITIVE_TERMS.slice(),
+      minDim: DEFAULT_MIN_DIM,
+      blackMinDim: BLACKLIST_MIN_DIM,
+      scanInterval: SCAN_INTERVAL
+    };
+
+    function loadSettings() {
+      try {
+        const raw = localStorage.getItem(SETTINGS_KEY);
+        if (!raw) return Object.assign({}, DEFAULT_SETTINGS);
+        const parsed = JSON.parse(raw);
+        return Object.assign({}, DEFAULT_SETTINGS, parsed);
+      } catch (e) { return Object.assign({}, DEFAULT_SETTINGS); }
+    }
+
+    function saveSettings(s) {
+      try {
+        localStorage.setItem(SETTINGS_KEY, JSON.stringify(s));
+        return true;
+      } catch (e) { console.warn('Could not save settings', e); return false; }
+    }
+
+    function applySettingsToRuntime(s) {
+      // mutate runtime arrays/values
+      ALLOWLIST.length = 0; s.allowlist.forEach(x=>ALLOWLIST.push(x));
+      BLOCKLIST.length = 0; s.blocklist.forEach(x=>BLOCKLIST.push(x));
+      SENSITIVE_TERMS.length = 0; s.sensitive.forEach(x=>SENSITIVE_TERMS.push(x));
+      // replace TRAP_POOL contents
+      while(TRAP_POOL.length) TRAP_POOL.pop();
+      if (Array.isArray(s.pink) && s.pink.length) {
+        s.pink.forEach(u=>TRAP_POOL.push(u));
+      } else {
+        TRAP_POOL.push(makeTrapSVGMinimal());
+      }
+      // numeric options
+      if (typeof s.minDim === 'number') { DEFAULT_MIN_DIM = s.minDim; }
+      if (typeof s.blackMinDim === 'number') { BLACKLIST_MIN_DIM = s.blackMinDim; }
+      if (typeof s.scanInterval === 'number') {
+        SCAN_INTERVAL = s.scanInterval;
+        // restart scanner interval via exposed helper
+        window.__tmAdultBlock && window.__tmAdultBlock._restartInterval && window.__tmAdultBlock._restartInterval(SCAN_INTERVAL);
+      }
+    }
+
+    function resetToDefaults() {
+      saveSettings(DEFAULT_SETTINGS);
+      applySettingsToRuntime(DEFAULT_SETTINGS);
+      return DEFAULT_SETTINGS;
+    }
+
+    const SETTINGS_CSS2 = `
+    .tm-settings-btn { position: fixed; right: 12px; bottom: 12px; z-index:2147483647; width:48px; height:48px; border-radius:24px; background:#111; color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.35); font-size:20px; border: none; }
+    .tm-settings-panel { position: fixed; right: 12px; bottom: 72px; z-index:2147483647; width:360px; max-width:calc(100% - 32px); background:#fff; color:#111; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.35); padding:12px; font-family:sans-serif; display:none; max-height:70vh; overflow:auto; }
+    .tm-settings-panel h4 { margin:0 0 8px 0; font-size:14px; }
+    .tm-settings-row { display:flex; align-items:center; gap:8px; margin:8px 0; }
+    .tm-settings-row input[type="text"], .tm-settings-row input[type="number"], .tm-settings-row textarea { flex:1; padding:6px 8px; border:1px solid #ddd; border-radius:6px; font-size:13px; }
+    .tm-settings-row button { padding:6px 8px; border-radius:6px; border:1px solid #bbb; background:#f6f6f8; cursor:pointer; font-size:13px; }
+    .tm-settings-note { font-size:12px; color:#666; margin-top:6px; }
+    .tm-settings-list { max-height:120px; overflow:auto; border:1px solid #eee; padding:6px; border-radius:6px; background:#fafafa; font-size:13px; }
+    .tm-settings-list div { display:flex; justify-content:space-between; gap:8px; padding:4px 2px; align-items:center; }
+    .tm-settings-list button { font-size:12px; padding:4px 6px; }
+    `;
+
+    document.head.appendChild(Object.assign(document.createElement('style'),{textContent:SETTINGS_CSS2}));
+
+    const settingsBtn2 = document.createElement('button');
+    settingsBtn2.className = 'tm-settings-btn';
+    settingsBtn2.title = 'Setări filtrare imagini';
+    settingsBtn2.innerHTML = '⚙️';
+    document.body.appendChild(settingsBtn2);
+
+    const panel = document.createElement('div');
+    panel.className = 'tm-settings-panel';
+    panel.innerHTML = `
+      <h4>Setări filtre imagini</h4>
+
+      <div><strong>Allowlist</strong></div>
+      <div class="tm-settings-row">
+        <input type="text" id="tm-allow-input" placeholder="adaugă,virgule,separate"/>
+        <button id="tm-add-allow">Adaugă</button>
+        <button id="tm-clear-allow">Şterge toate</button>
+      </div>
+      <div class="tm-settings-list" id="tm-allow-list"></div>
+
+      <div><strong>Blocklist</strong></div>
+      <div class="tm-settings-row">
+        <input type="text" id="tm-block-input" placeholder="adaugă,virgule,separate"/>
+        <button id="tm-add-block">Adaugă</button>
+        <button id="tm-clear-block">Şterge toate</button>
+      </div>
+      <div class="tm-settings-list" id="tm-block-list"></div>
+
+      <div><strong>Pink list (trap URLs)</strong></div>
+      <div class="tm-settings-row">
+        <input type="text" id="tm-pink-input" placeholder="https://..."/>
+        <button id="tm-add-pink">Adaugă</button>
+        <button id="tm-clear-pink">Şterge toate</button>
+      </div>
+      <div class="tm-settings-list" id="tm-pink-list"></div>
+
+      <div><strong>Sensitive terms</strong></div>
+      <div class="tm-settings-row">
+        <input type="text" id="tm-sens-input" placeholder="term1,term2"/>
+        <button id="tm-add-sens">Adaugă</button>
+        <button id="tm-clear-sens">Şterge toate</button>
+      </div>
+      <div class="tm-settings-list" id="tm-sens-list"></div>
+
+      <div><strong>Opţiuni scanare</strong></div>
+      <div class="tm-settings-row">
+        <label>minDim</label>
+        <input type="number" id="tm-min-dim" style="width:80px" min="1"/>
+        <label>blackMin</label>
+        <input type="number" id="tm-black-min" style="width:80px" min="1"/>
+      </div>
+      <div class="tm-settings-row">
+        <label>scanInterval(ms)</label>
+        <input type="number" id="tm-scan-interval" style="width:140px" min="100"/>
+        <button id="tm-save-options">Salvează opţiuni</button>
+      </div>
+
+      <div class="tm-settings-row">
+        <button id="tm-unblock-all">Deblochează toate</button>
+        <button id="tm-relaunch">Re-scan</button>
+        <button id="tm-reset-defaults">Reset defaults</button>
+      </div>
+
+      <div class="tm-settings-note">Setările se păstrează local (localStorage). Schimbările afectează imediat pagina curentă.</div>
+    `;
+    document.body.appendChild(panel);
+
+    settingsBtn2.addEventListener('click', (e)=>{ e.stopPropagation(); panel.style.display = panel.style.display === 'none' || !panel.style.display ? 'block' : 'none'; });
+    document.addEventListener('click', (e)=>{ if (!panel.contains(e.target) && e.target !== settingsBtn2) panel.style.display = 'none'; });
+
+    function renderList(containerId, arr, removeHandler) {
+      const c = document.getElementById(containerId);
+      c.innerHTML = '';
+      arr.forEach((it, idx) => {
+        const div = document.createElement('div');
+        const span = document.createElement('span');
+        span.textContent = it;
+        const btn = document.createElement('button');
+        btn.textContent = '✖';
+        btn.addEventListener('click', ()=> removeHandler(it, idx));
+        div.appendChild(span);
+        div.appendChild(btn);
+        c.appendChild(div);
+      });
+    }
+
+    function ensureArrayUnique(a){ return Array.from(new Set(a)); }
+
+    let settings = loadSettings();
+
+    function refreshUIFromSettings() {
+      settings = loadSettings();
+      renderList('tm-allow-list', settings.allowlist, (it)=>{ settings.allowlist = settings.allowlist.filter(x=>x!==it); saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings(); });
+      renderList('tm-block-list', settings.blocklist, (it)=>{ settings.blocklist = settings.blocklist.filter(x=>x!==it); saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings(); });
+      renderList('tm-pink-list', settings.pink, (it)=>{ settings.pink = settings.pink.filter(x=>x!==it); saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings(); });
+      renderList('tm-sens-list', settings.sensitive, (it)=>{ settings.sensitive = settings.sensitive.filter(x=>x!==it); saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings(); });
+
+      document.getElementById('tm-min-dim').value = settings.minDim;
+      document.getElementById('tm-black-min').value = settings.blackMinDim;
+      document.getElementById('tm-scan-interval').value = settings.scanInterval;
+    }
+
+    document.getElementById('tm-add-allow').addEventListener('click', ()=>{
+      const v = document.getElementById('tm-allow-input').value || '';
+      const items = v.split(',').map(s=>s.trim()).filter(Boolean);
+      settings.allowlist = ensureArrayUnique(settings.allowlist.concat(items));
+      saveSettings(settings); applySettingsToRuntime(settings); document.getElementById('tm-allow-input').value=''; refreshUIFromSettings();
+    });
+    document.getElementById('tm-clear-allow').addEventListener('click', ()=>{
+      settings.allowlist = []; saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings();
+    });
+
+    document.getElementById('tm-add-block').addEventListener('click', ()=>{
+      const v = document.getElementById('tm-block-input').value || '';
+      const items = v.split(',').map(s=>s.trim()).filter(Boolean);
+      settings.blocklist = ensureArrayUnique(settings.blocklist.concat(items));
+      saveSettings(settings); applySettingsToRuntime(settings); document.getElementById('tm-block-input').value=''; refreshUIFromSettings();
+    });
+    document.getElementById('tm-clear-block').addEventListener('click', ()=>{
+      settings.blocklist = []; saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings();
+    });
+
+    document.getElementById('tm-add-pink').addEventListener('click', ()=>{
+      const v = document.getElementById('tm-pink-input').value.trim();
+      if (!v) return;
+      settings.pink = ensureArrayUnique([v].concat(settings.pink));
+      saveSettings(settings); applySettingsToRuntime(settings); document.getElementById('tm-pink-input').value=''; refreshUIFromSettings();
+    });
+    document.getElementById('tm-clear-pink').addEventListener('click', ()=>{
+      settings.pink = []; saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings();
+    });
+
+    document.getElementById('tm-add-sens').addEventListener('click', ()=>{
+      const v = document.getElementById('tm-sens-input').value || '';
+      const items = v.split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);
+      settings.sensitive = ensureArrayUnique(settings.sensitive.concat(items));
+      saveSettings(settings); applySettingsToRuntime(settings); document.getElementById('tm-sens-input').value=''; refreshUIFromSettings();
+    });
+    document.getElementById('tm-clear-sens').addEventListener('click', ()=>{
+      settings.sensitive = []; saveSettings(settings); applySettingsToRuntime(settings); refreshUIFromSettings();
+    });
+
+    document.getElementById('tm-save-options').addEventListener('click', ()=>{
+      const minD = parseInt(document.getElementById('tm-min-dim').value,10) || DEFAULT_MIN_DIM;
+      const blackD = parseInt(document.getElementById('tm-black-min').value,10) || BLACKLIST_MIN_DIM;
+      const scanI = parseInt(document.getElementById('tm-scan-interval').value,10) || SCAN_INTERVAL;
+      settings.minDim = minD; settings.blackMinDim = blackD; settings.scanInterval = scanI;
+      saveSettings(settings);
+      applySettingsToRuntime(settings);
+      alert('Opţiuni salvate');
+    });
+
+    document.getElementById('tm-unblock-all').addEventListener('click', ()=>{
+      try { window.__tmAdultBlock && window.__tmAdultBlock.unblockAll(); alert('Toate imaginile deblocate temporar'); } catch(e){ alert('Eroare'); }
+    });
+    document.getElementById('tm-relaunch').addEventListener('click', ()=>{
+      try { window.__tmAdultBlock && window.__tmAdultBlock.relaunch(); alert('Re-scan efectuat'); } catch(e){ alert('Eroare'); }
+    });
+    document.getElementById('tm-reset-defaults').addEventListener('click', ()=>{
+      settings = resetToDefaults();
+      refreshUIFromSettings();
+      alert('Setările au fost resetate la implicit');
+    });
+
+    // expose helper to restart interval
+    window.__tmAdultBlock = window.__tmAdultBlock || {};
+    window.__tmAdultBlock._restartInterval = function(newInterval){
+      try {
+        if (window.__tmAdultBlock._intervalHandle) clearInterval(window.__tmAdultBlock._intervalHandle);
+        window.__tmAdultBlock._intervalHandle = setInterval(scanAndBlock, newInterval);
+      } catch(e){}
+    };
+
+    // initial apply and render
+    applySettingsToRuntime(settings);
+    refreshUIFromSettings();
+    if (window.__tmAdultBlock._intervalHandle) { clearInterval(window.__tmAdultBlock._intervalHandle); }
+    window.__tmAdultBlock._intervalHandle = setInterval(scanAndBlock, settings.scanInterval || SCAN_INTERVAL);
+    // --- END: UI setări persistente ---
+
+    // ----- Core helper functions -----
+    function domainMatches(list) { try { const host = location.host.toLowerCase(); return list.some(s => host.includes(s.toLowerCase())); } catch (e) { return false; } }
+
+    function matchesSensitiveText(text) { if (!text) return false; const t = text.toLowerCase(); return SENSITIVE_TERMS.some(term => t.includes(term)); }
+    function matchesSensitiveRegex(url) { if (!url) return false; return SENSITIVE_REGEX.some(r => r.test(url)); }
+    function filenameFromUrl(url) { try { const u = new URL(url, location.href); const parts = u.pathname.split('/'); return parts.pop() || parts.pop() || ''; } catch (e) { return ''; } }
+
+    function pickRandomTrap() { return TRAP_POOL[Math.floor(Math.random()*TRAP_POOL.length)]; }
+
+    function blockImage(img, reason) {
+        if (!img || img.__tm_adult_handled) return;
+        img.__tm_adult_handled = true;
+        img.__tm_adult_reason = reason || 'suspect';
+
+        const wrapper = document.createElement('span');
+        wrapper.className = 'tm-adult-block-wrapper';
+        const computedDisplay = getComputedStyle(img).display === 'block' ? 'block' : 'inline-block';
+        wrapper.style.display = computedDisplay;
+        wrapper.style.lineHeight = '0';
+        if (img.parentNode) img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+
+        const trap = document.createElement('img');
+        trap.className = 'tm-trap-img';
+        trap.src = pickRandomTrap();
+        trap.style.position = 'absolute';
+        trap.style.top = '0'; trap.style.left = '0';
+        trap.style.zIndex = 2147483645;
+        trap.style.width = (img.width ? img.width + 'px' : img.clientWidth + 'px');
+        trap.style.height = (img.height ? img.height + 'px' : img.clientHeight + 'px');
+        wrapper.appendChild(trap);
+
+        img.style.visibility = 'hidden';
+        img.style.pointerEvents = 'auto';
+
+        const lockBtn = document.createElement('div');
+        lockBtn.className = 'tm-trap-lock';
+        lockBtn.textContent = '🔒';
+        lockBtn.title = 'Imagine blocată (' + img.__tm_adult_reason + '). Click pentru a debloca/rehboca';
+        lockBtn.style.pointerEvents = 'auto';
+        wrapper.appendChild(lockBtn);
+
+        trap.addEventListener('click', (e) => {
+            e.stopPropagation();
+            revealImage(img, trap, lockBtn);
+        });
+
+        lockBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (img.style.visibility !== 'hidden') {
+                img.style.visibility = 'hidden';
+                trap.style.opacity = '1';
+                trap.style.pointerEvents = 'auto';
+                lockBtn.textContent = '🔒';
+                img.classList.remove('tm-adult-unlocked');
+                if (img.__tm_unlock_timeout) clearTimeout(img.__tm_unlock_timeout);
+            } else {
+                revealImage(img, trap, lockBtn);
+            }
+        });
+
+        const ro = new ResizeObserver(() => {
+            trap.style.width = (img.width ? img.width + 'px' : img.clientWidth + 'px');
+            trap.style.height = (img.height ? img.height + 'px' : img.clientHeight + 'px');
+            lockBtn.style.right = '6px';
+            lockBtn.style.top = '6px';
+        });
+        ro.observe(img);
+        img.__tm_ro = ro;
+        img.__tm_trap = trap;
+        img.__tm_lockBtn = lockBtn;
+    }
+
+    function revealImage(img, trap, lockBtn) {
+        try {
+            img.style.visibility = '';
+            trap.style.opacity = '0';
+            trap.style.pointerEvents = 'none';
+            lockBtn.textContent = '🔓';
+            img.classList.add('tm-adult-unlocked');
+            if (img.__tm_unlock_timeout) clearTimeout(img.__tm_unlock_timeout);
+            img.__tm_unlock_timeout = setTimeout(() => {
+                img.style.visibility = 'hidden';
+                trap.style.opacity = '1';
+                trap.style.pointerEvents = 'auto';
+                lockBtn.textContent = '🔒';
+                img.classList.remove('tm-adult-unlocked');
+            }, 45000);
+        } catch (e) { /* ignore */ }
+    }
+
+    function analyzeSkinToneHeuristic(img, minSkinRatio=0.18) {
+        try {
+            const w = img.naturalWidth || img.width || img.clientWidth;
+            const h = img.naturalHeight || img.height || img.clientHeight;
+            if (!w || !h) return false;
+            const cw = Math.min(w, 360), ch = Math.min(h, 360);
+            const canvas = document.createElement('canvas');
+            canvas.width = cw; canvas.height = ch;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, cw, ch);
+            const data = ctx.getImageData(0,0,cw,ch).data;
+            let skin = 0, total = 0;
+            for (let i=0;i<data.length;i+=4) {
+                const r = data[i], g = data[i+1], b = data[i+2];
+                const rg = r / (g+1), rb = r / (b+1);
+                if (r > 80 && g > 30 && b > 15 && rg > 1.1 && rb > 0.9 && (r - g) > 10) skin++;
+                total++;
+                if (total > 3000) break;
+            }
+            return total>0 && (skin/total) > minSkinRatio;
+        } catch (e) { return false; }
+    }
+
+    function isImageSensitive(img) {
+        try {
+            if (!img) return false;
+            const src = img.currentSrc || img.src || '';
+            const alt = img.alt || img.getAttribute('aria-label') || '';
+            const title = img.title || '';
+            const fname = filenameFromUrl(src);
+            const w = img.naturalWidth || img.width || img.clientWidth;
+            const h = img.naturalHeight || img.height || img.clientHeight;
+            if (domainMatches(ALLOWLIST)) return false;
+            if (matchesSensitiveText(src) || matchesSensitiveText(alt) || matchesSensitiveText(title) || matchesSensitiveText(fname)) return 'term-match';
+            if (matchesSensitiveRegex(src)) return 'regex-match';
+            const parent = img.closest && img.closest('a,figure,article,div,section');
+            const parentText = parent ? (parent.innerText || '') : '';
+            if (matchesSensitiveText(parentText)) return 'parent-text';
+            const minDim = domainMatches(BLOCKLIST) ? BLACKLIST_MIN_DIM : DEFAULT_MIN_DIM;
+            if (w && h && (w < minDim || h < minDim)) {
+                if (matchesSensitiveText(src) || matchesSensitiveRegex(src)) return 'small-term';
+                return false;
+            }
+            const skinRatio = domainMatches(BLOCKLIST) ? 0.15 : 0.18;
+            if (analyzeSkinToneHeuristic(img, skinRatio)) return 'skin-heuristic';
+            if (/thumb|preview|gallery|file\/preview|previewer/i.test(src)) return 'preview-url';
+            return false;
+        } catch (e) { return false; }
+    }
+
+    function scanAndBlock() {
+        if (domainMatches(ALLOWLIST)) return;
+        const imgs = Array.from(document.images);
+        for (const img of imgs) {
+            if (img.__tm_adult_handled) continue;
+            const res = isImageSensitive(img);
+            if (res) blockImage(img, res);
+        }
+    }
+
+    scanAndBlock();
+    const intervalId = setInterval(scanAndBlock, SCAN_INTERVAL);
+
+    const mo = new MutationObserver((mutations) => {
+        if (domainMatches(ALLOWLIST)) return;
+        for (const m of mutations) {
+            if (m.addedNodes && m.addedNodes.length) {
+                for (const n of m.addedNodes) {
+                    if (n.tagName === 'IMG') {
+                        if (!n.__tm_adult_handled) {
+                            const res = isImageSensitive(n);
+                            if (res) blockImage(n, res);
+                        }
+                    } else if (n.querySelectorAll) {
+                        const nested = n.querySelectorAll('img');
+                        nested.forEach(el => {
+                            if (!el.__tm_adult_handled) {
+                                const res = isImageSensitive(el);
+                                if (res) blockImage(el, res);
+                            }
+                        });
+                    }
+                }
+            }
+        }
+    });
+    mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+    window.addEventListener('beforeunload', () => { clearInterval(intervalId); mo.disconnect(); if (window.__tmAdultBlock && window.__tmAdultBlock._intervalHandle) clearInterval(window.__tmAdultBlock._intervalHandle); });
+
+    // API runtime pentru gestionarea Pink list și alte opțiuni
+    window.__tmAdultBlock = Object.assign(window.__tmAdultBlock || {}, {
+        addAllow: (d) => { ALLOWLIST.push(d); },
+        addBlock: (d) => { BLOCKLIST.push(d); },
+        addTerm: (t) => { SENSITIVE_TERMS.push(t.toLowerCase()); },
+        removeTerm: (t) => { const i = SENSITIVE_TERMS.indexOf(t.toLowerCase()); if (i>=0) SENSITIVE_TERMS.splice(i,1); },
+        unblockAll: () => { document.querySelectorAll('.tm-trap-lock').forEach(o=>o.click()); },
+        relaunch: () => { scanAndBlock(); },
+        addPink: (url) => { if (typeof url === 'string' && url.trim()) { TRAP_POOL.unshift(url.trim()); return true; } return false; },
+        removePink: (url) => { const i = TRAP_POOL.indexOf(url); if (i>=0) { TRAP_POOL.splice(i,1); return true; } return false; },
+        listPink: () => TRAP_POOL.slice(0, PINK_LIST.length),
+        listAllTraps: () => TRAP_POOL.slice()
+    });
+})();

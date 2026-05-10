@@ -1,0 +1,317 @@
+// ==UserScript==
+// @name         YouTube Auto CC -> Auto-translate Română (tuned, prefer lowercase)
+// @namespace    https://example.local/
+// @version      1.18
+// @description  Enable CC once per session, then auto-translate -> română with timing, language-indicator detection, manual-reset handling, and preference for 'română' lowercase option.
+// @match        https://www.youtube.com/*
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @run-at       document-idle
+// ==/UserScript==
+
+(function(){'use strict';
+const MENU_OPEN_DELAY=420, RETRY_INTERVAL=1000, MAX_RETRIES=16;
+let enabled=GM_getValue('enabled',true);
+let ccEnabledFlag = GM_getValue('ccEnabled', false);
+let DEBUG=false;
+
+// per-video failure flag to avoid infinite retries on same video
+const failedVideos = new Map();
+
+function log(...a){ if(DEBUG) console.log('[YT-CC-RO]',...a); }
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+function clickEl(el){ if(!el) return; try{ el.dispatchEvent(new MouseEvent('pointerover',{bubbles:true})); el.dispatchEvent(new MouseEvent('pointerdown',{bubbles:true})); el.dispatchEvent(new MouseEvent('pointerup',{bubbles:true})); }catch(e){} try{ el.click(); }catch(e){} }
+function sendC(player){ try{ const kd=new KeyboardEvent('keydown',{key:'c',code:'KeyC',keyCode:67,which:67,bubbles:true,cancelable:true}); const ku=new KeyboardEvent('keyup',{key:'c',code:'KeyC',keyCode:67,which:67,bubbles:true,cancelable:true}); (player||document).dispatchEvent(kd); (player||document).dispatchEvent(ku);}catch(e){} }
+function findSettings(){ return document.querySelector('.ytp-settings-button, button[aria-label="Settings"], button[aria-label="Setări"]'); }
+const menuSel='.ytp-panel-menu .ytp-menuitem, .ytp-panel .ytp-menuitem, .ytp-settings-menu .ytp-menuitem';
+
+function equalsText(el, text){ if(!el) return false; const t=(el.innerText||'').trim(); return t===text || t.toLowerCase()===text.toLowerCase(); }
+function includesText(el, text){ if(!el) return false; const t=(el.innerText||'').trim(); return t.toLowerCase().includes(text.toLowerCase()); }
+
+function findScrollContainer(sampleEl){
+  if(!sampleEl) return null;
+  let el=sampleEl;
+  for(let i=0;i<8;i++){
+    if(!el) break;
+    const overflowY=getComputedStyle(el).overflowY;
+    if(overflowY==='auto' || overflowY==='scroll') return el;
+    el=el.parentElement;
+  }
+  return null;
+}
+
+async function scrollAndFindExact(targetTexts, sample){
+  const sel = menuSel;
+  let nodes=Array.from(document.querySelectorAll(sel));
+  for(const n of nodes){ for(const t of targetTexts){ if(equalsText(n,t)) return n; } }
+  const sc = findScrollContainer(sample||nodes[0]);
+  if(!sc) return null;
+  const step = Math.max(120, Math.floor(sc.clientHeight*0.6));
+  sc.scrollTop = 0; await sleep(140);
+  for(let i=0;i<30;i++){
+    sc.scrollTop += step; await sleep(180);
+    nodes=Array.from(document.querySelectorAll(sel));
+    for(const n of nodes){ for(const t of targetTexts){ if(equalsText(n,t)) return n; } }
+  }
+  return null;
+}
+
+function containsOromoLike(el){
+  if(!el) return false;
+  const t=(el.innerText||'').toLowerCase();
+  if(t.includes('oromo') || t.includes(' oro') || t.includes('oro ' ) || t.match(/\bom\b/)) return true;
+  return false;
+}
+
+const TARGET_LANGS = ['română','Română','Romanian'];
+
+function getVideoId(){
+  const m = location.search.match(/[?&]v=([^&]+)/);
+  return m?m[1]:(location.pathname.match(/\/watch\/([A-Za-z0-9_-]+)/)||[])[1]||location.pathname;
+}
+
+function subtitlesVisible(){
+  const selCandidates = [
+    '.ytp-caption-segment',
+    '.caption-window',
+    '.ytp-subtitles-text',
+    '.captions-text',
+    '[aria-live] .ytp-caption-segment'
+  ];
+  for(const s of selCandidates){
+    const el = document.querySelector(s);
+    if(el){
+      const r = el.getBoundingClientRect();
+      if(r.width>6 && r.height>6 && el.innerText && el.innerText.trim().length>0) return true;
+    }
+  }
+  const captionContainers = Array.from(document.querySelectorAll('.ytp-caption-window, .caption-window, .ytp-subtitles-container'));
+  for(const c of captionContainers){
+    if(c && c.innerText && c.innerText.trim().length>0){
+      const r = c.getBoundingClientRect();
+      if(r.width>6 && r.height>6) return true;
+    }
+  }
+  return false;
+}
+
+function findCCUIButton(){
+  return document.querySelector('.ytp-subtitles-button, button[aria-label*="Captions"], button[aria-label*="Subtitr"]');
+}
+
+function ccUIButtonIsOn(btn){
+  if(!btn) return false;
+  const ap = btn.getAttribute('aria-pressed');
+  if(ap!==null) return ap==='true';
+  const cls = btn.className||'';
+  if(cls.toLowerCase().includes('on')||cls.toLowerCase().includes('enabled')) return true;
+  return false;
+}
+
+async function ensureCCUIButtonOnOnce(){
+  if(ccEnabledFlag) return true;
+  const btn = findCCUIButton();
+  if(!btn) { log('no CC UI button'); return false; }
+  if(ccUIButtonIsOn(btn)){
+    ccEnabledFlag=true; GM_setValue('ccEnabled', true); log('CC UI already on'); return true;
+  }
+  clickEl(btn); await sleep(700);
+  if(ccUIButtonIsOn(btn) || subtitlesVisible()){
+    ccEnabledFlag=true; GM_setValue('ccEnabled', true); log('CC UI turned on'); return true;
+  }
+  const player=document.querySelector('video')||document.querySelector('.html5-video-player');
+  if(player){ sendC(player); await sleep(500); if(subtitlesVisible()){ ccEnabledFlag=true; GM_setValue('ccEnabled', true); log('CC on after sendC'); return true; } }
+  return false;
+}
+
+async function ensureCCEnabledOnce(){
+  if(ccEnabledFlag) { log('cc already enabled in storage'); return; }
+  const on = await ensureCCUIButtonOnOnce();
+  if(on) return;
+  const player=document.querySelector('video')||document.querySelector('.html5-video-player');
+  if(!player) return;
+  const settings=findSettings();
+  if(!settings){
+    sendC(player);
+    ccEnabledFlag = true; GM_setValue('ccEnabled', true);
+    log('sent c (no settings found), set ccEnabled');
+    return;
+  }
+  clickEl(settings); await sleep(MENU_OPEN_DELAY);
+  const items=Array.from(document.querySelectorAll(menuSel));
+  const sub = items.find(mi=>{ const t=(mi.innerText||'').toLowerCase(); return t.includes('subtit')||t.includes('capt')||t.includes('subtitr')||t.includes('captions')||t.includes('subtitles'); });
+  if(sub){
+    clickEl(sub); await sleep(MENU_OPEN_DELAY);
+    const st=findSettings(); if(st) clickEl(st);
+    ccEnabledFlag = true; GM_setValue('ccEnabled', true);
+    log('opened subtitles once and set ccEnabled');
+    return;
+  }
+  sendC(player);
+  ccEnabledFlag = true; GM_setValue('ccEnabled', true);
+  log('fallback sent c and set ccEnabled');
+}
+
+function settingsOrSubtitlesShowsLanguage(lang){
+  const ccBtn = findCCUIButton();
+  if(ccBtn){
+    const al = (ccBtn.getAttribute('aria-label')||'').toLowerCase();
+    if(al.includes(lang.toLowerCase())) return true;
+    if(ccBtn.innerText && ccBtn.innerText.toLowerCase().includes(lang.toLowerCase())) return true;
+  }
+  const stBtn = findSettings();
+  if(stBtn){
+    const al = (stBtn.getAttribute('aria-label')||'').toLowerCase();
+    if(al.includes(lang.toLowerCase())) return true;
+    if(stBtn.innerText && stBtn.innerText.toLowerCase().includes(lang.toLowerCase())) return true;
+  }
+  return false;
+}
+
+// New: prefer lowercase 'română' first, then fall back to other TARGET_LANGS
+async function findPreferredLanguageCandidate(){
+  const nodes=Array.from(document.querySelectorAll(menuSel));
+  // first pass: exact 'română' lowercase
+  for(const n of nodes){
+    const txt=(n.innerText||'').trim();
+    if(txt==='română') return n;
+  }
+  // second pass: any of TARGET_LANGS (case-insensitive)
+  for(const n of nodes){
+    const txt=(n.innerText||'').trim().toLowerCase();
+    if(TARGET_LANGS.map(x=>x.toLowerCase()).includes(txt)) return n;
+  }
+  // try scroll search preferring lowercase exact
+  const foundLower = await scrollAndFindExact(['română'], document.querySelector(menuSel));
+  if(foundLower) return foundLower;
+  const foundAny = await scrollAndFindExact(TARGET_LANGS, document.querySelector(menuSel));
+  return foundAny;
+}
+
+// Primary flow adjusted to not toggle CC repeatedly; includes visibility check + one retry + longer wait
+async function flowStrict(retries=0){
+  log('flowStrict start',retries);
+  if(retries>MAX_RETRIES) return false;
+  const vid = getVideoId();
+  if(failedVideos.get(vid)) { log('previously failed for this video, skipping'); return false; }
+
+  const settings=findSettings();
+  if(!settings){ log('no settings'); await sleep(RETRY_INTERVAL); return flowStrict(retries+1); }
+  clickEl(settings); await sleep(MENU_OPEN_DELAY);
+
+  let items=Array.from(document.querySelectorAll(menuSel));
+  let entry = items.find(mi=>{
+    const t=(mi.innerText||'').toLowerCase();
+    return t.includes('subtit')||t.includes('capt')||t.includes('subtitr')||t.includes('captions')||t.includes('subtitles')||t.includes('traduc')||t.includes('translate')||t.includes('traduce');
+  });
+  if(!entry){ clickEl(settings); await sleep(120); log('no entry'); await sleep(RETRY_INTERVAL); return flowStrict(retries+1); }
+  clickEl(entry); await sleep(MENU_OPEN_DELAY);
+
+  // ensure CC UI is on before opening auto-translate options
+  await ensureCCUIButtonOnOnce();
+
+  // find Auto-translate entry
+  items=Array.from(document.querySelectorAll(menuSel));
+  let auto = items.find(mi=>{
+    const t=(mi.innerText||'').toLowerCase();
+    return t.includes('traducere automată')||t.includes('traduce automat')||t.includes('auto-translate')||t.includes('translate automatically')||t.includes('traducere automata')||t.includes('autotranslate');
+  });
+  if(!auto){
+    auto = items.find(mi=>{ const t=(mi.innerText||'').toLowerCase(); return t.includes('traduc')||t.includes('translate')||t.includes('traduce'); });
+  }
+  if(!auto){
+    const foundAuto = await scrollAndFindExact(['Traducere automată','traduce automat','Auto-translate','Translate automatically','Traducere automata','autotranslate'], document.querySelector(menuSel));
+    if(foundAuto) auto = foundAuto;
+  }
+  if(!auto){ const st=findSettings(); if(st) clickEl(st); log('no auto found'); await sleep(RETRY_INTERVAL); return flowStrict(retries+1); }
+  clickEl(auto); await sleep(MENU_OPEN_DELAY);
+
+  // attempt selection + verify visible captions; allow one retry
+  let didRetry=false;
+  const trySelect = async ()=>{
+    const langCandidate = await findPreferredLanguageCandidate();
+    if(langCandidate && !containsOromoLike(langCandidate)){
+      clickEl(langCandidate); await sleep(MENU_OPEN_DELAY);
+      // increased wait to accommodate slow videos
+      await sleep(1300);
+      const st=findSettings(); if(st) clickEl(st);
+      log('selected',langCandidate.innerText);
+      // check language indicator in UI as well as visible captions
+      if(subtitlesVisible() || settingsOrSubtitlesShowsLanguage('română') || settingsOrSubtitlesShowsLanguage('romanian')){
+        log('captions visible or language indicator present after select');
+        return true;
+      }else{
+        log('no visible captions or indicator after select');
+        return false;
+      }
+    }
+    // fallback scan (should rarely reach here because findPreferredLanguageCandidate covers)
+    const nodes=Array.from(document.querySelectorAll(menuSel));
+    for(const n of nodes){
+      const txt=(n.innerText||'').trim();
+      if((txt==='română' || txt==='Română' || txt.toLowerCase()==='romanian') && !containsOromoLike(n)){
+        clickEl(n); await sleep(MENU_OPEN_DELAY);
+        await sleep(1300);
+        const st=findSettings(); if(st) clickEl(st);
+        log('selected fallback', txt);
+        if(subtitlesVisible() || settingsOrSubtitlesShowsLanguage('română') || settingsOrSubtitlesShowsLanguage('romanian')){
+          log('captions visible or indicator present after fallback select');
+          return true;
+        }else{
+          log('no visible captions or indicator after fallback select');
+          return false;
+        }
+      }
+    }
+    return false;
+  };
+
+  let ok = await trySelect();
+  if(!ok && !didRetry){
+    didRetry=true;
+    log('retrying selection once');
+    await sleep(350);
+    const s=findSettings(); if(s) clickEl(s); await sleep(MENU_OPEN_DELAY);
+    items=Array.from(document.querySelectorAll(menuSel));
+    entry = items.find(mi=>{ const t=(mi.innerText||'').toLowerCase(); return t.includes('subtit')||t.includes('capt')||t.includes('subtitr')||t.includes('captions')||t.includes('subtitles')||t.includes('traduc')||t.includes('translate')||t.includes('traduce'); });
+    if(!entry){ const st=findSettings(); if(st) clickEl(st); log('no entry on retry'); await sleep(RETRY_INTERVAL); return flowStrict(retries+1); }
+    clickEl(entry); await sleep(MENU_OPEN_DELAY);
+    items=Array.from(document.querySelectorAll(menuSel));
+    auto = items.find(mi=>{ const t=(mi.innerText||'').toLowerCase(); return t.includes('traducere automată')||t.includes('traduce automat')||t.includes('auto-translate')||t.includes('translate automatically')||t.includes('traducere automata')||t.includes('autotranslate'); });
+    if(!auto){
+      auto = items.find(mi=>{ const t=(mi.innerText||'').toLowerCase(); return t.includes('traduc')||t.includes('translate')||t.includes('traduce'); });
+    }
+    if(auto){ clickEl(auto); await sleep(MENU_OPEN_DELAY); }
+    ok = await trySelect();
+  }
+
+  if(!ok){
+    failedVideos.set(vid, true);
+    log('marking video as failedOnce');
+  }
+  return ok;
+}
+
+async function flow(){
+  if(!enabled) return;
+  try{
+    await ensureCCEnabledOnce();
+    return await flowStrict();
+  }catch(e){ log('flow error',e); return false; }
+}
+
+// Watcher: also listen for manual user changes to reset failure flags
+let lastPath=location.pathname+location.search; let attempts=0;
+async function watcher(){ const v=document.querySelector('video'); if(!v){ attempts=0; return;} const cur=location.pathname+location.search; if(cur!==lastPath){ lastPath=cur; attempts=0; } 
+  const vid = getVideoId();
+  const ccBtn = findCCUIButton();
+  if(ccBtn && ccUIButtonIsOn(ccBtn) && settingsOrSubtitlesShowsLanguage('română')){
+    if(failedVideos.get(vid)){ failedVideos.delete(vid); log('user changed CC/lang manually — cleared failure flag'); flow().catch(()=>{}); }
+  }
+  if(attempts<6){ attempts++; await sleep(900+attempts*120); flow().catch(()=>{});} 
+}
+setInterval(watcher,1200); setTimeout(watcher,1400);
+
+window.YTAutoTranslateRo={forceFlow:flow, enableDebug:()=>{DEBUG=true;}, disableDebug:()=>{DEBUG=false;}, resetCCFlag:()=>{ ccEnabledFlag=false; GM_setValue('ccEnabled', false); }, resetFailures:()=>{ failedVideos.clear(); }};
+console.log('YouTube Auto CC -> Auto-translate Română (tuned, prefer lowercase) loaded');
+})();

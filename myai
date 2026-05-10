@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Loky/Nyu Chat — Search-Only
+// @name         Loky/Nyu Chat — Search-Only (final)
 // @namespace    http://tampermonkey.net/
-// @version      1.0
-// @description  Afișează widgetul Lucy/Nyu Chat doar pe paginile motoarelor de căutare (Google, Bing, DuckDuckGo, Yahoo, Brave)
+// @version      1.2
+// @description  Widget Lucy/Nyu Chat doar pe paginile motoarelor de căutare; păstrează 20 mesaje; suportă comenzi text și buton pentru ștergere (inclusiv "șterge mesaje").
 // @match        *://*/*
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -90,8 +90,11 @@
         <div class="lcb-window" id="lcb-window">
             <div class="lcb-header" id="lcb-header">
                 <img class="lcb-icon" src="https://assets.mycast.io/actor_images/actor-lucy-elfen-lied-1121936_large.jpg" alt="icon"/>
-                <span class="lcb-title">Local Chat Bot</span>
-                <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+                <span class="lcb-title">Lucy/Nyu Chat</span>
+                <div class="lcb-controls">
+                    <button id="lcb-clear-btn" class="lcb-clear" title="Șterge toate mesajele">🗑️</button>
+                    <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+                </div>
             </div>
             <div class="lcb-body" id="lcb-body"></div>
             <form id="lcb-form" class="lcb-form">
@@ -102,17 +105,14 @@
     `;
     document.body.appendChild(container);
 
-    // Schimbă titlul și atributul alt pentru icon
-    const titleEl = document.querySelector('#local-chat-bot .lcb-title');
-    if (titleEl) titleEl.textContent = 'Lucy/Nyu Chat';
-    const iconEl = document.querySelector('#local-chat-bot .lcb-icon');
-    if (iconEl) iconEl.alt = 'Lucy/Nyu icon';
-
     GM_addStyle(`
         #local-chat-bot .lcb-window { position: fixed; right: 20px; bottom: 20px; width: 360px; max-width: 86%; background: #fff0f6; border: 1px solid #ffc0de; border-radius: 12px; box-shadow: 0 8px 24px rgba(255,105,180,0.12); font-family: Arial, sans-serif; z-index: 999999; transition: width .18s ease, height .18s ease; }
         .lcb-header { display:flex; align-items:center; gap:8px; padding:8px 10px; background:linear-gradient(90deg,#ff9acb,#ff77b8); color:#fff; border-top-left-radius:12px;border-top-right-radius:12px; cursor: default; transition: padding .18s ease; }
         .lcb-icon { width:36px; height:36px; border-radius:6px; object-fit:cover; border:2px solid rgba(255,255,255,0.6); transition: width .18s ease, height .18s ease, margin .18s ease, opacity .18s ease; }
         .lcb-title { font-weight:700; font-size:14px; flex:1; transition: opacity .18s ease; }
+        .lcb-controls { display:flex; gap:6px; align-items:center; }
+        .lcb-clear { background:transparent; border:none; color:#fff; font-size:16px; cursor:pointer; width:36px; height:36px; border-radius:6px; }
+        .lcb-clear:hover { background: rgba(255,255,255,0.12); }
         .lcb-minimize { background:transparent; border:none; color:#fff; font-size:18px; line-height:1; width:32px; height:28px; cursor:pointer; border-radius:50%; display:flex; align-items:center; justify-content:center; }
         .lcb-minimize.compact { width:40px; height:40px; border-radius:50%; background:#ff4da6; font-weight:700; font-size:20px; box-shadow: 0 6px 18px rgba(255,77,166,0.12); }
         .lcb-minimize:hover { background: rgba(0,0,0,0.12); }
@@ -146,16 +146,23 @@
     const form = document.getElementById('lcb-form');
     const input = document.getElementById('lcb-input');
     const minBtn = document.getElementById('lcb-minimize-btn');
+    const clearBtn = document.getElementById('lcb-clear-btn');
     const lcbWindow = document.getElementById('lcb-window');
     const lcbHeader = document.getElementById('lcb-header');
 
-    function trimMessages(max = 5) {
+    // Trim messages: păstrează până la 20 mesaje
+    function trimMessages(max = 20) {
         const msgs = bodyDiv.querySelectorAll('.lcb-msg');
         while (msgs.length > max) {
             const first = bodyDiv.querySelector('.lcb-msg');
             if (!first) break;
             first.remove();
         }
+    }
+
+    // Șterge toate mesajele
+    function clearAllMessages() {
+        bodyDiv.innerHTML = '';
     }
 
     function applyAnimationsToElement(el, message) {
@@ -176,14 +183,36 @@
         div.textContent = text;
         bodyDiv.appendChild(div);
         applyAnimationsToElement(div, text);
-        trimMessages(5);
+        trimMessages(20);
         bodyDiv.scrollTop = bodyDiv.scrollHeight;
     }
 
+    // Clear button behavior
+    clearBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!confirm('Ștergi toate mesajele?')) return;
+        clearAllMessages();
+        appendMessage('Toate mesajele au fost șterse.', 'bot');
+    });
+
+    // Form submit: suport text commands și aliasuri pentru ștergere
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const msg = input.value.trim();
         if (!msg) return;
+
+        const clearCommands = ['sterge mesaje', 'șterge mesaje', 'sterge-chat', 'sterge chat', 'clear messages', 'clear'];
+        if (clearCommands.includes(msg.toLowerCase())) {
+            appendMessage(msg, 'user');
+            setTimeout(() => {
+                clearAllMessages();
+                appendMessage('Toate mesajele au fost șterse.', 'bot');
+            }, 200);
+            input.value = '';
+            input.focus();
+            return;
+        }
+
         appendMessage(msg, 'user');
         const reply = getResponse(msg);
         setTimeout(() => appendMessage(reply, 'bot'), 300);
@@ -230,7 +259,8 @@
             setTimeout(() => appendMessage(reply, 'bot'), 200);
         },
         addRule: (pattern, response) => { rules.unshift([pattern, response]); },
-        setForceLang: (lang) => { config.forceLang = lang; }
+        setForceLang: (lang) => { config.forceLang = lang; },
+        clear: clearAllMessages
     };
 
     input.focus();

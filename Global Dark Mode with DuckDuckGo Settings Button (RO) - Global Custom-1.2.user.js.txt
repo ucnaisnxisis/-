@@ -1,0 +1,462 @@
+// ==UserScript==
+// @name         Global Dark Mode with DuckDuckGo Settings Button (RO) - Global Custom
+// @namespace    http://tampermonkey.net/
+// @version      1.2
+// @description  Dark mode global cu buton de setări pe DuckDuckGo; suport culori personalizate globale și per-site; UI în română; include roz în paletă.
+// @author       You
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // --- CONFIG (bază originală) ---
+    const WHITELIST = [
+        // "example.com"
+    ];
+    const BLACKLIST = [
+        // "example.com"
+    ];
+    const DEFAULT_DARK_CSS = `
+        html.dark-mode {
+            background: #0b0b0b !important;
+            color: #e6e6e6 !important;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        html.dark-mode img, html.dark-mode video, html.dark-mode svg {
+            filter: none !important;
+        }
+        html.dark-mode iframe, html.dark-mode embed { filter: none !important; }
+        html.dark-mode pre, html.dark-mode code, html.dark-mode kbd {
+            background-color: rgba(0,0,0,0.6) !important;
+            color: #f5f5f5 !important;
+        }
+        html.dark-mode a { color: #6bb8ff !important; }
+        html.dark-mode a:visited { color: #8aa8d9 !important; }
+        html.dark-mode table { background-color: transparent !important; color: #ddd !important; }
+        html.dark-mode input, html.dark-mode textarea, html.dark-mode select, html.dark-mode button {
+            background-color: #111 !important;
+            color: #eee !important;
+            border-color: rgba(255,255,255,0.08) !important;
+        }
+        html.dark-mode body, html.dark-mode body * { background: transparent !important; color: inherit !important; }
+    `;
+
+    // --- END CONFIG ---
+
+    // Helpers
+    function matchesList(list) {
+        try {
+            const host = location.hostname.toLowerCase();
+            for (let p of list) {
+                if (!p) continue;
+                p = p.toLowerCase().replace(/^https?:\/\//, '').split('/')[0];
+                if (host === p || host.endsWith('.' + p) || host.indexOf(p) !== -1) return true;
+            }
+        } catch (e) {}
+        return false;
+    }
+
+    // Style element handling
+    const STYLE_ID = 'tm-darkmode-style';
+    let styleEl = document.createElement('style');
+    styleEl.id = STYLE_ID;
+    styleEl.textContent = DEFAULT_DARK_CSS;
+    try { document.documentElement.appendChild(styleEl); } catch (e) {}
+
+    // localStorage keys
+    const LS_PREFIX = 'tm_dark_';
+    function lsKeyHost(k) { return LS_PREFIX + (location.hostname || 'global') + '_' + k; }
+    const GLOBAL_KEY = LS_PREFIX + 'global_override';
+
+    // persisted settings structure per hostname/global:
+    // { mode: 'auto'|'light'|'dark'|'custom', bg: '#xxxxxx', text: '#xxxxxx' }
+    function getOverridePerSite() {
+        try {
+            const v = localStorage.getItem(lsKeyHost('override'));
+            return v ? JSON.parse(v) : null;
+        } catch (e) { return null; }
+    }
+    function setOverridePerSite(obj) {
+        try {
+            if (!obj) localStorage.removeItem(lsKeyHost('override'));
+            else localStorage.setItem(lsKeyHost('override'), JSON.stringify(obj));
+        } catch (e) {}
+    }
+    function getGlobalOverride() {
+        try {
+            const v = localStorage.getItem(GLOBAL_KEY);
+            return v ? JSON.parse(v) : null;
+        } catch (e) { return null; }
+    }
+    function setGlobalOverride(obj) {
+        try {
+            if (!obj) localStorage.removeItem(GLOBAL_KEY);
+            else localStorage.setItem(GLOBAL_KEY, JSON.stringify(obj));
+        } catch (e) {}
+    }
+
+    // Custom color application
+    function applyCustomColors(bg, text) {
+        const css = `
+            html.custom-color {
+                background: ${bg} !important;
+                color: ${text} !important;
+            }
+            html.custom-color img, html.custom-color video, html.custom-color svg { filter: none !important; }
+            html.custom-color a { color: ${adjustLinkColor(text)} !important; }
+            html.custom-color body, html.custom-color body * { background: transparent !important; color: inherit !important; }
+        `;
+        styleEl.textContent = DEFAULT_DARK_CSS + '\n' + css;
+    }
+    function adjustLinkColor(textColor) {
+        return '#6bb8ff';
+    }
+
+    function setDarkEnabled(enable) {
+        if (enable) {
+            document.documentElement.classList.add('dark-mode');
+            document.documentElement.classList.remove('custom-color');
+            try { document.documentElement.style.colorScheme = 'dark'; } catch(e){}
+        } else {
+            document.documentElement.classList.remove('dark-mode', 'custom-color');
+            try { document.documentElement.style.colorScheme = 'light'; } catch(e){}
+        }
+    }
+    function setLightEnabled() {
+        document.documentElement.classList.remove('dark-mode', 'custom-color');
+        try { document.documentElement.style.colorScheme = 'light'; } catch(e){}
+    }
+    function setCustomEnabled(bg, text) {
+        document.documentElement.classList.remove('dark-mode');
+        document.documentElement.classList.add('custom-color');
+        applyCustomColors(bg, text);
+        try { document.documentElement.style.colorScheme = 'light'; } catch(e){}
+    }
+
+    // Decision logic:
+    // 1) per-site override -> 2) whitelist -> 3) blacklist -> 4) global override -> 5) system pref -> 6) fallback dark
+    function decideAndApply() {
+        const per = getOverridePerSite();
+        if (per && per.mode) {
+            if (per.mode === 'light') { setLightEnabled(); return; }
+            if (per.mode === 'dark') { setDarkEnabled(true); return; }
+            if (per.mode === 'custom') { setCustomEnabled(per.bg || '#0b0b0b', per.text || '#e6e6e6'); return; }
+        }
+        if (matchesList(WHITELIST)) { setLightEnabled(); return; }
+        if (matchesList(BLACKLIST)) { setDarkEnabled(true); return; }
+        const glob = getGlobalOverride();
+        if (glob && glob.mode) {
+            if (glob.mode === 'light') { setLightEnabled(); return; }
+            if (glob.mode === 'dark') { setDarkEnabled(true); return; }
+            if (glob.mode === 'custom') { setCustomEnabled(glob.bg || '#0b0b0b', glob.text || '#e6e6e6'); return; }
+        }
+        const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+        if (mq) { setDarkEnabled(mq.matches); mq.addEventListener ? mq.addEventListener('change', e => setDarkEnabled(e.matches)) : mq.addListener(e => setDarkEnabled(e.matches)); return; }
+        setDarkEnabled(true);
+    }
+
+    decideAndApply();
+    window.addEventListener('load', () => decideAndApply(), { once: true });
+
+    (function hookHistory(fn){
+        try {
+            const _push = history.pushState;
+            history.pushState = function(...args){ _push.apply(this,args); fn(); };
+            const _replace = history.replaceState;
+            history.replaceState = function(...args){ _replace.apply(this,args); fn(); };
+            window.addEventListener('popstate', fn);
+            window.addEventListener('hashchange', fn);
+        } catch(e){}
+    })(decideAndApply);
+
+    window.__tm_darkmode = {
+        enable: () => setDarkEnabled(true),
+        disable: () => setLightEnabled(),
+        custom: (bg, text) => setCustomEnabled(bg, text),
+        decide: () => decideAndApply(),
+        isDark: () => document.documentElement.classList.contains('dark-mode'),
+        whitelist: WHITELIST,
+        blacklist: BLACKLIST,
+        getOverridePerSite,
+        setOverridePerSite,
+        getGlobalOverride,
+        setGlobalOverride
+    };
+
+    // --- UI on duckduckgo only ---
+    try {
+        const host = location.hostname.toLowerCase();
+        if (host.indexOf('duckduckgo') !== -1) {
+            const uiCss = `
+                #tm-ddg-btn { position: fixed; right: 12px; bottom: 12px; z-index: 2147483647; }
+                #tm-ddg-btn button { width:44px; height:44px; border-radius:8px; border: none; background: #111; color:#fff; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,0.4); }
+                #tm-ddg-menu { position: fixed; right: 12px; bottom: 66px; width:360px; max-width: calc(100% - 24px); background:#fff; color:#000; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,0.3); padding:12px; z-index:2147483647; font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; display:none; }
+                #tm-ddg-menu h3 { margin:0 0 8px 0; font-size:14px; }
+                #tm-ddg-menu label { display:block; font-size:13px; margin:8px 0 4px 0; }
+                #tm-ddg-menu input[type="text"], #tm-ddg-menu input[type="color"] { width:100%; padding:6px 8px; box-sizing:border-box; border:1px solid #ddd; border-radius:6px; }
+                #tm-ddg-menu .row { display:flex; gap:8px; }
+                #tm-ddg-menu button.ctrl { margin-top:10px; padding:8px 10px; border-radius:6px; border:none; cursor:pointer; background:#eee; }
+                #tm-ddg-menu .small { font-size:12px; color:#666; margin-top:6px; }
+                #tm-ddg-list { max-height:120px; overflow:auto; border:1px dashed #ddd; padding:6px; border-radius:6px; background:#fafafa; }
+                #tm-ddg-list div.item { display:flex; justify-content:space-between; padding:4px 6px; border-radius:4px; background:#fff; margin-bottom:6px; align-items:center; }
+                #tm-ddg-list div.item button { background:#eee; border:none; padding:4px 6px; border-radius:4px; cursor:pointer; }
+                html.dark-mode #tm-ddg-menu { background:#222; color:#eee; }
+                html.dark-mode #tm-ddg-menu input[type="text"] { background:#333; color:#eee; border-color:#444; }
+                html.dark-mode #tm-ddg-menu .small { color:#bbb; }
+                .tm-palette { display:flex; gap:6px; margin-top:6px; }
+                .tm-swatch { width:28px; height:28px; border-radius:6px; border:1px solid #ccc; cursor:pointer; }
+            `;
+            const uiStyle = document.createElement('style');
+            uiStyle.id = 'tm-ddg-ui-style';
+            uiStyle.textContent = uiCss;
+            document.documentElement.appendChild(uiStyle);
+
+            const btnWrap = document.createElement('div');
+            btnWrap.id = 'tm-ddg-btn';
+            btnWrap.innerHTML = `<button aria-label="Setări DarkMode">☾</button>`;
+            document.documentElement.appendChild(btnWrap);
+
+            const menu = document.createElement('div');
+            menu.id = 'tm-ddg-menu';
+            menu.innerHTML = `
+                <h3>Setări Dark Mode</h3>
+                <div>
+                    <label>Mod global / implicit</label>
+                    <div class="row" id="tm-mode-row">
+                        <button data-mode="auto" class="ctrl">Auto</button>
+                        <button data-mode="light" class="ctrl">Luminos</button>
+                        <button data-mode="dark" class="ctrl">Întunecat</button>
+                        <button data-mode="custom" class="ctrl">Personalizat</button>
+                    </div>
+                </div>
+                <div id="tm-custom-section" style="display:none; margin-top:8px;">
+                    <label>Fundal (hex)</label>
+                    <input type="text" id="tm-custom-bg" placeholder="#0b0b0b" />
+                    <label>Culoare text (hex)</label>
+                    <input type="text" id="tm-custom-text" placeholder="#e6e6e6" />
+                    <div class="small">Poți folosi selectorul de culoare sau paleta rapidă.</div>
+                    <div class="tm-palette" id="tm-palette">
+                        <div class="tm-swatch" data-bg="#0b0b0b" data-text="#e6e6e6" style="background:#0b0b0b"></div>
+                        <div class="tm-swatch" data-bg="#ffffff" data-text="#111111" style="background:#ffffff"></div>
+                        <div class="tm-swatch" data-bg="#121212" data-text="#eaeaea" style="background:#121212"></div>
+                        <div class="tm-swatch" data-bg="#0a2540" data-text="#dbefff" style="background:#0a2540"></div>
+                        <div class="tm-swatch" data-bg="#2b2b3a" data-text="#ffd6e8" style="background:#2b2b3a"></div>
+                        <div class="tm-swatch" data-bg="#ffb6c1" data-text="#3b0020" style="background:#ffb6c1"></div> <!-- ROZ adăugat -->
+                    </div>
+                    <div class="row" style="margin-top:8px;">
+                        <input type="color" id="tm-color-bg" value="#0b0b0b" style="width:44px;height:36px;padding:0;border-radius:6px;border:1px solid #ddd;" />
+                        <input type="color" id="tm-color-text" value="#e6e6e6" style="width:44px;height:36px;padding:0;border-radius:6px;border:1px solid #ddd;" />
+                        <button id="tm-apply-custom" class="ctrl">Aplică</button>
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <label>Whitelist (hostname, un per linie)</label>
+                    <div id="tm-whitelist-box" class="tm-inner-list"></div>
+                    <input type="text" id="tm-whitelist-input" placeholder="ex: example.com" />
+                    <button id="tm-whitelist-add" class="ctrl">Adaugă</button>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <label>Blacklist (hostname, un per linie)</label>
+                    <div id="tm-blacklist-box" class="tm-inner-list"></div>
+                    <input type="text" id="tm-blacklist-input" placeholder="ex: example.com" />
+                    <button id="tm-blacklist-add" class="ctrl">Adaugă</button>
+                </div>
+
+                <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+                    <button id="tm-save-global" class="ctrl">Salvează pe toate site-urile</button>
+                    <button id="tm-save-site" class="ctrl">Salvează doar pentru acest site</button>
+                    <button id="tm-clear-override" class="ctrl">Resetează</button>
+                </div>
+                <div class="small">Setările se salvează local în browser. "Salvează pe toate site-urile" va forța setarea globală.</div>
+            `;
+            document.documentElement.appendChild(menu);
+
+            const btn = btnWrap.querySelector('button');
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+            });
+            document.addEventListener('click', () => { menu.style.display = 'none'; });
+
+            // Render whitelist/blacklist boxes
+            function renderList(box, arr, isWhitelist) {
+                box.innerHTML = '';
+                arr.forEach((it, idx) => {
+                    const d = document.createElement('div');
+                    d.className = 'item';
+                    d.style.display = 'flex';
+                    d.style.justifyContent = 'space-between';
+                    d.style.padding = '6px';
+                    d.style.marginBottom = '6px';
+                    d.style.background = '#fff';
+                    d.style.borderRadius = '6px';
+                    d.innerHTML = `<span style="font-size:13px;">${it}</span><div><button data-idx="${idx}" data-type="${isWhitelist? 'w':'b'}">Șterge</button></div>`;
+                    box.appendChild(d);
+                });
+                box.querySelectorAll('button').forEach(b => {
+                    b.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        const idx = Number(b.getAttribute('data-idx'));
+                        if (isWhitelist) { WHITELIST.splice(idx,1); renderList(box, WHITELIST, true); } else { BLACKLIST.splice(idx,1); renderList(box, BLACKLIST, false); }
+                    });
+                });
+            }
+            const wlBox = menu.querySelector('#tm-whitelist-box');
+            const blBox = menu.querySelector('#tm-blacklist-box');
+            renderList(wlBox, WHITELIST, true);
+            renderList(blBox, BLACKLIST, false);
+
+            // Add handlers
+            menu.querySelector('#tm-whitelist-add').addEventListener('click', () => {
+                const v = (menu.querySelector('#tm-whitelist-input').value || '').trim();
+                if (!v) return;
+                WHITELIST.push(v);
+                menu.querySelector('#tm-whitelist-input').value = '';
+                renderList(wlBox, WHITELIST, true);
+            });
+            menu.querySelector('#tm-blacklist-add').addEventListener('click', () => {
+                const v = (menu.querySelector('#tm-blacklist-input').value || '').trim();
+                if (!v) return;
+                BLACKLIST.push(v);
+                menu.querySelector('#tm-blacklist-input').value = '';
+                renderList(blBox, BLACKLIST, false);
+            });
+
+            // Mode buttons
+            const modeRow = menu.querySelector('#tm-mode-row');
+            modeRow.querySelectorAll('button').forEach(b => {
+                b.addEventListener('click', () => {
+                    const mode = b.getAttribute('data-mode');
+                    menu.querySelector('#tm-custom-section').style.display = (mode === 'custom') ? 'block' : 'none';
+                    if (mode === 'light') { setLightEnabled(); }
+                    else if (mode === 'dark') { setDarkEnabled(true); }
+                    else if (mode === 'auto') { decideAndApply(); }
+                    else if (mode === 'custom') {
+                        const bg = menu.querySelector('#tm-custom-bg').value || menu.querySelector('#tm-color-bg').value || '#0b0b0b';
+                        const text = menu.querySelector('#tm-custom-text').value || menu.querySelector('#tm-color-text').value || '#e6e6e6';
+                        setCustomEnabled(bg, text);
+                    }
+                    modeRow.querySelectorAll('button').forEach(x=>x.style.opacity='0.7');
+                    b.style.opacity = '1';
+                });
+            });
+
+            // Palette swatches (including roz)
+            menu.querySelectorAll('.tm-swatch').forEach(s => {
+                s.addEventListener('click', () => {
+                    const bg = s.getAttribute('data-bg');
+                    const text = s.getAttribute('data-text');
+                    menu.querySelector('#tm-custom-bg').value = bg;
+                    menu.querySelector('#tm-custom-text').value = text;
+                    menu.querySelector('#tm-color-bg').value = bg;
+                    menu.querySelector('#tm-color-text').value = text;
+                    setCustomEnabled(bg, text);
+                    // select custom mode visually
+                    modeRow.querySelectorAll('button').forEach(x=>x.style.opacity='0.7');
+                    modeRow.querySelector('[data-mode="custom"]').style.opacity = '1';
+                    menu.querySelector('#tm-custom-section').style.display = 'block';
+                });
+            });
+
+            // Custom color inputs sync
+            const bgInput = menu.querySelector('#tm-custom-bg');
+            const textInput = menu.querySelector('#tm-custom-text');
+            const bgColor = menu.querySelector('#tm-color-bg');
+            const textColor = menu.querySelector('#tm-color-text');
+            bgColor.addEventListener('input', () => { bgInput.value = bgColor.value; setCustomEnabled(bgColor.value, textInput.value || textColor.value); });
+            textColor.addEventListener('input', () => { textInput.value = textColor.value; setCustomEnabled(bgInput.value || bgColor.value, textColor.value); });
+            bgInput.addEventListener('change', () => { if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(bgInput.value)) bgColor.value = bgInput.value; });
+            textInput.addEventListener('change', () => { if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(textInput.value)) textColor.value = textInput.value; });
+
+            // Apply custom button - applies globally immediately (implicit global)
+            menu.querySelector('#tm-apply-custom').addEventListener('click', () => {
+                const bg = bgInput.value || bgColor.value || '#0b0b0b';
+                const text = textInput.value || textColor.value || '#e6e6e6';
+                // apply as active custom (immediately)
+                setCustomEnabled(bg, text);
+                // also set as implicit global current (but not saved until "Salvează pe toate site-urile")
+                // we temporarily store in-memory via setGlobalOverride? avoid persisting here.
+            });
+
+            // Salvează pe toate site-urile -> persist global override and apply everywhere
+            menu.querySelector('#tm-save-global').addEventListener('click', () => {
+                // determine current mode
+                if (document.documentElement.classList.contains('custom-color')) {
+                    const bg = bgInput.value || bgColor.value || '#0b0b0b';
+                    const text = textInput.value || textColor.value || '#e6e6e6';
+                    setGlobalOverride({ mode: 'custom', bg, text });
+                    setCustomEnabled(bg, text);
+                } else if (document.documentElement.classList.contains('dark-mode')) {
+                    setGlobalOverride({ mode: 'dark' });
+                    setDarkEnabled(true);
+                } else {
+                    setGlobalOverride({ mode: 'light' });
+                    setLightEnabled();
+                }
+                alert('Setarea a fost salvată pentru toate site-urile (local).');
+            });
+
+            // Salvează doar pentru acest site (per-site override)
+            menu.querySelector('#tm-save-site').addEventListener('click', () => {
+                if (document.documentElement.classList.contains('custom-color')) {
+                    const bg = bgInput.value || bgColor.value || '#0b0b0b';
+                    const text = textInput.value || textColor.value || '#e6e6e6';
+                    setOverridePerSite({ mode: 'custom', bg, text });
+                } else if (document.documentElement.classList.contains('dark-mode')) {
+                    setOverridePerSite({ mode: 'dark' });
+                } else {
+                    setOverridePerSite({ mode: 'light' });
+                }
+                alert('Setarea a fost salvată doar pentru acest site (local).');
+            });
+
+            // Resetează -> clear per-site and global overrides and reapply
+            menu.querySelector('#tm-clear-override').addEventListener('click', () => {
+                setOverridePerSite(null);
+                setGlobalOverride(null);
+                decideAndApply();
+                alert('Override-urile globale și per-site au fost eliminate.');
+            });
+
+            // Initialize UI from overrides
+            (function initUiFromOverride(){
+                const per = getOverridePerSite();
+                const glob = getGlobalOverride();
+                if (per && per.mode) {
+                    if (per.mode === 'dark') { modeRow.querySelector('[data-mode="dark"]').click(); }
+                    else if (per.mode === 'light') { modeRow.querySelector('[data-mode="light"]').click(); }
+                    else if (per.mode === 'custom') {
+                        menu.querySelector('#tm-custom-section').style.display = 'block';
+                        menu.querySelector('#tm-custom-bg').value = per.bg || '#0b0b0b';
+                        menu.querySelector('#tm-custom-text').value = per.text || '#e6e6e6';
+                        menu.querySelector('#tm-color-bg').value = per.bg || '#0b0b0b';
+                        menu.querySelector('#tm-color-text').value = per.text || '#e6e6e6';
+                        modeRow.querySelector('[data-mode="custom"]').click();
+                    } else { modeRow.querySelector('[data-mode="auto"]').click(); }
+                } else if (glob && glob.mode) {
+                    if (glob.mode === 'dark') { modeRow.querySelector('[data-mode="dark"]').click(); }
+                    else if (glob.mode === 'light') { modeRow.querySelector('[data-mode="light"]').click(); }
+                    else if (glob.mode === 'custom') {
+                        menu.querySelector('#tm-custom-section').style.display = 'block';
+                        menu.querySelector('#tm-custom-bg').value = glob.bg || '#0b0b0b';
+                        menu.querySelector('#tm-custom-text').value = glob.text || '#e6e6e6';
+                        menu.querySelector('#tm-color-bg').value = glob.bg || '#0b0b0b';
+                        menu.querySelector('#tm-color-text').value = glob.text || '#e6e6e6';
+                        modeRow.querySelector('[data-mode="custom"]').click();
+                    } else { modeRow.querySelector('[data-mode="auto"]').click(); }
+                } else {
+                    modeRow.querySelector('[data-mode="auto"]').click();
+                }
+            })();
+
+        } // end duckduckgo check
+    } catch (uiErr) {
+        console.error('tm-darkmode UI error', uiErr);
+    }
+
+})();

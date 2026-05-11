@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Loky/Nyu Chat — Search-Only (final)
 // @namespace    http://tampermonkey.net/
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/myai
 // @version      1.2
 // @description  Widget Lucy/Nyu Chat doar pe paginile motoarelor de căutare; păstrează 20 mesaje; suportă comenzi text și buton pentru ștergere (inclusiv "șterge mesaje").
 // @match        *://*/*

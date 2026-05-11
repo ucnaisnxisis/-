@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Global Dark Mode with DuckDuckGo Settings Button
 // @namespace    http://tampermonkey.net/
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/dark
 // @version      1.2
 // @description  Dark mode global cu buton de setări pe DuckDuckGo; suport culori personalizate globale și per-site; UI în română; include roz în paletă.
 // @author       You

@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Local Keyword Chat Bot - Lucy.Nyu Chat 1.0
 // @namespace    http://tampermonkey.net/
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/myai0
 // @version      1.9
 // @description  Chat local: fără TTS, animații, max 5 mesaje; bot magenta, user mov puternic; minimizare compactă.
 // @match        https://www.google.com/

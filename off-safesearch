@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Disable safesearch (force safe=off via redirect)
 // @namespace    https://example.invalid/disable-safesearch
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/off-safesearch
 // @version      0.1.8
 // @description  Force safe=off on many search engines (redirect to URL with safe=off when needed)
 // @author       You

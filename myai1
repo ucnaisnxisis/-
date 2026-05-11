@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Loky/Nyu Chat — Anime Specialist
 // @namespace    http://tampermonkey.net/
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/myai1
 // @version      3.0
 // @description  Un chat bot specializat pe anime, cu evaluări, recomandări personalizate, quiz și watchlist
 // @match        *://www.google.com/*

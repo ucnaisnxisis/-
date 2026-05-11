@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         YouTube Auto CC -> Auto-translate Română (tuned, prefer lowercase)
 // @namespace    https://example.local/
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/yt
 // @version      1.18
 // @description  Enable CC once per session, then auto-translate -> română with timing, language-indicator detection, manual-reset handling, and preference for 'română' lowercase option.
 // @match        https://www.youtube.com/*

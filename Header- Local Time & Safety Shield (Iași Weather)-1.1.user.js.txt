@@ -1,0 +1,237 @@
+// ==UserScript==
+// @name         Header: Local Time & Safety Shield (Iași Weather)
+// @namespace    http://tampermonkey.net/
+// @version      1.1
+// @description  Afișează data/ora în stânga sus, emoji vreme pentru Iași și un scut de stare site (sigur/virus/adult) în dreapta sus. Compatibil cu majoritatea site-urilor.
+// @author       You
+// @match        *://*/*
+// @grant        GM_addStyle
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // --- Configurări ---
+    const timeFormatOptions = { year: 'numeric', month: 'short', day: '2-digit',
+                                hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const iasiQuery = 'Iași,RO'; // locație wttr.in
+    const weatherUpdateIntervalMs = 10 * 60 * 1000; // actualizare vreme la 10 minute
+    const clockUpdateIntervalMs = 1000; // actualizare ceas la 1s
+
+    // Listă simplă de domenii periculoase (extinde după nevoie)
+    const knownMalicious = [
+      'malicious.example', 'badsite.test', 'phishing.example'
+    ];
+
+    // --- Stiluri ---
+    GM_addStyle(`
+    .tm-header-overlay {
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        z-index: 2147483647;
+        background: rgba(0,0,0,0.55);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        font-size: 13px;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        pointer-events: none;
+    }
+    .tm-header-right {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        z-index: 2147483647;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        pointer-events: none;
+    }
+    .tm-weather {
+        font-size: 16px;
+        padding: 4px 8px;
+        background: rgba(0,0,0,0.55);
+        color: #fff;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .tm-small-muted {
+        font-size: 12px;
+        opacity: 0.9;
+    }
+    .tm-shield {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        color: #fff;
+        font-weight: 600;
+        pointer-events: none;
+    }
+    `);
+
+    // --- Elemente UI ---
+    const leftBox = document.createElement('div');
+    leftBox.className = 'tm-header-overlay';
+    leftBox.id = 'tm-local-datetime';
+    leftBox.textContent = '…';
+
+    const rightBox = document.createElement('div');
+    rightBox.className = 'tm-header-right';
+
+    // Weather box
+    const weatherBox = document.createElement('div');
+    weatherBox.className = 'tm-weather';
+    weatherBox.id = 'tm-iasi-weather';
+    weatherBox.textContent = '…';
+
+    // Shield (indicator stare site)
+    const shield = document.createElement('div');
+    shield.className = 'tm-shield';
+    shield.id = 'tm-site-shield';
+    shield.setAttribute('title', 'Site safety indicator');
+    shield.textContent = '';
+
+    // Adaugă elemente în pagină
+    document.documentElement.appendChild(leftBox);
+    document.documentElement.appendChild(rightBox);
+    rightBox.appendChild(weatherBox);
+    rightBox.appendChild(shield);
+
+    // --- Funcții utilitare ---
+    function updateClock() {
+        const now = new Date();
+        const formatted = now.toLocaleString(undefined, timeFormatOptions);
+        leftBox.innerHTML = `<span class="tm-small-muted">Local:</span> <strong>${formatted}</strong>`;
+    }
+
+    // --- Weather fetching (wttr.in JSON) ---
+    async function fetchIasiWeather() {
+        try {
+            const url = 'https://wttr.in/' + encodeURIComponent(iasiQuery) + '?format=j1';
+            const resp = await fetch(url, { method: 'GET' });
+            if (!resp.ok) throw new Error('weather fetch failed');
+            const data = await resp.json();
+            const cc = data.current_condition && data.current_condition[0];
+            if (!cc) throw new Error('no current_condition');
+            const tempC = cc.temp_C;
+            const weatherDesc = (cc.weatherDesc && cc.weatherDesc[0] && cc.weatherDesc[0].value) || '';
+            const cond = weatherDesc.toLowerCase();
+            let emoji = '🌤️';
+            if (cond.includes('sun') || cond.includes('clear')) emoji = '☀️';
+            else if (cond.includes('cloud') || cond.includes('overcast')) emoji = '☁️';
+            else if (cond.includes('rain') || cond.includes('drizzle')) emoji = '🌧️';
+            else if (cond.includes('thunder')) emoji = '⛈️';
+            else if (cond.includes('snow') || cond.includes('sleet')) emoji = '❄️';
+            else if (cond.includes('fog') || cond.includes('mist')) emoji = '🌫️';
+
+            weatherBox.innerHTML = `<span style="font-size:16px">${emoji}</span><span class="tm-small-muted">${tempC}°C</span>`;
+        } catch (e) {
+            weatherBox.textContent = '⚠️ vreme indisponibilă';
+        }
+    }
+
+    // Clasificator simplu pe reguli
+    function classifySiteSimple(url, doc) {
+      try {
+        const u = new URL(url);
+        const host = u.hostname.toLowerCase();
+        const path = (u.pathname + ' ' + u.search).toLowerCase();
+
+        // 1) host în listă cunoscută -> virus
+        for (const bad of knownMalicious) {
+          if (host.includes(bad)) return 'virus';
+        }
+
+        // 2) detectare cuvinte adulte în host/path
+        const adultKeywords = ['porn', 'sex', 'adult', 'xxx', '18+'];
+        for (const k of adultKeywords) {
+          if (host.includes(k) || path.includes(k)) return 'adult';
+        }
+
+        // 3) căutare text simplă în body (limitată)
+        let bodyText = '';
+        try {
+          bodyText = (doc && doc.body && doc.body.innerText) ? doc.body.innerText.toLowerCase().slice(0, 2000) : '';
+        } catch (e) {
+          bodyText = '';
+        }
+        for (const k of adultKeywords) {
+          if (bodyText.includes(k)) return 'adult';
+        }
+
+        // 4) heuristica protocol: HTTPS => safe; HTTP => safe (per cerință)
+        // (poți modifica această regulă pentru a marca HTTP ca 'unknown')
+        return 'safe';
+      } catch (e) {
+        return 'safe';
+      }
+    }
+
+    // Aplică culoarea pe baza clasificării
+    function updateShield() {
+      const cls = classifySiteSimple(window.location.href, document);
+      if (cls === 'safe') {
+        shield.style.background = '#7b61ff'; // mov
+        shield.textContent = '✔';
+        shield.setAttribute('title', 'Site: sigur');
+      } else if (cls === 'virus') {
+        shield.style.background = '#1db954'; // verde
+        shield.textContent = '!';
+        shield.setAttribute('title', 'Site: posibil periculos');
+      } else if (cls === 'adult') {
+        shield.style.background = '#ff66b2'; // roz
+        shield.textContent = '🔞';
+        shield.setAttribute('title', 'Site: conținut pentru adulți');
+      } else {
+        shield.style.background = '#7b61ff';
+        shield.textContent = '';
+        shield.setAttribute('title', 'Indicator stare site');
+      }
+    }
+
+    // --- Inițializări ---
+    updateClock();
+    fetchIasiWeather();
+    updateShield();
+
+    // Timere
+    setInterval(updateClock, clockUpdateIntervalMs);
+    setInterval(fetchIasiWeather, weatherUpdateIntervalMs);
+
+    // Observăm schimbări DOM pentru re-aplicare (SPA)
+    const bodyObserver = new MutationObserver(() => {
+      if (!document.documentElement.contains(leftBox)) document.documentElement.appendChild(leftBox);
+      if (!document.documentElement.contains(rightBox)) document.documentElement.appendChild(rightBox);
+    });
+    bodyObserver.observe(document.body || document.documentElement, { childList: true, subtree: true });
+
+    // Observăm modificări care pot schimba conținutul pentru reclasificare
+    const urlObserver = new MutationObserver(() => updateShield());
+    urlObserver.observe(document.body || document.documentElement, { childList: true, subtree: true });
+
+    // Interceptează pushState/replaceState pentru aplicații SPA
+    (function(history) {
+      const pushState = history.pushState;
+      history.pushState = function() {
+        pushState.apply(history, arguments);
+        setTimeout(updateShield, 200);
+      };
+      const replaceState = history.replaceState;
+      history.replaceState = function() {
+        replaceState.apply(history, arguments);
+        setTimeout(updateShield, 200);
+      };
+    })(window.history);
+
+})();

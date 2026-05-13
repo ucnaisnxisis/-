@@ -1,0 +1,357 @@
+// ==UserScript==
+// @name         Pride Search Banner (search-only, configurabil) - v0.3.1
+// @namespace    http://tampermonkey.net/
+// @version      0.3.1
+// @description  Banner transparent cu GIF/imagine + text motivațional pe paginile motoarelor de căutare. Configurabil: imagini, texte, poziție, ordine, culori stratificate, timeout 10s (implicit dezactivat dacă se detecta închidere). Modificări: eliminare text-shadow când culoarea e neagră; dacă culoarea e non-negru, textul folosește culoarea și nu are shadow; chenar semi-transparent pentru text; previne închiderea automată dacă exista un timeout activ.
+// @author       You
+// @match        *://*/*
+// @grant        none
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+'use strict';
+
+// ---------------- CONFIG (editează după nevoie) ----------------
+const config = {
+    // Host-urile motoarelor de căutare pe care scriptul trebuie să ruleze
+    allowedSearchHosts: [
+        'www.google.com', 'google.com',
+        'www.bing.com', 'bing.com',
+        'duckduckgo.com', 'www.duckduckgo.com',
+        'search.yahoo.com', 'www.search.yahoo.com'
+    ],
+
+    // Termenii țintă: cheia = termenul căutat (lowercase)
+    // Pentru fiecare: img = URL GIF/imag, text = mesaj, color = culoarea stratificată (hex sau CSS color)
+
+    terms: {
+        'lgbt': {
+            img: 'https://media.tenor.com/984z9eOkbR8AAAAj/pride-flag-pride.gif',
+            text: 'Fii mândru/ă. Ești baza acestei comunități.',
+            color: '#ff0000',
+            aliases: ['lgbtq','lgbtqia','pride','lgbt+']
+        },
+        'asexual': {
+            img: 'https://64.media.tumblr.com/76b76bf68c339c3f5e448d59d41c09e2/tumblr_p97oj11Qpw1r2i93to1_1280.gifv',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#7f00ff',
+            aliases: ['ace','asexuality','asexualitate','asexualitati','asexuală','asexuale','asexualelor','asexuali','asexualii']
+        },
+        'transexual': {
+            img: 'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExODhmYnVuMDRxMjRjZnJieGNrZnZ2Y3loa2JkbTZmZHVkZHZsdnNjNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EKRD9Gsie8jgsMFP4F/giphy.gif',
+            text: 'Curajul tău contează.',
+            color: '#00aaff',
+            aliases: ['trans','transex','transexuali','transexualitate']
+        },
+        'aroace': {
+            img: 'https://64.media.tumblr.com/034700a0d5d500b3cae47e0d8310b294/f07b469bcf573314-37/s540x810/6ec0c1ebfdfa5626935449868a3cc699b7318042.gifv',
+            text: 'Ești valid/ă în felul tău unic.',
+            color: '#ffaa00',
+            aliases: ['aro','acearo']
+        },
+        'pansexual': {
+            img: 'https://upload.wikimedia.org/wikipedia/commons/a/a2/Pansexuality_Pride_Flag.svg',
+            text: 'Ești valid/ă în felul tău unic.',
+            color: '#ffaa00',
+            aliases: ['pansexualitate','pansex','pansexu','pansexualitati','pansexuali']
+        },
+        'animesexual': {
+            img: 'https://static.wikitide.net/mogaiwiki/4/48/Animatesexual.png',
+            text: 'Ești ok, în felul tău unic.',
+            color: '#ffaa00',
+            aliases: ['animesexuality','animesex','animesexuali','animesexualitate','animesexualitati']
+        },
+        'bisexual': {
+            img: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXMwbmhsdDV0NmR5MGt2dzMzY2lsOHljMTR4b2IycTljdGM4NDlxNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/X84zoCEKvGWl1ruhdm/giphy.gif',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['bisexuality','bisex','bisexuali','bisexualitate','bisexualitati']
+        },
+        'queer': {
+            img: 'https://static.wikia.nocookie.net/lgbtqia-sandbox/images/8/86/Queer_Flag.svg/revision/latest?cb=20250310075405',
+            text: 'Curajul tău contează.',
+            color: '#00aaff',
+            aliases: ['queers','queersex','queersexuali','queersexualitate']
+        },
+        'intersex': {
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Intersex_Pride_Flag.svg/1280px-Intersex_Pride_Flag.svg.png',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['intersexuality','intersex','intersexuali','intersexualitate','intersexualitati']
+        },
+            'intersex': {
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Intersex_Pride_Flag.svg/1280px-Intersex_Pride_Flag.svg.png',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['intersexuality','intersex','intersexuali','intersexualitate','intersexualitati']
+        },
+            'nonbinar': {
+            img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Intersex_Pride_Flag.svg/1280px-Intersex_Pride_Flag.svg.png',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['nonbinaritty','non-binar','nonbinuali','nonbinualitate','nonbinualitati']
+        },
+            'lesbian': {
+            img: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/image12?qlt=82&wid=768&ts=1670910940053&dpr=off&fit=constrain&fmt=png-alpha',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['lesbinaritty','lesbianitate','lesbiana','lesbianca','lesbi','lesbience','lesbienci','lesby']
+        },
+            'gay': {
+            img: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/image14?qlt=82&wid=768&ts=1670911241536&dpr=off&fit=constrain&fmt=png-alpha',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['gays','ghei']
+        },
+            'homosex': {
+            img: 'https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/image14?qlt=82&wid=768&ts=1670911241536&dpr=off&fit=constrain&fmt=png-alpha',
+            text: 'Ai valoare. Dragostea are multe forme.',
+            color: '#ffaa00',
+            aliases: ['homosexuali','homosexualitate','homosexual','homosexualelor','homosexuale','homosexualtati','homosexuality']
+        },
+        },
+
+    // UI / poziționare / ordine
+    bannerId: 'pride-local-banner',
+    bannerHeight: '120px',     // înălțimea bannerului (poți schimba)
+    position: 'bottom',           // 'top' sau 'bottom'
+    // ordine: 'image-first' sau 'text-first'
+    order: 'image-first',
+
+    // dimensiuni și stiluri default pentru imagine și text
+    imgHeight: '100px',        // înălțime imagine
+    textFontSize: '18px',      // mărimea textului
+    gapBetween: '12px',        // spațiul dintre imagine și text
+
+    // parametrii de detectare ai motorului de căutare
+    detectQueryParamNames: ['q', 'query', 'search', 's'],
+
+    // timeout în ms pentru închidere automată (setat implicit la 0 = permanent)
+    autoCloseMs: 0
+};
+// ---------------- sfârșit CONFIG ----------------
+
+// Validare host
+if (!config.allowedSearchHosts.includes(location.hostname)) return;
+
+// Variabilă pentru timer global
+let __prideCloseTimer = null;
+
+function isColorBlack(color) {
+    if (!color) return true;
+    // Normalize: accept hex (#rgb, #rrggbb) sau nume CSS
+    const c = color.trim().toLowerCase();
+    if (c === 'black' || c === '#000' || c === '#000000' || c === 'rgb(0,0,0)' || c === 'rgba(0,0,0,1)') return true;
+    // Dacă e hex de format #rrggbb, verificăm componente
+    const hexMatch = c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (hexMatch) {
+        let hex = hexMatch[1];
+        if (hex.length === 3) hex = hex.split('').map(ch => ch + ch).join('');
+        const r = parseInt(hex.substring(0,2),16);
+        const g = parseInt(hex.substring(2,4),16);
+        const b = parseInt(hex.substring(4,6),16);
+        return r===0 && g===0 && b===0;
+    }
+    return false; // presupunem non-negru pentru nume sau valori complexe
+}
+
+function detectTerm() {
+    try {
+        const urlObj = new URL(location.href);
+        for (const p of config.detectQueryParamNames) {
+            const val = urlObj.searchParams.get(p);
+            if (val) {
+                for (const t of Object.keys(config.terms)) {
+                    if (val.toLowerCase().includes(t)) return t;
+                }
+            }
+        }
+    } catch (e) { /* ignore */ }
+
+    const bodyText = (document.body && document.body.innerText) ? document.body.innerText.slice(0,20000).toLowerCase() : '';
+    for (const t of Object.keys(config.terms)) {
+        if (location.href.toLowerCase().includes(t) || bodyText.includes(t)) return t;
+    }
+    return null;
+}
+
+function removeBanner() {
+    const old = document.getElementById(config.bannerId);
+    if (old) old.remove();
+    document.documentElement.style.paddingTop = '';
+    document.documentElement.style.paddingBottom = '';
+    document.body && (document.body.style.paddingTop = '', document.body.style.paddingBottom = '');
+    if (__prideCloseTimer) { clearTimeout(__prideCloseTimer); __prideCloseTimer = null; }
+}
+
+function createBanner(termKey) {
+    removeBanner();
+    const data = config.terms[termKey];
+    if (!data) return;
+
+    const banner = document.createElement('div');
+    banner.id = config.bannerId;
+    banner.style.position = 'fixed';
+    banner.style.left = '0';
+    banner.style.right = '0';
+    banner.style.height = config.bannerHeight;
+    banner.style.display = 'flex';
+    banner.style.alignItems = 'center';
+    banner.style.justifyContent = 'center';
+    banner.style.pointerEvents = 'none';
+    banner.style.zIndex = '999999';
+    banner.style.background = 'transparent';
+
+    // poziționare sus/jos
+    if (config.position === 'bottom') {
+        banner.style.bottom = '0';
+    } else {
+        banner.style.top = '0';
+    }
+
+    const inner = document.createElement('div');
+    inner.style.pointerEvents = 'auto';
+    inner.style.display = 'flex';
+    inner.style.alignItems = 'center';
+    inner.style.gap = config.gapBetween;
+    inner.style.padding = '8px 12px';
+    inner.style.borderRadius = '8px';
+    inner.style.backdropFilter = 'none';
+    inner.style.background = 'transparent';
+
+    // Creează element imagine
+    const img = document.createElement('img');
+    img.src = data.img;
+    img.alt = termKey;
+    img.style.height = config.imgHeight;
+    img.style.width = 'auto';
+    img.style.display = 'block';
+    img.style.objectFit = 'contain';
+    img.style.pointerEvents = 'none';
+
+    // Creează element text — tratăm culoarea/ombre în funcție de valoare
+    const textWrapper = document.createElement('div');
+    textWrapper.style.position = 'relative';
+    textWrapper.style.display = 'inline-block';
+    textWrapper.style.padding = '8px 12px'; // padding comun
+    textWrapper.style.borderRadius = '8px';
+    // Chenar semi-semi-transparent (semi-transparent + puțină bordură)
+    textWrapper.style.background = 'rgba(0,0,0,0.35)'; // fundal semi-transparent
+    textWrapper.style.border = '1px solid rgba(255,255,255,0.08)';
+    textWrapper.style.backdropFilter = 'blur(4px)';
+    textWrapper.style.pointerEvents = 'none';
+
+    const baseSpan = document.createElement('span');
+    baseSpan.textContent = data.text || '';
+    baseSpan.style.position = 'relative';
+    baseSpan.style.zIndex = '1';
+    baseSpan.style.fontSize = config.textFontSize;
+    baseSpan.style.fontWeight = '700';
+    baseSpan.style.lineHeight = '1.1';
+    baseSpan.style.pointerEvents = 'none';
+
+    const color = data.color || 'transparent';
+    const colorIsBlack = isColorBlack(color);
+
+    if (colorIsBlack) {
+        // Dacă culoarea stratificată e neagră -> eliminăm orice text-shadow și afișăm textul negru simplu
+        baseSpan.style.color = '#000000';
+        baseSpan.style.textShadow = 'none';
+    } else {
+        // Dacă culoarea stratificată NU e neagră -> folosim culoarea pentru text, eliminăm umbrele negre
+        baseSpan.style.color = color;
+        baseSpan.style.textShadow = 'none';
+    }
+
+    textWrapper.appendChild(baseSpan);
+
+    // Configurăm ordinea elementelor
+    if (config.order === 'text-first') {
+        inner.appendChild(textWrapper);
+        inner.appendChild(img);
+    } else {
+        inner.appendChild(img);
+        inner.appendChild(textWrapper);
+    }
+
+    banner.appendChild(inner);
+    document.documentElement.appendChild(banner);
+
+    // Adaugă padding pe body pentru a nu suprapune conținutul (în funcție de poziție)
+    if (config.position === 'bottom') {
+        document.body && (document.body.style.paddingBottom = config.bannerHeight);
+        document.documentElement.style.paddingBottom = config.bannerHeight;
+    } else {
+        document.body && (document.body.style.paddingTop = config.bannerHeight);
+        document.documentElement.style.paddingTop = config.bannerHeight;
+    }
+
+    // Detectăm dacă exista un timer anterior setat și îl anulăm (fără a reseta config.autoCloseMs)
+    if (__prideCloseTimer) { clearTimeout(__prideCloseTimer); __prideCloseTimer = null; }
+
+    // Nu pornim timer dacă config.autoCloseMs e 0 sau invalid
+    if (typeof config.autoCloseMs === 'number' && config.autoCloseMs > 0) {
+        if (__prideCloseTimer) { clearTimeout(__prideCloseTimer); __prideCloseTimer = null; }
+        __prideCloseTimer = setTimeout(() => { removeBanner(); }, config.autoCloseMs);
+    }
+}
+
+// Observer pentru rezultate dinamice (ex: Google)
+const observer = new MutationObserver(() => {
+    const term = detectTerm();
+    if (term) createBanner(term);
+    else removeBanner();
+});
+
+// Start
+const initialTerm = detectTerm();
+if (initialTerm) createBanner(initialTerm);
+observer.observe(document.body || document.documentElement, { childList: true, subtree: true });
+
+// Cleanup la unload
+window.addEventListener('unload', () => observer.disconnect());
+
+// API în consolă pentru modificări runtime (ex: în Tampermonkey console)
+window.PrideBannerConfig = {
+    set(termKey, imgUrl, text, color) {
+        config.terms[termKey] = { img: imgUrl, text: text, color: color };
+    },
+    remove(termKey) {
+        delete config.terms[termKey];
+    },
+    showNow(termKey) {
+        createBanner(termKey);
+    },
+    hideNow() {
+        removeBanner();
+    },
+    setPosition(pos) {
+        if (pos === 'top' || pos === 'bottom') config.position = pos;
+    },
+    setOrder(order) {
+        if (order === 'image-first' || order === 'text-first') config.order = order;
+    },
+    setAutoCloseMs(ms) {
+        config.autoCloseMs = Number(ms);
+    },
+    addAllowedHost(host) {
+        if (!config.allowedSearchHosts.includes(host)) config.allowedSearchHosts.push(host);
+    },
+    getConfig() { return JSON.parse(JSON.stringify(config)); },
+    toggleAutoClose(enabled, ms) {
+        config.autoCloseMs = enabled ? Number(ms) : 0;
+        if (__prideCloseTimer) { clearTimeout(__prideCloseTimer); __prideCloseTimer = null; }
+        if (config.autoCloseMs>0) __prideCloseTimer = setTimeout(removeBanner, config.autoCloseMs);
+    }
+};
+
+// Instrucțiuni rapide (în română) pentru editare în interiorul codului:
+// - Schimbă imaginile/texte culorile în obiectul config.terms (cheia = termenul de căutare).
+// - Poziția bannerului: config.position = 'top' sau 'bottom'.
+// - Ordinea imagine/text: config.order = 'image-first' sau 'text-first'.
+// - Dimensiuni: config.imgHeight, config.textFontSize, config.gapBetween.
+// - Timeout: config.autoCloseMs = 10000 (10 secunde). Implicit scriptul anulează timerele active la afișare și permite setarea ulterioară prin API.
+// - Adaugă/șterge host-uri de search în config.allowedSearchHosts.
+
+})();

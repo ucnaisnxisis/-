@@ -1036,6 +1036,23 @@ incredibilia.ro##.thrv_wrapper.thrv-styled_list
 incredibilia.ro##.tve_lg_input_container.tve_lg_input.tcb-icon-display.tve_empty_dropzone
 incredibilia.ro##h1
 incredibilia.ro##.tve_lg_input_container.tve_submit_container.tve_lg_submit.tcb-icon-display > button
+www.computerworld.com##.SiteFooter__social
+www.computerworld.com##li.SiteFooterList__listItem:nth-of-type(7)
+www.computerworld.com##li.SiteFooterList__listItem:nth-of-type(6)
+www.computerworld.com##li.SiteFooterList__listItem:nth-of-type(8)
+www.computerworld.com###footer-panel-100077781-2 > .SiteFooterList__list > li.SiteFooterList__listItem:nth-of-type(2)
+www.computerworld.com###footer-panel-100077772-1 > .SiteFooterList__list > li.SiteFooterList__listItem:nth-of-type(2)
+www.past-pedia.com##div.ai-viewport-3
+www.libertatea.ro##.justify-between.d-flex-wrap.btns-google
+adevarul.ro##.svelte-cmrgmk.metaFont.googlePreferredSource
+adevarul.ro##p:nth-of-type(18)
+moldovacrestina.md##[href="https://moldovacrestina.md/doneaza/"]
+m.youtube.com##.ytVideoAttributeViewModelOverflowMenu
+m.youtube.com##.playlist-engagement-panel-menu-container
+click.ro##.svelte-1crgxm8.googlePreferredSource
+observatornews.ro##a.gnews-as
+intreb.bancatransilvania.ro##.bt-footer-heading-content-social
+intreb.bancatransilvania.ro##form.bt-header-search:nth-of-type(1)
 www.animalutul.ro##.btn-page-actions.btn-page-actions-save-search.save-search-button
 www.animalutul.ro##.login-buttons-row
 www.youtube.com##.ytd-watch-metadata.style-scope > .ytd-menu-renderer.style-scope.top-level-buttons

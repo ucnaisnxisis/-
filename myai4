@@ -1,0 +1,1061 @@
+// ==UserScript==
+// @name         Local Chat Bot - Lucy/Nyu 2.0
+// @namespace    http://tampermonkey.net/
+// @version      6.0
+// @description  Chat cu cel mai avansat robot digital.
+// @author       tester john
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://duckduckgo.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.brave.com/*
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // --- Host Allowlist ---
+    const ALLOWED_HOSTS = [
+        'www.google.com', 'google.com', 'www.bing.com', 'bing.com',
+        'duckduckgo.com', 'www.duckduckgo.com',
+        'search.yahoo.com', 'www.yahoo.com', 'yahoo.com',
+        'search.brave.com', 'brave.com', 'www.brave.com'
+    ];
+    const ALLOW_SUBDOMAINS = true;
+
+    function isSearchHost() {
+        const host = location.hostname.toLowerCase();
+        if (ALLOWED_HOSTS.includes(host)) return true;
+        if (ALLOW_SUBDOMAINS) return ALLOWED_HOSTS.some(h => host === h || host.endsWith('.' + h));
+        return false;
+    }
+    if (!isSearchHost()) return;
+
+   // --- State ---
+    let q1Mode = false;
+    let waitingQQ = false;
+    let isDragging = false;
+    let isResizing = false;
+    let startX, startY, startWidth, startHeight;
+    const STORAGE_KEY_COLORS = 'local_chat_bot_colors_v7';
+    const STORAGE_KEY_SIZE = 'local_chat_bot_size_v4';
+    const STORAGE_KEY_POSITION = 'local_chat_bot_position_v3';
+
+    // --- Color Settings ---
+    const colorDefaults = {
+        windowBg: '#fff0f6',
+        headerGradientFrom: '#ff9acb',
+        headerGradientTo: '#ff77b8',
+        botBg: '#ff00a8',
+        botText: '#ffffff',
+        userBg: '#6a00d9',
+        userText: '#ffffff',
+        bodyBg: '#fff0f9',
+        accent: '#ff4da6',
+        botNameColor: '##ffffff'
+    };
+
+    function loadSettings() {
+        try {
+            const colorsRaw = localStorage.getItem(STORAGE_KEY_COLORS);
+            const sizeRaw = localStorage.getItem(STORAGE_KEY_SIZE);
+            const positionRaw = localStorage.getItem(STORAGE_KEY_POSITION);
+            return {
+                colors: colorsRaw ? JSON.parse(colorsRaw) : { ...colorDefaults },
+                size: sizeRaw ? JSON.parse(sizeRaw) : { width: '360px', height: '400px' },
+                position: positionRaw ? JSON.parse(positionRaw) : { x: 20, y: 20 }
+            };
+        } catch (e) {
+            return {
+                colors: { ...colorDefaults },
+                size: { width: '360px', height: '400px' },
+                position: { x: 20, y: 20 }
+            };
+        }
+    }
+
+    function saveSettings() {
+        try {
+            localStorage.setItem(STORAGE_KEY_COLORS, JSON.stringify(colors));
+            localStorage.setItem(STORAGE_KEY_SIZE, JSON.stringify(size));
+            localStorage.setItem(STORAGE_KEY_POSITION, JSON.stringify(position));
+        } catch (e) {}
+    }
+
+    let { colors, size, position } = loadSettings();
+
+    // --- Rules ---
+    const rules = [
+        ['salut', 'Salut! 🌸 Cu ce te pot ajuta? (Scrie "ajutor" pentru comenzi)'],
+        ['buna', 'Bună! 😊 Ce faci?'],
+        ['cum esti', 'Sunt un bot local, funcționez bine! 🤖✨'],
+        ['ce faci', 'Mă distrez cu tine! 😊 Ce faci tu?'],
+        ['cum te cheamă', 'Sunt Lucy/Nyu, bot-ul tău de chat! 🌸'],
+        ['vorbește cu mine', 'Desigur! Despre ce vrei să vorbim? 💬'],
+        ['glumă', 'De ce nu se joacă robotii la ascunzător? 🤖➡️ Pentru că sunt prea buni la "cache"! 😂'],
+        [/mulțumesc|merci/i, 'Cu plăcere! 💖'],
+        ['timp', () => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['pâine', 'Îți place pâinea? Eu nu mănânc, dar știu rețete! 🍞 (Ex: Pâine de secară cu miere și nuci)'],
+        ['ajutor', '📌 **Comenzi disponibile:**\n' +
+            '- `culori`: Deschide panoul de culori.\n' +
+            '- `marime ecran [20x20|30x30|40x40|50x50|60x60|70x70|80x80|90x90|100x100|X%]`: Schimbă dimensiunea chat-ului.\n' +
+            '- `resetare ecran`: Resetează dimensiunea ecranului la 50% x 50%.\n' +
+            '- `q1`: Activează/dezactivează modul q1 (botul afișează mesajele tale, dar nu răspunde).\n' +
+            '- `qq [text]`: Botul repetă exact textul tău (fără prefixul `qq`).\n' +
+            '- `sterge mesaje`: Șterge toată conversația.\n' +
+            '- `logic [propoziție]`: Analizează propoziția din perspectiva logicii.\n' +
+            '- `argumenteaza [tema]`: Generează argumente pro/contra.\n' +
+            '- `anime [nume]`: Informații științifice/filozofice despre anime.'],
+
+        [/^logic (.+)/i, (msg) => {
+            const prop = msg.match(/^logic (.+)/i)[1].trim();
+            return `🔍 **Analiză logică:**\n- **Propoziție:** "${prop}"\n- **Tip:** ${prop.includes('→') ? 'Implicație' : prop.includes('∧') ? 'Conjuncție' : prop.includes('∨') ? 'Disjuncție' : 'Propoziție atomică'}\n- **Valoare de adevăr:** ${prop.toLowerCase().includes('adevărat') ? '✅ Adevărat' : prop.toLowerCase().includes('fals') ? '❌ Fals' : '⚠️ Nedeterminat (lipsește context)'}\n- **Sfaturi:** Folosește conectori logici (∧, ∨, →, ¬) pentru analize precise.`;
+        }],
+        [/^argumenteaza (.+)/i, (msg) => {
+            const topic = msg.match(/^argumenteaza (.+)/i)[1].trim();
+            return `🗣️ **Argumente pentru "${topic}":**\n\n**Pro:**\n- ${topic} poate aduce beneficii pe termen lung, cum ar fi ${topic.includes('tehnologie') ? 'eficiență și inovație.' : 'îmbunătățirea calității vieții.'}\n- Studii arată că ${topic} are un impact pozitiv în ${topic.includes('educatie') ? 'dezvoltarea intelectuală.' : 'domeniul său.'}\n\n**Contra:**\n- ${topic} poate avea efecte negative, cum ar fi ${topic.includes('retele sociale') ? 'izolarea socială.' : 'costurile ridicate.'}\n- Criticii susțin că ${topic} ${topic.includes('AI') ? 'poate înlocui locuri de muncă.' : 'nu este întotdeauna etic.'}\n\n💡 **Concluzie:** Analizează ambele părți pentru o viziune echilibrată.`;
+        }],
+
+        [/^anime (.+)/i, (msg) => {
+            const animeName = msg.match(/^anime (.+)/i)[1].trim().toLowerCase();
+            const animeDB = {
+                'elfen lied': {
+                    science: '🧠 **Neuroștiință:** Lucy (Diclonius) are "vectori" care manipulează materia prin undele electromagnetice — similar cu teorii despre **telechinezie** (psihokineză).',
+                    philosophy: '🌌 **Filozofie:** Tema principală este **discriminarea și umanitatea**. Diclonii sunt văzuți ca monștri, dar au emoții complexe — similar cu dezbaterile despre **IA și drepturile conștiinței**.',
+                    quote: '💬 "Dacă nu poți accepta lumea aşa cum este, schimbă-o!" — Nyu.'
+                },
+                'steins gate': {
+                    science: '⏳ **Fizică cuantică:** Mașina timpului folosește **găuri de vierme** (Einstein-Rosen) și **teoria multiversului** (Hugh Everett).',
+                    philosophy: '🔄 **Determinism vs. Liber Arbitru:** Okabe trece prin "Reading Steiner" (memorie retroactivă), punând sub semnul întrebării dacă **soarta este fixă**.',
+                    quote: '💬 "Eu sunt omul de știință care salvează lumea!" — Okabe Rintarou.'
+                },
+                'psycho pass': {
+                    science: '🧠 **Psihologie + IA:** Sistemul Sibyl măsoară **coeficientul de criminalitate** folosind scanări cerebrale — similar cu **neuroimagistica** modernă (fMRI).',
+                    philosophy: '⚖️ **Etica utilitarismului:** Societatea sacrifică libertatea individuală pentru **siguranță colectivă** — dezbateri asemănătoare cu **supravegherea masivă**.',
+                    quote: '💬 "Justiția este un lux pe care nu și-l permitem." — Shogo Makishima.'
+                },
+                'attack on titan': {
+                    science: '🧬 **Biologie:** Titanii au **regenerare accelerată** — inspirat din **planaria** (viermi care se regenerează) și **celule stem**.',
+                    philosophy: '🌍 **Război și libertate:** Tema centrală este **ciclu violenței** și căutarea libertății — asemănător cu **teoriile lui Hobbes** ("Homo homini lupus").',
+                    quote: '💬 "Dedicați inima voastră! Pântecele, inima, sângele, oasele, totul!" — Eren Yeager.'
+                }
+            };
+            if (animeDB[animeName]) {
+                const { science, philosophy, quote } = animeDB[animeName];
+                return `🎌 **${animeName.charAt(0).toUpperCase() + animeName.slice(1)}:**\n\n${science}\n\n${philosophy}\n\n${quote}`;
+            } else {
+                return `❌ Nu am informații despre "${animeName}". Îmi poți sugera un anime cunoscut (ex: Elfen Lied, Steins;Gate, Psycho-Pass)?`;
+            }
+        }],
+
+        [/^marime ecran(\s+(\d+x\d+|[\d]+%))?/i, (msg) => {
+            const match = msg.match(/^marime ecran(\s+(\d+x\d+|[\d]+%))?/i);
+            let sizeParam = match[2] ? match[2].trim() : null;
+
+            if (!sizeParam) {
+                const el = document.createElement('div');
+                el.className = 'lcb-msg lcb-bot';
+                el.innerHTML = `
+                    📐 **Alege dimensiunea ecranului:**
+                    <br>
+                    <button class="lcb-size-btn" data-size="20x20" title="20x20">🟣</button>
+                    <button class="lcb-size-btn" data-size="30x30" title="30x30">🟤</button>
+                    <button class="lcb-size-btn" data-size="40x40" title="40x40">🟥</button>
+                    <button class="lcb-size-btn" data-size="50x50" title="50x50">🟧</button>
+                    <button class="lcb-size-btn" data-size="60x60" title="60x60">🟨</button>
+                    <button class="lcb-size-btn" data-size="70x70" title="70x70">🟩</button>
+                    <button class="lcb-size-btn" data-size="80x80" title="80x80">🟦</button>
+                    <button class="lcb-size-btn" data-size="90x90" title="90x90">🟫</button>
+                    <button class="lcb-size-btn" data-size="100x100" title="100x100">⬛</button>
+                    <br>
+                    <small>Sau scrie: <code>marime ecran 75%</code> sau <code>resetare ecran</code></small>
+                `;
+                bodyDiv.appendChild(el);
+                bodyDiv.scrollTop = bodyDiv.scrollHeight;
+
+                el.querySelectorAll('.lcb-size-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const sizeType = btn.getAttribute('data-size');
+                        handleSizeChange(sizeType);
+                    });
+                });
+                return '';
+            } else {
+                handleSizeChange(sizeParam);
+                return `✅ Dimensiune setată la: <strong>${sizeParam}</strong>.`;
+            }
+        }],
+
+        [/^resetare ecran/i, () => {
+            handleSizeChange('50%');
+            return `✅ Dimensiunea ecranului a fost resetată la 50% x 50%.`;
+        }],
+
+        [/.*/i, 'Îmi pare rău, nu am un răspuns pregătit pentru asta. Scrie "ajutor" pentru a vedea comenzi disponibile.']
+    ];
+
+    // --- Helper Functions ---
+    function handleSizeChange(sizeParam) {
+        let width, height;
+        if (sizeParam.includes('x')) {
+            const [w, h] = sizeParam.split('x').map(Number);
+            width = `${Math.max(w, 20)}px`;
+            height = `${Math.max(h, 20)}px`;
+        } else if (sizeParam.includes('%')) {
+            const percent = parseFloat(sizeParam);
+            width = `${Math.max(percent, 20)}%`;
+            height = 'auto';
+        } else {
+            const sizes = {
+                '20x20': '200px',
+                '30x30': '300px',
+                '40x40': '400px',
+                '50x50': '50%',
+                '60x60': '60%',
+                '70x70': '70%',
+                '80x80': '80%',
+                '90x90': '90%',
+                '100x100': '100%'
+            };
+            width = sizes[sizeParam] || '360px';
+            height = sizes[sizeParam] ? (sizes[sizeParam].includes('%') ? 'auto' : sizes[sizeParam]) : '400px';
+        }
+
+        size = { width, height };
+        saveSettings();
+        applySizeToUI();
+    }
+
+    function applySizeToUI() {
+        lcbWindow.style.width = size.width;
+        lcbWindow.style.height = size.height;
+        lcbWindow.style.maxWidth = size.width.includes('%') ? '86%' : 'none';
+    }
+
+    function getResponse(message) {
+        if (q1Mode && !message.startsWith('qq ')) {
+            return '';
+        }
+
+        const lower = message.toLowerCase();
+        for (const [pattern, response] of rules) {
+            if (pattern instanceof RegExp) {
+                if (pattern.test(message)) {
+                    return typeof response === 'function' ? response(message) : response;
+                }
+            } else {
+                if (lower.includes(pattern.toLowerCase())) {
+                    return typeof response === 'function' ? response(message) : response;
+                }
+            }
+        }
+        return rules[rules.length - 1][1];
+    }
+
+    // --- Build UI ---
+    const container = document.createElement('div');
+    container.id = 'local-chat-bot';
+    container.innerHTML = `
+        <div class="lcb-window" id="lcb-window" role="dialog" aria-label="Local chat bot">
+            <div class="lcb-header" id="lcb-header">
+                <img class="lcb-icon" id="lcb-icon" src="https://assets.mycast.io/actor_images/actor-lucy-elfen-lied-1121936_large.jpg" alt="Lucy/Nyu"/>
+                <span class="lcb-title" id="lcb-title" style="color: ${colors.botNameColor};">Lucy/Nyu Chat</span>
+                <div class="lcb-controls">
+                    <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+                </div>
+            </div>
+            <div class="lcb-body" id="lcb-body" aria-live="polite"></div>
+            <div class="lcb-color-banner" id="lcb-color-banner">
+                <button id="lcb-open-colors" class="lcb-open-colors-btn" title="Deschide setări culori">🎨 Culori</button>
+            </div>
+            <form id="lcb-form" class="lcb-form" aria-label="Trimite mesaj">
+                <input id="lcb-input" class="lcb-input" autocomplete="off" placeholder="Scrie un mesaj..." />
+                <button type="button" class="lcb-emoji-btn" title="Emoji">😊</button>
+                <button type="submit" class="lcb-send">Trimite</button>
+            </form>
+            <div class="lcb-resize-handle" id="lcb-resize-handle"></div>
+            <div class="lcb-settings-panel" id="lcb-settings-panel" aria-hidden="true">
+                <h4>Setări culori</h4>
+                <div class="lcb-palette-row">
+                    <label>Nume bot:</label>
+                    <div class="lcb-swatch" data-key="botNameColor" title="Culoarea numelui bot-ului"></div>
+                    <input type="text" id="color-botNameColor" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="windowBg" title="Fundal fereastră"></div>
+                    <input type="text" id="color-windowBg" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="headerGradientFrom" title="Header start"></div>
+                    <input type="text" id="color-headerFrom" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="headerGradientTo" title="Header stop"></div>
+                    <input type="text" id="color-headerTo" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="bodyBg" title="Fundal body"></div>
+                    <input type="text" id="color-bodyBg" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="botBg" title="Bot fundal"></div>
+                    <input type="text" id="color-botBg" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="botText" title="Bot text"></div>
+                    <input type="text" id="color-botText" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="userBg" title="User fundal"></div>
+                    <input type="text" id="color-userBg" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="userText" title="User text"></div>
+                    <input type="text" id="color-userText" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-palette-row">
+                    <div class="lcb-swatch" data-key="accent" title="Acent"></div>
+                    <input type="text" id="color-accent" class="lcb-color" placeholder="#hex" />
+                </div>
+                <div class="lcb-settings-actions">
+                    <button id="lcb-save-colors" class="lcb-btn">Salvează</button>
+                    <button id="lcb-reset-colors" class="lcb-btn">Resetează</button>
+                    <button id="lcb-close-settings" class="lcb-btn">Închide</button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    // --- Base Styles ---
+    GM_addStyle(`
+        #local-chat-bot .lcb-window {
+            position: fixed;
+            right: ${position.x}px;
+            bottom: ${position.y}px;
+            width: ${size.width};
+            max-width: 86%;
+            height: ${size.height};
+            background: ${colors.windowBg};
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            font-family: Arial, sans-serif;
+            z-index: 999999;
+            transition: width .18s ease, height .18s ease;
+            overflow: hidden;
+            resize: none;
+        }
+        .lcb-window .lcb-header {
+            cursor: move;
+        }
+        .lcb-resize-handle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            right: 0;
+            bottom: 0;
+            background: ${colors.accent};
+            cursor: nwse-resize;
+            border-radius: 0 0 6px 0;
+        }
+        .lcb-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: linear-gradient(90deg, ${colors.headerGradientFrom}, ${colors.headerGradientTo});
+            color: #fff;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            cursor: move;
+            user-select: none;
+        }
+        .lcb-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.6);
+            flex: 0 0 28px;
+        }
+        .lcb-title {
+            font-weight: 700;
+            font-size: 13px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .lcb-controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .lcb-minimize {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+        .lcb-minimize:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        .lcb-body {
+            min-height: 160px;
+            max-height: calc(${size.height} - 120px);
+            padding: 10px;
+            overflow-y: auto;
+            background: ${colors.bodyBg};
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: opacity .18s ease;
+        }
+        .lcb-color-banner {
+            padding: 6px 8px;
+            background: rgba(255,255,255,0.8);
+            border-top: 1px solid rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .lcb-open-colors-btn {
+            background: ${colors.accent};
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .lcb-open-colors-btn:hover {
+            opacity: 0.9;
+        }
+        .lcb-form {
+            display: flex;
+            padding: 8px;
+            gap: 6px;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            background: transparent;
+        }
+        .lcb-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 8px;
+            background: #fff;
+        }
+        .lcb-emoji-btn {
+            padding: 8px 10px;
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .lcb-emoji-btn:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+        .lcb-send {
+            padding: 8px 10px;
+            background: ${colors.accent};
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .lcb-msg {
+            margin: 0;
+            max-width: 86%;
+            padding: 8px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            word-break: break-word;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .lcb-bot {
+            background: ${colors.botBg};
+            color: ${colors.botText};
+            align-self: flex-start;
+        }
+        .lcb-user {
+            align-self: flex-end;
+            background: ${colors.userBg};
+            color: ${colors.userText};
+        }
+        .lcb-bot-img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        .lcb-bot-name {
+            color: ${colors.botNameColor};
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .lcb-window.minimized {
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 28px !important;
+            padding: 6px !important;
+            overflow: visible;
+        }
+        .lcb-window.minimized .lcb-header {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lcb-window.minimized .lcb-icon,
+        .lcb-window.minimized .lcb-title,
+        .lcb-window.minimized .lcb-body,
+        .lcb-window.minimized .lcb-form,
+        .lcb-window.minimized .lcb-settings-panel,
+        .lcb-window.minimized .lcb-resize-handle,
+        .lcb-window.minimized .lcb-color-banner {
+            display: none;
+        }
+        .lcb-window.minimized .lcb-minimize {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: ${colors.accent};
+            color: #fff;
+            font-size: 20px;
+            line-height: 1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .lcb-settings-panel {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            background: rgba(255,255,255,0.96);
+            position: relative;
+        }
+        .lcb-settings-panel.visible {
+            display: block;
+        }
+        .lcb-settings-panel h4 {
+            margin: 6px 0 8px 0;
+            font-size: 14px;
+        }
+        .lcb-palette-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+        }
+        .lcb-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.06);
+            cursor: pointer;
+            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.03);
+        }
+        .lcb-color {
+            width: 140px;
+            padding: 6px;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 6px;
+        }
+        .lcb-settings-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .lcb-btn {
+            padding: 6px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.06);
+            background: #f4f4f4;
+            cursor: pointer;
+        }
+        .lcb-btn:hover {
+            background: #e0e0e0;
+        }
+        .lcb-size-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 4px;
+            padding: 4px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .lcb-size-btn:hover {
+            transform: scale(1.2);
+        }
+        .lcb-emoji-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 8px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            z-index: 1000000;
+            bottom: 60px;
+            right: 20px;
+            max-width: 300px;
+        }
+        .lcb-emoji-option {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .lcb-emoji-option:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 420px) {
+            #local-chat-bot .lcb-window {
+                right: 10px;
+                bottom: 10px;
+                width: 300px;
+            }
+            .lcb-icon {
+                width: 24px;
+                height: 24px;
+                flex: 0 0 24px;
+            }
+            .lcb-title {
+                font-size: 12px;
+            }
+        }
+    `);
+
+    // --- Element Refs ---
+    const bodyDiv = document.getElementById('lcb-body');
+    const form = document.getElementById('lcb-form');
+    const input = document.getElementById('lcb-input');
+    const minBtn = document.getElementById('lcb-minimize-btn');
+    const lcbWindow = document.getElementById('lcb-window');
+    const lcbHeader = document.getElementById('lcb-header');
+    const settingsPanel = document.getElementById('lcb-settings-panel');
+    const emojiBtn = document.querySelector('.lcb-emoji-btn');
+    const resizeHandle = document.getElementById('lcb-resize-handle');
+    const colorBanner = document.getElementById('lcb-color-banner');
+    const openColorsBtn = document.getElementById('lcb-open-colors');
+
+    // Settings inputs
+    const in_botNameColor = document.getElementById('color-botNameColor');
+    const in_windowBg = document.getElementById('color-windowBg');
+    const in_headerFrom = document.getElementById('color-headerFrom');
+    const in_headerTo = document.getElementById('color-headerTo');
+    const in_bodyBg = document.getElementById('color-bodyBg');
+    const in_botBg = document.getElementById('color-botBg');
+    const in_botText = document.getElementById('color-botText');
+    const in_userBg = document.getElementById('color-userBg');
+    const in_userText = document.getElementById('color-userText');
+    const in_accent = document.getElementById('color-accent');
+    const swatches = settingsPanel.querySelectorAll('.lcb-swatch');
+    const saveColorsBtn = document.getElementById('lcb-save-colors');
+    const resetColorsBtn = document.getElementById('lcb-reset-colors');
+    const closeSettingsBtn = document.getElementById('lcb-close-settings');
+
+    // --- Drag & Drop and Resize Logic ---
+    lcbHeader.addEventListener('mousedown', (e) => {
+        if (e.target.classList.contains('lcb-minimize') || e.target.classList.contains('lcb-emoji-btn')) return;
+
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = lcbWindow.getBoundingClientRect();
+        const windowX = window.innerWidth - rect.right;
+        const windowY = window.innerHeight - rect.bottom;
+        const offsetX = startX - rect.left;
+        const offsetY = startY - rect.top;
+
+        function moveWindow(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            position.x = window.innerWidth - e.clientX - offsetX;
+            position.y = window.innerHeight - e.clientY - offsetY;
+            lcbWindow.style.right = `${position.x}px`;
+            lcbWindow.style.bottom = `${position.y}px`;
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', moveWindow);
+            document.removeEventListener('mouseup', stopDrag);
+            saveSettings();
+        }
+
+        document.addEventListener('mousemove', moveWindow);
+        document.addEventListener('mouseup', stopDrag);
+    });
+
+    resizeHandle.addEventListener('mousedown', (e) => {
+        e.stopPropagation();
+        isResizing = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = parseInt(lcbWindow.style.width || size.width);
+        startHeight = parseInt(lcbWindow.style.height || size.height);
+
+        function resizeWindow(e) {
+            if (!isResizing) return;
+            e.preventDefault();
+            const newWidth = startWidth + (e.clientX - startX);
+            const newHeight = startHeight + (e.clientY - startY);
+
+            size.width = `${Math.max(newWidth, 200)}px`;
+            size.height = `${Math.max(newHeight, 200)}px`;
+            lcbWindow.style.width = size.width;
+            lcbWindow.style.height = size.height;
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('mousemove', resizeWindow);
+            document.removeEventListener('mouseup', stopResize);
+            saveSettings();
+        }
+
+        document.addEventListener('mousemove', resizeWindow);
+        document.addEventListener('mouseup', stopResize);
+    });
+
+    // --- Message Utilities ---
+    function appendMessage(text, who = 'bot') {
+        if (!text) return null;
+        const el = document.createElement('div');
+        el.className = 'lcb-msg ' + (who === 'user' ? 'lcb-user' : 'lcb-bot');
+
+        if (who === 'bot') {
+            const img = document.createElement('img');
+            img.src = 'https://assets.mycast.io/actor_images/actor-lucy-elfen-lied-1121936_large.jpg';
+            img.className = 'lcb-bot-img';
+            img.alt = 'Lucy';
+            el.appendChild(img);
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'lcb-bot-name';
+            nameSpan.textContent = 'Lucy: ';
+            el.appendChild(nameSpan);
+        }
+
+        const textSpan = document.createElement('span');
+        textSpan.innerHTML = text.includes('<') ? text : escapeHtml(text);
+        el.appendChild(textSpan);
+
+        bodyDiv.appendChild(el);
+        bodyDiv.scrollTop = bodyDiv.scrollHeight;
+        return el;
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    function trimMessages(max = 100) {
+        const msgs = bodyDiv.querySelectorAll('.lcb-msg');
+        while (msgs.length > max) {
+            const first = msgs[0];
+            if (!first) break;
+            first.remove();
+        }
+    }
+
+    function clearAllMessages() {
+        bodyDiv.innerHTML = '';
+        appendMessage('🧹 Toate mesajele au fost șterse.', 'bot');
+    }
+
+    // --- Emoji Picker ---
+    function showEmojiPicker() {
+        const emojiPicker = document.createElement('div');
+        emojiPicker.className = 'lcb-emoji-picker';
+        emojiPicker.innerHTML = `
+            <button class="lcb-emoji-option" data-emoji="😊">😊</button>
+            <button class="lcb-emoji-option" data-emoji="😍">😍</button>
+            <button class="lcb-emoji-option" data-emoji="😂">😂</button>
+            <button class="lcb-emoji-option" data-emoji="😢">😢</button>
+            <button class="lcb-emoji-option" data-emoji="👍">👍</button>
+            <button class="lcb-emoji-option" data-emoji="❤️">❤️</button>
+            <button class="lcb-emoji-option" data-emoji="🎉">🎉</button>
+            <button class="lcb-emoji-option" data-emoji="😎">😎</button>
+            <button class="lcb-emoji-option" data-emoji="🤔">🤔</button>
+            <button class="lcb-emoji-option" data-emoji="🙏">🙏</button>
+            <button class="lcb-emoji-option" data-emoji="😘">😘</button>
+            <button class="lcb-emoji-option" data-emoji="😇">😇</button>
+            <button class="lcb-emoji-option" data-emoji="💪">💪</button>
+            <button class="lcb-emoji-option" data-emoji="👀">👀</button>
+            <button class="lcb-emoji-option" data-emoji="🌟">🌟</button>
+            <button class="lcb-emoji-option" data-emoji="🔥">🔥</button>
+        `;
+        document.body.appendChild(emojiPicker);
+
+        emojiPicker.querySelectorAll('.lcb-emoji-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const emoji = btn.getAttribute('data-emoji');
+                input.value += emoji;
+                input.focus();
+                emojiPicker.remove();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!emojiPicker.contains(e.target) && e.target !== emojiBtn) {
+                emojiPicker.remove();
+            }
+        }, { once: true });
+    }
+
+    // --- Settings Panel ---
+    function populateSettingsInputs() {
+        in_botNameColor.value = colors.botNameColor || '';
+        in_windowBg.value = colors.windowBg || '';
+        in_headerFrom.value = colors.headerGradientFrom || '';
+        in_headerTo.value = colors.headerGradientTo || '';
+        in_bodyBg.value = colors.bodyBg || '';
+        in_botBg.value = colors.botBg || '';
+        in_botText.value = colors.botText || '';
+        in_userBg.value = colors.userBg || '';
+        in_userText.value = colors.userText || '';
+        in_accent.value = colors.accent || '';
+        swatches.forEach(s => {
+            const key = s.getAttribute('data-key');
+            if (key && colors[key]) s.style.background = colors[key];
+        });
+    }
+
+    function applySettingsToUI() {
+        colors = Object.assign({}, colorDefaults, colors);
+        const prev = document.querySelector('style[data-lcb-injected]');
+        if (prev) prev.remove();
+        const css = `
+            #local-chat-bot .lcb-window { background: ${colors.windowBg} !important; }
+            .lcb-header { background: linear-gradient(90deg, ${colors.headerGradientFrom}, ${colors.headerGradientTo}) !important; }
+            .lcb-body { background: ${colors.bodyBg} !important; }
+            .lcb-bot { background: ${colors.botBg} !important; color: ${colors.botText} !important; }
+            .lcb-user { background: ${colors.userBg} !important; color: ${colors.userText} !important; }
+            .lcb-send, .lcb-window.minimized .lcb-minimize, .lcb-resize-handle, .lcb-open-colors-btn { background: ${colors.accent} !important; }
+            .lcb-bot-name { color: ${colors.botNameColor} !important; }
+        `;
+        const s = document.createElement('style');
+        s.setAttribute('data-lcb-injected', '1');
+        s.textContent = css;
+        document.head.appendChild(s);
+        if (settingsPanel) {
+            swatches.forEach(s => {
+                const key = s.getAttribute('data-key');
+                if (key && colors[key]) s.style.background = colors[key];
+            });
+        }
+        document.getElementById('lcb-title').style.color = colors.botNameColor;
+    }
+
+    function isValidHex(h) {
+        return /^#([0-9A-F]{3}){1,2}$/i.test(h);
+    }
+
+    function toggleSettingsPanel(show) {
+        const visible = typeof show === 'boolean' ? show : !settingsPanel.classList.contains('visible');
+        if (visible) {
+            settingsPanel.classList.add('visible');
+            settingsPanel.setAttribute('aria-hidden', 'false');
+            populateSettingsInputs();
+        } else {
+            settingsPanel.classList.remove('visible');
+            settingsPanel.setAttribute('aria-hidden', 'true');
+        }
+    }
+
+    // --- Event Listeners ---
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const raw = (input.value || '').trim();
+        if (!raw) return;
+        const lower = raw.toLowerCase();
+
+        // q1 toggle
+        if (lower === 'q1') {
+            q1Mode = !q1Mode;
+            appendMessage(q1Mode ? '🔇 Mod q1 activat. Botul afișează mesajele tale, dar nu răspunde.' : '🔊 Mod q1 dezactivat. Botul revine la normal.', 'bot');
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        // qq handling
+        if (lower.startsWith('qq ')) {
+            const payload = raw.slice(3).trim();
+            appendMessage(payload, 'bot');
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        // Clear messages
+        const clearCommands = ['sterge mesaje', 'șterge mesaje', 'sterge-chat', 'sterge chat', 'clear messages', 'clear'];
+        if (clearCommands.includes(lower)) {
+            appendMessage(raw, 'user');
+            clearAllMessages();
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        // Colors command
+        if (lower === 'culori') {
+            appendMessage(raw, 'user');
+            toggleSettingsPanel(true);
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        // Normal flow
+        appendMessage(raw, 'user');
+        if (!q1Mode) {
+            const reply = getResponse(raw);
+            if (reply) {
+                setTimeout(() => {
+                    appendMessage(reply, 'bot');
+                }, 250);
+            }
+        }
+        input.value = '';
+        input.focus();
+    });
+
+    emojiBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showEmojiPicker();
+    });
+
+    minBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isMin = lcbWindow.classList.contains('minimized');
+        if (isMin) {
+            lcbWindow.classList.remove('minimized');
+            minBtn.textContent = '—';
+            input.focus();
+        } else {
+            lcbWindow.classList.add('minimized');
+            minBtn.textContent = '+';
+        }
+    });
+
+    lcbHeader.addEventListener('dblclick', () => {
+        lcbWindow.classList.toggle('minimized');
+    });
+
+    lcbWindow.addEventListener('click', (e) => {
+        if (lcbWindow.classList.contains('minimized')) {
+            lcbWindow.classList.remove('minimized');
+            input.focus();
+        }
+    });
+
+    openColorsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleSettingsPanel(true);
+    });
+
+    // Swatches click
+    swatches.forEach(s => {
+        s.addEventListener('click', (e) => {
+            const key = s.getAttribute('data-key');
+            if (!key) return;
+            const colorInput = document.createElement('input');
+            colorInput.type = 'color';
+            const current = colors[key] || colorDefaults[key] || '#ffffff';
+            try { colorInput.value = current; } catch (e) { colorInput.value = '#ffffff'; }
+            colorInput.addEventListener('input', (ev) => {
+                const v = ev.target.value;
+                s.style.background = v;
+                switch (key) {
+                    case 'botNameColor': in_botNameColor.value = v; break;
+                    case 'windowBg': in_windowBg.value = v; break;
+                    case 'headerGradientFrom': in_headerFrom.value = v; break;
+                    case 'headerGradientTo': in_headerTo.value = v; break;
+                    case 'bodyBg': in_bodyBg.value = v; break;
+                    case 'botBg': in_botBg.value = v; break;
+                    case 'botText': in_botText.value = v; break;
+                    case 'userBg': in_userBg.value = v; break;
+                    case 'userText': in_userText.value = v; break;
+                    case 'accent': in_accent.value = v; break;
+                }
+            });
+            colorInput.click();
+        });
+    });
+
+    saveColorsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const candidate = {
+            botNameColor: in_botNameColor.value.trim() || colors.botNameColor,
+            windowBg: in_windowBg.value.trim() || colors.windowBg,
+            headerGradientFrom: in_headerFrom.value.trim() || colors.headerGradientFrom,
+            headerGradientTo: in_headerTo.value.trim() || colors.headerGradientTo,
+            bodyBg: in_bodyBg.value.trim() || colors.bodyBg,
+            botBg: in_botBg.value.trim() || colors.botBg,
+            botText: in_botText.value.trim() || colors.botText,
+            userBg: in_userBg.value.trim() || colors.userBg,
+            userText: in_userText.value.trim() || colors.userText,
+            accent: in_accent.value.trim() || colors.accent
+        };
+        for (const k in candidate) {
+            const v = candidate[k];
+            if (v && !isValidHex(v)) {
+                alert('Cod hex invalid: ' + v + '\nFolosește formatul #rrggbb sau #rgb.');
+                return;
+            }
+        }
+        colors = Object.assign({}, candidate);
+        saveSettings();
+        applySettingsToUI();
+        appendMessage('✅ Culorile au fost salvate!', 'bot');
+        toggleSettingsPanel(false);
+    });
+
+    resetColorsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!confirm('Resetezi culorile la valorile implicite?')) return;
+        colors = Object.assign({}, colorDefaults);
+        saveSettings();
+        applySettingsToUI();
+        appendMessage('Culorile au fost resetate la valorile implicite.', 'bot');
+        toggleSettingsPanel(false);
+    });
+
+    closeSettingsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleSettingsPanel(false);
+    });
+
+    // --- Global API ---
+    window.localChatBot = {
+        send: (text) => {
+            appendMessage(text, 'user');
+            if (!q1Mode) {
+                setTimeout(() => appendMessage(getResponse(text), 'bot'), 200);
+            }
+        },
+        clear: () => { clearAllMessages(); }
+    };
+
+    // --- Initialize ---
+    applySettingsToUI();
+    applySizeToUI();
+    input.focus();
+    appendMessage('🌸 **Bun venit!** Scrie "ajutor" pentru a vedea comenzi disponibile.', 'bot');
+})();

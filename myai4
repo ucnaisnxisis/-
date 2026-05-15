@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Local Chat Bot - Lucy/Nyu 2.0
+// @name         Local Chat Bot - Lucy/Nyu 2.0 test
 // @namespace    http://tampermonkey.net/
-// @version      6.0
+// @version      7.0
 // @description  Chat cu cel mai avansat robot digital.
 // @author       tester john
 // @match        *://*.google.com/*
@@ -32,9 +32,8 @@
     }
     if (!isSearchHost()) return;
 
-   // --- State ---
+    // --- State ---
     let q1Mode = false;
-    let waitingQQ = false;
     let isDragging = false;
     let isResizing = false;
     let startX, startY, startWidth, startHeight;
@@ -53,7 +52,7 @@
         userText: '#ffffff',
         bodyBg: '#fff0f9',
         accent: '#ff4da6',
-        botNameColor: '##ffffff'
+        botNameColor: '#ffffff'
     };
 
     function loadSettings() {
@@ -99,8 +98,6 @@
         ['pâine', 'Îți place pâinea? Eu nu mănânc, dar știu rețete! 🍞 (Ex: Pâine de secară cu miere și nuci)'],
         ['ajutor', '📌 **Comenzi disponibile:**\n' +
             '- `culori`: Deschide panoul de culori.\n' +
-            '- `marime ecran [20x20|30x30|40x40|50x50|60x60|70x70|80x80|90x90|100x100|X%]`: Schimbă dimensiunea chat-ului.\n' +
-            '- `resetare ecran`: Resetează dimensiunea ecranului la 50% x 50%.\n' +
             '- `q1`: Activează/dezactivează modul q1 (botul afișează mesajele tale, dar nu răspunde).\n' +
             '- `qq [text]`: Botul repetă exact textul tău (fără prefixul `qq`).\n' +
             '- `sterge mesaje`: Șterge toată conversația.\n' +
@@ -147,49 +144,6 @@
             } else {
                 return `❌ Nu am informații despre "${animeName}". Îmi poți sugera un anime cunoscut (ex: Elfen Lied, Steins;Gate, Psycho-Pass)?`;
             }
-        }],
-
-        [/^marime ecran(\s+(\d+x\d+|[\d]+%))?/i, (msg) => {
-            const match = msg.match(/^marime ecran(\s+(\d+x\d+|[\d]+%))?/i);
-            let sizeParam = match[2] ? match[2].trim() : null;
-
-            if (!sizeParam) {
-                const el = document.createElement('div');
-                el.className = 'lcb-msg lcb-bot';
-                el.innerHTML = `
-                    📐 **Alege dimensiunea ecranului:**
-                    <br>
-                    <button class="lcb-size-btn" data-size="20x20" title="20x20">🟣</button>
-                    <button class="lcb-size-btn" data-size="30x30" title="30x30">🟤</button>
-                    <button class="lcb-size-btn" data-size="40x40" title="40x40">🟥</button>
-                    <button class="lcb-size-btn" data-size="50x50" title="50x50">🟧</button>
-                    <button class="lcb-size-btn" data-size="60x60" title="60x60">🟨</button>
-                    <button class="lcb-size-btn" data-size="70x70" title="70x70">🟩</button>
-                    <button class="lcb-size-btn" data-size="80x80" title="80x80">🟦</button>
-                    <button class="lcb-size-btn" data-size="90x90" title="90x90">🟫</button>
-                    <button class="lcb-size-btn" data-size="100x100" title="100x100">⬛</button>
-                    <br>
-                    <small>Sau scrie: <code>marime ecran 75%</code> sau <code>resetare ecran</code></small>
-                `;
-                bodyDiv.appendChild(el);
-                bodyDiv.scrollTop = bodyDiv.scrollHeight;
-
-                el.querySelectorAll('.lcb-size-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        const sizeType = btn.getAttribute('data-size');
-                        handleSizeChange(sizeType);
-                    });
-                });
-                return '';
-            } else {
-                handleSizeChange(sizeParam);
-                return `✅ Dimensiune setată la: <strong>${sizeParam}</strong>.`;
-            }
-        }],
-
-        [/^resetare ecran/i, () => {
-            handleSizeChange('50%');
-            return `✅ Dimensiunea ecranului a fost resetată la 50% x 50%.`;
         }],
 
         [/.*/i, 'Îmi pare rău, nu am un răspuns pregătit pentru asta. Scrie "ajutor" pentru a vedea comenzi disponibile.']
@@ -266,67 +220,42 @@
                 </div>
             </div>
             <div class="lcb-body" id="lcb-body" aria-live="polite"></div>
-            <div class="lcb-color-banner" id="lcb-color-banner">
-                <button id="lcb-open-colors" class="lcb-open-colors-btn" title="Deschide setări culori">🎨 Culori</button>
-            </div>
             <form id="lcb-form" class="lcb-form" aria-label="Trimite mesaj">
                 <input id="lcb-input" class="lcb-input" autocomplete="off" placeholder="Scrie un mesaj..." />
                 <button type="button" class="lcb-emoji-btn" title="Emoji">😊</button>
                 <button type="submit" class="lcb-send">Trimite</button>
             </form>
             <div class="lcb-resize-handle" id="lcb-resize-handle"></div>
-            <div class="lcb-settings-panel" id="lcb-settings-panel" aria-hidden="true">
-                <h4>Setări culori</h4>
-                <div class="lcb-palette-row">
-                    <label>Nume bot:</label>
-                    <div class="lcb-swatch" data-key="botNameColor" title="Culoarea numelui bot-ului"></div>
-                    <input type="text" id="color-botNameColor" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="windowBg" title="Fundal fereastră"></div>
-                    <input type="text" id="color-windowBg" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="headerGradientFrom" title="Header start"></div>
-                    <input type="text" id="color-headerFrom" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="headerGradientTo" title="Header stop"></div>
-                    <input type="text" id="color-headerTo" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="bodyBg" title="Fundal body"></div>
-                    <input type="text" id="color-bodyBg" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="botBg" title="Bot fundal"></div>
-                    <input type="text" id="color-botBg" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="botText" title="Bot text"></div>
-                    <input type="text" id="color-botText" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="userBg" title="User fundal"></div>
-                    <input type="text" id="color-userBg" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="userText" title="User text"></div>
-                    <input type="text" id="color-userText" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-palette-row">
-                    <div class="lcb-swatch" data-key="accent" title="Acent"></div>
-                    <input type="text" id="color-accent" class="lcb-color" placeholder="#hex" />
-                </div>
-                <div class="lcb-settings-actions">
-                    <button id="lcb-save-colors" class="lcb-btn">Salvează</button>
-                    <button id="lcb-reset-colors" class="lcb-btn">Resetează</button>
-                    <button id="lcb-close-settings" class="lcb-btn">Închide</button>
-                </div>
-            </div>
         </div>
     `;
     document.body.appendChild(container);
+
+    // --- Floating Color Panel (independent, center of screen) ---
+    const floatingColorPanel = document.createElement('div');
+    floatingColorPanel.id = 'lcb-floating-color-panel';
+    floatingColorPanel.style = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000000;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        display: none;
+        max-width: 400px;
+        width: 90%;
+    `;
+    floatingColorPanel.innerHTML = `
+        <h3 style="margin-top: 0;">Setări culori</h3>
+        <div id="lcb-floating-palette"></div>
+        <div style="display: flex; gap: 8px; margin-top: 12px;">
+            <button id="lcb-save-floating-colors" class="lcb-btn">Salvează</button>
+            <button id="lcb-close-floating-panel" class="lcb-btn">Închide</button>
+        </div>
+    `;
+    document.body.appendChild(floatingColorPanel);
 
     // --- Base Styles ---
     GM_addStyle(`
@@ -408,7 +337,7 @@
         }
         .lcb-body {
             min-height: 160px;
-            max-height: calc(${size.height} - 120px);
+            max-height: calc(${size.height} - 80px);
             padding: 10px;
             overflow-y: auto;
             background: ${colors.bodyBg};
@@ -416,24 +345,6 @@
             flex-direction: column;
             gap: 8px;
             transition: opacity .18s ease;
-        }
-        .lcb-color-banner {
-            padding: 6px 8px;
-            background: rgba(255,255,255,0.8);
-            border-top: 1px solid rgba(0,0,0,0.04);
-            text-align: center;
-        }
-        .lcb-open-colors-btn {
-            background: ${colors.accent};
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 6px 10px;
-            cursor: pointer;
-            font-size: 12px;
-        }
-        .lcb-open-colors-btn:hover {
-            opacity: 0.9;
         }
         .lcb-form {
             display: flex;
@@ -517,9 +428,7 @@
         .lcb-window.minimized .lcb-title,
         .lcb-window.minimized .lcb-body,
         .lcb-window.minimized .lcb-form,
-        .lcb-window.minimized .lcb-settings-panel,
-        .lcb-window.minimized .lcb-resize-handle,
-        .lcb-window.minimized .lcb-color-banner {
+        .lcb-window.minimized .lcb-resize-handle {
             display: none;
         }
         .lcb-window.minimized .lcb-minimize {
@@ -533,45 +442,6 @@
             line-height: 1;
             box-shadow: 0 8px 20px rgba(0,0,0,0.06);
         }
-        .lcb-settings-panel {
-            display: none;
-            padding: 10px;
-            border-top: 1px solid rgba(0,0,0,0.04);
-            background: rgba(255,255,255,0.96);
-            position: relative;
-        }
-        .lcb-settings-panel.visible {
-            display: block;
-        }
-        .lcb-settings-panel h4 {
-            margin: 6px 0 8px 0;
-            font-size: 14px;
-        }
-        .lcb-palette-row {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 6px 0;
-        }
-        .lcb-swatch {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            border: 1px solid rgba(0,0,0,0.06);
-            cursor: pointer;
-            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.03);
-        }
-        .lcb-color {
-            width: 140px;
-            padding: 6px;
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 6px;
-        }
-        .lcb-settings-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 8px;
-        }
         .lcb-btn {
             padding: 6px 8px;
             border-radius: 6px;
@@ -581,19 +451,6 @@
         }
         .lcb-btn:hover {
             background: #e0e0e0;
-        }
-        .lcb-size-btn {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-            margin: 4px;
-            padding: 4px;
-            border-radius: 8px;
-            transition: transform 0.2s;
-        }
-        .lcb-size-btn:hover {
-            transform: scale(1.2);
         }
         .lcb-emoji-picker {
             display: flex;
@@ -644,27 +501,13 @@
     const minBtn = document.getElementById('lcb-minimize-btn');
     const lcbWindow = document.getElementById('lcb-window');
     const lcbHeader = document.getElementById('lcb-header');
-    const settingsPanel = document.getElementById('lcb-settings-panel');
-    const emojiBtn = document.querySelector('.lcb-emoji-btn');
     const resizeHandle = document.getElementById('lcb-resize-handle');
-    const colorBanner = document.getElementById('lcb-color-banner');
-    const openColorsBtn = document.getElementById('lcb-open-colors');
+    const emojiBtn = document.querySelector('.lcb-emoji-btn');
 
-    // Settings inputs
-    const in_botNameColor = document.getElementById('color-botNameColor');
-    const in_windowBg = document.getElementById('color-windowBg');
-    const in_headerFrom = document.getElementById('color-headerFrom');
-    const in_headerTo = document.getElementById('color-headerTo');
-    const in_bodyBg = document.getElementById('color-bodyBg');
-    const in_botBg = document.getElementById('color-botBg');
-    const in_botText = document.getElementById('color-botText');
-    const in_userBg = document.getElementById('color-userBg');
-    const in_userText = document.getElementById('color-userText');
-    const in_accent = document.getElementById('color-accent');
-    const swatches = settingsPanel.querySelectorAll('.lcb-swatch');
-    const saveColorsBtn = document.getElementById('lcb-save-colors');
-    const resetColorsBtn = document.getElementById('lcb-reset-colors');
-    const closeSettingsBtn = document.getElementById('lcb-close-settings');
+    // --- Floating Color Panel Refs ---
+    const floatingPalette = document.getElementById('lcb-floating-palette');
+    const saveFloatingColorsBtn = document.getElementById('lcb-save-floating-colors');
+    const closeFloatingPanelBtn = document.getElementById('lcb-close-floating-panel');
 
     // --- Drag & Drop and Resize Logic ---
     lcbHeader.addEventListener('mousedown', (e) => {
@@ -764,15 +607,6 @@
         return div.innerHTML;
     }
 
-    function trimMessages(max = 100) {
-        const msgs = bodyDiv.querySelectorAll('.lcb-msg');
-        while (msgs.length > max) {
-            const first = msgs[0];
-            if (!first) break;
-            first.remove();
-        }
-    }
-
     function clearAllMessages() {
         bodyDiv.innerHTML = '';
         appendMessage('🧹 Toate mesajele au fost șterse.', 'bot');
@@ -818,22 +652,18 @@
         }, { once: true });
     }
 
-    // --- Settings Panel ---
-    function populateSettingsInputs() {
-        in_botNameColor.value = colors.botNameColor || '';
-        in_windowBg.value = colors.windowBg || '';
-        in_headerFrom.value = colors.headerGradientFrom || '';
-        in_headerTo.value = colors.headerGradientTo || '';
-        in_bodyBg.value = colors.bodyBg || '';
-        in_botBg.value = colors.botBg || '';
-        in_botText.value = colors.botText || '';
-        in_userBg.value = colors.userBg || '';
-        in_userText.value = colors.userText || '';
-        in_accent.value = colors.accent || '';
-        swatches.forEach(s => {
-            const key = s.getAttribute('data-key');
-            if (key && colors[key]) s.style.background = colors[key];
-        });
+    // --- Floating Color Panel Functions ---
+    function populateFloatingColorPanel() {
+        floatingPalette.innerHTML = `
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${Object.keys(colors).map(key => `
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <label style="width: 120px; font-size: 12px;">${key}:</label>
+                        <input type="text" id="floating-color-${key}" class="lcb-color" placeholder="#hex" value="${colors[key] || ''}" style="flex: 1; padding: 6px; border: 1px solid #ccc; border-radius: 4px;" />
+                    </div>
+                `).join('')}
+            </div>
+        `;
     }
 
     function applySettingsToUI() {
@@ -846,36 +676,18 @@
             .lcb-body { background: ${colors.bodyBg} !important; }
             .lcb-bot { background: ${colors.botBg} !important; color: ${colors.botText} !important; }
             .lcb-user { background: ${colors.userBg} !important; color: ${colors.userText} !important; }
-            .lcb-send, .lcb-window.minimized .lcb-minimize, .lcb-resize-handle, .lcb-open-colors-btn { background: ${colors.accent} !important; }
+            .lcb-send, .lcb-window.minimized .lcb-minimize, .lcb-resize-handle { background: ${colors.accent} !important; }
             .lcb-bot-name { color: ${colors.botNameColor} !important; }
         `;
         const s = document.createElement('style');
         s.setAttribute('data-lcb-injected', '1');
         s.textContent = css;
         document.head.appendChild(s);
-        if (settingsPanel) {
-            swatches.forEach(s => {
-                const key = s.getAttribute('data-key');
-                if (key && colors[key]) s.style.background = colors[key];
-            });
-        }
         document.getElementById('lcb-title').style.color = colors.botNameColor;
     }
 
     function isValidHex(h) {
         return /^#([0-9A-F]{3}){1,2}$/i.test(h);
-    }
-
-    function toggleSettingsPanel(show) {
-        const visible = typeof show === 'boolean' ? show : !settingsPanel.classList.contains('visible');
-        if (visible) {
-            settingsPanel.classList.add('visible');
-            settingsPanel.setAttribute('aria-hidden', 'false');
-            populateSettingsInputs();
-        } else {
-            settingsPanel.classList.remove('visible');
-            settingsPanel.setAttribute('aria-hidden', 'true');
-        }
     }
 
     // --- Event Listeners ---
@@ -885,10 +697,9 @@
         if (!raw) return;
         const lower = raw.toLowerCase();
 
-        // q1 toggle
+        // q1 toggle (fără notificare)
         if (lower === 'q1') {
             q1Mode = !q1Mode;
-            appendMessage(q1Mode ? '🔇 Mod q1 activat. Botul afișează mesajele tale, dar nu răspunde.' : '🔊 Mod q1 dezactivat. Botul revine la normal.', 'bot');
             input.value = '';
             input.focus();
             return;
@@ -904,7 +715,7 @@
         }
 
         // Clear messages
-        const clearCommands = ['sterge mesaje', 'șterge mesaje', 'sterge-chat', 'sterge chat', 'clear messages', 'clear'];
+        const clearCommands = ['sterge mesaje', 'șterge mesaje', 'sterge-chat', 'sterge chat', 'clear messages', 'clear','șterge mesajele','sterge mesajele'];
         if (clearCommands.includes(lower)) {
             appendMessage(raw, 'user');
             clearAllMessages();
@@ -916,7 +727,8 @@
         // Colors command
         if (lower === 'culori') {
             appendMessage(raw, 'user');
-            toggleSettingsPanel(true);
+            populateFloatingColorPanel();
+            floatingColorPanel.style.display = 'block';
             input.value = '';
             input.focus();
             return;
@@ -965,81 +777,32 @@
         }
     });
 
-    openColorsBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleSettingsPanel(true);
+    // Floating color panel events
+    closeFloatingPanelBtn.addEventListener('click', () => {
+        floatingColorPanel.style.display = 'none';
     });
 
-    // Swatches click
-    swatches.forEach(s => {
-        s.addEventListener('click', (e) => {
-            const key = s.getAttribute('data-key');
-            if (!key) return;
-            const colorInput = document.createElement('input');
-            colorInput.type = 'color';
-            const current = colors[key] || colorDefaults[key] || '#ffffff';
-            try { colorInput.value = current; } catch (e) { colorInput.value = '#ffffff'; }
-            colorInput.addEventListener('input', (ev) => {
-                const v = ev.target.value;
-                s.style.background = v;
-                switch (key) {
-                    case 'botNameColor': in_botNameColor.value = v; break;
-                    case 'windowBg': in_windowBg.value = v; break;
-                    case 'headerGradientFrom': in_headerFrom.value = v; break;
-                    case 'headerGradientTo': in_headerTo.value = v; break;
-                    case 'bodyBg': in_bodyBg.value = v; break;
-                    case 'botBg': in_botBg.value = v; break;
-                    case 'botText': in_botText.value = v; break;
-                    case 'userBg': in_userBg.value = v; break;
-                    case 'userText': in_userText.value = v; break;
-                    case 'accent': in_accent.value = v; break;
-                }
-            });
-            colorInput.click();
-        });
-    });
-
-    saveColorsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const candidate = {
-            botNameColor: in_botNameColor.value.trim() || colors.botNameColor,
-            windowBg: in_windowBg.value.trim() || colors.windowBg,
-            headerGradientFrom: in_headerFrom.value.trim() || colors.headerGradientFrom,
-            headerGradientTo: in_headerTo.value.trim() || colors.headerGradientTo,
-            bodyBg: in_bodyBg.value.trim() || colors.bodyBg,
-            botBg: in_botBg.value.trim() || colors.botBg,
-            botText: in_botText.value.trim() || colors.botText,
-            userBg: in_userBg.value.trim() || colors.userBg,
-            userText: in_userText.value.trim() || colors.userText,
-            accent: in_accent.value.trim() || colors.accent
-        };
-        for (const k in candidate) {
-            const v = candidate[k];
-            if (v && !isValidHex(v)) {
-                alert('Cod hex invalid: ' + v + '\nFolosește formatul #rrggbb sau #rgb.');
-                return;
+    saveFloatingColorsBtn.addEventListener('click', () => {
+        let allValid = true;
+        Object.keys(colors).forEach(key => {
+            const inputEl = document.getElementById(`floating-color-${key}`);
+            const value = inputEl.value.trim();
+            if (value && !isValidHex(value)) {
+                allValid = false;
+                inputEl.style.border = '1px solid red';
+            } else {
+                inputEl.style.border = '';
+                if (value) colors[key] = value;
             }
+        });
+        if (!allValid) {
+            alert('Unele coduri hex nu sunt valide! Folosește formatul #rrggbb sau #rgb.');
+            return;
         }
-        colors = Object.assign({}, candidate);
         saveSettings();
         applySettingsToUI();
+        floatingColorPanel.style.display = 'none';
         appendMessage('✅ Culorile au fost salvate!', 'bot');
-        toggleSettingsPanel(false);
-    });
-
-    resetColorsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (!confirm('Resetezi culorile la valorile implicite?')) return;
-        colors = Object.assign({}, colorDefaults);
-        saveSettings();
-        applySettingsToUI();
-        appendMessage('Culorile au fost resetate la valorile implicite.', 'bot');
-        toggleSettingsPanel(false);
-    });
-
-    closeSettingsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleSettingsPanel(false);
     });
 
     // --- Global API ---

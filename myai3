@@ -1,0 +1,670 @@
+// ==UserScript==
+// @name         Anya Forger - Chat Modern (rev6)
+// @namespace    http://tampermonkey.net/
+// @version      1.5
+// @description  Chatbot local "Anya Forger" — design modern, butoane emoji pentru mărime, avatar utilizator, culori personalizabile, comandă qq îmbunătățită.
+// @match        *://*/*
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @run-at       document-end
+// ==/UserScript==
+
+(function () {
+  'use strict';
+
+  // CONFIG
+  const APP_ID = 'anya-forger-chat';
+  const DEFAULTS = {
+    width: 360,
+    height: 520,
+    scale: 1.0,
+    visible: true,
+    minimized: false,
+    pos: { right: 20, bottom: 20 },
+    bg: '#fff0f6',
+    headerBg: '#ffbfdc',
+    bannerMsgBg: '#ffe6f0',
+    userBg: '#ffffff',
+    botBg: '#ffd1e8',
+    userText: '#6a0dad',
+    botText: '#000000',
+    headerText: '#220022', // Culoare text header
+    accent: '#ff77b3',
+    buttonText: '#ffffff',
+    border: '#ff8fb0',
+    avatar: 'https://cdn.rafled.com/anime-icons/images/9d812cba92a4a411bc462c222b5454f9600ffcbee3ac0a54555cf869d5e258fb.jpg',
+    userAvatar: 'https://widgetopia.io/widget/purple-boy-eye', // Avatar pentru "Japonezul"
+    q1Active: false
+  };
+
+  // Storage helpers
+  async function getState() {
+    const s = await GM_getValue(APP_ID + ':state', null);
+    if (!s) return DEFAULTS;
+    try {
+      return Object.assign({}, DEFAULTS, JSON.parse(s));
+    } catch (e) {
+      return DEFAULTS;
+    }
+  }
+
+  async function setState(st) {
+    await GM_setValue(APP_ID + ':state', JSON.stringify(st));
+  }
+
+  // Allowed hosts (search engines)
+  const ALLOWED_HOSTS = ['google.', 'bing.', 'search.yahoo.', 'duckduckgo.com', 'yandex.', 'ecosia.org'];
+  if (!ALLOWED_HOSTS.some(function (h) { return location.hostname.includes(h); })) return;
+
+  (async function main() {
+    const state = await getState();
+    if (document.getElementById(APP_ID)) return;
+
+    // Container
+    const c = document.createElement('div');
+    c.id = APP_ID;
+    c.style.position = 'fixed';
+    c.style.zIndex = 999999;
+    c.style.right = state.pos.right + 'px';
+    c.style.bottom = state.pos.bottom + 'px';
+    c.style.width = state.width + 'px';
+    c.style.height = state.height + 'px';
+    c.style.transform = 'scale(' + state.scale + ')';
+    c.style.boxShadow = '0 12px 40px rgba(0,0,0,0.25)';
+    c.style.border = '2px solid ' + state.border;
+    c.style.borderRadius = '16px'; // Borduri mai rotunjite
+    c.style.overflow = 'hidden';
+    c.style.display = 'flex';
+    c.style.flexDirection = 'column';
+    c.style.background = state.bg;
+    c.style.fontFamily = '"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'; // Font modern
+
+    // Header (banner)
+    const header = document.createElement('div');
+    header.style.height = '60px';
+    header.style.display = 'flex';
+    header.style.alignItems = 'center';
+    header.style.padding = '8px 12px';
+    header.style.gap = '10px';
+    header.style.background = state.headerBg;
+    header.style.cursor = 'move';
+    header.style.userSelect = 'none';
+    header.style.borderBottom = '1px solid ' + state.border;
+
+    const avatar = document.createElement('img');
+    avatar.src = state.avatar;
+    avatar.alt = 'Anya';
+    avatar.style.width = '44px';
+    avatar.style.height = '44px';
+    avatar.style.borderRadius = '50%'; // Avatar rotund
+    avatar.style.objectFit = 'cover';
+    avatar.style.border = '2px solid ' + state.border;
+
+    const title = document.createElement('div');
+    title.innerText = 'Anya Forger';
+    title.style.fontWeight = '700';
+    title.style.fontSize = '16px';
+    title.style.color = state.headerText; // Culoare text header
+
+    const spacer = document.createElement('div');
+    spacer.style.flex = '1';
+
+    // Butoane pentru mărime (emoji)
+    const sizeButtons = document.createElement('div');
+    sizeButtons.style.display = 'flex';
+    sizeButtons.style.gap = '4px';
+
+    const expandBtn = document.createElement('button');
+    expandBtn.innerText = '🔼'; // Emoji pentru +
+    expandBtn.title = 'Mărește';
+    expandBtn.style.cssText = 'border:none;padding:6px 8px;border-radius:6px;cursor:pointer;color:' + state.buttonText + ';background:' + state.accent + ';font-size: 16px;';
+
+    const shrinkBtn = document.createElement('button');
+    shrinkBtn.innerText = '🔽'; // Emoji pentru -
+    shrinkBtn.title = 'Micșorează';
+    shrinkBtn.style.cssText = 'border:none;padding:6px 8px;border-radius:6px;cursor:pointer;color:' + state.buttonText + ';background:' + state.accent + ';font-size: 16px;';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.innerText = '✕';
+    closeBtn.title = 'Închide';
+    closeBtn.style.cssText = 'border:none;padding:6px 8px;border-radius:6px;cursor:pointer;color:' + state.buttonText + ';background:' + state.accent + ';font-size: 16px;';
+
+    sizeButtons.appendChild(expandBtn);
+    sizeButtons.appendChild(shrinkBtn);
+    header.appendChild(avatar);
+    header.appendChild(title);
+    header.appendChild(spacer);
+    header.appendChild(sizeButtons);
+    header.appendChild(closeBtn);
+
+    // Message area
+    const body = document.createElement('div');
+    body.style.flex = '1';
+    body.style.padding = '12px';
+    body.style.display = 'flex';
+    body.style.flexDirection = 'column';
+    body.style.overflowY = 'auto';
+    body.style.gap = '10px';
+    body.style.background = state.bg;
+
+    // Input area (fără banner de typing)
+    const inputWrap = document.createElement('div');
+    inputWrap.style.height = '60px';
+    inputWrap.style.display = 'flex';
+    inputWrap.style.alignItems = 'center';
+    inputWrap.style.padding = '8px 12px';
+    inputWrap.style.gap = '8px';
+    inputWrap.style.background = state.bg;
+    inputWrap.style.borderTop = '1px solid ' + state.border;
+
+    const textInput = document.createElement('input');
+    textInput.type = 'text';
+    textInput.placeholder = 'Scrie mesaj...';
+    textInput.style.flex = '1';
+    textInput.style.padding = '10px 12px';
+    textInput.style.borderRadius = '20px'; // Input rotunjit
+    textInput.style.border = '1px solid ' + state.border;
+    textInput.style.outline = 'none';
+    textInput.style.background = state.userBg;
+    textInput.style.color = state.userText;
+    textInput.style.fontFamily = 'inherit';
+
+    const sendBtn = document.createElement('button');
+    sendBtn.innerText = 'Trimite';
+    sendBtn.style.padding = '10px 16px';
+    sendBtn.style.border = 'none';
+    sendBtn.style.background = state.accent;
+    sendBtn.style.color = state.buttonText;
+    sendBtn.style.borderRadius = '20px'; // Buton rotunjit
+    sendBtn.style.cursor = 'pointer';
+    sendBtn.style.fontWeight = '600';
+
+    inputWrap.appendChild(textInput);
+    inputWrap.appendChild(sendBtn);
+
+    // Assemble
+    c.appendChild(header);
+    c.appendChild(body);
+    c.appendChild(inputWrap);
+    document.body.appendChild(c);
+
+    // Conversation storage
+    const CONV_KEY = APP_ID + ':conv';
+    async function loadConv() {
+      try {
+        var raw = await GM_getValue(CONV_KEY, '[]');
+        return JSON.parse(raw || '[]');
+      } catch (e) {
+        return [];
+      }
+    }
+    async function saveConv(a) {
+      await GM_setValue(CONV_KEY, JSON.stringify(a || []));
+    }
+
+    // Auto-delete messages over 100
+    async function trimConv(conv) {
+      if (conv.length > 100) {
+        conv = conv.slice(-100);
+        await saveConv(conv);
+      }
+      return conv;
+    }
+
+    // Render message with avatar and name
+    function renderMessage(text, from) {
+      from = from || 'bot';
+      const row = document.createElement('div');
+      row.style.display = 'flex';
+      row.style.width = '100%';
+      row.style.justifyContent = from === 'user' ? 'flex-end' : 'flex-start';
+      row.style.alignItems = 'flex-end';
+      row.style.gap = '8px';
+
+      // Avatar
+      const avatarImg = document.createElement('img');
+      avatarImg.style.width = '28px';
+      avatarImg.style.height = '28px';
+      avatarImg.style.borderRadius = '50%';
+      avatarImg.style.objectFit = 'cover';
+      avatarImg.src = from === 'user' ? state.userAvatar : state.avatar;
+
+      // Name
+      const nameSpan = document.createElement('span');
+      nameSpan.style.fontSize = '11px';
+      nameSpan.style.fontWeight = '600';
+      nameSpan.style.color = from === 'user' ? state.userText : state.botText;
+      nameSpan.innerText = from === 'user' ? 'Japonezul' : 'Anya Forger';
+
+      // Bubble
+      const bubble = document.createElement('div');
+      bubble.innerText = text;
+      bubble.style.maxWidth = '75%';
+      bubble.style.padding = '10px 14px';
+      bubble.style.borderRadius = '18px'; // Mesaje rotunjite
+      bubble.style.whiteSpace = 'pre-wrap';
+      bubble.style.boxShadow = '0 1px 2px rgba(0,0,0,0.1)';
+      if (from === 'user') {
+        bubble.style.background = state.userBg;
+        bubble.style.color = state.userText;
+        bubble.style.borderBottomRightRadius = '4px'; // Colț dreapta jos tăiat
+      } else {
+        bubble.style.background = state.botBg;
+        bubble.style.color = state.botText;
+        bubble.style.borderBottomLeftRadius = '4px'; // Colț stânga jos tăiat
+      }
+
+      // Adaugă avatarul și numele
+      if (from === 'bot') {
+        row.appendChild(avatarImg);
+        row.appendChild(nameSpan);
+      }
+      row.appendChild(bubble);
+      if (from === 'user') {
+        row.appendChild(nameSpan);
+        row.appendChild(avatarImg);
+      }
+      body.appendChild(row);
+      body.scrollTop = body.scrollHeight;
+    }
+
+    // Commands logic
+    var q1Mode = !!state.q1Active;
+
+    async function processCommandRaw(text) {
+      var parts = text.trim().split(' ');
+      var cmd = parts[0].toLowerCase();
+
+      if (q1Mode && cmd !== 'qq' && cmd !== 'q1' && cmd !== 'marime ecran' && cmd !== 'culori') {
+        return { handled: false, ignored: true };
+      }
+
+      if (cmd === 'culori') {
+        openColorEditor();
+        return { handled: true };
+      }
+      if (cmd === 'sterge' || cmd === 'clear' || cmd === 'delete') {
+        await saveConv([]);
+        body.innerHTML = '';
+        return { handled: true };
+      }
+      if (cmd === 'qq') {
+        var conv = await loadConv();
+        var lastUserMsg = null;
+        for (var i = conv.length - 1; i >= 0; i--) {
+          if (conv[i].from === 'user') {
+            lastUserMsg = conv[i].text;
+            break;
+          }
+        }
+        if (lastUserMsg) {
+          conv.push({ from: 'bot', text: lastUserMsg });
+          await saveConv(conv);
+          renderMessage(lastUserMsg, 'bot');
+        }
+        return { handled: true };
+      }
+      if (cmd === 'q1') {
+        q1Mode = !q1Mode;
+        state.q1Active = q1Mode;
+        await setState(state);
+        return { handled: true, reply: 'Modul q1: ' + (q1Mode ? 'ACTIVAT' : 'DEZACTIVAT') };
+      }
+      if (cmd === 'marime ecran') {
+        return { handled: true, reply: 'Folosește butoanele 🔼 și 🔽 pentru a ajusta mărimea.' };
+      }
+      if (cmd === '/time') {
+        var now = new Date();
+        var timeStr = now.toLocaleString('ro-RO');
+        return { handled: true, reply: 'Ora și data curentă: ' + timeStr };
+      }
+      if (cmd === '/help') {
+        return {
+          handled: true,
+          reply: 'Comenzi disponibile:\n- culori: Deschide editorul de culori\n- sterge/clear/delete: Șterge conversația\n- qq: Botul repetă ultimul mesaj al tău\n- q1: Activează/dezactivează modul q1\n- marime ecran: Afișează butoanele de mărime\n- /time: Ora și data\n- /random opțiune1,opțiune2: Alege aleatoriu\n- /emoji cuvânt: Afișează un emoji'
+        };
+      }
+      if (cmd === '/random') {
+        var options = text.substring(8).split(',').map(s => s.trim()).filter(s => s);
+        if (options.length > 0) {
+          var randomOption = options[Math.floor(Math.random() * options.length)];
+          return { handled: true, reply: randomOption };
+        } else {
+          return { handled: true, reply: 'Specifică opțiunile, separate prin virgulă.' };
+        }
+      }
+      if (cmd === '/emoji') {
+        var keyword = text.substring(7).trim().toLowerCase();
+        var emojiMap = {
+          'like': '👍', 'heart': '❤️', 'fire': '🔥', 'laugh': '😂', 'sad': '😢',
+          'angry': '😡', 'love': '😍', 'star': '⭐', 'rocket': '🚀', 'party': '🎉',
+          'hug': '🤗', 'thumbsup': '👍', 'thumbsdown': '👎', 'clap': '👏', 'wink': '😉'
+        };
+        return { handled: true, reply: emojiMap[keyword] || '❓' };
+      }
+
+      return { handled: false };
+    }
+
+    // Smart replies
+    function getSmartReply(text) {
+      text = text.toLowerCase().trim();
+      var randomReplies = {
+        'ce anotimp preferi?': ['vara 🌞', 'toamna 🍂', 'primăvara 🌸', 'iarna ❄️'],
+        'ce sezon preferi?': ['vara 🌞', 'toamna 🍂', 'primăvara 🌸', 'iarna ❄️'],
+        'ce culoare preferi?': ['roșu 🔴', 'albastru 🔵', 'verde 🟢', 'galben 🟡'],
+        'ce mâncare preferi?': ['pizza 🍕', 'sushi 🍣', 'paste 🍝', 'burgere 🍔'],
+        'vreau like': ['👍'], 'vreau heart': ['❤️'], 'vreau fire': ['🔥'], 'vreau laugh': ['😂']
+      };
+      for (var key in randomReplies) {
+        if (text.includes(key)) {
+          return randomReplies[key][Math.floor(Math.random() * randomReplies[key].length)];
+        }
+      }
+      return null;
+    }
+
+    // Color editor (include headerText)
+    function openColorEditor() {
+      var modal = document.createElement('div');
+      modal.style.position = 'fixed';
+      modal.style.left = '50%';
+      modal.style.top = '50%';
+      modal.style.transform = 'translate(-50%,-50%)';
+      modal.style.zIndex = 1000002;
+      modal.style.background = '#fff';
+      modal.style.padding = '16px';
+      modal.style.border = '2px solid ' + state.border;
+      modal.style.borderRadius = '12px';
+      modal.style.width = '400px';
+      modal.style.boxShadow = '0 12px 40px rgba(0,0,0,0.3)';
+
+      var title = document.createElement('div');
+      title.innerText = 'Editor culori';
+      title.style.fontWeight = '700';
+      title.style.marginBottom = '12px';
+      title.style.fontSize = '18px';
+      modal.appendChild(title);
+
+      var fields = [
+        { key: 'bg', label: 'Fundal general' },
+        { key: 'headerBg', label: 'Header (banner)' },
+        { key: 'headerText', label: 'Text header' },
+        { key: 'botBg', label: 'Mesaje bot (fundal)' },
+        { key: 'userBg', label: 'Mesaje user (fundal)' },
+        { key: 'botText', label: 'Text bot' },
+        { key: 'userText', label: 'Text user' },
+        { key: 'accent', label: 'Accent (butoane)' },
+        { key: 'border', label: 'Border' }
+      ];
+
+      var inputs = {};
+      fields.forEach(function (f) {
+        var row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.alignItems = 'center';
+        row.style.justifyContent = 'space-between';
+        row.style.marginBottom = '8px';
+
+        var lab = document.createElement('div');
+        lab.innerText = f.label;
+        lab.style.flex = '1';
+
+        var inp = document.createElement('input');
+        inp.type = 'color';
+        inp.value = state[f.key] || DEFAULTS[f.key];
+        inp.style.width = '64px';
+        inp.style.height = '36px';
+        inputs[f.key] = inp;
+
+        row.appendChild(lab);
+        row.appendChild(inp);
+        modal.appendChild(row);
+      });
+
+      var sizeRow = document.createElement('div');
+      sizeRow.style.display = 'flex';
+      sizeRow.style.gap = '12px';
+      sizeRow.style.alignItems = 'center';
+      sizeRow.style.marginTop = '12px';
+      var wLabel = document.createElement('div');
+      wLabel.innerText = 'Lățime:';
+      var wIn = document.createElement('input');
+      wIn.type = 'range';
+      wIn.min = 220;
+      wIn.max = window.innerWidth;
+      wIn.value = state.width;
+      var wVal = document.createElement('span');
+      wVal.innerText = state.width + 'px';
+      var hLabel = document.createElement('div');
+      hLabel.innerText = 'Înălțime:';
+      var hIn = document.createElement('input');
+      hIn.type = 'range';
+      hIn.min = 200;
+      hIn.max = window.innerHeight;
+      hIn.value = state.height;
+      var hVal = document.createElement('span');
+      hVal.innerText = state.height + 'px';
+
+      wIn.addEventListener('input', function() { wVal.innerText = wIn.value + 'px'; });
+      hIn.addEventListener('input', function() { hVal.innerText = hIn.value + 'px'; });
+
+      sizeRow.appendChild(wLabel);
+      sizeRow.appendChild(wIn);
+      sizeRow.appendChild(wVal);
+      sizeRow.appendChild(hLabel);
+      sizeRow.appendChild(hIn);
+      sizeRow.appendChild(hVal);
+      modal.appendChild(sizeRow);
+
+      var btnRow = document.createElement('div');
+      btnRow.style.display = 'flex';
+      btnRow.style.justifyContent = 'flex-end';
+      btnRow.style.gap = '8px';
+      btnRow.style.marginTop = '16px';
+      var saveBtn = document.createElement('button');
+      saveBtn.innerText = 'Salvează';
+      saveBtn.style.padding = '10px 16px';
+      saveBtn.style.background = state.accent;
+      saveBtn.style.color = state.buttonText;
+      saveBtn.style.border = 'none';
+      saveBtn.style.borderRadius = '8px';
+      saveBtn.style.cursor = 'pointer';
+      var cancelBtn = document.createElement('button');
+      cancelBtn.innerText = 'Anulează';
+      cancelBtn.style.padding = '10px 16px';
+      cancelBtn.style.background = '#ddd';
+      cancelBtn.style.border = 'none';
+      cancelBtn.style.borderRadius = '8px';
+      cancelBtn.style.cursor = 'pointer';
+      btnRow.appendChild(cancelBtn);
+      btnRow.appendChild(saveBtn);
+      modal.appendChild(btnRow);
+
+      document.body.appendChild(modal);
+
+      cancelBtn.onclick = function () {
+        if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
+      };
+      saveBtn.onclick = async function () {
+        fields.forEach(function (f) {
+          state[f.key] = inputs[f.key].value;
+        });
+        state.width = parseInt(wIn.value, 10);
+        state.height = parseInt(hIn.value, 10);
+        c.style.width = state.width + 'px';
+        c.style.height = state.height + 'px';
+        c.style.border = '2px solid ' + state.border;
+        header.style.background = state.headerBg;
+        title.style.color = state.headerText;
+        c.style.background = state.bg;
+        body.style.background = state.bg;
+        textInput.style.background = state.userBg;
+        textInput.style.color = state.userText;
+        sendBtn.style.background = state.accent;
+        sendBtn.style.color = state.buttonText;
+        await setState(state);
+        if (modal && modal.parentNode) modal.parentNode.removeChild(modal);
+      };
+    }
+
+    // Send handling
+    async function handleSend(rawText) {
+      var text = String(rawText || '').trim();
+      if (!text) return;
+      var conv = await loadConv();
+      conv.push({ from: 'user', text: text });
+      await saveConv(conv);
+      renderMessage(text, 'user');
+
+      var res = await processCommandRaw(text);
+      if (res.ignored) return;
+      if (res.handled) {
+        if (res.reply) {
+          conv.push({ from: 'bot', text: res.reply });
+          await saveConv(conv);
+          renderMessage(res.reply, 'bot');
+        }
+        return;
+      }
+
+      var smartReply = getSmartReply(text);
+      if (smartReply) {
+        conv.push({ from: 'bot', text: smartReply });
+        await saveConv(conv);
+        renderMessage(smartReply, 'bot');
+        conv = await trimConv(conv);
+        return;
+      }
+    }
+
+    // UI interactions
+    sendBtn.onclick = function () {
+      var t = textInput.value;
+      handleSend(t);
+      textInput.value = '';
+    };
+    textInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        sendBtn.click();
+      }
+    });
+
+    // Expand / Shrink behavior
+    expandBtn.onclick = async function () {
+      var vw = window.innerWidth;
+      var vh = window.innerHeight;
+      var newW = Math.min(vw, Math.round(c.offsetWidth * 1.2));
+      var newH = Math.min(vh, Math.round(c.offsetHeight * 1.2));
+      state.width = newW;
+      state.height = newH;
+      c.style.width = state.width + 'px';
+      c.style.height = state.height + 'px';
+      if (state.width >= vw && state.height >= vh) {
+        c.style.right = '0px';
+        c.style.bottom = '0px';
+        state.pos.right = 0;
+        state.pos.bottom = 0;
+      }
+      await setState(state);
+    };
+
+    shrinkBtn.onclick = async function () {
+      var minW = 220;
+      var minH = 200;
+      var newW = Math.max(minW, Math.round(c.offsetWidth * 0.8));
+      var newH = Math.max(minH, Math.round(c.offsetHeight * 0.8));
+      state.width = newW;
+      state.height = newH;
+      c.style.width = state.width + 'px';
+      c.style.height = state.height + 'px';
+      await setState(state);
+    };
+
+    // Close -> hide and create launcher
+    closeBtn.onclick = async function () {
+      c.style.display = 'none';
+      state.visible = false;
+      await setState(state);
+      createLauncher();
+    };
+    function createLauncher() {
+      if (document.getElementById(APP_ID + '-launcher')) return;
+      var l = document.createElement('div');
+      l.id = APP_ID + '-launcher';
+      l.style.position = 'fixed';
+      l.style.right = (state.pos.right + 10) + 'px';
+      l.style.bottom = (state.pos.bottom + 10) + 'px';
+      l.style.zIndex = 999998;
+      l.style.width = '48px';
+      l.style.height = '48px';
+      l.style.borderRadius = '50%';
+      l.style.background = state.accent;
+      l.style.display = 'flex';
+      l.style.alignItems = 'center';
+      l.style.justifyContent = 'center';
+      l.style.cursor = 'pointer';
+      l.style.color = state.buttonText;
+      l.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+      l.innerText = 'A';
+      document.body.appendChild(l);
+      l.onclick = async function () {
+        c.style.display = 'flex';
+        state.visible = true;
+        await setState(state);
+        if (l && l.parentNode) l.parentNode.removeChild(l);
+      };
+    }
+
+    // Dragging
+    (function makeDraggable(node) {
+      var dragging = false;
+      var startX = 0;
+      var startY = 0;
+      var startRight = 0;
+      var startBottom = 0;
+      header.addEventListener('mousedown', function (e) {
+        dragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        startRight = state.pos.right;
+        startBottom = state.pos.bottom;
+        document.body.style.userSelect = 'none';
+      });
+      document.addEventListener('mousemove', function (e) {
+        if (!dragging) return;
+        var dx = e.clientX - startX;
+        var dy = e.clientY - startY;
+        var newRight = Math.max(0, startRight - dx);
+        var newBottom = Math.max(0, startBottom - dy);
+        state.pos.right = newRight;
+        state.pos.bottom = newBottom;
+        c.style.right = newRight + 'px';
+        c.style.bottom = newBottom + 'px';
+      });
+      document.addEventListener('mouseup', async function () {
+        if (dragging) {
+          dragging = false;
+          document.body.style.userSelect = '';
+          await setState(state);
+        }
+      });
+    }(c));
+
+    // Save state on unload
+    window.addEventListener('beforeunload', function () {
+      setState(state);
+    });
+
+    // Initialize conversation
+    (async function initConv() {
+      var conv = await loadConv();
+      conv = await trimConv(conv);
+      conv.forEach(function (m) {
+        renderMessage(m.text, m.from);
+      });
+      body.scrollTop = body.scrollHeight;
+    })();
+  })();
+}());

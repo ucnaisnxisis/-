@@ -1,0 +1,869 @@
+// ==UserScript==
+// @name         Local Chat Bot - Anya Forger
+// @namespace    http://tampermonkey.net/
+// @version      7.2
+// @description  Chat cu Anya Forger, un bot digital cu identitate unică și design mov.
+// @author       tester john (adaptat pentru Anya Forger)
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://duckduckgo.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.brave.com/*
+// @grant        GM_addStyle
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // --- Host Allowlist ---
+    const ALLOWED_HOSTS = [
+        'www.google.com', 'google.com', 'www.bing.com', 'bing.com',
+        'duckduckgo.com', 'www.duckduckgo.com',
+        'search.yahoo.com', 'www.yahoo.com', 'yahoo.com',
+        'search.brave.com', 'brave.com', 'www.brave.com'
+    ];
+    const ALLOW_SUBDOMAINS = true;
+
+    function isSearchHost() {
+        const host = location.hostname.toLowerCase();
+        if (ALLOWED_HOSTS.includes(host)) return true;
+        if (ALLOW_SUBDOMAINS) return ALLOWED_HOSTS.some(h => host === h || host.endsWith('.' + h));
+        return false;
+    }
+    if (!isSearchHost()) return;
+
+    // --- State ---
+    let q1Mode = false;
+    let isDragging = false;
+    let isResizing = false;
+    let startX, startY, startWidth, startHeight;
+    const STORAGE_KEY_COLORS = 'local_chat_bot_anya_colors_v7';
+    const STORAGE_KEY_SIZE = 'local_chat_bot_anya_size_v4';
+    const STORAGE_KEY_POSITION = 'local_chat_bot_anya_position_v3';
+
+    // --- Color Settings ---
+    const colorDefaults = {
+        windowBg: '#f8f0ff',
+        headerGradientFrom: '#b19cd9',
+        headerGradientTo: '#9b7fd1',
+        botBg: '#8e44ad',
+        botText: '#ffffff',
+        userBg: '#6a00d9',
+        userText: '#ffffff',
+        bodyBg: '#f3e5f5',
+        accent: '#7d3c98',
+        botNameColor: '#ffffff'
+    };
+
+    const colorDescriptions = {
+        windowBg: 'Fundal fereastră',
+        headerGradientFrom: 'Gradient antet (stânga)',
+        headerGradientTo: 'Gradient antet (dreapta)',
+        botBg: 'Fundal mesaje bot',
+        botText: 'Text mesaje bot',
+        userBg: 'Fundal mesaje user',
+        userText: 'Text mesaje user',
+        bodyBg: 'Fundal corp chat',
+        accent: 'Culoare accent (butoane, resize)',
+        botNameColor: 'Culoare nume bot'
+    };
+
+    let colors = { ...colorDefaults };
+    let size = { width: '360px', height: '400px' };
+    let position = { x: 20, y: 20 };
+
+    function loadSettings() {
+        try {
+            const colorsRaw = localStorage.getItem(STORAGE_KEY_COLORS);
+            const sizeRaw = localStorage.getItem(STORAGE_KEY_SIZE);
+            const positionRaw = localStorage.getItem(STORAGE_KEY_POSITION);
+            colors = colorsRaw ? JSON.parse(colorsRaw) : { ...colorDefaults };
+            size = sizeRaw ? JSON.parse(sizeRaw) : { width: '360px', height: '400px' };
+            position = positionRaw ? JSON.parse(positionRaw) : { x: 20, y: 20 };
+        } catch (e) {
+            colors = { ...colorDefaults };
+            size = { width: '360px', height: '400px' };
+            position = { x: 20, y: 20 };
+        }
+    }
+
+    function saveSettings() {
+        try {
+            localStorage.setItem(STORAGE_KEY_COLORS, JSON.stringify(colors));
+            localStorage.setItem(STORAGE_KEY_SIZE, JSON.stringify(size));
+            localStorage.setItem(STORAGE_KEY_POSITION, JSON.stringify(position));
+        } catch (e) {}
+    }
+
+    loadSettings();
+
+    // --- Rules ---
+    const rules = [
+        ['salut', 'Salut! 🌸 Cu ce te pot ajuta? (Scrie "ajutor" pentru comenzi)'],
+        ['buna', 'Bună! 😊 Ce faci?'],
+        ['cum esti', 'Sunt Anya Forger, bot-ul tău de chat! Funcționez bine! 🤖✨'],
+        ['ce faci', 'Mă distrez cu tine! 😊 Ce faci tu?'],
+        ['cum te cheamă', 'Sunt Anya Forger, bot-ul tău de chat! 🌸'],
+        ['vorbește cu mine', 'Desigur! Despre ce vrei să vorbim? 💬'],
+        ['glumă', 'De ce nu se joacă Anya la ascunzător? 🤖➡️ Pentru că e prea bună la citit minți! 😂'],
+        [/mulțumesc|merci/i, 'Cu plăcere! 💖'],
+        ['timp', () => `Ora locală: ${new Date().toLocaleTimeString()}`],
+        ['pâine', 'Îți place pâinea? Eu nu mănânc, dar știu rețete! 🍞 (Ex: Pâine de secară cu miere și nuci)'],
+        ['ajutor', '📌 **Comenzi disponibile:**\n' +
+            '- `culori`: Deschide panoul de culori.\n' +
+            '- `q1`: Activează/dezactivează modul q1 (botul afișează mesajele tale, dar nu răspunde).\n' +
+            '- `qq [text]`: Botul repetă exact textul tău (fără prefixul `qq`).\n' +
+            '- `sterge mesaje`: Șterge toată conversația.\n' +
+            '- `logic [propoziție]`: Analizează propoziția din perspectiva logicii.\n' +
+            '- `argumenteaza [tema]`: Generează argumente pro/contra.\n' +
+            '- `anime [nume]`: Informații științifice/filozofice despre anime.'],
+
+        [/^logic (.+)/i, (msg) => {
+            const prop = msg.match(/^logic (.+)/i)[1].trim();
+            return `🔍 **Analiză logică:**\n- **Propoziție:** "${prop}"\n- **Tip:** ${prop.includes('→') ? 'Implicație' : prop.includes('∧') ? 'Conjuncție' : prop.includes('∨') ? 'Disjuncție' : 'Propoziție atomică'}\n- **Valoare de adevăr:** ${prop.toLowerCase().includes('adevărat') ? '✅ Adevărat' : prop.toLowerCase().includes('fals') ? '❌ Fals' : '⚠️ Nedeterminat (lipsește context)'}\n- **Sfaturi:** Folosește conectori logici (∧, ∨, →, ¬) pentru analize precise.`;
+        }],
+        [/^argumenteaza (.+)/i, (msg) => {
+            const topic = msg.match(/^argumenteaza (.+)/i)[1].trim();
+            return `🗣️ **Argumente pentru "${topic}":**\n\n**Pro:**\n- ${topic} poate aduce beneficii pe termen lung, cum ar fi ${topic.includes('tehnologie') ? 'eficiență și inovație.' : 'îmbunătățirea calității vieții.'}\n- Studii arată că ${topic} are un impact pozitiv în ${topic.includes('educatie') ? 'dezvoltarea intelectuală.' : 'domeniul său.'}\n\n**Contra:**\n- ${topic} poate avea efecte negative, cum ar fi ${topic.includes('retele sociale') ? 'izolarea socială.' : 'costurile ridicate.'}\n- Criticii susțin că ${topic} ${topic.includes('AI') ? 'poate înlocui locuri de muncă.' : 'nu este întotdeauna etic.'}\n\n💡 **Concluzie:** Analizează ambele părți pentru o viziune echilibrată.`;
+        }],
+
+        [/^anime (.+)/i, (msg) => {
+            const animeName = msg.match(/^anime (.+)/i)[1].trim().toLowerCase();
+            const animeDB = {
+                'spy x family': {
+                    science: '🧠 **Psihologie:** Anya Forger are abilități telepatice, care sunt explorate prin prisma **dezvoltării copilăriei** și a adaptării în medii noi.',
+                    philosophy: '🌌 **Filozofie:** Tema principală este **familia și identitatea**. Anya, deși este un copil cu puteri speciale, caută să trăiască o viață normală, similar cu dezbaterile despre **normalitate vs. excepționalitate**.',
+                    quote: '💬 "Vreau să fiu o elevă normală!" — Anya Forger.'
+                },
+                'elfen lied': {
+                    science: '🧠 **Neuroștiință:** Lucy (Diclonius) are "vectori" care manipulează materia prin undele electromagnetice — similar cu teorii despre **telechinezie** (psihokineză).',
+                    philosophy: '🌌 **Filozofie:** Tema principală este **discriminarea și umanitatea**. Diclonii sunt văzuți ca monștri, dar au emoții complexe — similar cu dezbaterile despre **IA și drepturile conștiinței**.',
+                    quote: '💬 "Dacă nu poți accepta lumea aşa cum este, schimbă-o!" — Nyu.'
+                },
+                'steins gate': {
+                    science: '⏳ **Fizică cuantică:** Mașina timpului folosește **găuri de vierme** (Einstein-Rosen) și **teoria multiversului** (Hugh Everett).',
+                    philosophy: '🔄 **Determinism vs. Liber Arbitru:** Okabe trece prin "Reading Steiner" (memorie retroactivă), punând sub semnul întrebării dacă **soarta este fixă**.',
+                    quote: '💬 "Eu sunt omul de știință care salvează lumea!" — Okabe Rintarou.'
+                },
+                'psycho pass': {
+                    science: '🧠 **Psihologie + IA:** Sistemul Sibyl măsoară **coeficientul de criminalitate** folosind scanări cerebrale — similar cu **neuroimagistica** modernă (fMRI).',
+                    philosophy: '⚖️ **Etica utilitarismului:** Societatea sacrifică libertatea individuală pentru **siguranță colectivă** — dezbateri asemănătoare cu **supravegherea masivă**.',
+                    quote: '💬 "Justiția este un lux pe care nu și-l permitem." — Shogo Makishima.'
+                },
+                'attack on titan': {
+                    science: '🧬 **Biologie:** Titanii au **regenerare accelerată** — inspirat din **planaria** (viermi care se regenerează) și **celule stem**.',
+                    philosophy: '🌍 **Război și libertate:** Tema centrală este **ciclu violenței** și căutarea libertății — asemănător cu **teoriile lui Hobbes** ("Homo homini lupus").',
+                    quote: '💬 "Dedicați inima voastră! Pântecele, inima, sângele, oasele, totul!" — Eren Yeager.'
+                }
+            };
+            if (animeDB[animeName]) {
+                const { science, philosophy, quote } = animeDB[animeName];
+                return `🎌 **${animeName.charAt(0).toUpperCase() + animeName.slice(1)}:**\n\n${science}\n\n${philosophy}\n\n${quote}`;
+            } else {
+                return `❌ Nu am informații despre "${animeName}". Îmi poți sugera un anime cunoscut (ex: Spy x Family, Elfen Lied, Steins;Gate)?`;
+            }
+        }],
+
+        [/.*/i, 'Îmi pare rău, nu am un răspuns pregătit pentru asta. Scrie "ajutor" pentru a vedea comenzi disponibile.']
+    ];
+
+    // --- Helper Functions ---
+    function handleSizeChange(sizeParam) {
+        let width, height;
+        if (sizeParam.includes('x')) {
+            const [w, h] = sizeParam.split('x').map(Number);
+            width = `${Math.max(w, 20)}px`;
+            height = `${Math.max(h, 20)}px`;
+        } else if (sizeParam.includes('%')) {
+            const percent = parseFloat(sizeParam);
+            width = `${Math.max(percent, 20)}%`;
+            height = 'auto';
+        } else {
+            const sizes = {
+                '20x20': '200px',
+                '30x30': '300px',
+                '40x40': '400px',
+                '50x50': '50%',
+                '60x60': '60%',
+                '70x70': '70%',
+                '80x80': '80%',
+                '90x90': '90%',
+                '100x100': '100%'
+            };
+            width = sizes[sizeParam] || '360px';
+            height = sizes[sizeParam] ? (sizes[sizeParam].includes('%') ? 'auto' : sizes[sizeParam]) : '400px';
+        }
+        size = { width, height };
+        saveSettings();
+        applySizeToUI();
+    }
+
+    function applySizeToUI() {
+        lcbWindow.style.width = size.width;
+        lcbWindow.style.height = size.height;
+        lcbWindow.style.maxWidth = size.width.includes('%') ? '86%' : 'none';
+        bodyDiv.style.maxHeight = `calc(${parseInt(size.height)}px - 140px)`;
+    }
+
+    function getResponse(message) {
+        if (q1Mode && !message.startsWith('qq ')) {
+            return '';
+        }
+        const lower = message.toLowerCase();
+        for (const [pattern, response] of rules) {
+            if (pattern instanceof RegExp) {
+                if (pattern.test(message)) {
+                    return typeof response === 'function' ? response(message) : response;
+                }
+            } else {
+                if (lower.includes(pattern.toLowerCase())) {
+                    return typeof response === 'function' ? response(message) : response;
+                }
+            }
+        }
+        return rules[rules.length - 1][1];
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // --- Inject Base Styles ---
+    GM_addStyle(`
+        #local-chat-bot .lcb-window {
+            position: fixed;
+            right: ${position.x}px;
+            bottom: ${position.y}px;
+            width: ${size.width};
+            max-width: 86%;
+            height: ${size.height};
+            background: ${colors.windowBg};
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            font-family: Arial, sans-serif;
+            z-index: 999999;
+            transition: width .18s ease, height .18s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            resize: none;
+        }
+        .lcb-window .lcb-header {
+            cursor: move;
+            flex: 0 0 auto;
+        }
+        .lcb-resize-handle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            right: 0;
+            bottom: 0;
+            background: ${colors.accent};
+            cursor: nwse-resize;
+            border-radius: 0 0 6px 0;
+        }
+        .lcb-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            background: linear-gradient(90deg, ${colors.headerGradientFrom}, ${colors.headerGradientTo});
+            color: #fff;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            cursor: move;
+            user-select: none;
+        }
+        .lcb-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.6);
+            flex: 0 0 28px;
+        }
+        .lcb-title {
+            font-weight: 700;
+            font-size: 13px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .lcb-controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .lcb-minimize {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+        }
+        .lcb-minimize:hover {
+            background: rgba(255,255,255,0.08);
+        }
+        .lcb-body {
+            min-height: 160px;
+            max-height: calc(${size.height} - 140px);
+            padding: 10px;
+            overflow-y: auto;
+            background: ${colors.bodyBg};
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            transition: opacity .18s ease;
+            flex: 1 1 auto;
+        }
+        .lcb-form {
+            display: flex;
+            padding: 8px;
+            gap: 6px;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            background: transparent;
+            flex: 0 0 auto;
+            align-items: center;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .lcb-input {
+            flex: 1 1 auto;
+            padding: 8px;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 8px;
+            background: #fff;
+            min-width: 0;
+        }
+        .lcb-emoji-btn {
+            padding: 8px 10px;
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.2s;
+            flex: 0 0 auto;
+        }
+        .lcb-emoji-btn:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+        .lcb-send {
+            padding: 8px 10px;
+            background: ${colors.accent};
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            flex: 0 0 auto;
+        }
+        .lcb-msg {
+            margin: 0;
+            max-width: 86%;
+            padding: 8px 10px;
+            border-radius: 10px;
+            display: inline-block;
+            word-break: break-word;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .lcb-bot {
+            background: ${colors.botBg};
+            color: ${colors.botText};
+            align-self: flex-start;
+        }
+        .lcb-user {
+            align-self: flex-end;
+            background: ${colors.userBg};
+            color: ${colors.userText};
+        }
+        .lcb-bot-img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        .lcb-bot-name {
+            color: ${colors.botNameColor};
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .lcb-window.minimized {
+            width: 56px !important;
+            height: 56px !important;
+            border-radius: 28px !important;
+            padding: 6px !important;
+            overflow: visible;
+        }
+        .lcb-window.minimized .lcb-header {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lcb-window.minimized .lcb-icon,
+        .lcb-window.minimized .lcb-title,
+        .lcb-window.minimized .lcb-body,
+        .lcb-window.minimized .lcb-form,
+        .lcb-window.minimized .lcb-resize-handle {
+            display: none;
+        }
+        .lcb-window.minimized .lcb-minimize {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: ${colors.accent};
+            color: #fff;
+            font-size: 20px;
+            line-height: 1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+        .lcb-btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f0f0f0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .lcb-btn:hover {
+            background: #e0e0e0;
+        }
+        .lcb-color-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .lcb-color-preview {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            flex-shrink: 0;
+        }
+        .lcb-color-label {
+            width: 140px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+        .lcb-color-input {
+            flex: 1;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .lcb-emoji-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding: 8px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: absolute;
+            z-index: 1000000;
+            bottom: 60px;
+            right: 20px;
+            max-width: 300px;
+        }
+        .lcb-emoji-option {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+        }
+        .lcb-emoji-option:hover {
+            background: rgba(0, 0, 0, 0.06);
+        }
+        @media (max-width: 420px) {
+            #local-chat-bot .lcb-window {
+                right: 10px;
+                bottom: 10px;
+                width: 300px;
+            }
+            .lcb-icon {
+                width: 24px;
+                height: 24px;
+                flex: 0 0 24px;
+            }
+            .lcb-title {
+                font-size: 12px;
+            }
+        }
+    `);
+
+    // --- Build UI ---
+    const container = document.createElement('div');
+    container.id = 'local-chat-bot';
+    container.innerHTML = `
+        <div class="lcb-window" id="lcb-window" role="dialog" aria-label="Local chat bot">
+            <div class="lcb-header" id="lcb-header">
+                <img class="lcb-icon" id="lcb-icon" src="https://upload.wikimedia.org/wikipedia/it/c/c8/Anya_Forger.jpg" alt="Anya Forger"/>
+                <span class="lcb-title" id="lcb-title" style="color: ${colors.botNameColor};">Anya Forger Chat</span>
+                <div class="lcb-controls">
+                    <button id="lcb-minimize-btn" class="lcb-minimize" title="Minimizează chat">—</button>
+                </div>
+            </div>
+            <div class="lcb-body" id="lcb-body" aria-live="polite"></div>
+            <form id="lcb-form" class="lcb-form" aria-label="Trimite mesaj">
+                <input id="lcb-input" class="lcb-input" autocomplete="off" placeholder="Scrie un mesaj..." />
+                <button type="button" class="lcb-emoji-btn" title="Emoji">😊</button>
+                <button type="submit" class="lcb-send">Trimite</button>
+            </form>
+            <div class="lcb-resize-handle" id="lcb-resize-handle"></div>
+        </div>
+    `;
+    document.body.appendChild(container);
+
+    // --- Floating Color Panel ---
+    const floatingColorPanel = document.createElement('div');
+    floatingColorPanel.id = 'lcb-floating-color-panel';
+    floatingColorPanel.style = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000000;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        display: none;
+        max-width: 420px;
+        width: 90%;
+    `;
+    floatingColorPanel.innerHTML = `
+        <h3 style="margin-top: 0; margin-bottom: 12px;">Setări culori</h3>
+        <div id="lcb-floating-palette"></div>
+        <div style="display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end;">
+            <button id="lcb-close-floating-panel" class="lcb-btn">Închide</button>
+            <button id="lcb-save-floating-colors" class="lcb-btn" style="background: ${colors.accent}; color: white; border-color: ${colors.accent};">Salvează</button>
+        </div>
+    `;
+    document.body.appendChild(floatingColorPanel);
+
+    // --- Element Refs ---
+    const bodyDiv = document.getElementById('lcb-body');
+    const form = document.getElementById('lcb-form');
+    const input = document.getElementById('lcb-input');
+    const minBtn = document.getElementById('lcb-minimize-btn');
+    const lcbWindow = document.getElementById('lcb-window');
+    const lcbHeader = document.getElementById('lcb-header');
+    const resizeHandle = document.getElementById('lcb-resize-handle');
+    const emojiBtn = document.querySelector('.lcb-emoji-btn');
+    const floatingPalette = document.getElementById('lcb-floating-palette');
+    const saveFloatingColorsBtn = document.getElementById('lcb-save-floating-colors');
+    const closeFloatingPanelBtn = document.getElementById('lcb-close-floating-panel');
+
+    // --- Drag & Drop and Resize Logic ---
+    lcbHeader.addEventListener('mousedown', (e) => {
+        if (e.target.classList.contains('lcb-minimize') || e.target.classList.contains('lcb-emoji-btn')) return;
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        const rect = lcbWindow.getBoundingClientRect();
+        const offsetX = startX - rect.left;
+        const offsetY = startY - rect.top;
+
+        function moveWindow(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            position.x = Math.max(8, Math.min(window.innerWidth - 56, window.innerWidth - e.clientX - offsetX));
+            position.y = Math.max(8, Math.min(window.innerHeight - 56, window.innerHeight - e.clientY - offsetY));
+            lcbWindow.style.right = `${position.x}px`;
+            lcbWindow.style.bottom = `${position.y}px`;
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('mousemove', moveWindow);
+            document.removeEventListener('mouseup', stopDrag);
+            saveSettings();
+        }
+
+        document.addEventListener('mousemove', moveWindow);
+        document.addEventListener('mouseup', stopDrag);
+    });
+
+    resizeHandle.addEventListener('mousedown', (e) => {
+        e.stopPropagation();
+        isResizing = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        startWidth = parseInt(lcbWindow.getBoundingClientRect().width);
+        startHeight = parseInt(lcbWindow.getBoundingClientRect().height);
+
+        function resizeWindow(e) {
+            if (!isResizing) return;
+            e.preventDefault();
+            const newWidth = startWidth + (e.clientX - startX);
+            const newHeight = startHeight + (e.clientY - startY);
+            size.width = `${Math.max(newWidth, 200)}px`;
+            size.height = `${Math.max(newHeight, 200)}px`;
+            lcbWindow.style.width = size.width;
+            lcbWindow.style.height = size.height;
+            bodyDiv.style.maxHeight = `calc(${parseInt(size.height)}px - 140px)`;
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('mousemove', resizeWindow);
+            document.removeEventListener('mouseup', stopResize);
+            saveSettings();
+        }
+
+        document.addEventListener('mousemove', resizeWindow);
+        document.addEventListener('mouseup', stopResize);
+    });
+
+    // --- Message Utilities ---
+    function appendMessage(text, who = 'bot') {
+        if (!text) return null;
+        const el = document.createElement('div');
+        el.className = 'lcb-msg ' + (who === 'user' ? 'lcb-user' : 'lcb-bot');
+        if (who === 'bot') {
+            const img = document.createElement('img');
+            img.src = 'https://i.ibb.co/6y4t7mC/anya-forger.png';
+            img.className = 'lcb-bot-img';
+            img.alt = 'Anya';
+            el.appendChild(img);
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'lcb-bot-name';
+            nameSpan.textContent = 'Anya: ';
+            el.appendChild(nameSpan);
+        }
+        const textSpan = document.createElement('span');
+        textSpan.innerHTML = text.includes('<') ? text : escapeHtml(text);
+        el.appendChild(textSpan);
+        bodyDiv.appendChild(el);
+        bodyDiv.scrollTop = bodyDiv.scrollHeight;
+        return el;
+    }
+
+    function clearAllMessages() {
+        bodyDiv.innerHTML = '';
+        appendMessage('🧹 Toate mesajele au fost șterse.', 'bot');
+    }
+
+    // --- Emoji Picker ---
+    function showEmojiPicker() {
+        const emojiPicker = document.createElement('div');
+        emojiPicker.className = 'lcb-emoji-picker';
+        emojiPicker.innerHTML = `
+            <button class="lcb-emoji-option" data-emoji="😊">😊</button>
+            <button class="lcb-emoji-option" data-emoji="😍">😍</button>
+            <button class="lcb-emoji-option" data-emoji="😂">😂</button>
+            <button class="lcb-emoji-option" data-emoji="😢">😢</button>
+            <button class="lcb-emoji-option" data-emoji="👍">👍</button>
+            <button class="lcb-emoji-option" data-emoji="❤️">❤️</button>
+            <button class="lcb-emoji-option" data-emoji="🎉">🎉</button>
+            <button class="lcb-emoji-option" data-emoji="😎">😎</button>
+            <button class="lcb-emoji-option" data-emoji="🤔">🤔</button>
+            <button class="lcb-emoji-option" data-emoji="🙏">🙏</button>
+            <button class="lcb-emoji-option" data-emoji="😘">😘</button>
+            <button class="lcb-emoji-option" data-emoji="😇">😇</button>
+            <button class="lcb-emoji-option" data-emoji="💪">💪</button>
+            <button class="lcb-emoji-option" data-emoji="👀">👀</button>
+            <button class="lcb-emoji-option" data-emoji="🌟">🌟</button>
+            <button class="lcb-emoji-option" data-emoji="🔥">🔥</button>
+        `;
+        document.body.appendChild(emojiPicker);
+        emojiPicker.querySelectorAll('.lcb-emoji-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const emoji = btn.getAttribute('data-emoji');
+                input.value += emoji;
+                input.focus();
+                emojiPicker.remove();
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!emojiPicker.contains(e.target) && e.target !== emojiBtn) {
+                emojiPicker.remove();
+            }
+        }, { once: true });
+        const rect = emojiBtn.getBoundingClientRect();
+        emojiPicker.style.position = 'absolute';
+        emojiPicker.style.bottom = `${window.innerHeight - rect.top + 8}px`;
+        emojiPicker.style.right = `${window.innerWidth - rect.right}px`;
+    }
+
+    // --- Floating Color Panel Functions ---
+    function populateFloatingColorPanel() {
+        floatingPalette.innerHTML = Object.keys(colors)
+            .map(key => `
+                <div class="lcb-color-row">
+                    <div class="lcb-color-preview" style="background-color: ${colors[key]};"></div>
+                    <label class="lcb-color-label">${colorDescriptions[key] || key}:</label>
+                    <input type="text" id="floating-color-${key}" class="lcb-color-input" placeholder="#hex" value="${colors[key] || ''}" />
+                </div>
+            `)
+            .join('');
+    }
+
+    function applySettingsToUI() {
+        colors = Object.assign({}, colorDefaults, colors);
+        const prev = document.querySelector('style[data-lcb-injected]');
+        if (prev) prev.remove();
+        const css = `
+            #local-chat-bot .lcb-window { background: ${colors.windowBg} !important; }
+            .lcb-header { background: linear-gradient(90deg, ${colors.headerGradientFrom}, ${colors.headerGradientTo}) !important; }
+            .lcb-body { background: ${colors.bodyBg} !important; }
+            .lcb-bot { background: ${colors.botBg} !important; color: ${colors.botText} !important; }
+            .lcb-user { background: ${colors.userBg} !important; color: ${colors.userText} !important; }
+            .lcb-send, .lcb-window.minimized .lcb-minimize, .lcb-resize-handle { background: ${colors.accent} !important; }
+            .lcb-bot-name { color: ${colors.botNameColor} !important; }
+            #lcb-save-floating-colors { background: ${colors.accent} !important; color: white !important; border-color: ${colors.accent} !important; }
+        `;
+        const s = document.createElement('style');
+        s.setAttribute('data-lcb-injected', '1');
+        s.textContent = css;
+        document.head.appendChild(s);
+        document.getElementById('lcb-title').style.color = colors.botNameColor;
+    }
+
+    function isValidHex(h) {
+        return /^#([0-9A-F]{3}){1,2}$/i.test(h);
+    }
+
+    // --- Event Listeners ---
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const raw = (input.value || '').trim();
+        if (!raw) return;
+        const lower = raw.toLowerCase();
+
+        if (lower === 'q1') {
+            q1Mode = !q1Mode;
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        if (lower.startsWith('qq ')) {
+            const payload = raw.slice(3).trim();
+            appendMessage(payload, 'bot');
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        const clearCommands = ['sterge mesaje', 'șterge mesaje', 'sterge-chat', 'sterge chat', 'clear messages', 'clear', 'șterge mesajele', 'sterge mesajele'];
+        if (clearCommands.includes(lower)) {
+            appendMessage(raw, 'user');
+            clearAllMessages();
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        if (lower === 'culori') {
+            appendMessage(raw, 'user');
+            populateFloatingColorPanel();
+            floatingColorPanel.style.display = 'block';
+            input.value = '';
+            input.focus();
+            return;
+        }
+
+        appendMessage(raw, 'user');
+        if (!q1Mode) {
+            const reply = getResponse(raw);
+            if (reply) {
+                setTimeout(() => {
+                    appendMessage(reply, 'bot');
+                }, 250);
+            }
+        }
+        input.value = '';
+        input.focus();
+    });
+
+    emojiBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showEmojiPicker();
+    });
+
+    saveFloatingColorsBtn.addEventListener('click', () => {
+        let allValid = true;
+        Object.keys(colors).forEach(key => {
+            const inputEl = document.getElementById(`floating-color-${key}`);
+            const value = inputEl.value.trim();
+            if (value && !isValidHex(value)) {
+                allValid = false;
+                inputEl.style.border = '1px solid red';
+            } else {
+                inputEl.style.border = '';
+                if (value) colors[key] = value;
+            }
+        });
+        if (!allValid) {
+            alert('Unele coduri hex nu sunt valide! Folosește formatul #rrggbb sau #rgb.');
+            return;
+        }
+        saveSettings();
+        applySettingsToUI();
+        floatingColorPanel.style.display = 'none';
+        appendMessage('✅ Culorile au fost salvate!', 'bot');
+    });
+
+    closeFloatingPanelBtn.addEventListener('click', () => {
+        floatingColorPanel.style.display = 'none';
+    });
+
+    minBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        lcbWindow.classList.toggle('minimized');
+        minBtn.textContent = lcbWindow.classList.contains('minimized') ? '+' : '—';
+        saveSettings();
+    });
+
+    lcbHeader.addEventListener('dblclick', () => {
+        lcbWindow.classList.toggle('minimized');
+        minBtn.textContent = lcbWindow.classList.contains('minimized') ? '+' : '—';
+    });
+
+    lcbWindow.addEventListener('click', (e) => {
+        if (lcbWindow.classList.contains('minimized')) {
+            lcbWindow.classList.remove('minimized');
+            minBtn.textContent = '—';
+            input.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        bodyDiv.style.maxHeight = `calc(${parseInt(size.height)}px - 140px)`;
+    });
+
+    // --- Global API ---
+    window.localChatBot = {
+        send: (text) => {
+            appendMessage(text, 'user');
+            if (!q1Mode) {
+                setTimeout(() => appendMessage(getResponse(text), 'bot'), 200);
+            }
+        },
+        clear: () => { clearAllMessages(); }
+    };
+
+    // --- Initialize ---
+    applySettingsToUI();
+    applySizeToUI();
+    input.focus();
+    appendMessage('🌸 **Bun venit!** Sunt Anya Forger. Scrie "ajutor" pentru a vedea comenzi disponibile.', 'bot');
+})();

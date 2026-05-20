@@ -351,6 +351,16 @@
 ###mod-custom800
 ###mod-custom900
 ###mod-custom1000
+##.box__social-media__google.box__share__social-media.box__container
+##.pad15b.news__info__share__footer
+##[href="/ro/gdpr"]
+##.mastfoot__social
+##[href="/visitor-privacy-notice"]
+##[href="../confidentialitate/"]
+##.hidden-xs.get-in-touch-icons
+##.ask-ai-header
+##.social_links
+##.social_links
 ##.none.ue-scroll-to-cta
 ##.ue-scroll-to-icon
 ##.fa-arrow-up.fas

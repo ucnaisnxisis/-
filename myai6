@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Rem & Ram + Senko San (Chatbot Final) - Versiune 7.0
+// @name         Rem & Ram + Senko San (Chatbot Final) - Versiune 7.1
 // @namespace    http://tampermonkey.net/
-// @version      7.0
-// @description  Chatbot complet cu Rem, Ram și Senko San: 3 moduri, comenzi, culori personalizabile, opțiuni transparență mesaje, culori nume individuale. User: mov/alb. 100% funcțional.
+// @version      7.1
+// @description  Chatbot complet cu Rem, Ram și Senko San: 3 moduri, comenzi, culori personalizabile, opțiuni transparență mesaje, culori nume individuale. User: tester john. Fix avatare mesaje. 100% funcțional.
 // @author       Japonezul (Modificat de Le Chat)
 // @match        *://*.google.com
 // @match        *://*.bing.*/*
@@ -44,9 +44,9 @@
 
     // Poze de profil (libere de drepturi)
     const DEFAULT_AVATARS = {
-        [USER_NAME]: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Profile_avatar_placeholder_large.png/200px-Profile_avatar_placeholder_large.png",
-        [REM_NAME]: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Re_Zero_Rem.png/200px-Re_Zero_Rem.png",
-        [RAM_NAME]: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Re_Zero_Ram.png/200px-Re_Zero_Ram.png",
+        [USER_NAME]: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtGTxAKYwnjrg8rDp00c_CbRT0xFke87u1iuyRuzJlw&s=10",
+        [REM_NAME]: "https://wallpapercave.com/wp/wp5166129.jpg",
+        [RAM_NAME]: "https://static.zerochan.net/Ram.%28Re%3AZero%29.full.4261226.png",
         [SENKO_NAME]: "https://upload.wikimedia.org/wikipedia/en/f/fe/Sewayaki_Kitsune_no_Senko-san_volume_1_cover.jpg"
     };
 
@@ -72,7 +72,7 @@
     };
 
     // Setări transparență mesaje
-    let messageOpacity = "solid"; // "solid", "semi-transparent", "transparent"
+    let messageOpacity = "solid";
 
     // Starea globală
     let currentMode = "normal";
@@ -229,7 +229,6 @@
                 ? `linear-gradient(90deg, ${COLORS.header.senkoFrom}, ${COLORS.header.senkoTo})`
                 : `linear-gradient(90deg, ${COLORS.header.allFrom}, ${COLORS.header.allTo})`;
 
-        // Calculăm opacitatea pentru mesaje
         const getOpacityValue = () => {
             switch(messageOpacity) {
                 case 'semi-transparent': return 0.5;
@@ -398,6 +397,7 @@
 
             .dual-chatbot-message.user {
                 align-self: flex-end;
+                flex-direction: row-reverse;
             }
 
             .dual-chatbot-message img.avatar {
@@ -406,11 +406,12 @@
                 border-radius: 50%;
                 object-fit: cover;
                 margin-right: 6px;
+                flex-shrink: 0;
             }
 
             .dual-chatbot-message.user img.avatar {
-                margin-right: 6px;
-                margin-left: 0;
+                margin-right: 0;
+                margin-left: 6px;
             }
 
             .dual-chatbot-message-content-wrapper {
@@ -1010,7 +1011,6 @@
         saveSettings();
         renderMessages();
 
-        // Actualizăm butoanele de opacitate
         document.querySelectorAll('.dual-chatbot-opacity-button').forEach(btn => {
             btn.classList.remove('active');
             if (btn.dataset.opacity === opacity) {
@@ -1504,13 +1504,11 @@
         const headerRight = document.createElement('div');
         headerRight.id = 'dual-chatbot-header-right';
 
-        // Buton pentru schimbare mod
         const modeButton = document.createElement('button');
         modeButton.className = 'dual-chatbot-header-button dual-chatbot-mode-button';
         modeButton.textContent = '👥';
         modeButton.title = 'Schimbă modul';
 
-        // Butoane header
         const fileButtonHeader = document.createElement('button');
         fileButtonHeader.className = 'dual-chatbot-header-button';
         fileButtonHeader.textContent = '📁';
@@ -1574,7 +1572,6 @@
         container.appendChild(inputPanel);
         container.appendChild(resizeHandle);
 
-        // Panou emoji
         emojiPicker = document.createElement('div');
         emojiPicker.id = 'dual-chatbot-emoji-picker';
 
@@ -1613,7 +1610,6 @@
             emojiPicker.classList.toggle('active');
         });
 
-        // Panou culori
         colorPicker = document.createElement('div');
         colorPicker.id = 'dual-chatbot-color-picker';
 
@@ -1630,7 +1626,6 @@
         colorPickerHeader.appendChild(colorPickerTitle);
         colorPickerHeader.appendChild(colorPickerClose);
 
-        // Secțiune culori fundal mesaje
         const bgSection = document.createElement('div');
         bgSection.className = 'dual-chatbot-color-section';
         const bgSectionTitle = document.createElement('h4');
@@ -1668,7 +1663,6 @@
 
         colorPicker.appendChild(bgSection);
 
-        // Secțiune culori nume
         const nameSection = document.createElement('div');
         nameSection.className = 'dual-chatbot-color-section';
         const nameSectionTitle = document.createElement('h4');
@@ -1702,7 +1696,6 @@
 
         colorPicker.appendChild(nameSection);
 
-        // Butoane transparență
         const opacitySection = document.createElement('div');
         opacitySection.className = 'dual-chatbot-color-section';
         const opacitySectionTitle = document.createElement('h4');
@@ -1735,7 +1728,6 @@
         opacitySection.appendChild(opacityButtonsContainer);
         colorPicker.appendChild(opacitySection);
 
-        // Secțiune alte culori
         const otherSection = document.createElement('div');
         otherSection.className = 'dual-chatbot-color-section';
         const otherSectionTitle = document.createElement('h4');
@@ -1794,7 +1786,6 @@
         colorPicker.appendChild(colorPickerHeader);
         colorPicker.appendChild(colorActions);
 
-        // Modal fișiere
         fileModal = document.createElement('div');
         fileModal.id = 'dual-chatbot-file-modal';
 
@@ -1862,7 +1853,6 @@
 
         fileModal.appendChild(fileModalContent);
 
-        // Modal ajutor
         helpModal = document.createElement('div');
         helpModal.id = 'dual-chatbot-help-modal';
 
@@ -1909,7 +1899,6 @@
         helpContent.appendChild(helpBody);
         helpModal.appendChild(helpContent);
 
-        // Modal pentru schimbare mod
         modeModal = document.createElement('div');
         modeModal.id = 'dual-chatbot-mode-modal';
 
@@ -1945,9 +1934,6 @@
         modeCloseBtn.id = 'dual-chatbot-mode-close';
         modeCloseBtn.className = 'dual-chatbot-btn';
         modeCloseBtn.textContent = 'Închide';
-        modeCloseBtn.addEventListener('click', () => {
-            modeModal.style.display = 'none';
-        });
 
         modeContent.appendChild(modeTitle);
         modeContent.appendChild(modeButtons);
@@ -2004,6 +1990,7 @@
                 avatar.src = selectedAvatars[name];
                 avatar.alt = name;
                 avatar.className = 'avatar';
+                avatar.crossOrigin = 'anonymous';
                 avatarContainer.appendChild(avatar);
 
                 const nameSpan = document.createElement('span');
@@ -2021,6 +2008,7 @@
             avatar.src = selectedAvatars[SENKO_NAME];
             avatar.alt = SENKO_NAME;
             avatar.className = 'avatar';
+            avatar.crossOrigin = 'anonymous';
             avatarContainer.appendChild(avatar);
 
             const nameSpan = document.createElement('span');
@@ -2038,6 +2026,7 @@
                 avatar.src = selectedAvatars[name];
                 avatar.alt = name;
                 avatar.className = 'avatar';
+                avatar.crossOrigin = 'anonymous';
                 avatarContainer.appendChild(avatar);
 
                 const nameSpan = document.createElement('span');
@@ -2071,7 +2060,6 @@
         if (!messagesPanel) return;
         messagesPanel.innerHTML = '';
         messages.forEach((msg) => {
-            // Filtrează mesajele care nu aparțin modului curent
             if (currentMode === "normal" && msg.sender === SENKO_NAME) return;
             if (currentMode === "senko" && (msg.sender === REM_NAME || msg.sender === RAM_NAME)) return;
 
@@ -2085,6 +2073,7 @@
             avatarImg.src = selectedAvatars[msg.sender] || selectedAvatars[USER_NAME];
             avatarImg.alt = msg.sender;
             avatarImg.className = 'avatar';
+            avatarImg.crossOrigin = 'anonymous';
 
             const messageContentWrapper = document.createElement('div');
             messageContentWrapper.className = 'dual-chatbot-message-content-wrapper';
@@ -2092,7 +2081,6 @@
             const messageContentDiv = document.createElement('div');
             messageContentDiv.className = 'dual-chatbot-message-content';
 
-            // Adaugă numele expeditorului
             const senderName = document.createElement('span');
             senderName.className = 'dual-chatbot-message-sender';
             senderName.textContent = msg.sender;
@@ -2204,7 +2192,6 @@
         applySizeToUI();
         regenerateCSS();
 
-        // Drag pentru deplasare (Mouse)
         header.addEventListener('mousedown', (e) => {
             if (e.target.closest('.dual-chatbot-header-button')) return;
 
@@ -2235,10 +2222,8 @@
             document.addEventListener('mouseup', stopDrag);
         });
 
-        // Drag pentru deplasare (Touch)
         header.addEventListener('touchstart', handleTouchDragStart, { passive: false });
 
-        // Resizing (Mouse)
         resizeHandle.addEventListener('mousedown', (e) => {
             e.stopPropagation();
             isResizing = true;
@@ -2271,10 +2256,8 @@
             document.addEventListener('mouseup', stopResize);
         });
 
-        // Resizing (Touch)
         resizeHandle.addEventListener('touchstart', handleTouchResizeStart, { passive: false });
 
-        // Trimite mesaj
         elements.sendButton.addEventListener('click', () => {
             const message = messageInput.value.trim();
             if (message) {
@@ -2303,17 +2286,14 @@
             }
         });
 
-        // Trimite cu Enter
         messageInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') elements.sendButton.click();
         });
 
-        // Buton schimbare mod
         elements.modeButton.addEventListener('click', () => {
             modeModal.style.display = 'block';
         });
 
-        // Butoane header
         elements.fileButtonHeader.addEventListener('click', () => {
             const fileSenderSelector = document.getElementById('dual-chatbot-file-sender-selector');
             fileSenderSelector.innerHTML = '';
@@ -2355,7 +2335,6 @@
             modeModal.remove();
         });
 
-        // Modal fișiere
         elements.cancelFileButton.addEventListener('click', () => {
             fileModal.style.display = 'none';
             document.getElementById('dual-chatbot-file-input').value = '';
@@ -2376,7 +2355,6 @@
             }
         });
 
-        // Panou culori
         elements.colorPickerClose.addEventListener('click', () => colorPicker.classList.remove('active'));
         elements.cancelColorsButton.addEventListener('click', () => colorPicker.classList.remove('active'));
 
@@ -2406,7 +2384,6 @@
         });
 
         elements.applyColorsButton.addEventListener('click', () => {
-            // Culori fundal mesaje
             if (document.getElementById('rem-bg')) COLORS.rem.bg = document.getElementById('rem-bg').value;
             if (document.getElementById('rem-text')) COLORS.rem.text = document.getElementById('rem-text').value;
             if (document.getElementById('ram-bg')) COLORS.ram.bg = document.getElementById('ram-bg').value;
@@ -2416,13 +2393,11 @@
             if (document.getElementById('user-bg')) COLORS.user.bg = document.getElementById('user-bg').value;
             if (document.getElementById('user-text')) COLORS.user.text = document.getElementById('user-text').value;
 
-            // Culori nume
             if (document.getElementById('rem-name')) COLORS.rem.name = document.getElementById('rem-name').value;
             if (document.getElementById('ram-name')) COLORS.ram.name = document.getElementById('ram-name').value;
             if (document.getElementById('senko-name')) COLORS.senko.name = document.getElementById('senko-name').value;
             if (document.getElementById('user-name')) COLORS.user.name = document.getElementById('user-name').value;
 
-            // Alte culori
             if (document.getElementById('chat-bg')) COLORS.chatBg = document.getElementById('chat-bg').value;
             if (document.getElementById('input-bg')) COLORS.input.bg = document.getElementById('input-bg').value;
             if (document.getElementById('input-text')) COLORS.input.text = document.getElementById('input-text').value;
@@ -2438,13 +2413,9 @@
             renderMessages();
         });
 
-        // Modal ajutor
         elements.helpClose.addEventListener('click', () => helpModal.style.display = 'none');
-
-        // Modal mod
         elements.modeCloseBtn.addEventListener('click', () => modeModal.style.display = 'none');
 
-        // Ascunde panourile la click în afară
         document.addEventListener('click', (e) => {
             if (!emojiPicker.contains(e.target) && e.target !== elements.emojiButton)
                 emojiPicker.classList.remove('active');
@@ -2452,7 +2423,6 @@
                 colorPicker.classList.remove('active');
         });
 
-        // Închide modalurile la click pe fundal
         fileModal.addEventListener('click', (e) => {
             if (e.target === fileModal) {
                 fileModal.style.display = 'none';
@@ -2468,10 +2438,8 @@
             if (e.target === modeModal) modeModal.style.display = 'none';
         });
 
-        // Setup Drag & Drop
         setupDragAndDrop();
 
-        // Mesaj de bun venit
         setTimeout(() => {
             if (currentMode === "normal") {
                 addMessage(REM_NAME, getRandom(GREETINGS[REM_NAME]));
@@ -2491,7 +2459,6 @@
             }
         }, 500);
 
-        // Scurtături tastatură
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 emojiPicker.classList.remove('active');

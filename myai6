@@ -4,7 +4,7 @@
 // @version      7.2
 // @description  Chatbot complet cu Rem, Ram și Senko San: 3 moduri, comenzi, culori personalizabile, opțiuni transparență mesaje, culori nume individuale. Fix avatare mesaje, eliminat cod duplicat.
 // @author       Japonezul (Modificat de Le Chat)
-// @match        *://*.google.com
+// @match        *://*.google.com/*
 // @match        *://*.bing.*/*
 // @match        *://*.yahoo.*/*
 // @match        *://*.duckduckgo.com/*

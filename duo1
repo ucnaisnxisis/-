@@ -1765,6 +1765,27 @@ comic-con.ro##.safety-fab.safety-fab-pulse
 comic-con.ro##span.footer-separator:nth-of-type(5)
 comic-con.ro##span.footer-separator:nth-of-type(6)
 comic-con.ro##.mobile-menu-social
+www.youtube.com##.paper-toast-open.yt-notification-action-renderer.style-scope.toast-button
+www.youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
+www.youtube.com##.ytd-popup-container.style-scope > .no-transition.yt-upsell-dialog-renderer.style-scope
+www.youtube.com##grid-shelf-view-model.ytd-item-section-renderer.ytGridShelfViewModelHost:nth-of-type(1)
+www.youtube.com###upsell-dialog-title
+www.youtube.com###upsell-dialog-text
+www.youtube.com###icon-container
+www.youtube.com##.yt-upsell-dialog-renderer.style-scope
+policies.google.com
+www.weebly.com###cookie-policy-footer
+www.weebly.com###privacy-policy-link-footer
+www.weebly.com##.optanon-toggle-display.link--subdued.lp-nav__item
+www.weebly.com##a.link--subdued.lp-nav__item:nth-of-type(9)
+ifreedomains.com##li:nth-of-type(2) > [href="privacycenter.php"]
+chat.mistral.ai##.desktop-mac\:no-drag.backdrop-blur-xs.z-50.inset-0.fixed.bg-overlay.data-\[state\=open\]\:fade-in-0.data-\[state\=closed\]\:fade-out-0.data-\[state\=closed\]\:animate-out.data-\[state\=open\]\:animate-in
+chat.mistral.ai##.gap-1.sm\:text-left.text-center.space-y-1\.5.flex-col.flex
+new.lewd.ninja##.age-gate__btn-no.is-medium.is-dark.button
+new.lewd.ninja##.age-gate__desc
+lewdgames.to###block-30
+www.patreon.com##button.BodyTextBundle-module__ICI1wq__sizeMd.BodyTextBundle-module__ICI1wq__weightBold.BodyTextBundle-module__ICI1wq__shared.Button-module__YRbc6a__isActive.Button-module__YRbc6a__isFilled.Button-module__YRbc6a__variantLabelOnly.Button-module__YRbc6a__hasDimensions.Button-module__YRbc6a__sizeMd.Button-module__YRbc6a__themePrimary.Button-module__YRbc6a__root:nth-of-type(2)
+thisvid.com##li:nth-of-type(7)
 10times.com##.modal-body
 10times.com###\31 0t-TenTimes-Modal
 10times.com###consent-label

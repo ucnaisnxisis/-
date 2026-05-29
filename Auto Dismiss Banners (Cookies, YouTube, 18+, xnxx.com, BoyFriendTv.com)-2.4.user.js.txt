@@ -1,0 +1,295 @@
+// ==UserScript==
+// @name         Auto Dismiss Banners (Cookies, YouTube, 18+, xnxx.com, BoyFriendTv.com)
+// @namespace    https://github.com
+// @version      2.4
+// @description  Apasă automat butoanele de respingere/acceptare din bannere (YouTube, 18+, cookie-uri, xnxx.com, BoyFriendTv.com). NU funcționează pe xvideos.com. Optimizat pentru Firefox PC.
+// @author       Le Chat
+// @match        *://*/*
+// @grant        none
+// @run-at       document-idle
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // --- EXCLUDERI SITE-URI (nu rula scriptul pe aceste hostnames) ---
+    const HOST_EXCLUDE = ['xvideos.com', 'itch.io'];
+    for (const h of HOST_EXCLUDE) {
+        if (window.location.hostname.includes(h)) return;
+    }
+    // ============================
+
+    // ===== UTILITĂȚI =====
+    function normalizeText(s) {
+        if (s === null || s === undefined) return '';
+        try {
+            return s.toString()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .toLowerCase()
+                .trim();
+        } catch (e) {
+            return (s || '').toString().toLowerCase().trim();
+        }
+    }
+
+    function isVisible(el) {
+        if (!el || !(el instanceof Element)) return false;
+        try {
+            const style = window.getComputedStyle(el);
+            if (style.display === 'none' || style.visibility === 'hidden' || parseFloat(style.opacity) === 0) {
+                return false;
+            }
+            const rect = el.getBoundingClientRect();
+            return rect.width > 0 && rect.height > 0;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function isModal(el) {
+        if (!el || !(el instanceof Element)) return false;
+        try {
+            const style = window.getComputedStyle(el);
+            const rect = el.getBoundingClientRect();
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+            return (
+                rect.width > screenWidth * 0.5 && rect.height > screenHeight * 0.3 ||
+                style.position === 'fixed' ||
+                style.position === 'absolute' ||
+                el.getAttribute('role') === 'dialog' ||
+                el.getAttribute('role') === 'alertdialog' ||
+                el.classList.contains('modal') ||
+                el.id.includes('modal') ||
+                el.id.includes('overlay') ||
+                el.classList.contains('overlay')
+            );
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function safeClick(el) {
+        if (!el || !isVisible(el)) return false;
+        try {
+            el.click();
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function textMatches(el, patterns) {
+        if (!el) return false;
+        try {
+            const text = normalizeText(el.textContent || el.value || el.getAttribute('aria-label') || '');
+            return patterns.some(p => text.includes(normalizeText(p)));
+        } catch (e) {
+            return false;
+        }
+    }
+
+    // ===== LOGICA PRINCIPALĂ =====
+    const BUTTON_TEXTS = [
+        // Cookie-uri (Reject)
+        'reject', 'refuse', 'decline', 'deny', 'do not accept', 'do not agree',
+        'reject all', 'reject cookies', 'only necessary', 'only essential',
+        'respinge', 'respinge tot', 'refuz', 'refuză', 'doar necesare', 'doar esențiale',
+        'numai necesare', 'setări cookie', 'setari cookie', 'închide', 'close',
+        // 18+ (Accept)
+        'accept', 'ok', 'confirm', 'enter', 'i am 18', 'i am 18+', 'i am over 18',
+        'i am 18 or older', 'i am 21', 'i am 21+', 'i am over 21', 'yes', 'yes i am',
+        'sunt major', 'sunt major(a)', 'am peste 18', 'am peste 18 ani', 'am peste 21',
+        'intră', 'intra', 'continuă', 'continua', 'da', 'da sunt major',
+        'confirmă vârsta', 'confirma varsta', 'sunt de acord', 'Gay 🏳️‍🌈',
+        // YouTube
+        'skip', 'skip ad', 'dismiss', 'close ad', 'got it', 'no thanks',
+        'închide anunț', 'sari', 'sari peste', 'nu mulțumesc'
+    ];
+
+    const BANNER_SELECTORS = [
+        // Cookie-uri
+        '[id*="cookie"]', '[class*="cookie"]', '[id*="consent"]', '[class*="consent"]',
+        '[id*="gdpr"]', '[class*="gdpr"]', '[class*="cookie-banner"]', '[class*="cookie-notice"]',
+        '[class*="cookie-modal"]', '[class*="privacy"]', '[id*="privacy"]',
+        // 18+
+        '[id*="age"]', '[class*="age"]', '[id*="over18"]', '[class*="over18"]',
+        '[id*="verify"]', '[class*="verify"]', '[id*="modal"]', '[class*="modal"]',
+        '[role="dialog"]', '[role="alertdialog"]', '.age-gate', '.age-confirm'
+    ];
+
+    const BUTTON_SELECTORS = [
+        'button', 'a', 'input[type="button"]', 'input[type="submit"]',
+        'div[role="button"]', 'span[role="button"]'
+    ];
+
+    // Stocare pentru încercări per site
+    const siteAttempts = new Map();
+
+    function getSiteKey() {
+        return window.location.hostname;
+    }
+
+    function canTryAgain() {
+        const siteKey = getSiteKey();
+        const attempts = siteAttempts.get(siteKey) || 0;
+        if (attempts >= 2) {
+            return false;
+        }
+        siteAttempts.set(siteKey, attempts + 1);
+        return true;
+    }
+
+    function resetAttempts() {
+        const siteKey = getSiteKey();
+        siteAttempts.delete(siteKey);
+    }
+
+    /**
+     * Caută și apasă butoanele din bannerele/modalele vizibile.
+     */
+    function clickBannerButtons() {
+        if (!canTryAgain()) return false;
+
+        let clicked = false;
+
+        // Adăugare specifică pentru xnxx.com și BoyFriendTv.com
+        if (window.location.hostname.includes('xnxx.com') || window.location.hostname.includes('BoyFriendTv.com')) {
+            const gayButtonBySelector = document.querySelector('button.btn-default.btn:nth-of-type(2)');
+            if (gayButtonBySelector && isVisible(gayButtonBySelector)) {
+                safeClick(gayButtonBySelector);
+                clicked = true;
+            } else {
+                const gayButtonByText = Array.from(document.querySelectorAll(BUTTON_SELECTORS.join(', ')))
+                    .find(el => textMatches(el, ['Gay 🏳️‍🌈']));
+                if (gayButtonByText && isVisible(gayButtonByText)) {
+                    safeClick(gayButtonByText);
+                    clicked = true;
+                }
+            }
+            if (clicked) return true;
+        }
+
+        for (const bannerSelector of BANNER_SELECTORS) {
+            const banners = document.querySelectorAll(bannerSelector);
+            for (const banner of banners) {
+                if (!isVisible(banner) || !isModal(banner)) continue;
+
+                for (const buttonSelector of BUTTON_SELECTORS) {
+                    const buttons = banner.querySelectorAll(buttonSelector);
+                    for (const button of buttons) {
+                        if (isVisible(button) && textMatches(button, BUTTON_TEXTS)) {
+                            safeClick(button);
+                            clicked = true;
+                            break;
+                        }
+                    }
+                    if (clicked) break;
+                }
+                if (clicked) break;
+            }
+            if (clicked) break;
+        }
+        return clicked;
+    }
+
+    /**
+     * Caută butoanele de skip/dismiss din YouTube Player.
+     */
+    function clickYouTubeButtons() {
+        if (!canTryAgain()) return false;
+        if (!window.location.hostname.includes('youtube.com')) return false;
+
+        const player = document.getElementById('movie_player') ||
+                      document.querySelector('ytd-player') ||
+                      document.querySelector('ytd-watch-flexy');
+        if (!player) return false;
+
+        const skipButtons = player.querySelectorAll([
+            '#dismiss-button', '#dismissBtn', '.dismiss-button', '.ytp-dismiss',
+            '#ytp-dismiss', '#close-ad', '.close-ad', '#close-button', '.close-button',
+            '[aria-label*="dismiss"]', '[aria-label*="close"]', '[aria-label*="skip"]',
+            'button[class*="skip"]', 'div[class*="skip"]'
+        ].join(', '));
+
+        for (const button of skipButtons) {
+            if (isVisible(button)) {
+                safeClick(button);
+                return true;
+            }
+        }
+
+        const iframes = document.querySelectorAll('iframe');
+        for (const iframe of iframes) {
+            try {
+                if (iframe.contentDocument) {
+                    const iframeButtons = iframe.contentDocument.querySelectorAll([
+                        '#dismiss-button', '.dismiss-button', '[aria-label*="dismiss"]',
+                        '[aria-label*="close"]', '[aria-label*="skip"]'
+                    ].join(', '));
+                    for (const button of iframeButtons) {
+                        if (isVisible(button)) {
+                            safeClick(button);
+                            return true;
+                        }
+                    }
+                }
+            } catch (e) {
+                // Ignoră erorile de cross-origin
+            }
+        }
+
+        return false;
+    }
+
+    // ===== RULARE =====
+    function runAll() {
+        const siteKey = getSiteKey();
+        if (siteAttempts.get(siteKey) >= 2) {
+            return;
+        }
+
+        const clicked = clickBannerButtons() || clickYouTubeButtons();
+        if (clicked) {
+            siteAttempts.set(siteKey, 2);
+        }
+    }
+
+    // Rulează imediat
+    runAll();
+
+    // Rulează după 1 secundă (pentru pagini lente)
+    setTimeout(runAll, 1000);
+
+    // Rulează periodic (o dată la 3 secunde), dar doar dacă nu a reuşit încă
+    const intervalId = setInterval(() => {
+        const siteKey = getSiteKey();
+        if ((siteAttempts.get(siteKey) || 0) < 2) {
+            runAll();
+        }
+    }, 3000);
+
+    // Oprește după 10 minute
+    setTimeout(() => {
+        clearInterval(intervalId);
+    }, 10 * 60 * 1000);
+
+    // Observator pentru bannere/modale noi
+    const observer = new MutationObserver(() => {
+        const siteKey = getSiteKey();
+        if ((siteAttempts.get(siteKey) || 0) < 2) {
+            runAll();
+        }
+    });
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class', 'id']
+    });
+
+    // Reset la schimbarea site-ului
+    window.addEventListener('beforeunload', resetAttempts);
+    window.addEventListener('unload', resetAttempts);
+})();

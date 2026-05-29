@@ -788,7 +788,6 @@ iframe[src*="pubads"] { display: none !important; }
 ##div.navb [href="/rss_feed.xml"]
 ###div.navb [href="/rss_feed.xml"]
 ##.div.navb [href="/rss_feed.xml"]
-##[href="#"]
 ##.ckPolicyGomag
 ###ckPolicyGomag
 ##ckPolicyGomag

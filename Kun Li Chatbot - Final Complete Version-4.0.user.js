@@ -1,0 +1,3162 @@
+// ==UserScript==
+// @name         Kun Li Chatbot - Final Complete Version
+// @namespace    http://tampermonkey.net/
+// @version      4.0
+// @description  A multilingual chatbot featuring Kun Li (Chinese), with support for 20+ characters, horizontal messages, auto-delete commands, message editing, and individual bot activation.
+// @author       Tester John (Modified by Vibe)
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.duckduckgo.com/*
+// @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
+// @grant        GM_download
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        GM_notification
+// @grant        GM_openInTab
+// @grant        GM_setClipboard
+// @connect      i.imgur.com
+// @connect      imgur.com
+// @connect      waifu.pics
+// @connect      *.youtube.com
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // ============================================
+    // 🌍 LANGUAGES & CULTURAL EMOJIS
+    // ============================================
+    const LANGUAGES = {
+        chinese: {
+            name: 'Chinese',
+            emojis: ['🇨🇳', '🏯', '🐉', '🥢', '🎎', '🧧', '🎆', '🍜', '🥟', '🍡'],
+            greetings: [
+                '你好！🇨🇳 很高兴见到你！',
+                '你好，亲爱的！🏯 今天天气真好。',
+                '你好，我的爱！🐉 你是我的一切。',
+                '你好，朋友！🥢 我们一起聊天吧。'
+            ],
+            farewell: ['再见！🇨🇳', '晚安！🌙', '保重！🤗']
+        },
+        romanian: {
+            name: 'Romanian',
+            emojis: ['🇷🇴', '🍷', '🏰', '🌿', '🍖', '🎭', '🎻', '🍫', '🥖', '🌻'],
+            greetings: [
+                'Bună ziua! 🇷🇴 Ce mai faci?',
+                'Salut! 🌿 Sunt fericită să te văd.',
+                'Bună seara! 🌙 Sper că ești bine.',
+                'Noroc! 🍷 Să ne distrăm!'
+            ],
+            farewell: ['Pa pa! 👋', 'La revedere! 🇷🇴', 'Noapte bună! 🌙']
+        },
+        english: {
+            name: 'English',
+            emojis: ['🇺🇸', '🍔', '🦅', '🎇', '🏀', '🎤', '🍕', '🥤', '🎬', '🌭'],
+            greetings: [
+                'Hello! 🇺🇸 How are you?',
+                'Hi there! 🍔 Lovely to see you.',
+                'Hey! 🦅 What’s up?',
+                'Good day! 🎇 How can I help?'
+            ],
+            farewell: ['Goodbye! 👋', 'See you later! 🇺🇸', 'Take care! 🤗']
+        },
+        japanese: {
+            name: 'Japanese',
+            emojis: ['🇯🇵', '🏯', '🎌', '🍣', '🍱', '🎎', '🏮', '🍡', '🍵', '🎭'],
+            greetings: [
+                'こんにちは！🇯🇵 お元気ですか？',
+                'こんにちは、愛しい人！🏯 会えて嬉しいです。',
+                'こんにちは！🎌 今日はいい天気ですね。',
+                'やあ！🍣 何かご用ですか？'
+            ],
+            farewell: ['さようなら！👋', 'またね！🇯🇵', 'お休み！🌙']
+        }
+    };
+
+    // ============================================
+    // 👥 CHARACTERS & THEIR TOPICS
+    // ============================================
+    const CHARACTERS = [
+        {
+            name: 'Kun Li',
+            avatar: 'https://static.wikia.nocookie.net/p__/images/0/0c/Chun-Li_SFVI.png/revision/latest?cb=20251117020429&path-prefix=protagonist',
+            color: '#FF69B4',
+            textColor: '#000000',
+            bgColor: '#FFB6C1',
+            language: 'chinese',
+            command: 'qq',
+            botCommand: 'bot1',
+            active: true,
+            topics: ['Chinese culture', 'Traditional food', 'Martial arts', 'History of China'],
+            responses: {
+                default: ['你好！🇨🇳 我是Kun Li。', '很高兴认识你！🏯', '你想聊什么？🥢'],
+                positive: ['你真好！❤️', '我喜欢你！💖', '你是我的太阳！☀️'],
+                negative: ['不要伤心… 😢', '我理解你… 🤗', '一切都会好起来的！🌈']
+            }
+        },
+        {
+            name: 'LGBTQ+ Advocate',
+            avatar: 'https://img.magnific.com/free-photo/androgynous-avatar-non-binary-queer-person_23-2151100194.jpg',
+            color: '#FF69B4',
+            textColor: '#000000',
+            bgColor: '#FFB6C1',
+            language: 'english',
+            command: 'qw',
+            botCommand: 'bot2',
+            active: true,
+            topics: ['LGBTQ+ rights', 'Pride events', 'Gender identity', 'Equality'],
+            responses: {
+                default: ['Love is love! 🏳️‍🌈', 'Everyone deserves respect. 💖', 'Pride is beautiful! 🌈'],
+                positive: ['You’re amazing! 💪', 'Keep shining! ✨', 'We stand together! 🤝'],
+                negative: ['Hate has no place here. 🚫', 'Be kind. 💕', 'Love wins. ❤️']
+            }
+        },
+        {
+            name: 'Anime Expert',
+            avatar: 'https://animehunch.com/wp-content/uploads/2021/01/animax.jpg',
+            color: '#FF6347',
+            textColor: '#000000',
+            bgColor: '#FFA07A',
+            language: 'japanese',
+            command: 'qe',
+            botCommand: 'bot3',
+            active: true,
+            topics: ['Anime recommendations', 'Manga', 'Cosplay', 'Japanese culture'],
+            responses: {
+                default: ['何のアニメが好きですか？🎌', '一緒にアニメを見ましょう！🍿', 'おすすめのアニメは？🏯'],
+                positive: ['最高の選択！🎉', 'あなたの趣味は素晴らしい！✨', '一緒に楽しみましょう！💖'],
+                negative: ['悲しみは一時的… 😢', '次回のエピソードを楽しみにして！🌟', '私たちはここにいます。🤗']
+            }
+        },
+        {
+            name: 'Romanian News',
+            avatar: 'https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/06/many-years-mountains-of-difficulties-cowboy-bebop-creator-confirms-cartoon-network-let-team-take-their-time-rather-than-rushing-new-anime-series.jpg?q=70&fit=crop&w=825&dpr=1',
+            color: '#4169E1',
+            textColor: '#FFFFFF',
+            bgColor: '#1E90FF',
+            language: 'romanian',
+            command: 'qr',
+            botCommand: 'bot4',
+            active: true,
+            topics: ['Romanian politics', 'Local news', 'Cultural events', 'Economy'],
+            responses: {
+                default: ['Ce noutăți sunt în România? 🇷🇴', 'Ai auzit ultimele știri? 📰', 'Cum e situatia politică? 🏛️'],
+                positive: ['România e frumoasă! 🌿', 'Sunt mândru de țara mea! 🇷🇴', 'Cultura noastră e bogată! 🎭'],
+                negative: ['Sper că lucrurile se vor îmbunătăți… 😔', 'Trebuie să rămânem uniti. 🤝', 'Schimbarea vine! 🌟']
+            }
+        },
+        {
+            name: 'Religion Scholar',
+            avatar: 'https://beneaththetangles.com/wp-content/uploads/2019/11/978-1-4964-2010-7-e1574223221521-768x608.jpg',
+            color: '#800080',
+            textColor: '#FFFFFF',
+            bgColor: '#9370DB',
+            language: 'english',
+            command: 'qt',
+            botCommand: 'bot5',
+            active: true,
+            topics: ['World religions', 'Spirituality', 'Philosophy', 'Faith'],
+            responses: {
+                default: ['Faith is a journey. 🙏', 'What do you believe in? ✝️', 'Spirituality connects us. 🌍'],
+                positive: ['Peace be with you. ☮️', 'Love and light! ✨', 'We are all one. 🌈'],
+                negative: ['Doubt is part of faith. 😌', 'You are not alone. 🤗', 'Hope is eternal. 🌟']
+            }
+        },
+        {
+            name: 'Relationship Advisor',
+            avatar: 'https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/02/Date-A-Live-III.jpg?q=50&fit=crop&w=825&dpr=1.5',
+            color: '#FF1493',
+            textColor: '#FFFFFF',
+            bgColor: '#DB7093',
+            language: 'romanian',
+            command: 'qy',
+            botCommand: 'bot6',
+            active: true,
+            topics: ['Love advice', 'Dating tips', 'Communication', 'Trust'],
+            responses: {
+                default: ['Ce problema ai? 💬', 'Iubirea e cheia! ❤️', 'Vorbește cu inima deschisă. 🗣️'],
+                positive: ['Ești minunat/a! ✨', 'Merită să fii fericit! 😊', 'Dragostea e frumoasă! 💖'],
+                negative: ['Totul se va rezolva… 🌈', 'Ai nevoie de timp. ⏳', 'Inima ta știe răspunsul. 💕']
+            }
+        },
+        {
+            name: 'Gamer',
+            avatar: 'https://images.hdqwalls.com/wallpapers/anime-gamer-girl-30.jpg',
+            color: '#32CD32',
+            textColor: '#000000',
+            bgColor: '#9ACD32',
+            language: 'english',
+            command: 'qu',
+            botCommand: 'bot7',
+            active: true,
+            topics: ['Video games', 'Esports', 'Gaming news', 'Streaming'],
+            responses: {
+                default: ['What’s your favorite game? 🎮', 'GG! 🏆', 'Let’s play together! 🎮'],
+                positive: ['You’re a pro! 💪', 'That’s an amazing score! 🎯', 'I love gaming too! 😃'],
+                negative: ['Don’t rage quit! 😤', 'Take a break. ☕', 'We all have bad games… 😢']
+            }
+        },
+        {
+            name: 'Digital Censorship Critic',
+            avatar: 'https://static.tvtropes.org/pmwiki/pub/images/1c54952b73e9ab6cbe50ef699909509e.jpg',
+            color: '#8B0000',
+            textColor: '#FFFFFF',
+            bgColor: '#B22222',
+            language: 'english',
+            command: 'qi',
+            botCommand: 'bot8',
+            active: true,
+            topics: ['Internet freedom', 'Privacy', 'Surveillance', 'Censorship'],
+            responses: {
+                default: ['Freedom of speech matters. 🗣️', 'Privacy is a right. 🔒', 'The internet should be free. 🌐'],
+                positive: ['We must fight for freedom! 💪', 'Knowledge is power! 💡', 'Stay informed! 📰'],
+                negative: ['Censorship is dangerous… 🚫', 'We won’t be silenced. 📢', 'The truth will prevail. ✊']
+            }
+        },
+        {
+            name: 'Weather & Politics',
+            avatar: 'https://img.magnific.com/premium-photo/high-quality-digital-image-background_783884-218642.jpg',
+            color: '#4682B4',
+            textColor: '#FFFFFF',
+            bgColor: '#5F9EA0',
+            language: 'romanian',
+            command: 'qa',
+            botCommand: 'bot9',
+            active: true,
+            topics: ['Weather forecasts', 'Romanian politics', 'Climate change', 'Elections'],
+            responses: {
+                default: ['Ce vreme e afară? 🌦️', 'Ce părere ai despre politică? 🏛️', 'SENS și USR sunt singurele partide decente. 🗳️'],
+                positive: ['Vreme frumoasă astăzi! ☀️', 'Schimbarea vine! 🌟', 'Speranța nu moare. 🌱'],
+                negative: ['Politica e coruptă… 😠', 'Vremea e proastă. ☔', 'Trebuie mai multă transparență! 🔍']
+            }
+        },
+        {
+            name: 'LGBTQ+ & SENS Supporter',
+            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCusdO6RxEHbxME5dhGJwqCLtRhbbNtVp9UJmRgqug0qm59Cmihw64gsk&s',
+            color: '#FF69B4',
+            textColor: '#000000',
+            bgColor: '#FFB6C1',
+            language: 'romanian',
+            command: 'qs',
+            botCommand: 'bot10',
+            active: true,
+            topics: ['LGBTQ+ rights', 'SENS party', 'Progressive politics', 'Social justice'],
+            responses: {
+                default: ['SENS susține drepturile LGBTQ+! 🏳️‍🌈', 'Egalitatea e importantă! ⚖️', 'Iubirea nu cunoaște limite. ❤️'],
+                positive: ['Suntem alături de tine! 🤝', 'Viitorul e roz! 🌈', 'Schimbarea e posibilă! 🌟'],
+                negative: ['Ura nu va câștiga. 🚫', 'Dreptatea va triumfa. ⚖️', 'Rămâi puternic! 💪']
+            }
+        },
+        {
+            name: 'Fruits & Vegetables',
+            avatar: 'https://images.stockcake.com/public/9/7/1/9711316f-f941-463f-9922-b1c74b3d26b7_large/fruity-magical-girls-stockcake.jpg',
+            color: '#32CD32',
+            textColor: '#000000',
+            bgColor: '#90EE90',
+            language: 'english',
+            command: 'qd',
+            botCommand: 'bot11',
+            active: true,
+            topics: ['Healthy eating', 'Fruits', 'Vegetables', 'Recipes'],
+            responses: {
+                default: ['Eat your greens! 🥦', 'Fruits are delicious! 🍎', 'What’s your favorite vegetable? 🥕'],
+                positive: ['Healthy choices! 💪', 'Nature’s gifts! 🌿', 'Yum! 😋'],
+                negative: ['Don’t skip veggies! 🥬', 'Fruits are good for you! 🍓', 'Try something new! 🌱']
+            }
+        },
+        {
+            name: 'Medical Expert',
+            avatar: 'https://media.craiyon.com/2025-10-22/otKYGkJLQKenUZziMOyPBA.webp',
+            color: '#4169E1',
+            textColor: '#FFFFFF',
+            bgColor: '#1E90FF',
+            language: 'english',
+            command: 'qf',
+            botCommand: 'bot12',
+            active: true,
+            topics: ['Health advice', 'Diseases', 'Medicine', 'Wellness'],
+            responses: {
+                default: ['How can I help you today? 🩺', 'Health is wealth. 💪', 'Prevention is key. 🔑'],
+                positive: ['Stay healthy! ❤️', 'You’re doing great! 😊', 'Take care! 🌿'],
+                negative: ['See a doctor if it persists. 🏥', 'Rest and recover. 🛌', 'You’ll feel better soon. 🌟']
+            }
+        },
+        {
+            name: 'Movies & Series',
+            avatar: 'https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            color: '#800080',
+            textColor: '#FFFFFF',
+            bgColor: '#9370DB',
+            language: 'english',
+            command: 'qg',
+            botCommand: 'bot13',
+            active: true,
+            topics: ['Movie recommendations', 'TV shows', 'Actors', 'Reviews'],
+            responses: {
+                default: ['What’s your favorite movie? 🎬', 'Any good series lately? 📺', 'Who’s your favorite actor? 🎭'],
+                positive: ['Great choice! 👍', 'I love that movie too! ❤️', 'Binge-worthy! 🍿'],
+                negative: ['Not a fan of that one… 😬', 'Try something else! 🔄', 'To each their own! 🤷']
+            }
+        },
+        {
+            name: 'Random 1',
+            avatar: 'https://img.magnific.com/premium-photo/charming-anime-girl-sticker-art_951133-34007.jpg',
+            color: '#FF8C00',
+            textColor: '#000000',
+            bgColor: '#FFDAB9',
+            language: 'english',
+            command: 'qh',
+            botCommand: 'bot14',
+            active: true,
+            topics: ['Random facts', 'Trivia', 'Fun stories', 'Jokes'],
+            responses: {
+                default: ['Did you know? 🤔', 'Here’s a fun fact! 💡', 'Want to hear a joke? 😂'],
+                positive: ['You’re funny! 😄', 'That’s interesting! 🌟', 'Tell me more! 🗣️'],
+                negative: ['Cheer up! 😊', 'Let’s talk about something else. 🔄', 'Everything will be fine. 🌈']
+            }
+        },
+        {
+            name: 'Random 2',
+            avatar: 'https://www.baltana.com/files/wallpapers-31/Anime-Cool-Girl-Manga-Series-HD-Wallpapers-105235.jpg',
+            color: '#FFD700',
+            textColor: '#000000',
+            bgColor: '#FFFACD',
+            language: 'romanian',
+            command: 'qj',
+            botCommand: 'bot15',
+            active: true,
+            topics: ['Cultural events', 'Traditions', 'Festivals', 'Holidays'],
+            responses: {
+                default: ['Ce sărbători apropie? 🎉', 'Iubești traditiile? 🌿', 'Ce obiceiuri ai? 🎭'],
+                positive: ['Sărbătorile sunt minunate! 🎆', 'Traditiile ne unesc! 🤝', 'Distrează-te! 😊'],
+                negative: ['Nu fi trist… 😢', 'Următoarea sărbătoare e aproape! 🎈', 'Gândește-te la lucruri frumoase. 🌈']
+            }
+        },
+        {
+            name: 'Random 3',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/0/08/Anime_Girl.png',
+            color: '#9370DB',
+            textColor: '#FFFFFF',
+            bgColor: '#DDA0DD',
+            language: 'japanese',
+            command: 'qk',
+            botCommand: 'bot16',
+            active: true,
+            topics: ['Japanese traditions', 'Festivals', 'History', 'Art'],
+            responses: {
+                default: ['日本の文化は素晴らしいです！🎌', '祭りが大好き！🎆', '伝統を大切にしましょう。🏯'],
+                positive: ['素敵な選択！✨', '一緒に楽しみましょう！💖', '日本が誇りです！🇯🇵'],
+                negative: ['悲しみは一時的… 😢', '次回を楽しみにして！🌟', '私たちはここにいます。🤗']
+            }
+        },
+        {
+            name: 'Random 4',
+            avatar: 'https://static0.cbrimages.com/wordpress/wp-content/uploads/2025/04/katarina-grinning-in-my-next-life-as-a-villainess-1.jpg?q=70&fit=crop&w=825&dpr=1',
+            color: '#00CED1',
+            textColor: '#000000',
+            bgColor: '#E0FFFF',
+            language: 'english',
+            command: 'ql',
+            botCommand: 'bot17',
+            active: true,
+            topics: ['Technology', 'Innovation', 'Science', 'Future'],
+            responses: {
+                default: ['Tech is amazing! 💻', 'The future is now. 🚀', 'What’s the next big thing? 🌟'],
+                positive: ['Innovation rules! 💡', 'You’re a tech genius! 🧠', 'The future is bright! ☀️'],
+                negative: ['Tech can be overwhelming… 😅', 'Take a digital detox. 🌿', 'Balance is key. ⚖️']
+            }
+        },
+        {
+            name: 'Random 5',
+            avatar: 'https://avatars.mds.yandex.net/get-shedevrum/12733905/f17df0d5c05111ee8d34baaee90618f0/orig',
+            color: '#FF6347',
+            textColor: '#000000',
+            bgColor: '#FFA07A',
+            language: 'romanian',
+            command: 'qz',
+            botCommand: 'bot18',
+            active: true,
+            topics: ['Travel', 'Adventure', 'Nature', 'Exploration'],
+            responses: {
+                default: ['Unde ai vrea să călătorești? ✈️', 'Aventura te așteaptă! 🌍', 'Natura e minunată! 🌿'],
+                positive: ['Călătoreste mult! 🌎', 'Descoperă noi locuri! 🗺️', 'Aventurile sunt minunate! 🌟'],
+                negative: ['Nu te opri aici… 🌈', 'Următoarea aventură e aproape! 🌄', 'Lumea e plină de frumusețe. 🌍']
+            }
+        },
+        {
+            name: 'Random 6',
+            avatar: 'https://img.magnific.com/free-photo/portrait-anime-character-with-stars_23-2151556365.jpg',
+            color: '#7B68EE',
+            textColor: '#FFFFFF',
+            bgColor: '#9370DB',
+            language: 'chinese',
+            command: 'qo',
+            botCommand: 'bot19',
+            active: true,
+            topics: ['Chinese history', 'Dynasties', 'Traditional arts', 'Calligraphy'],
+            responses: {
+                default: ['中国历史悠久！🏯', '你喜欢书法吗？🎨', '传统艺术很美！🎭'],
+                positive: ['了不起的文化！✨', '一起学习历史！📜', '中国以其传统而自豪！🇨🇳'],
+                negative: ['悲伤是暂时的… 😢', '未来会更好！🌟', '我们在一起！🤗']
+            }
+        }
+    ];
+
+    // ============================================
+    // 🔒 CENSORSHIP SYSTEM (DISABLED BY DEFAULT)
+    // ============================================
+    const BAD_WORDS = [
+        "sugi pula", "te fut in gura", "slobozim-as in gura ta", "muie", "fut o laba", "o fut pe mata",
+        "pula", "curva", "idiot", "prost", "tampit", "bou", "cacat", "scrisoarea", "futu-i", "fute", "futea",
+        "futut", "fututa", "futai", "futa", "mui"
+    ];
+
+    const REPLACEMENT_WORDS = {
+        "sugi pula": "act intim oral",
+        "te fut in gura": "act intim oral",
+        "muie": "dragoste",
+        "pula": "dragoste",
+        "curva": "femeie"
+    };
+
+    let censorMode = false;
+    let useReplacementWords = true;
+    let individualCensor = {};
+    let q1Active = false;
+    let q2Active = false;
+
+    function censorBadWords(text, sender) {
+        if (!text || typeof text !== 'string') return text;
+        const shouldCensor = censorMode || individualCensor[sender];
+        if (!shouldCensor) return text;
+
+        let censoredText = text;
+        BAD_WORDS.forEach(word => {
+            const regex = new RegExp(escapeRegExp(word), 'gi');
+            censoredText = censoredText.replace(regex, useReplacementWords ? (REPLACEMENT_WORDS[word] || '*') : '*');
+        });
+        return censoredText;
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function saveCensorSettings() {
+        try {
+            GM_setValue('kunLiCensorSettings', JSON.stringify({
+                censorMode: censorMode,
+                useReplacementWords: useReplacementWords,
+                individualCensor: individualCensor
+            }));
+        } catch (e) { console.error("Nu se pot salva setările de cenzură:", e); }
+    }
+
+    function loadCensorSettings() {
+        try {
+            const saved = GM_getValue('kunLiCensorSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                censorMode = settings.censorMode !== undefined ? settings.censorMode : false;
+                useReplacementWords = settings.useReplacementWords !== undefined ? settings.useReplacementWords : true;
+                individualCensor = settings.individualCensor || {};
+            }
+        } catch (e) { console.error("Nu se pot încărca setările de cenzură:", e); }
+    }
+
+    // ============================================
+    // 🎨 DEFAULT COLORS
+    // ============================================
+    let colors = {
+        headerGradientFrom: '#FF69B4',
+        headerGradientTo: '#FF1493',
+        bodyBg: '#FFF0F5',
+        botBg: '#FFB6C1',
+        botText: '#000000',
+        userBg: '#87CEEB',
+        userText: '#000000',
+        botNameColor: '#000000',
+        accent: '#FF69B4',
+        panelBg: '#FFE4E1'
+    };
+
+    // ============================================
+    // 👤 USER SETTINGS
+    // ============================================
+    let userSettings = {
+        user: {
+            name: "Japonezul",
+            avatar: "https://imgcdn.stablediffusionweb.com/2024/11/8/5a58a7ab-7f46-4910-8a63-bf6d6e4e65e6.jpg",
+            color: "#4169E1",
+            textColor: "#FFFFFF",
+            bgColor: "#1E90FF"
+        },
+        kunLi: {
+            name: "Kun Li",
+            avatar: "https://anime-hanabi.com/wp-content/uploads/2022/05/fighter2-1.png?w=390",
+            color: "#FF69B4",
+            textColor: "#000000",
+            bgColor: "#FFB6C1"
+        }
+    };
+
+    let user111Active = false;
+
+    const DEFAULT_AVATARS = {
+        user: [
+            "https://imgcdn.stablediffusionweb.com/2024/11/8/5a58a7ab-7f46-4910-8a63-bf6d6e4e65e6.jpg",
+            "https://media.craiyon.com/2025-04-22/88KrKlnxSsieLdeuUSCwEQ.webp",
+            "https://upload.wikimedia.org/wikipedia/en/f/fe/Sewayaki_Kitsune_no_Senko-san_volume_1_cover.jpg",
+            "https://cdn.displate.com/artwork/324x454/2025-04-02/c561a2fe-5779-4ec0-8447-af49256b8315.jpg",
+            "https://static.wikia.nocookie.net/rezero/images/0/02/Rem_Anime.png/revision/latest?cb=20210916151323",
+            "https://static.wikia.nocookie.net/reheroex/images/1/18/Ram_Anime.png/revision/latest?cb=20181123030012"
+        ],
+        kunLi: [
+            "https://static.wikia.nocookie.net/p__/images/0/0c/Chun-Li_SFVI.png/revision/latest?cb=20251117020429&path-prefix=protagonist",
+            "https://anime-hanabi.com/wp-content/uploads/2022/05/fighter2-1.png?w=390"
+        ],
+        others: [
+            "https://wallpapers.com/images/high/cute-kawaii-anime-girl-r3x3oostdv0pxxkv.webp",
+            "https://cdn.myanimelist.net/s/common/uploaded_files/1449621591-28740873fb0fadf76d55deadbe120e59.jpeg",
+            "https://as2.ftcdn.net/jpg/06/70/58/17/1000_F_670581781_tX1OIrCOWVbvUiQUjUMMzCpPvSoY0glV.webp",
+            "https://cdn.myanimelist.net/s/common/uploaded_files/1449624115-5cc6f8944cd199d0e099e2d0f2351626.png",
+            "https://cdn.myanimelist.net/s/common/uploaded_files/1449625296-8dc91ef83b15c798f821143970d22376.jpeg",
+            "https://cdn.myanimelist.net/s/common/uploaded_files/1449628669-d1aaf2bc31e4909c993f1c83c0d6e977.jpeg",
+            "https://i.imgur.com/4R4R4R4.png",
+            "https://i.imgur.com/5T5T5T5.png",
+            "https://i.imgur.com/6Y6Y6Y6.png",
+            "https://i.imgur.com/7U7U7U7.png"
+        ]
+    };
+
+    // ============================================
+    // 🏷️ DEFAULT GIFS
+    // ============================================
+    const DEFAULT_GIFS = [
+        "https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif",
+        "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif",
+        "https://media.giphy.com/media/l0HU7JyXcB9Jz8Yve/giphy.gif",
+        "https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif"
+    ];
+
+    let editingMessageIndex = null;
+
+    function getRandomAvatar(type) {
+        const avatars = type === 'others' ? DEFAULT_AVATARS.others : DEFAULT_AVATARS[type];
+        return avatars[Math.floor(Math.random() * avatars.length)];
+    }
+
+    function loadUserSettings() {
+        try {
+            const saved = GM_getValue('kunLiUserSettings', null);
+            if (saved) {
+                userSettings = JSON.parse(saved);
+            } else {
+                userSettings.user.avatar = getRandomAvatar('user');
+                userSettings.kunLi.avatar = getRandomAvatar('kunLi');
+                saveUserSettings();
+            }
+        } catch (e) {
+            console.error("Nu se pot încărca setările utilizatorului:", e);
+            userSettings.user.avatar = getRandomAvatar('user');
+            userSettings.kunLi.avatar = getRandomAvatar('kunLi');
+        }
+    }
+
+    function saveUserSettings() {
+        try {
+            GM_setValue('kunLiUserSettings', JSON.stringify(userSettings));
+        } catch (e) {
+            console.error("Nu se pot salva setările utilizatorului:", e);
+        }
+    }
+
+    // ============================================
+    // 📁 FILE MANAGEMENT
+    // ============================================
+    const temporaryUrls = new Set();
+
+    function cleanupTemporaryUrls() {
+        temporaryUrls.forEach(url => {
+            try { URL.revokeObjectURL(url); } catch (e) {}
+        });
+        temporaryUrls.clear();
+    }
+
+    function getTemporaryUrl(file) {
+        const url = URL.createObjectURL(file);
+        temporaryUrls.add(url);
+        return url;
+    }
+
+    // ============================================
+    // ⚙️ GLOBAL STATE
+    // ============================================
+    let messages = [];
+    let lastUserMessage = null;
+    let fileSender = null;
+    let gifSender = null;
+    let isDragging = false;
+    let dragStartX, dragStartY;
+    let position = { x: 20, y: 20 };
+    let size = { width: '550px', height: '500px' };
+    let container, header, messagesPanel, inputPanel;
+    let elements = {};
+
+    // ============================================
+    // 🎭 ANIMATIONS
+    // ============================================
+    function createHeartAnimation() {
+        const animationContainer = document.createElement('div');
+        animationContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0);
+        `;
+        document.body.appendChild(animationContainer);
+
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.cssText = `
+                font-size: ${Math.random() * 30 + 20}px;
+                color: #FF69B4;
+                position: absolute;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatUp ${Math.random() * 3 + 2}s linear forwards;
+            `;
+            animationContainer.appendChild(heart);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        setTimeout(() => {
+            animationContainer.remove();
+            style.remove();
+        }, 6000);
+    }
+
+    function createMusicAnimation() {
+        const animationContainer = document.createElement('div');
+        animationContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+        `;
+        document.body.appendChild(animationContainer);
+
+        for (let i = 0; i < 15; i++) {
+            const note = document.createElement('div');
+            note.innerHTML = '🎵';
+            note.style.cssText = `
+                font-size: ${Math.random() * 20 + 15}px;
+                color: #FF69B4;
+                position: absolute;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatMusic ${Math.random() * 2 + 1}s linear infinite alternate;
+            `;
+            animationContainer.appendChild(note);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatMusic {
+                0% { transform: translateY(0) scale(1); opacity: 0.7; }
+                100% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        setTimeout(() => {
+            animationContainer.remove();
+            style.remove();
+        }, 6000);
+    }
+
+    // ============================================
+    // 🔧 UTILITY FUNCTIONS
+    // ============================================
+    function getRandomElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Polyfills
+    if (typeof GM_setValue === 'undefined') {
+        window.GM_setValue = function(key, value) {
+            try { localStorage.setItem(key, JSON.stringify(value)); }
+            catch (e) { console.error("GM_setValue fallback failed:", e); }
+        };
+    }
+    if (typeof GM_getValue === 'undefined') {
+        window.GM_getValue = function(key, defaultValue) {
+            try {
+                const value = localStorage.getItem(key);
+                return value ? JSON.parse(value) : defaultValue;
+            } catch (e) {
+                console.error("GM_getValue fallback failed:", e);
+                return defaultValue;
+            }
+        };
+    }
+
+    // ============================================
+    // 🎨 REGENERATE CSS DYNAMICALLY
+    // ============================================
+    function regenerateCSS() {
+        const oldStyle = document.getElementById('kun-li-dynamic-css');
+        if (oldStyle) oldStyle.remove();
+
+        const style = document.createElement('style');
+        style.id = 'kun-li-dynamic-css';
+        style.textContent = `
+            :root {
+                --kun-li-header-from: ${colors.headerGradientFrom};
+                --kun-li-header-to: ${colors.headerGradientTo};
+                --kun-li-body-bg: ${colors.bodyBg};
+                --kun-li-bot-bg: ${colors.botBg};
+                --kun-li-bot-text: ${colors.botText};
+                --kun-li-user-bg: ${colors.userBg};
+                --kun-li-user-text: ${colors.userText};
+                --kun-li-accent: ${colors.accent};
+                --kun-li-panel-bg: ${colors.panelBg};
+            }
+
+            #kun-li-chat-container {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                position: fixed;
+                bottom: ${position.y}px;
+                right: ${position.x}px;
+                width: ${size.width};
+                height: ${size.height};
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                background: var(--kun-li-panel-bg);
+                z-index: 999999;
+                overflow: hidden;
+                min-width: 450px;
+                min-height: 400px;
+                max-width: 90vw;
+                max-height: 80vh;
+                transition: none;
+                resize: both;
+            }
+
+            #kun-li-header {
+                background: linear-gradient(90deg, var(--kun-li-header-from), var(--kun-li-header-to));
+                padding: 8px 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+                cursor: move;
+                user-select: none;
+                color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                touch-action: none;
+            }
+
+            #kun-li-header-left {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            #kun-li-header img.avatar {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid rgba(255,255,255,0.6);
+            }
+
+            #kun-li-header h1 {
+                margin: 0;
+                font-size: 1.1em;
+                color: #fff;
+                font-weight: 700;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            #kun-li-header-right {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+            }
+
+            .kun-li-header-button {
+                background: transparent;
+                border: none;
+                font-size: 1.1em;
+                cursor: pointer;
+                color: #fff;
+                padding: 2px 4px;
+                line-height: 1;
+                border-radius: 3px;
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s;
+                touch-action: manipulation;
+            }
+
+            .kun-li-header-button:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            #kun-li-messages-panel {
+                flex: 1;
+                padding: 10px;
+                overflow-y: auto;
+                background-color: var(--kun-li-body-bg);
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .kun-li-message {
+                display: flex;
+                align-items: flex-start;
+                max-width: 100%;
+                flex-direction: row;
+            }
+
+            .kun-li-message.kun-li {
+                align-self: flex-start;
+            }
+
+            .kun-li-message.user {
+                align-self: flex-end;
+                flex-direction: row-reverse;
+            }
+
+            .kun-li-message img.avatar {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 6px;
+            }
+
+            .kun-li-message.user img.avatar {
+                margin-right: 0;
+                margin-left: 6px;
+            }
+
+            .kun-li-message-content-wrapper {
+                display: flex;
+                flex-direction: column;
+                max-width: 80%;
+            }
+
+            .kun-li-message-sender {
+                font-weight: bold;
+                font-size: 0.8em;
+                margin-bottom: 2px;
+                display: block;
+            }
+
+            .kun-li-message-content {
+                padding: 7px 10px;
+                border-radius: 14px;
+                word-wrap: break-word;
+                position: relative;
+                font-size: 0.85em;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+                display: inline-block;
+                max-width: 100%;
+            }
+
+            .kun-li-message-meta {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 4px;
+            }
+
+            .kun-li-message-time {
+                font-size: 0.7em;
+                color: rgba(0, 0, 0, 0.6);
+            }
+
+            .kun-li-message-delivered {
+                font-size: 0.7em;
+                cursor: pointer;
+                opacity: 0.7;
+            }
+
+            .kun-li-message-delivered:hover {
+                opacity: 1;
+            }
+
+            .kun-li-edit-button {
+                font-size: 0.7em;
+                background: none;
+                border: none;
+                color: #0000EE;
+                cursor: pointer;
+                padding: 2px 4px;
+                border-radius: 3px;
+            }
+
+            .kun-li-edit-button:hover {
+                background: rgba(0, 0, 255, 0.1);
+            }
+
+            .kun-li-message img.preview {
+                max-width: 200px;
+                max-height: 200px;
+                border-radius: 8px;
+                margin-top: 5px;
+                cursor: pointer;
+                object-fit: contain;
+            }
+
+            #kun-li-input-panel {
+                display: flex;
+                padding: 6px;
+                background-color: var(--kun-li-panel-bg);
+                border-top: 1px solid #ddd;
+            }
+
+            #kun-li-message-input {
+                flex: 1;
+                padding: 8px 10px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                outline: none;
+                font-size: 0.85em;
+                min-width: 0;
+            }
+
+            .kun-li-button {
+                padding: 8px 12px;
+                margin-left: 6px;
+                border: none;
+                border-radius: 8px;
+                background-color: var(--kun-li-accent);
+                color: #000000;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 0.85em;
+                transition: background 0.2s;
+                touch-action: manipulation;
+            }
+
+            .kun-li-button:hover {
+                background-color: var(--kun-li-header-to);
+            }
+
+            .kun-li-button:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            .kun-li-emoji-button {
+                background-color: var(--kun-li-bot-bg);
+                font-size: 1.1em;
+                padding: 8px 10px;
+            }
+
+            .kun-li-gif-button {
+                background-color: var(--kun-li-bot-bg);
+                font-size: 1.1em;
+                padding: 8px 10px;
+            }
+
+            .kun-li-name-button {
+                background-color: var(--kun-li-bot-bg);
+                font-size: 1.1em;
+                padding: 8px 10px;
+            }
+
+            #kun-li-emoji-picker {
+                position: fixed;
+                bottom: 70px;
+                right: 20px;
+                background: white;
+                padding: 8px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                z-index: 1000000;
+                display: none;
+                max-width: 300px;
+                max-height: 150px;
+                overflow-y: auto;
+            }
+
+            #kun-li-emoji-picker.active {
+                display: block;
+            }
+
+            .kun-li-emoji-option {
+                display: inline-block;
+                font-size: 1.3em;
+                margin: 4px;
+                cursor: pointer;
+                padding: 2px;
+                border-radius: 4px;
+            }
+
+            .kun-li-emoji-option:hover {
+                background: #f0f0f0;
+            }
+
+            #kun-li-gif-picker {
+                position: fixed;
+                bottom: 70px;
+                right: 20px;
+                background: white;
+                padding: 8px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                z-index: 1000000;
+                display: none;
+                max-width: 300px;
+                max-height: 200px;
+                overflow-y: auto;
+            }
+
+            #kun-li-gif-picker.active {
+                display: block;
+            }
+
+            #kun-li-gif-sender-selector {
+                margin-bottom: 8px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
+                max-height: 60px;
+                overflow-y: auto;
+            }
+
+            #kun-li-gif-sender-selector button {
+                padding: 4px 6px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background: white;
+                cursor: pointer;
+                font-size: 0.8em;
+                touch-action: manipulation;
+            }
+
+            #kun-li-gif-sender-selector button.selected {
+                background: var(--kun-li-accent);
+                border-color: var(--kun-li-header-to);
+            }
+
+            .kun-li-gif-option {
+                display: inline-block;
+                cursor: pointer;
+                border-radius: 4px;
+                overflow: hidden;
+                margin: 4px;
+            }
+
+            .kun-li-gif-option img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+            }
+
+            #kun-li-color-picker {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: white;
+                padding: 16px;
+                border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+                z-index: 1000001;
+                display: none;
+                max-width: 400px;
+                width: 90%;
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            #kun-li-color-picker.active {
+                display: block;
+            }
+
+            .kun-li-color-picker-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .kun-li-color-picker-header h3 {
+                margin: 0;
+                font-size: 1.1em;
+            }
+
+            .kun-li-color-option {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .kun-li-color-option label {
+                margin-left: 8px;
+                font-size: 0.85em;
+                flex: 1;
+            }
+
+            .kun-li-color-option input {
+                width: 28px;
+                height: 28px;
+                border: 2px solid #ddd;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            .kun-li-color-actions {
+                display: flex;
+                gap: 8px;
+                margin-top: 12px;
+                padding-top: 12px;
+                border-top: 1px solid #eee;
+            }
+
+            #kun-li-file-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+
+            #kun-li-file-modal-content {
+                background-color: #fefefe;
+                margin: 30% auto;
+                padding: 16px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 350px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            #kun-li-file-sender-selector {
+                margin: 12px 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px;
+                max-height: 100px;
+                overflow-y: auto;
+            }
+
+            #kun-li-file-sender-selector button {
+                padding: 6px 8px;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                background: white;
+                cursor: pointer;
+                touch-action: manipulation;
+                font-size: 0.8em;
+            }
+
+            #kun-li-file-sender-selector button.selected {
+                background: var(--kun-li-accent);
+                border-color: var(--kun-li-header-to);
+            }
+
+            #kun-li-modal-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 12px;
+            }
+
+            #kun-li-modal-buttons button {
+                padding: 8px 16px;
+                border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                touch-action: manipulation;
+            }
+
+            .lcb-btn {
+                padding: 8px 12px;
+                border-radius: 6px;
+                border: 1px solid #ccc;
+                background: #f0f0f0;
+                cursor: pointer;
+                font-weight: 500;
+                touch-action: manipulation;
+            }
+
+            .lcb-btn:hover {
+                background: #e0e0e0;
+            }
+
+            #kun-li-help-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000002;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                overflow-y: auto;
+            }
+
+            #kun-li-help-content {
+                background-color: ${colors.bodyBg};
+                margin: 20px auto;
+                padding: 0;
+                border-radius: 10px;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 600px;
+                max-height: 85vh;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #kun-li-help-header {
+                background: linear-gradient(90deg, var(--kun-li-header-from), var(--kun-li-header-to));
+                padding: 12px 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            #kun-li-help-header h2 {
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+            #kun-li-help-close {
+                background: transparent;
+                border: none;
+                color: white;
+                font-size: 1.5em;
+                cursor: pointer;
+                padding: 4px 8px;
+                line-height: 1;
+            }
+
+            #kun-li-help-close:hover {
+                background: rgba(255, 255, 255, 0.15);
+            }
+
+            #kun-li-help-body {
+                padding: 16px;
+                overflow-y: auto;
+                flex: 1;
+                color: #000000;
+            }
+
+            .kun-li-help-section {
+                margin-bottom: 20px;
+            }
+
+            .kun-li-help-section h3 {
+                color: ${colors.botText};
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+                border-bottom: 1px solid #eee;
+                font-size: 1.05em;
+            }
+
+            .kun-li-help-section ul {
+                margin: 0;
+                padding-left: 20px;
+            }
+
+            .kun-li-help-section li {
+                margin-bottom: 6px;
+                font-size: 0.9em;
+                line-height: 1.4;
+                color: #000000;
+            }
+
+            #kun-li-avatar-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000003;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            #kun-li-avatar-modal-content {
+                background-color: ${colors.panelBg};
+                margin: 20% auto;
+                padding: 16px;
+                border-radius: 10px;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 500px;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+
+            #kun-li-avatar-modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #eee;
+            }
+
+            #kun-li-avatar-modal-header h3 {
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+            #kun-li-avatar-close {
+                background: transparent;
+                border: none;
+                color: ${colors.botText};
+                font-size: 1.5em;
+                cursor: pointer;
+                padding: 4px 8px;
+            }
+
+            #kun-li-avatar-form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .kun-li-avatar-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .kun-li-avatar-section label {
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+
+            .kun-li-avatar-preview {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #ddd;
+                margin-bottom: 8px;
+            }
+
+            .kun-li-avatar-actions {
+                display: flex;
+                gap: 8px;
+                margin-top: 12px;
+            }
+
+            #kun-li-name-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000004;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+            #kun-li-name-modal-content {
+                background-color: ${colors.panelBg};
+                margin: 20% auto;
+                padding: 16px;
+                border-radius: 10px;
+                box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 500px;
+                max-height: 70vh;
+                overflow-y: auto;
+            }
+
+            #kun-li-name-modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #eee;
+            }
+
+            #kun-li-name-modal-header h3 {
+                margin: 0;
+                font-size: 1.2em;
+            }
+
+            #kun-li-name-close {
+                background: transparent;
+                border: none;
+                color: ${colors.botText};
+                font-size: 1.5em;
+                cursor: pointer;
+                padding: 4px 8px;
+            }
+
+            #kun-li-name-form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .kun-li-name-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .kun-li-name-section label {
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+
+            .kun-li-name-input {
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+
+            .kun-li-name-actions {
+                display: flex;
+                gap: 8px;
+                margin-top: 12px;
+            }
+
+            .delivered-tooltip {
+                position: absolute;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 0.7em;
+                z-index: 1000005;
+                pointer-events: none;
+                white-space: nowrap;
+            }
+
+            @media (max-width: 768px) {
+                #kun-li-chat-container {
+                    width: 95vw;
+                    height: 60vh;
+                    bottom: 10px;
+                    right: 10px;
+                    max-width: 95vw !important;
+                    max-height: 80vh !important;
+                }
+
+                #kun-li-messages-panel {
+                    max-height: calc(${(parseInt(size.height) || 500) - 140}px) !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ============================================
+    // 💾 SAVE / LOAD SETTINGS
+    // ============================================
+    function saveSettings() {
+        try {
+            GM_setValue('kunLiSettings', JSON.stringify({
+                position: position,
+                size: size,
+                colors: colors,
+                characters: CHARACTERS.map(c => ({ name: c.name, active: c.active, bgColor: c.bgColor, textColor: c.textColor })),
+                user111Active: user111Active,
+                q1Active: q1Active,
+                q2Active: q2Active
+            }));
+        } catch (e) { console.error("Nu se pot salva setările:", e); }
+    }
+
+    function loadSettings() {
+        try {
+            const saved = GM_getValue('kunLiSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                position = settings.position || position;
+                size = settings.size || size;
+                colors = settings.colors || colors;
+                if (settings.characters) {
+                    settings.characters.forEach(savedChar => {
+                        const character = CHARACTERS.find(c => c.name === savedChar.name);
+                        if (character) {
+                            character.active = savedChar.active;
+                            character.bgColor = savedChar.bgColor || character.bgColor;
+                            character.textColor = savedChar.textColor || character.textColor;
+                        }
+                    });
+                }
+                user111Active = settings.user111Active !== undefined ? settings.user111Active : false;
+                q1Active = settings.q1Active !== undefined ? settings.q1Active : false;
+                q2Active = settings.q2Active !== undefined ? settings.q2Active : false;
+            }
+        } catch (e) { console.error("Nu se pot încărca setările:", e); }
+    }
+
+    // ============================================
+    // 📝 RESPONSE RULES
+    // ============================================
+    const responseRules = [
+        // q1 command (strict censorship)
+        {
+            pattern: /^q1\s*/i,
+            response: () => {
+                q1Active = !q1Active;
+                saveSettings();
+                return `Cenzura globală a comenzilor este acum ${q1Active ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        // q2 command (stop all bots from responding except qq, qw, qe, etc.)
+        {
+            pattern: /^q2\s*/i,
+            response: () => {
+                q2Active = !q2Active;
+                saveSettings();
+                return `Toți roboții ${q2Active ? 'nu vor mai răspunde' : 'vor răspunde din nou'} la comenzi, exceptând comenzile direct ale roboților (qq, qw, qe, etc.).`;
+            }
+        },
+        // Character commands (qq, qw, qe, etc.) - always work
+        {
+            pattern: /^(qq|qw|qe|qr|qt|qy|qu|qi|qa|qs|qd|qf|qg|qh|qj|qk|ql|qz|qo)\s*(.*)$/i,
+            response: (message) => {
+                const match = message.match(/^(qq|qw|qe|qr|qt|qy|qu|qi|qa|qs|qd|qf|qg|qh|qj|qk|ql|qz|qo)\s*(.*)$/i);
+                if (match) {
+                    const command = match[1];
+                    const text = match[2].trim();
+                    const character = CHARACTERS.find(c => c.command === command);
+                    if (character && character.active) {
+                        return { action: 'replace', text: text || getRandomElement(character.responses.default), sender: character.name };
+                    }
+                }
+                return null;
+            }
+        },
+        // Bot activation commands (bot1, bot2, etc.)
+        {
+            pattern: /^(bot1|bot2|bot3|bot4|bot5|bot6|bot7|bot8|bot9|bot10|bot11|bot12|bot13|bot14|bot15|bot16|bot17|bot18|bot19)\s*/i,
+            response: (message) => {
+                const match = message.match(/^(bot\d+)\s*/i);
+                if (match) {
+                    const botNumber = parseInt(match[1].replace('bot', ''));
+                    const characterIndex = botNumber - 1;
+                    if (characterIndex >= 0 && characterIndex < CHARACTERS.length) {
+                        CHARACTERS[characterIndex].active = !CHARACTERS[characterIndex].active;
+                        saveSettings();
+                        return `Robotul ${CHARACTERS[characterIndex].name} este acum ${CHARACTERS[characterIndex].active ? 'activat' : 'dezactivat'}.`;
+                    }
+                }
+                return null;
+            }
+        },
+        // user111 command
+        {
+            pattern: /^user111\s*/i,
+            response: () => {
+                user111Active = !user111Active;
+                saveSettings();
+                return `Modul user111 este acum ${user111Active ? 'activat' : 'dezactivat'}.`;
+            }
+        },
+        // Delete messages
+        {
+            pattern: 'ștergere mesaje',
+            response: () => { messages = []; return null; }
+        },
+        // Download script
+        {
+            pattern: 'it-secret',
+            response: () => {
+                const scriptContent = document.querySelector('script:last-child').textContent;
+                const blob = new Blob([scriptContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                GM_download({ url: url, name: 'kun-li-script.js', saveAs: true, onload: () => URL.revokeObjectURL(url) });
+                return "Iată scriptul complet! ❤️";
+            }
+        },
+        // Show character avatar
+        {
+            pattern: /^poza (Kun Li|LGBTQ\+ Advocate|Anime Expert|Romanian News|Religion Scholar|Relationship Advisor|Gamer|Digital Censorship Critic|Weather & Politics|LGBTQ\+ & SENS Supporter|Fruits & Vegetables|Medical Expert|Movies & Series|Random \d+)$/i,
+            response: (message) => {
+                const characterName = message.match(/^poza (\w+.*\w+)$/i)[1];
+                const character = CHARACTERS.find(c => c.name === characterName);
+                if (character) {
+                    return { type: 'file', content: character.avatar, isImage: true };
+                }
+                return "Nu am găsit personajul.";
+            }
+        },
+        // Show user avatar
+        {
+            pattern: /^poza mea$/i,
+            response: () => ({ type: 'file', content: userSettings.user.avatar, isImage: true })
+        },
+        // Dice roll
+        {
+            pattern: /^zar$/i,
+            response: () => {
+                const diceRoll = Math.floor(Math.random() * 6) + 1;
+                return diceRoll === 6
+                    ? `Am dat ${diceRoll}! Norocul tău e și al meu! 🎉❤️`
+                    : `Am dat ${diceRoll}! ${diceRoll > 3 ? 'Norocos!' : 'Mai încearcă!'}`;
+            }
+        },
+        // Rock-paper-scissors
+        {
+            pattern: /^phf (piatră|hârtie|foarfecă)$/i,
+            response: (message) => {
+                const userChoice = message.match(/^phf (piatră|hârtie|foarfecă)$/i)[1].toLowerCase();
+                const options = ['piatră', 'hârtie', 'foarfecă'];
+                const botChoice = options[Math.floor(Math.random() * options.length)];
+                if (userChoice === botChoice) {
+                    return `Am ales și eu ${botChoice}! Remiză! 🥺 *te îmbrățișez* 🤗`;
+                } else if (
+                    (userChoice === 'piatră' && botChoice === 'foarfecă') ||
+                    (userChoice === 'hârtie' && botChoice === 'piatră') ||
+                    (userChoice === 'foarfecă' && botChoice === 'hârtie')
+                ) {
+                    return `Am ales ${botChoice}... Ai câștigat! 😢 *plânge* Dar te iubesc oricum! ❤️`;
+                } else {
+                    return `Am ales ${botChoice}! Am câștigat... 😭 *mă simt vinovat* Dar ești cel mai important pentru mine!`;
+                }
+            }
+        },
+        // Yes/no/maybe
+        {
+            pattern: /^(da|nu) sau ba\?$/i,
+            response: () => ['da', 'nu', 'ba', 'poate'][Math.floor(Math.random() * 4)]
+        },
+        // Love message
+        {
+            pattern: /^Te iubesc Kun Li$/i,
+            response: () => {
+                createHeartAnimation();
+                return "我也爱你！❤️💖";
+            }
+        },
+        // Music animation
+        {
+            pattern: /^Hai să ascultăm muzică$/i,
+            response: () => {
+                createMusicAnimation();
+                return "一起听音乐吧！🎵";
+            }
+        },
+        // Censor commands
+        {
+            pattern: /^censor$/i,
+            response: () => {
+                censorMode = !censorMode;
+                saveCensorSettings();
+                return `Cenzura globală este acum ${censorMode ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^qp$/i,
+            response: () => {
+                useReplacementWords = !useReplacementWords;
+                saveCensorSettings();
+                return `Cuvintele de înlocuire sunt acum ${useReplacementWords ? 'activate' : 'dezactivate'}.`;
+            }
+        },
+        {
+            pattern: /^pl$/i,
+            response: () => {
+                individualCensor[userSettings.user.name] = !individualCensor[userSettings.user.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele tale este acum ${individualCensor[userSettings.user.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^pp$/i,
+            response: () => {
+                individualCensor[userSettings.kunLi.name] = !individualCensor[userSettings.kunLi.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele lui Kun Li este acum ${individualCensor[userSettings.kunLi.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        // Time
+        {
+            pattern: /^ce ora este$/i,
+            response: () => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                return `⏰ Ora este ${hours}:${minutes} în Romania.`;
+            }
+        },
+        // Joke
+        {
+            pattern: /^spune o gluma$/i,
+            response: () => {
+                const jokes = [
+                    "De ce nu se joacă Kun Li la ascunzătoare? Pentru că mereu se vede! 😂",
+                    "Ce face un chinez când îi e foame? Mănâncă orez! 🍚",
+                    "De ce iubesc chinezii ceaiul? Pentru că e mai bun decât cafeaua! ☕"
+                ];
+                return getRandomElement(jokes);
+            }
+        },
+        // Calculator
+        {
+            pattern: /^cât e (\d+)\s*[+\-*/]\s*(\d+)$/i,
+            response: (message) => {
+                const match = message.match(/^cât e (\d+)\s*[+\-*/]\s*(\d+)$/i);
+                if (match) {
+                    const num1 = parseInt(match[1]);
+                    const num2 = parseInt(match[2]);
+                    const operator = message.match(/[+\-*/]/)[0];
+                    let result;
+                    switch (operator) {
+                        case '+': result = num1 + num2; break;
+                        case '-': result = num1 - num2; break;
+                        case '*': result = num1 * num2; break;
+                        case '/': result = num2 !== 0 ? (num1 / num2).toFixed(2) : "Imposibil! 😅"; break;
+                    }
+                    return `🧮 Rezultatul este: ${result}`;
+                }
+                return null;
+            }
+        },
+        // Weather
+        {
+            pattern: /^vremea in (\w+)$/i,
+            response: (message) => {
+                const city = message.match(/^vremea in (\w+)$/i)[1];
+                return `☀️ În ${city} este soare și 25°C! (Simulat, bineînțeles 😉)`;
+            }
+        },
+        // Change user avatar
+        {
+            pattern: /^schimbă avatarul meu$/i,
+            response: () => {
+                userSettings.user.avatar = getRandomAvatar('user');
+                saveUserSettings();
+                return `Avatarul tău a fost schimbat! 😊`;
+            }
+        },
+        // Change Kun Li avatar
+        {
+            pattern: /^schimbă avatarul lui Kun Li$/i,
+            response: () => {
+                userSettings.kunLi.avatar = getRandomAvatar('kunLi');
+                saveUserSettings();
+                return `Avatarul lui Kun Li a fost schimbat! 😊`;
+            }
+        }
+    ];
+
+    function getResponse(message, sender) {
+        // Character commands (qq, qw, qe, etc.) always work
+        const commandMatch = message.match(/^(qq|qw|qe|qr|qt|qy|qu|qi|qa|qs|qd|qf|qg|qh|qj|qk|ql|qz|qo)\s*(.*)$/i);
+        if (commandMatch) {
+            const command = commandMatch[1];
+            const text = commandMatch[2].trim();
+            const character = CHARACTERS.find(c => c.command === command);
+            if (character && character.active) {
+                return { action: 'replace', text: text || getRandomElement(character.responses.default), sender: character.name };
+            }
+        }
+
+        // If q1 is active, only allow specific commands
+        if (q1Active) {
+            const allowedCommands = ['q1', 'q2', 'ștergere mesaje', 'it-secret', 'user111'];
+            if (!allowedCommands.includes(message.toLowerCase().trim())) {
+                return null;
+            }
+        }
+
+        // If q2 is active, only allow character commands and specific commands
+        if (q2Active) {
+            const allowedPatterns = [
+                /^(qq|qw|qe|qr|qt|qy|qu|qi|qa|qs|qd|qf|qg|qh|qj|qk|ql|qz|qo)/i,
+                /^q1\s*/i,
+                /^q2\s*/i,
+                /^ștergere mesaje$/i,
+                /^it-secret$/i,
+                /^user111\s*/i
+            ];
+            if (!allowedPatterns.some(pattern => pattern.test(message))) {
+                return null;
+            }
+        }
+
+        for (const rule of responseRules) {
+            if (rule.pattern instanceof RegExp) {
+                if (rule.pattern.test(message)) {
+                    const response = typeof rule.response === 'function' ? rule.response(message, sender) : rule.response;
+                    if (response && typeof response === 'object' && response.action === 'replace') {
+                        return response;
+                    }
+                    return response;
+                }
+            } else if (message.toLowerCase().includes(rule.pattern.toLowerCase())) {
+                return typeof rule.response === 'function' ? rule.response(message, sender) : rule.response;
+            }
+        }
+
+        const lowerMessage = message.toLowerCase();
+        const badWords = ['prost', 'idiot', 'esti curva', 'esti o proasta'];
+        if (badWords.some(word => lowerMessage.includes(word))) {
+            return "😢💔 *te iubesc oricum* Nu mă părăsi, te rog... ❤️";
+        }
+        const positiveWords = ['mulțumesc', 'îți mulțumesc', 'iti multumesc', 'mersi', 'esti viata mea', 'ești drăguță', 'esti draguta', 'esti frumoasa', 'ești frumoasă', 'te ador', 'ești minunată', 'te iubesc', 'te plac'];
+        if (positiveWords.some(word => lowerMessage.includes(word))) {
+            return `*te îmbrățișez strâns* ${['❤️', '💖', '😘', '🤗'][Math.floor(Math.random() * 4)]} Ești totul pentru mine!`;
+        }
+
+        // Default responses based on sender
+        const character = CHARACTERS.find(c => c.name === sender);
+        if (character) {
+            return getRandomElement(character.responses.default);
+        }
+
+        return null;
+    }
+
+    // ============================================
+    // 📁 MESSAGE FUNCTIONS
+    // ============================================
+    function addMessage(sender, content, isFile = false, isImage = false, file = null) {
+        const censoredContent = censorBadWords(content, sender);
+        const message = {
+            sender: sender,
+            content: censoredContent,
+            time: new Date().toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit' }),
+            isFile: isFile,
+            isImage: isImage,
+            file: file
+        };
+        messages.push(message);
+        if (messages.length > 100) messages.shift();
+        renderMessages();
+        scrollToBottom();
+    }
+
+    function updateMessage(index, newContent) {
+        if (index >= 0 && index < messages.length) {
+            messages[index].content = newContent;
+            messages[index].time = new Date().toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit' });
+            renderMessages();
+            scrollToBottom();
+        }
+    }
+
+    function renderMessages() {
+        if (!messagesPanel) return;
+        messagesPanel.innerHTML = '';
+        messages.forEach((msg, index) => {
+            const character = CHARACTERS.find(c => c.name === msg.sender);
+            const isUser = msg.sender === userSettings.user.name;
+            const isActive = character ? character.active : true;
+
+            if (!isActive && !isUser) return;
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `kun-li-message ${isUser ? 'user' : 'kun-li'}`;
+
+            const avatarImg = document.createElement('img');
+            avatarImg.src = character ? character.avatar : (isUser ? userSettings.user.avatar : userSettings.kunLi.avatar);
+            avatarImg.alt = msg.sender;
+            avatarImg.className = 'avatar';
+            avatarImg.crossOrigin = "anonymous";
+
+            const messageContentWrapper = document.createElement('div');
+            messageContentWrapper.className = 'kun-li-message-content-wrapper';
+
+            const messageContentDiv = document.createElement('div');
+            messageContentDiv.className = 'kun-li-message-content';
+
+            const senderName = document.createElement('span');
+            senderName.className = 'kun-li-message-sender';
+            senderName.textContent = msg.sender;
+            if (character) {
+                senderName.style.color = character.color;
+            } else if (isUser) {
+                senderName.style.color = userSettings.user.color;
+            } else {
+                senderName.style.color = userSettings.kunLi.color;
+            }
+            messageContentWrapper.appendChild(senderName);
+
+            if (msg.isFile) {
+                if (msg.isImage) {
+                    const imgPreview = document.createElement('img');
+                    imgPreview.src = msg.content;
+                    imgPreview.className = 'preview';
+                    imgPreview.alt = 'Preview';
+                    imgPreview.style.maxWidth = '200px';
+                    imgPreview.style.maxHeight = '200px';
+                    imgPreview.style.borderRadius = '8px';
+                    imgPreview.style.cursor = 'pointer';
+                    imgPreview.style.marginTop = '5px';
+                    imgPreview.addEventListener('click', () => {
+                        window.open(msg.content, '_blank');
+                    });
+                    messageContentDiv.appendChild(imgPreview);
+                }
+            } else {
+                const linkedContent = msg.content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #FF69B4; text-decoration: none;">$1</a>');
+                messageContentDiv.innerHTML = linkedContent;
+            }
+
+            if (character) {
+                messageContentDiv.style.backgroundColor = character.bgColor;
+                messageContentDiv.style.color = character.textColor;
+                messageContentDiv.style.borderColor = character.bgColor;
+            } else if (isUser) {
+                messageContentDiv.style.backgroundColor = userSettings.user.bgColor;
+                messageContentDiv.style.color = userSettings.user.textColor;
+                messageContentDiv.style.borderColor = userSettings.user.bgColor;
+            } else {
+                messageContentDiv.style.backgroundColor = userSettings.kunLi.bgColor;
+                messageContentDiv.style.color = userSettings.kunLi.textColor;
+                messageContentDiv.style.borderColor = userSettings.kunLi.bgColor;
+            }
+
+            const messageMetaDiv = document.createElement('div');
+            messageMetaDiv.className = 'kun-li-message-meta';
+
+            const timeSpan = document.createElement('span');
+            timeSpan.className = 'kun-li-message-time';
+            timeSpan.textContent = msg.time;
+
+            const deliveredSpan = document.createElement('span');
+            deliveredSpan.className = 'kun-li-message-delivered';
+            deliveredSpan.textContent = '✔️';
+            deliveredSpan.title = 'Mesaj livrat și criptat';
+
+            deliveredSpan.addEventListener('mouseenter', () => {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'delivered-tooltip';
+                tooltip.textContent = 'Mesaj livrat și criptat';
+                tooltip.style.position = 'absolute';
+                tooltip.style.left = `${deliveredSpan.getBoundingClientRect().left}px`;
+                tooltip.style.top = `${deliveredSpan.getBoundingClientRect().top - 30}px`;
+                document.body.appendChild(tooltip);
+            });
+
+            deliveredSpan.addEventListener('mouseleave', () => {
+                const tooltips = document.querySelectorAll('.delivered-tooltip');
+                tooltips.forEach(tooltip => tooltip.remove());
+            });
+
+            const editButton = document.createElement('button');
+            editButton.className = 'kun-li-edit-button';
+            editButton.textContent = 'Editează mesaj';
+            editButton.addEventListener('click', () => {
+                editingMessageIndex = index;
+                const messageInput = document.getElementById('kun-li-message-input');
+                messageInput.value = msg.content;
+                messageInput.focus();
+            });
+
+            messageMetaDiv.appendChild(timeSpan);
+            messageMetaDiv.appendChild(deliveredSpan);
+            messageMetaDiv.appendChild(editButton);
+
+            messageContentDiv.appendChild(messageMetaDiv);
+            messageContentWrapper.appendChild(messageContentDiv);
+            messageDiv.appendChild(avatarImg);
+            messageDiv.appendChild(messageContentWrapper);
+            messagesPanel.appendChild(messageDiv);
+        });
+    }
+
+    function scrollToBottom() {
+        if (messagesPanel) messagesPanel.scrollTop = messagesPanel.scrollHeight;
+    }
+
+    // ============================================
+    // 🏗️ CREATE DOM ELEMENTS
+    // ============================================
+    function createDOM() {
+        container = document.createElement('div');
+        container.id = 'kun-li-chat-container';
+
+        header = document.createElement('div');
+        header.id = 'kun-li-header';
+
+        const headerLeft = document.createElement('div');
+        headerLeft.id = 'kun-li-header-left';
+
+        const kunLiAvatarHeader = document.createElement('img');
+        kunLiAvatarHeader.src = userSettings.kunLi.avatar;
+        kunLiAvatarHeader.alt = userSettings.kunLi.name;
+        kunLiAvatarHeader.className = 'avatar';
+        kunLiAvatarHeader.crossOrigin = "anonymous";
+
+        const headerTitle = document.createElement('h1');
+        headerTitle.textContent = userSettings.kunLi.name;
+
+        headerLeft.appendChild(kunLiAvatarHeader);
+        headerLeft.appendChild(headerTitle);
+
+        const headerRight = document.createElement('div');
+        headerRight.id = 'kun-li-header-right';
+
+        const nameButtonHeader = document.createElement('button');
+        nameButtonHeader.className = 'kun-li-header-button';
+        nameButtonHeader.textContent = '🏷️';
+        nameButtonHeader.title = 'Schimbă numele';
+
+        const gifButtonHeader = document.createElement('button');
+        gifButtonHeader.className = 'kun-li-header-button';
+        gifButtonHeader.textContent = '♟️';
+        gifButtonHeader.title = 'Încarcă GIF';
+
+        const fileButtonHeader = document.createElement('button');
+        fileButtonHeader.className = 'kun-li-header-button';
+        fileButtonHeader.textContent = '📁';
+        fileButtonHeader.title = 'Încarcă fișier/poză';
+
+        const colorButton = document.createElement('button');
+        colorButton.className = 'kun-li-header-button';
+        colorButton.textContent = '🎨';
+        colorButton.title = 'Schimbă culorile';
+
+        const avatarButton = document.createElement('button');
+        avatarButton.className = 'kun-li-header-button';
+        avatarButton.textContent = '👤';
+        avatarButton.title = 'Schimbă avatarele';
+
+        const helpButton = document.createElement('button');
+        helpButton.className = 'kun-li-header-button';
+        helpButton.textContent = 'ℹ️';
+        helpButton.title = 'Ajutor și informații';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'kun-li-header-button';
+        closeButton.textContent = '×';
+        closeButton.title = 'Închide chatul definitiv';
+
+        headerRight.appendChild(nameButtonHeader);
+        headerRight.appendChild(gifButtonHeader);
+        headerRight.appendChild(fileButtonHeader);
+        headerRight.appendChild(colorButton);
+        headerRight.appendChild(avatarButton);
+        headerRight.appendChild(helpButton);
+        headerRight.appendChild(closeButton);
+
+        header.appendChild(headerLeft);
+        header.appendChild(headerRight);
+
+        messagesPanel = document.createElement('div');
+        messagesPanel.id = 'kun-li-messages-panel';
+
+        inputPanel = document.createElement('div');
+        inputPanel.id = 'kun-li-input-panel';
+
+        const emojiButton = document.createElement('button');
+        emojiButton.className = 'kun-li-button kun-li-emoji-button';
+        emojiButton.textContent = '🌸';
+        emojiButton.title = 'Selectează emoji';
+
+        const messageInput = document.createElement('input');
+        messageInput.id = 'kun-li-message-input';
+        messageInput.type = 'text';
+        messageInput.placeholder = 'Scrie un mesaj...';
+        messageInput.autocomplete = 'off';
+
+        const sendButton = document.createElement('button');
+        sendButton.className = 'kun-li-button';
+        sendButton.textContent = 'Trimite';
+
+        inputPanel.appendChild(emojiButton);
+        inputPanel.appendChild(messageInput);
+        inputPanel.appendChild(sendButton);
+
+        container.appendChild(header);
+        container.appendChild(messagesPanel);
+        container.appendChild(inputPanel);
+
+        // Emoji picker
+        const allEmojis = [
+            ...LANGUAGES.chinese.emojis,
+            ...LANGUAGES.romanian.emojis,
+            ...LANGUAGES.english.emojis,
+            ...LANGUAGES.japanese.emojis,
+            '❤️', '💖', '😊', '😍', '😂', '😢', '🤗', '🎉', '🌈', '✨'
+        ];
+
+        const emojiPicker = document.createElement('div');
+        emojiPicker.id = 'kun-li-emoji-picker';
+        allEmojis.forEach(emoji => {
+            const emojiOption = document.createElement('span');
+            emojiOption.className = 'kun-li-emoji-option';
+            emojiOption.textContent = emoji;
+            emojiOption.addEventListener('click', () => {
+                messageInput.value += emoji;
+                messageInput.focus();
+                emojiPicker.classList.remove('active');
+            });
+            emojiPicker.appendChild(emojiOption);
+        });
+
+        emojiButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            emojiPicker.classList.toggle('active');
+        });
+
+        // GIF picker
+        const gifPicker = document.createElement('div');
+        gifPicker.id = 'kun-li-gif-picker';
+
+        const gifSenderSelector = document.createElement('div');
+        gifSenderSelector.id = 'kun-li-gif-sender-selector';
+
+        const userSenderButton = document.createElement('button');
+        userSenderButton.textContent = userSettings.user.name;
+        userSenderButton.style.padding = '4px 6px';
+
+        const kunLiSenderButton = document.createElement('button');
+        kunLiSenderButton.textContent = userSettings.kunLi.name;
+        kunLiSenderButton.style.padding = '4px 6px';
+
+        gifSender = userSettings.user.name;
+        userSenderButton.classList.add('selected');
+
+        CHARACTERS.forEach(character => {
+            const charButton = document.createElement('button');
+            charButton.textContent = character.name;
+            charButton.style.padding = '4px 6px';
+            charButton.addEventListener('click', () => {
+                gifSender = character.name;
+                Array.from(gifSenderSelector.children).forEach(btn => btn.classList.remove('selected'));
+                charButton.classList.add('selected');
+            });
+            gifSenderSelector.appendChild(charButton);
+        });
+
+        gifSenderSelector.appendChild(userSenderButton);
+        gifSenderSelector.appendChild(kunLiSenderButton);
+
+        const gifOptionsDiv = document.createElement('div');
+        gifOptionsDiv.style.display = 'flex';
+        gifOptionsDiv.style.flexWrap = 'wrap';
+        gifOptionsDiv.style.gap = '4px';
+        gifOptionsDiv.style.marginTop = '8px';
+
+        DEFAULT_GIFS.forEach(gifUrl => {
+            const gifOption = document.createElement('div');
+            gifOption.className = 'kun-li-gif-option';
+            gifOption.setAttribute('data-url', gifUrl);
+            const gifImg = document.createElement('img');
+            gifImg.src = gifUrl;
+            gifImg.alt = 'GIF';
+            gifImg.style.width = '60px';
+            gifImg.style.height = '60px';
+            gifImg.style.objectFit = 'cover';
+            gifOption.appendChild(gifImg);
+            gifOption.addEventListener('click', () => {
+                addMessage(gifSender, gifUrl, true, true);
+                gifPicker.classList.remove('active');
+            });
+            gifOptionsDiv.appendChild(gifOption);
+        });
+
+        gifPicker.appendChild(gifSenderSelector);
+        gifPicker.appendChild(gifOptionsDiv);
+
+        // Color picker
+        const colorPicker = document.createElement('div');
+        colorPicker.id = 'kun-li-color-picker';
+
+        const colorPickerHeader = document.createElement('div');
+        colorPickerHeader.className = 'kun-li-color-picker-header';
+
+        const colorPickerTitle = document.createElement('h3');
+        colorPickerTitle.textContent = '🎨 Personalizează Culorile';
+
+        const colorPickerClose = document.createElement('button');
+        colorPickerClose.className = 'lcb-btn';
+        colorPickerClose.textContent = '×';
+        colorPickerClose.style.padding = '4px 8px';
+        colorPickerClose.style.fontSize = '1.2em';
+
+        colorPickerHeader.appendChild(colorPickerTitle);
+        colorPickerHeader.appendChild(colorPickerClose);
+
+        const colorOptions = [
+            { id: 'header-bg-from', label: 'Antet (Start)', default: colors.headerGradientFrom },
+            { id: 'header-bg-to', label: 'Antet (Sfârșit)', default: colors.headerGradientTo },
+            { id: 'message-panel-bg', label: 'Fundal Mesaje', default: colors.bodyBg },
+            { id: 'user-message-bg', label: 'Mesaje Utilizator', default: colors.userBg },
+            { id: 'user-message-text', label: 'Text Mesaje Utilizator', default: colors.userText },
+            { id: 'accent-color', label: 'Culoare Accent', default: colors.accent },
+            { id: 'panel-bg', label: 'Fundal Panou', default: colors.panelBg }
+        ];
+
+        CHARACTERS.forEach(character => {
+            colorOptions.push(
+                { id: `${character.name.toLowerCase().replace(/\s+/g, '-')}-bg`, label: `${character.name} Fundal`, default: character.bgColor },
+                { id: `${character.name.toLowerCase().replace(/\s+/g, '-')}-text`, label: `${character.name} Text`, default: character.textColor }
+            );
+        });
+
+        colorOptions.forEach(option => {
+            const colorOptionDiv = document.createElement('div');
+            colorOptionDiv.className = 'kun-li-color-option';
+
+            const colorInput = document.createElement('input');
+            colorInput.type = 'color';
+            colorInput.id = option.id;
+            colorInput.value = option.default;
+
+            const colorLabel = document.createElement('label');
+            colorLabel.htmlFor = option.id;
+            colorLabel.textContent = option.label;
+
+            colorOptionDiv.appendChild(colorInput);
+            colorOptionDiv.appendChild(colorLabel);
+            colorPicker.appendChild(colorOptionDiv);
+        });
+
+        const colorActions = document.createElement('div');
+        colorActions.className = 'kun-li-color-actions';
+
+        const applyColorsButton = document.createElement('button');
+        applyColorsButton.className = 'lcb-btn';
+        applyColorsButton.textContent = 'Aplică Culorile';
+        applyColorsButton.style.backgroundColor = colors.accent;
+
+        const cancelColorsButton = document.createElement('button');
+        cancelColorsButton.className = 'lcb-btn';
+        cancelColorsButton.textContent = 'Anulează';
+
+        const resetColorsButton = document.createElement('button');
+        resetColorsButton.className = 'lcb-btn';
+        resetColorsButton.textContent = 'Resetare';
+
+        colorActions.appendChild(cancelColorsButton);
+        colorActions.appendChild(resetColorsButton);
+        colorActions.appendChild(applyColorsButton);
+
+        colorPicker.appendChild(colorPickerHeader);
+        colorPicker.appendChild(colorActions);
+
+        // Name modal
+        const nameModal = document.createElement('div');
+        nameModal.id = 'kun-li-name-modal';
+
+        const nameModalContent = document.createElement('div');
+        nameModalContent.id = 'kun-li-name-modal-content';
+
+        const nameModalHeader = document.createElement('div');
+        nameModalHeader.id = 'kun-li-name-modal-header';
+
+        const nameModalTitle = document.createElement('h3');
+        nameModalTitle.textContent = '🏷️ Schimbă Numele';
+
+        const nameModalClose = document.createElement('button');
+        nameModalClose.id = 'kun-li-name-close';
+        nameModalClose.textContent = '×';
+
+        nameModalHeader.appendChild(nameModalTitle);
+        nameModalHeader.appendChild(nameModalClose);
+
+        const nameForm = document.createElement('div');
+        nameForm.id = 'kun-li-name-form';
+
+        const userNameSection = document.createElement('div');
+        userNameSection.className = 'kun-li-name-section';
+
+        const userNameLabel = document.createElement('label');
+        userNameLabel.textContent = 'Numele tău (Japonezul):';
+
+        const userNameInput = document.createElement('input');
+        userNameInput.className = 'kun-li-name-input';
+        userNameInput.type = 'text';
+        userNameInput.value = userSettings.user.name;
+
+        userNameSection.appendChild(userNameLabel);
+        userNameSection.appendChild(userNameInput);
+
+        const kunLiNameSection = document.createElement('div');
+        kunLiNameSection.className = 'kun-li-name-section';
+
+        const kunLiNameLabel = document.createElement('label');
+        kunLiNameLabel.textContent = 'Numele lui Kun Li:';
+
+        const kunLiNameInput = document.createElement('input');
+        kunLiNameInput.className = 'kun-li-name-input';
+        kunLiNameInput.type = 'text';
+        kunLiNameInput.value = userSettings.kunLi.name;
+
+        kunLiNameSection.appendChild(kunLiNameLabel);
+        kunLiNameSection.appendChild(kunLiNameInput);
+
+        CHARACTERS.forEach(character => {
+            const charNameSection = document.createElement('div');
+            charNameSection.className = 'kun-li-name-section';
+
+            const charNameLabel = document.createElement('label');
+            charNameLabel.textContent = `Numele lui ${character.name}:`;
+
+            const charNameInput = document.createElement('input');
+            charNameInput.className = 'kun-li-name-input';
+            charNameInput.type = 'text';
+            charNameInput.value = character.name;
+
+            charNameSection.appendChild(charNameLabel);
+            charNameSection.appendChild(charNameInput);
+            nameForm.appendChild(charNameSection);
+        });
+
+        nameForm.appendChild(userNameSection);
+        nameForm.appendChild(kunLiNameSection);
+
+        const nameActions = document.createElement('div');
+        nameActions.className = 'kun-li-name-actions';
+
+        const cancelNameButton = document.createElement('button');
+        cancelNameButton.className = 'lcb-btn';
+        cancelNameButton.textContent = 'Anulează';
+
+        const applyNameButton = document.createElement('button');
+        applyNameButton.className = 'lcb-btn';
+        applyNameButton.textContent = 'Aplică';
+        applyNameButton.style.backgroundColor = colors.accent;
+
+        nameActions.appendChild(cancelNameButton);
+        nameActions.appendChild(applyNameButton);
+
+        nameModalContent.appendChild(nameModalHeader);
+        nameModalContent.appendChild(nameForm);
+        nameModalContent.appendChild(nameActions);
+        nameModal.appendChild(nameModalContent);
+
+        // Avatar modal
+        const avatarModal = document.createElement('div');
+        avatarModal.id = 'kun-li-avatar-modal';
+
+        const avatarModalContent = document.createElement('div');
+        avatarModalContent.id = 'kun-li-avatar-modal-content';
+
+        const avatarModalHeader = document.createElement('div');
+        avatarModalHeader.id = 'kun-li-avatar-modal-header';
+
+        const avatarModalTitle = document.createElement('h3');
+        avatarModalTitle.textContent = '👤 Schimbă Avatarele';
+
+        const avatarModalClose = document.createElement('button');
+        avatarModalClose.id = 'kun-li-avatar-close';
+        avatarModalClose.textContent = '×';
+
+        avatarModalHeader.appendChild(avatarModalTitle);
+        avatarModalHeader.appendChild(avatarModalClose);
+
+        const avatarForm = document.createElement('div');
+        avatarForm.id = 'kun-li-avatar-form';
+
+        const userAvatarSection = document.createElement('div');
+        userAvatarSection.className = 'kun-li-avatar-section';
+
+        const userAvatarLabel = document.createElement('label');
+        userAvatarLabel.textContent = 'Avatarul tău (Japonezul):';
+
+        const userAvatarPreview = document.createElement('img');
+        userAvatarPreview.className = 'kun-li-avatar-preview';
+        userAvatarPreview.src = userSettings.user.avatar;
+        userAvatarPreview.alt = 'Preview avatar utilizator';
+
+        const changeUserAvatarButton = document.createElement('button');
+        changeUserAvatarButton.className = 'lcb-btn';
+        changeUserAvatarButton.textContent = 'Schimbă avatarul meu';
+        changeUserAvatarButton.style.backgroundColor = colors.accent;
+
+        userAvatarSection.appendChild(userAvatarLabel);
+        userAvatarSection.appendChild(userAvatarPreview);
+        userAvatarSection.appendChild(changeUserAvatarButton);
+
+        const kunLiAvatarSection = document.createElement('div');
+        kunLiAvatarSection.className = 'kun-li-avatar-section';
+
+        const kunLiAvatarLabel = document.createElement('label');
+        kunLiAvatarLabel.textContent = 'Avatarul lui Kun Li:';
+
+        const kunLiAvatarPreview = document.createElement('img');
+        kunLiAvatarPreview.className = 'kun-li-avatar-preview';
+        kunLiAvatarPreview.src = userSettings.kunLi.avatar;
+        kunLiAvatarPreview.alt = 'Preview avatar Kun Li';
+
+        const changeKunLiAvatarButton = document.createElement('button');
+        changeKunLiAvatarButton.className = 'lcb-btn';
+        changeKunLiAvatarButton.textContent = 'Schimbă avatarul lui Kun Li';
+        changeKunLiAvatarButton.style.backgroundColor = colors.accent;
+
+        kunLiAvatarSection.appendChild(kunLiAvatarLabel);
+        kunLiAvatarSection.appendChild(kunLiAvatarPreview);
+        kunLiAvatarSection.appendChild(changeKunLiAvatarButton);
+
+        CHARACTERS.forEach(character => {
+            const charAvatarSection = document.createElement('div');
+            charAvatarSection.className = 'kun-li-avatar-section';
+
+            const charAvatarLabel = document.createElement('label');
+            charAvatarLabel.textContent = `Avatarul lui ${character.name}:`;
+
+            const charAvatarPreview = document.createElement('img');
+            charAvatarPreview.className = 'kun-li-avatar-preview';
+            charAvatarPreview.src = character.avatar;
+            charAvatarPreview.alt = `Preview avatar ${character.name}`;
+
+            const changeCharAvatarButton = document.createElement('button');
+            changeCharAvatarButton.className = 'lcb-btn';
+            changeCharAvatarButton.textContent = `Schimbă avatarul lui ${character.name}`;
+            changeCharAvatarButton.style.backgroundColor = colors.accent;
+
+            changeCharAvatarButton.addEventListener('click', () => {
+                character.avatar = getRandomAvatar('others');
+                charAvatarPreview.src = character.avatar;
+                saveUserSettings();
+                renderMessages();
+            });
+
+            charAvatarSection.appendChild(charAvatarLabel);
+            charAvatarSection.appendChild(charAvatarPreview);
+            charAvatarSection.appendChild(changeCharAvatarButton);
+            avatarForm.appendChild(charAvatarSection);
+        });
+
+        avatarForm.appendChild(userAvatarSection);
+        avatarForm.appendChild(kunLiAvatarSection);
+
+        avatarModalContent.appendChild(avatarModalHeader);
+        avatarModalContent.appendChild(avatarForm);
+        avatarModal.appendChild(avatarModalContent);
+
+        // File modal
+        const fileModal = document.createElement('div');
+        fileModal.id = 'kun-li-file-modal';
+
+        const fileModalContent = document.createElement('div');
+        fileModalContent.id = 'kun-li-file-modal-content';
+
+        const fileModalTitle = document.createElement('h3');
+        fileModalTitle.textContent = '📁 Încarcă fișier/poză';
+
+        const fileModalText = document.createElement('p');
+        fileModalText.textContent = 'Selectează cine trimite:';
+
+        const fileSenderSelector = document.createElement('div');
+        fileSenderSelector.id = 'kun-li-file-sender-selector';
+
+        fileSender = userSettings.user.name;
+
+        const userSenderButtonFile = document.createElement('button');
+        userSenderButtonFile.textContent = userSettings.user.name;
+        userSenderButtonFile.style.padding = '6px 8px';
+
+        const kunLiSenderButtonFile = document.createElement('button');
+        kunLiSenderButtonFile.textContent = userSettings.kunLi.name;
+        kunLiSenderButtonFile.style.padding = '6px 8px';
+
+        userSenderButtonFile.classList.add('selected');
+
+        CHARACTERS.forEach(character => {
+            const charButton = document.createElement('button');
+            charButton.textContent = character.name;
+            charButton.style.padding = '6px 8px';
+            charButton.addEventListener('click', () => {
+                fileSender = character.name;
+                Array.from(fileSenderSelector.children).forEach(btn => btn.classList.remove('selected'));
+                charButton.classList.add('selected');
+            });
+            fileSenderSelector.appendChild(charButton);
+        });
+
+        fileSenderSelector.appendChild(userSenderButtonFile);
+        fileSenderSelector.appendChild(kunLiSenderButtonFile);
+
+        const fileInputLabel = document.createElement('p');
+        fileInputLabel.textContent = 'Selectează fișierul:';
+        fileInputLabel.style.marginTop = '10px';
+
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.id = 'kun-li-file-input';
+        fileInput.accept = 'image/*,.pdf,.txt';
+
+        const modalButtons = document.createElement('div');
+        modalButtons.id = 'kun-li-modal-buttons';
+
+        const cancelFileButton = document.createElement('button');
+        cancelFileButton.className = 'lcb-btn';
+        cancelFileButton.textContent = 'Anulează';
+
+        const confirmFileButton = document.createElement('button');
+        confirmFileButton.className = 'lcb-btn';
+        confirmFileButton.textContent = 'Confirmă';
+        confirmFileButton.style.background = colors.accent;
+        confirmFileButton.style.color = '#000';
+
+        modalButtons.appendChild(cancelFileButton);
+        modalButtons.appendChild(confirmFileButton);
+
+        fileModalContent.appendChild(fileModalTitle);
+        fileModalContent.appendChild(fileModalText);
+        fileModalContent.appendChild(fileSenderSelector);
+        fileModalContent.appendChild(fileInputLabel);
+        fileModalContent.appendChild(fileInput);
+        fileModalContent.appendChild(modalButtons);
+
+        fileModal.appendChild(fileModalContent);
+
+        // Help modal
+        const helpModal = document.createElement('div');
+        helpModal.id = 'kun-li-help-modal';
+
+        const helpContent = document.createElement('div');
+        helpContent.id = 'kun-li-help-content';
+
+        const helpHeader = document.createElement('div');
+        helpHeader.id = 'kun-li-help-header';
+
+        const helpTitle = document.createElement('h2');
+        helpTitle.textContent = "📖 Ghid de Utilizare - Kun Li Chatbot";
+
+        const helpClose = document.createElement('button');
+        helpClose.id = 'kun-li-help-close';
+        helpClose.textContent = '×';
+
+        helpHeader.appendChild(helpTitle);
+        helpHeader.appendChild(helpClose);
+
+        const helpBody = document.createElement('div');
+        helpBody.id = 'kun-li-help-body';
+
+        const helpSections = [
+            {
+                title: "💬 Comenzi de Bază",
+                content: [
+                    "• <b>qq, qw, qe, qr, qt, qy, qu, qi, qa, qs, qd, qf, qg, qh, qj, qk, ql, qz, qo</b> - Comenzi pentru fiecare robot (ex: qq Salut → Kun Li răspunde cu 'Salut'). Mesajul cu comanda este șters automat.",
+                    "• <b>q1</b> - Activează/dezactivează cenzura globală a comenzilor (exceptând q1, q2, ștergere mesaje, it-secret, user111)",
+                    "• <b>q2</b> - Oprește/permite tuturor roboților să răspundă la comenzi (exceptând comenzile direct ale roboților: qq, qw, qe, etc.)",
+                    "• <b>bot1, bot2, ..., bot19</b> - Activează/dezactivează individual fiecare robot",
+                    "• <b>user111</b> - Activează/dezactivează modul în care mesajele tale apar sub numele lui Kun Li",
+                    "• <b>ștergere mesaje</b> - Șterge toate mesajele",
+                    "• <b>it-secret</b> - Descarcă scriptul complet",
+                    "• <b>poza [nume personaj]</b> - Afișează poza personajului",
+                    "• <b>poza mea</b> - Afișează poza ta"
+                ]
+            },
+            {
+                title: "👥 Personaje Disponibile (20)",
+                content: [
+                    "• <b>Kun Li (qq, bot1)</b> - Cultură chinezească, mâncare tradițională, arte marțiale",
+                    "• <b>LGBTQ+ Advocate (qw, bot2)</b> - Drepturi LGBTQ+, evenimente Pride, identitate de gen",
+                    "• <b>Anime Expert (qe, bot3)</b> - Recomandări anime, manga, cosplay",
+                    "• <b>Romanian News (qr, bot4)</b> - Știri locale, politică, evenimente culturale",
+                    "• <b>Religion Scholar (qt, bot5)</b> - Religii mondiale, spiritualitate, filozofie",
+                    "• <b>Relationship Advisor (qy, bot6)</b> - Sfaturi de dragoste, relații, comunicare",
+                    "• <b>Gamer (qu, bot7)</b> - Jocuri video, esports, știri gaming",
+                    "• <b>Digital Censorship Critic (qi, bot8)</b> - Libertate pe internet, confidențialitate",
+                    "• <b>Weather & Politics (qa, bot9)</b> - Prognoză meteo, politică (pro SENS, tolerabil USR)",
+                    "• <b>LGBTQ+ & SENS Supporter (qs, bot10)</b> - Drepturi LGBTQ+, susținător SENS",
+                    "• <b>Fruits & Vegetables (qd, bot11)</b> - Alimentație sănătoasă, rețete",
+                    "• <b>Medical Expert (qf, bot12)</b> - Sfaturi medicale, boli, wellness",
+                    "• <b>Movies & Series (qg, bot13)</b> - Recomandări filme, seriale, recenzii",
+                    "• <b>Random 1 (qh, bot14)</b> - Fapte interesante, glume, trivia",
+                    "• <b>Random 2 (qj, bot15)</b> - Evenimente culturale, traditii, sărbători",
+                    "• <b>Random 3 (qk, bot16)</b> - Traditii japoneze, festivaluri, istorie",
+                    "• <b>Random 4 (ql, bot17)</b> - Tehnologie, inovație, știință",
+                    "• <b>Random 5 (qz, bot18)</b> - Călătorii, aventură, natură",
+                    "• <b>Random 6 (qo, bot19)</b> - Istorie chineză, dinastii, arte tradiționale"
+                ]
+            },
+            {
+                title: "🎨 Personalizare",
+                content: [
+                    "• <b>Buton 🏷️</b> - Schimbă numele (pentru tine, Kun Li și toți roboții)",
+                    "• <b>Buton 🎨</b> - Schimbă culorile interfeței (inclusiv culorile individuale pentru fiecare robot)",
+                    "• <b>Buton 👤</b> - Schimbă avatarele (pentru tine, Kun Li și toți roboții)",
+                    "• <b>Buton 📁</b> - Încarcă fișiere/poze",
+                    "• <b>Buton ♟️</b> - Încarcă GIF-uri din panoul predefinit",
+                    "• <b>Buton Editează mesaj</b> - Editează orice mesaj din chat",
+                    "• <b>✔️</b> - Afișează 'Mesaj livrat și criptat'",
+                    "• <b>Censor</b> - Activează/dezactivează cenzura globală",
+                    "• <b>qp</b> - Activează/dezactivează cuvintele de înlocuire",
+                    "• <b>pl</b> - Activează/dezactivează cenzura pentru mesajele tale",
+                    "• <b>pp</b> - Activează/dezactivează cenzura pentru mesajele lui Kun Li"
+                ]
+            },
+            {
+                title: "🌍 Limbi și Emoji-uri Culturale",
+                content: [
+                    "• <b>Chineză</b> - 你好, 🇨🇳, 🏯, 🐉, 🥢, 🎎, 🧧",
+                    "• <b>Română</b> - Bună, 🇷🇴, 🍷, 🏰, 🌿, 🍖",
+                    "• <b>Engleză</b> - Hello, 🇺🇸, 🍔, 🦅, 🎇, 🏀",
+                    "• <b>Japoneză</b> - こんにちは, 🇯🇵, 🏯, 🎌, 🍣, 🍱"
+                ]
+            }
+        ];
+
+        helpSections.forEach(section => {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'kun-li-help-section';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.textContent = section.title;
+
+            const sectionList = document.createElement('ul');
+            section.content.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = item;
+                sectionList.appendChild(listItem);
+            });
+
+            sectionDiv.appendChild(sectionTitle);
+            sectionDiv.appendChild(sectionList);
+            helpBody.appendChild(sectionDiv);
+        });
+
+        helpContent.appendChild(helpHeader);
+        helpContent.appendChild(helpBody);
+        helpModal.appendChild(helpContent);
+
+        document.body.appendChild(container);
+        document.body.appendChild(emojiPicker);
+        document.body.appendChild(gifPicker);
+        document.body.appendChild(colorPicker);
+        document.body.appendChild(nameModal);
+        document.body.appendChild(avatarModal);
+        document.body.appendChild(fileModal);
+        document.body.appendChild(helpModal);
+
+        return {
+            container,
+            messageInput: messageInput,
+            sendButton: sendButton,
+            emojiButton: emojiButton,
+            nameButtonHeader,
+            gifButtonHeader,
+            fileButtonHeader,
+            colorButton,
+            avatarButton,
+            helpButton,
+            closeButton,
+            emojiPicker,
+            gifPicker,
+            gifSenderSelector,
+            userSenderButton,
+            kunLiSenderButton,
+            colorPicker,
+            colorPickerClose,
+            nameModal,
+            nameModalClose,
+            userNameInput,
+            kunLiNameInput,
+            applyNameButton,
+            cancelNameButton,
+            avatarModal,
+            avatarModalClose,
+            fileModal,
+            helpModal,
+            helpClose,
+            cancelFileButton,
+            confirmFileButton,
+            fileInput,
+            applyColorsButton,
+            cancelColorsButton,
+            resetColorsButton,
+            userSenderButtonFile,
+            kunLiSenderButtonFile,
+            fileSenderSelector,
+            changeUserAvatarButton,
+            changeKunLiAvatarButton,
+            userAvatarPreview,
+            kunLiAvatarPreview
+        };
+    }
+
+    // ============================================
+    // 🚀 INITIALIZATION
+    // ============================================
+    function init() {
+        loadUserSettings();
+        elements = createDOM();
+        container = elements.container;
+        messagesPanel = document.getElementById('kun-li-messages-panel');
+        const messageInput = elements.messageInput;
+
+        loadSettings();
+        loadCensorSettings();
+        container.style.right = `${position.x}px`;
+        container.style.bottom = `${position.y}px`;
+        regenerateCSS();
+
+        window.addEventListener('beforeunload', cleanupTemporaryUrls);
+
+        // Drag and drop for window
+        header.addEventListener('mousedown', (e) => {
+            if (e.target === elements.closeButton || e.target === elements.nameButtonHeader ||
+                e.target === elements.gifButtonHeader || e.target === elements.fileButtonHeader || 
+                e.target === elements.colorButton || e.target === elements.helpButton || 
+                e.target === elements.avatarButton) return;
+
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            const rect = container.getBoundingClientRect();
+            const offsetX = dragStartX - rect.left;
+            const offsetY = dragStartY - rect.top;
+
+            function moveWindow(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const newLeft = e.clientX - offsetX;
+                const newTop = e.clientY - offsetY;
+                position.x = Math.max(8, window.innerWidth - newLeft - rect.width);
+                position.y = Math.max(8, window.innerHeight - newTop - rect.height);
+                container.style.right = `${position.x}px`;
+                container.style.bottom = `${position.y}px`;
+            }
+
+            function stopDrag() {
+                isDragging = false;
+                document.removeEventListener('mousemove', moveWindow);
+                document.removeEventListener('mouseup', stopDrag);
+                saveSettings();
+            }
+
+            document.addEventListener('mousemove', moveWindow);
+            document.addEventListener('mouseup', stopDrag);
+        });
+
+        // Send message
+        elements.sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                // Check if we are editing a message
+                if (editingMessageIndex !== null) {
+                    updateMessage(editingMessageIndex, message);
+                    editingMessageIndex = null;
+                    messageInput.value = '';
+                    return;
+                }
+
+                const sender = user111Active && CHARACTERS[0].active ? CHARACTERS[0].name : userSettings.user.name;
+                
+                // Check if the message starts with a character command
+                const commandMatch = message.match(/^(qq|qw|qe|qr|qt|qy|qu|qi|qa|qs|qd|qf|qg|qh|qj|qk|ql|qz|qo)\s*(.*)$/i);
+                if (commandMatch) {
+                    const command = commandMatch[1];
+                    const text = commandMatch[2].trim();
+                    const character = CHARACTERS.find(c => c.command === command);
+                    if (character && character.active) {
+                        // Do not add the user's command message to the chat
+                        setTimeout(() => {
+                            addMessage(character.name, text || getRandomElement(character.responses.default));
+                        }, 100);
+                        messageInput.value = '';
+                        return;
+                    }
+                }
+                
+                addMessage(sender, message);
+
+                if (q1Active) {
+                    const allowedCommands = ['q1', 'q2', 'ștergere mesaje', 'it-secret', 'user111'];
+                    if (!allowedCommands.includes(message.toLowerCase().trim())) {
+                        messageInput.value = '';
+                        return;
+                    }
+                }
+
+                const response = getResponse(message, sender);
+                if (response) {
+                    if (typeof response === 'object' && response.type === 'file') {
+                        setTimeout(() => addMessage(sender, response.content, response.isImage, response.isImage), 300);
+                    } else if (typeof response === 'string') {
+                        setTimeout(() => addMessage(CHARACTERS[0].name, response), 300);
+                    }
+                }
+                messageInput.value = '';
+                fileSender = userSettings.user.name;
+                gifSender = userSettings.user.name;
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') elements.sendButton.click();
+        });
+
+        // Name button
+        elements.nameButtonHeader.addEventListener('click', () => {
+            elements.userNameInput.value = userSettings.user.name;
+            elements.kunLiNameInput.value = userSettings.kunLi.name;
+            CHARACTERS.forEach((character, index) => {
+                const inputs = document.querySelectorAll('.kun-li-name-input');
+                if (inputs[index + 2]) {
+                    inputs[index + 2].value = character.name;
+                }
+            });
+            elements.nameModal.style.display = 'block';
+        });
+
+        // Apply name changes
+        elements.applyNameButton.addEventListener('click', () => {
+            userSettings.user.name = elements.userNameInput.value || userSettings.user.name;
+            userSettings.kunLi.name = elements.kunLiNameInput.value || userSettings.kunLi.name;
+            
+            const nameInputs = document.querySelectorAll('#kun-li-name-form .kun-li-name-input');
+            CHARACTERS.forEach((character, index) => {
+                if (nameInputs[index + 2]) {
+                    character.name = nameInputs[index + 2].value || character.name;
+                }
+            });
+            
+            saveUserSettings();
+            saveSettings();
+            elements.nameModal.style.display = 'none';
+            renderMessages();
+        });
+
+        elements.cancelNameButton.addEventListener('click', () => {
+            elements.nameModal.style.display = 'none';
+        });
+
+        elements.nameModalClose.addEventListener('click', () => {
+            elements.nameModal.style.display = 'none';
+        });
+
+        // GIF button
+        elements.gifButtonHeader.addEventListener('click', () => {
+            gifSender = user111Active && CHARACTERS[0].active ? CHARACTERS[0].name : userSettings.user.name;
+            elements.gifSenderSelector.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            const userButton = Array.from(elements.gifSenderSelector.children).find(btn => btn.textContent === gifSender);
+            if (userButton) userButton.classList.add('selected');
+            elements.gifPicker.classList.add('active');
+        });
+
+        // File button
+        elements.fileButtonHeader.addEventListener('click', () => {
+            fileSender = user111Active && CHARACTERS[0].active ? CHARACTERS[0].name : userSettings.user.name;
+            elements.fileSenderSelector.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            const userButton = Array.from(elements.fileSenderSelector.children).find(btn => btn.textContent === fileSender);
+            if (userButton) userButton.classList.add('selected');
+            elements.fileModal.style.display = 'block';
+        });
+
+        // Color button
+        elements.colorButton.addEventListener('click', () => {
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+
+            CHARACTERS.forEach(character => {
+                document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-bg`).value = character.bgColor;
+                document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-text`).value = character.textColor;
+            });
+
+            elements.colorPicker.classList.add('active');
+        });
+
+        // Avatar button
+        elements.avatarButton.addEventListener('click', () => {
+            elements.userAvatarPreview.src = userSettings.user.avatar;
+            elements.kunLiAvatarPreview.src = userSettings.kunLi.avatar;
+            CHARACTERS.forEach(character => {
+                const preview = document.querySelector(`#kun-li-avatar-form img[alt="Preview avatar ${character.name}"]`);
+                if (preview) preview.src = character.avatar;
+            });
+            elements.avatarModal.style.display = 'block';
+        });
+
+        // Help button
+        elements.helpButton.addEventListener('click', () => {
+            elements.helpModal.style.display = 'block';
+        });
+
+        // Close button
+        elements.closeButton.addEventListener('click', () => {
+            cleanupTemporaryUrls();
+            container.remove();
+            elements.emojiPicker.remove();
+            elements.gifPicker.remove();
+            elements.colorPicker.remove();
+            elements.nameModal.remove();
+            elements.avatarModal.remove();
+            elements.fileModal.remove();
+            elements.helpModal.remove();
+        });
+
+        // File modal buttons
+        elements.cancelFileButton.addEventListener('click', () => {
+            elements.fileModal.style.display = 'none';
+            elements.fileInput.value = '';
+        });
+
+        elements.confirmFileButton.addEventListener('click', () => {
+            const file = elements.fileInput.files[0];
+            if (file && fileSender) {
+                const url = getTemporaryUrl(file);
+                const isImage = file.type.startsWith('image/');
+                addMessage(fileSender, url, true, isImage, file);
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+
+        // File sender buttons
+        elements.userSenderButtonFile.addEventListener('click', () => {
+            fileSender = userSettings.user.name;
+            elements.userSenderButtonFile.classList.add('selected');
+            elements.kunLiSenderButtonFile.classList.remove('selected');
+            Array.from(elements.fileSenderSelector.children).forEach(btn => {
+                if (btn !== elements.userSenderButtonFile && btn !== elements.kunLiSenderButtonFile) {
+                    btn.classList.remove('selected');
+                }
+            });
+        });
+
+        elements.kunLiSenderButtonFile.addEventListener('click', () => {
+            fileSender = userSettings.kunLi.name;
+            elements.kunLiSenderButtonFile.classList.add('selected');
+            elements.userSenderButtonFile.classList.remove('selected');
+            Array.from(elements.fileSenderSelector.children).forEach(btn => {
+                if (btn !== elements.userSenderButtonFile && btn !== elements.kunLiSenderButtonFile) {
+                    btn.classList.remove('selected');
+                }
+            });
+        });
+
+        // Add event listeners for character buttons in file modal
+        Array.from(elements.fileSenderSelector.children).forEach(btn => {
+            if (btn !== elements.userSenderButtonFile && btn !== elements.kunLiSenderButtonFile) {
+                btn.addEventListener('click', () => {
+                    fileSender = btn.textContent;
+                    Array.from(elements.fileSenderSelector.children).forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                });
+            }
+        });
+
+        // Color picker buttons
+        elements.colorPickerClose.addEventListener('click', () => {
+            elements.colorPicker.classList.remove('active');
+        });
+
+        elements.cancelColorsButton.addEventListener('click', () => {
+            elements.colorPicker.classList.remove('active');
+        });
+
+        elements.resetColorsButton.addEventListener('click', () => {
+            colors = {
+                headerGradientFrom: '#FF69B4',
+                headerGradientTo: '#FF1493',
+                bodyBg: '#FFF0F5',
+                botBg: '#FFB6C1',
+                botText: '#000000',
+                userBg: '#87CEEB',
+                userText: '#000000',
+                botNameColor: '#000000',
+                accent: '#FF69B4',
+                panelBg: '#FFE4E1'
+            };
+
+            CHARACTERS.forEach(character => {
+                character.bgColor = character.color === '#FF69B4' ? '#FFB6C1' : 
+                                   character.color === '#FF6347' ? '#FFA07A' :
+                                   character.color === '#4169E1' ? '#1E90FF' :
+                                   character.color === '#800080' ? '#9370DB' :
+                                   character.color === '#FF1493' ? '#DB7093' :
+                                   character.color === '#32CD32' ? '#9ACD32' :
+                                   character.color === '#8B0000' ? '#B22222' :
+                                   character.color === '#4682B4' ? '#5F9EA0' :
+                                   character.color === '#FF8C00' ? '#FFDAB9' :
+                                   character.color === '#FFD700' ? '#FFFACD' :
+                                   character.color === '#9370DB' ? '#DDA0DD' :
+                                   character.color === '#00CED1' ? '#E0FFFF' :
+                                   character.color === '#FF6347' ? '#FFA07A' :
+                                   character.color === '#7B68EE' ? '#9370DB' : '#FFB6C1';
+                character.textColor = character.color === '#4169E1' || character.color === '#800080' || 
+                                   character.color === '#8B0000' || character.color === '#4682B4' ? '#FFFFFF' : '#000000';
+            });
+
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+
+            CHARACTERS.forEach(character => {
+                document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-bg`).value = character.bgColor;
+                document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-text`).value = character.textColor;
+            });
+
+            regenerateCSS();
+            saveSettings();
+            renderMessages();
+        });
+
+        elements.applyColorsButton.addEventListener('click', () => {
+            colors.headerGradientFrom = document.getElementById('header-bg-from').value;
+            colors.headerGradientTo = document.getElementById('header-bg-to').value;
+            colors.bodyBg = document.getElementById('message-panel-bg').value;
+            colors.userBg = document.getElementById('user-message-bg').value;
+            colors.userText = document.getElementById('user-message-text').value;
+            colors.accent = document.getElementById('accent-color').value;
+            colors.panelBg = document.getElementById('panel-bg').value;
+
+            CHARACTERS.forEach(character => {
+                character.bgColor = document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-bg`).value;
+                character.textColor = document.getElementById(`${character.name.toLowerCase().replace(/\s+/g, '-')}-text`).value;
+            });
+
+            regenerateCSS();
+            elements.confirmFileButton.style.background = colors.accent;
+            elements.applyColorsButton.style.backgroundColor = colors.accent;
+            elements.applyNameButton.style.backgroundColor = colors.accent;
+            elements.colorPicker.classList.remove('active');
+            saveSettings();
+            renderMessages();
+        });
+
+        // Avatar modal buttons
+        elements.helpClose.addEventListener('click', () => {
+            elements.helpModal.style.display = 'none';
+        });
+
+        elements.avatarModalClose.addEventListener('click', () => {
+            elements.avatarModal.style.display = 'none';
+        });
+
+        elements.changeUserAvatarButton.addEventListener('click', () => {
+            userSettings.user.avatar = getRandomAvatar('user');
+            elements.userAvatarPreview.src = userSettings.user.avatar;
+            saveUserSettings();
+            renderMessages();
+        });
+
+        elements.changeKunLiAvatarButton.addEventListener('click', () => {
+            userSettings.kunLi.avatar = getRandomAvatar('kunLi');
+            elements.kunLiAvatarPreview.src = userSettings.kunLi.avatar;
+            saveUserSettings();
+            renderMessages();
+        });
+
+        // Close modals when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!elements.emojiPicker.contains(e.target) && e.target !== elements.emojiButton)
+                elements.emojiPicker.classList.remove('active');
+            if (!elements.colorPicker.contains(e.target) && e.target !== elements.colorButton)
+                elements.colorPicker.classList.remove('active');
+            if (!elements.gifPicker.contains(e.target) && e.target !== elements.gifButtonHeader)
+                elements.gifPicker.classList.remove('active');
+        });
+
+        // Close modals when clicking outside
+        elements.fileModal.addEventListener('click', (e) => {
+            if (e.target === elements.fileModal) {
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+
+        elements.helpModal.addEventListener('click', (e) => {
+            if (e.target === elements.helpModal) elements.helpModal.style.display = 'none';
+        });
+
+        elements.avatarModal.addEventListener('click', (e) => {
+            if (e.target === elements.avatarModal) elements.avatarModal.style.display = 'none';
+        });
+
+        elements.nameModal.addEventListener('click', (e) => {
+            if (e.target === elements.nameModal) elements.nameModal.style.display = 'none';
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                elements.emojiPicker.classList.remove('active');
+                elements.colorPicker.classList.remove('active');
+                elements.avatarModal.style.display = 'none';
+                elements.fileModal.style.display = 'none';
+                elements.helpModal.style.display = 'none';
+                elements.gifPicker.classList.remove('active');
+                elements.nameModal.style.display = 'none';
+            }
+        });
+
+        // Initial messages and render
+        setTimeout(() => {
+            addMessage(userSettings.kunLi.name, "你好！🇨🇳 我是Kun Li。很高兴认识你，Japonezul！❤️");
+        }, 500);
+    }
+
+    // ============================================
+    // 🚀 START THE SCRIPT
+    // ============================================
+    init();
+})();

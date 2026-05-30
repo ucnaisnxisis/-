@@ -1,0 +1,1826 @@
+// ==UserScript==
+// @name         Tarkan Chatbot - Final Version with Custom Avatars and Colors
+// @namespace    http://tampermonkey.net/
+// @version      4.0
+// @description  Chatbot ultra-personalizat Tarkan: romantic, inteligent pe chestiile turcești și arabe, cu cenzură dezactivată implicit, traduceri, melodii, animații, informatii detaliate, avatare personalizabile și culori unice.
+// @author       Tester John (Modified by Vibe)
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.duckduckgo.com/*
+// @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
+// @grant        GM_download
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @connect      i.imgur.com
+// @connect      imgur.com
+// @connect      waifu.pics
+// @connect      www.youtube.com
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // ============================================
+    // 🔒 SISTEM DE CENZURĂ (DEZACTIVAT IMPLICIT)
+    // ============================================
+    const BAD_WORDS = [
+        "sugi pula", "te fut in gura", "slobozim-as in gura ta", "muie", "fut o laba", "o fut pe mata",
+        "pula", "curva", "idiot", "prost", "tampit", "bou", "cacat", "scrisoarea", "futu-i", "fute", "futea",
+        "futut", "fututa", "futai", "futa", "mui", "muie", "muist"
+    ];
+
+    const REPLACEMENT_WORDS = {
+        "sugi pula": "act intim oral",
+        "te fut in gura": "act intim oral",
+        "muie": "dragoste",
+        "pula": "dragoste",
+        "curva": "femeie"
+    };
+
+    let censorMode = false;
+    let useReplacementWords = true;
+    let individualCensor = {};
+
+    function censorBadWords(text, sender) {
+        if (!text || typeof text !== 'string') return text;
+        const shouldCensor = censorMode || individualCensor[sender];
+        if (!shouldCensor) return text;
+
+        let censoredText = text;
+        BAD_WORDS.forEach(word => {
+            const regex = new RegExp(escapeRegExp(word), 'gi');
+            censoredText = censoredText.replace(regex, useReplacementWords ? (REPLACEMENT_WORDS[word] || '*') : '*');
+        });
+        return censoredText;
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function saveCensorSettings() {
+        try {
+            GM_setValue('tarkanCensorSettings', JSON.stringify({
+                censorMode: censorMode,
+                useReplacementWords: useReplacementWords,
+                individualCensor: individualCensor
+            }));
+        } catch (e) { console.error("Nu se pot salva setările de cenzură:", e); }
+    }
+
+    function loadCensorSettings() {
+        try {
+            const saved = GM_getValue('tarkanCensorSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                censorMode = settings.censorMode !== undefined ? settings.censorMode : false;
+                useReplacementWords = settings.useReplacementWords !== undefined ? settings.useReplacementWords : true;
+                individualCensor = settings.individualCensor || {};
+            }
+        } catch (e) { console.error("Nu se pot încărca setările de cenzură:", e); }
+    }
+
+    // ============================================
+    // 🌸 FUNCȚII: Saluturi Romantice & Turcești
+    // ============================================
+    const GREETINGS = {
+        'salut': [
+            "Merhaba, sevgilim Anda! 🌿 Kalbim senin için atıyor!",
+            "Selam, aşkım! 💚 Sen benim güneşimsin.",
+            "Merhaba, canım! 🍃 Seni görmek benim için mutluluk.",
+            "Selam, güzelim! 🌺 Sen bir rüya gibisin."
+        ],
+        'buna ziua': [
+            "Günaydın, aşkım! ☀️ Umut ediyorum ki günün senin kadar güzel."
+        ],
+        'buna seara': [
+            "İyi akşamlar, sevgilim! 🌙 Umut ediyorum ki akşamın senin kadar güzel."
+        ],
+        'buna dimineata': [
+            "Günaydın, canım! ☀️ Yeni bir gün, yeni mutluluklar!"
+        ]
+    };
+
+    // ============================================
+    // 🎵 MELODII TURCEȘTI ȘI ARABE
+    // ============================================
+    const TARKAN_SONGS = [
+        {
+            title: "Şımarık",
+            artist: "Tarkan",
+            youtubeLink: "https://www.youtube.com/watch?v=7k8Q8lMzD0w",
+            description: "Un hit internațional al lui Tarkan."
+        },
+        {
+            title: "Kış Güneşi",
+            artist: "Tarkan",
+            youtubeLink: "https://www.youtube.com/watch?v=123IJzZQ5Xc",
+            description: "O melodie emoționantă despre iubire."
+        },
+        {
+            title: "Hüp",
+            artist: "Tarkan",
+            youtubeLink: "https://www.youtube.com/watch?v=4F7j2QbQZ1Y",
+            description: "O melodie energică, perfectă pentru petreceri."
+        }
+    ];
+
+    const ARABIC_SONGS = [
+        {
+            title: "Tunak Tunak Tun",
+            artist: "Dalida",
+            youtubeLink: "https://www.youtube.com/watch?v=9N9x77JxJnA",
+            description: "Un hit arabesc clasic."
+        },
+        {
+            title: "Ahwak",
+            artist: "Abdel Halim Hafez",
+            youtubeLink: "https://www.youtube.com/watch?v=7JxJxJxJxJQ",
+            description: "O melodie de dragoste faimoasă."
+        }
+    ];
+
+    // ============================================
+    // 🍰 INFORMAȚII DESPRE TURCIA
+    // ============================================
+    const TURKISH_INFO = {
+        'halva': "Halva este un desert tradițional turcesc făcut din semințe de susan, zahăr și uneori nucă. 🍯",
+        'baklava': "Baklava este un desert turcesc făcut din straturi de aluat, nuci și sirop de zahăr. 🍰",
+        'ceai': "Ceaiul turcesc este servit în pahare mici și se bea de obicei după mese. ☕",
+        'kebab': "Kebabul este un fel de mâncare turcesc făcut din carne la grătar. 🍢",
+        'Istanbul': "Istanbul este cel mai mare oraș din Turcia, fostă capitală a Imperiului Otoman. 🏙️",
+        'Turcia': "Turcia este o țară situată între Europa și Asia, cu o cultură bogată. 🇹🇷"
+    };
+
+    // ============================================
+    // 🗣️ TRADUCERI
+    // ============================================
+    const TRANSLATIONS = {
+        'te iubesc': 'Seni seviyorum',
+        'bună': 'Merhaba',
+        'mulțumesc': 'Teşekkür ederim',
+        'da': 'Evet',
+        'nu': 'Hayır',
+        'ce mai faci?': 'Nasılsın?',
+        'sunt bine': 'İyiyim',
+        'adio': 'Hoşçakal'
+    };
+
+    // ============================================
+    // 🎨 CULORI IMPLICITE (Nuante de verde)
+    // ============================================
+    let colors = {
+        headerGradientFrom: '#2E8B57',
+        headerGradientTo: '#3CB371',
+        bodyBg: '#E8F5E9',
+        botBg: '#8FBC8F',
+        botText: '#000000',
+        userBg: '#FF69B4', // Roz pentru mesajele utilizatorului
+        userText: '#000000',
+        botNameColor: '#000000',
+        accent: '#228B22',
+        panelBg: '#F0FFF0'
+    };
+
+    // Avatare implicite
+    const DEFAULT_AVATARS = {
+        user: [
+            "https://instagram.fias1-1.fna.fbcdn.net/v/t51.82787-15/627970179_18388377802151161_8115940214500093464_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MTk0Mjg2MDkyOTYyMjIxMzg3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=i2iT_47393EQ7kNvwGpre74&_nc_oc=AdpJ9Lq1SxPznRi1WlEFsAtXnCUq2RdRBietsFlKkQtN7bFKonZmdqmdQFj9I0k8D3w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-1.fna&_nc_gid=IkXxHJ3iGMZE_tCwTRHFjQ&_nc_ss=7a22e&oh=00_Af6WfKwMIiVRJgignjgVZaAXkHc8MXKoTAVrbxHIp8im7g&oe=6A20B746",
+            "https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/490342256_2176130279524284_4065461364350129415_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=p0TPMq7J7gUQ7kNvwHx79YN&_nc_oc=AdoTXClziBdLKE3UXL5EE_A3TzORe0c5zcSxrR5pyC2GMd6g-P8qPWb2_52vtGCWoiU&_nc_zt=23&_nc_ht=scontent.fias1-1.fna&_nc_gid=Nn1AD8LnUe6Z72TWKJHyLQ&_nc_ss=7b289&oh=00_Af4fQAMTs73ADRHsD4hWrwHgtkS1mQq7PSxwYyWG0Cx2bw&oe=6A20879E",
+            "https://www.antena3.ro/thumbs/amp/2026/01/10/situatie-disperata-la-cafeneaua-cu-pisici-din-bucuresti-apel-pentru-iubitorii-de-animale-e-nevoie-de-adapost-pentru-mate-si-motani-1037250.webp",
+            "https://www.pepinieraavramescu.ro/wp-content/uploads/2023/12/Trandafir-Ingrid-Bergman-rosu-ghiveci-3-l-2.jpg",
+            "https://static.vecteezy.com/system/resources/previews/075/293/904/large_2x/cute-happy-minie-mouse-cartoon-free-vector.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
+            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
+            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
+            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
+            "https://m.media-amazon.com/images/I/61fD57vbeFL.png"
+        ],
+        tarkan: [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
+            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
+            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
+            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
+            "https://instagram.fias1-1.fna.fbcdn.net/v/t51.82787-15/627970179_18388377802151161_8115940214500093464_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MTk0Mjg2MDkyOTYyMjIxMzg3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=i2iT_47393EQ7kNvwGpre74&_nc_oc=AdpJ9Lq1SxPznRi1WlEFsAtXnCUq2RdRBietsFlKkQtN7bFKonZmdqmdQFj9I0k8D3w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-1.fna&_nc_gid=IkXxHJ3iGMZE_tCwTRHFjQ&_nc_ss=7a22e&oh=00_Af6WfKwMIiVRJgignjgVZaAXkHc8MXKoTAVrbxHIp8im7g&oe=6A20B746",
+            "https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/490342256_2176130279524284_4065461364350129415_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=p0TPMq7J7gUQ7kNvwHx79YN&_nc_oc=AdoTXClziBdLKE3UXL5EE_A3TzORe0c5zcSxrR5pyC2GMd6g-P8qPWb2_52vtGCWoiU&_nc_zt=23&_nc_ht=scontent.fias1-1.fna&_nc_gid=Nn1AD8LnUe6Z72TWKJHyLQ&_nc_ss=7b289&oh=00_Af4fQAMTs73ADRHsD4hWrwHgtkS1mQq7PSxwYyWG0Cx2bw&oe=6A20879E",
+            "https://www.antena3.ro/thumbs/amp/2026/01/10/situatie-disperata-la-cafeneaua-cu-pisici-din-bucuresti-apel-pentru-iubitorii-de-animale-e-nevoie-de-adapost-pentru-mate-si-motani-1037250.webp",
+            "https://www.pepinieraavramescu.ro/wp-content/uploads/2023/12/Trandafir-Ingrid-Bergman-rosu-ghiveci-3-l-2.jpg",
+            "https://static.vecteezy.com/system/resources/previews/075/293/904/large_2x/cute-happy-minie-mouse-cartoon-free-vector.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
+            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
+            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
+            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
+            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
+            "https://m.media-amazon.com/images/I/61fD57vbeFL.png"
+        ]
+    };
+
+    // Avatare personalizabile
+    let userSettings = {
+        user: {
+            name: "Anda",
+            avatar: "https://instagram.fias1-1.fna.fbcdn.net/v/t51.2885-19/21296333_499130263789646_6586381847914086400_a.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xOTguYzIifQ&_nc_ht=instagram.fias1-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2gFv5_8xD9LHD2fz10mVQ59fzVIaaQJ5bUKd-ug9mxLyQD7kz8n9ql5L61fktnoxd6o&_nc_ohc=m_axkh2CuEAQ7kNvwHYeyRr&_nc_gid=1isDrbKONtgC9127cP52PQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6A4ZvKVOz8aCjXCuMRzcFQQalalBK010Z9e3F5jkETDA&oe=6A208BEA&_nc_sid=8b3546",
+            color: "#FF69B4"
+        },
+        tarkan: {
+            name: "Tarkan",
+            avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
+            color: "#228B22"
+        }
+    };
+
+    function getRandomAvatar(type) {
+        const avatars = DEFAULT_AVATARS[type];
+        return avatars[Math.floor(Math.random() * avatars.length)];
+    }
+
+    function loadUserSettings() {
+        try {
+            const saved = GM_getValue('tarkanUserSettings', null);
+            if (saved) {
+                userSettings = JSON.parse(saved);
+            } else {
+                // Setăm avatare aleatoare la prima rulare
+                userSettings.user.avatar = getRandomAvatar('user');
+                userSettings.tarkan.avatar = getRandomAvatar('tarkan');
+                saveUserSettings();
+            }
+        } catch (e) {
+            console.error("Nu se pot încărca setările utilizatorului:", e);
+            userSettings.user.avatar = getRandomAvatar('user');
+            userSettings.tarkan.avatar = getRandomAvatar('tarkan');
+        }
+    }
+
+    function saveUserSettings() {
+        try {
+            GM_setValue('tarkanUserSettings', JSON.stringify(userSettings));
+        } catch (e) {
+            console.error("Nu se pot salva setările utilizatorului:", e);
+        }
+    }
+
+    // ============================================
+    // 📁 GESTIONAREA FIȘIERELOR
+    // ============================================
+    const temporaryUrls = new Set();
+
+    function cleanupTemporaryUrls() {
+        temporaryUrls.forEach(url => {
+            try { URL.revokeObjectURL(url); } catch (e) {}
+        });
+        temporaryUrls.clear();
+    }
+
+    function getTemporaryUrl(file) {
+        const url = URL.createObjectURL(file);
+        temporaryUrls.add(url);
+        return url;
+    }
+
+    // ============================================
+    // ⚙️ STARE GLOBALĂ
+    // ============================================
+    let messages = [];
+    let q1Active = false;
+    let lastUserMessage = null;
+    let fileSender = null;
+    let isDragging = false;
+    let isResizing = false;
+    let dragStartX, dragStartY;
+    let resizeStartX, resizeStartY, resizeStartWidth, resizeStartHeight;
+    let position = { x: 20, y: 20 };
+    let size = { width: '350px', height: '500px' };
+    let container, header, messagesPanel, inputPanel, resizeHandle;
+    let elements = {};
+
+    // ============================================
+    // 🎭 ANIMAȚII
+    // ============================================
+    function createHeartAnimation() {
+        const animationContainer = document.createElement('div');
+        animationContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0);
+        `;
+        document.body.appendChild(animationContainer);
+
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.style.cssText = `
+                font-size: ${Math.random() * 30 + 20}px;
+                color: #2E8B57;
+                position: absolute;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatUp ${Math.random() * 3 + 2}s linear forwards;
+            `;
+            animationContainer.appendChild(heart);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+                100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        setTimeout(() => {
+            animationContainer.remove();
+            style.remove();
+        }, 6000);
+    }
+
+    function createMusicAnimation() {
+        const animationContainer = document.createElement('div');
+        animationContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.1);
+        `;
+        document.body.appendChild(animationContainer);
+
+        for (let i = 0; i < 15; i++) {
+            const note = document.createElement('div');
+            note.innerHTML = '🎵';
+            note.style.cssText = `
+                font-size: ${Math.random() * 20 + 15}px;
+                color: #3CB371;
+                position: absolute;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                animation: floatMusic ${Math.random() * 2 + 1}s linear infinite alternate;
+            `;
+            animationContainer.appendChild(note);
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatMusic {
+                0% { transform: translateY(0) scale(1); opacity: 0.7; }
+                100% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        setTimeout(() => {
+            animationContainer.remove();
+            style.remove();
+        }, 6000);
+    }
+
+    // ============================================
+    // 🔧 FUNCȚII UTILITARE
+    // ============================================
+    function getRandomElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Polyfills
+    if (typeof GM_setValue === 'undefined') {
+        window.GM_setValue = function(key, value) {
+            try { localStorage.setItem(key, JSON.stringify(value)); }
+            catch (e) { console.error("GM_setValue fallback failed:", e); }
+        };
+    }
+    if (typeof GM_getValue === 'undefined') {
+        window.GM_getValue = function(key, defaultValue) {
+            try {
+                const value = localStorage.getItem(key);
+                return value ? JSON.parse(value) : defaultValue;
+            } catch (e) {
+                console.error("GM_getValue fallback failed:", e);
+                return defaultValue;
+            }
+        };
+    }
+
+    // ============================================
+    // 🎨 REGENEREAZĂ CSS-UL DINAMIC
+    // ============================================
+    function regenerateCSS() {
+        const oldStyle = document.getElementById('tarkan-dynamic-css');
+        if (oldStyle) oldStyle.remove();
+
+        const style = document.createElement('style');
+        style.id = 'tarkan-dynamic-css';
+        style.textContent = `
+            :root {
+                --tarkan-header-from: ${colors.headerGradientFrom};
+                --tarkan-header-to: ${colors.headerGradientTo};
+                --tarkan-body-bg: ${colors.bodyBg};
+                --tarkan-bot-bg: ${colors.botBg};
+                --tarkan-bot-text: ${colors.botText};
+                --tarkan-user-bg: ${colors.userBg};
+                --tarkan-user-text: ${colors.userText};
+                --tarkan-accent: ${colors.accent};
+                --tarkan-panel-bg: ${colors.panelBg};
+            }
+
+            #tarkan-chat-container {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                position: fixed;
+                bottom: ${position.y}px;
+                right: ${position.x}px;
+                width: ${size.width};
+                height: ${size.height};
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                background: var(--tarkan-panel-bg);
+                z-index: 999999;
+                overflow: hidden;
+                min-width: 250px;
+                min-height: 300px;
+                max-width: 90vw;
+                max-height: 80vh;
+                transition: none;
+                resize: both;
+                overflow: auto;
+            }
+
+            #tarkan-header {
+                background: linear-gradient(90deg, var(--tarkan-header-from), var(--tarkan-header-to));
+                padding: 8px 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+                cursor: move;
+                user-select: none;
+                color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                touch-action: none;
+            }
+
+            #tarkan-header-left { display: flex; align-items: center; gap: 8px; }
+            #tarkan-header img.avatar {
+                width: 28px; height: 28px; border-radius: 50%;
+                object-fit: cover; border: 2px solid rgba(255,255,255,0.6);
+            }
+            #tarkan-header h1 {
+                margin: 0; font-size: 1.1em; color: #fff; font-weight: 700;
+                white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            }
+            #tarkan-header-right { display: flex; align-items: center; gap: 4px; }
+
+            .tarkan-header-button {
+                background: transparent; border: none; font-size: 1.1em;
+                cursor: pointer; color: #fff; padding: 2px 4px; line-height: 1;
+                border-radius: 3px; width: 32px; height: 32px;
+                display: flex; align-items: center; justify-content: center;
+                transition: background 0.2s; touch-action: manipulation;
+            }
+            .tarkan-header-button:hover { background: rgba(255, 255, 255, 0.15); }
+
+            #tarkan-messages-panel {
+                flex: 1; padding: 10px; overflow-y: auto;
+                background-color: var(--tarkan-body-bg);
+                max-height: calc(${(parseInt(size.height) || 500) - 140}px);
+            }
+
+            .tarkan-message {
+                display: flex; align-items: flex-start; margin-bottom: 10px;
+                max-width: 85%;
+            }
+            .tarkan-message.tarkan { align-self: flex-start; }
+            .tarkan-message.user { align-self: flex-end; flex-direction: row-reverse; }
+            .tarkan-message img.avatar {
+                width: 26px; height: 26px; border-radius: 50%;
+                object-fit: cover; margin-right: 6px;
+            }
+            .tarkan-message.user img.avatar { margin-right: 0; margin-left: 6px; }
+
+            .tarkan-message-content-wrapper {
+                display: flex; flex-direction: column; max-width: 75%;
+            }
+
+            .tarkan-message-sender {
+                font-weight: bold; font-size: 0.8em; margin-bottom: 2px;
+                display: block; color: ${colors.botNameColor} !important;
+            }
+
+            .tarkan-message-content {
+                padding: 7px 10px; border-radius: 14px; word-wrap: break-word;
+                position: relative; font-size: 0.85em;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            }
+            .tarkan-message.tarkan .tarkan-message-content {
+                background-color: var(--tarkan-bot-bg);
+                border: 1px solid var(--tarkan-bot-bg);
+                color: var(--tarkan-bot-text);
+            }
+            .tarkan-message.user .tarkan-message-content {
+                background-color: var(--tarkan-user-bg);
+                border: 1px solid var(--tarkan-user-bg);
+                color: var(--tarkan-user-text);
+            }
+
+            .tarkan-message-time {
+                font-size: 0.7em; color: rgba(0, 0, 0, 0.6);
+                margin-left: 4px; align-self: flex-end;
+            }
+
+            .tarkan-message img.preview {
+                max-width: 200px; max-height: 200px; border-radius: 8px;
+                margin-top: 5px; cursor: pointer; object-fit: contain;
+            }
+
+            #tarkan-input-panel {
+                display: flex; padding: 6px;
+                background-color: var(--tarkan-panel-bg);
+                border-top: 1px solid #ddd;
+            }
+
+            #tarkan-message-input {
+                flex: 1; padding: 8px 10px; border: 1px solid #ddd;
+                border-radius: 8px; outline: none; font-size: 0.85em;
+                min-width: 0;
+            }
+
+            .tarkan-button {
+                padding: 8px 12px; margin-left: 6px; border: none;
+                border-radius: 8px; background-color: var(--tarkan-accent);
+                color: #000000; cursor: pointer; font-weight: bold;
+                font-size: 0.85em; transition: background 0.2s;
+                touch-action: manipulation;
+            }
+            .tarkan-button:hover { background-color: var(--tarkan-header-to); }
+            .tarkan-button:disabled { opacity: 0.6; cursor: not-allowed; }
+            .tarkan-emoji-button { background-color: var(--tarkan-bot-bg); font-size: 1.1em; padding: 8px 10px; }
+
+            #tarkan-emoji-picker {
+                position: fixed; bottom: 70px; right: 20px;
+                background: white; padding: 8px; border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); z-index: 1000000;
+                display: none; max-width: 300px; max-height: 150px;
+                overflow-y: auto;
+            }
+            #tarkan-emoji-picker.active { display: block; }
+            .tarkan-emoji-option {
+                display: inline-block; font-size: 1.3em; margin: 4px;
+                cursor: pointer; padding: 2px; border-radius: 4px;
+            }
+            .tarkan-emoji-option:hover { background: #f0f0f0; }
+
+            #tarkan-color-picker {
+                position: fixed; top: 50%; left: 50%;
+                transform: translate(-50%, -50%); background: white;
+                padding: 16px; border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); z-index: 1000001;
+                display: none; max-width: 320px; width: 90%;
+                max-height: 80vh; overflow-y: auto;
+            }
+            #tarkan-color-picker.active { display: block; }
+
+            .tarkan-color-picker-header {
+                display: flex; justify-content: space-between;
+                align-items: center; margin-bottom: 12px;
+                padding-bottom: 8px; border-bottom: 1px solid #eee;
+            }
+            .tarkan-color-picker-header h3 { margin: 0; font-size: 1.1em; }
+
+            .tarkan-color-option {
+                display: flex; align-items: center; margin-bottom: 10px;
+            }
+            .tarkan-color-option label {
+                margin-left: 8px; font-size: 0.85em; flex: 1;
+            }
+            .tarkan-color-option input {
+                width: 28px; height: 28px; border: 2px solid #ddd;
+                cursor: pointer; border-radius: 4px;
+            }
+
+            .tarkan-color-actions {
+                display: flex; gap: 8px; margin-top: 12px;
+                padding-top: 12px; border-top: 1px solid #eee;
+            }
+
+            #tarkan-file-modal {
+                display: none; position: fixed; z-index: 1000000;
+                left: 0; top: 0; width: 100%; height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            #tarkan-file-modal-content {
+                background-color: #fefefe; margin: 30% auto; padding: 16px;
+                border: 1px solid #888; width: 80%; max-width: 350px;
+                border-radius: 10px; text-align: center;
+            }
+            #tarkan-file-sender-selector {
+                margin: 12px 0; display: flex; justify-content: center; gap: 10px;
+            }
+            #tarkan-file-sender-selector button {
+                padding: 8px 12px; border: 1px solid #ddd;
+                border-radius: 6px; background: white; cursor: pointer;
+                touch-action: manipulation;
+            }
+            #tarkan-file-sender-selector button.selected {
+                background: var(--tarkan-accent); border-color: var(--tarkan-header-to);
+            }
+            #tarkan-modal-buttons {
+                display: flex; justify-content: center; gap: 8px; margin-top: 12px;
+            }
+            #tarkan-modal-buttons button {
+                padding: 8px 16px; border-radius: 6px; border: none;
+                cursor: pointer; touch-action: manipulation;
+            }
+
+            .lcb-btn {
+                padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc;
+                background: #f0f0f0; cursor: pointer; font-weight: 500;
+                touch-action: manipulation;
+            }
+            .lcb-btn:hover { background: #e0e0e0; }
+
+            #tarkan-help-modal {
+                display: none; position: fixed; z-index: 1000002;
+                left: 0; top: 0; width: 100%; height: 100%;
+                background-color: rgba(0, 0, 0, 0.6); overflow-y: auto;
+            }
+            #tarkan-help-content {
+                background-color: ${colors.bodyBg}; margin: 20px auto; padding: 0;
+                border-radius: 10px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%; max-width: 600px; max-height: 85vh;
+                overflow: hidden; display: flex; flex-direction: column;
+            }
+            #tarkan-help-header {
+                background: linear-gradient(90deg, var(--tarkan-header-from), var(--tarkan-header-to));
+                padding: 12px 16px; display: flex; justify-content: space-between;
+                align-items: center; color: white;
+                border-top-left-radius: 10px; border-top-right-radius: 10px;
+            }
+            #tarkan-help-header h2 { margin: 0; font-size: 1.2em; }
+            #tarkan-help-close {
+                background: transparent; border: none; color: white;
+                font-size: 1.5em; cursor: pointer; padding: 4px 8px;
+                line-height: 1;
+            }
+            #tarkan-help-close:hover { background: rgba(255, 255, 255, 0.15); }
+            #tarkan-help-body {
+                padding: 16px; overflow-y: auto; flex: 1;
+                color: #000000;
+            }
+            .tarkan-help-section { margin-bottom: 20px; }
+            .tarkan-help-section h3 {
+                color: ${colors.botText}; margin-bottom: 8px;
+                padding-bottom: 4px; border-bottom: 1px solid #eee;
+                font-size: 1.05em;
+            }
+            .tarkan-help-section ul { margin: 0; padding-left: 20px; }
+            .tarkan-help-section li {
+                margin-bottom: 6px; font-size: 0.9em; line-height: 1.4;
+                color: #000000;
+            }
+
+            #tarkan-avatar-modal {
+                display: none; position: fixed; z-index: 1000003;
+                left: 0; top: 0; width: 100%; height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+            #tarkan-avatar-modal-content {
+                background-color: ${colors.panelBg}; margin: 20% auto; padding: 16px;
+                border-radius: 10px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%; max-width: 400px; max-height: 70vh;
+                overflow-y: auto;
+            }
+            #tarkan-avatar-modal-header {
+                display: flex; justify-content: space-between; align-items: center;
+                margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #eee;
+            }
+            #tarkan-avatar-modal-header h3 { margin: 0; font-size: 1.2em; }
+            #tarkan-avatar-close {
+                background: transparent; border: none; color: ${colors.botText};
+                font-size: 1.5em; cursor: pointer; padding: 4px 8px;
+            }
+            #tarkan-avatar-form {
+                display: flex; flex-direction: column; gap: 12px;
+            }
+            .tarkan-avatar-section {
+                display: flex; flex-direction: column; gap: 8px;
+            }
+            .tarkan-avatar-section label {
+                font-weight: bold; font-size: 0.9em;
+            }
+            .tarkan-avatar-preview {
+                width: 80px; height: 80px; border-radius: 50%;
+                object-fit: cover; border: 2px solid #ddd;
+                margin-bottom: 8px;
+            }
+            .tarkan-avatar-actions {
+                display: flex; gap: 8px; margin-top: 12px;
+            }
+
+            @media (max-width: 768px) {
+                #tarkan-chat-container {
+                    width: 95vw; height: 60vh; bottom: 10px; right: 10px;
+                    max-width: 95vw !important; max-height: 80vh !important;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ============================================
+    // 💾 SALVARE / ÎNCĂRCARE SETĂRI
+    // ============================================
+    function saveSettings() {
+        try {
+            GM_setValue('tarkanSettings', JSON.stringify({
+                position: position,
+                size: size,
+                colors: colors
+            }));
+        } catch (e) { console.error("Nu se pot salva setările:", e); }
+    }
+
+    function loadSettings() {
+        try {
+            const saved = GM_getValue('tarkanSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                position = settings.position || position;
+                size = settings.size || size;
+                colors = settings.colors || colors;
+            }
+        } catch (e) { console.error("Nu se pot încărca setările:", e); }
+    }
+
+    // ============================================
+    // 📝 REGULI PENTRU RĂSPUNSURI
+    // ============================================
+    const responseRules = [
+        {
+            pattern: /^(salut|sal|salutare|bună ziua|bună seara|bună dimineața|hei,? am venit să? te salut|salutări din partea mea|hei salut|merhaba|selam)$/i,
+            response: (message) => {
+                const normalized = message.toLowerCase().trim();
+                for (const [key, responses] of Object.entries(GREETINGS)) {
+                    if (normalized.includes(key.toLowerCase().replace(/[.,!?]/g, ''))) {
+                        return getRandomElement(responses);
+                    }
+                }
+                return getRandomElement(GREETINGS['salut']);
+            }
+        },
+        { pattern: /^qdn\s*/i, response: () => Math.random() < 0.5 ? "Evet (Da)" : "Hayır (Nu)" },
+        {
+            pattern: /^(Doresc o melodie de-a ta|Doresc melodiile tale|Oferă o muzică pe care o cânți|Spune-mi melodiile tale)$/i,
+            response: () => {
+                const song = getRandomElement(TARKAN_SONGS);
+                return `🎵 ${song.title} - ${song.artist}. ${song.description} [Ascultă aici](${song.youtubeLink})`;
+            }
+        },
+        {
+            pattern: /^Doresc muzica araba$/i,
+            response: () => {
+                const song = getRandomElement(ARABIC_SONGS);
+                return `🎵 ${song.title} - ${song.artist}. ${song.description} [Ascultă aici](${song.youtubeLink})`;
+            }
+        },
+        {
+            pattern: /^Spune-mi text melodiile tale$/i,
+            response: () => {
+                const songList = TARKAN_SONGS.map(song => `• ${song.title}`).join('\n');
+                return `Iată melodiile mele:\n${songList}`;
+            }
+        },
+        {
+            pattern: /^despre Turcia (.+)$/i,
+            response: (message) => {
+                const subject = message.match(/^despre Turcia (.+)$/i)[1].toLowerCase();
+                for (const [key, info] of Object.entries(TURKISH_INFO)) {
+                    if (subject.includes(key)) {
+                        return info;
+                    }
+                }
+                return "🇹🇷 Turcia este o țară minunată cu o cultură bogată. Dorești să afli ceva specific?";
+            }
+        },
+        {
+            pattern: /^Tradu (.+)$/i,
+            response: (message) => {
+                const text = message.match(/^Tradu (.+)$/i)[1].toLowerCase();
+                for (const [key, translation] of Object.entries(TRANSLATIONS)) {
+                    if (text.includes(key)) {
+                        return `🗣️ "${key}" se traduce în: "${translation}"`;
+                    }
+                }
+                return `🤔 Nu cunosc traducerea pentru "${text}".`;
+            }
+        },
+        { pattern: 'q1',
+            response: () => {
+                q1Active = true;
+                return "Toate comenzile au fost dezactivate, cu excepția q1, qq, ștergere mesaje și it-secret. 😢";
+            }
+        },
+        {
+            pattern: /^qq\s*/i,
+            response: () => lastUserMessage ? lastUserMessage.replace(/^qq\s*/i, '').trim() : null
+        },
+        {
+            pattern: 'ștergere mesaje',
+            response: () => { messages = []; return null; }
+        },
+        {
+            pattern: 'it-secret',
+            response: () => {
+                const scriptContent = document.querySelector('script:last-child').textContent;
+                const blob = new Blob([scriptContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                GM_download({ url: url, name: 'tarkan-script.js', saveAs: true, onload: () => URL.revokeObjectURL(url) });
+                return "Iată scriptul complet, dragostea mea! ❤️";
+            }
+        },
+        { pattern: 'poza ta', response: { type: 'file', content: userSettings.tarkan.avatar || getRandomAvatar('tarkan'), isImage: true } },
+        {
+            pattern: 'zar',
+            response: () => {
+                const diceRoll = Math.floor(Math.random() * 6) + 1;
+                return diceRoll === 6
+                    ? `Am dat ${diceRoll}! Norocul tău e și al meu! 🎉❤️`
+                    : `Am dat ${diceRoll}! ${diceRoll > 3 ? 'Norocos!' : 'Mai încearcă!'}`;
+            }
+        },
+        {
+            pattern: /^phf (piatră|hârtie|foarfecă)$/i,
+            response: (message) => {
+                const userChoice = message.match(/^phf (piatră|hârtie|foarfecă)$/i)[1].toLowerCase();
+                const options = ['piatră', 'hârtie', 'foarfecă'];
+                const tarkanChoice = options[Math.floor(Math.random() * options.length)];
+                if (userChoice === tarkanChoice) {
+                    return `Am ales și eu ${tarkanChoice}! Remiză! 🥺 *te îmbrățișez* 🤗`;
+                } else if (
+                    (userChoice === 'piatră' && tarkanChoice === 'foarfecă') ||
+                    (userChoice === 'hârtie' && tarkanChoice === 'piatră') ||
+                    (userChoice === 'foarfecă' && tarkanChoice === 'hârtie')
+                ) {
+                    return `Am ales ${tarkanChoice}... Ai câștigat! 😢 *plânge* Dar te iubesc oricum! ❤️`;
+                } else {
+                    return `Am ales ${tarkanChoice}! Am câștigat... 😭 *mă simt vinovat* Dar ești cel mai important pentru mine!`;
+                }
+            }
+        },
+        { pattern: /^(da|nu) sau ba\?$/i, response: () => ['da', 'nu', 'ba', 'poate'][Math.floor(Math.random() * 4)] },
+        {
+            pattern: /^Te iubesc Tarkan$/i,
+            response: () => {
+                createHeartAnimation();
+                return "Seni de seviyorum, Anda! ❤️💚";
+            }
+        },
+        {
+            pattern: /^Hai să ascultăm muzică$/i,
+            response: () => {
+                createMusicAnimation();
+                return "Hadi, müzik dinleyelim! 🎵";
+            }
+        },
+        {
+            pattern: /^censor$/i,
+            response: () => {
+                censorMode = !censorMode;
+                saveCensorSettings();
+                return `Cenzura globală este acum ${censorMode ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^qp$/i,
+            response: () => {
+                useReplacementWords = !useReplacementWords;
+                saveCensorSettings();
+                return `Cuvintele de înlocuire sunt acum ${useReplacementWords ? 'activate' : 'dezactivate'}.`;
+            }
+        },
+        {
+            pattern: /^pl$/i,
+            response: () => {
+                individualCensor[userSettings.user.name] = !individualCensor[userSettings.user.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele tale este acum ${individualCensor[userSettings.user.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^pp$/i,
+            response: () => {
+                individualCensor[tarkan.name] = !individualCensor[tarkan.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele mele este acum ${individualCensor[tarkan.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        // Comenzi nebanuite
+        {
+            pattern: /^ce ora este$/i,
+            response: () => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                return `⏰ Ora este ${hours}:${minutes} în Romania.`;
+            }
+        },
+        {
+            pattern: /^spune o gluma$/i,
+            response: () => {
+                const jokes = [
+                    "De ce nu se joacă Tarkan la ascunzătoare? Pentru că mereu se vede! 😂",
+                    "Ce face un turc când îi e foame? Mănâncă kebab! 🍢",
+                    "De ce iubesc turcii ceaiul? Pentru că e mai bun decât cafeaua! ☕"
+                ];
+                return getRandomElement(jokes);
+            }
+        },
+        {
+            pattern: /^cât e (\d+)\s*[+\-*/]\s*(\d+)$/i,
+            response: (message) => {
+                const match = message.match(/^cât e (\d+)\s*[+\-*/]\s*(\d+)$/i);
+                if (match) {
+                    const num1 = parseInt(match[1]);
+                    const num2 = parseInt(match[2]);
+                    const operator = message.match(/[+\-*/]/)[0];
+                    let result;
+                    switch (operator) {
+                        case '+': result = num1 + num2; break;
+                        case '-': result = num1 - num2; break;
+                        case '*': result = num1 * num2; break;
+                        case '/': result = num2 !== 0 ? (num1 / num2).toFixed(2) : "Imposibil! 😅"; break;
+                    }
+                    return `🧮 Rezultatul este: ${result}`;
+                }
+                return null;
+            }
+        },
+        {
+            pattern: /^vremea in (\w+)$/i,
+            response: (message) => {
+                const city = message.match(/^vremea in (\w+)$/i)[1];
+                return `☀️ În ${city} este soare și 25°C! (Simulat, bineînțeles 😉)`;
+            }
+        },
+        {
+            pattern: /^schimbă avatarul meu$/i,
+            response: () => {
+                userSettings.user.avatar = getRandomAvatar('user');
+                saveUserSettings();
+                return `Avatarul tău a fost schimbat! 😊`;
+            }
+        },
+        {
+            pattern: /^schimbă avatarul lui Tarkan$/i,
+            response: () => {
+                userSettings.tarkan.avatar = getRandomAvatar('tarkan');
+                saveUserSettings();
+                return `Avatarul lui Tarkan a fost schimbat! 😊`;
+            }
+        }
+    ];
+
+    function getResponse(message) {
+        if (q1Active && !message.startsWith('qq ') && !['q1', 'ștergere mesaje', 'it-secret'].includes(message.toLowerCase().trim())) {
+            return null;
+        }
+
+        for (const rule of responseRules) {
+            if (rule.pattern instanceof RegExp) {
+                if (rule.pattern.test(message)) {
+                    return typeof rule.response === 'function' ? rule.response(message) : rule.response;
+                }
+            } else if (message.toLowerCase().includes(rule.pattern.toLowerCase())) {
+                return typeof rule.response === 'function' ? rule.response(message) : rule.response;
+            }
+        }
+
+        const lowerMessage = message.toLowerCase();
+        const badWords = ['prost', 'idiot', 'esti curva', 'esti o proasta'];
+        if (badWords.some(word => lowerMessage.includes(word))) {
+            return "😢💔 *te iubesc oricum* Nu mă părăsi, te rog... ❤️";
+        }
+        const positiveWords = ['mulțumesc', 'îți mulțumesc', 'iti multumesc', 'mersi', 'esti viata mea', 'ești drăguță', 'esti draguta', 'esti frumoasa', 'ești frumoasă', 'te ador', 'ești minunată', 'te iubesc', 'te plac'];
+        if (positiveWords.some(word => lowerMessage.includes(word))) {
+            return `*te îmbrățișez strâns* ${['❤️', '💖', '😘', '🤗'][Math.floor(Math.random() * 4)]} Ești totul pentru mine!`;
+        }
+        return null;
+    }
+
+    // ============================================
+    // 📁 FUNCȚII PENTRU FIȘIERE/POZE
+    // ============================================
+    function addMessage(sender, content, isFile = false, isImage = false, file = null) {
+        const censoredContent = censorBadWords(content, sender);
+        const message = {
+            sender: sender,
+            content: censoredContent,
+            time: new Date().toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit' }),
+            isFile: isFile,
+            isImage: isImage,
+            file: file
+        };
+        messages.push(message);
+        if (messages.length > 100) messages.shift();
+        renderMessages();
+        scrollToBottom();
+    }
+
+    function renderMessages() {
+        if (!messagesPanel) return;
+        messagesPanel.innerHTML = '';
+        messages.forEach((msg) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `tarkan-message ${msg.sender === userSettings.tarkan.name ? 'tarkan' : 'user'}`;
+
+            const avatarImg = document.createElement('img');
+            avatarImg.src = msg.sender === userSettings.tarkan.name ? userSettings.tarkan.avatar : userSettings.user.avatar;
+            avatarImg.alt = msg.sender;
+            avatarImg.className = 'avatar';
+            avatarImg.crossOrigin = "anonymous";
+
+            const messageContentWrapper = document.createElement('div');
+            messageContentWrapper.className = 'tarkan-message-content-wrapper';
+
+            const messageContentDiv = document.createElement('div');
+            messageContentDiv.className = 'tarkan-message-content';
+
+            const senderName = document.createElement('span');
+            senderName.className = 'tarkan-message-sender';
+            senderName.textContent = msg.sender;
+            messageContentWrapper.appendChild(senderName);
+
+            if (msg.isFile) {
+                if (msg.isImage) {
+                    const imgPreview = document.createElement('img');
+                    imgPreview.src = msg.content;
+                    imgPreview.className = 'preview';
+                    imgPreview.alt = 'Preview';
+                    imgPreview.style.maxWidth = '200px';
+                    imgPreview.style.maxHeight = '200px';
+                    imgPreview.style.borderRadius = '8px';
+                    imgPreview.style.cursor = 'pointer';
+                    imgPreview.style.marginTop = '5px';
+                    imgPreview.addEventListener('click', () => {
+                        window.open(msg.content, '_blank');
+                    });
+                    messageContentDiv.appendChild(imgPreview);
+
+                    const downloadButton = document.createElement('button');
+                    downloadButton.textContent = '📥 Descarcă';
+                    downloadButton.style.marginTop = '5px';
+                    downloadButton.style.padding = '4px 8px';
+                    downloadButton.style.border = 'none';
+                    downloadButton.style.borderRadius = '4px';
+                    downloadButton.style.backgroundColor = '#228B22';
+                    downloadButton.style.cursor = 'pointer';
+
+                    downloadButton.addEventListener('click', () => {
+                        if (msg.file) {
+                            const url = getTemporaryUrl(msg.file);
+                            GM_download({
+                                url: url,
+                                name: `tarkan-image-${Date.now()}.${msg.file.name.split('.').pop() || 'jpg'}`,
+                                saveAs: true,
+                                onload: () => URL.revokeObjectURL(url)
+                            });
+                        } else {
+                            GM_download({
+                                url: msg.content,
+                                name: `tarkan-image-${Date.now()}.jpg`,
+                                saveAs: true
+                            });
+                        }
+                    });
+                    messageContentDiv.appendChild(downloadButton);
+                }
+            } else {
+                const linkedContent = msg.content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color: #228B22; text-decoration: none;">$1</a>');
+                messageContentDiv.innerHTML = linkedContent;
+            }
+
+            const messageMetaDiv = document.createElement('div');
+            messageMetaDiv.style.display = 'flex';
+            messageMetaDiv.style.alignItems = 'center';
+
+            const timeSpan = document.createElement('span');
+            timeSpan.className = 'tarkan-message-time';
+            timeSpan.textContent = msg.time;
+
+            messageMetaDiv.appendChild(timeSpan);
+            messageContentDiv.appendChild(messageMetaDiv);
+            messageContentWrapper.appendChild(messageContentDiv);
+            messageDiv.appendChild(avatarImg);
+            messageDiv.appendChild(messageContentWrapper);
+            messagesPanel.appendChild(messageDiv);
+        });
+    }
+
+    function scrollToBottom() {
+        if (messagesPanel) messagesPanel.scrollTop = messagesPanel.scrollHeight;
+    }
+
+    // ============================================
+    // 🏗️ CREARE ELEMENTE DOM
+    // ============================================
+    function createDOM() {
+        container = document.createElement('div');
+        container.id = 'tarkan-chat-container';
+
+        header = document.createElement('div');
+        header.id = 'tarkan-header';
+
+        const headerLeft = document.createElement('div');
+        headerLeft.id = 'tarkan-header-left';
+
+        const tarkanAvatarHeader = document.createElement('img');
+        tarkanAvatarHeader.src = userSettings.tarkan.avatar;
+        tarkanAvatarHeader.alt = userSettings.tarkan.name;
+        tarkanAvatarHeader.className = 'avatar';
+        tarkanAvatarHeader.crossOrigin = "anonymous";
+
+        const headerTitle = document.createElement('h1');
+        headerTitle.textContent = userSettings.tarkan.name;
+
+        headerLeft.appendChild(tarkanAvatarHeader);
+        headerLeft.appendChild(headerTitle);
+
+        const headerRight = document.createElement('div');
+        headerRight.id = 'tarkan-header-right';
+
+        const fileButtonHeader = document.createElement('button');
+        fileButtonHeader.className = 'tarkan-header-button';
+        fileButtonHeader.textContent = '📁';
+        fileButtonHeader.title = 'Încarcă fișier/poză';
+
+        const colorButton = document.createElement('button');
+        colorButton.className = 'tarkan-header-button';
+        colorButton.textContent = '🎨';
+        colorButton.title = 'Schimbă culorile';
+
+        const avatarButton = document.createElement('button');
+        avatarButton.className = 'tarkan-header-button';
+        avatarButton.textContent = '👤';
+        avatarButton.title = 'Schimbă avatarele';
+
+        const helpButton = document.createElement('button');
+        helpButton.className = 'tarkan-header-button';
+        helpButton.textContent = 'ℹ️';
+        helpButton.title = 'Ajutor și informații';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'tarkan-header-button';
+        closeButton.textContent = '×';
+        closeButton.title = 'Închide chatul definitiv';
+
+        headerRight.appendChild(fileButtonHeader);
+        headerRight.appendChild(colorButton);
+        headerRight.appendChild(avatarButton);
+        headerRight.appendChild(helpButton);
+        headerRight.appendChild(closeButton);
+
+        header.appendChild(headerLeft);
+        header.appendChild(headerRight);
+
+        messagesPanel = document.createElement('div');
+        messagesPanel.id = 'tarkan-messages-panel';
+
+        inputPanel = document.createElement('div');
+        inputPanel.id = 'tarkan-input-panel';
+
+        const emojiButton = document.createElement('button');
+        emojiButton.className = 'tarkan-button tarkan-emoji-button';
+        emojiButton.textContent = '🌿';
+        emojiButton.title = 'Selectează emoji';
+
+        const messageInput = document.createElement('input');
+        messageInput.id = 'tarkan-message-input';
+        messageInput.type = 'text';
+        messageInput.placeholder = 'Scrie un mesaj...';
+        messageInput.autocomplete = 'off';
+
+        const sendButton = document.createElement('button');
+        sendButton.className = 'tarkan-button';
+        sendButton.textContent = 'Trimite';
+
+        inputPanel.appendChild(emojiButton);
+        inputPanel.appendChild(messageInput);
+        inputPanel.appendChild(sendButton);
+
+        container.appendChild(header);
+        container.appendChild(messagesPanel);
+        container.appendChild(inputPanel);
+
+        const emojis = [
+            "🇹🇷", "🌿", "🌺", "💚", "❤️", "😊", "😍", "😂", "😢", "🔥", "🌟", "🎉",
+            "🕋", "🌙", "✨", "🤗", "😘", "💖", "🌟", "🎶", "🇸🇦"
+        ];
+
+        const emojiPicker = document.createElement('div');
+        emojiPicker.id = 'tarkan-emoji-picker';
+        emojis.forEach(emoji => {
+            const emojiOption = document.createElement('span');
+            emojiOption.className = 'tarkan-emoji-option';
+            emojiOption.textContent = emoji;
+            emojiOption.addEventListener('click', () => {
+                messageInput.value += emoji;
+                messageInput.focus();
+                emojiPicker.classList.remove('active');
+            });
+            emojiPicker.appendChild(emojiOption);
+        });
+
+        emojiButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            emojiPicker.classList.toggle('active');
+        });
+
+        const colorPicker = document.createElement('div');
+        colorPicker.id = 'tarkan-color-picker';
+
+        const colorPickerHeader = document.createElement('div');
+        colorPickerHeader.className = 'tarkan-color-picker-header';
+
+        const colorPickerTitle = document.createElement('h3');
+        colorPickerTitle.textContent = '🎨 Personalizează Culorile';
+
+        const colorPickerClose = document.createElement('button');
+        colorPickerClose.className = 'lcb-btn';
+        colorPickerClose.textContent = '×';
+        colorPickerClose.style.padding = '4px 8px';
+        colorPickerClose.style.fontSize = '1.2em';
+
+        colorPickerHeader.appendChild(colorPickerTitle);
+        colorPickerHeader.appendChild(colorPickerClose);
+
+        const colorOptions = [
+            { id: 'header-bg-from', label: 'Antet (Start)', default: colors.headerGradientFrom },
+            { id: 'header-bg-to', label: 'Antet (Sfârșit)', default: colors.headerGradientTo },
+            { id: 'message-panel-bg', label: 'Fundal Mesaje', default: colors.bodyBg },
+            { id: 'bot-message-bg', label: 'Mesaje Tarkan', default: colors.botBg },
+            { id: 'bot-message-text', label: 'Text Mesaje Tarkan', default: colors.botText },
+            { id: 'user-message-bg', label: 'Mesaje Utilizator', default: colors.userBg },
+            { id: 'user-message-text', label: 'Text Mesaje Utilizator', default: colors.userText },
+            { id: 'accent-color', label: 'Culoare Accent', default: colors.accent },
+            { id: 'panel-bg', label: 'Fundal Panou', default: colors.panelBg }
+        ];
+
+        colorOptions.forEach(option => {
+            const colorOptionDiv = document.createElement('div');
+            colorOptionDiv.className = 'tarkan-color-option';
+
+            const colorInput = document.createElement('input');
+            colorInput.type = 'color';
+            colorInput.id = option.id;
+            colorInput.value = option.default;
+
+            const colorLabel = document.createElement('label');
+            colorLabel.htmlFor = option.id;
+            colorLabel.textContent = option.label;
+
+            colorOptionDiv.appendChild(colorInput);
+            colorOptionDiv.appendChild(colorLabel);
+            colorPicker.appendChild(colorOptionDiv);
+        });
+
+        const colorActions = document.createElement('div');
+        colorActions.className = 'tarkan-color-actions';
+
+        const applyColorsButton = document.createElement('button');
+        applyColorsButton.className = 'lcb-btn';
+        applyColorsButton.textContent = 'Aplică Culorile';
+        applyColorsButton.style.backgroundColor = colors.accent;
+
+        const cancelColorsButton = document.createElement('button');
+        cancelColorsButton.className = 'lcb-btn';
+        cancelColorsButton.textContent = 'Anulează';
+
+        const resetColorsButton = document.createElement('button');
+        resetColorsButton.className = 'lcb-btn';
+        resetColorsButton.textContent = 'Resetare';
+
+        colorActions.appendChild(cancelColorsButton);
+        colorActions.appendChild(resetColorsButton);
+        colorActions.appendChild(applyColorsButton);
+
+        colorPicker.appendChild(colorPickerHeader);
+        colorPicker.appendChild(colorActions);
+
+        // Modal pentru avatare
+        const avatarModal = document.createElement('div');
+        avatarModal.id = 'tarkan-avatar-modal';
+
+        const avatarModalContent = document.createElement('div');
+        avatarModalContent.id = 'tarkan-avatar-modal-content';
+
+        const avatarModalHeader = document.createElement('div');
+        avatarModalHeader.id = 'tarkan-avatar-modal-header';
+
+        const avatarModalTitle = document.createElement('h3');
+        avatarModalTitle.textContent = '👤 Schimbă Avatarele';
+
+        const avatarModalClose = document.createElement('button');
+        avatarModalClose.id = 'tarkan-avatar-close';
+        avatarModalClose.textContent = '×';
+
+        avatarModalHeader.appendChild(avatarModalTitle);
+        avatarModalHeader.appendChild(avatarModalClose);
+
+        const avatarForm = document.createElement('div');
+        avatarForm.id = 'tarkan-avatar-form';
+
+        const userAvatarSection = document.createElement('div');
+        userAvatarSection.className = 'tarkan-avatar-section';
+
+        const userAvatarLabel = document.createElement('label');
+        userAvatarLabel.textContent = 'Avatarul tău (Anda):';
+
+        const userAvatarPreview = document.createElement('img');
+        userAvatarPreview.className = 'tarkan-avatar-preview';
+        userAvatarPreview.src = userSettings.user.avatar;
+        userAvatarPreview.alt = 'Preview avatar utilizator';
+
+        const changeUserAvatarButton = document.createElement('button');
+        changeUserAvatarButton.className = 'lcb-btn';
+        changeUserAvatarButton.textContent = 'Schimbă avatarul meu';
+        changeUserAvatarButton.style.backgroundColor = colors.accent;
+
+        userAvatarSection.appendChild(userAvatarLabel);
+        userAvatarSection.appendChild(userAvatarPreview);
+        userAvatarSection.appendChild(changeUserAvatarButton);
+
+        const tarkanAvatarSection = document.createElement('div');
+        tarkanAvatarSection.className = 'tarkan-avatar-section';
+
+        const tarkanAvatarLabel = document.createElement('label');
+        tarkanAvatarLabel.textContent = 'Avatarul lui Tarkan:';
+
+        const tarkanAvatarPreview = document.createElement('img');
+        tarkanAvatarPreview.className = 'tarkan-avatar-preview';
+        tarkanAvatarPreview.src = userSettings.tarkan.avatar;
+        tarkanAvatarPreview.alt = 'Preview avatar Tarkan';
+
+        const changeTarkanAvatarButton = document.createElement('button');
+        changeTarkanAvatarButton.className = 'lcb-btn';
+        changeTarkanAvatarButton.textContent = 'Schimbă avatarul lui Tarkan';
+        changeTarkanAvatarButton.style.backgroundColor = colors.accent;
+
+        tarkanAvatarSection.appendChild(tarkanAvatarLabel);
+        tarkanAvatarSection.appendChild(tarkanAvatarPreview);
+        tarkanAvatarSection.appendChild(changeTarkanAvatarButton);
+
+        avatarForm.appendChild(userAvatarSection);
+        avatarForm.appendChild(tarkanAvatarSection);
+
+        avatarModalContent.appendChild(avatarModalHeader);
+        avatarModalContent.appendChild(avatarForm);
+        avatarModal.appendChild(avatarModalContent);
+
+        const fileModal = document.createElement('div');
+        fileModal.id = 'tarkan-file-modal';
+
+        const fileModalContent = document.createElement('div');
+        fileModalContent.id = 'tarkan-file-modal-content';
+
+        const fileModalTitle = document.createElement('h3');
+        fileModalTitle.textContent = '📁 Încarcă fișier/poză';
+
+        const fileModalText = document.createElement('p');
+        fileModalText.textContent = 'Selectează cine trimite:';
+
+        const fileSenderSelector = document.createElement('div');
+        fileSenderSelector.id = 'tarkan-file-sender-selector';
+
+        const userSenderButton = document.createElement('button');
+        userSenderButton.textContent = userSettings.user.name;
+        userSenderButton.style.padding = '8px 12px';
+
+        const tarkanSenderButton = document.createElement('button');
+        tarkanSenderButton.textContent = userSettings.tarkan.name;
+        tarkanSenderButton.style.padding = '8px 12px';
+
+        fileSender = userSettings.user.name;
+        userSenderButton.classList.add('selected');
+
+        fileSenderSelector.appendChild(userSenderButton);
+        fileSenderSelector.appendChild(tarkanSenderButton);
+
+        const fileInputLabel = document.createElement('p');
+        fileInputLabel.textContent = 'Selectează fișierul:';
+        fileInputLabel.style.marginTop = '10px';
+
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.id = 'tarkan-file-input';
+        fileInput.accept = 'image/*,.pdf,.txt';
+
+        const modalButtons = document.createElement('div');
+        modalButtons.id = 'tarkan-modal-buttons';
+
+        const cancelFileButton = document.createElement('button');
+        cancelFileButton.className = 'lcb-btn';
+        cancelFileButton.textContent = 'Anulează';
+
+        const confirmFileButton = document.createElement('button');
+        confirmFileButton.className = 'lcb-btn';
+        confirmFileButton.textContent = 'Confirmă';
+        confirmFileButton.style.background = colors.accent;
+        confirmFileButton.style.color = '#000';
+
+        modalButtons.appendChild(cancelFileButton);
+        modalButtons.appendChild(confirmFileButton);
+
+        fileModalContent.appendChild(fileModalTitle);
+        fileModalContent.appendChild(fileModalText);
+        fileModalContent.appendChild(fileSenderSelector);
+        fileModalContent.appendChild(fileInputLabel);
+        fileModalContent.appendChild(fileInput);
+        fileModalContent.appendChild(modalButtons);
+
+        fileModal.appendChild(fileModalContent);
+
+        const helpModal = document.createElement('div');
+        helpModal.id = 'tarkan-help-modal';
+
+        const helpContent = document.createElement('div');
+        helpContent.id = 'tarkan-help-content';
+
+        const helpHeader = document.createElement('div');
+        helpHeader.id = 'tarkan-help-header';
+
+        const helpTitle = document.createElement('h2');
+        helpTitle.textContent = "📖 Ghid de Utilizare - Tarkan Chatbot";
+
+        const helpClose = document.createElement('button');
+        helpClose.id = 'tarkan-help-close';
+        helpClose.textContent = '×';
+
+        helpHeader.appendChild(helpTitle);
+        helpHeader.appendChild(helpClose);
+
+        const helpBody = document.createElement('div');
+        helpBody.id = 'tarkan-help-body';
+
+        const helpSections = [
+            {
+                title: "💬 Comenzi de Bază",
+                content: [
+                    "• <b>Salut / Bună / Merhaba</b> - Saluturi romantice",
+                    "• <b>Doresc o melodie de-a ta</b> - Link YouTube cu melodii ale lui Tarkan",
+                    "• <b>Doresc muzica araba</b> - Link YouTube cu melodii arabe",
+                    "• <b>despre Turcia [subiect]</b> - Informații detaliate",
+                    "• <b>Tradu [text]</b> - Traducere în turcă/arabă",
+                    "• <b>Te iubesc Tarkan</b> - Animație cu inimoare verzi",
+                    "• <b>Hai să ascultăm muzică</b> - Animație cu note muzicale",
+                    "• <b>ce ora este</b> - Afișează ora curentă",
+                    "• <b>spune o gluma</b> - O glumă aleatoare",
+                    "• <b>cât e 2+2</b> - Calculator simplu",
+                    "• <b>vremea in [oraș]</b> - Vremea (simulată)",
+                    "• <b>schimbă avatarul meu</b> - Schimbă avatarul tău",
+                    "• <b>schimbă avatarul lui Tarkan</b> - Schimbă avatarul lui Tarkan"
+                ]
+            },
+            {
+                title: "🎨 Personalizare",
+                content: [
+                    "• <b>Buton 🎨</b> - Schimbă culorile",
+                    "• <b>Buton 👤</b> - Schimbă avatarele",
+                    "• <b>Buton 📁</b> - Încarcă fișiere/poze",
+                    "• <b>Drag & Drop</b> - Trage și plasează fișiere"
+                ]
+            }
+        ];
+
+        helpSections.forEach(section => {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'tarkan-help-section';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.textContent = section.title;
+
+            const sectionList = document.createElement('ul');
+            section.content.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = item;
+                sectionList.appendChild(listItem);
+            });
+
+            sectionDiv.appendChild(sectionTitle);
+            sectionDiv.appendChild(sectionList);
+            helpBody.appendChild(sectionDiv);
+        });
+
+        helpContent.appendChild(helpHeader);
+        helpContent.appendChild(helpBody);
+        helpModal.appendChild(helpContent);
+
+        document.body.appendChild(container);
+        document.body.appendChild(emojiPicker);
+        document.body.appendChild(colorPicker);
+        document.body.appendChild(avatarModal);
+        document.body.appendChild(fileModal);
+        document.body.appendChild(helpModal);
+
+        return {
+            container,
+            messageInput: messageInput,
+            sendButton: sendButton,
+            emojiButton: emojiButton,
+            fileButtonHeader,
+            colorButton,
+            avatarButton,
+            helpButton,
+            closeButton,
+            emojiPicker,
+            colorPicker,
+            colorPickerClose,
+            avatarModal,
+            avatarModalClose,
+            fileModal,
+            helpModal,
+            helpClose,
+            cancelFileButton,
+            confirmFileButton,
+            fileInput,
+            applyColorsButton,
+            cancelColorsButton,
+            resetColorsButton,
+            userSenderButton: userSenderButton,
+            tarkanSenderButton: tarkanSenderButton,
+            changeUserAvatarButton: changeUserAvatarButton,
+            changeTarkanAvatarButton: changeTarkanAvatarButton,
+            userAvatarPreview: userAvatarPreview,
+            tarkanAvatarPreview: tarkanAvatarPreview
+        };
+    }
+
+    // ============================================
+    // 🚀 INITIALIZARE
+    // ============================================
+    function init() {
+        loadUserSettings();
+        elements = createDOM();
+        container = elements.container;
+        messagesPanel = document.getElementById('tarkan-messages-panel');
+        const messageInput = elements.messageInput;
+
+        loadSettings();
+        loadCensorSettings();
+        container.style.right = `${position.x}px`;
+        container.style.bottom = `${position.y}px`;
+        regenerateCSS();
+
+        window.addEventListener('beforeunload', cleanupTemporaryUrls);
+
+        header.addEventListener('mousedown', (e) => {
+            if (e.target === elements.closeButton || e.target === elements.fileButtonHeader ||
+                e.target === elements.colorButton || e.target === elements.helpButton || e.target === elements.avatarButton) return;
+
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            const rect = container.getBoundingClientRect();
+            const offsetX = dragStartX - rect.left;
+            const offsetY = dragStartY - rect.top;
+
+            function moveWindow(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const newLeft = e.clientX - offsetX;
+                const newTop = e.clientY - offsetY;
+                position.x = Math.max(8, window.innerWidth - newLeft - rect.width);
+                position.y = Math.max(8, window.innerHeight - newTop - rect.height);
+                container.style.right = `${position.x}px`;
+                container.style.bottom = `${position.y}px`;
+            }
+
+            function stopDrag() {
+                isDragging = false;
+                document.removeEventListener('mousemove', moveWindow);
+                document.removeEventListener('mouseup', stopDrag);
+                saveSettings();
+            }
+
+            document.addEventListener('mousemove', moveWindow);
+            document.addEventListener('mouseup', stopDrag);
+        });
+
+        elements.sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                lastUserMessage = message;
+                addMessage(userSettings.user.name, message);
+
+                if (message.startsWith('qq ')) {
+                    const response = getResponse('qq');
+                    if (response) setTimeout(() => addMessage(userSettings.tarkan.name, response), 300);
+                    if (messages.length >= 1) { messages.pop(); renderMessages(); }
+                } else {
+                    const response = getResponse(message);
+                    if (response) {
+                        if (typeof response === 'object' && response.type === 'file') {
+                            setTimeout(() => addMessage(userSettings.tarkan.name, response.content, response.isImage, response.isImage), 300);
+                        } else if (typeof response === 'string') {
+                            setTimeout(() => addMessage(userSettings.tarkan.name, response), 300);
+                        }
+                    }
+                }
+                messageInput.value = '';
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') elements.sendButton.click();
+        });
+
+        elements.fileButtonHeader.addEventListener('click', () => elements.fileModal.style.display = 'block');
+        elements.colorButton.addEventListener('click', () => {
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('bot-message-bg').value = colors.botBg;
+            document.getElementById('bot-message-text').value = colors.botText;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+            elements.colorPicker.classList.add('active');
+        });
+
+        elements.avatarButton.addEventListener('click', () => {
+            elements.userAvatarPreview.src = userSettings.user.avatar;
+            elements.tarkanAvatarPreview.src = userSettings.tarkan.avatar;
+            elements.avatarModal.style.display = 'block';
+        });
+
+        elements.helpButton.addEventListener('click', () => elements.helpModal.style.display = 'block');
+        elements.closeButton.addEventListener('click', () => {
+            cleanupTemporaryUrls();
+            container.remove();
+            elements.emojiPicker.remove();
+            elements.colorPicker.remove();
+            elements.avatarModal.remove();
+            elements.fileModal.remove();
+            elements.helpModal.remove();
+        });
+
+        elements.cancelFileButton.addEventListener('click', () => {
+            elements.fileModal.style.display = 'none';
+            elements.fileInput.value = '';
+        });
+        elements.confirmFileButton.addEventListener('click', () => {
+            const file = elements.fileInput.files[0];
+            if (file && fileSender) {
+                const url = getTemporaryUrl(file);
+                const isImage = file.type.startsWith('image/');
+                addMessage(fileSender, url, true, isImage, file);
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+
+        elements.userSenderButton.addEventListener('click', () => {
+            fileSender = userSettings.user.name;
+            elements.userSenderButton.classList.add('selected');
+            elements.tarkanSenderButton.classList.remove('selected');
+        });
+        elements.tarkanSenderButton.addEventListener('click', () => {
+            fileSender = userSettings.tarkan.name;
+            elements.tarkanSenderButton.classList.add('selected');
+            elements.userSenderButton.classList.remove('selected');
+        });
+
+        elements.colorPickerClose.addEventListener('click', () => elements.colorPicker.classList.remove('active'));
+        elements.cancelColorsButton.addEventListener('click', () => elements.colorPicker.classList.remove('active'));
+        elements.resetColorsButton.addEventListener('click', () => {
+            colors = {
+                headerGradientFrom: '#2E8B57',
+                headerGradientTo: '#3CB371',
+                bodyBg: '#E8F5E9',
+                botBg: '#8FBC8F',
+                botText: '#000000',
+                userBg: '#FF69B4',
+                userText: '#000000',
+                botNameColor: '#000000',
+                accent: '#228B22',
+                panelBg: '#F0FFF0'
+            };
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('bot-message-bg').value = colors.botBg;
+            document.getElementById('bot-message-text').value = colors.botText;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+            regenerateCSS();
+            saveSettings();
+        });
+        elements.applyColorsButton.addEventListener('click', () => {
+            colors.headerGradientFrom = document.getElementById('header-bg-from').value;
+            colors.headerGradientTo = document.getElementById('header-bg-to').value;
+            colors.bodyBg = document.getElementById('message-panel-bg').value;
+            colors.botBg = document.getElementById('bot-message-bg').value;
+            colors.botText = document.getElementById('bot-message-text').value;
+            colors.userBg = document.getElementById('user-message-bg').value;
+            colors.userText = document.getElementById('user-message-text').value;
+            colors.accent = document.getElementById('accent-color').value;
+            colors.panelBg = document.getElementById('panel-bg').value;
+
+            regenerateCSS();
+            elements.confirmFileButton.style.background = colors.accent;
+            elements.applyColorsButton.style.backgroundColor = colors.accent;
+            elements.colorPicker.classList.remove('active');
+            saveSettings();
+            renderMessages();
+        });
+
+        elements.helpClose.addEventListener('click', () => elements.helpModal.style.display = 'none');
+        elements.avatarModalClose.addEventListener('click', () => elements.avatarModal.style.display = 'none');
+
+        elements.changeUserAvatarButton.addEventListener('click', () => {
+            userSettings.user.avatar = getRandomAvatar('user');
+            elements.userAvatarPreview.src = userSettings.user.avatar;
+            saveUserSettings();
+            renderMessages();
+        });
+
+        elements.changeTarkanAvatarButton.addEventListener('click', () => {
+            userSettings.tarkan.avatar = getRandomAvatar('tarkan');
+            elements.tarkanAvatarPreview.src = userSettings.tarkan.avatar;
+            saveUserSettings();
+            renderMessages();
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!elements.emojiPicker.contains(e.target) && e.target !== elements.emojiButton)
+                elements.emojiPicker.classList.remove('active');
+            if (!elements.colorPicker.contains(e.target) && e.target !== elements.colorButton)
+                elements.colorPicker.classList.remove('active');
+        });
+
+        elements.fileModal.addEventListener('click', (e) => {
+            if (e.target === elements.fileModal) {
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+        elements.helpModal.addEventListener('click', (e) => {
+            if (e.target === elements.helpModal) elements.helpModal.style.display = 'none';
+        });
+        elements.avatarModal.addEventListener('click', (e) => {
+            if (e.target === elements.avatarModal) elements.avatarModal.style.display = 'none';
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                elements.emojiPicker.classList.remove('active');
+                elements.colorPicker.classList.remove('active');
+                elements.avatarModal.style.display = 'none';
+                elements.fileModal.style.display = 'none';
+                elements.helpModal.style.display = 'none';
+            }
+        });
+
+        setTimeout(() => {
+            addMessage(userSettings.tarkan.name, "Merhaba, sevgilim Anda! 🌿 Kalbim senin için atıyor!");
+        }, 500);
+    }
+
+    init();
+})();

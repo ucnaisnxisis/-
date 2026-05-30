@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Tarkan Chatbot - Final Version with Custom Avatars and Colors
+// @name         Tarkan Chatbot - Final Version
 // @namespace    http://tampermonkey.net/
-// @version      4.0
+// @version      5.1
 // @description  Chatbot ultra-personalizat Tarkan: romantic, inteligent pe chestiile turcești și arabe, cu cenzură dezactivată implicit, traduceri, melodii, animații, informatii detaliate, avatare personalizabile și culori unice.
 // @author       Tester John (Modified by Vibe)
 // @match        *://*.google.com/*
@@ -13,10 +13,13 @@
 // @grant        GM_download
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @grant        GM_notification
+// @grant        GM_openInTab
+// @grant        GM_setClipboard
 // @connect      i.imgur.com
 // @connect      imgur.com
 // @connect      waifu.pics
-// @connect      www.youtube.com
+// @connect      *.youtube.com
 // @run-at       document-end
 // ==/UserScript==
 
@@ -178,7 +181,7 @@
         bodyBg: '#E8F5E9',
         botBg: '#8FBC8F',
         botText: '#000000',
-        userBg: '#FF69B4', // Roz pentru mesajele utilizatorului
+        userBg: '#FF69B4',
         userText: '#000000',
         botNameColor: '#000000',
         accent: '#228B22',
@@ -188,41 +191,15 @@
     // Avatare implicite
     const DEFAULT_AVATARS = {
         user: [
-            "https://instagram.fias1-1.fna.fbcdn.net/v/t51.82787-15/627970179_18388377802151161_8115940214500093464_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MTk0Mjg2MDkyOTYyMjIxMzg3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=i2iT_47393EQ7kNvwGpre74&_nc_oc=AdpJ9Lq1SxPznRi1WlEFsAtXnCUq2RdRBietsFlKkQtN7bFKonZmdqmdQFj9I0k8D3w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-1.fna&_nc_gid=IkXxHJ3iGMZE_tCwTRHFjQ&_nc_ss=7a22e&oh=00_Af6WfKwMIiVRJgignjgVZaAXkHc8MXKoTAVrbxHIp8im7g&oe=6A20B746",
-            "https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/490342256_2176130279524284_4065461364350129415_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=p0TPMq7J7gUQ7kNvwHx79YN&_nc_oc=AdoTXClziBdLKE3UXL5EE_A3TzORe0c5zcSxrR5pyC2GMd6g-P8qPWb2_52vtGCWoiU&_nc_zt=23&_nc_ht=scontent.fias1-1.fna&_nc_gid=Nn1AD8LnUe6Z72TWKJHyLQ&_nc_ss=7b289&oh=00_Af4fQAMTs73ADRHsD4hWrwHgtkS1mQq7PSxwYyWG0Cx2bw&oe=6A20879E",
-            "https://www.antena3.ro/thumbs/amp/2026/01/10/situatie-disperata-la-cafeneaua-cu-pisici-din-bucuresti-apel-pentru-iubitorii-de-animale-e-nevoie-de-adapost-pentru-mate-si-motani-1037250.webp",
-            "https://www.pepinieraavramescu.ro/wp-content/uploads/2023/12/Trandafir-Ingrid-Bergman-rosu-ghiveci-3-l-2.jpg",
-            "https://static.vecteezy.com/system/resources/previews/075/293/904/large_2x/cute-happy-minie-mouse-cartoon-free-vector.jpg",
+            "https://instagram.fias1-1.fna.fbcdn.net/v/t51.82787-15/627970179_18388377802151161_8115940214500093464_n.jpg",
+            "https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/490342256_2176130279524284_4065461364350129415_n.jpg",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
-            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
-            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
-            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
-            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
-            "https://m.media-amazon.com/images/I/61fD57vbeFL.png"
+            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png"
         ],
         tarkan: [
             "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
-            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
-            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
-            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
-            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
-            "https://instagram.fias1-1.fna.fbcdn.net/v/t51.82787-15/627970179_18388377802151161_8115940214500093464_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MTk0Mjg2MDkyOTYyMjIxMzg3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=i2iT_47393EQ7kNvwGpre74&_nc_oc=AdpJ9Lq1SxPznRi1WlEFsAtXnCUq2RdRBietsFlKkQtN7bFKonZmdqmdQFj9I0k8D3w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-1.fna&_nc_gid=IkXxHJ3iGMZE_tCwTRHFjQ&_nc_ss=7a22e&oh=00_Af6WfKwMIiVRJgignjgVZaAXkHc8MXKoTAVrbxHIp8im7g&oe=6A20B746",
-            "https://scontent.fias1-1.fna.fbcdn.net/v/t39.30808-6/490342256_2176130279524284_4065461364350129415_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=p0TPMq7J7gUQ7kNvwHx79YN&_nc_oc=AdoTXClziBdLKE3UXL5EE_A3TzORe0c5zcSxrR5pyC2GMd6g-P8qPWb2_52vtGCWoiU&_nc_zt=23&_nc_ht=scontent.fias1-1.fna&_nc_gid=Nn1AD8LnUe6Z72TWKJHyLQ&_nc_ss=7b289&oh=00_Af4fQAMTs73ADRHsD4hWrwHgtkS1mQq7PSxwYyWG0Cx2bw&oe=6A20879E",
-            "https://www.antena3.ro/thumbs/amp/2026/01/10/situatie-disperata-la-cafeneaua-cu-pisici-din-bucuresti-apel-pentru-iubitorii-de-animale-e-nevoie-de-adapost-pentru-mate-si-motani-1037250.webp",
-            "https://www.pepinieraavramescu.ro/wp-content/uploads/2023/12/Trandafir-Ingrid-Bergman-rosu-ghiveci-3-l-2.jpg",
-            "https://static.vecteezy.com/system/resources/previews/075/293/904/large_2x/cute-happy-minie-mouse-cartoon-free-vector.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tarkan_2017.jpg/800px-Tarkan_2017.jpg",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6tjzeDVK2CxMPQdaUOrYNzzRxvTVPcjilhBf0LV78VsHfzF9lKlO_f9dOKMay8A5CvkYyC6iskLT3oXcpe0BzY-QGBcgYQoYc1RMzzsD3&s=10",
-            "https://upload.wikimedia.org/wikipedia/commons/e/e4/Tarkan.JPG",
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWAYPWCXCXtblLf5RDORh5jFBpBOp3AGgCeTA3XP_N1g&s=10",
-            "https://improvisedlife.com/wp-content/uploads/2019/11/dance-for-friday-tunak-tunak-tun.jpg",
-            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png/revision/latest?cb=20230508142819",
-            "https://instagram.fias1-2.fna.fbcdn.net/v/t51.82787-15/615925679_17897094045367381_6879843365570200136_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzgwOTg0MDM1Nzg0MDc4NjQyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4rAJkN_MA68Q7kNvwFmd6hi&_nc_oc=AdoMH7HJwwQJuJZK0gIm4kVknGUaZ4L6QhO3-fDgjWUMyoLXVsrYjkyJnqLc9wGDdI4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fias1-2.fna&_nc_gid=qQouoM2zu9QuTfxoqcAHnA&_nc_ss=7a22e&oh=00_Af7S7engaFMcEwKhG0QT4WLdDJ0MJ1a8PMuQwnlQY7Ptkw&oe=6A20B743"
-            "https://m.media-amazon.com/images/I/61fD57vbeFL.png"
+            "https://static.wikia.nocookie.net/characters/images/4/42/Mickey_Mouse_%28character%29.png"
         ]
     };
 
@@ -230,7 +207,7 @@
     let userSettings = {
         user: {
             name: "Anda",
-            avatar: "https://instagram.fias1-1.fna.fbcdn.net/v/t51.2885-19/21296333_499130263789646_6586381847914086400_a.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xOTguYzIifQ&_nc_ht=instagram.fias1-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2gFv5_8xD9LHD2fz10mVQ59fzVIaaQJ5bUKd-ug9mxLyQD7kz8n9ql5L61fktnoxd6o&_nc_ohc=m_axkh2CuEAQ7kNvwHYeyRr&_nc_gid=1isDrbKONtgC9127cP52PQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af6A4ZvKVOz8aCjXCuMRzcFQQalalBK010Z9e3F5jkETDA&oe=6A208BEA&_nc_sid=8b3546",
+            avatar: "https://instagram.fias1-1.fna.fbcdn.net/v/t51.2885-19/21296333_499130263789646_6586381847914086400_a.jpg",
             color: "#FF69B4"
         },
         tarkan: {
@@ -251,7 +228,6 @@
             if (saved) {
                 userSettings = JSON.parse(saved);
             } else {
-                // Setăm avatare aleatoare la prima rulare
                 userSettings.user.avatar = getRandomAvatar('user');
                 userSettings.tarkan.avatar = getRandomAvatar('tarkan');
                 saveUserSettings();
@@ -477,6 +453,7 @@
                 transition: none;
                 resize: both;
                 overflow: auto;
+                touch-action: manipulation;
             }
 
             #tarkan-header {
@@ -943,9 +920,9 @@
         {
             pattern: /^pp$/i,
             response: () => {
-                individualCensor[tarkan.name] = !individualCensor[tarkan.name];
+                individualCensor[userSettings.tarkan.name] = !individualCensor[userSettings.tarkan.name];
                 saveCensorSettings();
-                return `Cenzura pentru mesajele mele este acum ${individualCensor[tarkan.name] ? 'activată' : 'dezactivată'}.`;
+                return `Cenzura pentru mesajele mele este acum ${individualCensor[userSettings.tarkan.name] ? 'activată' : 'dezactivată'}.`;
             }
         },
         // Comenzi nebanuite

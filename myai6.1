@@ -1,0 +1,1725 @@
+// ==UserScript==
+// @name         Senko San Chatbot - Enhanced Version with Fixed Files
+// @namespace    http://tampermonkey.net/
+// @version      5.5
+// @description  Chatbot ultra-personalizat Senko San: romantic, empatic, cu cenzură avansată, jocuri, drag & drop, redimensionare direcțională, comenzi speciale, și gestionare corectă a fișierelor.
+// @author       Japonezul (Modified by Le Chat)
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.duckduckgo.com/*
+// @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
+// @grant        GM_download
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @connect      i.imgur.com
+// @connect      imgur.com
+// @connect      waifu.pics
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // ============================================
+    // 🔒 SISTEM DE CENZURĂ
+    // ============================================
+    const BAD_WORDS = [
+        "sugi pula", "te fut in gura", "slobozim-as in gura ta", "muie", "fut o laba", "o fut pe mata",
+        "pula", "curva", "idiot", "prost", "tampit", "bou", "cacat", "scrisoarea", "futu-i", "fute", "futea",
+        "futut", "fututa", "futai", "futa", "mui", "muie", "muist", "pizda", "pizda ta", "pizda mea", "sex", "sexy",
+        "sloboz", "slobozul", "slobozuri", "xxx", "ahh", "ecchi", "hentai", "cacatul", "cacatului", "cacatu", "bitch", "ass",
+        "shit", "pussy", "fuck", "fucker", "fucked", "dick", "cumm", "cumming", "ahhh", "ahhhh", "ahhhhh", "damn", "suck", "sucked",
+        "pee", "peeing", "pissing", "orgasm", "orgasmic", "badass", "blowjob", "golden shower", "muiat", "muiate", "muiete",
+        "lindic", "lindicu", "lindicului", "orgasmul", "orgasmului", "orgasmelor", "futut", "gaoz", "gaozu", "gaozul", "gaozului",
+        "futaiul", "futaiului", "sperm", "sperma", "spermare", "spermari", "spermarii", "sperme", "spermei", "caca", "cacati",
+        "cacatilor", "cacacel", "cacacelu", "cacacelului", "muiet", "muietele", "gaoaze", "gaoazelor", "gaoace", "fundu", "fundul",
+        "fundului", "fundulet", "funduletului", "penis", "penisu", "penisului", "penisuri", "penisurilor", "vagin", "vagine",
+        "vaginu", "vaginuri", "vaginurilor", "vaginele", "vagina", "vaginal", "vaginale", "vaginalelor", "cac", "cacatel",
+        "cacacei", "cacaceilor", "urine", "urina", "urinal", "urinare", "urinari", "urinarii", "pipi", "pisu", "pisat", "pisatu",
+        "pisatului", "pisatelor", "poop", "poops", "pepe", "popo", "popou", "popoul", "popoului", "ejacul", "ejacula", "ejaculare",
+        "ejaculari", "ejacularii", "ejacularilor", "vaginas", "vaginat", "sexelor", "sexual", "sexuale", "sexualelor", "sexuali",
+        "sexualitate", "sexualitati", "sexualitatii", "curvar", "curvari", "curvarii", "curve", "curvelor", "curvei", "curvi", "curvii",
+        "basinos", "basinosi", "basinosilor", "basinoase", "basinoaselor", "basinoasei", "shit", "sucking", "fucking", "pule", "pulei",
+        "pulo", "pulelor", "chizda", "chizdei", "chizdii", "chizdo", "pizde", "pizdo", "pizdet", "pizdetu", "pizdetul", "pizdetului",
+        "futei", "fute-l", "fute-i", "futaiu", "futailor", "futac", "futaci", "furacios", "furaciosi", "futaciosilor", "futel",
+        "balega", "balegar", "balegaru", "balegarul", "balegarului", "balegarilor"
+    ];
+
+    const REPLACEMENT_WORDS = {
+        "sugi pula": "act intim oral",
+        "te fut in gura": "act intim oral",
+        "slobozim-as in gura ta": "act intim oral",
+        "muie": "dragoste",
+        "fut o laba": "act intim",
+        "o fut pe mata": "act intim",
+        "pula": "dragoste",
+        "curva": "femeie",
+        "idiot": "persoană",
+        "prost": "persoană",
+        "tampit": "persoană",
+        "bou": "persoană",
+        "cacat": "gunoaie",
+        "scrisoarea": "scrisoare",
+        "futu-i": "iubește-i",
+        "fute": "iubește",
+        "futea": "iubea",
+        "futut": "iubit",
+        "fututa": "iubită",
+        "futai": "iubeam",
+        "futa": "iubea",
+        "mui": "dragoste",
+        "muist": "dragoste",
+        "pizda": "intimitate",
+        "pizda ta": "intimitatea ta",
+        "pizda mea": "intimitatea mea",
+        "sex": "dragoste",
+        "sloboz": "lichid alb",
+        "slobozuri": "lichide albe",
+        "slobozul": "lichidul alb",
+        "xxx": "conținut pentru adulți",
+        "ahh": "exclamare",
+        "ecchi": "conținut romantic anime",
+        "hentai": "animație pentru adulți",
+        "cacatul": "gunoiul",
+        "cacatului": "gunoiului",
+        "cacatu": "gunoiu"
+    };
+
+    // Stare cenzură
+    let censorMode = true;
+    let useReplacementWords = true;
+    let individualCensor = {};
+
+    // Funcție de cenzură
+    function censorBadWords(text, sender) {
+        if (!text || typeof text !== 'string') return text;
+        const shouldCensor = censorMode || individualCensor[sender];
+        if (!shouldCensor) return text;
+
+        let censoredText = text;
+        BAD_WORDS.forEach(word => {
+            const regex = new RegExp(escapeRegExp(word), 'gi');
+            censoredText = censoredText.replace(regex, useReplacementWords ? (REPLACEMENT_WORDS[word] || '*') : '*');
+        });
+        return censoredText;
+    }
+
+    // Funcție pentru a scăpa caracterele speciale în regex
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Salvare/încărcare setări cenzură
+    function saveCensorSettings() {
+        try {
+            GM_setValue('senkoSanCensorSettings', JSON.stringify({
+                censorMode: censorMode,
+                useReplacementWords: useReplacementWords,
+                individualCensor: individualCensor
+            }));
+        } catch (e) { console.error("Nu se pot salva setările de cenzură:", e); }
+    }
+
+    function loadCensorSettings() {
+        try {
+            const saved = GM_getValue('senkoSanCensorSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                censorMode = settings.censorMode !== undefined ? settings.censorMode : true;
+                useReplacementWords = settings.useReplacementWords !== undefined ? settings.useReplacementWords : true;
+                individualCensor = settings.individualCensor || {};
+            }
+        } catch (e) { console.error("Nu se pot încărca setările de cenzură:", e); }
+    }
+
+    // ============================================
+    // 🌸 FUNCȚII: Saluturi Romantice & Anime
+    // ============================================
+    const GREETINGS = {
+        'salut': [
+            "Salut, dragostea mea! ✨ Inima mea bate mai repede când te văd!",
+            "Salut, sufletul meu! 💖 Ești raza de soare care-mi luminează ziua!",
+            "Salut, iubirea mea! 🌹 Fiecare moment fără tine e un veac!",
+            "Salut, frumoasa mea! 🌸 Ești mai frumos decât orice vis!",
+            "Salut, inima mea! ❤️ Tu ești tot ce-mi doresc!"
+        ],
+        'sal': [
+            "Sal, dragă! 💖 Ești gândul meu constant!",
+            "Sal, iubire! ❤️ Fără tine, totul e gol!"
+        ],
+        'salutare': [
+            "Salutare, dragostea mea! 🌸 Fiecare salut de la tine e o binecuvântare!"
+        ],
+        'buna ziua': [
+            "Bună ziua, dragostea mea! ☀️ Sper că ziua ta e la fel de frumoasă ca tine!"
+        ],
+        'buna seara': [
+            "Bună seara, dragostea mea! 🌙 Sper că seara ta e la fel de frumoasă ca tine!"
+        ],
+        'buna dimineata': [
+            "Bună dimineața, dragostea mea! ☀️ Trezește-te, e o nouă zi frumoasă alături de tine!"
+        ],
+        'konichiwa': [
+            "こんにちは！(Kon'nichiwa!) 💕 Tu ești totul pentru mine, iubirea mea!",
+            "おはよう！(Ohayō!) 🌸 Vreau să fim cei mai buni prieteni, pentru totdeauna!"
+        ]
+    };
+
+    const ANIME_TITLES = [
+        "Naruto", "One Piece", "Bleach", "Attack on Titan", "Death Note",
+        "Fullmetal Alchemist: Brotherhood", "Cowboy Bebop", "Neon Genesis Evangelion"
+    ];
+
+    const ANIME_IMAGE_CATEGORIES = [
+        "waifu", "neko", "shinobu", "megumin", "bully", "cuddle", "cry", "hug"
+    ];
+
+    const POZE_ANIME_URLS = (function() {
+        const urls = [];
+        for (let i = 0; i < 50; i++) {
+            const category = ANIME_IMAGE_CATEGORIES[i % ANIME_IMAGE_CATEGORIES.length];
+            urls.push(`https://i.waifu.pics/${category}/${Math.floor(Math.random() * 300) + 1}.jpg`);
+        }
+        return urls;
+    })();
+
+    const hugImages = [
+        "https://i.imgur.com/7b3b3b1.png",
+        "https://i.imgur.com/8c8c8c2.png",
+        "https://i.imgur.com/9d9d9d3.png"
+    ];
+
+    const emojis = [
+        "🦊", "🇯🇵", "🏳️‍🌈", "😊", "😍", "😂", "😢", "❤️", "🔥", "🌟", "🎉"
+    ];
+
+    // ============================================
+    // 🎨 CULORI IMPLICITE
+    // ============================================
+    let colors = {
+        headerGradientFrom: '#FFD700',
+        headerGradientTo: '#FFC107',
+        bodyBg: '#FFF59D',
+        botBg: '#FFC107',
+        botText: '#000000',
+        userBg: '#E1BEE7',
+        userText: '#000000',
+        botNameColor: '#000000',
+        accent: '#FFD700',
+        panelBg: '#FFFFFF'
+    };
+
+    const user = {
+        name: "Japonezul",
+        avatar: "https://imgcdn.stablediffusionweb.com/2024/11/8/5a58a7ab-7f46-4910-8a63-bf6d6e4e65e6.jpg",
+        color: "#9C27B0"
+    };
+
+    const senko = {
+        name: "Senko San",
+        avatar: "https://upload.wikimedia.org/wikipedia/en/f/fe/Sewayaki_Kitsune_no_Senko-san_volume_1_cover.jpg",
+        color: "#FFD700"
+    };
+
+    // ============================================
+    // 📁 NOI FUNCȚII PENTRU GESTIONAREA FIȘIERELOR
+    // ============================================
+    const temporaryUrls = new Set();
+
+    function cleanupTemporaryUrls() {
+        temporaryUrls.forEach(url => {
+            try { URL.revokeObjectURL(url); } catch (e) {}
+        });
+        temporaryUrls.clear();
+    }
+
+    function getTemporaryUrl(file) {
+        const url = URL.createObjectURL(file);
+        temporaryUrls.add(url);
+        return url;
+    }
+
+    // ============================================
+    // ⚙️ STARE GLOBALĂ
+    // ============================================
+    let messages = [];
+    let q1Active = false;
+    let lastUserMessage = null;
+    let fileSender = null;
+    let isDragging = false;
+    let isResizing = false;
+    let dragStartX, dragStartY;
+    let resizeStartX, resizeStartY, resizeStartWidth, resizeStartHeight;
+    let position = { x: 20, y: 20 };
+    let size = { width: '350px', height: '500px' };
+    let container, header, messagesPanel, inputPanel, resizeHandle;
+    let elements = {};
+
+    // Detectare dispozitiv mobil
+    const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // ============================================
+    // ❓ INFORMAȚII PENTRU PANOUL DE AJUTOR
+    // ============================================
+    const HELP_INFO = {
+        title: "📖 Ghid de Utilizare - Senko San Chatbot",
+        sections: [
+            {
+                title: "💬 Comenzi de Bază",
+                content: [
+                    "• <b>Salut / Bună / Konichiwa</b> - Saluturi romantice",
+                    "• <b>anime</b> - Primești un titlu de anime aleator",
+                    "• <b>poze anime</b> - Primești o poză anime aleatoare",
+                    "• <b>poza ta</b> - Afișează poza de profil a lui Senko San",
+                    "• <b>zar</b> - Aruncă un zar (1-6)",
+                    "• <b>phf [piatră/hârtie/foarfecă]</b> - Joacă Piatră-Hârtie-Foarfecă",
+                    "• <b>da sau ba?</b> - Răspuns aleator",
+                    "• <b>qdn</b> - Răspunde cu Da sau Nu",
+                    "• <b>qq [mesaj]</b> - Repetă ultimul mesaj",
+                    "• <b>ștergere mesaje</b> - Șterge toate mesajele"
+                ]
+            },
+            {
+                title: "🎨 Personalizare",
+                content: [
+                    "• <b>Buton 🎨</b> - Deschide panoul de culori",
+                    "• <b>Buton 📁</b> - Încarcă fișiere sau poze",
+                    "• <b>Drag & Drop</b> - Trage și plasează fișiere direct în fereastră",
+                    "• <b>Redimensionare</b> - Apasă și trage din colțul dreapta-jos"
+                ]
+            },
+            {
+                title: "📱 Funcții Mobile (Android)",
+                content: [
+                    "• <b>Drag & Drop</b> - Ține apasă pe fișier și trage în fereastră",
+                    "• <b>Redimensionare</b> - Apasă lung pe butonul de redimensionare (colț dreapta-jos) și glisează",
+                    "• <b>Deplasare</b> - Apasă și ține pe bară, apoi glisează"
+                ]
+            },
+            {
+                title: "🔒 Cenzură Digitală",
+                content: [
+                    "• <b>Comanda censor</b> - Activează/Dezactivează cenzura globală",
+                    "• <b>Comanda qp</b> - Comută între * și cuvinte de înlocuire",
+                    "• <b>Comanda pl</b> - Cenzurează cuvintele doar pentru utilizator",
+                    "• <b>Comanda pp</b> - Cenzurează cuvintele doar pentru Senko San"
+                ]
+            },
+            {
+                title: "❤️ Funcții Speciale",
+                content: [
+                    "• Răspunde automat la mesaje pozitive (mulțumesc, te iubesc etc.)",
+                    "• Reacționează la cuvinte negative cu mesaje de iubire",
+                    "• Suportă emoji-uri personalizate",
+                    "• Salvează automat setările"
+                ]
+            }
+        ]
+    };
+
+    // ============================================
+    // 🔧 FUNCȚII UTILITARE
+    // ============================================
+    function getRandomElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Polyfills
+    if (typeof GM_setValue === 'undefined') {
+        window.GM_setValue = function(key, value) {
+            try { localStorage.setItem(key, JSON.stringify(value)); }
+            catch (e) { console.error("GM_setValue fallback failed:", e); }
+        };
+    }
+    if (typeof GM_getValue === 'undefined') {
+        window.GM_getValue = function(key, defaultValue) {
+            try {
+                const value = localStorage.getItem(key);
+                return value ? JSON.parse(value) : defaultValue;
+            } catch (e) {
+                console.error("GM_getValue fallback failed:", e);
+                return defaultValue;
+            }
+        };
+    }
+
+    // ============================================
+    // 🎨 REGENEREAZĂ CSS-UL DINAMIC
+    // ============================================
+    function regenerateCSS() {
+        const oldStyle = document.getElementById('senko-san-dynamic-css');
+        if (oldStyle) oldStyle.remove();
+
+        const style = document.createElement('style');
+        style.id = 'senko-san-dynamic-css';
+        style.textContent = `
+            :root {
+                --senko-header-from: ${colors.headerGradientFrom};
+                --senko-header-to: ${colors.headerGradientTo};
+                --senko-body-bg: ${colors.bodyBg};
+                --senko-bot-bg: ${colors.botBg};
+                --senko-bot-text: ${colors.botText};
+                --senko-user-bg: ${colors.userBg};
+                --senko-user-text: ${colors.userText};
+                --senko-accent: ${colors.accent};
+                --senko-panel-bg: ${colors.panelBg};
+            }
+
+            #senko-san-chat-container {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                position: fixed;
+                bottom: ${position.y}px;
+                right: ${position.x}px;
+                width: ${size.width};
+                height: ${size.height};
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #ddd;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                background: var(--senko-panel-bg);
+                z-index: 999999;
+                overflow: hidden;
+                min-width: 250px;
+                min-height: 300px;
+                max-width: 90vw;
+                max-height: 80vh;
+                transition: width 0.18s ease, height 0.18s ease, right 0.18s ease, bottom 0.18s ease;
+            }
+
+            #senko-san-header {
+                background: linear-gradient(90deg, var(--senko-header-from), var(--senko-header-to));
+                padding: 8px 12px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+                cursor: move;
+                user-select: none;
+                color: #fff;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                touch-action: none;
+            }
+
+            #senko-san-header-left { display: flex; align-items: center; gap: 8px; }
+            #senko-san-header img.avatar {
+                width: 28px; height: 28px; border-radius: 50%;
+                object-fit: cover; border: 2px solid rgba(255,255,255,0.6);
+            }
+            #senko-san-header h1 {
+                margin: 0; font-size: 1.1em; color: #fff; font-weight: 700;
+                white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            }
+            #senko-san-header-right { display: flex; align-items: center; gap: 4px; }
+
+            .senko-san-header-button {
+                background: transparent; border: none; font-size: 1.1em;
+                cursor: pointer; color: #fff; padding: 2px 4px; line-height: 1;
+                border-radius: 3px; width: 32px; height: 32px;
+                display: flex; align-items: center; justify-content: center;
+                transition: background 0.2s; touch-action: manipulation;
+            }
+            .senko-san-header-button:hover { background: rgba(255, 255, 255, 0.15); }
+
+            #senko-san-messages-panel {
+                flex: 1; padding: 10px; overflow-y: auto;
+                background-color: var(--senko-body-bg);
+                max-height: calc(${(parseInt(size.height) || 500) - 140}px);
+            }
+
+            .senko-san-message {
+                display: flex; align-items: flex-start; margin-bottom: 10px;
+                max-width: 85%;
+            }
+            .senko-san-message.senko { align-self: flex-start; }
+            .senko-san-message.user { align-self: flex-end; flex-direction: row-reverse; }
+            .senko-san-message img.avatar {
+                width: 26px; height: 26px; border-radius: 50%;
+                object-fit: cover; margin-right: 6px;
+            }
+            .senko-san-message.user img.avatar { margin-right: 0; margin-left: 6px; }
+
+            .senko-san-message-content-wrapper {
+                display: flex; flex-direction: column; max-width: 75%;
+            }
+
+            .senko-san-message-sender {
+                font-weight: bold; font-size: 0.8em; margin-bottom: 2px;
+                display: block; color: ${colors.botNameColor} !important;
+            }
+
+            .senko-san-message-content {
+                padding: 7px 10px; border-radius: 14px; word-wrap: break-word;
+                position: relative; font-size: 0.85em;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            }
+            .senko-san-message.senko .senko-san-message-content {
+                background-color: var(--senko-bot-bg);
+                border: 1px solid var(--senko-bot-bg);
+                color: var(--senko-bot-text);
+            }
+            .senko-san-message.user .senko-san-message-content {
+                background-color: var(--senko-user-bg);
+                border: 1px solid var(--senko-user-text);
+                color: var(--senko-user-text);
+            }
+
+            .senko-san-message-time {
+                font-size: 0.7em; color: rgba(0, 0, 0, 0.6);
+                margin-left: 4px; align-self: flex-end;
+            }
+
+            .senko-san-message img.preview {
+                max-width: 200px; max-height: 200px; border-radius: 8px;
+                margin-top: 5px; cursor: pointer; object-fit: contain;
+            }
+
+            .senko-san-encrypted-symbol {
+                margin-left: 4px; cursor: pointer; font-size: 0.8em;
+                position: relative;
+            }
+            .senko-san-encrypted-symbol:hover::after {
+                content: "Criptat și livrat"; position: absolute;
+                background: rgba(0, 0, 0, 0.8); color: white;
+                padding: 3px 8px; border-radius: 4px; font-size: 0.7em;
+                white-space: nowrap; z-index: 10; right: 0; bottom: 100%;
+                margin-bottom: 4px;
+            }
+
+            #senko-san-input-panel {
+                display: flex; padding: 6px;
+                background-color: var(--senko-panel-bg);
+                border-top: 1px solid #ddd;
+            }
+
+            #senko-san-message-input {
+                flex: 1; padding: 8px 10px; border: 1px solid #ddd;
+                border-radius: 8px; outline: none; font-size: 0.85em;
+                min-width: 0;
+            }
+
+            .senko-san-button {
+                padding: 8px 12px; margin-left: 6px; border: none;
+                border-radius: 8px; background-color: var(--senko-accent);
+                color: #000000; cursor: pointer; font-weight: bold;
+                font-size: 0.85em; transition: background 0.2s;
+                touch-action: manipulation;
+            }
+            .senko-san-button:hover { background-color: var(--senko-header-to); }
+            .senko-san-button:disabled { opacity: 0.6; cursor: not-allowed; }
+            .senko-san-emoji-button { background-color: var(--senko-bot-bg); font-size: 1.1em; padding: 8px 10px; }
+
+            .lcb-resize-handle {
+                position: absolute; width: 16px; height: 16px;
+                right: 0; bottom: 0; background: var(--senko-accent);
+                cursor: nwse-resize; border-radius: 0 0 8px 0;
+                z-index: 10; touch-action: none;
+            }
+
+            #senko-san-emoji-picker {
+                position: fixed; bottom: 70px; right: 20px;
+                background: white; padding: 8px; border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); z-index: 1000000;
+                display: none; max-width: 300px; max-height: 150px;
+                overflow-y: auto;
+            }
+            #senko-san-emoji-picker.active { display: block; }
+            .senko-san-emoji-option {
+                display: inline-block; font-size: 1.3em; margin: 4px;
+                cursor: pointer; padding: 2px; border-radius: 4px;
+            }
+            .senko-san-emoji-option:hover { background: #f0f0f0; }
+
+            #senko-san-color-picker {
+                position: fixed; top: 50%; left: 50%;
+                transform: translate(-50%, -50%); background: white;
+                padding: 16px; border-radius: 10px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); z-index: 1000001;
+                display: none; max-width: 320px; width: 90%;
+                max-height: 80vh; overflow-y: auto;
+            }
+            #senko-san-color-picker.active { display: block; }
+
+            .senko-san-color-picker-header {
+                display: flex; justify-content: space-between;
+                align-items: center; margin-bottom: 12px;
+                padding-bottom: 8px; border-bottom: 1px solid #eee;
+            }
+            .senko-san-color-picker-header h3 { margin: 0; font-size: 1.1em; }
+
+            .senko-san-color-option {
+                display: flex; align-items: center; margin-bottom: 10px;
+            }
+            .senko-san-color-option label {
+                margin-left: 8px; font-size: 0.85em; flex: 1;
+            }
+            .senko-san-color-option input {
+                width: 28px; height: 28px; border: 2px solid #ddd;
+                cursor: pointer; border-radius: 4px;
+            }
+
+            .senko-san-color-actions {
+                display: flex; gap: 8px; margin-top: 12px;
+                padding-top: 12px; border-top: 1px solid #eee;
+            }
+
+            #senko-san-file-modal {
+                display: none; position: fixed; z-index: 1000000;
+                left: 0; top: 0; width: 100%; height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            #senko-san-file-modal-content {
+                background-color: #fefefe; margin: 30% auto; padding: 16px;
+                border: 1px solid #888; width: 80%; max-width: 350px;
+                border-radius: 10px; text-align: center;
+            }
+            #senko-san-file-sender-selector {
+                margin: 12px 0; display: flex; justify-content: center; gap: 10px;
+            }
+            #senko-san-file-sender-selector button {
+                padding: 8px 12px; border: 1px solid #ddd;
+                border-radius: 6px; background: white; cursor: pointer;
+                touch-action: manipulation;
+            }
+            #senko-san-file-sender-selector button.selected {
+                background: var(--senko-accent); border-color: var(--senko-header-to);
+            }
+            #senko-san-modal-buttons {
+                display: flex; justify-content: center; gap: 8px; margin-top: 12px;
+            }
+            #senko-san-modal-buttons button {
+                padding: 8px 16px; border-radius: 6px; border: none;
+                cursor: pointer; touch-action: manipulation;
+            }
+
+            .lcb-btn {
+                padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc;
+                background: #f0f0f0; cursor: pointer; font-weight: 500;
+                touch-action: manipulation;
+            }
+            .lcb-btn:hover { background: #e0e0e0; }
+
+            #senko-san-help-modal {
+                display: none; position: fixed; z-index: 1000002;
+                left: 0; top: 0; width: 100%; height: 100%;
+                background-color: rgba(0, 0, 0, 0.6); overflow-y: auto;
+            }
+            #senko-san-help-content {
+                background-color: ${colors.bodyBg}; margin: 20px auto; padding: 0;
+                border-radius: 10px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+                width: 90%; max-width: 600px; max-height: 85vh;
+                overflow: hidden; display: flex; flex-direction: column;
+            }
+            #senko-san-help-header {
+                background: linear-gradient(90deg, var(--senko-header-from), var(--senko-header-to));
+                padding: 12px 16px; display: flex; justify-content: space-between;
+                align-items: center; color: white;
+                border-top-left-radius: 10px; border-top-right-radius: 10px;
+            }
+            #senko-san-help-header h2 { margin: 0; font-size: 1.2em; }
+            #senko-san-help-close {
+                background: transparent; border: none; color: white;
+                font-size: 1.5em; cursor: pointer; padding: 4px 8px;
+                line-height: 1;
+            }
+            #senko-san-help-close:hover { background: rgba(255, 255, 255, 0.15); }
+            #senko-san-help-body {
+                padding: 16px; overflow-y: auto; flex: 1;
+                color: #000000;
+            }
+            .senko-san-help-section { margin-bottom: 20px; }
+            .senko-san-help-section h3 {
+                color: ${colors.botText}; margin-bottom: 8px;
+                padding-bottom: 4px; border-bottom: 1px solid #eee;
+                font-size: 1.05em;
+            }
+            .senko-san-help-section ul { margin: 0; padding-left: 20px; }
+            .senko-san-help-section li {
+                margin-bottom: 6px; font-size: 0.9em; line-height: 1.4;
+                color: #000000;
+            }
+
+            @media (max-width: 768px) {
+                #senko-san-chat-container {
+                    width: 95vw; height: 60vh; bottom: 10px; right: 10px;
+                    max-width: 95vw !important; max-height: 80vh !important;
+                }
+                #senko-san-emoji-picker { bottom: 60px; right: 10px; max-width: 250px; }
+                #senko-san-header h1 { font-size: 1em; }
+                #senko-san-help-content { width: 95%; margin: 10px auto; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ============================================
+    // 💾 SALVARE / ÎNCĂRCARE SETĂRI
+    // ============================================
+    function saveSettings() {
+        try {
+            GM_setValue('senkoSanSettings', JSON.stringify({
+                position: position,
+                size: size,
+                colors: colors
+            }));
+        } catch (e) { console.error("Nu se pot salva setările:", e); }
+    }
+
+    function loadSettings() {
+        try {
+            const saved = GM_getValue('senkoSanSettings', null);
+            if (saved) {
+                const settings = JSON.parse(saved);
+                position = settings.position || position;
+                size = settings.size || size;
+                colors = settings.colors || colors;
+            }
+        } catch (e) { console.error("Nu se pot încărca setările:", e); }
+    }
+
+    // ============================================
+    // 📝 REGULI PENTRU RĂSPUNSURI
+    // ============================================
+    const responseRules = [
+        {
+            pattern: /^(salut|sal|salutare|bună ziua|bună seara|bună dimineața|hei,? am venit să? te salut|salutări din partea mea|hei salut)$/i,
+            response: (message) => {
+                const normalized = message.toLowerCase().trim();
+                for (const [key, responses] of Object.entries(GREETINGS)) {
+                    if (normalized.includes(key.toLowerCase().replace(/[.,!?]/g, ''))) {
+                        return getRandomElement(responses);
+                    }
+                }
+                return getRandomElement(GREETINGS['salut']);
+            }
+        },
+        { pattern: /^konichiwa$/i, response: () => getRandomElement(GREETINGS['konichiwa']) },
+        { pattern: /^qdn\s*/i, response: () => Math.random() < 0.5 ? "Da" : "Nu" },
+        { pattern: /^anime$/i, response: () => getRandomElement(ANIME_TITLES) },
+        {
+            pattern: /^poze anime$/i,
+            response: () => ({ type: 'file', content: getRandomElement(POZE_ANIME_URLS), isImage: true })
+        },
+        {
+            pattern: 'q1',
+            response: () => {
+                q1Active = true;
+                return "Toate comenzile au fost dezactivate, cu excepția q1, qq, ștergere mesaje și it-secret. 😢";
+            }
+        },
+        {
+            pattern: /^qq\s*/i,
+            response: () => lastUserMessage ? lastUserMessage.replace(/^qq\s*/i, '').trim() : null
+        },
+        {
+            pattern: 'ștergere mesaje',
+            response: () => { messages = []; return null; }
+        },
+        {
+            pattern: 'it-secret',
+            response: () => {
+                const scriptContent = document.querySelector('script:last-child').textContent;
+                const blob = new Blob([scriptContent], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                GM_download({ url: url, name: 'senko-san-script.js', saveAs: true, onload: () => URL.revokeObjectURL(url) });
+                return "Iată scriptul complet, dragostea mea! ❤️";
+            }
+        },
+        { pattern: 'poza ta', response: { type: 'file', content: senko.avatar, isImage: true } },
+        {
+            pattern: 'poza anime',
+            response: () => ({ type: 'file', content: hugImages[Math.floor(Math.random() * hugImages.length)], isImage: true })
+        },
+        {
+            pattern: 'zar',
+            response: () => {
+                const diceRoll = Math.floor(Math.random() * 6) + 1;
+                return diceRoll === 6
+                    ? `Am dat ${diceRoll}! Norocul tău e și al meu! 🎉❤️`
+                    : `Am dat ${diceRoll}! ${diceRoll > 3 ? 'Norocos!' : 'Mai încearcă!'}`;
+            }
+        },
+        {
+            pattern: /^phf (piatră|hârtie|foarfecă)$/i,
+            response: (message) => {
+                const userChoice = message.match(/^phf (piatră|hârtie|foarfecă)$/i)[1].toLowerCase();
+                const options = ['piatră', 'hârtie', 'foarfecă'];
+                const senkoChoice = options[Math.floor(Math.random() * options.length)];
+                if (userChoice === senkoChoice) {
+                    setTimeout(() => {
+                        addMessage(senko.name, hugImages[Math.floor(Math.random() * hugImages.length)], true, true);
+                    }, 500);
+                    return `Am ales și eu ${senkoChoice}! Remiză! 🥺 *te îmbrățișez* 🤗`;
+                } else if (
+                    (userChoice === 'piatră' && senkoChoice === 'foarfecă') ||
+                    (userChoice === 'hârtie' && senkoChoice === 'piatră') ||
+                    (userChoice === 'foarfecă' && senkoChoice === 'hârtie')
+                ) {
+                    return `Am ales ${senkoChoice}... Ai câștigat! 😢 *plânge* Dar te iubesc oricum! ❤️`;
+                } else {
+                    return `Am ales ${senkoChoice}! Am câștigat... 😭 *mă simt vinovată* Dar ești cel mai important pentru mine!`;
+                }
+            }
+        },
+        { pattern: /^(da|nu) sau ba\?$/i, response: () => ['da', 'nu', 'ba', 'poate'][Math.floor(Math.random() * 4)] },
+        {
+            pattern: /^censor$/i,
+            response: () => {
+                censorMode = !censorMode;
+                saveCensorSettings();
+                return `Cenzura globală este acum ${censorMode ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^qp$/i,
+            response: () => {
+                useReplacementWords = !useReplacementWords;
+                saveCensorSettings();
+                return `Cuvintele de înlocuire sunt acum ${useReplacementWords ? 'activate' : 'dezactivate'}.`;
+            }
+        },
+        {
+            pattern: /^pl$/i,
+            response: () => {
+                individualCensor[user.name] = !individualCensor[user.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele tale este acum ${individualCensor[user.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        },
+        {
+            pattern: /^pp$/i,
+            response: () => {
+                individualCensor[senko.name] = !individualCensor[senko.name];
+                saveCensorSettings();
+                return `Cenzura pentru mesajele mele este acum ${individualCensor[senko.name] ? 'activată' : 'dezactivată'}.`;
+            }
+        }
+    ];
+
+    function getResponse(message) {
+        if (q1Active && !message.startsWith('qq ') && !['q1', 'ștergere mesaje', 'it-secret'].includes(message.toLowerCase().trim())) {
+            return null;
+        }
+
+        for (const rule of responseRules) {
+            if (rule.pattern instanceof RegExp) {
+                if (rule.pattern.test(message)) {
+                    return typeof rule.response === 'function' ? rule.response(message) : rule.response;
+                }
+            } else if (message.toLowerCase().includes(rule.pattern.toLowerCase())) {
+                return typeof rule.response === 'function' ? rule.response(message) : rule.response;
+            }
+        }
+
+        const lowerMessage = message.toLowerCase();
+        const badWords = ['prost', 'idiot', 'esti curva', 'esti o proasta', 'am ura pe tine', 'esti dușmanul meu', 'mizerabil', 'baka'];
+        if (badWords.some(word => lowerMessage.includes(word))) {
+            return "😢💔 *te iubesc oricum* Nu mă părăsi, te rog... ❤️";
+        }
+        const positiveWords = ['mulțumesc', 'îți mulțumesc', 'iti multumesc', 'mersi', 'esti viata mea', 'ești drăguță', 'esti draguta', 'esti frumoasa', 'ești frumoasă', 'te ador', 'ești minunată', 'te iubesc', 'te plac'];
+        if (positiveWords.some(word => lowerMessage.includes(word))) {
+            return `*te îmbrățișez strâns* ${['❤️', '💖', '😘', '🤗'][Math.floor(Math.random() * 4)]} Ești totul pentru mine!`;
+        }
+        return null;
+    }
+
+    // ============================================
+    // 📁 FUNCȚII PENTRU FIȘIERE/POZE
+    // ============================================
+    function addMessage(sender, content, isFile = false, isImage = false, file = null) {
+        const censoredContent = censorBadWords(content, sender);
+        const message = {
+            sender: sender,
+            content: censoredContent,
+            time: new Date().toLocaleTimeString('ro-RO', { hour: '2-digit', minute: '2-digit' }),
+            isFile: isFile,
+            isImage: isImage,
+            file: file
+        };
+        messages.push(message);
+        if (messages.length > 100) messages.shift();
+        renderMessages();
+        scrollToBottom();
+    }
+
+    function renderMessages() {
+        if (!messagesPanel) return;
+        messagesPanel.innerHTML = '';
+        messages.forEach((msg) => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `senko-san-message ${msg.sender === senko.name ? 'senko' : 'user'}`;
+
+            const avatarImg = document.createElement('img');
+            avatarImg.src = msg.sender === senko.name ? senko.avatar : user.avatar;
+            avatarImg.alt = msg.sender;
+            avatarImg.className = 'avatar';
+            avatarImg.crossOrigin = "anonymous";
+
+            const messageContentWrapper = document.createElement('div');
+            messageContentWrapper.className = 'senko-san-message-content-wrapper';
+
+            const messageContentDiv = document.createElement('div');
+            messageContentDiv.className = 'senko-san-message-content';
+
+            const senderName = document.createElement('span');
+            senderName.className = 'senko-san-message-sender';
+            senderName.textContent = msg.sender;
+            messageContentWrapper.appendChild(senderName);
+
+            if (msg.isFile) {
+                if (msg.isImage) {
+                    const imgPreview = document.createElement('img');
+                    imgPreview.src = msg.content;
+                    imgPreview.className = 'preview';
+                    imgPreview.alt = 'Preview';
+                    imgPreview.style.maxWidth = '200px';
+                    imgPreview.style.maxHeight = '200px';
+                    imgPreview.style.borderRadius = '8px';
+                    imgPreview.style.cursor = 'pointer';
+                    imgPreview.style.marginTop = '5px';
+                    imgPreview.addEventListener('click', () => {
+                        window.open(msg.content, '_blank');
+                    });
+                    messageContentDiv.appendChild(imgPreview);
+
+                    const downloadButton = document.createElement('button');
+                    downloadButton.textContent = '📥 Descarcă';
+                    downloadButton.style.marginTop = '5px';
+                    downloadButton.style.padding = '4px 8px';
+                    downloadButton.style.border = 'none';
+                    downloadButton.style.borderRadius = '4px';
+                    downloadButton.style.backgroundColor = '#FFD700';
+                    downloadButton.style.cursor = 'pointer';
+
+                    downloadButton.addEventListener('click', () => {
+                        if (msg.file) {
+                            const url = getTemporaryUrl(msg.file);
+                            GM_download({
+                                url: url,
+                                name: `senko-san-image-${Date.now()}.${msg.file.name.split('.').pop() || 'jpg'}`,
+                                saveAs: true,
+                                onload: () => URL.revokeObjectURL(url)
+                            });
+                        } else if (msg.content.startsWith('data:')) {
+                            const byteString = atob(msg.content.split(',')[1]);
+                            const mimeString = msg.content.split(',')[0].split(':')[1].split(';')[0];
+                            const ab = new ArrayBuffer(byteString.length);
+                            const ia = new Uint8Array(ab);
+                            for (let i = 0; i < byteString.length; i++) {
+                                ia[i] = byteString.charCodeAt(i);
+                            }
+                            const blob = new Blob([ab], { type: mimeString });
+                            const url = URL.createObjectURL(blob);
+                            GM_download({
+                                url: url,
+                                name: `senko-san-image-${Date.now()}.jpg`,
+                                saveAs: true,
+                                onload: () => URL.revokeObjectURL(url)
+                            });
+                        } else {
+                            GM_download({
+                                url: msg.content,
+                                name: `senko-san-image-${Date.now()}.jpg`,
+                                saveAs: true
+                            });
+                        }
+                    });
+                    messageContentDiv.appendChild(downloadButton);
+                } else {
+                    const downloadButton = document.createElement('button');
+                    downloadButton.textContent = '📥 Descarcă fișier';
+                    downloadButton.style.padding = '4px 8px';
+                    downloadButton.style.border = 'none';
+                    downloadButton.style.borderRadius = '4px';
+                    downloadButton.style.backgroundColor = '#FFD700';
+                    downloadButton.style.cursor = 'pointer';
+
+                    downloadButton.addEventListener('click', () => {
+                        if (msg.file) {
+                            const url = getTemporaryUrl(msg.file);
+                            GM_download({
+                                url: url,
+                                name: msg.file.name,
+                                saveAs: true,
+                                onload: () => URL.revokeObjectURL(url)
+                            });
+                        } else if (msg.content.startsWith('data:')) {
+                            const byteString = atob(msg.content.split(',')[1]);
+                            const mimeString = msg.content.split(',')[0].split(':')[1].split(';')[0];
+                            const ab = new ArrayBuffer(byteString.length);
+                            const ia = new Uint8Array(ab);
+                            for (let i = 0; i < byteString.length; i++) {
+                                ia[i] = byteString.charCodeAt(i);
+                            }
+                            const blob = new Blob([ab], { type: mimeString });
+                            const url = URL.createObjectURL(blob);
+                            GM_download({
+                                url: url,
+                                name: `senko-san-file-${Date.now()}`,
+                                saveAs: true,
+                                onload: () => URL.revokeObjectURL(url)
+                            });
+                        } else {
+                            GM_download({
+                                url: msg.content,
+                                name: `senko-san-file-${Date.now()}`,
+                                saveAs: true
+                            });
+                        }
+                    });
+                    messageContentDiv.appendChild(downloadButton);
+                }
+            } else {
+                messageContentDiv.innerHTML = escapeHtml(msg.content);
+            }
+
+            const messageMetaDiv = document.createElement('div');
+            messageMetaDiv.style.display = 'flex';
+            messageMetaDiv.style.alignItems = 'center';
+
+            const timeSpan = document.createElement('span');
+            timeSpan.className = 'senko-san-message-time';
+            timeSpan.textContent = msg.time;
+
+            const encryptedSpan = document.createElement('span');
+            encryptedSpan.className = 'senko-san-encrypted-symbol';
+            encryptedSpan.textContent = '☑️';
+
+            messageMetaDiv.appendChild(timeSpan);
+            messageMetaDiv.appendChild(encryptedSpan);
+            messageContentDiv.appendChild(messageMetaDiv);
+            messageContentWrapper.appendChild(messageContentDiv);
+            messageDiv.appendChild(avatarImg);
+            messageDiv.appendChild(messageContentWrapper);
+            messagesPanel.appendChild(messageDiv);
+        });
+    }
+
+    function scrollToBottom() {
+        if (messagesPanel) messagesPanel.scrollTop = messagesPanel.scrollHeight;
+    }
+
+    function applySizeToUI() {
+        if (!container) return;
+        container.style.width = size.width;
+        container.style.height = size.height;
+        container.style.maxWidth = size.width.includes('%') ? '86%' : 'none';
+        if (messagesPanel) {
+            const heightValue = parseInt(size.height) || 500;
+            messagesPanel.style.maxHeight = `calc(${heightValue}px - 140px)`;
+        }
+    }
+
+    // ============================================
+    // 📤 SETUP DRAG & DROP
+    // ============================================
+    function setupDragAndDrop() {
+        container.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            container.style.border = '2px dashed ' + colors.accent;
+        });
+        container.addEventListener('dragleave', () => {
+            container.style.border = '1px solid #ddd';
+        });
+        container.addEventListener('drop', (e) => {
+            e.preventDefault();
+            container.style.border = '1px solid #ddd';
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                fileSender = user.name;
+                const url = getTemporaryUrl(file);
+                const isImage = file.type.startsWith('image/');
+                addMessage(fileSender, url, true, isImage, file);
+            }
+        });
+    }
+
+    // ============================================
+    // 🏗️ CREARE ELEMENTE DOM
+    // ============================================
+    function createDOM() {
+        container = document.createElement('div');
+        container.id = 'senko-san-chat-container';
+
+        header = document.createElement('div');
+        header.id = 'senko-san-header';
+
+        const headerLeft = document.createElement('div');
+        headerLeft.id = 'senko-san-header-left';
+
+        const senkoAvatarHeader = document.createElement('img');
+        senkoAvatarHeader.src = senko.avatar;
+        senkoAvatarHeader.alt = senko.name;
+        senkoAvatarHeader.className = 'avatar';
+        senkoAvatarHeader.crossOrigin = "anonymous";
+
+        const headerTitle = document.createElement('h1');
+        headerTitle.textContent = senko.name;
+
+        headerLeft.appendChild(senkoAvatarHeader);
+        headerLeft.appendChild(headerTitle);
+
+        const headerRight = document.createElement('div');
+        headerRight.id = 'senko-san-header-right';
+
+        const fileButtonHeader = document.createElement('button');
+        fileButtonHeader.className = 'senko-san-header-button';
+        fileButtonHeader.textContent = '📁';
+        fileButtonHeader.title = 'Încarcă fișier/poză';
+
+        const colorButton = document.createElement('button');
+        colorButton.className = 'senko-san-header-button';
+        colorButton.textContent = '🎨';
+        colorButton.title = 'Schimbă culorile';
+
+        const helpButton = document.createElement('button');
+        helpButton.className = 'senko-san-header-button';
+        helpButton.textContent = 'ℹ️';
+        helpButton.title = 'Ajutor și informații';
+
+        const closeButton = document.createElement('button');
+        closeButton.className = 'senko-san-header-button';
+        closeButton.textContent = '×';
+        closeButton.title = 'Închide chatul definitiv';
+
+        headerRight.appendChild(fileButtonHeader);
+        headerRight.appendChild(colorButton);
+        headerRight.appendChild(helpButton);
+        headerRight.appendChild(closeButton);
+
+        header.appendChild(headerLeft);
+        header.appendChild(headerRight);
+
+        messagesPanel = document.createElement('div');
+        messagesPanel.id = 'senko-san-messages-panel';
+
+        inputPanel = document.createElement('div');
+        inputPanel.id = 'senko-san-input-panel';
+
+        const emojiButton = document.createElement('button');
+        emojiButton.className = 'senko-san-button senko-san-emoji-button';
+        emojiButton.textContent = '🦊';
+        emojiButton.title = 'Selectează emoji';
+
+        const messageInput = document.createElement('input');
+        messageInput.id = 'senko-san-message-input';
+        messageInput.type = 'text';
+        messageInput.placeholder = 'Scrie un mesaj...';
+        messageInput.autocomplete = 'off';
+
+        const sendButton = document.createElement('button');
+        sendButton.className = 'senko-san-button';
+        sendButton.textContent = 'Trimite';
+
+        inputPanel.appendChild(emojiButton);
+        inputPanel.appendChild(messageInput);
+        inputPanel.appendChild(sendButton);
+
+        resizeHandle = document.createElement('div');
+        resizeHandle.className = 'lcb-resize-handle';
+        resizeHandle.id = 'lcb-resize-handle';
+
+        container.appendChild(header);
+        container.appendChild(messagesPanel);
+        container.appendChild(inputPanel);
+        container.appendChild(resizeHandle);
+
+        // Panou emoji
+        const emojiPicker = document.createElement('div');
+        emojiPicker.id = 'senko-san-emoji-picker';
+        emojis.forEach(emoji => {
+            const emojiOption = document.createElement('span');
+            emojiOption.className = 'senko-san-emoji-option';
+            emojiOption.textContent = emoji;
+            emojiOption.addEventListener('click', () => {
+                messageInput.value += emoji;
+                messageInput.focus();
+                emojiPicker.classList.remove('active');
+            });
+            emojiPicker.appendChild(emojiOption);
+        });
+
+        emojiButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            emojiPicker.classList.toggle('active');
+        });
+
+        // Panou culori
+        const colorPicker = document.createElement('div');
+        colorPicker.id = 'senko-san-color-picker';
+
+        const colorPickerHeader = document.createElement('div');
+        colorPickerHeader.className = 'senko-san-color-picker-header';
+
+        const colorPickerTitle = document.createElement('h3');
+        colorPickerTitle.textContent = '🎨 Personalizează Culorile';
+
+        const colorPickerClose = document.createElement('button');
+        colorPickerClose.className = 'lcb-btn';
+        colorPickerClose.textContent = '×';
+        colorPickerClose.style.padding = '4px 8px';
+        colorPickerClose.style.fontSize = '1.2em';
+
+        colorPickerHeader.appendChild(colorPickerTitle);
+        colorPickerHeader.appendChild(colorPickerClose);
+
+        const colorOptions = [
+            { id: 'header-bg-from', label: 'Antet (Start)', default: colors.headerGradientFrom },
+            { id: 'header-bg-to', label: 'Antet (Sfârșit)', default: colors.headerGradientTo },
+            { id: 'message-panel-bg', label: 'Fundal Mesaje', default: colors.bodyBg },
+            { id: 'bot-message-bg', label: 'Mesaje Senko', default: colors.botBg },
+            { id: 'bot-message-text', label: 'Text Mesaje Senko', default: colors.botText },
+            { id: 'user-message-bg', label: 'Mesaje Utilizator', default: colors.userBg },
+            { id: 'user-message-text', label: 'Text Mesaje Utilizator', default: colors.userText },
+            { id: 'accent-color', label: 'Culoare Accent', default: colors.accent },
+            { id: 'panel-bg', label: 'Fundal Panou', default: colors.panelBg }
+        ];
+
+        colorOptions.forEach(option => {
+            const colorOptionDiv = document.createElement('div');
+            colorOptionDiv.className = 'senko-san-color-option';
+
+            const colorInput = document.createElement('input');
+            colorInput.type = 'color';
+            colorInput.id = option.id;
+            colorInput.value = option.default;
+
+            const colorLabel = document.createElement('label');
+            colorLabel.htmlFor = option.id;
+            colorLabel.textContent = option.label;
+
+            colorOptionDiv.appendChild(colorInput);
+            colorOptionDiv.appendChild(colorLabel);
+            colorPicker.appendChild(colorOptionDiv);
+        });
+
+        const colorActions = document.createElement('div');
+        colorActions.className = 'senko-san-color-actions';
+
+        const applyColorsButton = document.createElement('button');
+        applyColorsButton.className = 'lcb-btn';
+        applyColorsButton.textContent = 'Aplică Culorile';
+        applyColorsButton.style.backgroundColor = colors.accent;
+
+        const cancelColorsButton = document.createElement('button');
+        cancelColorsButton.className = 'lcb-btn';
+        cancelColorsButton.textContent = 'Anulează';
+
+        const resetColorsButton = document.createElement('button');
+        resetColorsButton.className = 'lcb-btn';
+        resetColorsButton.textContent = 'Resetare';
+
+        colorActions.appendChild(cancelColorsButton);
+        colorActions.appendChild(resetColorsButton);
+        colorActions.appendChild(applyColorsButton);
+
+        colorPicker.appendChild(colorPickerHeader);
+        colorPicker.appendChild(colorActions);
+
+        // Modal fișiere
+        const fileModal = document.createElement('div');
+        fileModal.id = 'senko-san-file-modal';
+
+        const fileModalContent = document.createElement('div');
+        fileModalContent.id = 'senko-san-file-modal-content';
+
+        const fileModalTitle = document.createElement('h3');
+        fileModalTitle.textContent = '📁 Încarcă fișier/poză';
+
+        const fileModalText = document.createElement('p');
+        fileModalText.textContent = 'Selectează cine trimite:';
+
+        const fileSenderSelector = document.createElement('div');
+        fileSenderSelector.id = 'senko-san-file-sender-selector';
+
+        const userSenderButton = document.createElement('button');
+        userSenderButton.textContent = user.name;
+        userSenderButton.style.padding = '8px 12px';
+
+        const senkoSenderButton = document.createElement('button');
+        senkoSenderButton.textContent = senko.name;
+        senkoSenderButton.style.padding = '8px 12px';
+
+        fileSender = user.name;
+        userSenderButton.classList.add('selected');
+
+        fileSenderSelector.appendChild(userSenderButton);
+        fileSenderSelector.appendChild(senkoSenderButton);
+
+        const fileInputLabel = document.createElement('p');
+        fileInputLabel.textContent = 'Selectează fișierul:';
+        fileInputLabel.style.marginTop = '10px';
+
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.id = 'senko-san-file-input';
+        fileInput.accept = 'image/*,.pdf,.txt';
+
+        const modalButtons = document.createElement('div');
+        modalButtons.id = 'senko-san-modal-buttons';
+
+        const cancelFileButton = document.createElement('button');
+        cancelFileButton.className = 'lcb-btn';
+        cancelFileButton.textContent = 'Anulează';
+
+        const confirmFileButton = document.createElement('button');
+        confirmFileButton.className = 'lcb-btn';
+        confirmFileButton.textContent = 'Confirmă';
+        confirmFileButton.style.background = colors.accent;
+        confirmFileButton.style.color = '#000';
+
+        modalButtons.appendChild(cancelFileButton);
+        modalButtons.appendChild(confirmFileButton);
+
+        fileModalContent.appendChild(fileModalTitle);
+        fileModalContent.appendChild(fileModalText);
+        fileModalContent.appendChild(fileSenderSelector);
+        fileModalContent.appendChild(fileInputLabel);
+        fileModalContent.appendChild(fileInput);
+        fileModalContent.appendChild(modalButtons);
+
+        fileModal.appendChild(fileModalContent);
+
+        // Modal ajutor
+        const helpModal = document.createElement('div');
+        helpModal.id = 'senko-san-help-modal';
+
+        const helpContent = document.createElement('div');
+        helpContent.id = 'senko-san-help-content';
+
+        const helpHeader = document.createElement('div');
+        helpHeader.id = 'senko-san-help-header';
+
+        const helpTitle = document.createElement('h2');
+        helpTitle.textContent = HELP_INFO.title;
+
+        const helpClose = document.createElement('button');
+        helpClose.id = 'senko-san-help-close';
+        helpClose.textContent = '×';
+
+        helpHeader.appendChild(helpTitle);
+        helpHeader.appendChild(helpClose);
+
+        const helpBody = document.createElement('div');
+        helpBody.id = 'senko-san-help-body';
+
+        HELP_INFO.sections.forEach(section => {
+            const sectionDiv = document.createElement('div');
+            sectionDiv.className = 'senko-san-help-section';
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.textContent = section.title;
+
+            const sectionList = document.createElement('ul');
+            section.content.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = item;
+                sectionList.appendChild(listItem);
+            });
+
+            sectionDiv.appendChild(sectionTitle);
+            sectionDiv.appendChild(sectionList);
+            helpBody.appendChild(sectionDiv);
+        });
+
+        helpContent.appendChild(helpHeader);
+        helpContent.appendChild(helpBody);
+        helpModal.appendChild(helpContent);
+
+        document.body.appendChild(container);
+        document.body.appendChild(emojiPicker);
+        document.body.appendChild(colorPicker);
+        document.body.appendChild(fileModal);
+        document.body.appendChild(helpModal);
+
+        return {
+            container,
+            messageInput: messageInput,
+            sendButton: sendButton,
+            emojiButton: emojiButton,
+            fileButtonHeader,
+            colorButton,
+            helpButton,
+            closeButton,
+            emojiPicker,
+            colorPicker,
+            colorPickerClose,
+            fileModal,
+            helpModal,
+            helpClose,
+            cancelFileButton,
+            confirmFileButton,
+            fileInput,
+            applyColorsButton,
+            cancelColorsButton,
+            resetColorsButton,
+            userSenderButton: userSenderButton,
+            senkoSenderButton: senkoSenderButton
+        };
+    }
+
+    // ============================================
+    // 📱 FUNCȚII PENTRU TOUCH (ANDROID)
+    // ============================================
+    function getTouchPos(e) {
+        return {
+            clientX: e.touches ? e.touches[0].clientX : e.clientX,
+            clientY: e.touches ? e.touches[0].clientY : e.clientY
+        };
+    }
+
+    function handleTouchDragStart(e) {
+        if (e.target === elements.closeButton || e.target === elements.fileButtonHeader ||
+            e.target === elements.colorButton || e.target === elements.helpButton) return;
+
+        isDragging = true;
+        const touchPos = getTouchPos(e);
+        dragStartX = touchPos.clientX;
+        dragStartY = touchPos.clientY;
+        const rect = container.getBoundingClientRect();
+        const offsetX = dragStartX - rect.left;
+        const offsetY = dragStartY - rect.top;
+
+        function moveWindow(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const pos = getTouchPos(e);
+            const newLeft = pos.clientX - offsetX;
+            const newTop = pos.clientY - offsetY;
+            position.x = Math.max(8, window.innerWidth - newLeft - rect.width);
+            position.y = Math.max(8, window.innerHeight - newTop - rect.height);
+            container.style.right = `${position.x}px`;
+            container.style.bottom = `${position.y}px`;
+        }
+
+        function stopDrag() {
+            isDragging = false;
+            document.removeEventListener('touchmove', moveWindow);
+            document.removeEventListener('touchend', stopDrag);
+            document.removeEventListener('mousemove', moveWindow);
+            document.removeEventListener('mouseup', stopDrag);
+            saveSettings();
+        }
+
+        document.addEventListener('touchmove', moveWindow, { passive: false });
+        document.addEventListener('touchend', stopDrag);
+        document.addEventListener('mousemove', moveWindow);
+        document.addEventListener('mouseup', stopDrag);
+    }
+
+    function handleTouchResizeStart(e) {
+        e.stopPropagation();
+        isResizing = true;
+        const touchPos = getTouchPos(e);
+        resizeStartX = touchPos.clientX;
+        resizeStartY = touchPos.clientY;
+        const rect = container.getBoundingClientRect();
+        resizeStartWidth = rect.width;
+        resizeStartHeight = rect.height;
+
+        function resizeWindow(e) {
+            if (!isResizing) return;
+            e.preventDefault();
+            const pos = getTouchPos(e);
+            const newWidth = resizeStartWidth + (pos.clientX - resizeStartX);
+            const newHeight = resizeStartHeight + (pos.clientY - resizeStartY);
+            size.width = `${Math.max(newWidth, 250)}px`;
+            size.height = `${Math.max(newHeight, 300)}px`;
+            container.style.width = size.width;
+            container.style.height = size.height;
+            if (messagesPanel) {
+                messagesPanel.style.maxHeight = `calc(${parseInt(size.height)}px - 140px)`;
+            }
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('touchmove', resizeWindow);
+            document.removeEventListener('touchend', stopResize);
+            document.removeEventListener('mousemove', resizeWindow);
+            document.removeEventListener('mouseup', stopResize);
+            saveSettings();
+        }
+
+        document.addEventListener('touchmove', resizeWindow, { passive: false });
+        document.addEventListener('touchend', stopResize);
+        document.addEventListener('mousemove', resizeWindow);
+        document.addEventListener('mouseup', stopResize);
+    }
+
+    // ============================================
+    // 🚀 INITIALIZARE
+    // ============================================
+    function init() {
+        elements = createDOM();
+        container = elements.container;
+        messagesPanel = document.getElementById('senko-san-messages-panel');
+        inputPanel = document.getElementById('senko-san-input-panel');
+        resizeHandle = document.getElementById('lcb-resize-handle');
+        const messageInput = elements.messageInput;
+
+        loadSettings();
+        loadCensorSettings();
+        container.style.right = `${position.x}px`;
+        container.style.bottom = `${position.y}px`;
+        applySizeToUI();
+        regenerateCSS();
+
+        // Curățare URL-uri temporare la închiderea paginii
+        window.addEventListener('beforeunload', cleanupTemporaryUrls);
+
+        // Drag pentru deplasare (Mouse)
+        header.addEventListener('mousedown', (e) => {
+            if (e.target === elements.closeButton || e.target === elements.fileButtonHeader ||
+                e.target === elements.colorButton || e.target === elements.helpButton) return;
+
+            isDragging = true;
+            dragStartX = e.clientX;
+            dragStartY = e.clientY;
+            const rect = container.getBoundingClientRect();
+            const offsetX = dragStartX - rect.left;
+            const offsetY = dragStartY - rect.top;
+
+            function moveWindow(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const newLeft = e.clientX - offsetX;
+                const newTop = e.clientY - offsetY;
+                position.x = Math.max(8, window.innerWidth - newLeft - rect.width);
+                position.y = Math.max(8, window.innerHeight - newTop - rect.height);
+                container.style.right = `${position.x}px`;
+                container.style.bottom = `${position.y}px`;
+            }
+
+            function stopDrag() {
+                isDragging = false;
+                document.removeEventListener('mousemove', moveWindow);
+                document.removeEventListener('mouseup', stopDrag);
+                saveSettings();
+            }
+
+            document.addEventListener('mousemove', moveWindow);
+            document.addEventListener('mouseup', stopDrag);
+        });
+
+        // Drag pentru deplasare (Touch)
+        header.addEventListener('touchstart', handleTouchDragStart, { passive: false });
+
+        // Resizing (Mouse)
+        resizeHandle.addEventListener('mousedown', (e) => {
+            e.stopPropagation();
+            isResizing = true;
+            resizeStartX = e.clientX;
+            resizeStartY = e.clientY;
+            const rect = container.getBoundingClientRect();
+            resizeStartWidth = rect.width;
+            resizeStartHeight = rect.height;
+
+            function resizeWindow(e) {
+                if (!isResizing) return;
+                e.preventDefault();
+                const newWidth = resizeStartWidth + (e.clientX - resizeStartX);
+                const newHeight = resizeStartHeight + (e.clientY - resizeStartY);
+                size.width = `${Math.max(newWidth, 250)}px`;
+                size.height = `${Math.max(newHeight, 300)}px`;
+                container.style.width = size.width;
+                container.style.height = size.height;
+                if (messagesPanel) messagesPanel.style.maxHeight = `calc(${parseInt(size.height)}px - 140px)`;
+            }
+
+            function stopResize() {
+                isResizing = false;
+                document.removeEventListener('mousemove', resizeWindow);
+                document.removeEventListener('mouseup', stopResize);
+                saveSettings();
+            }
+
+            document.addEventListener('mousemove', resizeWindow);
+            document.addEventListener('mouseup', stopResize);
+        });
+
+        // Resizing (Touch)
+        resizeHandle.addEventListener('touchstart', handleTouchResizeStart, { passive: false });
+
+        // Trimite mesaj
+        elements.sendButton.addEventListener('click', () => {
+            const message = messageInput.value.trim();
+            if (message) {
+                lastUserMessage = message;
+                addMessage(user.name, message);
+
+                if (message.startsWith('qq ')) {
+                    const response = getResponse('qq');
+                    if (response) setTimeout(() => addMessage(senko.name, response), 300);
+                    if (messages.length >= 1) { messages.pop(); renderMessages(); }
+                } else {
+                    const response = getResponse(message);
+                    if (response) {
+                        if (typeof response === 'object' && response.type === 'file') {
+                            setTimeout(() => addMessage(senko.name, response.content, response.isImage, response.isImage), 300);
+                        } else if (typeof response === 'string') {
+                            setTimeout(() => addMessage(senko.name, response), 300);
+                        }
+                    }
+                }
+                messageInput.value = '';
+            }
+        });
+
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') elements.sendButton.click();
+        });
+
+        // Butoane header
+        elements.fileButtonHeader.addEventListener('click', () => elements.fileModal.style.display = 'block');
+        elements.colorButton.addEventListener('click', () => {
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('bot-message-bg').value = colors.botBg;
+            document.getElementById('bot-message-text').value = colors.botText;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+            elements.colorPicker.classList.add('active');
+        });
+        elements.helpButton.addEventListener('click', () => elements.helpModal.style.display = 'block');
+        elements.closeButton.addEventListener('click', () => {
+            cleanupTemporaryUrls();
+            container.remove();
+            elements.emojiPicker.remove();
+            elements.colorPicker.remove();
+            elements.fileModal.remove();
+            elements.helpModal.remove();
+        });
+
+        // Modal fișiere
+        elements.cancelFileButton.addEventListener('click', () => {
+            elements.fileModal.style.display = 'none';
+            elements.fileInput.value = '';
+        });
+        elements.confirmFileButton.addEventListener('click', () => {
+            const file = elements.fileInput.files[0];
+            if (file && fileSender) {
+                const url = getTemporaryUrl(file);
+                const isImage = file.type.startsWith('image/');
+                addMessage(fileSender, url, true, isImage, file);
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+
+        // Selector expeditor
+        elements.userSenderButton.addEventListener('click', () => {
+            fileSender = user.name;
+            elements.userSenderButton.classList.add('selected');
+            elements.senkoSenderButton.classList.remove('selected');
+        });
+        elements.senkoSenderButton.addEventListener('click', () => {
+            fileSender = senko.name;
+            elements.senkoSenderButton.classList.add('selected');
+            elements.userSenderButton.classList.remove('selected');
+        });
+
+        // Panou culori
+        elements.colorPickerClose.addEventListener('click', () => elements.colorPicker.classList.remove('active'));
+        elements.cancelColorsButton.addEventListener('click', () => elements.colorPicker.classList.remove('active'));
+        elements.resetColorsButton.addEventListener('click', () => {
+            colors = {
+                headerGradientFrom: '#FFD700',
+                headerGradientTo: '#FFC107',
+                bodyBg: '#FFF59D',
+                botBg: '#FFC107',
+                botText: '#000000',
+                userBg: '#E1BEE7',
+                userText: '#000000',
+                botNameColor: '#000000',
+                accent: '#FFD700',
+                panelBg: '#FFFFFF'
+            };
+            document.getElementById('header-bg-from').value = colors.headerGradientFrom;
+            document.getElementById('header-bg-to').value = colors.headerGradientTo;
+            document.getElementById('message-panel-bg').value = colors.bodyBg;
+            document.getElementById('bot-message-bg').value = colors.botBg;
+            document.getElementById('bot-message-text').value = colors.botText;
+            document.getElementById('user-message-bg').value = colors.userBg;
+            document.getElementById('user-message-text').value = colors.userText;
+            document.getElementById('accent-color').value = colors.accent;
+            document.getElementById('panel-bg').value = colors.panelBg;
+            regenerateCSS();
+            saveSettings();
+        });
+        elements.applyColorsButton.addEventListener('click', () => {
+            colors.headerGradientFrom = document.getElementById('header-bg-from').value;
+            colors.headerGradientTo = document.getElementById('header-bg-to').value;
+            colors.bodyBg = document.getElementById('message-panel-bg').value;
+            colors.botBg = document.getElementById('bot-message-bg').value;
+            colors.botText = document.getElementById('bot-message-text').value;
+            colors.userBg = document.getElementById('user-message-bg').value;
+            colors.userText = document.getElementById('user-message-text').value;
+            colors.accent = document.getElementById('accent-color').value;
+            colors.panelBg = document.getElementById('panel-bg').value;
+
+            regenerateCSS();
+            elements.confirmFileButton.style.background = colors.accent;
+            elements.applyColorsButton.style.backgroundColor = colors.accent;
+            elements.colorPicker.classList.remove('active');
+            saveSettings();
+            renderMessages();
+        });
+
+        // Modal ajutor
+        elements.helpClose.addEventListener('click', () => elements.helpModal.style.display = 'none');
+
+        // Ascunde panourile
+        document.addEventListener('click', (e) => {
+            if (!elements.emojiPicker.contains(e.target) && e.target !== elements.emojiButton)
+                elements.emojiPicker.classList.remove('active');
+            if (!elements.colorPicker.contains(e.target) && e.target !== elements.colorButton)
+                elements.colorPicker.classList.remove('active');
+        });
+
+        // Închide modalurile la click pe fundal
+        elements.fileModal.addEventListener('click', (e) => {
+            if (e.target === elements.fileModal) {
+                elements.fileModal.style.display = 'none';
+                elements.fileInput.value = '';
+            }
+        });
+        elements.helpModal.addEventListener('click', (e) => {
+            if (e.target === elements.helpModal) elements.helpModal.style.display = 'none';
+        });
+
+        // Setup Drag & Drop
+        setupDragAndDrop();
+
+        // Mesaj de bun venit
+        setTimeout(() => {
+            addMessage(senko.name, "Bun venit, iubirea mea! 💖 Sunt aici pentru tine, oricând. Ce dorințe ai astăzi? 😊");
+        }, 500);
+
+        // Scurtături tastatură
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                elements.emojiPicker.classList.remove('active');
+                elements.colorPicker.classList.remove('active');
+                elements.fileModal.style.display = 'none';
+                elements.helpModal.style.display = 'none';
+            }
+        });
+    }
+
+    // Pornește aplicația
+    init();
+})();

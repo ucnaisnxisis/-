@@ -1,0 +1,1443 @@
+// ==UserScript==
+// @name         TikTok Simulation Overlay (Advanced + Mobile Fixes)
+// @namespace    http://tampermonkey.net/
+// @version      4.0
+// @description  Overlay avansat cu live-uri reale, roboți, donări, animații, share, emoji, invitații, fixuri pentru Android
+// @author       Le Chat
+// @match        *://*.google.com/*
+// @match        *://*.bing.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://*.duckduckgo.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // === CONFIG ===
+    const CONFIG = {
+        COIN_INTERVAL_MIN: 1, // 1 minut pentru Android
+        COIN_INTERVAL_MAX: 1, // 1 minut fix
+        ANIMATION_PRICE: 5,
+        LEVEL_UP_EXP: 100,
+        LIVE_COLOR: "#FF0000",
+        PURPLE_BUTTON_COLOR: "#8A2BE2",
+        HEART_ANIMATION_INTERVAL: 15000,
+        BANNER_DURATION: 6000,
+        // Live-uri reale (YouTube, TikTok, V-Tuberi, YouTuberi Românești)
+        LIVE_STREAMS: {
+            // V-Tuberi
+            "GawrGura": {
+                name: "Gawr Gura",
+                url: "https://www.youtube.com/embed/4iSOaBWCug8?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["vtuber", "live"]
+            },
+            "MoriCalliope": {
+                name: "Mori Calliope",
+                url: "https://www.youtube.com/embed/6Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["vtuber", "live"]
+            },
+            "IRyS": {
+                name: "IRyS",
+                url: "https://www.youtube.com/embed/3JZq5n9XJ1o?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["vtuber", "live"]
+            },
+            "DearTabby3": {
+                name: "DearTabby3",
+                url: "https://www.youtube.com/embed/4iSOaBWCug8?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["vtuber", "live"]
+            },
+            "Shylily": {
+                name: "Shylily",
+                url: "https://www.youtube.com/embed/7Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["vtuber", "live"]
+            },
+            // YouTuberi
+            "MrBeast": {
+                name: "MrBeast",
+                url: "https://www.youtube.com/embed/6Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "live"]
+            },
+            "PewDiePie": {
+                name: "PewDiePie",
+                url: "https://www.youtube.com/embed/3JZq5n9XJ1o?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "live"]
+            },
+            "Jacksepticeye": {
+                name: "Jacksepticeye",
+                url: "https://www.youtube.com/embed/7Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "live"]
+            },
+            "Valkyrae": {
+                name: "Valkyrae",
+                url: "https://www.youtube.com/embed/9Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "live"]
+            },
+            // TikTokeri
+            "CharliDAmelio": {
+                name: "Charli D'Amelio",
+                url: "https://www.tiktok.com/@charlidamelio/live",
+                platform: "TikTok",
+                category: ["tiktoker", "live"]
+            },
+            "KhabyLame": {
+                name: "Khaby Lame",
+                url: "https://www.tiktok.com/@khaby.lame/live",
+                platform: "TikTok",
+                category: ["tiktoker", "live"]
+            },
+            "BellaPoarch": {
+                name: "Bella Poarch",
+                url: "https://www.tiktok.com/@bellapoarch/live",
+                platform: "TikTok",
+                category: ["tiktoker", "live"]
+            },
+            "AddisonRae": {
+                name: "Addison Rae",
+                url: "https://www.tiktok.com/@addisonre/live",
+                platform: "TikTok",
+                category: ["tiktoker", "live"]
+            },
+            // YouTuberi Românești
+            "Zasami": {
+                name: "Zasami",
+                url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "romania", "live"]
+            },
+            "KatalinTaleent": {
+                name: "Katalin Taleent",
+                url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "romania", "live"]
+            },
+            "Boto": {
+                name: "Boto",
+                url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "romania", "live"]
+            },
+            "Amza": {
+                name: "Amza",
+                url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "romania", "live"]
+            },
+            "CalinBoto": {
+                name: "Călin Boto",
+                url: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["youtuber", "romania", "live"]
+            },
+            // Muzică
+            "KPop247": {
+                name: "🔴 K-POP 24/7 LIVE",
+                url: "https://www.youtube.com/embed/fVtnHYzS0t4?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["kpop", "music", "live"]
+            },
+            "JPop247": {
+                name: "🔴 J-POP 24/7 LIVE",
+                url: "https://www.youtube.com/embed/JVocS7Yftw8?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["jpop", "music", "live"]
+            },
+            "GamingMusic": {
+                name: "🎵 Gaming Music 24/7",
+                url: "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["gaming", "music", "live"]
+            },
+            "RomanianHits": {
+                name: "🇷🇴 Romanian Hits 24/7",
+                url: "https://www.youtube.com/embed/6Jp5j5LzJ1E?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["romania", "music", "live"]
+            },
+            "AmericanTop40": {
+                name: "🇺🇸 American Top 40",
+                url: "https://www.youtube.com/embed/3JZq5n9XJ1o?autoplay=1&mute=1",
+                platform: "YouTube",
+                category: ["music", "live"]
+            }
+        },
+        // Mesaje random pentru roboți
+        ROBOT_MESSAGES: [
+            "Super live! 🔥",
+            "Cine mai e aici? 👀",
+            "Donat 10💰! 💖",
+            "Moderatorul a intrat în chat!",
+            "Cine vrea să fie invitat? 🎤",
+            "Live-ul e epic! 🚀",
+            "Am dat share pe Facebook! 📢",
+            "Cine mai urmează? 👇",
+            "1000 de vizionări! 🎉",
+            "Sunt fan! ❤️",
+            "Bun venit! 👋",
+            "Cine donază? 💰",
+            "Live-ul e top! 🏆",
+            "Cine e nou aici? 🆕",
+            "Suntem live! 🎥"
+        ],
+        // Emoji-uri disponibile
+        EMOJIS: [
+            "😀", "😂", "😍", "😢", "😡", "👍", "❤️", "🔥", "🎉", "🚀",
+            "😎", "🤔", "😴", "😇", "💪", "👏", "🙏", "💃", "🕺", "🎤",
+            "🎮", "🎵", "🎧", "🎬", "📺", "📱", "💻", "🎁", "🎈", "🎊"
+        ],
+        // Platforme de share
+        SHARE_PLATFORMS: [
+            { name: "Facebook", icon: "📘", url: "https://facebook.com/sharer/sharer.php?u=" },
+            { name: "Gmail", icon: "✉️", url: "mailto:?body=" },
+            { name: "WhatsApp", icon: "💬", url: "https://wa.me/?text=" },
+            { name: "Signal", icon: "🔒", url: "sgnl://message?text=" },
+            { name: "Instagram", icon: "📸", url: "https://instagram.com/" },
+            { name: "TikTok", icon: "🎵", url: "https://www.tiktok.com/" },
+            { name: "Twitter", icon: "🐦", url: "https://twitter.com/intent/tweet?text=" },
+            { name: "Telegram", icon: "📌", url: "https://t.me/share/url?url=" }
+        ],
+        // Categorii de căutare
+        CATEGORIES: [
+            { name: "Toate Live-urile", tag: "live" },
+            { name: "V-Tuberi", tag: "vtuber" },
+            { name: "YouTuberi", tag: "youtuber" },
+            { name: "TikTokeri", tag: "tiktoker" },
+            { name: "Muzică", tag: "music" },
+            { name: "K-Pop", tag: "kpop" },
+            { name: "J-Pop", tag: "jpop" },
+            { name: "Gaming", tag: "gaming" },
+            { name: "România", tag: "romania" }
+        ]
+    };
+
+    // === STATE ===
+    let state = {
+        coins: parseInt(localStorage.getItem("tiktok_coins") || "0"),
+        level: parseInt(localStorage.getItem("tiktok_level") || "1"),
+        exp: parseInt(localStorage.getItem("tiktok_exp") || "0"),
+        streamers: JSON.parse(localStorage.getItem("tiktok_streamers") || "{}"),
+        lastCoinTime: parseInt(localStorage.getItem("tiktok_lastCoinTime") || "0"),
+        currentVideo: null,
+        animations: [
+            { name: "Inimioară", duration: 10, price: CONFIG.ANIMATION_PRICE, emoji: "❤️" },
+            { name: "Avion", duration: 15, price: CONFIG.ANIMATION_PRICE, emoji: "✈️" },
+            { name: "Stele", duration: 20, price: CONFIG.ANIMATION_PRICE, emoji: "⭐" },
+            { name: "Rachetă", duration: 10, price: CONFIG.ANIMATION_PRICE, emoji: "🚀" },
+            { name: "Trandafir", duration: 15, price: CONFIG.ANIMATION_PRICE, emoji: "🌹" },
+            { name: "Balon", duration: 10, price: CONFIG.ANIMATION_PRICE, emoji: "🎈" },
+            { name: "Foc de artificii", duration: 20, price: CONFIG.ANIMATION_PRICE * 2, emoji: "🎆" }
+        ],
+        liveVideos: [],
+        normalVideos: [],
+        robotInterval: null,
+        heartInterval: null,
+        coinInterval: null,
+        // Adaugă live-urile din CONFIG.LIVE_STREAMS
+        customLiveStreams: Object.keys(CONFIG.LIVE_STREAMS).map(key => ({
+            id: key,
+            title: CONFIG.LIVE_STREAMS[key].name,
+            streamer: CONFIG.LIVE_STREAMS[key].name,
+            isLive: true,
+            url: CONFIG.LIVE_STREAMS[key].url,
+            platform: CONFIG.LIVE_STREAMS[key].platform,
+            category: CONFIG.LIVE_STREAMS[key].category || []
+        }))
+    };
+
+    // === INIT OVERLAY ===
+    function initOverlay() {
+        // Creează overlay-ul principal
+        const overlay = document.createElement("div");
+        overlay.id = "tiktok-overlay";
+        overlay.style = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 999999;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        `;
+
+        // Header (Nume Live + Coins, Level, Exp)
+        const header = document.createElement("div");
+        header.id = "tiktok-header";
+        header.style = `
+            padding: 8px;
+            background: #121212;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #333;
+        `;
+        header.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                <button id="tiktok-menu" style="
+                    padding: 6px 12px;
+                    background: #333;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 14px;
+                    touch-action: manipulation;
+                ">☰ Meniu</button>
+                <div id="tiktok-live-title" style="font-size: 16px; text-align: center; flex: 1; margin: 0 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                    ${state.currentVideo ? `Live: ${state.currentVideo.title}` : "Selectează un live"}
+                </div>
+                <button id="tiktok-search" style="
+                    padding: 6px 12px;
+                    background: #333;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 14px;
+                    touch-action: manipulation;
+                ">🔍 Caută</button>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <div>
+                    <button id="tiktok-categories" style="
+                        padding: 4px 8px;
+                        background: #4ECDC4;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 12px;
+                        touch-action: manipulation;
+                    ">📌 Categorii</button>
+                    <button id="tiktok-romania" style="
+                        padding: 4px 8px;
+                        background: #FF6B6B;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 12px;
+                        touch-action: manipulation;
+                        margin-left: 5px;
+                    ">🇷🇴 România</button>
+                    <button id="tiktok-music" style="
+                        padding: 4px 8px;
+                        background: #8A2BE2;
+                        border: none;
+                        border-radius: 5px;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 12px;
+                        touch-action: manipulation;
+                        margin-left: 5px;
+                    ">🎵 Muzică</button>
+                </div>
+                <div>
+                    <span id="tiktok-coins">💰 ${state.coins}</span> |
+                    <span id="tiktok-level">🏆 ${state.level}</span> |
+                    <span id="tiktok-exp">✨ ${state.exp}/${CONFIG.LEVEL_UP_EXP}</span>
+                </div>
+            </div>
+        `;
+        overlay.appendChild(header);
+
+        // Video Container (cu iframe pentru live-uri reale)
+        const videoContainer = document.createElement("div");
+        videoContainer.id = "tiktok-video-container";
+        videoContainer.style = `
+            position: relative;
+            width: 100%;
+            height: 55%;
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            touch-action: none;
+        `;
+        videoContainer.innerHTML = `
+            <div id="tiktok-video-placeholder" style="color: #666; text-align: center; padding: 20px;">
+                Selectează un live
+            </div>
+            <div id="tiktok-live-badge" style="
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: ${CONFIG.LIVE_COLOR};
+                padding: 5px 10px;
+                border-radius: 5px;
+                display: none;
+                font-size: 12px;
+                z-index: 10;
+            ">🔴 LIVE</div>
+            <iframe id="tiktok-live-iframe" style="width: 100%; height: 100%; border: none; display: none;"></iframe>
+        `;
+        overlay.appendChild(videoContainer);
+
+        // Controls (Butoane: Donează, Magazin, Buton Mov, Share, Emoji, Invitații)
+        const controls = document.createElement("div");
+        controls.id = "tiktok-controls";
+        controls.style = `
+            padding: 8px;
+            background: #121212;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-top: 1px solid #333;
+            gap: 5px;
+        `;
+        controls.innerHTML = `
+            <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                <button id="tiktok-emoji" style="
+                    padding: 6px 10px;
+                    background: #555;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">😊 Emoji</button>
+                <button id="tiktok-message" style="
+                    padding: 6px 10px;
+                    background: #555;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">💬 Mesaj</button>
+                <button id="tiktok-invite" style="
+                    padding: 6px 10px;
+                    background: #555;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">👥 Invitații</button>
+            </div>
+            <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                <button id="tiktok-share" style="
+                    padding: 6px 10px;
+                    background: #4ECDC4;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">📤 Share</button>
+                <button id="tiktok-gift" style="
+                    padding: 6px 10px;
+                    background: #FF6B6B;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">🎁 Cadou</button>
+                <button id="tiktok-donate" style="
+                    padding: 6px 10px;
+                    background: #FF6B6B;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">💰 Donează (1)</button>
+                <button id="tiktok-shop" style="
+                    padding: 6px 10px;
+                    background: #4ECDC4;
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">🛒 Magazin</button>
+                <button id="tiktok-purple" style="
+                    padding: 6px 10px;
+                    background: ${CONFIG.PURPLE_BUTTON_COLOR};
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    cursor: pointer;
+                    font-size: 12px;
+                    touch-action: manipulation;
+                ">🎲 Mov (Random 💰)</button>
+            </div>
+        `;
+        overlay.appendChild(controls);
+
+        // Messages
+        const messages = document.createElement("div");
+        messages.id = "tiktok-messages";
+        messages.style = `
+            height: 25%;
+            overflow-y: auto;
+            background: #111;
+            padding: 8px;
+            border-top: 1px solid #333;
+            font-size: 12px;
+        `;
+        overlay.appendChild(messages);
+
+        // Banner (cu buton de închidere)
+        const banner = document.createElement("div");
+        banner.id = "tiktok-banner";
+        banner.style = `
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: gold;
+            color: black;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            display: none;
+            z-index: 1000000;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        banner.innerHTML = `
+            <span id="tiktok-banner-text"></span>
+            <button id="tiktok-close-banner" style="
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                background: none;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+                color: black;
+                touch-action: manipulation;
+            ">✕</button>
+        `;
+        document.body.appendChild(banner);
+
+        // Emoji Panel
+        const emojiPanel = document.createElement("div");
+        emojiPanel.id = "tiktok-emoji-panel";
+        emojiPanel.style = `
+            position: fixed;
+            bottom: 60px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            flex-wrap: wrap;
+            max-width: 250px;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000001;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        document.body.appendChild(emojiPanel);
+
+        // Share Panel
+        const sharePanel = document.createElement("div");
+        sharePanel.id = "tiktok-share-panel";
+        sharePanel.style = `
+            position: fixed;
+            bottom: 60px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            flex-direction: column;
+            max-width: 200px;
+            z-index: 1000001;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        document.body.appendChild(sharePanel);
+
+        // Gift Panel
+        const giftPanel = document.createElement("div");
+        giftPanel.id = "tiktok-gift-panel";
+        giftPanel.style = `
+            position: fixed;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 90%;
+            z-index: 1000001;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        document.body.appendChild(giftPanel);
+
+        // Invite Panel
+        const invitePanel = document.createElement("div");
+        invitePanel.id = "tiktok-invite-panel";
+        invitePanel.style = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.98);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            max-width: 90%;
+            z-index: 1000001;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        invitePanel.innerHTML = `
+            <h2 style="text-align: center; margin: 0 0 10px 0; font-size: 18px;">Cerere de invitație</h2>
+            <p style="text-align: center; margin: 0 0 10px 0; font-size: 14px;">
+                Profită de șansa de a fi următorul invitat!
+            </p>
+            <p style="text-align: center; margin: 0 0 15px 0; font-size: 12px; color: #ccc;">
+                TikTok te recompensează atât pe tine, cât și pe creator pentru popularitatea voastră din timpul acestui LIVE.
+            </p>
+            <button id="tiktok-request-invite" style="
+                padding: 10px;
+                background: ${CONFIG.LIVE_COLOR};
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                margin: 0 0 10px 0;
+                font-weight: bold;
+                font-size: 14px;
+                touch-action: manipulation;
+            ">📩 Cerere</button>
+            <button id="tiktok-find-more" style="
+                padding: 10px;
+                background: #555;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+                touch-action: manipulation;
+            ">
+                <span>Găsește mai multe locuri</span>
+                <span>›</span>
+            </button>
+            <button id="tiktok-close-invite" style="
+                margin-top: 10px;
+                padding: 8px;
+                background: #333;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                touch-action: manipulation;
+            ">Închide</button>
+        `;
+        document.body.appendChild(invitePanel);
+
+        // Video List Overlay (Meniu lateral)
+        const videoList = document.createElement("div");
+        videoList.id = "tiktok-video-list";
+        videoList.style = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            overflow-y: auto;
+            display: none;
+            z-index: 1000001;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        `;
+        videoList.innerHTML = `
+            <div style="padding: 10px; background: #121212; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 16px;">Videoclipuri Live</h3>
+                <button id="tiktok-close-menu" style="
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 20px;
+                    cursor: pointer;
+                    touch-action: manipulation;
+                ">✕</button>
+            </div>
+            <div id="tiktok-video-list-content" style="padding: 5px;"></div>
+        `;
+        document.body.appendChild(videoList);
+
+        // Categories Panel
+        const categoriesPanel = document.createElement("div");
+        categoriesPanel.id = "tiktok-categories-panel";
+        categoriesPanel.style = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.98);
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            max-width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            z-index: 1000001;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        `;
+        categoriesPanel.innerHTML = `
+            <h2 style="text-align: center; margin: 0 0 10px 0; font-size: 18px;">Categorii</h2>
+            <div id="tiktok-categories-list" style="display: flex; flex-direction: column; gap: 5px;"></div>
+            <button id="tiktok-close-categories" style="
+                margin-top: 10px;
+                padding: 8px;
+                background: #333;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                touch-action: manipulation;
+            ">Închide</button>
+        `;
+        document.body.appendChild(categoriesPanel);
+
+        // Adaugă overlay-ul în body
+        document.body.appendChild(overlay);
+
+        // Încarcă starea inițială
+        loadState();
+
+        // Afișează un videoclip random la start
+        showRandomVideo();
+
+        // Pornește timer-ul pentru monede (1 ban la fiecare minut)
+        startCoinTimer();
+
+        // Pornește roboții
+        startRobotMessages();
+
+        // Pornește animațiile de inimi
+        startHeartAnimations();
+
+        // Adaugă event listeners
+        addEventListeners();
+
+        // Render UI
+        renderEmojiPanel();
+        renderSharePanel();
+        renderGiftPanel();
+        renderCategoriesPanel();
+    }
+
+    // === SHOW RANDOM VIDEO ===
+    function showRandomVideo() {
+        const allVideos = [...state.customLiveStreams];
+        if (allVideos.length === 0) return;
+
+        const randomIndex = Math.floor(Math.random() * allVideos.length);
+        state.currentVideo = allVideos[randomIndex];
+        updateVideoDisplay();
+    }
+
+    // === UPDATE VIDEO DISPLAY ===
+    function updateVideoDisplay() {
+        const placeholder = document.getElementById("tiktok-video-placeholder");
+        const liveBadge = document.getElementById("tiktok-live-badge");
+        const iframe = document.getElementById("tiktok-live-iframe");
+        const donateButton = document.getElementById("tiktok-donate");
+        const messageButton = document.getElementById("tiktok-message");
+        const liveTitle = document.getElementById("tiktok-live-title");
+
+        if (!state.currentVideo) {
+            placeholder.textContent = "Selectează un videoclip";
+            liveBadge.style.display = "none";
+            iframe.style.display = "none";
+            donateButton.style.display = "none";
+            messageButton.style.display = "none";
+            liveTitle.textContent = "Selectează un live";
+            return;
+        }
+
+        placeholder.textContent = `${state.currentVideo.title}`;
+        liveTitle.textContent = state.currentVideo.isLive ? `🔴 ${state.currentVideo.title}` : state.currentVideo.title;
+
+        if (state.currentVideo.isLive) {
+            liveBadge.style.display = "block";
+            donateButton.style.display = "inline-block";
+            messageButton.style.display = "inline-block";
+
+            // Dacă are URL, afișează iframe-ul
+            if (state.currentVideo.url) {
+                iframe.src = state.currentVideo.url;
+                iframe.style.display = "block";
+                placeholder.style.display = "none";
+            } else {
+                iframe.style.display = "none";
+                placeholder.style.display = "block";
+            }
+
+            // Inițializează streamerul dacă nu există
+            if (!state.streamers[state.currentVideo.streamer]) {
+                state.streamers[state.currentVideo.streamer] = { level: 1, exp: 0 };
+                saveState();
+            }
+        } else {
+            liveBadge.style.display = "none";
+            iframe.style.display = "none";
+            placeholder.style.display = "block";
+            donateButton.style.display = "none";
+            messageButton.style.display = "none";
+        }
+    }
+
+    // === START COIN TIMER (1 ban la fiecare minut) ===
+    function startCoinTimer() {
+        if (state.coinInterval) clearInterval(state.coinInterval);
+        state.coinInterval = setInterval(() => {
+            if (state.currentVideo && state.currentVideo.isLive) {
+                const now = Date.now();
+                const lastTime = state.lastCoinTime || now;
+                const minutesPassed = (now - lastTime) / (1000 * 60);
+
+                if (minutesPassed >= 1) { // 1 minut
+                    state.coins++;
+                    state.lastCoinTime = now;
+                    saveState();
+                    updateUI();
+                    showBanner(`+1💰! Ai primit un ban.`);
+                }
+            }
+        }, 1000);
+    }
+
+    // === START ROBOT MESSAGES ===
+    function startRobotMessages() {
+        if (state.robotInterval) clearInterval(state.robotInterval);
+        state.robotInterval = setInterval(() => {
+            if (state.currentVideo && state.currentVideo.isLive) {
+                const randomMessage = CONFIG.ROBOT_MESSAGES[Math.floor(Math.random() * CONFIG.ROBOT_MESSAGES.length)];
+                const randomUser = `User${Math.floor(Math.random() * 1000)}`;
+                addMessage(`${randomUser}: ${randomMessage}`, true);
+            }
+        }, 5000 + Math.random() * 10000); // 5-15 secunde
+    }
+
+    // === START HEART ANIMATIONS ===
+    function startHeartAnimations() {
+        if (state.heartInterval) clearInterval(state.heartInterval);
+        state.heartInterval = setInterval(() => {
+            if (state.currentVideo && state.currentVideo.isLive) {
+                if (Math.random() > 0.7) {
+                    createHeartAnimation();
+                }
+            }
+        }, CONFIG.HEART_ANIMATION_INTERVAL);
+    }
+
+    // === CREATE HEART ANIMATION ===
+    function createHeartAnimation(x = null, y = null) {
+        const videoContainer = document.getElementById("tiktok-video-container");
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style = `
+            position: absolute;
+            font-size: 20px;
+            pointer-events: none;
+            animation: floatUp 2s forwards;
+            z-index: 100;
+        `;
+
+        if (x && y) {
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+        } else {
+            heart.style.left = `${Math.random() * 80}%`;
+            heart.style.top = `${Math.random() * 80}%`;
+        }
+
+        videoContainer.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
+
+    // === DONATE COIN ===
+    function donateCoin() {
+        if (state.coins >= 1 && state.currentVideo && state.currentVideo.isLive) {
+            state.coins--;
+            if (!state.streamers[state.currentVideo.streamer]) {
+                state.streamers[state.currentVideo.streamer] = { level: 1, exp: 0 };
+            }
+            state.streamers[state.currentVideo.streamer].exp += 10;
+            state.exp += 5;
+
+            // Verifică nivelul streamerului
+            if (state.streamers[state.currentVideo.streamer].exp >= CONFIG.LEVEL_UP_EXP) {
+                state.streamers[state.currentVideo.streamer].level++;
+                state.streamers[state.currentVideo.streamer].exp = 0;
+                showBanner(`🎉 ${state.currentVideo.streamer} a urcat la nivel ${state.streamers[state.currentVideo.streamer].level}!`);
+            }
+
+            // Verifică nivelul userului
+            if (state.exp >= CONFIG.LEVEL_UP_EXP) {
+                state.level++;
+                state.exp = 0;
+                showBanner(`🏆 Ai urcat la nivel ${state.level}!`);
+            }
+
+            saveState();
+            updateUI();
+            showBanner(`Ai donat 1💰 către ${state.currentVideo.streamer}!`);
+            addMessage(`Tu: Ai donat 1💰 către ${state.currentVideo.streamer}!`, false);
+        } else {
+            showBanner("❌ Nu ai destule monede sau nu ești într-un live!");
+        }
+    }
+
+    // === PURPLE BUTTON (RANDOM COINS) ===
+    function purpleButtonClick() {
+        const randomCoins = Math.floor(Math.random() * 5) + 1;
+        state.coins += randomCoins;
+        saveState();
+        updateUI();
+        showBanner(`🎲 Ai primit ${randomCoins}💰 din butonul mov!`);
+    }
+
+    // === BUY ANIMATION ===
+    function buyAnimation(animationName) {
+        const animation = state.animations.find(a => a.name === animationName);
+        if (animation && state.coins >= animation.price) {
+            state.coins -= animation.price;
+            state.exp += 3;
+            saveState();
+            updateUI();
+            showBanner(`🎁 Ai cumpărat animația "${animationName}"!`);
+            playAnimation(animation);
+        } else {
+            showBanner("❌ Nu ai destule monede!");
+        }
+    }
+
+    // === PLAY ANIMATION ===
+    function playAnimation(animation) {
+        const videoContainer = document.getElementById("tiktok-video-container");
+        const animationElement = document.createElement("div");
+        animationElement.style = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: ${getAnimationStyle(animation.name)};
+            z-index: 100;
+            animation: fadeOut ${animation.duration}s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        `;
+        animationElement.textContent = animation.emoji;
+        videoContainer.appendChild(animationElement);
+
+        setTimeout(() => {
+            animationElement.remove();
+        }, animation.duration * 1000);
+    }
+
+    // === GET ANIMATION STYLE ===
+    function getAnimationStyle(name) {
+        const styles = {
+            "Inimioară": "radial-gradient(circle, rgba(255,107,107,0.7), rgba(255,209,220,0.3))",
+            "Avion": "radial-gradient(circle, rgba(135,206,235,0.7), rgba(70,130,180,0.3))",
+            "Stele": "radial-gradient(circle, rgba(255,215,0,0.7), rgba(255,165,0,0.3))",
+            "Rachetă": "radial-gradient(circle, rgba(255,69,0,0.7), rgba(255,140,0,0.3))",
+            "Trandafir": "radial-gradient(circle, rgba(255,20,147,0.7), rgba(219,112,147,0.3))",
+            "Balon": "radial-gradient(circle, rgba(255,192,203,0.7), rgba(255,105,180,0.3))",
+            "Foc de artificii": "radial-gradient(circle, rgba(255,215,0,0.7), rgba(255,165,0,0.3), rgba(255,0,0,0.3))"
+        };
+        return styles[name] || "radial-gradient(circle, rgba(255,255,255,0.7), rgba(0,0,0,0.3))";
+    }
+
+    // === SHOW BANNER ===
+    function showBanner(message) {
+        const banner = document.getElementById("tiktok-banner");
+        const bannerText = document.getElementById("tiktok-banner-text");
+        bannerText.textContent = message;
+        banner.style.display = "flex";
+        setTimeout(() => {
+            banner.style.display = "none";
+        }, CONFIG.BANNER_DURATION);
+    }
+
+    // === UPDATE UI ===
+    function updateUI() {
+        document.getElementById("tiktok-coins").textContent = `💰 ${state.coins}`;
+        document.getElementById("tiktok-level").textContent = `🏆 ${state.level}`;
+        document.getElementById("tiktok-exp").textContent = `✨ ${state.exp}/${CONFIG.LEVEL_UP_EXP}`;
+    }
+
+    // === SAVE STATE ===
+    function saveState() {
+        localStorage.setItem("tiktok_coins", state.coins);
+        localStorage.setItem("tiktok_level", state.level);
+        localStorage.setItem("tiktok_exp", state.exp);
+        localStorage.setItem("tiktok_streamers", JSON.stringify(state.streamers));
+        localStorage.setItem("tiktok_lastCoinTime", state.lastCoinTime);
+    }
+
+    // === LOAD STATE ===
+    function loadState() {
+        state.coins = parseInt(localStorage.getItem("tiktok_coins") || "0");
+        state.level = parseInt(localStorage.getItem("tiktok_level") || "1");
+        state.exp = parseInt(localStorage.getItem("tiktok_exp") || "0");
+        state.streamers = JSON.parse(localStorage.getItem("tiktok_streamers") || "{}");
+        state.lastCoinTime = parseInt(localStorage.getItem("tiktok_lastCoinTime") || "0");
+        updateUI();
+    }
+
+    // === ADD MESSAGE ===
+    function addMessage(message, isRobot = false) {
+        const messagesContainer = document.getElementById("tiktok-messages");
+        const messageElement = document.createElement("div");
+        messageElement.style = `
+            margin: 3px 0;
+            padding: 5px 8px;
+            background: ${isRobot ? "#333" : "#4ECDC4"};
+            border-radius: 5px;
+            font-size: 12px;
+            ${isRobot ? "" : "text-align: right; margin-left: 20%;"}
+        `;
+        messageElement.textContent = message;
+
+        // Dacă nu e robot, adaugă experiență
+        if (!isRobot && state.currentVideo && state.currentVideo.isLive) {
+            state.exp += 2;
+            if (state.streamers[state.currentVideo.streamer]) {
+                state.streamers[state.currentVideo.streamer].exp += 1;
+            }
+            saveState();
+            updateUI();
+        }
+
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // === RENDER EMOJI PANEL ===
+    function renderEmojiPanel() {
+        const emojiPanel = document.getElementById("tiktok-emoji-panel");
+        emojiPanel.innerHTML = "";
+        CONFIG.EMOJIS.forEach(emoji => {
+            const emojiButton = document.createElement("button");
+            emojiButton.textContent = emoji;
+            emojiButton.style = `
+                background: none;
+                border: none;
+                font-size: 18px;
+                cursor: pointer;
+                margin: 2px;
+                color: white;
+                touch-action: manipulation;
+            `;
+            emojiButton.addEventListener("click", () => {
+                const messageInput = prompt("Scrie mesajul (opțional):");
+                const message = messageInput ? `${messageInput} ${emoji}` : emoji;
+                if (message) {
+                    addMessage(`Tu: ${message}`);
+                }
+                emojiPanel.style.display = "none";
+            });
+            emojiPanel.appendChild(emojiButton);
+        });
+    }
+
+    // === RENDER SHARE PANEL ===
+    function renderSharePanel() {
+        const sharePanel = document.getElementById("tiktok-share-panel");
+        sharePanel.innerHTML = "<h3 style='margin: 0 0 10px 0; text-align: center; font-size: 14px;'>Share pe:</h3>";
+        CONFIG.SHARE_PLATFORMS.forEach(platform => {
+            const shareButton = document.createElement("button");
+            shareButton.innerHTML = `${platform.icon} ${platform.name}`;
+            shareButton.style = `
+                background: #4ECDC4;
+                border: none;
+                padding: 8px;
+                margin: 5px 0;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                font-size: 12px;
+                touch-action: manipulation;
+            `;
+            shareButton.addEventListener("click", () => {
+                if (state.currentVideo) {
+                    const shareText = `Urmărește live-ul "${state.currentVideo.title}" de la ${state.currentVideo.streamer}!`;
+                    window.open(platform.url + encodeURIComponent(shareText + " " + (state.currentVideo.url || window.location.href)));
+                }
+                sharePanel.style.display = "none";
+            });
+            sharePanel.appendChild(shareButton);
+        });
+    }
+
+    // === RENDER GIFT PANEL ===
+    function renderGiftPanel() {
+        const giftPanel = document.getElementById("tiktok-gift-panel");
+        giftPanel.innerHTML = "<h3 style='margin: 0 0 10px 0; text-align: center; font-size: 14px;'>Selectează un cadou:</h3>";
+        state.animations.forEach(animation => {
+            const giftButton = document.createElement("button");
+            giftButton.innerHTML = `${animation.emoji}<br><small>${animation.name}</small><br><small>${animation.price}💰</small>`;
+            giftButton.style = `
+                background: #FF6B6B;
+                border: none;
+                padding: 8px;
+                margin: 5px;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                font-size: 12px;
+                touch-action: manipulation;
+            `;
+            giftButton.addEventListener("click", () => {
+                buyAnimation(animation.name);
+                giftPanel.style.display = "none";
+            });
+            giftPanel.appendChild(giftButton);
+        });
+    }
+
+    // === RENDER CATEGORIES PANEL ===
+    function renderCategoriesPanel() {
+        const categoriesList = document.getElementById("tiktok-categories-list");
+        categoriesList.innerHTML = "";
+        CONFIG.CATEGORIES.forEach(category => {
+            const categoryButton = document.createElement("button");
+            categoryButton.textContent = category.name;
+            categoryButton.style = `
+                padding: 8px;
+                background: #333;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                font-size: 14px;
+                touch-action: manipulation;
+                text-align: left;
+            `;
+            categoryButton.addEventListener("click", () => {
+                filterVideosByCategory(category.tag);
+                document.getElementById("tiktok-categories-panel").style.display = "none";
+            });
+            categoriesList.appendChild(categoryButton);
+        });
+    }
+
+    // === FILTER VIDEOS BY CATEGORY ===
+    function filterVideosByCategory(tag) {
+        const filteredVideos = state.customLiveStreams.filter(video =>
+            video.category.includes(tag)
+        );
+        if (filteredVideos.length > 0) {
+            state.currentVideo = filteredVideos[0];
+            updateVideoDisplay();
+            showBanner(`Afisez live-uri din categoria: ${tag}`);
+        } else {
+            showBanner(`Nu s-au găsit live-uri în categoria "${tag}".`);
+        }
+    }
+
+    // === RENDER VIDEO LIST ===
+    function renderVideoList() {
+        const videoListContent = document.getElementById("tiktok-video-list-content");
+        videoListContent.innerHTML = "";
+
+        // Adaugă butoane pentru categorii în meniu
+        const categoryButtons = document.createElement("div");
+        categoryButtons.style = "padding: 5px; border-bottom: 1px solid #333; margin-bottom: 5px;";
+        CONFIG.CATEGORIES.forEach(category => {
+            const button = document.createElement("button");
+            button.textContent = category.name;
+            button.style = `
+                padding: 5px 8px;
+                background: #444;
+                border: none;
+                border-radius: 5px;
+                color: white;
+                cursor: pointer;
+                font-size: 12px;
+                margin: 2px;
+                touch-action: manipulation;
+            `;
+            button.addEventListener("click", () => {
+                filterVideosByCategory(category.tag);
+                document.getElementById("tiktok-video-list").style.transform = "translateX(-100%)";
+            });
+            categoryButtons.appendChild(button);
+        });
+        videoListContent.appendChild(categoryButtons);
+
+        // Live-uri personalizate
+        state.customLiveStreams.forEach(video => {
+            const item = document.createElement("div");
+            item.style = `
+                padding: 8px;
+                border-bottom: 1px solid #333;
+                cursor: pointer;
+                background: ${video.isLive ? "rgba(255, 0, 0, 0.2)" : "rgba(0, 255, 0, 0.1)"};
+                touch-action: manipulation;
+            `;
+            item.innerHTML = `
+                <strong>${video.isLive ? "🔴 LIVE" : "🎥"}: ${video.title}</strong><br>
+                <small style="color: #ccc;">${video.streamer} (${video.platform})</small>
+            `;
+            item.addEventListener("click", () => {
+                state.currentVideo = video;
+                updateVideoDisplay();
+                document.getElementById("tiktok-video-list").style.transform = "translateX(-100%)";
+            });
+            videoListContent.appendChild(item);
+        });
+    }
+
+    // === SEARCH FUNCTION ===
+    function searchLive() {
+        const searchTerm = prompt("Caută un live (ex: Gawr Gura, K-Pop, România, Zasami):");
+        if (!searchTerm) return;
+
+        const term = searchTerm.toLowerCase().trim();
+
+        // Caută în live-urile personalizate
+        const foundStreams = state.customLiveStreams.filter(stream =>
+            stream.id.toLowerCase().includes(term) ||
+            stream.title.toLowerCase().includes(term) ||
+            stream.streamer.toLowerCase().includes(term) ||
+            (stream.category && stream.category.some(cat => cat.includes(term)))
+        );
+
+        if (foundStreams.length > 0) {
+            // Dacă s-a găsit exact un rezultat, afișează-l
+            if (foundStreams.length === 1) {
+                state.currentVideo = foundStreams[0];
+                updateVideoDisplay();
+                showBanner(`Ai găsit: ${foundStreams[0].title}!`);
+            }
+            // Dacă s-au găsit mai multe, afișează-le în meniu
+            else {
+                state.currentVideo = foundStreams[0];
+                updateVideoDisplay();
+                showBanner(`Găsite ${foundStreams.length} rezultate pentru "${searchTerm}".`);
+            }
+        } else {
+            showBanner(`❌ Nu s-a găsit niciun live cu termenul "${searchTerm}".`);
+        }
+    }
+
+    // === ADD EVENT LISTENERS ===
+    function addEventListeners() {
+        // Butoane principale
+        document.getElementById("tiktok-donate").addEventListener("click", donateCoin);
+        document.getElementById("tiktok-purple").addEventListener("click", purpleButtonClick);
+        document.getElementById("tiktok-shop").addEventListener("click", () => {
+            showBanner("🛒 Magazinul va fi adăugat în viitor!");
+        });
+        document.getElementById("tiktok-search").addEventListener("click", searchLive);
+        document.getElementById("tiktok-menu").addEventListener("click", () => {
+            document.getElementById("tiktok-video-list").style.transform = "translateX(0)";
+            renderVideoList();
+        });
+
+        // Butoane noi
+        document.getElementById("tiktok-emoji").addEventListener("click", () => {
+            const emojiPanel = document.getElementById("tiktok-emoji-panel");
+            emojiPanel.style.display = emojiPanel.style.display === "none" ? "flex" : "none";
+        });
+
+        document.getElementById("tiktok-message").addEventListener("click", () => {
+            const message = prompt("Scrie mesajul:");
+            if (message) {
+                addMessage(`Tu: ${message}`);
+            }
+        });
+
+        document.getElementById("tiktok-share").addEventListener("click", () => {
+            const sharePanel = document.getElementById("tiktok-share-panel");
+            sharePanel.style.display = sharePanel.style.display === "none" ? "flex" : "none";
+        });
+
+        document.getElementById("tiktok-gift").addEventListener("click", () => {
+            const giftPanel = document.getElementById("tiktok-gift-panel");
+            giftPanel.style.display = giftPanel.style.display === "none" ? "flex" : "none";
+        });
+
+        document.getElementById("tiktok-invite").addEventListener("click", () => {
+            document.getElementById("tiktok-invite-panel").style.display = "flex";
+        });
+
+        // Butoane panou invitații
+        document.getElementById("tiktok-request-invite").addEventListener("click", () => {
+            showBanner("📩 Cererea de invitație a fost trimisă!");
+            document.getElementById("tiktok-invite-panel").style.display = "none";
+        });
+
+        document.getElementById("tiktok-find-more").addEventListener("click", () => {
+            showBanner("🔍 Căutăm mai multe locuri disponibile...");
+            document.getElementById("tiktok-invite-panel").style.display = "none";
+        });
+
+        document.getElementById("tiktok-close-invite").addEventListener("click", () => {
+            document.getElementById("tiktok-invite-panel").style.display = "none";
+        });
+
+        // Buton închidere banner
+        document.getElementById("tiktok-close-banner").addEventListener("click", () => {
+            document.getElementById("tiktok-banner").style.display = "none";
+        });
+
+        // Butoane categorii
+        document.getElementById("tiktok-categories").addEventListener("click", () => {
+            document.getElementById("tiktok-categories-panel").style.display = "flex";
+        });
+
+        document.getElementById("tiktok-romania").addEventListener("click", () => {
+            filterVideosByCategory("romania");
+        });
+
+        document.getElementById("tiktok-music").addEventListener("click", () => {
+            filterVideosByCategory("music");
+        });
+
+        document.getElementById("tiktok-close-categories").addEventListener("click", () => {
+            document.getElementById("tiktok-categories-panel").style.display = "none";
+        });
+
+        // Click pe video pentru inimi
+        document.getElementById("tiktok-video-container").addEventListener("click", (e) => {
+            if (state.currentVideo && state.currentVideo.isLive) {
+                const rect = e.target.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                createHeartAnimation(x, y);
+            }
+        });
+
+        // Închide panourile când dai click în afară
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest("#tiktok-emoji") && !e.target.closest("#tiktok-emoji-panel")) {
+                document.getElementById("tiktok-emoji-panel").style.display = "none";
+            }
+            if (!e.target.closest("#tiktok-share") && !e.target.closest("#tiktok-share-panel")) {
+                document.getElementById("tiktok-share-panel").style.display = "none";
+            }
+            if (!e.target.closest("#tiktok-gift") && !e.target.closest("#tiktok-gift-panel")) {
+                document.getElementById("tiktok-gift-panel").style.display = "none";
+            }
+        });
+
+        // Închide meniul lateral
+        document.getElementById("tiktok-close-menu").addEventListener("click", () => {
+            document.getElementById("tiktok-video-list").style.transform = "translateX(-100%)";
+        });
+
+        // Swipe pentru a închide meniul (Android)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        document.getElementById("tiktok-video-list").addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        document.getElementById("tiktok-video-list").addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // pragul pentru swipe
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe la stânga: închide meniul
+                    document.getElementById("tiktok-video-list").style.transform = "translateX(-100%)";
+                } else {
+                    // Swipe la dreapta: deschide meniul
+                    document.getElementById("tiktok-video-list").style.transform = "translateX(0)";
+                }
+            }
+        }
+    }
+
+    // === START ===
+    initOverlay();
+
+    // Adaugă CSS pentru animații
+    const style = document.createElement("style");
+    style.textContent = `
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        @media (max-width: 768px) {
+            #tiktok-controls {
+                flex-direction: column;
+            }
+            #tiktok-controls > div {
+                width: 100%;
+                justify-content: center;
+            }
+            #tiktok-header {
+                padding: 5px;
+            }
+            #tiktok-live-title {
+                font-size: 14px;
+            }
+            #tiktok-messages {
+                height: 20%;
+            }
+            #tiktok-video-container {
+                height: 50%;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+})();

@@ -261,8 +261,6 @@ m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
 m.youtube.com##.cbox.non-search-mode.mobile-topbar-header-content > .yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
 youtube.com##ytd-popup-container.ytd-app.style-scope
 youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
-youtube.com##.ytd-popup-container.style-scope > .yt-upsell-dialog-renderer.style-scope
-youtube.com##.ytd-popup-container.style-scope
 youtube.com##.yt-upsell-dialog-renderer.style-scope
 youtube.com##.yt-upsell-dialog-renderer.style-scope
 facebook.com##.xn9wirt.x1cnzs8.x106a9eq.x1xnnf8n.x7ep2pv.x9f619
@@ -1878,19 +1876,17 @@ www.pinterest.com##.ADXRXN.drGcEU > div.H2DtUH.KwViV7.FE_3R1._tKaHB:nth-of-type(
 www.pinterest.com##.ADXRXN.aHn_t7.bnBtRO.n62I2n
 www.pinterest.com##.ADXRXN.c49R7p.g0I6wi.sSBu24.zEVE_X > div.ADXRXN:nth-of-type(2) > .euRXRl > .dVx3J_.Q3hcOU.mm_g7v > .VHreRh.kHGn_J.XjRT60
 www.pinterest.com##.ADXRXN.c49R7p.g0I6wi.sSBu24.zEVE_X > div.ADXRXN:nth-of-type(3) > .euRXRl > .dVx3J_.Q3hcOU.mm_g7v > .VHreRh.kHGn_J.XjRT60
+www.reddit.com##.inline-flex.button.justify-center.items-center.button-secondary.px-\[calc\(var\(--rem12\)-var\(--button-border-width\,0px\)\)\].button-medium.px-md
 comic-con.ro##.cookie-banner
 comic-con.ro##.safety-fab.safety-fab-pulse
 comic-con.ro##span.footer-separator:nth-of-type(5)
 comic-con.ro##span.footer-separator:nth-of-type(6)
 comic-con.ro##.mobile-menu-social
-www.youtube.com##.paper-toast-open.yt-notification-action-renderer.style-scope.toast-button
-www.youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
 www.youtube.com##.ytd-popup-container.style-scope > .no-transition.yt-upsell-dialog-renderer.style-scope
 www.youtube.com##grid-shelf-view-model.ytd-item-section-renderer.ytGridShelfViewModelHost:nth-of-type(1)
 www.youtube.com###upsell-dialog-title
 www.youtube.com###upsell-dialog-text
 www.youtube.com###icon-container
-www.youtube.com##.yt-upsell-dialog-renderer.style-scope
 policies.google.com
 www.weebly.com###cookie-policy-footer
 www.weebly.com###privacy-policy-link-footer

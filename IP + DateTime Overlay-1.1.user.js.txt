@@ -1,0 +1,129 @@
+// ==UserScript==
+// @name         IP + DateTime Overlay
+// @namespace    http://tampermonkey.net/
+// @version      1.1
+// @description  Afișează overlay cu data, ora și IP public pe orice pagină
+// @author       Tu
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @grant        GM_addStyle
+// @connect      ipify.org
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    GM_addStyle(`
+        #ip-overlay {
+            position: fixed;
+            right: 12px;
+            bottom: 12px;
+            background: rgba(0,0,0,0.75);
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            font-size: 13px;
+            z-index: 2147483647;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            cursor: move;
+            user-select: none;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        #ip-overlay .dt-text { color: #ffffff; }
+        #ip-overlay .ip-text { color: #ffdd00; font-weight: 600; }
+        #ip-overlay .ip-close {
+            margin-left: 8px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        /* Responsive: reduce size on very small screens */
+        @media (max-width:420px){
+            #ip-overlay { font-size:12px; padding:6px 8px; }
+        }
+    `);
+
+    const overlay = document.createElement('div');
+    overlay.id = 'ip-overlay';
+    overlay.innerHTML = `<span class="dt-text">—</span><span class="ip-text">IP: încărcare...</span><button class="ip-close" title="Închide">×</button>`;
+    document.documentElement.appendChild(overlay);
+
+    overlay.querySelector('.ip-close').addEventListener('click', () => {
+        overlay.remove();
+    });
+
+    (function makeDraggable(el) {
+        let isDown = false;
+        let startX, startY, origX, origY;
+
+        const onDown = (e) => {
+            isDown = true;
+            const ev = e.touches ? e.touches[0] : e;
+            startX = ev.clientX;
+            startY = ev.clientY;
+            const rect = el.getBoundingClientRect();
+            origX = rect.left;
+            origY = rect.top;
+            ev.preventDefault?.();
+        };
+        const onMove = (e) => {
+            if (!isDown) return;
+            const ev = e.touches ? e.touches[0] : e;
+            const dx = ev.clientX - startX;
+            const dy = ev.clientY - startY;
+            el.style.left = (origX + dx) + 'px';
+            el.style.top = (origY + dy) + 'px';
+            el.style.right = 'auto';
+            el.style.bottom = 'auto';
+        };
+        const onUp = () => { isDown = false; };
+
+        el.addEventListener('mousedown', onDown);
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+        el.addEventListener('touchstart', onDown, {passive:false});
+        document.addEventListener('touchmove', onMove, {passive:false});
+        document.addEventListener('touchend', onUp);
+    })(overlay);
+
+    function fetchIP() {
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://api.ipify.org?format=json",
+            onload: function(res) {
+                try {
+                    const data = JSON.parse(res.responseText);
+                    const ip = data.ip || 'necunoscut';
+                    overlay.querySelector('.ip-text').textContent = 'IP: ' + ip;
+                } catch (e) {
+                    overlay.querySelector('.ip-text').textContent = 'IP: eroare';
+                }
+            },
+            onerror: function() {
+                overlay.querySelector('.ip-text').textContent = 'IP: eroare';
+            }
+        });
+    }
+
+    function updateDateTime() {
+        const now = new Date();
+        // Format: YYYY-MM-DD HH:MM:SS (local time)
+        const pad = (n) => String(n).padStart(2,'0');
+        const formatted = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+        const dtSpan = overlay.querySelector('.dt-text');
+        dtSpan.textContent = formatted;
+    }
+
+    fetchIP();
+    updateDateTime();
+
+    // Actualizări: dată/ora la fiecare 1s, IP la fiecare 5 minute
+    setInterval(updateDateTime, 1000);
+    setInterval(fetchIP, 5 * 60 * 1000);
+})();

@@ -11,7 +11,6 @@ ventcube.com##div:nth-of-type(2) > .space-y-3 > li:nth-of-type(2)
 ventcube.com##div:nth-of-type(1) > .space-y-3 > li:nth-of-type(1)
 ! 6 iun. 2026 https://securitybrief.co.uk
 securitybrief.co.uk##.lg\:shrink-0.lg\:min-w-60.lg\:w-auto.gap-2.grid-cols-2.w-full.grid
-
 ! 6 iun. 2026 https://finance.yahoo.com
 finance.yahoo.com##a.yf-119g04z.fin-size-medium.subtle-link:nth-of-type(7)
 finance.yahoo.com##.isFooter.yf-s7f2t5.privacy-container
@@ -147,3 +146,23 @@ florariadevis.ro##a.is-small.is-link.white.button:nth-of-type(3)
 florariadevis.ro##.tooltip
 ! 11 iun. 2026 https://www.flowertime.ro
 www.flowertime.ro##.footer-inner
+##.show.inited.trx_addons_icon-up.trx_addons_scroll_to_top
+###qlwapp
+www.autenticddd.ro##.optional > a
+! 11 iun. 2026 https://servicii-contracteddd.ro
+servicii-contracteddd.ro##.elementor-widget-divider.elementor-widget.elementor-widget-divider--view-line.elementor-element-22f9f6d2.elementor-element
+servicii-contracteddd.ro##.elementor-element-7aa863f3.elementor-element.elementor-inner-column.elementor-col-50.elementor-column > .elementor-element-populated.elementor-widget-wrap
+! 11 iun. 2026 https://spynews.ro
+spynews.ro##.spatiu-bottom
+spynews.ro##.gnews-as
+! 11 iun. 2026 https://atitudini.com
+atitudini.com##.jetpack-subscribe-modal__modal-content
+atitudini.com###block_widget-6
+atitudini.com###block_widget-3
+! 11 iun. 2026 https://revistacosmos.com
+revistacosmos.com##.entry-review-stars
+! 11 iun. 2026 https://www.stiripesurse.ro
+www.stiripesurse.ro##.app-banner
+www.stiripesurse.ro##.is-visible.gap-2.right-\[18px\].left-\[18px\].bottom-2.fixed.app-pref-sticky
+! 11 iun. 2026 https://3dots.ro
+3dots.ro##.bde-columns.bde-columns-13375-113

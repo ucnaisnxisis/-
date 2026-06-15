@@ -172,3 +172,19 @@ www.stiripesurse.ro##.app-banner
 www.stiripesurse.ro##.is-visible.gap-2.right-\[18px\].left-\[18px\].bottom-2.fixed.app-pref-sticky
 ! 11 iun. 2026 https://3dots.ro
 3dots.ro##.bde-columns.bde-columns-13375-113
+! 11 iun. 2026 https://expireddomains.com
+expireddomains.com##.social-media-links
+expireddomains.com##.subscribe-section
+! 13 iun. 2026 https://bmalegal.ro
+bmalegal.ro##.to-top-floating.to-top-right.to-top-container
+bmalegal.ro##[href="https://bmalegal.ro/privacy-policy/"]
+! 13 iun. 2026 https://web.archive.org
+web.archive.org##[href="/web/20130119215900/http://animaxtv.ro/oferta-publicitate"] > span
+web.archive.org##[href="/web/20130119215900/http://animaxtv.ro/privacy-policy"] > span
+web.archive.org##.feed-icon > span
+web.archive.org##.block-node.footer.container
+! 13 iun. 2026 https://meoo.ro
+meoo.ro###scroll-to-top
+meoo.ro##div:nth-of-type(2) > .text-gray-300.space-y-2 > li:nth-of-type(5)
+! 13 iun. 2026 https://5filme.com
+5filme.com###button-favorite

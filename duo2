@@ -4,69 +4,50 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-ch (Limit 1,99 MB rules)
 
-! 1 iun. 2026 https://m.webtoons.com
 m.webtoons.com###likeIt
 m.webtoons.com##._viewerAppDownloadPopup.ly_download_app
 m.webtoons.com##._goTop.viewer_top
-! 1 iun. 2026 https://liveatpc.com
 liveatpc.com##.elementor-button-wrapper
-! 3 iun. 2026 https://github.com
 github.com##.tmp-pr-lg-4.tmp-mb-5.col-lg-4.col-12
-! 6 iun. 2026 https://ventcube.com
 ventcube.com##div:nth-of-type(2) > .space-y-3 > li:nth-of-type(2)
 ventcube.com##div:nth-of-type(1) > .space-y-3 > li:nth-of-type(1)
-! 6 iun. 2026 https://securitybrief.co.uk
 securitybrief.co.uk##.lg\:shrink-0.lg\:min-w-60.lg\:w-auto.gap-2.grid-cols-2.w-full.grid
-! 6 iun. 2026 https://finance.yahoo.com
 finance.yahoo.com##a.yf-119g04z.fin-size-medium.subtle-link:nth-of-type(7)
 finance.yahoo.com##.isFooter.yf-s7f2t5.privacy-container
-! 6 iun. 2026 https://freedomhouse.org
 freedomhouse.org##.is-visible.newsletter-webform
 freedomhouse.org##.donate-button
 freedomhouse.org##[href="/about-us/privacy-policy"]
 freedomhouse.org###block-footermainmenu > .menu > li.menu-item:nth-of-type(5)
-! 6 iun. 2026 https://www.mediafax.ro
 www.mediafax.ro###divee-widget-placeholder
-! 6 iun. 2026 https://www.capital.ro
 www.capital.ro##div.mb-4.gap-2.flex-wrap.flex
 www.capital.ro##.mt-4.gap-3.flex
 www.capital.ro##.gap-8.lg\:grid-cols-4.sm\:grid-cols-2.grid-cols-1.grid > div:nth-of-type(3)
-! 6 iun. 2026 https://orizonturiliterare.ro
 orizonturiliterare.ro##.site-brand > .mobile-navigation-toggle
-! 6 iun. 2026 https://www.androidro.ro
 www.androidro.ro##.footer-links
 www.androidro.ro##.site-footer
-! 6 iun. 2026 https://support.google.com
 support.google.com##sc-client-feedback-inline-feedback-link
 support.google.com##.shaded.sub-article-container
 support.google.com##sc-client-feedback-inline-feedback-link
 support.google.com##p:nth-of-type(9)
 support.google.com##h2:nth-of-type(3)
-! 6 iun. 2026 https://lorphic.com
 lorphic.com###bbb-badge
-! 6 iun. 2026 https://www.thewindowsclub.com
 www.thewindowsclub.com##.twc-btn-wrap
-! 6 iun. 2026 https://www.getyourguide.com
 www.getyourguide.com##.c-icon__c-heart.i-heart
 www.getyourguide.com##.wishicon-atom
 www.getyourguide.com##.navigation__directory
 www.getyourguide.com##.navigation__item-section_mobile.navigation__item
 www.getyourguide.com##li.navigation__item-list-item > [href="/ro-ro/c/privacy-policy/"]
 www.getyourguide.com##li.navigation__item-list-item:nth-of-type(4)
-! 6 iun. 2026 https://ro.minuporno.com
 ro.minuporno.com##.legal-exit.legal-button
 ro.minuporno.com##.legal-text
 ro.minuporno.com##.legal-control
 ro.minuporno.com##.legal-copyright
-! 6 iun. 2026 https://www.getyourguide.com
 www.getyourguide.com##li:nth-of-type(12)
-! 6 iun. 2026 https://pornoxxx.vip
 pornoxxx.vip##[href="https://www.google.com/"]
 pornoxxx.vip##.am-content > p
 pornoxxx.vip##.am-footer
 pornoxxx.vip##.am-content > strong
 pornoxxx.vip##.viewsTrack.cxAdProAlert
-! 6 iun. 2026 https://www.avvenire.it
 www.avvenire.it##.gap-10.justify-between.items-start.flex-wrap.max-w-full.w-full.flex.mt-10
 www.avvenire.it##a.mx-2\.5.footer__link--xxs.footer__link:nth-of-type(2)
 www.avvenire.it##div.md\:border-b-0.md\:w-1\/5.sm\:w-1\/2.pr-2.border-b.w-full.border-primary-600:nth-of-type(3) > .pb-8.mt-4
@@ -74,23 +55,18 @@ www.avvenire.it##.btn-mode--default.btn--default.btn--medium.btn--accent.btn-def
 www.avvenire.it##.italic.py-4.border-y-gray-300.border-y.gap-2.justify-center.items-center.flex.my-4.text-body
 www.avvenire.it##.social-share-main
 www.avvenire.it##.justify-center.items-center.shrink-0.flex
-! 6 iun. 2026 https://www.tgtube.com
 www.tgtube.com##.h-full.gap-4.flex-col.flex.py-1.grow.max-h-full.overflow-auto.relative.modal-body
 www.tgtube.com##.mt-2
 www.tgtube.com##a.legal-link.anchor-link:nth-of-type(4)
 www.tgtube.com##a.legal-link.anchor-link:nth-of-type(2)
 www.tgtube.com##.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:hidden.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:opacity-0.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:invisible.context-button.button-text.button
-! 6 iun. 2026 https://wanderlog.com
 wanderlog.com##.pointer-events-none.PageBottomPromoContainer
 wanderlog.com##.justify-content-center.d-flex
-! 6 iun. 2026 https://www.maturetube.com
 www.maturetube.com##.h-full.gap-4.flex-col.flex.py-1.grow.max-h-full.overflow-auto.relative.modal-body
 www.maturetube.com##.mt-2
-! 6 iun. 2026 https://www.hok-cba.hr
 www.hok-cba.hr##.top-footer-social
 www.hok-cba.hr##[href="https://www.hok-cba.hr/o-nama/zastita-osobnih-podataka/"]
 www.hok-cba.hr##[href="https://www.hok-cba.hr/politika-zastite-osobnih-podataka//"]
-! 6 iun. 2026 https://www.cagliaritoday.it
 www.cagliaritoday.it##.u-size-1-3\@lg.u-size-1-2\@md.u-pr-large.u-mb-medium
 www.cagliaritoday.it##li.u-mb-small:nth-of-type(4)
 www.cagliaritoday.it##.iubenda-cs-preferences-link.o-link-inverse.u-nav-03
@@ -100,19 +76,14 @@ www.cagliaritoday.it##.u-body-02.u-text-center
 www.cagliaritoday.it##.l-entry__footer
 www.cagliaritoday.it##.u-p-xlarge\@md.u-px-xxsmall.u-py-large.u-items-center.u-justify-center.u-column.u-flex.u-size-1-3\@lg.u-size-full.c-footer__claim
 www.cagliaritoday.it##.u-justify-center.u-items-center.u-gap-small.u-flex.u-size-full.u-no-underline.c-btn--rounded.c-btn--inverse.c-btn
-! 6 iun. 2026 https://www.tiava.com
 www.tiava.com##.h-full.gap-4.flex-col.flex.py-1.grow.max-h-full.overflow-auto.relative.modal-body
 www.tiava.com##.group-\[\.paid\]\/card\:opacity-0.dark\:text-zinc-100.text-zinc-900.rounded.text-sm.px-1.inline-block.dark\:bg-zinc-800\/80.bg-zinc-100\/80.float-start.rating-badge
 www.tiava.com##.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:hidden.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:opacity-0.has-\[body\.sub\]\:has-\[\.card\.no-click\]\:invisible.context-button.button-text.button
-! 6 iun. 2026 https://pizdemari.com
 pizdemari.com##.like_view
-! 7 iun. 2026 https://proton.me
 proton.me##.min-h-16.motion-reduce\:transition-none.transition-all.overflow-hidden.sm\:hidden.bg-purple-900.items-center.flex-row.flex
-! 7 iun. 2026 https://www.acgcbk33.vip
 www.acgcbk33.vip###xfq-floatingBall
 www.acgcbk33.vip###m-footer-apkdownload
 www.acgcbk33.vip###permanent_text_bulletin
-! 8 iun. 2026 https://proton.me
 proton.me##div.xl\:px-16.md\:px-8.px-4.dtc-pb-8.xl\:dtc-pb-16.md\:dtc-pb-12.dtc-pt-4.xl\:dtc-pt-12.md\:dtc-pt-8
 proton.me##.xl\:px-16.md\:px-8.px-4.dtc-pb-16.xl\:dtc-pb-24.md\:dtc-pb-20.dtc-pt-4.xl\:dtc-pt-12.md\:dtc-pt-8
 proton.me##.xl\:px-16.md\:px-8.px-4.dtc-pb-4.xl\:dtc-pb-12.md\:dtc-pb-8.dtc-pt-4.xl\:dtc-pt-12.md\:dtc-pt-8
@@ -122,91 +93,59 @@ proton.me##.overflow-hidden.xl\:px-16.md\:px-8.px-4.dtc-pb-16.xl\:dtc-pb-24.md\:
 proton.me##.dtc-pb-4.dtc-pt-4.mx-auto.dtc-max-w-full
 proton.me##div.xl\:px-16.md\:px-8.px-4.dtc-pb-24.xl\:dtc-pb-44.md\:dtc-pb-32.dtc-pt-0:nth-of-type(13)
 proton.me##.overflow-hidden.xl\:px-16.md\:px-8.px-4.dtc-pb-16.xl\:dtc-pb-24.md\:dtc-pb-20.dtc-pt-0 > .mx-auto.dtc-max-w-7xl > .lg\:grid-cols-2.gap-y-12.gap-x-24.grid-cols-1.grid > .lg\:pb-18.lg\:pt-4.gap-y-12.justify-center.items-stretch.flex-col.flex > div:nth-of-type(1) > .text-start.items-start.gap-y-4.items-stretch.flex-col.flex > .space-y-3 > .justify-start.gap-2.flex-wrap.flex > .max-sm\:w-full.gap-1.text-base.px-5.py-1\.5.motion-safe\:active\:translate-y-px.focus-visible\:ring.ring-offset-2.no-underline.bg-transparent.hocus\:text-white.hocus\:bg-purple-700.ring-offset-white.ring-purple-800.text-purple-500.motion-reduce\:transition-none.ease-out.duration-150.transition-\[color\,background-color\,border-color\,box-shadow\].outline-none.font-semibold.text-center.rounded-full.justify-center.items-center.shrink-0.inline-flex
-! 8 iun. 2026 https://www.xcinema.ro
 www.xcinema.ro##.mb-2.justify-content-end.d-flex
-! 8 iun. 2026 https://decodo.com
 decodo.com##.flex-1.w-full
 decodo.com##.row-start-2.col-start-1.gap-8.flex-col.flex
 decodo.com##.row-start-1.col-start-1.gap-8.flex-col.flex
 decodo.com##div.gap-6.flex-col.w-\[200px\].flex:nth-of-type(1) > .gap-3.flex-col.flex > a.font-normal.active\:bg-transparent.hover\:bg-transparent.dark\:hover\:text-brand-500.hover\:text-brand-500.dark\:text-base-dark-white.text-gray-950.font-mono.text-body-m.bg-transparent.h-fit.p-0.lineHeight-\[1\.5rem\].disabled\:pointer-events-none.disabled\:text-gray-500.disabled\:bg-gray-200.transition-colors.rounded-\[4px\].justify-center.items-center.gap-2.inline-flex.w-fit:nth-of-type(5)
-! 8 iun. 2026 https://www.google.com
 www.google.com##[href^="https://accounts.google.com/ServiceLogin"]
-! 8 iun. 2026 https://hentai4porn.com
 hentai4porn.com##div.icon1.header:nth-of-type(1) > div > .lazyloaded
-! 9 iun. 2026 https://www.deichmann.com
 www.deichmann.com###\31 EVfO6tXAPnpJMwSTBywvt
 www.deichmann.com##[href="privacypolicy"]
 www.deichmann.com##[href="newsletter"]
-! 10 iun. 2026 https://ooni.org
 ooni.org##.space-x-6.flex
 ooni.org##div:nth-of-type(1) > ul > li:nth-of-type(4)
-! 10 iun. 2026 https://adguard-dns.io
 adguard-dns.io##.footer__bottom-links
-! 10 iun. 2026 https://www.childrensent.com
 www.childrensent.com##body > iframe
-! 10 iun. 2026 https://cartoondealer.com
 cartoondealer.com##.footer-inner
-! 11 iun. 2026 https://florariadevis.ro
 florariadevis.ro##a.is-small.is-link.white.button:nth-of-type(2)
 florariadevis.ro##a.is-small.is-link.white.button:nth-of-type(3)
 florariadevis.ro##.tooltip
-! 11 iun. 2026 https://www.flowertime.ro
 www.flowertime.ro##.footer-inner
 ##.show.inited.trx_addons_icon-up.trx_addons_scroll_to_top
 ###qlwapp
 www.autenticddd.ro##.optional > a
-! 11 iun. 2026 https://servicii-contracteddd.ro
 servicii-contracteddd.ro##.elementor-widget-divider.elementor-widget.elementor-widget-divider--view-line.elementor-element-22f9f6d2.elementor-element
 servicii-contracteddd.ro##.elementor-element-7aa863f3.elementor-element.elementor-inner-column.elementor-col-50.elementor-column > .elementor-element-populated.elementor-widget-wrap
-! 11 iun. 2026 https://spynews.ro
 spynews.ro##.spatiu-bottom
 spynews.ro##.gnews-as
-! 11 iun. 2026 https://atitudini.com
 atitudini.com##.jetpack-subscribe-modal__modal-content
 atitudini.com###block_widget-6
 atitudini.com###block_widget-3
-! 11 iun. 2026 https://revistacosmos.com
 revistacosmos.com##.entry-review-stars
-! 11 iun. 2026 https://www.stiripesurse.ro
 www.stiripesurse.ro##.app-banner
 www.stiripesurse.ro##.is-visible.gap-2.right-\[18px\].left-\[18px\].bottom-2.fixed.app-pref-sticky
-! 11 iun. 2026 https://3dots.ro
 3dots.ro##.bde-columns.bde-columns-13375-113
-! 11 iun. 2026 https://expireddomains.com
 expireddomains.com##.social-media-links
 expireddomains.com##.subscribe-section
-! 13 iun. 2026 https://bmalegal.ro
 bmalegal.ro##.to-top-floating.to-top-right.to-top-container
 bmalegal.ro##[href="https://bmalegal.ro/privacy-policy/"]
-! 13 iun. 2026 https://web.archive.org
 web.archive.org##[href="/web/20130119215900/http://animaxtv.ro/oferta-publicitate"] > span
 web.archive.org##[href="/web/20130119215900/http://animaxtv.ro/privacy-policy"] > span
 web.archive.org##.feed-icon > span
 web.archive.org##.block-node.footer.container
-! 13 iun. 2026 https://meoo.ro
 meoo.ro###scroll-to-top
 meoo.ro##div:nth-of-type(2) > .text-gray-300.space-y-2 > li:nth-of-type(5)
-! 13 iun. 2026 https://5filme.com
 5filme.com###button-favorite
-! 12 iun. 2026 https://thebestfetishsites.com
 thebestfetishsites.com##.user-rating-block
-! 12 iun. 2026 https://apify.com
 apify.com##div.kietmN.Badges__StyledBadgeList-sc-7dd674ec-0
-! 12 iun. 2026 https://serviciidddiasi.ro
 serviciidddiasi.ro##.f-form
-! 12 iun. 2026 https://alz.ro
 alz.ro###text-3
-! 13 iun. 2026 https://stiri.md
 stiri.md##.active.ggILyw.BackToTop__Button-sc-f7dceec3-0 > svg
-! 14 iun. 2026 https://www.kalda.co
 www.kalda.co##div.foot-col:nth-of-type(5)
 www.kalda.co##li:nth-of-type(7)
-! 14 iun. 2026 https://m.misiuneacasa.ro
 m.misiuneacasa.ro##[href="/politica-de-confidentialitate-siguranta-datelor-personale"]
-! 15 iun. 2026 https://the-artifice.com
 the-artifice.com##.footer-inner
 the-artifice.com###social-top
-! 15 iun. 2026 https://m.youtube.com
 m.youtube.com##.search-bar-entry-point-voice-search-button.search-bar-entry-point-button
-! 15 iun. 2026 https://www.animax.co.jp
 www.animax.co.jp###js-program-daily-button > .scrollin.fadein-up.fadein

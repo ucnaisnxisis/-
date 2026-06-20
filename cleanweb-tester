@@ -1,0 +1,328 @@
+// ==UserScript==
+// @name         Auto-Block Distractions (Cookies, Social, Notifications, Scroll Buttons, 18+, Newsletters, Email Subscriptions, App Banners)
+// @namespace    http://tampermonkey.net/
+// @version      1.5
+// @description  Blochează automat: notificări, iconițe sociale, bannere cookie, footer cookie, butoane scroll, 18+, newsletters, abonări, oferte prin e-mail, bannere de instalare aplicații, și apasă pe Reject/18+/Straight/OK
+// @author       Youu
+// @match        *://*/*
+// @exclude      *://*.duckduckgo.com/*
+// @exclude      *://tampermonkey.net/*
+// @grant        GM_addStyle
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        window.close
+// @grant        window.focus
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // --- LISTA ALBĂ: SITE-URI EXCLUSE ---
+    const excludedDomains = [
+        'duckduckgo.com',
+        'tampermonkey.net'
+    ];
+
+    // Verifică dacă site-ul curent este în lista albă
+    if (excludedDomains.some(domain => window.location.hostname.includes(domain))) {
+        console.log('Site-ul este în lista albă. Scriptul nu rulează.');
+        return;
+    }
+
+    // --- LISTA DE SITE-URI PENTRU BUTOANELE 18+ (xnxx.com, xvideos.com) ---
+    const adultSites = [
+        'www.xnxx.com',
+        'www.xvideos.com'
+    ];
+
+    // --- LISTA DE SITE-URI PENTRU BUTOANUL SECUNDAR (opțional) ---
+    // Adaugă aici site-urile unde vrei să funcționeze butonul secundar
+    const secondaryButtonSites = [
+        // Exemplu: 'siteul-tau.com'
+    ];
+
+    // 1. ASCUNDE ELEMENTELE DERANJANTE (CSS)
+    GM_addStyle(`
+        /* Ascunde bannerele de cookie */
+        .cookie*, [class*="cookie"], [id*="cookie"],
+        .cookieconsent*, #cookieconsent*, [class*="consent"],
+        .gdpr*, [class*="gdpr"], [id*="gdpr"],
+        .footer-places-privacy, .footer-places-cookiestatement,
+        [href*="politica-de-confidentialitate"],
+        [href*="privacy"], [href*="datenschutz"],
+        [href*="cookie"], [href*="terms"], [href*="imprint"],
+        #usercentrics-root, #uc-center-container,
+        .uc*, .cc_*, #cc_*, .cmplz-*, #cmplz-*,
+
+        /* Ascunde newsletters, abonări, oferte prin e-mail */
+        [class*="newsletter"], [id*="newsletter"],
+        [class*="subscribe"], [id*="subscribe"],
+        [class*="subscription"], [id*="subscription"],
+        [class*="email"], [id*="email"],
+        [class*="offer"], [id*="offer"],
+        [class*="promo"], [id*="promo"],
+        [href*="newsletter"], [href*="subscribe"],
+        [href*="abonare"], [href*="oferta"],
+        [href*="promo"], [href*="email"],
+        .newsletter-form, .subscribe-form, .email-signup,
+
+        /* Ascunde iconițele sociale */
+        .social*, [class*="social"], [id*="social"],
+        .whatsapp*, [class*="whatsapp"], [id*="whatsapp"],
+        .facebook*, [class*="facebook"], [id*="facebook"],
+        .twitter*, [class*="twitter"], [id*="twitter"],
+        .instagram*, [class*="instagram"], [id*="instagram"],
+        .share*, [class*="share"], [id*="share"],
+
+        /* Ascunde butoanele de scroll (sus/jos) */
+        .scroll-to-top*, .scrollTop*, .back-to-top*,
+        .scroll-down*, .scrollBottom*, .effectiveAppsScrollToTopBtn,
+        [class*="scroll"], [id*="scroll"],
+
+        /* Ascunde notificările */
+        .notification*, [class*="notification"], [id*="notification"],
+        .toast*, [class*="toast"], [id*="toast"],
+        .alert*, [class*="alert"], [id*="alert"],
+        .popup*, [class*="popup"], [id*="popup"],
+
+        /* Ascunde bannerele de instalare aplicații */
+        [class*="install"], [id*="install"],
+        [class*="app"], [id*="app"],
+        [class*="download"], [id*="download"],
+        [class*="google-play"], [id*="google-play"],
+        [class*="huawei-gallery"], [id*="huawei-gallery"],
+        [class*="app-store"], [id*="app-store"],
+        [href*="install"], [href*="app"],
+        [href*="download"], [href*="google-play"],
+        [href*="huawei-gallery"], [href*="app-store"],
+        .install-banner, .app-banner, .download-banner,
+        .google-play-banner, .huawei-gallery-banner,
+
+        /* Ascunde footer-ul dacă conține cuvinte cheie */
+        footer:has([href*="cookie"]),
+        footer:has([href*="reclame"]),
+        footer:has([href*="advertising"]),
+        footer:has([href*="politica-de-confidentialitate"]),
+        footer:has([href*="politica-de-confidențialitate"]),
+        footer:has([href*="privacy"]),
+        footer:has([href*="politica"]),
+        .footer:has(.cookie*),
+        .footer:has(.gdpr*),
+        footer [class*="cookie"], footer [class*="cookies"],
+        footer [class*="advertising"], footer [class*="advert"],
+        footer [class*="subscribe"], footer [class*="privacy"],
+        footer [class*="policy"], footer [class*="confidențialitate"],
+        footer [class*="confidentialitate"], footer [class*="reclame"],
+        footer [class*="publicitate"],
+        footer [href*="cookie"], footer [href*="cookies"],
+        footer [href*="advertising"], footer [href*="advert"],
+        footer [href*="subscribe"], footer [href*="privacy"],
+        footer [href*="policy"], footer [href*="confidențialitate"],
+        footer [href*="confidentialitate"], footer [href*="reclame"],
+        footer [href*="publicitate"],
+        footer [href*="newsletter"], footer [href*="abonare"],
+        footer [href*="oferta"], footer [href*="promo"] {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+        }
+    `);
+
+    // 2. APASĂ AUTOMAT PE BUTOANELE DE "REJECT COOKIES" / "18+" / "STRAIGHT" / "OK"
+    function clickRejectButtons() {
+        // Selectori pentru "Reject Cookies"
+        const rejectButtons = [
+            'button[class*="reject"]',
+            'button[id*="reject"]',
+            'button[class*="decline"]',
+            'button[id*="decline"]',
+            'button[class*="no"]',
+            'button[id*="no"]',
+            'button[class*="close"]',
+            'button[id*="close"]',
+            'button[aria-label*="reject"]',
+            'button[aria-label*="decline"]',
+            'button[aria-label*="no"]',
+            'button[aria-label*="close"]',
+            '[class*="cookie"] button',
+            '[id*="cookie"] button',
+            '.cookie* button',
+            '#cookie* button',
+
+            // Selectori pentru "18+"
+            'button[class*="18"]',
+            'button[id*="18"]',
+            'button[class*="age"]',
+            'button[id*="age"]',
+            'button[aria-label*="18"]',
+            'button[aria-label*="age"]',
+            '[class*="age-gate"] button',
+            '[id*="age-gate"] button',
+            'button[class*="🔞"]',
+            'button[id*="🔞"]',
+            'button[aria-label*="🔞"]',
+
+            // Selectori pentru "Straight" (inclusiv cu emoji-uri și combinații)
+            'button[class*="Straight"]',
+            'button[id*="Straight"]',
+            'button[aria-label*="Straight"]',
+            'button[class*="Drept"]',
+            'button[id*="Drept"]',
+            'button[aria-label*="Drept"]',
+            'button[class*="🚻"]',
+            'button[id*="🚻"]',
+            'button[aria-label*="🚻"]',
+            'button[class*="♂️"]',
+            'button[id*="♂️"]',
+            'button[aria-label*="♂️"]',
+            'button[class*="♀️"]',
+            'button[id*="♀️"]',
+            'button[aria-label*="♀️"]',
+            'button[class*="🏳️‍🌈"]',
+            'button[id*="🏳️‍🌈"]',
+            'button[aria-label*="🏳️‍🌈"]',
+            'button[class*="🏳️‍⚧️"]',
+            'button[id*="🏳️‍⚧️"]',
+            'button[aria-label*="🏳️‍⚧️"]',
+            'button[class*="♀️♂️"]',
+            'button[id*="♀️♂️"]',
+            'button[aria-label*="♀️♂️"]',
+            'button[class*="♂️♀️"]',
+            'button[id*="♂️♀️"]',
+            'button[aria-label*="♂️♀️"]',
+            'button[class*="Drept ENTER"]',
+            'button[id*="Drept ENTER"]',
+            'button[aria-label*="Drept ENTER"]',
+            'button[class*="Drept enter"]',
+            'button[id*="Drept enter"]',
+            'button[aria-label*="Drept enter"]',
+
+            // Selectori pentru "OK" (strict pentru YouTube)
+            'button[class*="Ok"]',
+            'button[id*="Ok"]',
+            'button[aria-label*="Ok"]',
+            'button[class*="ok"]',
+            'button[id*="ok"]',
+            'button[aria-label*="ok"]',
+
+            // Selectori generice pentru butoane de închidere
+            '.close-btn', '#close-btn',
+            '[class*="close"]', '[id*="close"]',
+            '[class*="dismiss"]', '[id*="dismiss"]',
+            '[class*="accept"] + button',
+
+            // Selectori pentru "Enter"
+            'button[class*="Enter"]',
+            'button[id*="Enter"]',
+            'button[aria-label*="Enter"]',
+            'button[class*="enter"]',
+            'button[id*="enter"]',
+            'button[aria-label*="enter"]'
+        ];
+
+        for (const selector of rejectButtons) {
+            const buttons = document.querySelectorAll(selector);
+            buttons.forEach(button => {
+                if (button && !button.disabled && button.offsetParent !== null) {
+                    button.click();
+                    console.log('Am apăsat automat pe:', selector);
+                }
+            });
+        }
+
+        // --- LOGICĂ PENTRU ORIENTARE SEXUALĂ ---
+        const orientationButtons = [
+            { selector: 'button[class*="straight"], button[id*="straight"], button[aria-label*="straight"], button[class*="Drept"], button[id*="Drept"], button[aria-label*="Drept"], button[class*="🚻"], button[id*="🚻"], button[aria-label*="🚻"], button[class*="♂️"], button[id*="♂️"], button[aria-label*="♂️"], button[class*="♀️"], button[id*="♀️"], button[aria-label*="♀️"], button[class*="♀️♂️"], button[id*="♀️♂️"], button[aria-label*="♀️♂️"], button[class*="♂️♀️"], button[id*="♂️♀️"], button[aria-label*="♂️♀️"], button[class*="Drept ENTER"], button[id*="Drept ENTER"], button[aria-label*="Drept ENTER"], button[class*="Drept enter"], button[id*="Drept enter"], button[aria-label*="Drept enter"]', priority: 1 },
+            { selector: 'button[class*="lesbi"], button[id*="lesbi"], button[aria-label*="lesbi"]', priority: 2 },
+            { selector: 'button[class*="trans"], button[id*="trans"], button[aria-label*="trans"], button[class*="🏳️‍⚧️"], button[id*="🏳️‍⚧️"], button[aria-label*="🏳️‍⚧️"]', priority: 3 },
+            { selector: 'button[class*="gay"], button[id*="gay"], button[aria-label*="gay"], button[class*="🏳️‍🌈"], button[id*="🏳️‍🌈"], button[aria-label*="🏳️‍🌈"]', priority: 4 }
+        ];
+
+        for (const { selector, priority } of orientationButtons) {
+            const button = document.querySelector(selector);
+            if (button && button.offsetParent !== null) {
+                button.click();
+                console.log(`Am apăsat pe butonul de prioritate ${priority}:`, selector);
+                return;
+            }
+        }
+
+        // --- LOGICĂ PENTRU "OK" (STRICT PENTRU YOUTUBE) ---
+        const isYouTube = window.location.hostname.includes('youtube.com');
+        if (isYouTube) {
+            const okButtons = [
+                'button[class*="Ok"], button[id*="Ok"], button[aria-label*="Ok"],
+                'button[class*="ok"], button[id*="ok"], button[aria-label*="ok"]'
+            ];
+            for (const selector of okButtons) {
+                const buttons = document.querySelectorAll(selector);
+                buttons.forEach(button => {
+                    if (button && !button.disabled && button.offsetParent !== null) {
+                        button.click();
+                        console.log('Am apăsat automat pe butonul OK (YouTube):', selector);
+                    }
+                });
+            }
+        }
+
+        // --- LOGICĂ PENTRU BUTOANELE 18+ (xnxx.com, xvideos.com) ---
+        const isAdultSite = adultSites.some(site => window.location.hostname.includes(site));
+        if (isAdultSite) {
+            const disclaimerButton = document.querySelector('.disclaimer-enter-btn.btn-primary.btn');
+            if (disclaimerButton && disclaimerButton.offsetParent !== null) {
+                // Apasă o singură dată
+                if (!GM_getValue('adultSiteButtonClicked', false)) {
+                    disclaimerButton.click();
+                    GM_setValue('adultSiteButtonClicked', true);
+                    console.log('Am apăsat o singură dată pe butonul 18+ pentru:', window.location.hostname);
+                }
+            }
+        }
+
+        // --- LOGICĂ PENTRU BUTOANUL SECUNDAR (opțional) ---
+        const isSecondaryButtonSite = secondaryButtonSites.some(site => window.location.hostname.includes(site));
+        if (isSecondaryButtonSite) {
+            const secondaryButton = document.querySelector('.disclaimer-enter-btn.btn-secondary.btn');
+            if (secondaryButton && secondaryButton.offsetParent !== null) {
+                secondaryButton.click();
+                console.log('Am apăsat pe butonul secundar pentru:', window.location.hostname);
+            }
+        }
+    }
+
+    // 3. MONITORIZARE DINAMICĂ (PENTRU BANNERELE CARE APARE DUPĂ ÎNCĂRCARE)
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(() => {
+            clickRejectButtons();
+        });
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: false,
+        characterData: false
+    });
+
+    // 4. RULEAZĂ LA ÎNCĂRCAREA PAGINII
+    window.addEventListener('load', clickRejectButtons);
+    setTimeout(clickRejectButtons, 1000);
+    setTimeout(clickRejectButtons, 3000);
+
+    // 5. BLOCARE NOTIFICĂRI BROWSER
+    if (window.Notification) {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                console.log('Notificările sunt blocate de script.');
+            }
+        });
+    }
+
+    // 6. BLOCARE POP-UP-URI (dacă apar)
+    window.addEventListener('beforeunload', () => {
+        window.onbeforeunload = null;
+    });
+})();

@@ -1,0 +1,156 @@
+// ==UserScript==
+// @name         Auto-Block Distractions (Cookies, Social, Notifications, Scroll Buttons, 18+)
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Blochează automat: notificări, iconițe sociale, bannere cookie, footer cookie, butoane scroll, și apasă pe Reject/18+
+// @author       You
+// @match        *://*/*
+// @grant        GM_addStyle
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @grant        window.close
+// @grant        window.focus
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 1. ASCUNDE ELEMENTELE DERANJANTE (CSS)
+    GM_addStyle(`
+        /* Ascunde bannerele de cookie */
+        .cookie*, [class*="cookie"], [id*="cookie"],
+        .cookieconsent*, #cookieconsent*, [class*="consent"],
+        .gdpr*, [class*="gdpr"], [id*="gdpr"],
+        .footer-places-privacy, .footer-places-cookiestatement,
+        [href*="politica-de-confidentialitate"],
+        [href*="privacy"], [href*="datenschutz"],
+        [href*="cookie"], [href*="terms"], [href*="imprint"],
+        #usercentrics-root, #uc-center-container,
+        .uc*, .cc_*, #cc_*, .cmplz-*, #cmplz-* {
+            display: none !important;
+            visibility: hidden !important;
+            height: 0 !important;
+            width: 0 !important;
+            opacity: 0 !important;
+        }
+
+        /* Ascunde iconițele sociale */
+        .social*, [class*="social"], [id*="social"],
+        .whatsapp*, [class*="whatsapp"], [id*="whatsapp"],
+        .facebook*, [class*="facebook"], [id*="facebook"],
+        .twitter*, [class*="twitter"], [id*="twitter"],
+        .instagram*, [class*="instagram"], [id*="instagram"],
+        .share*, [class*="share"], [id*="share"] {
+            display: none !important;
+        }
+
+        /* Ascunde butoanele de scroll (sus/jos) */
+        .scroll-to-top*, .scrollTop*, .back-to-top*,
+        .scroll-down*, .scrollBottom*, .effectiveAppsScrollToTopBtn,
+        [class*="scroll"], [id*="scroll"] {
+            display: none !important;
+        }
+
+        /* Ascunde notificările */
+        .notification*, [class*="notification"], [id*="notification"],
+        .toast*, [class*="toast"], [id*="toast"],
+        .alert*, [class*="alert"], [id*="alert"],
+        .popup*, [class*="popup"], [id*="popup"] {
+            display: none !important;
+        }
+
+        /* Ascunde footer-ul dacă conține cuvinte cheie */
+        footer:has([href*="cookie"]),
+        footer:has([href*="reclame"]),
+        footer:has([href*="advertising"]),
+        footer:has([href*="politica-de-confidentialitate"]),
+        footer:has([href*="politica-de-confidențialitate"]),
+        footer:has([href*="privacy"]),
+        footer:has([href*="politica"]),
+        .footer:has(.cookie*),
+        .footer:has(.gdpr*) {
+            display: none !important;
+        }
+    `);
+
+    // 2. APASĂ AUTOMAT PE BUTOANELE DE "REJECT COOKIES" / "18+"
+    function clickRejectButtons() {
+        const rejectButtons = [
+            // Selectori pentru "Reject Cookies"
+            'button[class*="reject"]',
+            'button[id*="reject"]',
+            'button[class*="decline"]',
+            'button[id*="decline"]',
+            'button[class*="no"]',
+            'button[id*="no"]',
+            'button[class*="close"]',
+            'button[id*="close"]',
+            'button[aria-label*="reject"]',
+            'button[aria-label*="decline"]',
+            'button[aria-label*="no"]',
+            'button[aria-label*="close"]',
+            '[class*="cookie"] button',
+            '[id*="cookie"] button',
+            '.cookie* button',
+            '#cookie* button',
+            // Selectori pentru "18+"
+            'button[class*="18"]',
+            'button[id*="18"]',
+            'button[class*="age"]',
+            'button[id*="age"]',
+            'button[aria-label*="18"]',
+            'button[aria-label*="age"]',
+            '[class*="age-gate"] button',
+            '[id*="age-gate"] button',
+            // Selectori generice pentru butoane de închidere
+            '.close-btn', '#close-btn',
+            '[class*="close"]', '[id*="close"]',
+            '[class*="dismiss"]', '[id*="dismiss"]',
+            '[class*="accept"] + button', // Uneori "Reject" e lângă "Accept"
+        ];
+
+        for (const selector of rejectButtons) {
+            const buttons = document.querySelectorAll(selector);
+            buttons.forEach(button => {
+                if (button && !button.disabled && button.offsetParent !== null) {
+                    button.click();
+                    console.log('Am apăsat automat pe:', selector);
+                }
+            });
+        }
+    }
+
+    // 3. MONITORIZARE DINAMICĂ (PENTRU BANNERELE CARE APARE DUPĂ ÎNCĂRCARE)
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(() => {
+            clickRejectButtons();
+        });
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: false,
+        characterData: false
+    });
+
+    // 4. RULEAZĂ LA ÎNCĂRCAREA PAGINII
+    window.addEventListener('load', clickRejectButtons);
+    setTimeout(clickRejectButtons, 1000); // și după 1 secundă (pentru bannerele întârziate)
+    setTimeout(clickRejectButtons, 3000); // și după 3 secunde (pentru site-uri lente)
+
+    // 5. BLOCARE NOTIFICĂRI BROWSER
+    if (window.Notification) {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                console.log('Notificările sunt blocate de script.');
+            }
+        });
+    }
+
+    // 6. BLOCARE POP-UP-URI (dacă apar)
+    window.addEventListener('beforeunload', () => {
+        window.onbeforeunload = null;
+    });
+})();

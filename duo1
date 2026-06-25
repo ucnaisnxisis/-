@@ -304,6 +304,48 @@ xat.com###space16
 wiki.xat.com##[href="/Redirect:Privacy"]
 forum.xat.com##.ipsSocialIcons
 forum.xat.com##.ipsFooterLinks
+canaletvonline.com##.like-action-control.toolbar-item-content
+tvonlinero.org##[href="/politica"]
+itmania.ro###adasprso-banner
+tvron.ro##.right-side-header
+hauzen.ro###wachat
+hauzen.ro##.footer-row-section-social
+www.frontiersin.org##.Footer__socialLinks
+www.frontiersin.org##[href="https://www.frontiersin.org/legal/privacy-policy"]
+www.frontiersin.org##.ToolbarContextual--up.ToolbarContextual--open.ToolbarContextual > li.ToolbarContextual__option:nth-of-type(2)
+||www.theadvocates.org/images/with-bg-triangle-top.svg$image
+www.theadvocates.org##.dark\:bg-\[\#232323\].dark\:border-\[\#444\].lg\:p-7\.5.lg\:max-w-\[350px\].p-5.bg-white.border-\[\#dbe7eb\].border.rounded-2xl.w-full
+www.theadvocates.org##.items-start.flex-col.flex
+||www.theadvocates.org/images/with-bg-triangle-top.svg$image
+www.theadvocates.org##.dark\:border-\[\#fff3\].pt-6.border-\[\#e5e5e5\].border-t.justify-between.items-center.flex.my-6
+www.theadvocates.org##.lg\:self-center.lg\:justify-end.lg\:items-end.self-start.gap-\[15px\].flex
+www.seattletimes.com##.menu-item-42880.menu-item-has-children.menu-item-object-post_format.menu-item-type-taxonomy.menu-item
+kinkygames.io##.adult-warning-panel > p
+kinkygames.io##.adult-warning-actions > .pill-outline.pill
+kinkygames.io##.game-action-dropdown-wrap
+kinkygames.io##.game-hero-actions > .game-action-icon-btn
+www.medicinas.ro##.in.fade.modal-backdrop
+www.medicinas.ro##.wapp-floating
+www.medicinas.ro##[href="https://www.medicinas.ro/prelucrarea-datelor-cu-caracter-personal/6"]
+www.medicinas.ro##.col-md-4.footer-col
+clubmistic.ro##.one-third.column-3.column > .widgets > .widget_media_image.widget
+huff.ro##.mvp-author-twit
+www.ghicitul-in-palma.visele.ro###footer > .container > .row > div.col-md-2:nth-of-type(3)
+www.corsair.com###google_preferred_source
+www.corsair.com###social_callout > ul
+www.onlaptop.ro###cm
+www.onlaptop.ro##[href="/regulament-gdpr"]
+www.onlaptop.ro##[href="/politica-cookie"]
+weather.com##.order-1
+weather.com##li.py-2.flex:nth-of-type(6)
+weather.com##li.py-2.flex:nth-of-type(4)
+whatismyipaddress.com##.footer-wrapper
+cetatenie.just.ro##.pojo-a11y-toolbar-toggle
+intreababanca.ro###back-to-top
+intreababanca.ro###menu-item-914
+intreababanca.ro###menu-item-918
+intreababanca.ro###epcl_about-1 > .info > .social
+www.softwareadvice.com##.gap-3.items-end.flex-col.flex.z-50.sm\:right-6.sm\:bottom-6.right-4.bottom-4.fixed
 www.libertateapentrufemei.ro##.newsletter-in-content
 ||pagead2.googlesyndication.com/pagead/js/*$script,domain=~google.com
 ||googlevideo.com//pagead/$third-party

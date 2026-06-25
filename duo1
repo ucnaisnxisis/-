@@ -2209,9 +2209,6 @@ m.youtube.com##.ytGridShelfViewModelHost > div
 m.youtube.com##.ytShelfHeaderLayoutDisableHorizontalPadding.ytShelfHeaderLayoutHost
 m.youtube.com##.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextMono.ytSpecButtonShapeNextFilled.ytSpecButtonShapeNextHost
 m.youtube.com##yt-tab-shape.ytTabShapeHostClickable.ytTabShapeHost:nth-of-type(3)
-m.youtube.com##.ytSpecTouchFeedbackShapeFill
-m.youtube.com##.ytSpecTouchFeedbackShapeStroke
-m.youtube.com##.ytSpecTouchFeedbackShapeHost.ytSpecTouchFeedbackShapeTouchResponse
 m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon > .yt-icon-shape.ytSpecIconShapeHost > div
 m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon > .yt-icon-shape.ytSpecIconShapeHost
 m.youtube.com##.ytSpecButtonShapeNextIcon > c3-icon

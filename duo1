@@ -310,6 +310,7 @@ xat.com###space16
 wiki.xat.com##[href="/Redirect:Privacy"]
 forum.xat.com##.ipsSocialIcons
 forum.xat.com##.ipsFooterLinks
+ytbdownload.com##div.content:nth-of-type(4)
 canaletvonline.com##.like-action-control.toolbar-item-content
 tvonlinero.org##[href="/politica"]
 itmania.ro###adasprso-banner

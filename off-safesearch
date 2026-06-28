@@ -102,6 +102,7 @@
     metager: { cookie: 'web_setting_s', is_array: false, value: 'o', domain: null, replaceUrl: 's' },
     startpage: { cookie: 'preferences', is_array: true, name: 'disable_family_filter', value: '1', separator: 'N', equal: 'EEE', domain: null },
     brave: { cookie: 'safesearch', is_array: false, value: 'off', domain: null }
+    google: { cookie: 'safesearch', is_array: false, value: 'off', domain: null }
   };
 
   let website = (function () {

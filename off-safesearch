@@ -1,0 +1,226 @@
+// ==UserScript==
+// @name         Disable safesearch (force safe=off via redirect)
+// @namespace    https://example.invalid/disable-safesearch
+// @home         https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/off-safesearch
+// @version      0.1.8
+// @description  Force safe=off on many search engines (redirect to URL with safe=off when needed)
+// @author       You
+// @include      https://*.google.*/search*
+// @include      https://*.google.*/imgres*
+// @match        https://www.bing.com/search?*
+// @match        https://www.bing.com/images/search?q=*&FORM=HDRSC3
+// @match        https://www.bing.com/videos/search?q=*&FORM=HDRSC4
+// @match        https://www.bing.com/news/search?q=*&FORM=HDRSC7
+// @match        https://www.bing.com/search?q=*&FORM=HDRSC1
+// @match        https://www.bing.com/search?q=*
+// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=news&iar=news
+// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=web
+// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=images&iax=images
+// @include      https://duckduckgo.com/?q=*&t=fpas&safe=off&ia=videos&iax=videos
+// @include      https://duckduckgo.com/?q=*
+// @include      https://duckduckgo.com/?q=*&t=ffab&iar=videos&safe=off
+// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=images&iax=images
+// @match        https://duckduckgo.com/?q=*&t=ffab&safe=off&ia=web
+// @match        https://duckduckgo.com/?q=*&t=fpas&iar=images
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=videos&iax=videos
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=images&iax=images
+// @match        https://duckduckgo.com/?t=ffab&q=*&ia=web
+// @match        https://yep.com/web?q=*
+// @match        https://yep.com/images?gl=RO&q=*
+// @match        https://yep.com/news?q=*
+// @match        https://you.com/*
+// @match        https://openverse.org/search/?q=*
+// @match        https://swisscows.com/en/web?query=*
+// @match        https://swisscows.com/en/news?query=*
+// @match        https://swisscows.com/en/images?query=*
+// @match        https://swisscows.com/en/video?query=*
+// @match        https://swisscows.com/en/music?query=*
+// @match        https://gibiru.com/results.html?q=*&cx=partner-pub-5956360965567042%3A8627692578&cof=FORID%3A11&ie=UTF-8
+// @match        https://searx.thegpm.org/*
+// @match        https://yandex.com/search/touch/?text=*&msid=1694578864172742-5505132880591793597-balancer-l7leveler-kubr-yp-sas-85-BAL-4877&search_source=yacom_touch_common&lr=15090&mda=0
+// @match        https://yandex.com/images/touch/search?text=*&parent-reqid=1694578869550003-3486553891269925461-balancer-l7leveler-kubr-yp-sas-85-BAL-1250
+// @match        https://yandex.com/video/touch/search?text=*
+// @match        https://www.baidu.com/from=844b/s?word=*&ts=0&t_kt=0&ie=utf-8&fm_kl=021394be2f&rsv_iqid=9247584279662534986&sa=ib&ms=1
+// @match        https://m.baidu.com/sf/vsearch?pd=video&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b&atn=index
+// @match        https://m.baidu.com/sf/vsearch?pd=tieba&word=*&tn=vsearch&sa=vs_tab&lid=9330781378770190878&ms=1&from=844b
+// @match        https://*.search.yahoo.com/*
+// @match        https://www.ecosia.org/search?q=*
+// @match        https://www.ecosia.org/images?q=*
+// @match        https://www.ecosia.org/videos?q=*
+// @match        https://www.ecosia.org/news?q=*
+// @match        https://www.qwant.com/?s=0&t=images&q=*
+// @match        https://www.qwant.com/?s=0&t=web&q=*
+// @match        https://www.qwant.com/?s=0&q=*&t=videos
+// @match        https://www.startpage.com/search
+// @match        https://search.brave.com/settings
+// @match        https://search.brave.com/search?q=*&source=web
+// @match        https://search.brave.com/images?q=*
+// @match        https://search.brave.com/videos?q=*
+// @match        https://search.brave.com/goggles?q=*
+// @match        https://search.brave.com/news?q=*&source=web
+// @match        https://www.dogpile.com/serp?q=*&sc=Hn0qr1PRkJ8920
+// @match        https://www.dogpile.com/serp?qc=images&q=*&sc=eBU7ec0hh9xy20
+// @match        https://www.dogpile.com/serp?qc=video&q=*&sc=ULxcfvwzcazZ20
+// @match        https://www.dogpile.com/serp?qc=news&q=*&sc=giInZcYVPfxR20
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=bing.com
+// @grant        none
+// @run-at       document-start
+// ==/UserScript==
+
+(function () {
+  'use strict';
+
+  const nowHref = () => window.location.href;
+  const isHTTPS = () => location.protocol === 'https:';
+  const sameOriginDomainValid = (candidate) => {
+    if (!candidate) return false;
+    const hostParts = window.location.hostname.split('.');
+    const hostSuffix = hostParts.slice(-2).join('.');
+    return candidate === hostSuffix || candidate === window.location.hostname;
+  };
+
+  // FORCE redirect variant: if safe param missing or different, redirect to same-origin URL with safe=off
+  (function ensureUrlSafeOff() {
+    try {
+      const url = new URL(nowHref());
+      if (!url.searchParams.has('safe') || url.searchParams.get('safe') !== 'off') {
+        url.searchParams.set('safe', 'off');
+        // Force full redirect so server receives param
+        window.location.href = url.toString();
+      }
+    } catch (e) {}
+  })();
+
+  const cookieSettings = {
+    bing: { cookie: 'SRCHHPGUSR', is_array: true, name: 'ADLT', value: 'OFF', domain: null, sameSite: 'None', separator: '&', session: false },
+    duckduckgo: { cookie: 'p', is_array: false, value: '-2', domain: null, sameSite: 'Lax' },
+    yep: { localStorage: 'safeSearch', value: 'off', replaceUrl: 'safeSearch' },
+    yahoo: { cookie: 'sB', is_array: true, name: 'vm', value: 'p', domain: null, sameSite: 'None', session: true, separator: '&' },
+    you: { cookie: 'safesearch_guest', is_array: false, value: 'Off', domain: null },
+    ecosia: { cookie: 'ECFG', is_array: true, name: 'f', value: 'n', domain: null, separator: ':', sameSite: 'Lax' },
+    qwant: { cookie: 's', is_array: false, value: '0', domain: null, replaceUrl: 's' },
+    metager: { cookie: 'web_setting_s', is_array: false, value: 'o', domain: null, replaceUrl: 's' },
+    startpage: { cookie: 'preferences', is_array: true, name: 'disable_family_filter', value: '1', separator: 'N', equal: 'EEE', domain: null },
+    brave: { cookie: 'safesearch', is_array: false, value: 'off', domain: null }
+  };
+
+  let website = (function () {
+    try {
+      const parts = window.location.hostname.split('.');
+      return parts.length >= 2 ? parts.at(-2) : window.location.hostname;
+    } catch (e) { return window.location.hostname; }
+  })();
+
+  if (window.location.hostname.includes('search.brave.com')) website = 'brave';
+  if (window.location.hostname.includes('duckduckgo.com')) website = 'duckduckgo';
+  if (window.location.hostname.includes('yep.com')) website = 'yep';
+  if (window.location.hostname.includes('startpage.com')) website = 'startpage';
+
+  const settings = cookieSettings[website];
+  if (!settings) return;
+
+  function getRawCookies() {
+    try { return document.cookie || ''; } catch (e) { return ''; }
+  }
+
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function buildArrayCookieString(rawCookie, cfg) {
+    const sep = cfg.separator || '&';
+    const eq = cfg.equal || '=';
+    let base = rawCookie ? rawCookie.replaceAll(/[ ;]/g, '') : (cfg.cookie + '=');
+    if (base.includes(cfg.name + eq)) {
+      const re = new RegExp('(^|' + escapeRegExp(sep) + ')' + escapeRegExp(cfg.name) + eq + '[^' + escapeRegExp(sep) + ']*');
+      if (!new RegExp(escapeRegExp(cfg.name) + eq + escapeRegExp(cfg.value)).test(base)) {
+        base = base.replace(re, '$1' + cfg.name + eq + cfg.value);
+      }
+    } else {
+      if (!base.endsWith(sep) && base.length) base += sep;
+      base += cfg.name + eq + cfg.value;
+    }
+    return base;
+  }
+
+  function buildSimpleCookieString(cfg) {
+    return cfg.cookie + '=' + cfg.value;
+  }
+
+  function setCookieString(cookieString, cfg) {
+    try {
+      let cookieParts = cookieString + '; path=/;';
+      if (!cfg.session) cookieParts += ' expires=Fri, 01 Jan 2038 00:00:00 GMT;';
+      if (cfg.domain && sameOriginDomainValid(cfg.domain)) cookieParts += ' domain=' + cfg.domain + ';';
+      if (isHTTPS()) cookieParts += ' Secure;';
+      if (cfg.sameSite) {
+        if (cfg.sameSite.toLowerCase() === 'none') {
+          if (isHTTPS()) cookieParts += ' SameSite=None;';
+        } else {
+          cookieParts += ' SameSite=' + cfg.sameSite + ';';
+        }
+      }
+      document.cookie = cookieParts;
+      console.log('[disable-safesearch] set cookie:', cookieParts.split(';')[0]);
+    } catch (e) {
+      console.warn('[disable-safesearch] cookie set failed', e);
+    }
+  }
+
+  const POSTSET_DELAY = 75;
+
+  function applySettings() {
+    try {
+      if (settings.localStorage) {
+        try {
+          localStorage.setItem(settings.localStorage, settings.value);
+          console.log('[disable-safesearch] localStorage set:', settings.localStorage, settings.value);
+          if (settings.replaceUrl) {
+            const loc = window.location.toString().replace(new RegExp('([?&])' + escapeRegExp(settings.replaceUrl) + '[^&]*&?'), '$1');
+            if (loc !== window.location.toString()) window.location = loc;
+          } else {
+            setTimeout(() => location.reload(), POSTSET_DELAY);
+          }
+          return;
+        } catch (e) {}
+      }
+
+      if (settings.cookie) {
+        const raw = getRawCookies();
+        const cookieMatch = raw.match(new RegExp('(?:^|; )' + escapeRegExp(settings.cookie) + '=[^;]*'));
+        let newCookie;
+        if (settings.is_array) {
+          const matched = cookieMatch ? cookieMatch[0].replaceAll(/[ ;]/g, '') : (settings.cookie + '=');
+          newCookie = buildArrayCookieString(matched, settings);
+        } else {
+          const existing = cookieMatch ? cookieMatch[0].replaceAll(/[ ;]/g, '') : '';
+          if (existing !== (settings.cookie + '=' + settings.value)) newCookie = buildSimpleCookieString(settings);
+          else newCookie = null;
+        }
+
+        if (newCookie) {
+          setTimeout(() => setCookieString(newCookie, settings), POSTSET_DELAY);
+          setTimeout(() => {
+            if (settings.replaceUrl && window.location.toString().match(new RegExp('([?&])' + escapeRegExp(settings.replaceUrl) + '[^&]*&?'))) {
+              window.location = window.location.toString().replace(new RegExp('([?&])' + escapeRegExp(settings.replaceUrl) + '[^&]*&?'), '$1');
+            } else {
+              const nav = performance.getEntriesByType('navigation')[0];
+              if (!nav || nav.type !== 'reload') location.reload();
+            }
+          }, POSTSET_DELAY + 20);
+        } else {
+          if (settings.replaceUrl && window.location.toString().match(new RegExp('([?&])' + escapeRegExp(settings.replaceUrl) + '[^&]*&?'))) {
+            window.location = window.location.toString().replace(new RegExp('([?&])' + escapeRegExp(settings.replaceUrl) + '[^&]*&?'), '$1');
+          } else {
+            console.log('[disable-safesearch] nothing to do for', website);
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[disable-safesearch] applySettings error', e);
+    }
+  }
+
+  applySettings();
+
+})();

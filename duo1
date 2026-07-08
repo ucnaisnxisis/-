@@ -302,6 +302,39 @@ www.biblegateway.com##li.legal:nth-of-type(10)
 www.descopera.ro##.sgb-google-buttons
 github.com##.js-webauthn-login-emu-control
 github.com##cookie-consent-link
+www.bb-shop.ro##.in.fade.modal
+www.bb-shop.ro##.in.fade.modal-backdrop
+www.bb-shop.ro##.option
+www.bb-shop.ro##[href="/utilizare_cookie.html"] > p
+www.bb-shop.ro##li:nth-of-type(10) > [href="https://www.tiktok.com/@bb_shop.ro"]
+www.bb-shop.ro##.left.col-sm-8.hidden-xs > ul > li:nth-of-type(7)
+www.bb-shop.ro##[href="https://www.youtube.com/@BB-Shop"]
+www.bb-shop.ro##li:nth-of-type(8) > [href="https://www.instagram.com/bbshop_romania/"]
+whatismyipaddress.com##.pum-trigger.open-privacy-policy.popup-privacy-policy-link
+www.vpn.com###popup-overlay
+au.pcmag.com##.footer-wrapper
+au.pcmag.com##[href="https://www.ziffdavis.com/"]
+au.pcmag.com##[href="https://www.ziffdavis.com/privacy-policy"]
+acceptromania.ro###cya11y-container
+www.antreprenoare.ro##[href="https://www.antreprenoare.ro/publicitate-pe-antreprenoare-ro/"]
+www.sfatulmedicului.ro##[href="//www.sfatulmedicului.ro/cookies"]
+www.sfatulmedicului.ro##[href="//www.sfatulmedicului.ro/confidentialitate"]
+www.reddit.com##li.max-h-none.overflow-visible.whitespace-normal.text-12.max-h-\[var\(--rem20\)\].overflow-hidden.text-ellipsis.whitespace-nowrap.inline-block.m-0.p-0:nth-of-type(2)
+www.livetickets.ro##li.ng-tns-c72-4.submenu:nth-of-type(3)
+www.google.com##.fzj3ad
+mail.proton.me##.modal-two
+mail.proton.me##.modal-two-backdrop--in.modal-two-backdrop
+www.tiktok.com##.TUXModal-overlay
+www.stopkillinggames.com##.backdrop-blur-md.bg-surface-raised\/95.border-border-default.border-t.z-\[100\].bottom-0.inset-x-0.fixed
+www.stopkillinggames.com##.hover\:text-accent-blue.transition-colors.text-left.cursor-pointer
+www.nouadreapta.org###ampz_flyin
+www.nouadreapta.org##.g-social
+www.nouadreapta.org###ampz_inline_bottom
+www.nouadreapta.org###ampz_inline_top
+www.nouadreapta.org##.slideInLeft.animated.ampz_sidebar_share_visible.ampz_sidebar_left.ampz_show_sidebar
+www.stiripesurse.ro##.max-w-fit.gap-\[0\.656rem\].lg\:flex.hidden
+www.stiripesurse.ro##.md\:items-center.md\:gap-6.gap-\[1\.25rem\].md\:flex-row.flex-col.md\:py-\[1\.336rem\].md\:flex.hidden
+www.stiripesurse.ro##.gap-4.flex-col.lg\:flex.hidden
 xat.com##.xbanner.mb-3.text-center
 xat.com###promoframe
 xat.com##div.col-sm > .container-fluid

@@ -4,6 +4,7 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+report.error-report.com
 185.178.208.163
 103.224.182.246
 www.lepierre.com

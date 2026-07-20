@@ -49,6 +49,22 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
+mail.proton.me##.bg-info.no-print.text-bold.relative.text-center.flex-nowrap.shrink-0.flex
+##[href="https://www.*.net/privacy.php"]
+www.cancan.ro##.single__aside
+ncac.org###mobile-menu-item-76492
+study.com##.appSmartBanner--jsp.android.appSmartBanner
+pikbest.com##.footer-shore
+pikbest.com###footer-sitemap-list-3 > li:nth-of-type(5)
+www.tampermonkey.net##a.tab:nth-of-type(5)
+www.tampermonkey.net##footer
+www.tampermonkey.net##span:nth-of-type(3)
+www.tampermonkey.com##[href="https://www.tampermonkey.net/privacy.php"]
+www.tampermonkey.net###-privacy-policy
+www.tampermonkey.net##.subnav.row > .container
+www.tampermonkey.net##a.tab:nth-of-type(3)
+www.tampermonkey.net##.footer.row
+www.tampermonkey.net##[href="https://www.userscript.zone/privacy"]
 zonait.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
 lovedeco.ro##.items-start.flex-col.flex.shrink-0.md\:w-1\/4.w-full
 web.archive.org##.footer-list

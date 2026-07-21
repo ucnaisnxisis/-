@@ -1,0 +1,151 @@
+// ==UserScript==
+// @name         Force Dark (skip already-dark) - DarkReader-like
+// @namespace    local.force-dark-skip
+// @version      1.0
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+(function () {
+  'use strict';
+
+  const STYLE_ID = 'tm-force-dark-skip-style';
+
+  function parseRgb(rgb) {
+    // rgb(r,g,b) or rgba(r,g,b,a)
+    const m = (rgb || '').match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/i);
+    if (!m) return null;
+    return { r: +m[1], g: +m[2], b: +m[3] };
+  }
+
+  function srgbToLin(c) {
+    c /= 255;
+    return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  }
+
+  function luminanceFromRgb({r,g,b}) {
+    // Relative luminance (sRGB)
+    const R = srgbToLin(r), G = srgbToLin(g), B = srgbToLin(b);
+    return 0.2126 * R + 0.7152 * G + 0.0722 * B; // 0..1
+  }
+
+  function getEffectiveBodyBackground() {
+    const body = document.body;
+    if (!body) return null;
+
+    const cs = getComputedStyle(body);
+    // Prefer background-color; fallback to html background
+    let bg = cs.backgroundColor;
+    if (!bg || bg === 'rgba(0, 0, 0, 0)') {
+      const html = document.documentElement;
+      if (html) bg = getComputedStyle(html).backgroundColor;
+    }
+    return parseRgb(bg);
+  }
+
+  function isAlreadyDark() {
+    const rgb = getEffectiveBodyBackground();
+    if (!rgb) return false;
+
+    // Threshold: if page background is dark enough, skip inversion
+    const lum = luminanceFromRgb(rgb); // 0=dark, 1=light
+    return lum < 0.35;
+  }
+
+  function ensureStyle() {
+    if (document.getElementById(STYLE_ID)) return;
+
+    const style = document.createElement('style');
+    style.id = STYLE_ID;
+
+    // Notes:
+    // - For light pages: use filter-based inversion
+    // - For already-dark pages: only apply minor adjustments (no inversion)
+    style.textContent = `
+      /* Base guard */
+      html.tm-dark * { transition: none !important; }
+
+      /* Applied only when we decide to invert */
+      html.tm-force-invert {
+        filter: invert(1) hue-rotate(180deg) saturate(1.1) contrast(0.95);
+      }
+
+      /* Undo inversion for media and form controls where possible */
+      html.tm-force-invert img,
+      html.tm-force-invert video,
+      html.tm-force-invert iframe,
+      html.tm-force-invert picture,
+      html.tm-force-invert svg {
+        filter: none !important;
+      }
+
+      /* Text readability tweaks (applies always) */
+      html.tm-force-dark * {
+        text-shadow: none !important;
+      }
+    `;
+    document.documentElement.appendChild(style);
+  }
+
+  function apply() {
+    ensureStyle();
+
+    // Always mark
+    document.documentElement.classList.add('tm-force-dark');
+
+    // Decide: invert only for light pages
+    const alreadyDark = isAlreadyDark();
+    if (alreadyDark) {
+      document.documentElement.classList.remove('tm-force-invert');
+
+      // Minimal “make readable” tweaks without inversion:
+      const patch = document.createElement('style');
+      patch.textContent = `
+        html.tm-force-dark body {
+          background: #0b0b0b !important;
+          color: #f2f2f2 !important;
+        }
+        html.tm-force-dark * {
+          background-color: inherit !important;
+          color: inherit !important;
+        }
+      `;
+      // Avoid stacking many times
+      patch.id = 'tm-force-dark-noinvert-patch';
+      if (!document.getElementById(patch.id)) document.documentElement.appendChild(patch);
+
+      return;
+    }
+
+    // Light page: invert
+    document.documentElement.classList.add('tm-force-invert');
+
+    // Also force body colors for consistency (helps on pages that rely on custom styles)
+    const patch = document.createElement('style');
+    patch.textContent = `
+      html.tm-force-dark body {
+        background: #0b0b0b !important;
+        color: #f2f2f2 !important;
+      }
+    `;
+    patch.id = 'tm-force-dark-invert-patch';
+    if (!document.getElementById(patch.id)) document.documentElement.appendChild(patch);
+  }
+
+  // Run early, then re-run after DOM changes (single page apps)
+  apply();
+
+  const mo = new MutationObserver(() => {
+    // Re-check occasionally; cheap enough for small number of updates
+    // Avoid infinite work by disconnecting after first useful application
+    try {
+      apply();
+    } catch (e) {}
+  });
+
+  // Watch for major DOM updates
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+  // Keep short: after 2 seconds, stop observing
+  setTimeout(() => mo.disconnect(), 2000);
+})();

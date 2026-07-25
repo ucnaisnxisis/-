@@ -302,6 +302,61 @@ www.biblegateway.com##.legal.eu-only
 www.biblegateway.com##li.legal:nth-of-type(6)
 www.biblegateway.com##li.legal:nth-of-type(10)
 www.descopera.ro##.sgb-google-buttons
+intimax.ro##div.bottom__bar-item:nth-of-type(2)
+intimax.ro##div.bottom__bar-item:nth-of-type(5)
+lovepoint.ro##.shopify-app-block.shopify-block
+lovepoint.ro##shopify-chat
+lovepoint.ro##.col-xl-4.col-lg-4.col-md-12.col-sm-12
+www.sexlab.ro###address-list [src]
+www.sexlab.ro###address-list > div:nth-of-type(5)
+www.sexlab.ro##div.tit-name:nth-of-type(3)
+www.sexlab.ro##.wa-float
+erotic24.ro##.px-1.pe-lg-2
+erotic24.ro##.px-5.py-5.d-lg-none.col-lg-3
+www.pasiune.ro##.footer_social_iconn
+www.pasiune.ro##.cont_footer_social_iconn
+www.pasiune.ro##div.col-xs-12.col-sm-3.col-md-3.col-lg-3:nth-of-type(2) > .col-inner > div > .list-unstyled.box-content > li:nth-of-type(2)
+www.pasiune.ro##.cart-button
+www.depozituldesex.ro##[href="/pages/confidentialitate/"]
+www.denysa.ro##.introduce-list > li:nth-of-type(5)
+www.sexfull.ro##.row > div.col-sm-4:nth-of-type(1)
+www.compari.ro##.modal-header
+www.compari.ro##.adult-no.btn-default.btn
+www.skroutz.ro##.age-verification.js-age-verification > p
+www.skroutz.ro##button.js-submit.btn:nth-of-type(2)
+www.skroutz.ro##.heart.icon.rc-icon-btn
+www.skroutz.ro##.notifications-link.js-bottom-tab.icon
+toperotic.ro###window > p
+toperotic.ro###checkAgeN
+toperotic.ro##a[href="/login"]:nth-of-type(3)
+www.aventurierotice.ro##.age-gate__subheadline
+www.aventurierotice.ro##.age-gate__headline
+www.aventurierotice.ro##.site-footer
+jucariisexualecupovesti.ro###page-wrap > .clear-fix
+www.satisfyer.com##.entry--notepad.navigation--entry.service--entry
+www.satisfyer.com##.footer--socials
+www.satisfyer.com##.footer--app
+www.satisfyer.com##.footer-minimal.container
+www.satisfyer.com##.is--collapsed.js--collapse-target.column--content.column--navigation > .navigation--list > li.navigation--entry:nth-of-type(3)
+www.satisfyer.com##div.block.column--menu.footer--column:nth-of-type(2) > .is--collapsed.js--collapse-target.column--content.column--navigation > .navigation--list > li.navigation--entry:nth-of-type(2)
+www.satisfyer.com##.action--note.product--action
+www.satisfyer.com##.product--rating-container
+www.netu.ro###netu-btn-customize
+www.netu.ro###netu-consent-banner-text
+www.netu.ro##.e-child.e-con.ecomus-motion--var\(--position\).ecomus-mobile-column--default.ecomus-tablet-column--default.ecomus-responsive-column.e-flex.e-con-full.elementor-element-c298fbb.elementor-element
+www.netu.ro###menu-item-19884 > [href]
+www.netu.ro##[href="https://www.netu.ro/politica-de-confidentialitate/"]
+www.netu.ro##[href="https://www.netu.ro/feedback/"]
+www.netu.ro##[href="#cookie-settings"]
+www.netu.ro##.ecomus-social-icons__wrapper
+www.netu.ro##div.em-flex-center.em-flex.ecomus-mobile-navigation-bar__item:nth-of-type(4)
+portcetate.ro##[href="https://portcetate.ro/politica-de-confidentialitate/"]
+lovmi.ro##.text-start.relative.modal__content--p-medium.modal__content.flex-auto > .rte.section__block
+lovmi.ro##.js-cancel-button.btn--popup-2.btn--secondary.btn
+lovmi.ro##.footer-menu--first.disclosure.footer-menu > .has-motion.disclosure__panel > .disclosure__content.footer-menu__links > li:nth-of-type(3)
+justlove.ro###wpconsent-root
+lovelab.ro##.rte.typeset2.popup__text
+lovelab.ro##.button--tertiary.button--small.button
 nym.com##.mui-89g2do.MuiBox-root
 nym.com##.mui-k9ylw2.MuiBox-root
 nym.com##.mui-19nvly0.MuiStack-root

@@ -49,6 +49,10 @@ www.cylex.es##div:nth-of-type(6)
 www.cylex.net.za##div:nth-of-type(5)
 www.cylex.co.nz##div:nth-of-type(5)
 www.cylex.com.ar##div:nth-of-type(5)
+www.youtube.com###header-image > .yt-img-shadow.style-scope
+www.youtube.com###upsell-dialog-text
+www.youtube.com###upsell-dialog-title
+www.youtube.com##.ytSpecButtonShapeNextEnableBackdropFilterExperiment.ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextCallToAction.ytSpecButtonShapeNextFilled.ytSpecButtonShapeNextHost
 mail.proton.me##.bg-info.no-print.text-bold.relative.text-center.flex-nowrap.shrink-0.flex
 ##[href="https://www.*.net/privacy.php"]
 www.cancan.ro##.single__aside

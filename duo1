@@ -327,6 +327,15 @@ wire.com##.kl-footer__legal [href="https://wire.com/en/privacy-policy"]
 wire.com##.kl-footer__social
 wire.com##[href="#"]
 wire.com##.hs-richtext
+www.ubbcluj.ro##.aligncenter.left.w33
+www.ubbcluj.ro##[href="/ro/politici/"]
+www.ubbcluj.ro##.copy > div > [href="/ro/politici/cookies"]
+www.ubbcluj.ro###ubbaccessibility-toolbar
+cryptomator.org##.min-h-\[80vh\].bg-gray-100 > .pb-24.pt-12.text-center.container
+cryptomator.org##div:nth-of-type(4) > .m-0.list-none > li:nth-of-type(3)
+forums.pcsx2.net##.footer-inner
+www.ps2-home.com##.footer-inner
+www.reddit.com##.overflow-hidden.relative.p-md.bg-neutral-background-weak.rounded-4.m-md.w-\[251px\].h-\[calc\(100vh-64px-56px\)\].flex-col.flex
 www.gdprregister.eu##[href="https://www.gdprregister.eu/privacy-policy/"]
 www.theregister.com##[href="https://www.theregister.com/Profile/cookies"]
 www.theregister.com##[href="https://situationpublishing.com/contact/"]

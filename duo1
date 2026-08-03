@@ -279,6 +279,33 @@ www.youtube.com###upsell-dialog-title
 www.youtube.com###upsell-dialog-text
 www.youtube.com###header-image > .yt-img-shadow.style-scope
 www.youtube.com##ytd-popup-container.ytd-app.style-scope
+www.youtube.com###voice-search-button
+www.youtube.com###guide-links-primary
+www.youtube.com###guide-links-secondary
+www.youtube.com##ytd-guide-section-renderer.ytd-guide-renderer.style-scope:nth-of-type(4)
+www.youtube.com##ytd-guide-signin-promo-renderer.ytd-guide-renderer.style-scope
+www.youtube.com##ytd-menu-service-item-renderer.ytd-menu-popup-renderer.style-scope:nth-of-type(2)
+www.youtube.com##yt-notification-action-renderer.ytd-popup-container.style-scope
+www.youtube.com###subscribe-button-shape
+www.youtube.com##.ytd-menu-renderer.style-scope.top-level-buttons
+www.youtube.com###button > .ytd-menu-renderer.style-scope
+www.youtube.com###dislike-button
+www.youtube.com###like-button
+www.youtube.com###flexible-item-buttons
+www.youtube.com###action-menu
+www.youtube.com##.ytd-comment-engagement-bar.style-scope
+www.youtube.com##yt-list-item-view-model.ytListItemViewModelHost:nth-of-type(3)
+www.youtube.com##yt-multi-page-menu-section-renderer.ytd-multi-page-menu-renderer.style-scope:nth-of-type(3)
+www.youtube.com##.ytFlexibleActionsViewModelAction
+www.youtube.com###subscribe
+www.youtube.com###menu > .ytd-watch-metadata.style-scope
+www.youtube.com##.image-overlay-text.shortsLockupViewModelHostShowOverPlayer.shortsLockupViewModelHostOutsideMetadataMenu
+anthropos.ro##div.wp-block-column-is-layout-flow.is-layout-flow.has-14-px-font-size.wp-block-column:nth-of-type(2)
+nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(4)
+nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(5) > .gap-2.flex-col.flex > a.hover\:text-primary.text-white\/75:nth-of-type(4)
+nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(5) > .gap-2.flex-col.flex > a.hover\:text-primary.text-white\/75:nth-of-type(5)
+nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(5) > .gap-2.flex-col.flex > a.hover\:text-primary.text-white\/75:nth-of-type(3)
+nibiru.net##.text-left.hover\:text-primary.text-white\/75
 facebook.com##.xn9wirt.x1cnzs8.x106a9eq.x1xnnf8n.x7ep2pv.x9f619
 facebook.com##.x1r1pt67.xtvsq51.x1g0dm76.xpdmqnj.x9f619.x14e42zd.x1qhh985.x10w94by.x972fbf.x5fzff1.xws8118.x1b1wa69.x14ldlfn.x1q0g3np.xozqiw3.x6s0dn4.xl56j7k.x1n2onr6.x2lah0s.x78zum5.x1ja2u2z
 facebook.com##.x1n2onr6.xippug5.xg6iff7.xdt5ytf.x78zum5

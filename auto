@@ -9,6 +9,31 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+##.BackToTop_show__vOQaZ.BackToTop_backToTop__I1aFe
+##.MainHeader_wish__5zLJ6
+###top-wishlist
+##.header-component__item--wishlist.header-component__item
+##[href="https://comenzi.bebetei.ro/eveniment/campanii-exclusiv-in-aplicatie"]
+##.hu.ht.hs.hr
+##.hk.hj.o.dx.b.hi.hh > .bh.bg.bf.be.bd.l.bc.c.bb.ba.b
+##a.uvp-item:nth-of-type(3) > .go.b.g.hm.o.bc.fg.c
+##.e-child.e-con.e-flex.color-scheme-light.e-con-full.elementor-element-7400d24.elementor-element
+##.col-lg-8.bottom-footer__link-container
+##.AppButtons_appButtonsList__CJniU
+##.Newsletter_newsletterWrapper__bjpL4
+##[href="#cookies-policy"]
+##[href="https://bandidoshop.ro/wishlist/"]
+##[href="/politica-cookie-uri-ue"]
+##[href="https://www.sephora.ro/politica-de-confidentialitate-si-cookies.html"]
+##.fa-pinterest.svg-inline--fa
+##.fa-tiktok.svg-inline--fa
+##.fa-facebook.svg-inline--fa
+##.fa-instagram.svg-inline--fa
+##.fa-youtube.svg-inline--fa
+##.fa-telegram.svg-inline--fa
+##.fa-whatsapp.svg-inline--fa
+##tip hstack justify-content-center bg-body-secondary py-1
+###tip hstack justify-content-center bg-body-secondary py-1
 ###wishlist-varnish-wrapper
 ##.mailinglist-sign-in-initialized.js-mailinglist-sign-in.lazy.mailinglist-sign-in
 ###ak-widget

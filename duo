@@ -276,6 +276,18 @@ m.digisport.ro##.social-link.social-link-in
 m.digisport.ro##.social-link.social-link-tk
 m.digisport.ro##.social-link.social-link-yt
 m.digisport.ro##.social-link.social-link-co
+www.kesnup.ro##[href="/politica-de-cookies/"]
+www.kesnup.ro##[href="/newsletter/"]
+www.kesnup.ro##.ct-container > div:nth-of-type(3)
+www.kesnup.ro##.page-item-2656.page_item
+www.kesnup.ro###politica-de-cookies
+www.kesnup.ro##.politica-de-cookies
+www.kesnup.ro##politica-de-cookies
+www.kesnup.ro###politica-de-confidentialitate
+www.kesnup.ro##.politica-de-confidentialitate
+www.kesnup.ro##politica-de-confidentialitate
+www.springfarma.com##div.footer-links.footer-column.pagebuilder-column:nth-of-type(2) > div:nth-of-type(5) > .footer-only-button-link
+www.springfarma.com##.promotion-blocks > div.pagebuilder-column-group
 redactia.ro###sti-mobile-btn-1
 bookbite.ro##div.footer-item.relative:nth-of-type(3) > .list-style-none.footer-links > li:nth-of-type(3)
 bookbite.ro###toPageTop

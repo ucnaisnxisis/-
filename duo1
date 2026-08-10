@@ -424,6 +424,68 @@ www.animecharactersdatabase.com##.wish-area
 www.animecharactersdatabase.com###tile1 p
 www.animecharactersdatabase.com##.center.pad.bg5
 www.animecharactersdatabase.com###tile1 [href^="characters.php"]
+www.youtube.com##.glue-social__list
+www.youtube.com##li.glue-footer__global-links-list-item:nth-of-type(4)
+www.youtube.com##ul.glue-no-bullet.glue-footer__global-links:nth-of-type(1) > li.glue-footer__global-links-list-item:nth-of-type(1)
+www.youtube.com###column-3-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
+watch.plex.tv##div.det6jpr.det6jpu.det6jpt.det6jps > .det6jp1w.det6jp24.det6jp3c._1ibfqemn._1ibfqem4.cvmzrg0._1ibfqemj._1ibfqemc._1ibfqem1._1ibfqem2._1r6wp5u0
+watch.plex.tv##.det6jp3c.det6jp48.det6jp1s.det6jp20.det6jp24.det6jp18.det6jp2o.det6jpw._13usayk0 > .det6jp34.det6jp1s.det6jp20.det6jp24.det6jp14.det6jp2o.det6jpw._13usayk0
+watch.plex.tv##.det6jp36.det6jp35.det6jp34.det6jp48.det6jp1l.det6jp1s.det6jp20.det6jp24.det6jp18.det6jp2m.det6jp2p.det6jp2o.det6jpw._13usayk0
+watch.plex.tv##.cvmzrg0._18g3b2g5._18g3b2g0._18g3b2g1._1x9vcnm0
+watch.plex.tv##.det6jp3e.det6jp35.det6jp34.det6jp48.det6jp1m.det6jp1t.det6jp1s.det6jp20.det6jp24.det6jp16.det6jp19.det6jp18.det6jp2i.det6jp2p.det6jp2o.det6jpw._13usayk0 > a.det6jp20.det6jp24.w01frab._1potxlb0.w01fra4.w01fra0.w01fra1._1r6wp5u0:nth-of-type(1)
+watch.plex.tv###base-ui-_R_spa4inmbsnmbsnpf99fambrb_
+watch.plex.tv##.det6jp34.det6jp4c.det6jp1s.det6jp20.det6jp24.det6jp18.det6jp2g.det6jpw._13usayk0 > div.det6jp35.det6jp34.det6jp1s.det6jp20.det6jp24.det6jp18.det6jp2l.det6jp2o.det6jpw._13usayk0:nth-of-type(2)
+ro.linuxadictos.com##div.code-block-1.code-block > div
+www.radiocluj.ro##.superbrands-footer
+ionbogdanstefanescu.ro##footer.wp-block-template-part
+m.zf.ro##[href="/abonare"]
+dex.anidescoala.ro##.border-gray-300.border-t.border-0.border-solid.sm\:text-left.text-center.mx-auto.sm\:px-8.sm\:py-4.py-10.lg\:w-full.w-240.cf-wrapper.cf-error-footer
+reper24.ro###cm
+reper24.ro##[href="https://reper24.ro/publicitate/"]
+reper24.ro##.sa_vert_center_wrap.sa_hover_container
+reper24.ro##.td-pb-span8.tdc-column.vc_column_container.wpb_column.tdi_80.vc_column
+reper24.ro##[href="https://reper24.ro/categorie/anunturi/"]
+vremeanoua.ro##.copyright-text-second.copyright-text
+vremeanoua.ro##.menu-item-has-icon.menu-item-731503.menu-item-object-custom.menu-item-type-custom.menu-item
+cugetliber.ro###cookie-consent-modal
+cugetliber.ro##.follow-us-rows
+cugetliber.ro##[href="https://cugetliber.ro/mobile/stiri-anunturi/"]
+orangesport.ro##.d-lg-none > .text-white
+www.gds.ro##.td_block_template_1.td-pb-border-top.tdi_260.tdm_block_inline_text.td_block_wrap.tdm_block
+argesplus.ro##.footer-etemplate.left-dot.rb-section.footer-wrap
+argesplus.ro##[src="https://argesplus.ro/wp-content/uploads/2019/11/jooble-jpg-webp.webp"]
+argesplus.ro##[src="https://argesplus.ro/wp-content/uploads/2020/11/MEDITATII.png"]
+argesplus.ro##.elementor-widget-foxiz-social-follower.elementor-widget.yes-colorful.elementor-element-9dbe4c9.elementor-element
+argesplus.ro##.elementor-widget-foxiz-heading.elementor-widget.elementor-element-cbc5b22.elementor-element
+argesplus.ro##.collapse-sections
+www.desteptarea.ro##.td-is-sticky.td-pb-span4.tdc-column.vc_column_container.wpb_column.tdi_132.vc_column
+www.desteptarea.ro##.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_147.vc_column
+www.desteptarea.ro##[href="https://www.desteptarea.ro/abonamente-la-desteptarea/"]
+www.cdep.ro##.footer-social-icons2025
+www.ziuadevest.ro##.td-container-border.td-container.td-sub-footer-container
+x.com##.data-\[state\=closed\]\:pointer-events-none.justify-center.items-center.touch-none.flex.z-50.inset-0.fixed.group
+x.com##.text-\[14px\].hover\:bg-mix-amount-10.hover\:bg-mix-background.focus-visible\:bg-mix-amount-10.focus-visible\:bg-mix-background.active\:bg-mix-amount-15.active\:bg-mix-background.rounded-full.text-background.outline-text.border-transparent.bg-text.text-subtext1.\[\&\>svg\]\:size-\[1\.125rem\].px-4.min-w-8.h-8.justify-center.disabled\:opacity-50.focus-visible\:outline.disabled\:pointer-events-none.transition.has-\[svg\:only-child\]\:px-0.font-bold.border-solid.border.items-center.inline-flex.gap-1
+x.com##button.border-transparent.w-full.h-10.two-col\:w-\[420px\].outline-current.focus-visible\:bg-mix-amount-10.focus-visible\:bg-mix-current.active\:bg-mix-amount-15.active\:bg-mix-current.hover\:bg-mix-amount-10.hover\:bg-mix-current.text-body.\[\&\>svg\]\:size-5.px-4.min-w-9.h-9.text-text.rounded-full.bg-background.justify-center.disabled\:opacity-50.focus-visible\:outline.disabled\:pointer-events-none.transition.has-\[svg\:only-child\]\:px-0.font-bold.border-solid.border.items-center.inline-flex.gap-1:nth-of-type(1)
+www.theverge.com##._152op7n0
+www.theverge.com##._1r9mtja5
+www.theverge.com##._1fwf6sa8 > .d9cw200 > li
+www.theverge.com##ul._1lw5n751:nth-of-type(2)
+www.testmuai.com##.chfw-footer-bottom
+lifetips.alibaba.com##a[href^="https://rulechannel.alibaba.com/icbu"]:nth-of-type(5)
+windowsreport.com###menu-item-1498588
+www.blitzortung.org###social_nets
+www.syfsee710.cc##button.custom-button:nth-of-type(2)
+www.syfsee710.cc###intro > h2
+www.syfsee710.cc###step1 > .option-list > button:nth-of-type(2)
+www.truyen-hentai.com##.legal-block > .sitemap-ul
+www.truyen-hentai.com##.legal-block
+www.truyen-hentai.com##.undefined.jMT1IGenVElHQ3X_ULzl
+gelbooru.com###motd
+animeporn.best##[href^="http://www.rtalabel.org/index.php"]
+thatpervert.com###jr-age-gate-deny
+thatpervert.com##p
+hentaihaven.xxx##.rating.meta-item
+www.hentai.name##.ai-float
 smartliving.ro##.sl-art__share
 smartliving.ro##.sl-ad-slot--inline.sl-ad-slot
 smartliving.ro##.sl-ad-slot

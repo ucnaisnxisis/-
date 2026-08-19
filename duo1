@@ -331,6 +331,63 @@ lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
 duckduckgo.com##div.col:nth-of-type(1) > ul > li:nth-of-type(7)
 duckduckgo.com##.footer_footerNav__TM5zq
+floorp.app##nav:nth-of-type(2)
+sourceforge.net##.psp-section.small-12.columns.m-project-activity > .heading > div
+gazarul.ro##.hideMobile.leftIcons
+www.directmm.ro##.entry-content > h4
+www.directmm.ro##div.wpsr-row-1.wpsr-buttons.wp-socializer:nth-of-type(2)
+www.directmm.ro##.g-20.g
+www.directmm.ro##.g-16.g
+observatornews.ro##.ad-special
+romania.europalibera.org##.footer-toolbar
+romania.europalibera.org##p:nth-of-type(39)
+www.euronews.ro##.md\:items-center.md\:flex-row.gap-4.items-start.flex-col.flex.my-8
+adevarul.ro##.svelte-19v8f1k.container
+adevarul.ro##button.svelte-baylhl.fadeWhenModerated:nth-of-type(3)
+adevarul.ro##button.svelte-baylhl.fadeWhenModerated:nth-of-type(2)
+alba24.ro##.teads-slot--has-passback.teads-slot
+rovision.ro###wpconsent-root
+rovision.ro###ft_w1
+spotmedia.ro##.mbm-margin-bottom-30.mbm-margin-top-40
+www.radioresita.ro##p:nth-of-type(14)
+panorama.ro##.article-urmareste-subiectul > .double-color
+www.zf.ro###notif-container
+www.zf.ro###sidebarTop > div:nth-of-type(2)
+www.zf.ro###sidebarTop > div:nth-of-type(1)
+www.zf.ro##.fright
+www.info-sud-est.ro##.cs-follow
+www.info-sud-est.ro##.cs-header__custom-button.cs-button
+www.info-sud-est.ro##.cs-burger-menu
+www.info-sud-est.ro##.cs-header__burger-toggle
+www.info-sud-est.ro##.code-block-6.code-block
+www.info-sud-est.ro##.wemp-cta--center.wemp-cta
+www.info-sud-est.ro##.cs-col-right.cs-footer__col
+www.automarket.ro###banda_footer
+www.automarket.ro##.comment_body > .clearfix
+www.automarket.ro##.widget_newsletter.article_widget
+b365.ro##.iframe_facebook_wrapper.video-wrapper
+focuspress.ro##[href="https://focuspress.ro/agentia-de-publicitate/"]
+www.viata-libera.ro##.col-md-9.col-12.banner-top
+www.viata-libera.ro##.banner-top-right.col-md-5.col-10
+www.viata-libera.ro##.col-md-4.col-5
+www.viata-libera.ro##.col-md-4.col-7
+graiulsalajului.ro##.pull-right.col-md-4.col-sm-12.col-xs-12
+graiulsalajului.ro##.secondary-footer
+www.cudetoate.ro##.is-visible.cdt-scrolltop
+www.cudetoate.ro##.cdt-wa
+www.cudetoate.ro##li.footer__menu-link:nth-of-type(5)
+www.cudetoate.ro##.cdt-wl-card-btn
+www.cudetoate.ro##.cdt-wl-header-icon.action-area__link.header__link.site-header__icon
+www.promotor.ro##div.single__tags:nth-of-type(7)
+calarasipress.ro##.footer56__social.footer56__element--social.footer56__element
+calarasipress.ro###waWidget
+calarasipress.ro##.scrollup__placeholder
+calarasipress.ro##.footer-section
+calarasipress.ro##.active.authorbox56__content > .fox56-social-list [href]
+calarasipress.ro##.single56__element.single56__share
+calarasipress.ro##.wa-inline-box
+calarasipress.ro##.fox56-social-list.header56__social.offcanvas56__social.offcanvas56__element
+calarasipress.ro##.header56__button2.header56__element
 xlecx.one##.page__share
 xlecx.one##.ws-nowrap.comment-item__rating
 xlecx.one##.jc-space-between.d-flex.page__rating

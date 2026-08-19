@@ -9,6 +9,25 @@
 ##+js(aost, document.getElementById, cookiesBlocked)
 ##.age-gate__buttons--no
 ###age_leave
+##.hideMobile.leftIcons
+##.ad-special
+##.teads-slot--has-passback.teads-slot
+###wpconsent-root
+###ft_w1
+##.article-urmareste-subiectul > .double-color
+###notif-container
+##.fright
+##.cs-follow
+###banda_footer
+##.widget_newsletter.article_widget
+##[href="https://focuspress.ro/agentia-de-publicitate/"]
+##.is-visible.cdt-scrolltop
+##.cdt-wa
+##.cdt-wl-card-btn
+##.cdt-wl-header-icon.action-area__link.header__link.site-header__icon
+###waWidget
+##.scrollup__placeholder
+##.wa-inline-box
 ##.BackToTop_show__vOQaZ.BackToTop_backToTop__I1aFe
 ##.MainHeader_wish__5zLJ6
 ###top-wishlist

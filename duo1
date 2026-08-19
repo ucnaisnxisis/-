@@ -267,7 +267,6 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
 m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
 m.youtube.com##.cbox.non-search-mode.mobile-topbar-header-content > .yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
-youtube.com##ytd-popup-container.ytd-app.style-scope
 youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
 youtube.com##.yt-upsell-dialog-renderer.style-scope
 youtube.com##.yt-upsell-dialog-renderer.style-scope

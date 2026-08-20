@@ -298,6 +298,29 @@ www.youtube.com##.ytFlexibleActionsViewModelAction
 www.youtube.com###subscribe
 www.youtube.com###menu > .ytd-watch-metadata.style-scope
 www.youtube.com##.image-overlay-text.shortsLockupViewModelHostShowOverPlayer.shortsLockupViewModelHostOutsideMetadataMenu
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-medium-round.ytp-ce-channel-that.ytp-ce-channel.ytp-ce-element
+www.youtube.com##.ytSectionGroupViewModelLpSectionGroup
+www.youtube.com##.ytd-watch-metadata.style-scope > .ytd-menu-renderer.style-scope.top-level-buttons
+www.youtube.com###flexible-item-buttons
+www.youtube.com###actions
+youtube.com##.ytd-consent-bump-renderer
+youtube.com##div[id^="consent"]
+youtube.com##ytd-consent-bump-renderer
+www.youtube.com###upsell-dialog-title
+www.youtube.com###upsell-dialog-text
+www.youtube.com###icon-container
+www.youtube.com##.ytp-ce-element-shadow
+www.youtube.com##.ytp-fullscreen-grid
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-medium-round.ytp-ce-website.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-left-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-right-quad.ytp-ce-medium-round.ytp-ce-channel-that.ytp-ce-channel.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-large-round.ytp-ce-video.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-right-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-top-right-quad.ytp-ce-large-round.ytp-ce-video.ytp-ce-element
+www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.ytp-ce-medium-round.ytp-ce-channel-this.ytp-ce-channel.ytp-ce-element
+www.youtube.com##div.ytd-item-section-renderer.ytGridShelfViewModelGridShelfRow
+www.youtube.com##.yt-shelf-header-layout--disable-horizontal-padding.yt-shelf-header-layout
+www.youtube.com##.ytp-impression-link
 anthropos.ro##div.wp-block-column-is-layout-flow.is-layout-flow.has-14-px-font-size.wp-block-column:nth-of-type(2)
 nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(4)
 nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(5) > .gap-2.flex-col.flex > a.hover\:text-primary.text-white\/75:nth-of-type(4)

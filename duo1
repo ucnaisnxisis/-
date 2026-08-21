@@ -377,6 +377,56 @@ www.zf.ro###notif-container
 www.zf.ro###sidebarTop > div:nth-of-type(2)
 www.zf.ro###sidebarTop > div:nth-of-type(1)
 www.zf.ro##.fright
+crimsonsfm.com##.space-y-6.mx-auto.max-w-8xl
+crimsonsfm.com##li:nth-of-type(6)
+whatismyipaddress.com##.menu-item.kb-nav-link-i9q3xly12.wp-block-kadence-navigation-link
+whatismyipaddress.com##li.wp-block-navigation-link.wp-block-navigation-item:nth-of-type(1)
+www.whatismyip.com##[href="/privacy-policy/#california-privacy-rights-ccpacpra"]
+bgp.tools##[src="/img/8708"]
+iplocation.io##[href="https://iplocation.io/privacy-policy"]
+iplocation.io##div.footer-widget.col-lg-3.col-sm-6.col-12:nth-of-type(8) > .widget-list > li:nth-of-type(3)
+2ip.io##.ip-icon-star-non-filled.bookmarks_add.fav
+ip.me##.text-right.col
+whatsmyip.com##.text-muted-foreground.text-sm.gap-4.items-center.flex > a.transition-colors.hover\:text-primary:nth-of-type(1)
+whatsmyip.com##.text-muted-foreground.text-xs.gap-2.items-center.flex
+www.ipaddress.com##.footer-inner
+www.ip.network##div.mb-8:nth-of-type(1)
+nordvpn.com###Accordion-DnATb > astro-slot > .Active_tab.Accordion__tab > .block.transition-all.overflow-hidden.Accordion__panel > .py-4.gap-6.flex-col.flex > a.body-sm-medium.active\:underline.active\:\!text-neutral-500.hover\:underline.\!text-neutral-300.hover\:\!text-disabled.active\:text-accent.hover\:text-accent-active.text-accent.focus-visible\:shadow-focus.focus-visible\:outline-none.ease-out.transition-colors.align-bottom:nth-of-type(2)
+nordvpn.com##.py-4.gap-6.flex-col.flex > .text-start.body-sm-medium.active\:underline.active\:\!text-neutral-500.hover\:underline.\!text-neutral-300.hover\:\!text-disabled.active\:text-accent.hover\:text-accent-active.text-accent.focus-visible\:shadow-focus.focus-visible\:outline-none.ease-out.transition-colors.align-bottom
+showip.net##.p-2\.5.bg-card\/75.border-border.border.rounded-lg.overflow-hidden.gap-2.place-items-stretch.grid-rows-\[auto_minmax\(0\,1fr\)\].min-w-0.grid.z-0.relative.min-h-\[640px\]
+showip.net##section.p-2\.5.bg-card\/75.border-border.border.rounded-lg.overflow-hidden.gap-2.place-items-stretch.grid-rows-\[auto_minmax\(0\,1fr\)\].min-w-0.grid.z-0.relative.min-h-\[128px\]
+www.fortinet.com##[href="http://www.fortinet.com/corporate/about-us/privacy"]
+windscribe.com##.__m__-_R_lmmrbdjinpfivb_.mantine-Flex-root.m_8bffd616.Footer_socialLinks__XkrHG
+windscribe.com###garry-widget-root
+kinsta.com##[href="https://kinsta.com/legal/privacy-policy/"]
+kinsta.com##.button-link
+www.wizcase.com##[href="https://www.wizcase.com/privacy-policy/"]
+ipchecker.io###cookies-box
+ipchecker.io##div.lg\:text-start.text-center.justify-center.flex.lg\:w-3\/12.w-full:nth-of-type(3) > .list-inside > li.before\:inlineblock.hover\:before\:content-\[\'-\'\].relative.hover\:text-\[\#FF9F43\].text-\[\#838E9E\].mb-2:nth-of-type(1)
+www.criminalip.io##.dFiaZB.CookieBanner__PopupLayer-sc-5009b2c4-0
+www.criminalip.io##.lnponJ.dnDzQB.Footer__FooterSocialIconsMobile-sc-13bc1ed8-19.Footer__FooterSocialIcons-sc-13bc1ed8-18
+search.criminalip.io##.cCtdrX.ScrollToTopButton__Button-sc-c7ef8c83-0
+decodo.com###livechat-placeholder
+decodo.com##a.font-normal.active\:bg-transparent.hover\:bg-transparent.dark\:hover\:text-brand-500.hover\:text-brand-500.dark\:text-base-dark-white.text-gray-950.font-mono.text-body-m.bg-transparent.h-fit.p-0.lineHeight-\[1\.5rem\].disabled\:pointer-events-none.disabled\:text-gray-500.disabled\:bg-gray-200.transition-colors.rounded-\[4px\].justify-center.items-center.gap-2.inline-flex.w-fit:nth-of-type(10)
+decodo.com##div.gap-8.flex-col.flex:nth-of-type(2)
+decodo.com##.md\:gap-\[60px\].gap-8.flex-col.min-w-\[200px\].h-fit.flex > div.gap-8.flex-col.flex:nth-of-type(1)
+www.vpnmentor.com##.header__follow
+www.vpnmentor.com##.ip__container-header.ip__disclosure.container
+www.liquidweb.com##.kb-section-sm-dir-horizontal.kb-section-dir-horizontal.kadence-column425973_abdfe5-4c.wp-block-kadence-column
+www.liquidweb.com##[href="/policies/privacy-policy/"]
+whatismyip.live##.wmip-consent-layer
+whatismyip.live##[href="https://whatismyip.live/privacy-policy"]
+www.showmyipaddress.eu##li.mb-sm-0.mb-2.mr-3.list-inline-item:nth-of-type(5)
+www.ionos.com##div.md\:tw-w-auto.tw-space-x-24.tw-w-full.tw-flex:nth-of-type(1)
+www.ionos.com##.focus-visible\:tw-outline-offset-2.focus-visible\:tw-outline.focus-visible\:tw-outline-ionos-blue-400.focus-visible\:tw-outline-2.focus-visible\:tw-border-none.focus-visible\:tw-bg-opacity-10.focus-visible\:tw-bg-ionos-blue-700.disabled\:tw-border-cool-grey-400.active\:tw-bg-opacity-20.active\:tw-bg-ionos-blue-700.active\:tw-outline-none.active\:tw-border-none.hover\:tw-bg-opacity-10.hover\:tw-bg-ionos-blue-700.hover\:tw-text-ionos-blue-700.tw-text-ionos-blue-700.\!tw-leading-5.tw-text-base.tw-px-24.tw-py-14.tw-font-semibold.tw-rounded-3xl.tw-text-center.tw-border-none.lg\:tw-py-14.lg\:tw-min-w-42.md\:tw-px-14.focus\:tw-bg-white.tw-justify-center.tw-flex.tw-mr-4.tw-bg-shadow-ionos-sky-400.tw-shadow-glow.tw-font-sans-semi-bold.tw-max-w-fit.tw-ease-in-out.tw-duration-150.tw-transition-all.tw-outline-none.whitespace-nowrap
+www.ionos.com##div.tw-w-full.tw-my-7:nth-of-type(7)
+www.techopedia.com##.newsletter-outer > .container
+www.techopedia.com##div.footer-one.col-md-6.col-lg-3:nth-of-type(4)
+dnschecker.org##[href="https://dnschecker.org/privacy.php"]
+www.techtarget.com##[href="https://www.informatechtarget.com/for-advertisers/"]
+www.cloudflare.com##.pb-4.flex-col.flex.bg-background-100
+www.cloudflare.com##.overflow-hidden.flex-col.w-full.flex.-mt-0\.5.bg-background-100.z-0.relative.ease-out.duration-2000.delay-100.transition-opacity.fade-in.mx-auto.animate-in
+dnschecker.org##div.footer-widget:nth-of-type(9)
 www.info-sud-est.ro##.cs-follow
 www.info-sud-est.ro##.cs-header__custom-button.cs-button
 www.info-sud-est.ro##.cs-burger-menu

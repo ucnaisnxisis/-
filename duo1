@@ -1,4 +1,4 @@
-! Title: 🔎CleanWeb 2026-2030🔎
+! Title: 🔎CleanWeb 2026-2028🔎
 ! Description: Clean Ads, Cookies Banners, footer websites about cookies & ads, website arrow up and down, hide Ai, minimalistic websites
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/duo1
 ! Info: Personal use, non-comercial, no-copyright claim, individual
@@ -1240,6 +1240,53 @@ anume.tv##.legal-links > [href="privacy.php#cookie-policy"]
 anume.tv##[href="privacy.php"]
 anume.tv##.legal-cookie-button
 anume.tv##.pay-icons
+destepti.ro##.code-block-8.code-block
+destepti.ro##p:nth-of-type(34)
+destepti.ro##p:nth-of-type(33)
+destepti.ro##p:nth-of-type(35)
+destepti.ro##p:nth-of-type(32)
+destepti.ro##p:nth-of-type(36)
+destepti.ro##p:nth-of-type(37)
+destepti.ro##.code-block-22.code-block
+www.monitoruldegalati.ro##.size-large.wp-block-image
+revistapolis.ro##[href="https://revistapolis.ro/anunturi/"]
+www.botosaneanul.ro##a.text-normal.text-general.text-footer:nth-of-type(8)
+jurnalul.ro##div:nth-of-type(6)
+stiri.botosani.ro##.scrollTop-btn
+stiri.botosani.ro##div.column4:nth-of-type(3)
+www.monitoruldegalati.ro##.article-buttons
+freemeteo.ro##.items-center.flex.cursor-pointer.border-0.bg-transparent.relative.p-0
+weather.com##.flex-col.mt-4.flex-wrap.flex > li.py-2.flex:nth-of-type(2)
+weather.com##li.py-2.flex:nth-of-type(7)
+weather.com##li.py-2.flex:nth-of-type(3)
+weather.com##.\@5xl\/footer\:gap-6.\@5xl\/footer\:w-\[53\%\].\@3xl\/footer\:flex-row.gap-4.flex-col.w-full.flex
+www.lachainemeteo.com##.header-cta
+www.wunderground.com##[href="/privacy-settings"]
+www.wunderground.com##[href="https://weather.com/privacy/privacy-policy#data-collection-technologies-and-consumer-choice"]
+meteofor.ro##section.section-media.section
+weather.yahoo.com##.gap-y-0.gap-x-0.pe-1.flex.flex-col
+www.aqi.in##.flex.justify-center.gap-\[0\.3em\].transition-all.\!text-title.anchor
+www.aqi.in##[href="https://www.aqi.in/app-privacy-policy"]
+www.3bmeteo.com##.footer-bottom
+www.3bmeteo.com##.fc-accordion-footer
+www.3bmeteo.com##[href="/privacy-policy/it"]
+www.3bmeteo.com##.ds-subscribeNow.ds-promoRegBuy.base-container
+folositor.ro##.shadow-lg.border-\[var\(--card-border\)\].border-t.bg-\[var\(--card-bg\)\].p-4.z-50.right-0.left-0.bottom-0.fixed
+folositor.ro##.text-\[var\(--muted\)\].text-sm.gap-4.justify-between.md\:items-baseline.items-center.md\:flex-row.flex-col.flex.pt-8.border-\[var\(--card-border\)\].border-t
+folositor.ro##li:nth-of-type(7)
+ro-alert.ro###first-footer-widget
+ro-alert.ro###primary-sidebar > .widget_siteorigin-panels-builder.widget
+book.tez-tour.ro##.login-content__scroll-to-top.text-body-medium.text-normalize.font-weight-semibold.v-btn--variant-elevated.v-btn--size-large.v-btn--density-default.bg-primary-yellow.v-theme--light.v-btn--icon.v-btn--elevated.v-btn
+www.weathercrave.com##li.item:nth-of-type(5)
+www.weathercrave.com##.sitemap > li.item:nth-of-type(4)
+www.weathercrave.com##li.item:nth-of-type(7)
+www.weathercrave.com##li.item:nth-of-type(6)
+www.weathercrave.com###ob_autres
+www.cancan.ro##div.single__extra:nth-of-type(6)
+www.cancan.ro##div.single__extra:nth-of-type(3)
+www.cancan.ro##.rounded-10.min-h-150.text-center.single__extra
+meteo.previmeteo.com##.playstore-widget
+meteo.previmeteo.com##.social-media-links
 apps.apple.com##li.svelte-15fwn9j:nth-of-type(2)
 apps.apple.com##li.svelte-15fwn9j:nth-of-type(3)
 www.imdb.com##.ipc-poster__watchlist-ribbon.ipc-watchlist-ribbon--onImage.ipc-watchlist-ribbon--base.ipc-watchlist-ribbon--m.ipc-focusable.ipc-watchlist-ribbon

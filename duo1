@@ -355,6 +355,18 @@ duckduckgo.com##div.col:nth-of-type(1) > ul > li:nth-of-type(7)
 duckduckgo.com##.footer_footerNav__TM5zq
 floorp.app##nav:nth-of-type(2)
 sourceforge.net##.psp-section.small-12.columns.m-project-activity > .heading > div
+www.google.com##a.eQtdDf:nth-of-type(1)
+a1.ro##.spatiu-top
+historia.ro##.svelte-o9f82p.socialIcons
+historia.ro##.svelte-d67te8.other
+historia.ro##li.svelte-d67te8.subItem:nth-of-type(5)
+www.mobygames.com##.footer-inner
+www.ryuugames.com##.ray-id
+www.ryuugames.com###tdi_26
+store.steampowered.com##._3nHL7awgK1Qei1XivGvHMK._12bkgGAkxHc79lKMb7rK88.ja5o2GZTopxfGJArsZgFh._1SxQuUnaM-MXeF5UfssWve
+store.steampowered.com##div._3nHL7awgK1Qei1XivGvHMK.ja5o2GZTopxfGJArsZgFh._3JCkAyd9cnB90tRcDLPp4W.uh0Q7gKQw3ZgTwvd5mQiZ:nth-of-type(5) > a._1DLGHwAfYnbFVIwbZjO2cn._2OgYmw12nDHXtyT9za9yzL.FYJ4NYxpWeIha0N1-jUcm:nth-of-type(2)
+kimochi.info##div.lg\:col-span-1.sm\:col-span-2:nth-of-type(5)
+kimochi.info##div:nth-of-type(3) > .space-y-3 > li:nth-of-type(1)
 gazarul.ro##.hideMobile.leftIcons
 www.directmm.ro##.entry-content > h4
 www.directmm.ro##div.wpsr-row-1.wpsr-buttons.wp-socializer:nth-of-type(2)

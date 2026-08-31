@@ -389,6 +389,57 @@ iplocation.io##div.footer-widget.col-lg-3.col-sm-6.col-12:nth-of-type(8) > .widg
 ip.me##.text-right.col
 whatsmyip.com##.text-muted-foreground.text-sm.gap-4.items-center.flex > a.transition-colors.hover\:text-primary:nth-of-type(1)
 whatsmyip.com##.text-muted-foreground.text-xs.gap-2.items-center.flex
+portokal.ro##.pk-footer__brand-socials
+portokal.ro##.accessibility-toggle-btn
+portokal.ro##[href="https://portokal.ro/politica-de-confidentialitate/"]
+portokal.ro##[href="https://portokal.ro/info-cookies/"]
+portokal.ro##.product-card__wishlist
+portokal.ro##a.pk-icon-btn:nth-of-type(1)
+ro.climate-data.org##div.sidebar-footer:nth-of-type(2) > div > .widget-posts-most-viewed.widget-posts.widget > div.widget-posts-post-box:nth-of-type(3)
+ro.climate-data.org##div.sidebar-footer:nth-of-type(2) > div > .widget-posts-most-viewed.widget-posts.widget > div.widget-posts-post-box:nth-of-type(2)
+ro.climate-data.org##div.widget-posts-post-box:nth-of-type(4)
+tv8.md##.jss33
+tv8.md##.jss126 > div
+tv8.md##.ad-container
+www.unde-si-cand.net##.hidden-xs.top.pub-billboard
+hikersbay.com##[href="/ads"]
+hikersbay.com##a[href^="/privacy"]:nth-of-type(10)
+ziarulunirea.ro##[href="https://ziarulunirea.ro/confidentialitate-si-politica-de-cookies/"]
+ziarulunirea.ro##.social-wrapper
+ziarulunirea.ro##.code-block-5.code-block
+ziarulunirea.ro##.code-block-4.code-block
+ziarulunirea.ro##.code-block-1.code-block
+www.businessmagazin.ro##.services
+www.vietnam.vn##.anticon-link.anticon
+www.vietnam.vn##button.hover\:border-\[\#4096ff\].hover\:text-\[\#4096ff\].border-\[\#d9d9d9\].text-\[\#4B4C4E\].ant-btn-icon-only.ant-btn-lg.ant-btn-variant-outlined.ant-btn-color-default.ant-btn-default.ant-btn-circle.ant-btn
+www.vietnam.vn##.\#4B4C4E.hover\:border-\[\#4096ff\].hover\:text-\[\#4096ff\].border-\[\#d9d9d9\].ant-btn-icon-only.ant-btn-lg.ant-btn-variant-outlined.ant-btn-color-default.ant-btn-default.ant-btn-circle.ant-btn
+www.vietnam.vn##.sm\:w-auto.w-full.sm\:gap-3.gap-2.sm\:items-center.items-stretch.sm\:flex-row.flex-col.flex
+wanderlog.com##.fa-width-auto.fa-sm.mx-0.fa-star.svg-inline--fa
+www.argesexpres.ro##.uk-width-medium-1-4.tm-sidebar-b
+iasitvlife.ro##.widget_custom_html.col-4.widget.widget_text
+iasitvlife.ro###fbw_id-2
+city-fm.ro##[href="https://city-fm.ro/politica-de-confidentialitate/"]
+city-fm.ro###cfm-sticky
+city-fm.ro##.td-is-sticky.td-pb-span3.tdc-column.vc_column_container.wpb_column.tdi_71.vc_column
+ziarulamprenta.ro##a.terms_page:nth-of-type(3)
+ziarulamprenta.ro##a.terms_page:nth-of-type(4)
+ziarulamprenta.ro##a.terms_page:nth-of-type(5)
+ziarulamprenta.ro##.sm-list
+www.money.ro##.py-5.px-6.border-emerald-100.border.bg-emerald-50.rounded-xl.mt-8
+www.money.ro##.sm\:grid-cols-3.gap-8.grid > div > .gap-3.flex
+www.money.ro##li:nth-of-type(4)
+www.money.ro##li:nth-of-type(5)
+www.money.ro##.py-6.px-6.border-emerald-100.border.bg-emerald-50.rounded-xl.mt-10
+www.money.ro##.mt-6
+www.money.ro##div.my-4:nth-of-type(3)
+www.money.ro##.border-zinc-200.border-b.border-t.py-4.my-6.gap-3.items-center.flex
+trumedia.ro##[href="https://trumedia.ro/politica-de-confidentialitate/"]
+trumedia.ro##.aligncenter.wp-block-wptelegram-widget-join-channel
+trumedia.ro##.google-news-container
+turdanews.net##div.footer_column.col-md-4:nth-of-type(3)
+turdanews.net##.has-border-color.wp-block-group
+turdanews.net##[href="https://turdanews.net/reclama/"]
+turdanews.net##.comment-form-privacy_policy > [href="#"]
 www.ipaddress.com##.footer-inner
 www.ip.network##div.mb-8:nth-of-type(1)
 nordvpn.com###Accordion-DnATb > astro-slot > .Active_tab.Accordion__tab > .block.transition-all.overflow-hidden.Accordion__panel > .py-4.gap-6.flex-col.flex > a.body-sm-medium.active\:underline.active\:\!text-neutral-500.hover\:underline.\!text-neutral-300.hover\:\!text-disabled.active\:text-accent.hover\:text-accent-active.text-accent.focus-visible\:shadow-focus.focus-visible\:outline-none.ease-out.transition-colors.align-bottom:nth-of-type(2)

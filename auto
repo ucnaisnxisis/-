@@ -72,6 +72,35 @@
 ##.fa-youtube.svg-inline--fa
 ##.fa-telegram.svg-inline--fa
 ##.fa-whatsapp.svg-inline--fa
+##.onlyDesktop.newDesignA.newsletters
+##.google-btn
+##.flex-wrap.justify-content-between.d-flex.col-google-news
+##.space-y-5
+##.footer_column.col-sm-8.col-md-7
+##.hide-on-med-and-down2
+##.custom-links [href="#"]
+##.jurna-target.jurna-entity-placement.jurna-continut
+##.l-shared-sec-outer
+##.hover\:opacity-80.underline-offset-2.underline.text-sm
+##.dark\:border-white\/10.border-divider.border-t.py-base-1.justify-between.gap-base-2.flex.feed-main-action
+##.social-menu-items
+##.ani-launcher
+##.ani-greeting
+##.p-5.to-brand-accent\/10.from-brand-primary\/5.bg-gradient-to-br.border-ink-100.border.rounded-xl.mt-8
+##.border-white\/10.border-b.py-8
+##.footer-social
+##.base-action.qa-action-list
+##.w-like-btn
+##.w-side-navigation-social
+##.uj-cta--newsletter--banner.uj-cta--newsletter.uj-cta
+##.uj-site-footer__social
+##[href^="/newsletter"]
+###bloglo-scroll-top
+##.header-social-wrap
+##.social-media-icons
+##.join-us
+www.crunchyroll.com##div.footer-column-layout__section--aa1CU:nth-of-type(3) > div > .footer_linkSectionContent__T9SiB > .footer_sectionList__4WITc > li.footer-nav-item--lm-fq:nth-of-type(4)
+##.cs-js-scroll-top.cs-footer__scroll-top
 ###wc-facebook-pixel-event-placeholder
 ###notifima-subscribe-form-js
 ###tiktok-pixel-tracking-handle-header-js-after

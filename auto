@@ -257,6 +257,15 @@ www.crunchyroll.com##div.footer-column-layout__section--aa1CU:nth-of-type(3) > d
 ##.btn-add-to-favorites.bt-white.bt-link
 ##.fa-heart.far
 ##.block-subscribe.block
+###btn-whatsapp
+##.btn-whatsapp
+##btn-whatsapp
+###btn-call-now
+##.btn-call-now
+##btn-call-now
+###footer-inner
+##.footer-inner
+##footer-inner
 ##.form-subscribe
 ##.announcement-bar
 ##.app-footer-container.container

@@ -374,6 +374,11 @@ www.clrn.org##.footer-inner
 observatornews.ro##.ad-special
 romania.europalibera.org##.footer-toolbar
 romania.europalibera.org##p:nth-of-type(39)
+businessupturn.com##.sm\:justify-between.sm\:items-center.sm\:flex-row.py-4.px-4.gap-3.flex-col.flex.bottom-0.inset-x-0.fixed
+businessupturn.com##div:nth-of-type(4)
+businessupturn.com##.px-4.gap-3.justify-between.items-center.flex-wrap.flex.mx-auto > .gap-3.items-center.flex
+businessupturn.com##span.gap-1.items-center.flex:nth-of-type(6)
+businessupturn.com##.gap-0\.5.flex-col.flex.lg\:col-span-1.sm\:col-span-1.col-span-2
 www.euronews.ro##.md\:items-center.md\:flex-row.gap-4.items-start.flex-col.flex.my-8
 adevarul.ro##.svelte-19v8f1k.container
 adevarul.ro##button.svelte-baylhl.fadeWhenModerated:nth-of-type(3)

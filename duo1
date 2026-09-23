@@ -14867,3 +14867,48 @@ www.hotspotshield.com###ada-entry
 www.hotspotshield.com##.center path
 www.hotspotshield.com##.rating_box
 iptest.me##div.col-md-6:nth-of-type(2)
+medium.com##.aho.ahn.ahm.ahl.ahk
+medium.com##.db.j.am
+medium.com##div.e.xg.xf:nth-of-type(8)
+medium.com##.me.md.mc.abr.dm.pw-multi-vote-icon
+medium.com##.lx.lw.lv.lu.lt.ls.lr.lq.lp.lo.ln.lm.ll.lk.lj.j.am > .cz.ck
+medium.com##.j.dl.dk.p.cz.ck > .j.am > .w.j.am
+medium.com##.abp.abo.bp.abn.j.he.am.af.ff.abm.cv.dz
+medium.com##.ma.lz.j.am
+dev.to##.reaction-button.inline-flex.reaction-like.mr-1.crayons-btn--s.crayons-btn--icon-left.crayons-btn--ghost.crayons-btn.relative.crayons-tooltip__activator
+dev.to##.grid.gap-4.pt-0.p-4.branded-7.crayons-card--secondary.crayons-card > .print-hidden
+dev.to##.multiple_reactions_engagement
+dev.to##a.crayons-btn--icon-left.crayons-btn--ghost.crayons-btn--s.crayons-btn:nth-of-type(1)
+dev.to##.crayons-story__bottom
+manifestgo.app##.md\:col-span-2.sm\:col-span-3.col-span-2 > .mt-5
+manifestgo.app##.md\:flex.tracking-wider.uppercase.font-bold.text-xs.gap-x-4.items-center.hidden > .gap-2.items-center.flex
+www.ctrlshiftcopy.com##div:nth-of-type(3)
+www.linkedin.com##a.cursor-pointer.text-color-text-low-emphasis.text-xs.font-sans.inline-block.comment__action:nth-of-type(1)
+www.linkedin.com##.items-center.flex-row.flex.like-button-default
+www.linkedin.com##.w-fit.pointer-events-auto.\[-webkit-user-select\:none\].select-none.justify-center.items-center.relative.flex-row.flex.reactions-menu
+www.linkedin.com##img.lazy-loaded:nth-of-type(2)
+www.linkedin.com##a.my-1.visited\:text-color-text-low-emphasis.\!no-underline.text-color-text-low-emphasis.font-normal.items-center.flex:nth-of-type(1)
+hackernoon.com##[href="http://hackernoon.com/privacy"]
+hackernoon.com##[href="https://hackernoon.com/p/emails"]
+hackernoon.com##[href="https://hackernoon.com/how-to-gain-followers-and-newsletter-subs-directly-on-hackernoon"]
+hackernoon.com##div:nth-of-type(4) > .text-base.list-none > li.mb-4:nth-of-type(8)
+hackernoon.com##.text-primary-content.hover\:scale-110.items-center.hidden.lg\:flex.relative
+lifehacker.com##.flex.sm\:mt-24.justify-center.mt-20.relative
+arxiv.org##[href="https://info.arxiv.org/help/subscribe"]
+doreturn.hashnode.dev##.tracking-wide.text-sm.gap-4.justify-center.flex-wrap.flex > li:nth-of-type(3)
+doreturn.hashnode.dev##a.hover\:text-foreground.transition.text-sm.gap-2.items-center.flex:nth-of-type(2)
+cybersecuritynews.com##[href="https://cybersecuritynews.com/privacy-policy-2/"]
+malwaretips.com##.message-attribution-gadget
+forums.malwarebytes.com##[href="https://forums.malwarebytes.com/cookies/"]
+forums.malwarebytes.com###elRSS
+css-tricks.com##.link-grid > div:nth-of-type(2)
+css-tricks.com##[href="https://css-tricks.com/newsletters/"]
+css-tricks.com##[href="https://css-tricks.com/rss-feeds/"]
+www.theverge.com###notifications-bell
+www.theverge.com##._19wir9w7
+www.theverge.com##._19wir9w5 > div:nth-of-type(1) > div:nth-of-type(3)
+www.theverge.com##li._1lw5n752:nth-of-type(2)
+www.dexerto.com##li.mb-1:nth-of-type(2)
+www.dexerto.com##.md\:block.hidden
+www.dexerto.com##.md\:bottom-24.rounded-l-none.size-14.z-10.left-0.bottom-44.fixed.bg-primary-accent.cursor-pointer.disabled\:pointer-events-none.disabled\:opacity-50.font-black.font-display.px-\[20px\].rounded-\[5px\].justify-center.items-center.flex
+www.dexerto.com##.md\:size-\[50px\].size-10.transition-opacity.hover\:opacity-70.cursor-pointer.py-2.px-3.border.gap-x-3.items-center.flex.dark\:text-neutral-white.font-semibold.font-display.text-button-1.disabled\:pointer-events-none.disabled\:opacity-50.rounded-\[5px\].justify-center

@@ -4,6 +4,12 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+graph.instagram.com
+i.instagram.com
+click.mailchimp.com
+servicer.mgid.com
+favicon.ico
+robots.txt
 bravoshymkent.taplink.kz
 kit.taplink.kz
 santaclausroblox.taplink.kz

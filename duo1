@@ -268,7 +268,6 @@ m.youtube.com##.consent-bump-v2-lightbox
 m.youtube.com##.remove-title-margin.typography-title-2.reel-shelf-title > .yt-core-attributed-string
 m.youtube.com##.cbox.secondary-text.YtmCommentRendererDetails
 m.youtube.com##.cbox.non-search-mode.mobile-topbar-header-content > .yt-spec-button-shape-next--icon-button.yt-spec-button-shape-next--size-l.yt-spec-button-shape-next--mono.yt-spec-button-shape-next--text.yt-spec-button-shape-next
-youtube.com##tp-yt-paper-dialog.ytd-popup-container.style-scope
 editurajunimea.ro##.avada-footer-scripts
 editurajunimea.ro##.to-top-right.to-top-container
 editurajunimea.ro###menu-item-26042
@@ -15274,3 +15273,18 @@ captchaforum.com##.message-attribution-gadget
 webautomation.io##[href="https://www.youtube.com/"]
 www.blackdown.org##.sh-widget-socialv2-list
 www.scrapingbee.com##.leading-none.md\:text-\[62px\].text-\[36px\].sm\:mb-\[16px\]
+auroraoss.com##.mantine-ActionIconGroup-group.m_1a0f1b21 > button.mantine-UnstyledButton-root.m_87cf2631.mantine-ActionIcon-root.m_8d3f4000.mantine-active.mantine-focus-auto
+x.com##.pt-3.px-6.gap-4.flex-col.min-w-0.w-full.flex.z-40.isolate.bottom-0.fixed
+x.com##.rtl\:origin-bottom-left.motion-safe\:focus-visible\:scale-\[1\.08\].motion-safe\:hover\:scale-\[1\.08\].focus-visible\:ring-gray-700.focus-visible\:ring-2.ease-out.duration-200.transition-transform.outline-hidden.p-4.border.rounded.gap-2.items-center.flex-col.cursor-pointer.origin-bottom-right.flex.z-1000.bottom-\[3vw\].inset-e-\[3vw\].fixed.motion-reduce\:animate-enter-fade.motion-safe\:animate-enter-fade-rise.bg-modal.shadow-popup.border-normal
+www.gtainside.com##p.margin0:nth-of-type(1)
+www.gtainside.com##p.margin0:nth-of-type(3)
+www.gtainside.com##div.marginbottom5.margintop5:nth-of-type(2)
+libertycity.net##[href="/privacy-policy.html"]
+libertycity.net##[href="/media-kit/"]
+www.deviantart.com##div.bPHrxS:nth-of-type(4) > a.jjwZXs:nth-of-type(3)
+www.deviantart.com##div.bPHrxS:nth-of-type(3) > a.jjwZXs:nth-of-type(2)
+www.deviantart.com##div.bPHrxS:nth-of-type(2) > a.jjwZXs:nth-of-type(4)
+www.deviantart.com##div.bPHrxS:nth-of-type(4) > a.jjwZXs:nth-of-type(2)
+www.deviantart.com##span.boBk3j > .z2zAry > .lvi3AX > .rsGqA6.reset-button
+www.deviantart.com##.ixQkmP.C0w9nR.pwRIP0
+www.deviantart.com##div.ixQkmP.C0w9nR

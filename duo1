@@ -22,6 +22,7 @@
 @@gitcdn.github.io
 @@cdn-1945.privacy-mgmt.com
 @@consent.dailymotion.com
+@@blogger.l.google.com
 antiadblockcore.com$domain=pahe.ink
 ||cookieconsent.^
 ||cookie-banner.^
@@ -350,6 +351,9 @@ www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
+github.com##.SubFooter-module__socialAndLocale__Kl140 > nav
+www.google.com##a.eQtdDf:nth-of-type(1)
+github.com##.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary
 duckduckgo.com##div.col:nth-of-type(1) > ul > li:nth-of-type(7)
 duckduckgo.com##.footer_footerNav__TM5zq
 floorp.app##nav:nth-of-type(2)
@@ -1095,7 +1099,6 @@ www.aventurierotice.ro##.site-footer
 jucariisexualecupovesti.ro###page-wrap > .clear-fix
 gifdb.com###scrollBtn
 www.wattpad.com##.main.footer-list .on-premium
-www.google.com##a.eQtdDf:nth-of-type(1)
 addons.palemoon.org##[href="//www.palemoon.org/policies/privacy.shtml"]
 addons.palemoon.org##[href="//www.palemoon.org/policies/cookies.shtml"]
 www.thunderbird.net##div.site-link-section:nth-of-type(5) > ul > li:nth-of-type(1)
@@ -1279,7 +1282,6 @@ www.sfatulmedicului.ro##[href="//www.sfatulmedicului.ro/cookies"]
 www.sfatulmedicului.ro##[href="//www.sfatulmedicului.ro/confidentialitate"]
 www.reddit.com##li.max-h-none.overflow-visible.whitespace-normal.text-12.max-h-\[var\(--rem20\)\].overflow-hidden.text-ellipsis.whitespace-nowrap.inline-block.m-0.p-0:nth-of-type(2)
 www.livetickets.ro##li.ng-tns-c72-4.submenu:nth-of-type(3)
-www.google.com##.fzj3ad
 mail.proton.me##.modal-two
 mail.proton.me##.modal-two-backdrop--in.modal-two-backdrop
 www.tiktok.com##.TUXModal-overlay
@@ -1310,7 +1312,6 @@ www.digi24.ro##.widget-google
 www.profm.ro##.flex-start-sm.flex-center.google-news
 www.profm.ro##.col-sm-12.col-md-9.col-8 > .article-content
 www.profm.ro##.col-sm-12.col-md-9.col-8 > .article-thumb
-www.google.com##.IzOpfd
 sexolog-bucuresti.ro##.container.footer_wrapper
 sexolog-bucuresti.ro##.et-last-child.et_pb_css_mix_blend_mode_passthrough.et_pb_column_3_tb_footer.et_pb_column_1_4.et_pb_column
 sexolog-bucuresti.ro##.searchform
@@ -2418,8 +2419,6 @@ business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-
 business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(4)
 business.google.com###column-2-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
 chat.google.com##.sTlgvc
-www.google.com##button.ZqLNQd.Hk4XGb.tUdUte.ZiKfbc:nth-of-type(3)
-www.google.com##.UjoA5b.ZqLNQd.Hk4XGb.tUdUte.ZiKfbc
 gemini.google.com##.policies
 gemini.google.com##.ng-star-inserted.variant-footer.footer
 calendar.google.com##a.PTIB6e:nth-of-type(2)
@@ -2618,44 +2617,6 @@ m.youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
 youtube.com##.no-transition.yt-upsell-dialog-renderer.style-scope
 youtube.com###content > .yt-upsell-dialog-renderer.style-scope
 youtube.com###action-button > .yt-upsell-dialog-renderer.style-scope
-www.google.com##.plR5qb
-www.google.com##.C6AK7c.XVMlrc
-www.google.com###L2AGLb
-www.google.com##.AG96lb
-www.google.com##.cG0Dmf.XWlrff
-www.google.com##.IczZ4b
-www.google.com###L2AGLb
-www.google.com##.AG96lb
-www.google.com##.KojFAc
-www.google.com##.gb_Cd
-www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_1 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
-www.google.com###_ZtcgabK-BpKrhbIPk7icsAc_2_0 > .QuMdAb > .Oar8Pc > a.sjVJQd.GHvYu:nth-of-type(2)
-www.google.com###KByQx
-www.google.com###Q7Ulpb
-www.google.com##.gb_z
-www.google.com##.XDyW0e
-www.google.com##a.pHiOh:nth-of-type(1)
-www.google.com##[href^="/url"]
-www.google.com##a.GHvYu.sjVJQd:nth-of-type(2)
-www.google.com##a.ZYHQ7e.wHYlTd.Fx4vi:nth-of-type(2)
-www.google.com##li.glue-footer__global-links-list-item:nth-of-type(3)
-www.google.com###column-1-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(2)
-www.google.com###gb
-www.google.com###og-te
-www.google.com##g-menu-item.GZnQqe.EpPYLd:nth-of-type(7)
-www.google.com##.mb1nxc
-www.google.com##.Lt2Ned.As6eLe.M6hT6.fbar
-www.google.com##a.Fx4vi:nth-of-type(2)
-www.google.com###Odp5De
-www.google.com##.kM7Sgc.cd29Sd.MjJqGe.KlOMXb.RMagM.RsW3Ke.LkIdQb.ig2Tkd
-www.google.com##.glue-header__cta--drawer.glue-header__cta
-www.google.com##li.glue-footer__global-links-list-item:nth-of-type(1)
-www.google.com###column-4
-www.google.com###column-5-content > .glue-no-bullet > li.glue-footer__site-links-list-item:nth-of-type(1)
-www.google.com##span.GHvYu.sjVJQd
-www.google.com##.kM7Sgc.cd29Sd.MjJqGe.KlOMXb.RMagM.RsW3Ke.LkIdQb.ig2Tkd
-www.google.com##.plR5qb
-www.google.com##.C6AK7c.XVMlrc
 play.google.com##div.KvNvKe:nth-of-type(2)
 chromewebstore.google.com##.yHWa2
 startup.google.com##.glue-footer__upper
@@ -4180,7 +4141,6 @@ www.accace.ro###div_block-697-247502
 www.accace.ro###link-1205-246248
 www.accace.ro###text_block-1204-246248
 www.accace.ro###link-1203-246248
-www.google.com##.tonYlb.erqCcf > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(3) > .CKgc1d > div:nth-of-type(1) > .Zkbeff > .mZJni.Dn7Fzd > div:nth-of-type(1) > div:nth-of-type(8) > .DBd2Wb > .zkL70c
 duckduckgo.com##div.col:nth-of-type(2) > ul > li:nth-of-type(7) > .text.text_text-sm__fJ7Aa.text_text__XCDHr.text_text-weight-normal__Zsm0J.text_responsive__YZEGi
 duckduckgo.com##div.col:nth-of-type(1) > ul > li:nth-of-type(7) > .text.text_text-sm__fJ7Aa.text_text__XCDHr.text_text-weight-normal__Zsm0J.text_responsive__YZEGi
 duckduckgo.com##.mobile-badge-banner_atbBadge__ISxcF.mobile-badge-banner_sticky__rDcx9.mobile-badge-banner_visible__c_ysq > [href*="https\:\/\/play\.google\.com\/store\/apps\/details"] > [src*="\/_next\/static\/media\/google-play-store-v2\.962e9ea3\.png"]
@@ -4651,7 +4611,6 @@ www3.nhk.or.jp##[href="/nhkworld/en/terms/privacy_eea_uk/"]
 www3.nhk.or.jp##[href="/nhkworld/en/terms/privacy_notice/"]
 www.filmon.com##[href="/page/privacy-policy-en"]
 www.filmon.com###newsticker
-www.google.com##.Efnghe.Q3DXx
 www.coduripostaleok.ro##div.w-100.my-2
 www.coduripostale.ro##.text-center.col-xs-12
 www.coduripostale.com.ro##h4
@@ -7418,7 +7377,6 @@ m.digi24.ro##.js_smartbanner.smartbanner--android.smartbanner
 m.digi24.ro##.ot-sdk-show-settings.footer-bottom-nav-list-item-link
 m.digi24.ro##.footer-social
 www.utv.ro##.header-social
-www.google.com##.UEbcze
 sweet.tv##.footer__media
 www.filmnow.ro##.header-social
 www.justwatch.com##div.vfm-item:nth-of-type(8)
@@ -8251,8 +8209,6 @@ weather.gc.ca##.container.pagedetails > .row
 www.metservice.com##.Footer-section--promo.Footer-section
 www.3bmeteo.com##[href="/mobile_app"]
 www.3bmeteo.com##[href="/servizi/app"]
-www.google.com##.S1On7c
-www.google.com##div:nth-of-type(10) > ul > li:nth-of-type(5)
 www.onbuy.com##li.footer__legal__item:nth-of-type(1)
 www.onbuy.com##.ob-text-white.ob-text-center.ob-font-bold.ob-text-xs.ob-py-4.ob-block.scroll-to
 newmedics.ro##[href="https://newmedics.ro/politica-de-confidentialitate/"]
@@ -9066,9 +9022,6 @@ sporulcasei.ro##[href="https://sporulcasei.ro/politica-gdpr/"]
 sporulcasei.ro##.elementor-element-a7452b7.elementor-element.elementor-inner-column.elementor-col-20.elementor-column
 smartliving.ro##.mobile-off-canvas-menu-contact.grid-x
 www.neogaf.com##.message-attribution-gadget
-www.google.com##.niO4u.B6OMee
-www.google.com##div.cMkUmd:nth-of-type(2)
-www.google.com##.F0OfWd
 decodo.com##.layout.bg-base-white.flex.min-h-screen.flex-col.items-center.justify-center.p-9.text-center.text-black
 devrant.com##.mobile-install-banner > .android-btn.btn
 heimdalsecurity.com##.checkbox-footer-container.input-group
@@ -9800,7 +9753,6 @@ www.siblondelegandesc.ro##.wpulike-heart.wpulike
 ortodoxiatinerilor.ro##.two
 www.instagram.com##.xvbhtw8.xf7dkkf.xv54qhq.x11njtxf.x1n2onr6.x18d9i69.xexx8yu.x1h3rv7z.x1lziwak.xat24cr.x14z9mp.xdj266r.xk390pu.x2lah0s.xdt5ytf.x78zum5.x9f619.x1qjc9v5
 zonait.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
-@@blogger.l.google.com
 www.hentaiporn.com.es##[href="https://www.hentaiporn.com.es/privacy-policy/"]
 www.hentai-foundry.com##.boxlinks
 vxhentai.com##.cRetour
@@ -10168,13 +10120,9 @@ adultvisor.com##.age-gate__heading
 adultvisor.com##.FixedWidget__fixed_widget.wp-block-image
 www.flaticon.com###button_panel
 ro.pinterest.com##.ADXRXN.CQ1_jt.MEP_vB._tKaHB.aNs6gM.b6DHg3.ecEhnF.g8WGSl.lSnwe8.sSBu24.zEVE_X
-www.google.com##.JeAC8
-www.google.com##.dnNgC
-www.google.com##.LoRBqc.z1asCe
 m.ziare.com##.news__box__donate.shuffleNotification
 www.cordulus.com##.w-layout-grid.social-media-grid-top-2.flex
 www.cordulus.com##a.footer-link-2:nth-of-type(6)
-www.google.com##.lUxx6 > div:nth-of-type(1) > .csTa2e > .uMMzHc > .wilSz
 edu.litera.ro##.fa.fa-angle-left
 edu.litera.ro###floatingprev
 edu.litera.ro##.col-md-8 > div:nth-of-type(2)
@@ -10262,7 +10210,6 @@ mai.gov.md###popup-icon
 mai.gov.md##.sonar-wave
 mai.gov.md##.icon-list.col-12
 violentaimpotrivafemeilor.ro##.swp_social_panel.swp_horizontal_panel.swp_flat_fresh.swp_default_full_color.swp_individual_full_color.swp_other_full_color.scale-100.scale-
-www.google.com##.Tdc1Lc
 club.steam250.com##p:nth-of-type(3)
 club.steam250.com##h2:nth-of-type(2)
 porngames.games##.text-center
@@ -12695,7 +12642,6 @@ rainbow-love.ro##.Bot
 rainbow-love.ro##.Footer
 rainbow-love.ro###custom_html-31
 rainbow-love.ro###ko_fi_widget-3
-www.google.com##a.ZYHQ7e.wHYlTd.Fx4vi:nth-of-type(3)
 demonslayer-anime.com##[href="https://www.facebook.com/DemonSlayer.anime/"]
 demonslayer-anime.com##[href="https://x.com/demonslayerusa"]
 donguriirosub.blogspot.com###credit-wrapper
@@ -16076,7 +16022,6 @@ www.mega-image.ro##.ieseJe.sc-y4jrw3-28
 www.mega-image.ro##.lkYpRx.sc-1j0noq-0
 www.netscylla.com##.float-right
 www.netscylla.com##.e-content.post-content > span
-www.google.com##body > div:nth-of-type(1) > div
 hotnews.ro##[href="https://hotnews.ro/t/hnpremium"]
 hotnews.ro##[href="https://hotnews.ro/newsletter"]
 www.101figurine.ro##.box.cosnew.cos > ul > li:nth-of-type(3)

@@ -351,6 +351,67 @@ www.facebook.com##div.m:nth-of-type(14) > .native-text.rslh > .f1.a
 ublockorigin.com##.chrome.link-icon
 lewd.ninja##+js(set, adblock, false)
 lewdninja.com##.is-small.is-info.notificationwww.waterfox.com##div.gap-2.flex-col.flex:nth-of-type(1)
+www.medlife.ro##.whatsapp-float-button
+lewdgames.to##[href="https://lewdgames.to/advertise-with-us/"]
+lewdgames.to##[href="https://lewdgames.to/privacy-policy/"]
+gamemodding.com##.footer__soci
+gamemodding.com##[href="#"]
+gamemodding.com##[href="/en/feedback/"]
+gamemodding.com##.liked-hover-icon.icon
+www.mobilegta.net##a[href^="/en/content.php"]:nth-of-type(4)
+modsgamer.com##.floor-main-Follow
+developer.microsoft.com##div:nth-of-type(5)
+developer.microsoft.com##.c-uhff-footer_managecookies.wcp-manage-footer
+vivafm.ro##[href="https://vivafm.ro/politica-cookies/"]
+vivafm.ro##[href="https://vivafm.ro/politica-de-confidentialitate/"]
+vivafm.ro##li.elementor-inline-item.elementor-icon-list-item:nth-of-type(2)
+vivafm.ro##.elementor-widget-icon-list.elementor-widget.elementor-list-item-link-full_width.elementor-widget__width-initial.elementor-align-start.elementor-icon-list--layout-inline.elementor-element-afafed6.elementor-element > .elementor-widget-container > .elementor-inline-items.elementor-icon-list-items > li.elementor-inline-item.elementor-icon-list-item:nth-of-type(3)
+mallauto.testergrup.ro##.footer-menu.sm\:mb-0.flex-wrap.flex > li.border-solid.border-gray-200.border-b-2.sm\:border-0:nth-of-type(2)
+mallauto.testergrup.ro##li.border-solid.border-gray-200.border-b-2.sm\:border-0:nth-of-type(1)
+mallauto.testergrup.ro##.site-footer-socials
+www.autovit.ro##.shrink-0.w-\[300px\]
+www.radioconstanta.ro##[href="https://www.srr.ro/politica-de-confidentialitate.html"]
+www.radioconstanta.ro##[href="https://www.srr.ro/politica-cookie-srr.html"]
+www.radioconstanta.ro##.footer__row > ul > li:nth-of-type(6)
+www.radioconstanta.ro##.footer__row > ul > li:nth-of-type(5)
+primariabuzau.ro##.mfn-cookies-reopen
+primariabuzau.ro##.vb-item.column_plain_text.mobile-one.tablet-one-fifth.laptop-one-fourth.one-fourth.mcb-item-248he7l.mcb-column.column
+primariabuzau.ro##.vb-item.column_plain_text.mobile-one.tablet-one-third.laptop-one-fourth.one-fourth.mcb-item-21z5v8m.mcb-column.column
+www.laiasi.ro##.col-sm-3.col-md-3.col-lg-3.fusion-column-last.fusion-column
+www.dasp.ro##.tg-column-4.tg-one-fourth-last.tg-one-fourth
+www.mauto-iasi.ro##[href="https://www.mauto-iasi.ro/politica-de-confidentialitate"]
+bolt.eu##.xs\:rt-r-gap-6.rt-r-gap-4.rt-r-fw-wrap.rt-r-ai-center.rt-Flex
+bolt.eu##a.rt-high-contrast.rt-underline-hover.rt-r-weight-light.rt-r-size-1.rt-Link.rt-reset.rt-Text:nth-of-type(3)
+bolt.eu##a.rt-high-contrast.rt-underline-hover.rt-r-weight-light.rt-r-size-1.rt-Link.rt-reset.rt-Text:nth-of-type(5)
+bolt.eu##.FooterBottom_CtaRow__4IKlE.sm\:rt-r-w.rt-r-w.rt-r-gap-4.rt-r-ai-center.sm\:rt-r-fd-row.rt-r-fd-column.rt-Flex
+operanb.ro##[href="/pentru-spectatori/politica-de-confidentialitate/"]
+www.arr.ro##div.mb-lg-0.mb-4.col-lg-3.col-sm-6:nth-of-type(4)
+www.arr.ro##.mb-sm-0.mb-4.col-lg-3.col-sm-6
+www.publi24.ro##[href="https://www.publi24.ro/landing/anunt-promo"]
+iasi365.com##[href="/amestecate/politica-de-confidentialitate"]
+www.mauto-iasi.ro##.social.col
+www.mauto-iasi.ro##.ckPolicyGomag
+stirileprotv.ro###outerbil
+stirileprotv.ro###divParent
+ziaruldeinteres.ro##.zdi-whatsapp-button
+ziaruldeinteres.ro##.zd-cta
+ziaruldeinteres.ro##[href="https://ziaruldeinteres.ro/politica-de-confidentialitate/"]
+ziaruldeinteres.ro##[href="https://ziaruldeinteres.ro/politica-de-cookies/"]
+ziaruldeinteres.ro##[href="https://ziaruldeinteres.ro/publicitate/"]
+www.livetickets.ro##li.ng-tns-c71-4.submenu:nth-of-type(3)
+classixfestival.ro##[href="https://classixfestival.ro/politica-confidentialitate/"]
+classixfestival.ro###cya11y-container
+classixfestival.ro###uicore-back-to-top
+classixfestival.ro##.elementor-inline-items.elementor-icon-list-items
+www.radioiasi.ro##[href="https://www.srr.ro/politica-cookie-srr.html"]
+www.radioiasi.ro##[href="https://www.srr.ro/politica-de-confidentialitate.html"]
+www.radioiasi.ro##.footer__row > ul > li:nth-of-type(6)
+www.radioiasi.ro##.footer__row > ul > li:nth-of-type(5)
+radioregional.ro##a.custom-live-button:nth-of-type(1)
+radioregional.ro###check-also-box
+radioregional.ro###tie-newsletter-4
+www.google.com###ow23
+github.com##li.mx-2:nth-of-type(3) > .Link.Link--secondary
 github.com##.SubFooter-module__socialAndLocale__Kl140 > nav
 www.google.com##a.eQtdDf:nth-of-type(1)
 github.com##.color-bg-transparent.p-0.border-0.underline-on-hover.Link--secondary

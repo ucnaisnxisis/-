@@ -4,8 +4,17 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+mgid.com
+mgid.co
+mgid.xyz
+mgid.org
+mgid.net
 pagead2.googlesyndication.com
 doubleclick.net
+doubleclick.org
+doubleclick.com
+doubleclick.co
+doubleclick.xyz
 adnxs.com
 servicer.mgid.com
 analytics.js

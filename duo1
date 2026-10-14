@@ -429,6 +429,32 @@ www.tampermonkey.net##.subnav.row > .container
 www.tampermonkey.net##a.tab:nth-of-type(3)
 www.tampermonkey.net##.footer.row
 www.tampermonkey.net##[href="https://www.userscript.zone/privacy"]
+www.eventim.ro##.u-flex-v-center.u-flex-justify-end.u-flex > .searchheader-action-link
+www.eventim.ro##.hidden-xs.full-width.info-accordion.footerfull-accordion > ul.theme-element-border.info-accordion-section.footerfull-linklist:nth-of-type(2) > li:nth-of-type(2) > .info-accordion-content.footerfull-linklist-content > li.footerfull-linklist-content-item:nth-of-type(1)
+www.eventim.ro##.hidden-xs.full-width.info-accordion.footerfull-accordion > ul.theme-element-border.info-accordion-section.footerfull-linklist:nth-of-type(2) > li:nth-of-type(2) > .info-accordion-content.footerfull-linklist-content > li.footerfull-linklist-content-item:nth-of-type(2)
+www.eventim.ro##.hidden-xs.full-width.info-accordion.footerfull-accordion > ul.theme-element-border.info-accordion-section.footerfull-linklist > li > .info-accordion-content.footerfull-linklist-content > li.footerfull-linklist-content-item > .js-track-delegate.js-tracking-delegate.theme-interaction-color.link.optanon-toggle-display.js-consent-settings
+www.eventim.ro##.footerfull-secondary > ul.footerfull-linklist:nth-of-type(1)
+www.eventim.ro##.footerfull-secondary
+www.vice.com##[href="https://newsletter.vice.com"]
+www.vice.com##[href="/en/membership"]
+www.vice.com##[href="/en/memberships"]
+www.vice.com##.wp-block-query-pagination-is-layout-flex.wp-container-core-query-pagination-is-layout-d70ed23c.is-layout-flex.is-content-justification-center.wp-block-query-pagination
+www.reddit.com##.self-center.ms-auto.shrink-0.z-2.relative
+www.reddit.com##.m\:border-t-0.mb-0.pt-md.mt-md.border-b-0.border-t-sm.border-x-0.border-neutral-border-weak.border-solid
+www.reddit.com##button.group:nth-child(1)
+www.reddit.com###button.group:nth-child(1)
+www.reddit.com##.button.group:nth-child(1)
+www.reddit.com##.button.group:nth-child(3)
+www.reddit.com##button.group:nth-child(3)
+www.reddit.com###button.group:nth-child(3)
+www.reddit.com##.div.px-md:nth-child(13)
+www.reddit.com###div.px-md:nth-child(13)
+www.reddit.com##div.px-md:nth-child(13)
+www.reddit.com##shreddit-vote-animations
+www.reddit.com###shreddit-vote-animations
+www.reddit.com##.shreddit-vote-animations
+www.reddit.com##.text-secondary-weak.border-solid.border-neutral-border-weak.border-sm.rounded-1.box-border.min-h-\[56px\].py-xs.px-md.xs\:mx-0.m-md.text-16.items-center.col-end-4.col-start-1.flex-row.flex
+github.com##li:nth-of-type(2) > .Link.Link--secondary
 zonait.ro##.mdp-hover-none.mdp-entrance-fade.bottom-left.mdp-readabler-trigger-button-box
 lovedeco.ro##.items-start.flex-col.flex.shrink-0.md\:w-1\/4.w-full
 web.archive.org##.footer-list

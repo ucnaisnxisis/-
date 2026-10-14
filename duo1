@@ -360,6 +360,21 @@ gamemodding.com##.footer__soci
 gamemodding.com##[href="#"]
 gamemodding.com##[href="/en/feedback/"]
 gamemodding.com##.liked-hover-icon.icon
+obfusgated.com##div:nth-of-type(3) > .space-y-2 > li:nth-of-type(2)
+obfusgated.com##.md\:mb-0.mb-4.space-x-6.flex
+www.mauriziofonte.it###tools-cookie-banner
+www.mauriziofonte.it##p.tools-footer-text--small.tools-footer-text:nth-of-type(2)
+tryblock.org##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(1) > .flex-grow.test-container
+tryblock.org##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(2) > .flex-grow.test-container
+tryblock.org##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(4) > .flex-grow.test-container
+tryblock.org##.flex-grow.test-container
+thomas.vanhoutte.be##[href="/get-in-touch/"]
+adblock.lukobi.com###gt-link
+klabsdev.com##[href="https://klabsdev.com/privacy-policy/"]
+klabsdev.com###announcement-bar-root
+klabsdev.com##.nav-github
+klabsdev.com##.nav-google
+klabsdev.com##.gh-portal-close.gh-primary-btn.gh-btn.gh-head-btn
 www.mobilegta.net##a[href^="/en/content.php"]:nth-of-type(4)
 modsgamer.com##.floor-main-Follow
 developer.microsoft.com##div:nth-of-type(5)

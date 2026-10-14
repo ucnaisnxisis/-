@@ -444,6 +444,69 @@ www.tampermonkey.net##.subnav.row > .container
 www.tampermonkey.net##a.tab:nth-of-type(3)
 www.tampermonkey.net##.footer.row
 www.tampermonkey.net##[href="https://www.userscript.zone/privacy"]
+www.silvergames.com##aside
+konghack.com##a.link-secondary:nth-of-type(5)
+konghack.com##a.link-secondary:nth-of-type(7)
+konghack.com##a.link-secondary:nth-of-type(6)
+konghack.com##span:nth-of-type(5)
+konghack.com##span:nth-of-type(4)
+konghack.com##span:nth-of-type(6)
+konghack.com##span:nth-of-type(3)
+www.gamezhero.com##div.pro-horizontal:nth-of-type(5)
+www.gamezhero.com##div.pro-horizontal:nth-of-type(4)
+www.gamezhero.com##.gamezhero-com-home > div.pro-horizontal:nth-of-type(1)
+www.gamezhero.com##.gamezhero-com-home > div.pro-horizontal
+www.gamezhero.com##.right-pro.main-container.gamezhero-com-main > div.pro-horizontal
+www.gamezhero.com##li.menu-item:nth-of-type(3)
+www.gamezhero.com##li.menu-item:nth-of-type(4)
+www.gamezhero.com##li.menu-item:nth-of-type(2)
+www.gamezhero.com###left-panel-menu > li.nowrap.menu-header:nth-of-type(1)
+www.flashgamehacks.com###rateBox
+www.flashgamehacks.com##[href="../page/privacy"]
+www.flashgamehacks.com##.ratebox
+kbhgames.com##.score-button
+www.gameflare.com##.game-share
+www.gameflare.com##.game-favourite.btn-danger.btn
+www.gameflare.com##.game-favourite.btn-warning.btn
+www.gameshot.org##[href="https://www.gameshot.org/policy.html"]
+yaksgames.com##div.menu:nth-of-type(3) > ul:nth-of-type(2) > li:nth-of-type(1)
+yaksgames.com##div.menu:nth-of-type(3) > ul:nth-of-type(1) > li:nth-of-type(4)
+yaksgames.com##.GameBtn.GamesShareBox
+flashmuseum.net##.gb-element-a49cab8f
+flashmuseum.net##.visible
+flashmuseum.net##.hide-on-mobile.hide-on-tablet.gb-element-1bf943ab
+flashmuseum.net##.topmenubutton.gb-text-9eb46605
+flashmuseum.net##.fm-share
+flashmuseum.net##.fm-ctrl-heart.fm-ctrl-btn
+armorgames.com##.col-right.col > .clearfix
+armorgames.com##.footer-badge.column
+unblockedgames.blogbucket.org##[href="https://www.blogbucket.org/privacy-policy-disclosure/"]
+www.miniplay.com##.mt-20.mb-20.game-options
+www.freegamesnews.com###footer > p > a[href^="https://www.freegamesnews.com/en/"]:nth-of-type(1)
+flashga.me##.fsw-modal.w3-modal
+flashga.me##div.footer-box:nth-of-type(3)
+flashga.me##.goto-top-btn
+gamershood.com##[href="https://gamershood.com/html/5/privacy-policy"]
+gamershood.com##.gh-game-actions
+www.kongregate.com###top-rated-comments > div.p-4.rounded-lg.bg-gray-800 > .gap-3.items-start.flex > .flex-grow > .items-start.justify-between.flex > .gap-2.items-center.flex
+www.kongregate.com##.sm\:gap-3.gap-2.items-center.flex
+www.funny-games.biz##.footer-menu-links > li.fa-chevron-right.fa:nth-of-type(2)
+www.funny-games.biz###favbutton
+bubblebox.com##.top-right_square
+www.izzygames.com###footer
+www.izzygames.com##.vt-float-right-block
+www.notdoppler.com##[href="https://itunes.apple.com/app/apple-store/id1355912318"]
+www.notdoppler.com##[href^="https://play.google.com/store/apps/details"]
+www.notdoppler.com##table:nth-of-type(2) > tbody > tr:nth-of-type(1) > td:nth-of-type(5)
+ideasgames.com##[href="/rss"]
+www.freegamesnews.com##a[href^="https://www.freegamesnews.com/en/"]:nth-of-type(4)
+www.freewebarcade.com##a.ralnk:nth-of-type(4)
+www.freewebarcade.com##p:nth-of-type(2)
+www.freewebarcade.com##.contentsec > div:nth-of-type(2)
+www.freewebarcade.com###loginButton
+www.fdg-entertainment.com##[href="https://www.fdg-entertainment.com/privacy-policy/"]
+www.fdg-entertainment.com##.show-for-large.nav-main__social > li
+www.fdg-entertainment.com##.section--hero--small.section--hero.section
 www.eventim.ro##.u-flex-v-center.u-flex-justify-end.u-flex > .searchheader-action-link
 www.eventim.ro##.hidden-xs.full-width.info-accordion.footerfull-accordion > ul.theme-element-border.info-accordion-section.footerfull-linklist:nth-of-type(2) > li:nth-of-type(2) > .info-accordion-content.footerfull-linklist-content > li.footerfull-linklist-content-item:nth-of-type(1)
 www.eventim.ro##.hidden-xs.full-width.info-accordion.footerfull-accordion > ul.theme-element-border.info-accordion-section.footerfull-linklist:nth-of-type(2) > li:nth-of-type(2) > .info-accordion-content.footerfull-linklist-content > li.footerfull-linklist-content-item:nth-of-type(2)

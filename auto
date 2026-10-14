@@ -4,6 +4,41 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##ads.js
+##pagead.js
+##advertisement.js
+##analytics.js
+###ads.js
+###pagead.js
+###advertisement.js
+###analytics.js
+##.ads.js
+##.pagead.js
+##.advertisement.js
+##.analytics.js
+##.ad1.example
+###ad1.example
+##ad1.example
+###ad2.example
+##.ad2.example
+##ad2.example
+##final-ad.example
+###final-ad.example
+##.final-ad.example
+##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(1) > .flex-grow.test-container
+##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(2) > .flex-grow.test-container
+##div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(4) > .flex-grow.test-container
+##.div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(1) > .flex-grow.test-container
+##.div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(2) > .flex-grow.test-container
+##.div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(4) > .flex-grow.test-container
+###div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(1) > .flex-grow.test-container
+###div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(2) > .flex-grow.test-container
+###div.border-gray-800.bg-\[\#0f172a\].flex-col.flex.test-section:nth-of-type(4) > .flex-grow.test-container
+###announcement-bar-root
+##.gh-portal-close.gh-button
+##.nav-github
+##.nav-google
+##.gh-portal-close.gh-primary-btn.gh-btn.gh-head-btn
 ##+js(aost, document.getElementById, adsBlocked)
 ##+js(aost, document.getElementById, consentBlocked)
 ##+js(aost, document.getElementById, cookiesBlocked)

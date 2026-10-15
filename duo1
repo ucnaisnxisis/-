@@ -46,6 +46,15 @@ antiadblockcore.com$domain=pahe.ink
 ||eu-cookie.^ ||cookie-control.^
 ||cookie-choices.^ ||clarity.microsoft.com^ ||cookielaw.org^ ||quantcast.mgr.consensu.org^ ||consenticompanion.*^
 @@||consentmanager.cmp|consent|cookie^$document,redirect=no
+www.reddit.com##.m-0.p-0.list-none
+adblocktester.pages.dev##ads.js
+adblocktester.pages.dev##pagead.js
+adblocktester.pages.dev##advertisement.js
+adblocktester.pages.dev##analytics.js
+www.mauriziofonte.it###tools-cookie-banner
+www.mauriziofonte.it##p.tools-footer-text--small.tools-footer-text:nth-of-type(2)
+www.mauriziofonte.it##a.tools-navbar-social:nth-of-type(2)
+obfusgated.com##div:nth-of-type(3) > .space-y-2 > li:nth-of-type(2)
 imgur.com##[href="https://imgur.com/privacy"]
 imgur.com##.Footer-app
 imgur.com##.Gallery-EngagementBar--bottom.Gallery-EngagementBar

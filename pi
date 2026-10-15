@@ -4,6 +4,29 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+service.mgid.com
+servicer.mgid.com
+servicer.mgid.advertising
+servicer.mgid.ad
+servicer.mgid.ads
+servicer.mgid.xxx
+servicer.mgid.online
+servicer.mgid.org
+servicer.mgid.xyz
+servicer.mgid.co
+servi.mgid.com
+advert.mgid.com
+robots.txt.mgid.com
+test.mgid.com
+no-cors.mgid.com
+GET.mgid.com
+MGID.mgid.com
+Ads.mgid.com
+104.17.198.65
+/servicer.mgid.com
+robots.txt
+.mgid.com
+robots.mgid.com
 mgid.com
 mgid.co
 mgid.xyz

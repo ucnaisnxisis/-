@@ -4,6 +4,29 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+#.text-ad
+#text-ad
+##text-ad
+##.text-ad
+###text-ad
+#.adsbygoogle
+#adsbygoogle
+##adsbygoogle
+##.adsbygoogle
+###adsbygoogle
+#.pub_300x250
+#pub_300x250
+##pub_300x250
+##.pub_300x250
+###pub_300x250
+#ads.js
+#pagead.js
+#advertisement.js
+#analytics.js
+#.ads.js
+#.pagead.js
+#.advertisement.js
+#.analytics.js
 ##ads.js
 ##pagead.js
 ##advertisement.js

@@ -3128,6 +3128,42 @@ adblock.turtlecute.org##.adbox.banner_ads.adsbox
 adblock.turtlecute.org##.textads
 faq.whatsapp.com##.xffp3nx.xhvchuf.xrgej4m
 games.victorz.ca##.footer-inner
+weather.com##.flex-1.bg-gray-100.pb-6
+www.theweathernetwork.com##.sc-jdkBTo.ibCVkP
+www.theweathernetwork.com##.sc-bvgPty.cLhFNn
+www.theweathernetwork.com##.sc-jdUcAg.lbFNFo
+www.theweathernetwork.com##li:nth-of-type(8) > .keyboard-focus-link > .sc-jlZhew.kA-DCOC
+www.theweathernetwork.com##.sc-bddgXz.sc-fmzyuX.jCHpWZ.kWtHtm > .sc-fyVfxW.fQuCXW > li:nth-of-type(2) > .keyboard-focus-link > .sc-jlZhew.kA-DCOC
+www.theweathernetwork.com##.sc-bddgXz.sc-cspYLC.jCHpWZ.guoJhE
+www.theweathernetwork.com##.sc-dwalKd.hRbSkH
+www.theweathernetwork.com##.sc-cspYLC.fiJjnF
+www.theweathernetwork.com##.sc-cspYLC.ejJMbf
+www.theweathernetwork.com##.sc-kdBSHD.ezTkpz
+www.theweathernetwork.com##.sc-jxOSlx.gRZsVj
+www.theweathernetwork.com##.sc-jxOSlx.gotndt
+www.weatherandradar.com##div.column:nth-of-type(3)
+www.weatherandradar.com##.app-badges
+www.weatherandradar.com##wo-async-placeholder.loaded:nth-of-type(1)
+www.tameteo.com##[href*="https\:\/\/www\.tameteo\.com\/privacy\.html"]
+www.tameteo.com##.enlaces.flex-end.text-sec > li:nth-of-type(4)
+www.tameteo.com##.enlaces.flex-end.text-sec > li:nth-of-type(5)
+www.tameteo.com##[src*="https\:\/\/www\.tameteo\.com\/css\/v3\/svgs\/rrss\/huawei\.svg"]
+www.tameteo.com##[src*="https\:\/\/www\.tameteo\.com\/css\/v3\/svgs\/rrss\/appStore\.svg"]
+www.tameteo.com##[src*="https\:\/\/www\.tameteo\.com\/css\/v3\/svgs\/rrss\/windows\.svg"]
+www.tameteo.com##.sociales.flex-end
+www.tameteo.com##.enlaces.flex-end.text-sec > li:nth-of-type(6)
+www.tameteo.com##.rrss
+www.tameteo.com###bannerDerPC
+www.tameteo.com##.meteored-ads.ad-taboola
+www.tameteo.com###bannerPC0
+www.tameteo.com###ad_bottom
+www.happyfoodstube.com##[href*="https\:\/\/www\.happyfoodstube\.com\/privacy-policy\/"]
+www.happyfoodstube.com##.wprm-comment-rating.entered.lazyloaded
+www.happyfoodstube.com##.nav-links
+www.happyfoodstube.com##.wprm-recipe-jump-to-comments.wprm-recipe-link.wprm-block-text-normal.wprm-recipe-jump-to-comments-inline-button.wprm-recipe-link-inline-button.wprm-color-accent
+www.happyfoodstube.com###wprm-recipe-user-rating-0
+www.happyfoodstube.com##.wprm-google-preferred-sources.wprm-google-preferred-sources-custom.wprm-recipe-link.wprm-block-text-normal.wprm-recipe-link-inline-button.wprm-color-accent
+www.happyfoodstube.com###secondary
 www.bzi.ro##.overflow-hidden.divide-x-40.single__content > .mg-top-20
 www.evo-imobiliare.ro###_aw
 www.evo-imobiliare.ro###need-help

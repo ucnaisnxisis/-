@@ -332,6 +332,159 @@ www.youtube.com##.ytp-ce-element-show.ytp-ce-size-1280.ytp-ce-bottom-left-quad.y
 www.youtube.com##div.ytd-item-section-renderer.ytGridShelfViewModelGridShelfRow
 www.youtube.com##.yt-shelf-header-layout--disable-horizontal-padding.yt-shelf-header-layout
 www.youtube.com##.ytp-impression-link
+d3ward.github.io##.textads
+d3ward.github.io##.adbox.banner_ads.adsbox
+www.ecb.europa.eu##.ecb-footerBottomSocialLinks
+primet.ro##.ws-section__inner.ws-newsletter-cta__inner.ws-reveal
+primet.ro##.ws-footer__legal
+primet.ro##.ws-footer__social
+primet.ro##.ws-footer__top
+primet.ro###ws-footer-col-1 > .ws-footer__col-inner > .ws-footer__links > li:nth-of-type(3)
+primet.ro###ws-footer-col-1 > .ws-footer__col-inner > .ws-footer__links > li:nth-of-type(4)
+primet.ro###ws-footer-col-1 > .ws-footer__col-inner > .ws-footer__links > li:nth-of-type(5)
+estimez.ro##[href*="\/politica-gdpr\/"]
+www.bancatransilvania.ro##.action
+www.smilecredit.ro##.col-xs-12.col-sm-6.col-md-2.footers-three > .list-unstyled > li:nth-of-type(5)
+www.smilecredit.ro##.col-xs-12.col-sm-6.col-md-2.footers-three > .list-unstyled > li:nth-of-type(3)
+www.smilecredit.ro##.col-xs-12.col-sm-6.col-md-2.footers-three > .list-unstyled > li:nth-of-type(2)
+calculatorinflatie.ro##button.text-gray-600.dark\:text-slate-400.hover\:text-blue-600.dark\:hover\:text-blue-400.transition-colors.underline.underline-offset-2:nth-of-type(2)
+calculatorinflatie.ro##.bg-gradient-to-r.from-blue-600.to-indigo-600.dark\:brightness-110.px-3.py-1\.5.sm\:px-3\.5.sm\:py-2.flex.items-center.gap-2
+calculatorinflatie.ro##.p-3.sm\:p-3\.5
+www.thesaurus.com###tcoContent2
+www.thesaurus.com###tcoContent2-container
+www.thesaurus.com###tcoContent1
+www.thesaurus.com###tcoContent1-container
+www.thesaurus.com##.box-additional.box-additional-anyclip.box-additional-after-first-entry
+www.thesaurus.com##.box-content-top
+www.rfc-editor.org##.relative.flex.flex-col.md\:flex-row.md\:gap-2.px-2.py-1
+www.rfc-editor.org##.data-\[state\=closed\]\:animate-none.data-\[swipe\=end\]\:translate-x-full.relative.flex.flex-col.gap-1.bg-white.dark\:bg-black.text-black.dark\:text-white.border-1.border-gray-300.dark\:border-gray-500.shadow-2xl.rounded-xs.px-1.py-3
+www.rfc-editor.org##.ml-4 > li:nth-of-type(3) > .flex.w-full.text-left.border.no-underline.border-gray-500.px-4.py-3\.5.hover\:bg-blue-400.focus\:bg-blue-400
+www.etymonline.com##div.relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\]:nth-of-type(2) > div.relative.min-h-\[90px\].w-full:nth-of-type(2) > .relative.z-10.min-h-\[90px\].w-full.flex.items-center.justify-center
+www.etymonline.com##div.relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\]:nth-of-type(2) > div.relative.min-h-\[90px\].w-full:nth-of-type(2)
+www.etymonline.com##div.relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\]:nth-of-type(2) > .border-b.border-divider.pl-4.py-2.border-white\/80.dark\:border-white\/10.flex.justify-between.items-center
+www.etymonline.com##div.-mt-4 > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(1) > .relative.z-10.min-h-\[90px\].w-full.flex.items-center.justify-center
+www.etymonline.com##div.-mt-4 > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(1)
+www.etymonline.com##.mt-4.space-y-12.mobile\:space-y-8.w-full > div:nth-of-type(3) > .space-y-4 > div:nth-of-type(3) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(2) > .relative.z-10.min-h-\[90px\].w-full.flex.items-center.justify-center
+www.etymonline.com##.mt-4.space-y-12.mobile\:space-y-8.w-full > div:nth-of-type(3) > .space-y-4 > div:nth-of-type(3) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(2)
+www.etymonline.com##.mt-4.space-y-12.mobile\:space-y-8.w-full > div:nth-of-type(3) > .space-y-4 > div:nth-of-type(3) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > .border-b.border-divider.pl-4.py-2.border-white\/80.dark\:border-white\/10.flex.justify-between.items-center
+www.etymonline.com##.w-full.flex.items-center.flex-col.space-y-8.lg\:items-start.lg\:w-\[300px\] > div.w-full.items-center:nth-of-type(1) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(2) > .relative.z-10.min-h-\[90px\].w-full.flex.items-center.justify-center
+www.etymonline.com##.w-full.flex.items-center.flex-col.space-y-8.lg\:items-start.lg\:w-\[300px\] > div.w-full.items-center:nth-of-type(1) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > div.relative.min-h-\[90px\].w-full:nth-of-type(2)
+www.etymonline.com##.w-full.flex.items-center.flex-col.space-y-8.lg\:items-start.lg\:w-\[300px\] > div.w-full.items-center:nth-of-type(1) > .relative.bg-secondary\/50.-mx-4.w-\[calc\(100\%.\+.\32 rem\)\] > .border-b.border-divider.pl-4.py-2.border-white\/80.dark\:border-white\/10.flex.justify-between.items-center
+playscrabble.com##.FooterLinks_cookies__cJx2T > button
+playscrabble.com##[href*="https\:\/\/scopely\.com\/privacy"]
+playscrabble.com##.d-flex.flex-column.justify-content-center.align-items-center > div.Flexstyle__StyledFlex-sc-1neqeo8-0.iiDKXB:nth-of-type(2)
+www.modernasianbaking.com##.sqs-svg-icon--list
+www.modernasianbaking.com##.fluid-engine.fe-677d618fc5f3ed754edc5a42
+www.modernasianbaking.com###block-6605ed672060b361b807414c
+www.modernasianbaking.com##.fe-block.fe-block-6605ed672060b361b807414c
+kids.wordsmyth.net##.footer.lh2 > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(1) > [href*="https\:\/\/kids\.wordsmyth\.net\/we\/"]
+kids.wordsmyth.net##.tooltip_c > input
+kids.wordsmyth.net##div.menu_item.menu_header:nth-of-type(3)
+kids.wordsmyth.net##div.menu_item.menu_header:nth-of-type(4)
+iamafoodblog.com##.insta-link
+iamafoodblog.com###wprm-recipe-user-rating-0
+iamafoodblog.com##.jump.footer-logo.icon-hamburger
+iamafoodblog.com##.jump.footer-logo.icon-hamburger
+iamafoodblog.com##.starries.starry-bg
+iamafoodblog.com##.starry-container
+en.wikwik.org##table:nth-of-type(3) > tbody > tr > td:nth-of-type(2)
+en.wikwik.org##div.a_v:nth-of-type(2)
+en.wikwik.org##table:nth-of-type(2)
+en.wikwik.org##.a_f2
+en.wikwik.org##div.a_v:nth-of-type(1)
+nourishedbynic.com###AdThrive_Below_Post_5_phone
+nourishedbynic.com###AdThrive_Below_Post_4_phone
+nourishedbynic.com###AdThrive_Below_Post_3_phone
+nourishedbynic.com###AdThrive_Below_Post_2_phone
+nourishedbynic.com###dpsp-content-bottom
+nourishedbynic.com###AdThrive_Below_Post_1_phone
+nourishedbynic.com###AdThrive_Content_14_phone
+nourishedbynic.com###AdThrive_Content_13_phone
+nourishedbynic.com###AdThrive_Recipe_4_phone
+nourishedbynic.com###AdThrive_Recipe_3_phone
+nourishedbynic.com###AdThrive_Recipe_2_phone
+nourishedbynic.com###AdThrive_Recipe_1_phone
+nourishedbynic.com###AdThrive_Recipe_5_phone
+nourishedbynic.com###wprm-recipe-rating-0
+nourishedbynic.com###AdThrive_Content_12_phone
+nourishedbynic.com###AdThrive_Content_11_phone
+nourishedbynic.com###AdThrive_Content_10_phone
+nourishedbynic.com###AdThrive_Content_9_phone
+nourishedbynic.com###AdThrive_Content_8_phone
+nourishedbynic.com###AdThrive_Content_7_phone
+nourishedbynic.com###AdThrive_Content_6_phone
+nourishedbynic.com###AdThrive_Content_5_phone
+nourishedbynic.com###AdThrive_Content_4_phone
+nourishedbynic.com###AdThrive_Content_3_phone
+nourishedbynic.com###AdThrive_Content_2_phone
+nourishedbynic.com###AdThrive_Content_1_phone
+nourishedbynic.com###cls-video-container-zWMmSnXc
+nourishedbynic.com##div.wp-block-group.is-style-full-width-feature-wrapper-cta:nth-of-type(27) > div.wp-block-group__inner-container.is-layout-constrained.wp-block-group-is-layout-constrained:nth-of-type(1) > .wp-block-group.is-content-justification-center.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-f56f9fcf.wp-block-group-is-layout-flex > .wp-block-paragraph > strong > a
+nourishedbynic.com##div.wp-block-group.is-style-full-width-feature-wrapper-cta:nth-of-type(27) > div.wp-block-group__inner-container.is-layout-constrained.wp-block-group-is-layout-constrained:nth-of-type(1) > .wp-block-group.is-content-justification-center.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-f56f9fcf.wp-block-group-is-layout-flex > .wp-block-paragraph > strong
+nourishedbynic.com##.wp-block-group.is-style-default.is-content-justification-center.is-nowrap.is-layout-flex.wp-container-core-group-is-layout-f56f9fcf.wp-block-group-is-layout-flex > .entered.lazyloaded
+nourishedbynic.com##.feast-social-media.feast-social-media--align-center
+www.mayoclinic.org##.aem-container.cmp-footer__separator-container.aem-Grid.aem-Grid--12.aem-Grid--default--12 > .aem-GridColumn.aem-GridColumn--default--12 > .cmp-separator
+www.mayoclinic.org##.aem-container.cmp-footer__separator-container.aem-Grid.aem-Grid--12.aem-Grid--default--12
+www.mayoclinic.org##.aem-container.cmp-container--background-color-copyright.cmp-container--container-padding-bottom-0x.cmp-container--container-padding-1x.aem-Grid.aem-Grid--12.aem-Grid--default--12.cmp-header-container > div.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > .aem-container.cmp-container--centered.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(2)
+www.mayoclinic.org###button-fbb5c5d99b > .cmp-button__inner.cmp-button__inner--width-full.cmp-button__inner--type-rectangle.cmp-button__inner--color-primary-inverse.cmp-button__inner--margin-right > .cmp-button__inner-wrapper
+www.mayoclinic.org##.cmp-horizontal-links__title.cmp-title__text--h3
+www.mayoclinic.org##li.cmp-list__item.cmp-horizontal-links__list-item:nth-of-type(1) > .cmp-link > .cmp-anchor--plain.cmp-button.cmp-button__link.cmp-horizontal-links__list-item-link
+www.mayoclinic.org##li.cmp-list__item.cmp-horizontal-links__list-item:nth-of-type(3) > .cmp-link > .cmp-anchor--plain.cmp-button.cmp-button__link.cmp-horizontal-links__list-item-link > .cmp-horizontal-links__list-item-link-title
+www.mayoclinic.org##.aem-container.cmp-container--container-padding-8x
+www.mayoclinic.org##.aem-container.aem-Grid.aem-Grid--12.aem-Grid--default--12.cmp-aside-container > div.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > .aem-container.cmp-container--column-padding-0x.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1) > .aem-container.cmp-container--column-padding-3x.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(1)
+www.wordreference.com##.mobiletopContainer
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(2) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo3
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(3) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo3
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(3) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .relative.flex.justify-center.py-16.md\:left-1\/2.md\:w-\[780px\].md\:max-w-max.md\:-translate-x-1\/2 > .w-max.text-center.sm\:text-left > .flex.flex-col.items-center.justify-between.text-black.sm\:flex-row.sm\:px-6 > .text-xs.italic.sm\:ml-7.sm\:text-sm
+lifehacker.com###incontent-9
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(3) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo2
+lifehacker.com###incontent-8
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(3) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo1
+lifehacker.com##.zmgad-full-width.pgautopogo5
+lifehacker.com##.zmgad-full-width.pgautopogo4
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(2) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo2
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(2) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo1
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(1) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo2
+lifehacker.com##section.flex.w-full.flex-col:nth-of-type(1) > section.w-full:nth-of-type(1) > .w-full.gap-x-8.md\:flex > .max-w-full.flex-grow.\32 xl\:w-\[calc\(100\%-350px\)\] > .w-full.gap-x-8.\32 xl\:flex > div.w-full:nth-of-type(1) > .main-content.w-full > article.editor-content > .zmgad-full-width.pgautopogo1
+www.chelseasmessyapron.com##.site-header__toggles > .favorite-toggle
+sallysbakingaddiction.com##.drawer-nav-inner > .social-menu
+www.justanswer.com##a.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAlways.css-rdcz1s:nth-of-type(1)
+www.justanswer.com##.css-1wpvtk9
+esim.holafly.com##.flex.flex-col.gap-\[21px\]
+esim.holafly.com##details.footer-accordion.flex.flex-col.border-b.border-primary-subtle.last\:border-b-0.lg\:border-none.px-5.py-3.lg\:px-0.lg\:py-0.lg\:w-40:nth-of-type(3) > .footer-accordion-content.flex.flex-col.flex-wrap.items-center.lg\:items-start.gap-4 > a.text-sm.hover\:underline:nth-of-type(5)
+esim.holafly.com###intercom-facade
+www.base.be##div.footer-item.aem-GridColumn--default--none.aem-GridColumn--phone--none.aem-GridColumn--phone--12.aem-GridColumn.aem-GridColumn--offset--phone--0.aem-GridColumn--offset--default--0.aem-GridColumn--default--2:nth-of-type(4) > .footer-item > .content.mt--xxs
+www.base.be##.cursor--pointer--hover.custom-launcher-button.has-slot.position--fixed.position--bottom.position--right.margin-bottom--5xl.color--text-inverse.padding--none.border-radius--full.border-width--md.border-color--subtle.display--flex.justify-content--center.align-items--center.background--brand.custom-launcher-button--base
+www.base.be##[href*="\/en\/legal-information\/privacy-policy\.html"]
+www.base.be##.cmp.cmp-social-media.aem-GridColumn.aem-GridColumn--default--12 > .theme--dark-ui > div:nth-of-type(1) > .heading--6
+starlink.com###emailsignup
+starlink.com##a.MuiTypography-root.MuiTypography-body2.MuiLink-root.MuiLink-underlineHover.mui-1w0sig3:nth-of-type(7)
+starlink.com##a.MuiTypography-root.MuiTypography-body2.MuiLink-root.MuiLink-underlineHover.mui-1w0sig3:nth-of-type(4)
+cellfie.ge##.cookie-container_inner.active
+cellfie.ge##.IJsdDsbXNmbiLIq3NI5S
+cellfie.ge##.appDownloadNotification
+cellfie.ge##.cookie-btn
+cellfie.ge###foot3 > .card-body > .inner-menu.d-flex.flex-column > a.inner-menu_item.speechable:nth-of-type(4)
+cellfie.ge###foot1 > .card-body > .inner-menu.d-flex.flex-column > a.inner-menu_item.speechable:nth-of-type(3)
+cellfie.ge##.footer-top-area.row.justify-content-between.d-flex.align-items-center
+cellfie.ge##.subHeader--personalArea > .headerMain--addBalance.AJAX_MODAL.speechable
+www.sim.de##.e-top_bar
+www.sim.de##.e-notifications_indicator.e-navi-icon_list-item.e-notifications_indicator--unread.e-notifications_indicator--animated
+www.sim.de##.e-sidebar-section.e-sidebar-hotline > .e-sidebar-content_icon.block.p-2
+www.sim.de##.e-back_to_top
+www.istockphoto.com##.uU2vlTaL_pMQizYS
+www.istockphoto.com##nav.XPtvOeIqYhfqhJqh:nth-of-type(2) > ul > li:nth-of-type(11)
+www.marenostrum.ro##li.menu-item:nth-of-type(4) > .submenu > li.submenu-item:nth-of-type(2)
+stiintasitehnica.com##.rmp-results-widget.js-rmp-results-widget.js-rmp-results-widget--26118
+stiintasitehnica.com##.rmp-results-widget.js-rmp-results-widget.js-rmp-results-widget--57359
+marelepescar.ro##li.flex.flex-col:nth-of-type(23) > .item.product.rounded-2xl.relative.product-item.bg-white.hover\:shadow-lg.flex.flex-col.w-full.h-full > .product-info.flex.flex-col.grow.relative > .reviews-summary.p-0\.3.mx-auto
+www.tierchenwelt.de##.uk-grid.uk-child-width-1-1.uk-child-width-1-4\@m.uk-flex-center.uk-grid-small.uk-grid-divider.uk-grid-match.uk-grid-stack > div.uk-grid-margin.uk-first-column:nth-of-type(4) > .el-item.uk-panel.uk-margin-remove-first-child > .el-content.uk-panel.uk-margin-top > ul.foosty:nth-of-type(1) > li
+www.tierchenwelt.de##.uk-grid.uk-child-width-1-1.uk-child-width-1-4\@m.uk-flex-center.uk-grid-small.uk-grid-divider.uk-grid-match.uk-grid-stack > div.uk-grid-margin.uk-first-column:nth-of-type(4) > .el-item.uk-panel.uk-margin-remove-first-child > .el-content.uk-panel.uk-margin-top > p:nth-of-type(1)
+www.tierchenwelt.de##.uk-grid.uk-child-width-1-1.uk-child-width-1-4\@m.uk-flex-center.uk-grid-small.uk-grid-divider.uk-grid-match.uk-grid-stack > div.uk-grid-margin.uk-first-column:nth-of-type(3) > .el-item.uk-panel.uk-margin-remove-first-child > .el-content.uk-panel.uk-margin-top > .foosty > li:nth-of-type(8)
+www.tierchenwelt.de##.uk-grid.uk-child-width-1-1.uk-child-width-1-4\@m.uk-flex-center.uk-grid-small.uk-grid-divider.uk-grid-match.uk-grid-stack > div.uk-grid-margin.uk-first-column:nth-of-type(3) > .el-item.uk-panel.uk-margin-remove-first-child > .el-content.uk-panel.uk-margin-top > .foosty > li:nth-of-type(9)
+www.tierchenwelt.de##.uk-grid.uk-child-width-1-1.uk-child-width-1-4\@m.uk-flex-center.uk-grid-small.uk-grid-divider.uk-grid-match.uk-grid-stack > div.uk-grid-margin.uk-first-column:nth-of-type(3) > .el-item.uk-panel.uk-margin-remove-first-child > .el-content.uk-panel.uk-margin-top > .foosty > li:nth-of-type(10)
+www.booking.com##.property_share_wrapper > div:nth-of-type(1) > div:nth-of-type(1) > div > .de576f5064.b46cd7aad7.e26a59bb37.c295306d66.dda427e6b5.daf5d4cb1c.e7f2b1a356
+www.booking.com##.de576f5064.b46cd7aad7.e26a59bb37.c295306d66.dda427e6b5.eed37d6a9d.daf5d4cb1c.e7f2b1a356.a0ddd706cc
 anthropos.ro##div.wp-block-column-is-layout-flow.is-layout-flow.has-14-px-font-size.wp-block-column:nth-of-type(2)
 nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(4)
 nibiru.net##div.xl\:justify-self-end.gap-4.flex-col.flex:nth-of-type(5) > .gap-2.flex-col.flex > a.hover\:text-primary.text-white\/75:nth-of-type(4)

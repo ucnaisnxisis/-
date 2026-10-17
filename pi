@@ -4,6 +4,26 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+adclick.g.doubleclick.net
+consent-pref.trustarc.com
+wrapper-api.sp-prod.net
+clientservices.googleapis.com
+redditmedia.com
+cpu.js.org
+fastpool.xyz
+edge.api.flagsmith.com
+api.flagsmith.com
+cdn-eu.configcat.com
+cdn.configcat.com
+app.launchdarkly.com
+stream.launchdarkly.com
+sendgrid.net
+mandrillapp.com
+email.mailgun.net
+cdn.jwplayer.com
+ f.vimeocdn.com
+f.vimeocdn.com
+cryptoloot.org
 seoptiks.com
 radarurl.com
 caraytech.com.ar

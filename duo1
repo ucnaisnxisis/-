@@ -17076,6 +17076,13 @@ pretix.eu##li:nth-of-type(3) > [href*="\/redirect\/"]
 www.internationalteflacademy.com##.site-footer__legal-nav > li:nth-of-type(1) > [href*="https\:\/\/www\.internationalteflacademy\.com\/privacy-policy"]
 www.isanet.org##.inline-list > li:nth-of-type(3)
 www.isanet.org##.list-inline > li:nth-of-type(3)
+thegtaplace.com##h4.navtitle:nth-of-type(4)
+thegtaplace.com##div.navmenu:nth-of-type(4)
+publicrecord.ro##.text-\[\#002c33\].my-10.rounded-\[4px\].sm\:p-8.p-6.bg-\[\#d7ecef\]
+publicrecord.ro##.pr-footer-legal.text-\[\#b5b5b5\].text-\[13px\].font-sans.gap-3.flex-col.flex
+publicrecord.ro##a.pr-footer-nav-link:nth-of-type(2)
+publicrecord.ro##.gap-6.justify-between.items-center.sm\:flex-row.flex-col.flex.pt-8 > div.gap-3.items-center.flex
+publicrecord.ro##div.items-center.flex-col.flex.sm\:px-6.px-4.pt-8.border-\[\#929190\].border-t
 www.ilgaasia.org###block-yui_3_17_2_1_1777051496116_3730 > .sqs-block-content > .sqs-block-socialaccountlinks-content > .sqs-svg-icon--outer.social-icon-alignment-left.social-icons-color-black.social-icons-size-large.social-icons-style-regular > .sqs-svg-icon--list
 www.ilgaasia.org###block-69eb894c0f67813189acf2ef
 www.ilgaasia.org###block-yui_3_17_2_1_1777438868874_25185

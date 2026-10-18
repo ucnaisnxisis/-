@@ -4,6 +4,15 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##.doubleclick-ad
+##.textAd
+##.FingerprintJS
+##.banner-advertisement
+##.google-ad
+fingerprint.com
+fpjs.io
+||fingerprint.com^
+||fpjs.io^
 #.text-ad
 #text-ad
 ##text-ad

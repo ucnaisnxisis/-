@@ -446,6 +446,27 @@ www.reddit.com##li.max-h-none.overflow-visible.whitespace-normal.text-caption-1.
 thegtaplace.com##.nn-cmp-show
 thegtaplace.com##[href="/about/#advertising"]
 thegtaplace.com##.tinyicons.right
+||ads.js
+||pagead.js
+||advertisement.js
+||analytics.js
+||partner.ads.js
+adblocktester.pages.dev##ads.js
+adblocktester.pages.dev##pagead.js
+adblocktester.pages.dev##advertisement.js
+adblocktester.pages.dev##analytics.js
+adblocktester.pages.dev##.ads.js
+adblocktester.pages.dev##.pagead.js
+adblocktester.pages.dev##.advertisement.js
+adblocktester.pages.dev##.analytics.js
+adblocktester.pages.dev###ads.js
+adblocktester.pages.dev###pagead.js
+adblocktester.pages.dev###advertisement.js
+adblocktester.pages.dev###analytics.js
+iamdjsai9999.github.io##.btn-p.gt-link
+www.mauriziofonte.it##p.tools-footer-text--small.tools-footer-text
+adsblocks.com##.footer-cookie-link
+adsblocks.com##.footer-brand > div
 gta-san-andreas-savegame-editor.soft112.com##section > .d-inline-block
 gta-san-andreas-savegame-editor.soft112.com##[href="https://www.soft112.com/policy.html"]
 www.soft112.com##.d-inline-block

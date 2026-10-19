@@ -51,6 +51,87 @@ adblocktester.pages.dev##ads.js
 adblocktester.pages.dev##pagead.js
 adblocktester.pages.dev##advertisement.js
 adblocktester.pages.dev##analytics.js
+fw.adsafeprotected.com
+static.adsafeprotected.com
+pixel.adsafeprotected.com
+securepubads.g.doubleclick.net/gampad/ads
+pubads.g.doubleclick.net/gampad/ads
+/pagead.js$domain=d3ward.github.io
+/widget/ads.
+stirileprotv.ro##.article--share
+hotnews.ro##div.xl\:min-w-0.xl\:max-w-48.xl\:flex-1.lg\:w-auto.w-full.flex-col.flex:nth-of-type(4)
+hotnews.ro##div.xl\:min-w-0.xl\:max-w-48.xl\:flex-1.lg\:w-auto.w-full.flex-col.flex:nth-of-type(1) > .lg\:border-b-0.border-hotnews-black\/15.border-b.flex-col.flex > .\!flex.lg\:\!flex.hidden.lg\:pt-1.lg\:pb-0.pb-4.list-none.p-0.m-0.gap-1.flex-col.flex > li.list-none.items-center.gap-2.flex:nth-of-type(6) > .leading-snug.no-underline.text-hotnews-black.font-jakarta.font-bold.text-xs
+www.mediafax.ro##.single__social
+www.g4media.ro##.single__social
+www.gsp.ro##.respect
+www.promotor.ro##.single__social
+www.realitatea.net##.\!mb-4.gap-2\.5.sm\:grid-cols-2.grid-cols-1.grid.mb-6
+www.realitatea.net##.shrink-0.gap-2.items-center.flex
+www.realitatea.net##div.gap-3.justify-between.items-center.flex:nth-of-type(4)
+antena24.ro##[href="https://antena24.ro/confidentialitate/"]
+antena24.ro##[href="https://antena24.ro/politica-de-cookies/"]
+evz.ro###perfecty-push-dialog-container
+evz.ro##.perfecty-push-settings-container
+www.stirilekanald.ro##.share-section
+www.cotidianul.ro##.border-0.pe-0.me-0.social-pages
+www.cotidianul.ro##[href^="https://www.google.com/preferences/source"]
+www.cotidianul.ro##.mb-4.flex-wrap.justify-content-center.align-items-center.d-flex.p-3.border.bg-light.box-share
+www.cancan.ro##.single__share
+www.sport.ro##div:nth-of-type(17) > .m-0.p-0.row
+www.wall-street.ro##.visible.scroll-text
+www.wall-street.ro##.align-items-md-start.author-left
+www.wall-street.ro##.article-author-box
+www.capital.ro###perfecty-push-dialog-container
+www.capital.ro###perfecty-push-settings-open
+www.sursazilei.ro##.td-scroll-up-visible.td-scroll-up
+national.ro##.wcc-notice-des
+national.ro##.wcc-btn-accept.wcc-btn
+national.ro##.pb-3.justify-center.flex
+oficiuldestiri.ro##.jeg_share_top_container
+oficiuldestiri.ro##.author-socials
+www.newsnow.com##[href="/subscription-terms/"]
+protv.md##.jvYkzv.sc-fjdhpX
+protv.md##.bottom-article-share-buttons
+protv.md##.google-preferred-source--bottom.google-preferred-source.gLKcsk.sc-kafWEX
+protv.md##.fIDJpL.sc-cIShpX
+playtech.ro##[href^="https://google.com/preferences/source"]
+universul.net##.td-menu-socials
+universul.net##.code-block-26.code-block
+www.bursa.ro##.scrollToTop
+stiri.botosani.ro##div.cm__btn-group:nth-of-type(1) > button.cm__btn:nth-of-type(1)
+stiri.botosani.ro##.cm__footer
+stiri.botosani.ro##.cm__desc
+bucurestiri.ro##.cmplz-accept.cmplz-btn
+bucurestiri.ro##.privacy-statement.cmplz-link
+bucurestiri.ro##.g1-back-to-top-on.g1-back-to-top
+media9.ro##.footer_container_full
+media9.ro###facebook_widget-3
+oficiuldestiri.ro##.item_bottom
+brave.com##.gap-2.flex.my-2
+brave.com###persistent-cta
+brave.com##li.lg\:pt-0.lg\:border-none.max-lg\:first\:pt-0.max-lg\:first\:pb-\[0\.375rem\].mt-0.first\:border-none.py-2.border-opacity-40.border-divider-strong.border-t:nth-of-type(4)
+brave.com##.my-10.layout > .gap-2.flex
+brave.com##div.site-footer__column:nth-of-type(4) > div.site-footer__grouping:nth-of-type(2) > ul > li:nth-of-type(1)
+www.ghacks.net##.google-preferred-source-badge
+www.reddit.com##rpl-modal-card > .inline-flex.button.justify-center.items-center.button-primary.px-\[calc\(var\(--rem12\)-var\(--button-border-width\,0px\)\)\].button-medium
+www.sigmabrowser.com##.blog--hero_links
+primetechinsights.com##.mow_fn_share
+primetechinsights.com##[href="https://primetechinsights.com/privacy-policy/"]
+primetechinsights.com##.social_in
+primetechinsights.com###mow_followers-1
+primetechinsights.com###mow_custom_categories-1
+getblockify.com##.grid.gap-10.sm\:grid-cols-2.lg\:grid-cols-4.lg\:gap-8 > div:nth-of-type(4) > .space-y-1 > li:nth-of-type(3)
+adblockbench.com##.mx-auto.flex.max-w-\[1200px\].flex-wrap.gap-x-16.gap-y-10.px-\[clamp\(16px\,4vw\,32px\)\].pt-12.pb-10 > .flex.flex-wrap.gap-x-16.gap-y-8 > div:nth-of-type(2) > ul > li > .inline-flex.min-h-11.items-center.gap-1\.5.text-\[15px\].text-ink-dim.transition-colors.duration-150.hover\:text-ink
+adblockbench.com##.mt-5.flex.items-center.gap-2
+www.goodreads.com##li.responsiveSiteFooter__linkListItem:nth-of-type(7) > .responsiveSiteFooter__link
+www.goodreads.com##.siteHeader__topLevelItem.siteHeader__topLevelItem--signUp
+aminoka.com##.sf-stores
+aminoka.com##.b-close-stores
+www.polybuzz.ai##div.footer-right-item:nth-of-type(5) > .footer-right-item-content > a.link-p:nth-of-type(3)
+www.reddit.com###t3_1vv4v2s > .no-underline.hover\:no-underline.text-\[color\:inherit\].absolute.inset-0.block.cursor-pointer
+www.reddit.com###t3_1vv4v2s > div:nth-of-type(2) > .mb-md > .mt-md > .ad-link-bar.isolate.relative > .no-underline.hover\:no-underline.text-\[color\:inherit\].z-1.absolute.top-0.start-0.w-100.h-100.cursor-pointer
+www.reddit.com###t3_1vv4v2s > div:nth-of-type(2) > .mb-md
+www.reddit.com##.mb-sm.mb-xs.flex.justify-between.items-center > .promoted-name-container.flex.flex-1.items-center.gap-\[6px\].overflow-hidden.text-12.pe-xs.p-2xs.-m-2xs.relative.h-lg
 www.mauriziofonte.it###tools-cookie-banner
 www.mauriziofonte.it##p.tools-footer-text--small.tools-footer-text:nth-of-type(2)
 www.mauriziofonte.it##a.tools-navbar-social:nth-of-type(2)

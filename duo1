@@ -18850,3 +18850,73 @@ www.simonandschuster.com##li.with-margin-right-small:nth-of-type(5)
 www.simonandschuster.com##.is-flex.is-centered > li.with-margin-right-small:nth-of-type(1)
 www.bbc.com##.Button-styles__ButtonBase-sc-c0f7f974-2.Button-styles__RoundButton-sc-c0f7f974-8.hGFNCD.kFiPxM
 www.bbc.com##.AudioSeriesPage-styles__AudioSeriesActionsStyled-sc-3a03d02b-10.bfyyek
+epicgames.com##list
+epicgames.com##.list
+epicgames.com###list
+store.epicgames.com##._sidebarFooterRow_96vuv_29.eds_370_1vyy44s4.eds_370_1vyy44s3.eds_370_127iqd05.eds_370_127iqd0b.eds_370_127iqd0a.eds_370_127iqd02.eds_370_127iqd00
+store.epicgames.com##section.eds_370_1vyy44s4.eds_370_1vyy44s3.eds_370_127iqd05.eds_370_127iqd0b.eds_370_127iqd0a.eds_370_127iqd01.eds_370_127iqd00:nth-of-type(3)
+store.epicgames.com##.eds_370_1vyy44s4.eds_370_1vyy44s3.eds_370_127iqd05.eds_370_127iqd0c.eds_370_127iqd08.eds_370_127iqd02.eds_370_127iqd00
+store.epicgames.com##.eds_370_9iy5nd0.eds_370_1uj6frh0.eds_370_3ezmi35.eds_370_3ezmi39.eds_370_g1avra9.eds_370_19s876i0.eds_370_g1avra0.eds_370_g1avra2.eds_370_3ezmi32.eds_370_3ezmi30
+store.epicgames.com##._errorAnchor_12fqh_4
+store.epicgames.com##.eds_370_cjpcry1.eds_370_eifnjs4.eds_370_19s876i0.eds_370_1ommefj0.eds_370_1ommefj5.eds_370_eifnjs3.eds_370_j232ue0.eds_370_eifnjs0
+www.epicgames.com##epicgames-footer
+www.britannica.com##.js-preferred-source-button.gtm-topic-tool.link-gray-600.tw\:flex.tw\:items-center.tw\:gap-1.tw\:border-ai.tw\:border-ai-focus.tw\:bg-transparent.tw\:p-0.tw\:text-xs\!.tw\:font-normal\!.tw\:leading-\[1\.4\].tw\:whitespace-nowrap
+www.britannica.com##.material-icons.md-icon.tw\:text-sm\!
+www.britannica.com##.material-icons.tw\:text-xs\!
+www.britannica.com##.d-none.d-sm-flex.flex-row.tw\:items-center.tw\:gap-3.header-topic-tools
+www.britannica.com##.col-md-da-320.topic-right-ad-container
+www.britannica.com##.material-icons
+www.britannica.com##.subscribe-link.btn.btn-sm.btn-blue.py-5.mr-10
+www.britannica.com##.btn.btn-blue.btn-sm.tw-border-0.tw-py-1\.5
+www.britannica.com##.d-none.d-lg-block.cm-right-rail.col-da-320.z-1
+www.britannica.com##button.btn.btn-outline-blue.btn-xs.py-5.px-10.shadow-sm.mr-5:nth-of-type(3)
+www.britannica.com##button.btn.btn-outline-blue.btn-xs.py-5.px-10.shadow-sm.mr-5:nth-of-type(1)
+www.britannica.com##mw-gdpr
+www.britannica.com##.mx-20
+ch.linkedin.com##li.li-footer__item.font-sans.text-xs.text-color-text-solid-secondary.flex.flex-shrink-0.justify-start.p-1.relative.w-50\%.papabear\:justify-center.papabear\:w-auto:nth-of-type(5)
+ch.linkedin.com##li.li-footer__item.font-sans.text-xs.text-color-text-solid-secondary.flex.flex-shrink-0.justify-start.p-1.relative.w-50\%.papabear\:justify-center.papabear\:w-auto:nth-of-type(3)
+ch.linkedin.com##.linkedin-tc__text.text-color-text-low-emphasis.text-xs.pb-2.text-center.mt-3
+ch.linkedin.com##.nsm7Bb-HzV7m-LgbsSe-MJoBVe
+ch.linkedin.com##.google-auth-button.google-auth-button--without-signin-form.mb-2.mx-auto.text-center
+www.linkedin.com##.kfekxq.kfekx7.kfekyq.kfeky7.kfeax9.kfeige.kfejm2.kfejmj.kfejmu.kfeike.kfehwi.kfea23.kfea2w.kfekrd.kfekq8.kfelly > .kfeax9.kfeige.kfejm2.kfejmj.kfejmv.kfeijy.kfelly > a.kfelux.kfeluw.kfektz.kfekuv.kfekvr.kfekwn.kfetb.kfeg9f.kfek4s.kfeax9:nth-of-type(2) > .kfek4p.kfekzz.kfeig2.kfekzn.kfek1v.kfek2b.kfek2z.kfek33.kfegb6.kfek4n.kfelbj
+www.linkedin.com###auto-component-1406bb69-4437-44c6-a02a-0c2c2c2f5619 > div.kfeax1.kfelly:nth-of-type(1) > .kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfehwi.kfelly > div.kfeax1.kfelly:nth-of-type(2) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfelly:nth-of-type(1) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeijy.kfelly:nth-of-type(1) > div.kfeax1.kfelly:nth-of-type(4) > .kfek4p.kfekzz.kfekzn.kfek1v.kfek2b.kfek2z.kfek33.kfegb6.kfek4n.kfelbj
+www.linkedin.com###auto-component-1406bb69-4437-44c6-a02a-0c2c2c2f5619 > div.kfeax1.kfelly:nth-of-type(1) > .kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfehwi.kfelly > div.kfeax1.kfelly:nth-of-type(2) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfelly:nth-of-type(1) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeijy.kfelly:nth-of-type(1) > div.kfeax1.kfelly:nth-of-type(2) > .kfeldr.kfeldq.kfetb.kfea2h.kfeg9f.kfek2z.kfek4i.kfeldw.kfeldt.kfelds.kfeay5.kfejme.kfejno.kfehwi > .kfelee.kfeld9.kfeig2.kfejme.kfetb.kfea2h.kfeay5.kfeiji.kfejm2.kfek2z.kfek4i.kfekr5.kfeksg.kfelei.kfeles.kfeleo.kfeleb.kfehm6.kfeley
+www.linkedin.com###auto-component-1406bb69-4437-44c6-a02a-0c2c2c2f5619 > div.kfeax1.kfelly:nth-of-type(1) > .kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfehwi.kfelly > div.kfeax1.kfelly:nth-of-type(2) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfelly:nth-of-type(1) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeijy.kfelly:nth-of-type(1) > div.kfeax1.kfelly:nth-of-type(2) > .kfeldr.kfeldq.kfetb.kfea2h.kfeg9f.kfek2z.kfek4i.kfeldw.kfeldt.kfelds.kfeay5.kfejme.kfejno.kfehwi
+www.linkedin.com###auto-component-1406bb69-4437-44c6-a02a-0c2c2c2f5619 > div.kfeax1.kfelly:nth-of-type(1) > .kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfehwi.kfelly > div.kfeax1.kfelly:nth-of-type(2) > div.kfellx.kfeax9.kfeify.kfejm4.kfejmj.kfejmu.kfeiim.kfelly:nth-of-type(1) > .kfekt4.kfeku0.kfeax9.kfeige.kfejm4.kfejme.kfejmu.kfeijy.kfelly
+www.capterra.co.za##.col-sm-6.col-md-3.mt-3.mt-sm-0 > .nav.flex-column > li.mb-2:nth-of-type(3)
+www.capterra.co.za##.btn.btn-outline-light.d-flex.text-neutral-80.rounded-0.event
+www.merriam-webster.com##.tbgads-mid-tall.tbgads-dynamic-check
+www.merriam-webster.com##div.tbgads-slot-wrap.tbgads-mid-tall-slot-wrap.d-none.d-md-block:nth-of-type(5)
+www.merriam-webster.com###mw-ad-slot-sticky-container
+www.merriam-webster.com###tbgads-slot-a8d1cb851a2e975a
+www.merriam-webster.com##div.tbgads-slot-wrap.tbgads-rightrail-slot-wrap.d-none.d-md-block:nth-of-type(4)
+www.merriam-webster.com###tbgads-slot-d8b00f883e40919e
+www.merriam-webster.com##.tbgads-slot-wrap.tbgads-rightrail-slot-wrap.d-none.d-md-block.first-ad
+www.energy.gov##.menu.menu--menu-footer-utility.nav > li:nth-of-type(3)
+www.energy.gov##.footer-social-bar
+www.ebsco.com##div.flex-shrink-0.w-\[360px\].border-r.border-b.\!border-\[var\(--ebsco-gray-200\)\].hover\:bg-\[var\(--ebsco-blue-100\)\].active\:bg-\[var\(--ebsco-blue-200\)\].dark\:hover\:bg-transparent.dark\:active\:bg-transparent.focus-within\:ring-2.focus-within\:ring-inset.focus-within\:ring-black.dark\:focus-within\:ring-white.focus-within\:z-10.hover\:\[\&_h3\]\:underline.active\:\[\&_h3\]\:underline.active\:\[\&_p\]\:text-\[var\(--ebsco-gray-700\)\].dark\:active\:\[\&_p\]\:text-\[var\(--ebsco-gray-600\)\].active\:\[\&_h3\]\:text-\[var\(--ebsco-blue-600\)\]:nth-of-type(5) > .mega-menu-item.group.block.h-full.transition-all.duration-200.px-8.py-3.\!rounded-none.focus\:outline-none
+www.ebsco.com##div.flex-shrink-0.w-\[360px\].border-r.border-b.\!border-\[var\(--ebsco-gray-200\)\].hover\:bg-\[var\(--ebsco-blue-100\)\].active\:bg-\[var\(--ebsco-blue-200\)\].dark\:hover\:bg-transparent.dark\:active\:bg-transparent.focus-within\:ring-2.focus-within\:ring-inset.focus-within\:ring-black.dark\:focus-within\:ring-white.focus-within\:z-10.hover\:\[\&_h3\]\:underline.active\:\[\&_h3\]\:underline.active\:\[\&_p\]\:text-\[var\(--ebsco-gray-700\)\].dark\:active\:\[\&_p\]\:text-\[var\(--ebsco-gray-600\)\].active\:\[\&_h3\]\:text-\[var\(--ebsco-blue-600\)\]:nth-of-type(4) > .mega-menu-item.group.block.h-full.transition-all.duration-200.px-8.py-3.\!rounded-none.focus\:outline-none
+www.ebsco.com##div.flex-shrink-0.w-\[360px\].border-r.border-b.\!border-\[var\(--ebsco-gray-200\)\].hover\:bg-\[var\(--ebsco-blue-100\)\].active\:bg-\[var\(--ebsco-blue-200\)\].dark\:hover\:bg-transparent.dark\:active\:bg-transparent.focus-within\:ring-2.focus-within\:ring-inset.focus-within\:ring-black.dark\:focus-within\:ring-white.focus-within\:z-10.hover\:\[\&_h3\]\:underline.active\:\[\&_h3\]\:underline.active\:\[\&_p\]\:text-\[var\(--ebsco-gray-700\)\].dark\:active\:\[\&_p\]\:text-\[var\(--ebsco-gray-600\)\].active\:\[\&_h3\]\:text-\[var\(--ebsco-blue-600\)\]:nth-of-type(4)
+www.ebsco.com##div.flex-shrink-0.w-\[360px\].border-r.border-b.\!border-\[var\(--ebsco-gray-200\)\].hover\:bg-\[var\(--ebsco-blue-100\)\].active\:bg-\[var\(--ebsco-blue-200\)\].dark\:hover\:bg-transparent.dark\:active\:bg-transparent.focus-within\:ring-2.focus-within\:ring-inset.focus-within\:ring-black.dark\:focus-within\:ring-white.focus-within\:z-10.hover\:\[\&_h3\]\:underline.active\:\[\&_h3\]\:underline.active\:\[\&_p\]\:text-\[var\(--ebsco-gray-700\)\].dark\:active\:\[\&_p\]\:text-\[var\(--ebsco-gray-600\)\].active\:\[\&_h3\]\:text-\[var\(--ebsco-blue-600\)\]:nth-of-type(5)
+www.proton.ai##.footer__social-flex
+shop.proton.me##.social-sharing-wrapper
+www.cnet.com##.pgautorail.pgQSsticky
+www.cnet.com##.pgautorailwrp.pgautorailwrp2
+www.cnet.com##.pgautorailwrp.pgautorailwrp7
+www.cnet.com##.pgfoot
+www.cnet.com###menu-item-3570216 > [href*="https\:\/\/www\.cnet\.com\/newsletters\/"]
+www.trustpilot.com##.styles_wrapper___luvQ.styles_actionsWrapper__PJqVW
+www.trustpilot.com##.footer_links__5EtD9.footer_linksHorizontalWhenPossible__gkrfh > li:nth-of-type(6) > .CDS_Typography_appearance-default__1d30bc.CDS_Typography_prettyStyle__1d30bc.CDS_Typography_body-m__1d30bc.CDS_Link_link__b0d57c.footer-link_footerLink__F74G8.CDS_Link_noUnderline__b0d57c
+www.wired.com##.AdWrapper-fGiLaV.iGDxYx.ad.ad--footer.should-hold-space
+www.wired.com##.AdWrapper-fGiLaV.iGDxYx.ad.ad--mid-content.should-hold-space
+www.wired.com##.AdWrapper-fGiLaV.dnFWcD.ad.ad--hero.should-hold-space
+www.theglobeandmail.com##.tgam-popover-container.tgam-toggletip-container.article-toolbar-share-menu
+www.theglobeandmail.com##.tgam-popover-container.tgam-toggletip-container.Toolbarstyles__ToggletipWithButtonStyled-sc-1rif7tm-1.cWQoaH.c-button--article-toolbar.article-toolbar-bookmark-menu
+www.theglobeandmail.com##.HeadingComponent__HeadingContainer-sc-4239dh-0.iAimUq.default__StyledHeadingComponent-sc-1wija17-0.iYFSBr > .mt-0.mb-0.multi-heading.text-pr-4
+www.theglobeandmail.com##div.c-topic-group:nth-of-type(2) > .c-topic-group__body > .c-topic-group__items
+www.theglobeandmail.com##.default__StyledBody-sc-1wija17-1.hlICso
+www.theglobeandmail.com##div.HrLine__StyledHrLine-sc-2d25v1-1.kogSvW:nth-of-type(1)
+www.theglobeandmail.com##li.AccordionItem__StyledAccordionItem-sc-t16yy3-0.bwEDIB.tgam-accordion-item.tgam-accordion-item--grey:nth-of-type(23) > .AccordionItem__StyledLinkContainer-sc-t16yy3-1.dMkKUs > .AccordionItem__StyledLinkText-sc-t16yy3-2.jgxBbA.text-gmb-5
+www.theglobeandmail.com##li.AccordionItem__StyledAccordionItem-sc-t16yy3-0.bwEDIB.tgam-accordion-item.tgam-accordion-item--grey:nth-of-type(23) > .AccordionItem__StyledLinkContainer-sc-t16yy3-1.dMkKUs
+www.welcometothejungle.com##.mt-lg.flex.gap-md.pt-lg.border-t-1.border-neutral-10.max-w-127
+www.welcometothejungle.com##.col-span-full.border-t-1.border-t-neutral-10.mt-lg.flex.flex-wrap.items-center.justify-between.pt-xl.pb-xl.gap-xl > .flex.flex-wrap.gap-xl > li:nth-of-type(4) > ._root_17p74_2._variant-label-md_17p74_96

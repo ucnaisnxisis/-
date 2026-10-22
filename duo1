@@ -15745,6 +15745,49 @@ profionline.ro##.footer__block-item--newsletter.footer__block-item
 profi.ru##.jClYtt.fErLbp.sc-imTTCS.sc-eHqVIu
 stirileprotv.ro##.news-today-popup__content
 stirileprotv.ro###news-today-popup
+www.appbrain.com##[href="/docs/privacy"]
+www.appbrain.com##.story-actions > button.story-action:nth-of-type(1)
+www.bexar.org##.first.col6.col.outer > div.wide.nest.row:nth-of-type(2)
+www.bexar.org###reciteme-button
+www.bexar.org###widgetQuicklinke065fe70-963b-46ee-ad41-a6347afc3851 > .cpGrid1.cpGrid.widgetBody > .narrow.row > .last.first.col1.col > .semanticList > li.QuickLinks.widgetItem:nth-of-type(8)
+uppolice.gov.in##dl.column:nth-of-type(2) > dd.link:nth-of-type(2)
+uppolice.gov.in##dl.column:nth-of-type(3)
+uppolice.gov.in##dl.column:nth-of-type(4)
+uppolice.gov.in##a.external:nth-of-type(3)
+www.comune.bari.it##[href="https://www.comune.bari.it/informativa-privacy"]
+www.comune.bari.it##div.pb-2.col-md.col-lg:nth-of-type(2)
+sintesi.regione.puglia.it##.m-0.list-inline > li.list-inline-item:nth-of-type(2)
+vulcraft.com###vvgConsentBanner
+vulcraft.com##div.col-lg-3.col-7 > .py-3.text-center
+vulcraft.com##a.text-white:nth-of-type(2)
+vulcraft.com###vvgConsentReopen
+vulcraft.com##a.text-white:nth-of-type(4)
+www.strava.com##.Footer_privacySocial___uySz
+www.strava.com##.RegistrationPanel_container__zgeYj > button.AuthButton_authButton__RrQR_.Button_default__JSqPI.Button_btn__EdK33:nth-of-type(1)
+www.strava.com##.DisclaimerText_disclaimerText__SMJfx
+www.strava.com##.RegistrationPanel_container__zgeYj > div > .AuthButton_authButton__RrQR_.Button_default__JSqPI.Button_btn__EdK33
+www.strava.com###cpra-compliance-cta
+www.strava.com##[href="/legal/cookie_policy"]
+www.strava.com##li:nth-of-type(4) > ul > li:nth-of-type(1)
+gls-group.com##[href="/RO/ro/politica-confidentialitate/"]
+gls-group.com##[href="/RO/ro/declaratie-accesibilitate/"]
+tbibank.ro##div.footer__list-col.footer-bg-second__list-col:nth-of-type(2) > .footer__list-content.footer-bg-second__list-content > .footer-bg-second__list-item > li:nth-of-type(2)
+tbibank.ro##div.footer__list-col.footer-bg-second__list-col:nth-of-type(2) > .footer__list-content.footer-bg-second__list-content > .footer-bg-second__list-item > li:nth-of-type(3)
+www.bayer.com##.lg\:gap-10.gap-6.grid-cols-1.grid
+www.bayer.com##.xl\:pb-20.xl\:pt-14.xl\:px-24.xl\:gap-8.xl\:grid-cols-\[501px_1fr\].xl\:w-full.lg\:pb-16.lg\:pt-14.lg\:px-10.md\:px-8.md\:gap-12.py-8.px-5.gap-8.grid-cols-1.grid > nav:nth-of-type(1)
+www.bayer.com##.lg\:pl-0.gap-y-3.gap-x-8.flex-wrap.flex > li:nth-of-type(2)
+www.bayer.com##.lg\:pl-0.gap-y-3.gap-x-8.flex-wrap.flex > li:nth-of-type(5)
+www.trenitalia.com##[href="/en/personal-data-protection.html"]
+www.baesystems.com##.gap-0.md\:gap-4.m-0.md\:py-3.px-0.items-start.md\:flex-row.flex-col.flex-wrap.flex.fotterBottom > li:nth-of-type(2)
+www.baesystems.com##.gap-0.md\:gap-4.m-0.md\:py-3.px-0.items-start.md\:flex-row.flex-col.flex-wrap.flex.fotterBottom > li:nth-of-type(1)
+www.baesystems.com##.md\:block.pt-6.hidden
+www.dazn.com##li.Csg-7G_footerLinkWrapper:nth-of-type(4)
+www.bluestarferries.com##.s-footer__social
+www.bluestarferries.com##[href="/en-gb/cookies-policy"]
+www.bluestarferries.com##.s-newsletter
+www.bluestarferries.com##[href="/en-gb/gdpr-general-data-protection-regulation"]
+www.bluestarferries.com##[href="/en-gb/privacy-notice-single-sign-on"]
+www.bluestarferries.com##[href="/en-gb/privacy-policy-ai-voicebot"]
 fsfe.org###followup
 fsfe.org##[href="/about/legal/imprint.ro.html#id-privacy-policy"]
 serialetari.com###catfish-banner

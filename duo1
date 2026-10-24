@@ -8970,6 +8970,20 @@ betterexplained.com##.noprint.py-10.text-sm.h-32.bg-bex-darkred.max-w-full
 betterexplained.com##.md\:text-right > a.lg\:mr-8.md\:mt-0.md\:inline-block.text-gray-700.mr-4.mt-4.block:nth-of-type(1)
 betterexplained.com##.md\:text-right > a.md\:mt-0.md\:inline-block.text-gray-700.mt-4.block:nth-of-type(4)
 softwareaccountant.com##[href="https://softwareaccountant.com/privacy-policy/"]
+luizacomenteaza.eu##div.widget:nth-of-type(1)
+luizacomenteaza.eu##.widget.widget_text
+luizacomenteaza.eu##.menu-item-190.menu-item-privacy-policy.menu-item-object-page.menu-item-type-post_type.menu-item
+alicebooks.ro##[href="https://alicebooks.ro/politica-de-confidentialitate/"]
+www.cartepedia.ro##a.icon-link:nth-of-type(2)
+www.cartepedia.ro###footerCol2 > li.p-1:nth-of-type(1)
+www.cartepedia.ro###footerCol2 > li.p-1:nth-of-type(3)
+www.cartepedia.ro###footerCol2 > li.p-1:nth-of-type(2)
+www.magazinul-de-carte.ro###buy-section [href] > span
+www.libristo.ro##.lg\:max-w-6xl.lg\:grid-cols-4.lg\:grid.lg\:overflow-x-visible.overflow-x-auto.lg\:mb-8.pt-8.pb-8.gap-12.flex-nowrap.flex.mx-auto.snap-x.snap-mandatory.w-full.max-w-full > .lg\:block.hidden
+www.libristo.ro##.items-end.flex-col.flex.font-sans.z-\[100\].right-6.bottom-6.fixed
+www.libristo.ro###wishlist--form
+www.pandora.com.tr##li:nth-of-type(4)
+www.pandora.com.tr##.md\:h-11.md\:w-11.md\:right-6.md\:bottom-8.cursor-pointer.duration-200.transition-all.hover\:text-gray-900.hover\:bg-gray-100.text-gray-600.shadow-md.rounded-full.border-gray-300.border.bg-white.justify-center.items-center.flex.h-10.w-10.z-50.right-4.bottom-6.fixed
 www.thefreedictionary.com##.icon-notif.i
 www.thefreedictionary.com##.mobile-visible.share-block
 www.thefreedictionary.com##.mobile-visible.slide-box

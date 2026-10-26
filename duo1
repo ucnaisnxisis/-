@@ -47,6 +47,9 @@ antiadblockcore.com$domain=pahe.ink
 ||cookie-choices.^ ||clarity.microsoft.com^ ||cookielaw.org^ ||quantcast.mgr.consensu.org^ ||consenticompanion.*^
 @@||consentmanager.cmp|consent|cookie^$document,redirect=no
 www.reddit.com##.m-0.p-0.list-none
+archive.org##ia-auth-options
+archive.org##.ia-auth-options
+archive.org###ia-auth-options
 adblocktester.pages.dev##ads.js
 adblocktester.pages.dev##pagead.js
 adblocktester.pages.dev##advertisement.js

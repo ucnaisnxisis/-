@@ -1,4 +1,4 @@
-Title: CleanWeb Whitelist
+! Title: ♻️Cleanweb Whitelist♻️
 ! Description: Prevent websites breakage! Some blocked list break videos, images and others, need to be whitelisted here.
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/pb
 

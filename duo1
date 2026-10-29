@@ -4,27 +4,6 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-ch (Limit 1,99 MB rules)
 
-@@ssl.p.jwpcdn.com
-@@stackpath.bootstrapcdn.com
-@@www.awxcdn.com
-@@maps.gstatic.com
-@@fonts.gstatic.com
-@@youtube.googleapis.com
-@@ypncdn.com
-@@owo.lewd.ninja
-@@xxx.lewd.ninja
-@@wikipedia.org
-@@i.imgur.com
-@@gamedock.io
-@@github.com
-@@avatars.githubusercontent.com
-@@githubassets.com
-@@github.githubassets.com
-@@githubassets.com
-@@gitcdn.github.io
-@@cdn-1945.privacy-mgmt.com
-@@consent.dailymotion.com
-@@blogger.l.google.com
 antiadblockcore.com$domain=pahe.ink
 ||cookieconsent.^
 ||cookie-banner.^

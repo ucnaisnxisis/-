@@ -26,7 +26,6 @@ antiadblockcore.com$domain=pahe.ink
 ||cookieNotice.^ ||gdpr-consent.^
 ||eu-cookie.^ ||cookie-control.^
 ||cookie-choices.^ ||clarity.microsoft.com^ ||cookielaw.org^ ||quantcast.mgr.consensu.org^ ||consenticompanion.*^
-@@||consentmanager.cmp|consent|cookie^$document,redirect=no
 www.reddit.com##.m-0.p-0.list-none
 archive.org##ia-auth-options
 archive.org##.ia-auth-options
@@ -6536,7 +6535,6 @@ replici.net##.extravote-stars
 zoso.ro##.scr-pos-bottom-right.scr-vote-container
 www.osos.ro##[href="https://www.osos.ro/politica-de-confidentialitate"]
 williamalexander.dev
-@@eprivacy-storage.eu-sharedservices.olxcdn.com
 production-graphql.eu-sharedservices.olxcdn.com
 ninja.data.olxcdn.com
 laquesis.data.olxcdn.com
@@ -6550,7 +6548,6 @@ m.olx.ro##.css-2itv6r
 m.olx.ro##.css-vd7evx
 m.olx.ro##li.css-w3nclo:nth-of-type(3)
 m.olx.ro##.css-czavxu
-@@olx.org
 m.olx.ro##.css-1urk9ud
 m.olx.ro##.css-11l6j54
 m.olx.ro##.css-15c6cjx
@@ -15723,7 +15720,6 @@ www.mega-image.ro##li.lfxKqa.sc-17yo6l8-12:nth-of-type(3)
 www.mega-image.ro##div.ijrYgG.sc-17yo6l8-9:nth-of-type(1) > .cYGLFb.sc-17yo6l8-11 > li.lfxKqa.sc-17yo6l8-12:nth-of-type(4)
 www.mega-image.ro##.fbUFUn.sc-y4jrw3-27
 www.mega-image.ro##.ipFGgK.sc-1jn36y3-0
-@@e36450.a.akamaiedge.net
 www.mega-image.ro##li.lfxKqa.sc-17yo6l8-12:nth-of-type(4)
 www.mega-image.ro##.keyfrc.sc-1fitj0a-1 > .fNvhqy.sc-1fitj0a-4
 www.mega-image.ro##.BZSJq.sc-1fitj0a-1 > .fNvhqy.sc-1fitj0a-4
@@ -15732,6 +15728,9 @@ www.mega-image.ro##div.ErHKq.sc-qv30oi-2 > .hjhJNC.sc-m28gtc-1 > .iQZlri.sc-777f
 www.mega-image.ro##.hAgJlH.sc-1fitj0a-1
 www.mega-image.ro##.iweWYB.sc-1fitj0a-1
 www.mega-image.ro##.fhFohM.sc-me4uo0-0
+atari.com##.py-5.footer__column--info.footer__column
+atari.com##.grid--2-col.grid.footer__blocks-wrapper.footer__content-center
+atari.com##.footer-klaviyo-signup
 www.kaufland.ro##.g-col-spacing.g-col > .content__separator
 www.kaufland.ro##div:nth-of-type(5) > div.content__separator:nth-of-type(4)
 www.kaufland.ro##.abstractcomponent.purchaseSummary

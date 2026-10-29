@@ -4752,6 +4752,15 @@ www.thespruceeats.com##li.horizontal-nav__item:nth-of-type(6)
 www.thespruceeats.com##li.horizontal-nav__item:nth-of-type(9)
 www.thespruceeats.com###site-wide-notification_1-0
 www.thefreedictionary.com##.footer
+github.com##react-partial.loaded:nth-of-type(2)
+us.codejunkies.com##[href="https://www.codejunkies.com/Privacy.aspx"]
+us.codejunkies.com##[href="https://www.codejunkies.com/contactus.aspx"]
+us.codejunkies.com##[href="https://twitter.com/eurocodejunkies"]
+ps2.gamespy.com##[href="http://corp.ign.com/policies/privacy"]
+ps2.gamespy.com##[href="http://corp.ign.com/"]
+ps2.gamespy.com##.ignFooter-linkRss
+www.supercheats.com##.righthalf.footSocials
+www.supercheats.com##[href="https://www.supercheats.com/privacy.htm"]
 cricksydog.ro##.et_pb_module.et_pb_text.et_pb_text_4_tb_footer.et_pb_text_align_left.et_pb_bg_layout_light > .et_pb_text_inner > ul > li:nth-of-type(3)
 cricksydog.ro##.et_pb_module.et_pb_text.et_pb_text_4_tb_footer.et_pb_text_align_left.et_pb_bg_layout_light > .et_pb_text_inner > ul > li:nth-of-type(2)
 cricksydog.ro##chat-widget

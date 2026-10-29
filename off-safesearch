@@ -25,6 +25,10 @@
 // @match        https://duckduckgo.com/?t=ffab&q=*&ia=videos&iax=videos
 // @match        https://duckduckgo.com/?t=ffab&q=*&ia=images&iax=images
 // @match        https://duckduckgo.com/?t=ffab&q=*&ia=web
+// @match        https://noai.duckduckgo.com/?q=*&noai=1&ia=web
+// @match        https://noai.duckduckgo.com/?q=*&noai=1&ia=news&iar=news
+// @match        https://noai.duckduckgo.com/?q=*&noai=1&ia=images&iax=images
+// @match        https://noai.duckduckgo.com/?q=*&noai=1&ia=videos&iax=videos
 // @match        https://yep.com/web?q=*
 // @match        https://yep.com/images?gl=RO&q=*
 // @match        https://yep.com/news?q=*

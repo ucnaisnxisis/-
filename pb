@@ -7,6 +7,9 @@
 @@encrypted-tbn0.gstatic.com
 @@cdnjs.cloudflare.com
 @@cdn.jsdelivr.net
+@@redditmedia.com
+@@www.redditstatic.com
+@@dualstack.reddit.map.fastly.net
 @@www.awxcdn.com
 @@maps.gstatic.com
 @@fonts.gstatic.com

@@ -4,6 +4,9 @@
 
 @@ssl.p.jwpcdn.com
 @@stackpath.bootstrapcdn.com
+@@encrypted-tbn0.gstatic.com
+@@cdnjs.cloudflare.com
+@@cdn.jsdelivr.net
 @@www.awxcdn.com
 @@maps.gstatic.com
 @@fonts.gstatic.com

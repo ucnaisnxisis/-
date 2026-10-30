@@ -4,6 +4,13 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Discontinued in 2026! But usefull. Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 1,99 MB rules, github >> Try clewanweb-duo1)
 
+instatus.com##.p-4.gap-3\.5.flex-col.flex.dark\:border-\[\#EDEDED\].dark\:bg-black.shadow-\[6px_6px_0_\#EEA5C6\].border-\[\#0A0A0A\].border-2.bg-white.sm\:w-\[290px\].w-\[calc\(100vw-24px\)\]
+instatus.com##.dark\:focus-visible\:outline-\[\#EDEDED\].dark\:text-\[\#EDEDED\].dark\:border-\[\#EDEDED\].dark\:bg-black.focus-visible\:outline-\[\#0A0A0A\].focus-visible\:outline-offset-2.focus-visible\:outline-2.shadow-\[0_3px_0_\#4B5563\].text-\[\#0A0A0A\].border-\[\#0A0A0A\].size-11.cursor-pointer.border-2.bg-white.items-center.justify-center.flex
+downdetector.co.il##section.footer_col:nth-of-type(2)
+downdetector.co.il##.gap-6.\32 xl\:grid-cols-3.lg\:grid-cols-2.grid-cols-1.grid > .flex-col.flex.h-full.pb-4.pt-4.p-6.dark\:border-black.border-zinc-200.duration-500.transition-colors.rounded-2xl.border.dark\:text-zinc-300.text-zinc-600.dark\:bg-zinc-700.bg-white
+downdetector.co.il##.flex-col.flex.h-full.pb-6.pt-4.p-6.dark\:border-black.border-zinc-200.duration-500.transition-colors.rounded-2xl.border.dark\:text-zinc-300.text-zinc-600.dark\:bg-zinc-700.bg-white
+downdetector.co.il##.border-zinc-200.dark\:border-zinc-600.border-y.mb-5.py-3.justify-between.items-center.flex
+downdetector.co.il##.px-4.mx-auto.max-w-2xl.lg\:gap-8.gap-3.justify-center.items-center.flex
 hotnews.ro##p:nth-of-type(2)
 hotnews.ro##p:nth-of-type(1)
 www.simonatache.ro##[href="https://www.simonatache.ro/politica-de-confidentialitate/"]

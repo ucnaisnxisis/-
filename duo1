@@ -96,6 +96,15 @@ brave.com##li.lg\:pt-0.lg\:border-none.max-lg\:first\:pt-0.max-lg\:first\:pb-\[0
 brave.com##.my-10.layout > .gap-2.flex
 brave.com##div.site-footer__column:nth-of-type(4) > div.site-footer__grouping:nth-of-type(2) > ul > li:nth-of-type(1)
 ruffle.rs##.mantine-Group-root.m_4081bf90.nP6W3G_links
+www.unitypoint.org##div.grid-margin-y.grid-padding-x.grid-x > .tablet-l-shrink.cell
+www.newscientist.com##div.footer__content-wrapper:nth-of-type(2)
+www.newscientist.com##div.footer__content-wrapper:nth-of-type(1)
+www.newscientist.com##[href="https://www.newscientist.com/privacy/"]
+www.newscientist.com##.footer__bottom
+www.newscientist.com###menu-item-2549009
+www.newscientist.com###menu-item-2548998
+www.google.com###lb
+69games.xxx###game_controls
 www.paloaltonetworks.com###collapse_col_2 > .mb-0.nav-list.list-unstyled > li.link:nth-of-type(13)
 www.rapid7.com##a.hover\:text-white-flash.text-gray-silver-sand.leading-\[16\.8px\].text-xs.whitespace-nowrap:nth-of-type(5)
 www.rapid7.com##.lg\:block.lg\:col-span-1.min-\[560px\]\:gap-\[60px\].min-\[560px\]\:grid-cols-2.min-\[560px\]\:grid.min-\[560px\]\:col-span-2.justify-between > div:nth-of-type(2)

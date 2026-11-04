@@ -2,6 +2,9 @@
 ! Description: Prevent websites breakage! Some blocked list break videos, images and others, need to be whitelisted here.
 ! Homepage: https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/pb
 
+@@youtube-nocookie.com
+@@www.youtube-nocookie.com
+@@youtube-ui.l.google.com
 @@ssl.p.jwpcdn.com
 @@stackpath.bootstrapcdn.com
 @@encrypted-tbn0.gstatic.com

@@ -4,6 +4,15 @@
 ! Caution: You can use this for Adblockers, but is not recommended. Only for Pi-hole/Rasspberry-pi.
 ! Info: Personal use, non-comercial, no-copyright claim, individual. Limit 1,99 MB rules, github.
 
+incoming.telemetry.mozilla.org
+geo.captcha-delivery.com
+ct.captcha-delivery.com
+captcha-delivery.com
+choice.quantcast.com
+events.redditmedia.com
+pixel.redditmedia.com
+tracker.redditmedia.com
+events.redditmedia.com
 pagead2.googlesyndication.com
 googleads.g.doubleclick.net
 googleads4.g.doubleclick.negoogleads5.g.doubleclick.net

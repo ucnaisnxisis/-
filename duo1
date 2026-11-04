@@ -19915,3 +19915,23 @@ adblocktester.pages.dev##.textads
 /ads.js$domain=adblocktester.pages.dev
 ||adblocktester.pages.dev/calea-reala/analytics.js
 ||adblocktester.pages.dev/calea-reala/advertisement.js
+hentaihaven.com##button.video_action
+hentaifox.com###add_fav_btn
+hentaifox.com###add_fap_btn
+hentaifox.com##.b_dlike
+landing.hentaipros.com##li:nth-of-type(5)
+landing.hentaipros.com##li:nth-of-type(2)
+ihentai.com##a.icon-button:nth-of-type(2)
+ihentai.com##button.secondary.button:nth-of-type(1)
+ihentai.com##.meta-chips > span:nth-of-type(3)
+ihentai.com##.save-button
+haho.moe##.user-controls
+whentai.com##.android-up
+shannoncoldalready.com##a.text-secondary:nth-of-type(4)
+shannoncoldalready.com##a.text-secondary:nth-of-type(5)
+film-bun.ro##.text-yellow-400.font-bold.text-xs.bg-black\/70.rounded.py-0\.5.px-1\.5.right-1\.5.top-1\.5.absolute
+film-bun.ro##.text-xs.min-w-0.gap-y-1.sm\:gap-x-3.gap-x-1\.5.items-center.flex-wrap.flex
+film-bun.ro##div:nth-of-type(4) > .space-y-3 > li:nth-of-type(6)
+manga-kids.com###comment-submit-button
+vreau-filme.ro##.news-item-rating
+vreau-filme.ro##.fx-row.flikes

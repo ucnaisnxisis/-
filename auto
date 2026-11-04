@@ -4,6 +4,20 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##adbox.banner_ads.adsbox
+##textads
+###adbox.banner_ads.adsbox
+###textads
+/ad/advertisement.js
+/ad/analytics.js
+##advertisement.js
+##analytics.js
+##.advertisement.js
+##.analytics.js
+###advertisement.js
+###analytics.js
+##.adbox.banner_ads.adsbox
+##.textads
 ##partner.ads.js
 ##.partner.ads.js
 ###partner.ads.js

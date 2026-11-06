@@ -104,6 +104,133 @@ www.newscientist.com##.footer__bottom
 www.newscientist.com###menu-item-2549009
 www.newscientist.com###menu-item-2548998
 www.google.com###lb
+m.google.com###lb
+www.google.com##lb
+m.google.com##lb
+www.google.com##.lb
+m.google.com##.lb
+www.foreca.net##.links > section:nth-of-type(3)
+www.foreca.net##section:nth-of-type(1) > ul > li:nth-of-type(5)
+www.foreca.net##[href="#"]
+www.foreca.net##[href^="https://info.foreca.com/feedback"]
+www.meteoblue.com##[href="//content.meteoblue.com/en/about-us/references"]
+www.weathersunshine.com##[href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)"]
+www.weathersunshine.com##[href="https://www.slunecno.cz/reklama/"]
+www.weathersunshine.com##[href="https://www.slunecno.cz/clanky/ochrana-soukromi-a-osobnich-udaju-uzivatelu-webu-slunecnocz-1954"]
+www.weathersunshine.com##[href="/oblibene"]
+www.weathersunshine.com##img.miniicon:nth-of-type(4)
+www.wunderground.com##.feedback-support-link
+www.wunderground.com##.accessibility-statement
+weawow.com##.market-footer > div:nth-of-type(1) > ul > li:nth-of-type(6)
+www.weather-forecast.com##.show-for-medium-up.columns.medium-4
+www.weather-forecast.com##[href="/pages/cookie_policy"]
+www.weather-forecast.com##[href="/pages/privacy"]
+www.sat24.com##li.hover\:underline:nth-of-type(4)
+www.sat24.com##li.hover\:underline:nth-of-type(3)
+www.sat24.com##ul.py-2.text-sm:nth-of-type(5)
+climeradar.com##a.css-r2u7f4.chakra-link:nth-of-type(4)
+climeradar.com##.css-11urvxf
+www.timeanddate.com##.main-content-div > span
+www.timeanddate.com##.footer-card__text > li:nth-of-type(1)
+www.timeanddate.com##.clip-block--newsletter.clip-block
+open-meteo.com##a.gap-0.items-center.w-10.flex.relative.py-2.px-4.h-10.hover\:text-accent-foreground.hover\:bg-accent.\[\&_svg\]\:shrink-0.\[\&_svg\]\:pointer-events-none.disabled\:opacity-50.disabled\:pointer-events-none.focus-visible\:ring-offset-2.focus-visible\:ring-2.focus-visible\:outline-none.transition-colors.rounded-md.whitespace-nowrap.justify-center.focus-visible\:ring-ring.ring-offset-background.cursor-pointer
+open-meteo.com##div:nth-of-type(4) > .mt-2.text-small.list-unstyled > li.mb-1:nth-of-type(4)
+open-meteo.com##div:nth-of-type(4) > .mt-2.text-small.list-unstyled > li.mb-1:nth-of-type(3)
+open-meteo.com##div:nth-of-type(4) > .mt-2.text-small.list-unstyled > li.mb-1:nth-of-type(1)
+open-meteo.com##.justify-center.items-center.flex-col.flex.mb-24.my-12
+www.worldweatheronline.com###btn-back-to-top
+www.worldweatheronline.com##.footer-main
+www.worldweatheronline.com##a.footer-menu-link:nth-of-type(2)
+www.worldweatheronline.com##.v3-ad
+www.theweathernetwork.com##.bMwhLD.sc-bDumWk
+www.theweathernetwork.com##.iKTxLs.sc-fifgRP > .bhomOt.sc-dAbbOL > .hRrxVl.sc-ejfMa-d
+www.theweathernetwork.com##li:nth-of-type(8) > .keyboard-focus-link
+www.theweathernetwork.com##li:nth-of-type(10)
+www.theweathernetwork.com##.kCbrTd.eZQUnd.sc-bpUBKd.sc-kbhJrz > .OLTdb.sc-ehixzo > li:nth-of-type(2)
+www.theweathernetwork.com##.drtSud.sc-EgOXT
+www.theweathernetwork.com##.kCbrTd.eZQUnd.sc-bpUBKd.sc-kbhJrz > .OLTdb.sc-ehixzo > li:nth-of-type(5)
+www.vremearomania.com##.flex.click-notice
+hjelp.yr.no##li.blocks-item:nth-of-type(2)
+hjelp.yr.no##li.blocks-item:nth-of-type(3)
+www.crazygames.com##.GamesPage_footerCallToActionButton__Q4huC.Button_czyButton--height50__yzcvJ.Button_czyButton--contained--purple__OBSeL.Button_czyButton__y8IRs
+www.crazygames.com##[href="https://www.crazygames.com/privacy-policy"]
+www.crazygames.com##.Header_rightSection__fcQ4k > div:nth-of-type(2)
+www.onlinegames.io##.footer__nav > li:nth-of-type(6)
+www.games.co.uk##[href="https://www.games.co.uk/privacy-policy"]
+www.primarygames.com##[href="https://www.primarygames.com/privacy.php"]
+nite.games##div.relative.group:nth-of-type(1)
+www.onlinegames.io###chat-container
+www.onlinegames.io##[href="https://www.youtube.com/@OnlineGamesIO"]
+www.y8.com##li.sidebar-item:nth-of-type(36)
+www.y8.com##li.sidebar-item:nth-of-type(37)
+www.y8.com##li.sidebar-item:nth-of-type(38)
+www.y8.com##li.sidebar-item:nth-of-type(39)
+www.y8.com##.header__logo-text-container
+www.meegames.com##[href="/en/help/privacy-policy/"]
+1games.io##.ads-desktop-only.pubfuture.ads-class
+1games.io##div.pubfuture.ads-class
+1games.io##div.menu_action.h-right__item:nth-of-type(3)
+1games.io##.menu_action.h-right__item-heart
+lgames.io###card__rating
+wellgames.com##a.main-footer__link:nth-of-type(5)
+wellgames.com##a.main-footer__link:nth-of-type(6)
+wellgames.com##.icons-star.icons.box-cell-row__rating
+wellgames.com###popup_notice
+www.gametop.com##.text-truncate.my-2.text-muted.small
+www.gametop.com###sm-block-policies > li.nav-item:nth-of-type(1)
+www.gametop.com###sm-block-policies > li.nav-item:nth-of-type(6)
+www.gametop.com##div.my-4
+www.friv.com###frivolousFactBottomBar
+www.friv.com###famousQuoteBottomBar
+www.friv.com###secretButton
+www.friv.com###secretButton2
+www.pacogames.com##.shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.16\)\].bg-white\/\[0\.035\].border-white\/6.border.rounded-\[24px\].overflow-hidden.-mx-1.min-w-0.min-\[801px\]\:mt-10.mt-8
+www.pacogames.com###hp_btm__R_56auiivb_
+sgames.org##a.footer__link:nth-of-type(3)
+sgames.org##button.footer__link
+sgames.org##.side-items
+sgames.org##.sticky
+sgames.org##.game-container__game-info
+sgames.org##.section--no-padding.game-ad-description
+sgames.org##.section--padding-y.game-ad-under
+sgames.org##.actions__button--favorite.actions__button
+sgames.org##.actions__reaction
+sgames.org##a.actions__button
+sgames.org##.banner-container.ad-game-in-right
+www.freeonlinegames.com##[href="javascript:void(0);"]
+www.freeonlinegames.com##[href="/dmca"]
+www.freeonlinegames.com##[href="/optout"]
+www.freeonlinegames.com###fog-cookie-box
+sgames.org##.game__rating
+sonsaur.com##.sm\:gap-4.gap-y-1.gap-x-2.items-center.flex-wrap.flex
+sonsaur.com##li:nth-of-type(5)
+sonsaur.com##a.items-center.flex.min-w-\[44px\].min-h-\[44px\].transition-colors.text-xs.hover\:text-white.text-slate-300
+web-games.io##.button-favorites.button-top
+allfreegames.com##a.hdr-btn
+allfreegames.com##[href="https://allfreegames.com/privacy-policy/"]
+www.crazygames.org##.bg-violet-600.rounded-full.text-white.font-bold.text-base.h-12.w-48.justify-center.items-center.flex
+www.crazygames.org##a.text-\[15px\].hover\:\[\&\>div\]\:mr-0.\[\&\>div\]\:mr-2.hover\:\[\&\>div\]\:pl-2.hover\:text-opacity-65.h-\[34px\].no-underline.font-semibold.items-center.flex.text-white.border-l-4.border-transparent:nth-of-type(24)
+www.snokido.com##.op.homesquare
+www.arkadium.com##._1lj742yl
+www.a10.com##[href="https://www.a10.com/privacy_policy"]
+www.a10.com##.manage_cookies_button
+www.play123.com##.copy
+www.arkadium.com##._1lj742yb > [src]
+www.arkadium.com##li:nth-of-type(6)
+www.arkadium.com##a._1uqvs92g.topbar-link.ark-ui-topbar-link:nth-of-type(5)
+www.freegame.com##[href="/page/privacy-policy"]
+www.gogy.com##.left > ul > li:nth-of-type(2)
+iwin.com##.sm\:inline-flex.shadow-lg.w-12.h-12.hidden.z-40.right-5.bottom-5.fixed.rounded-full.\[background\:var\(--gradient-hero\)\].hover\:opacity-95.text-primary-foreground.font-semibold.\[\&_svg\]\:shrink-0.\[\&_svg\]\:size-4.\[\&_svg\]\:pointer-events-none.disabled\:opacity-50.disabled\:cursor-not-allowed.disabled\:pointer-events-none.focus-visible\:ring-ring.focus-visible\:ring-1.focus-visible\:outline-none.transition-colors.text-sm.whitespace-nowrap.gap-2.justify-center.items-center.cursor-pointer
+iwin.com##ul:nth-of-type(3) > li:nth-of-type(2)
+free-gamesonline.com##.space-x-3.flex
+plays.org##.rwp-rating-stars
+gamershell.com##[href="https://gamershell.com/privacy"]
+kiz10.com##a.foo:nth-of-type(3)
+kiz10.com##a.foo:nth-of-type(4)
+kiz10.com##section.modRgames:nth-of-type(3)
+kiz10.com##section.modRgames:nth-of-type(2)
+kiz10.com##.hbc-four
+kiz10.com###hsubs
 69games.xxx###game_controls
 www.paloaltonetworks.com###collapse_col_2 > .mb-0.nav-list.list-unstyled > li.link:nth-of-type(13)
 www.rapid7.com##a.hover\:text-white-flash.text-gray-silver-sand.leading-\[16\.8px\].text-xs.whitespace-nowrap:nth-of-type(5)

@@ -1,0 +1,201 @@
+// ==UserScript==
+// @name         YouTube CC Română + Background Play + Search Settings
+// @namespace    https://example.local/
+// @version      1.0
+// @description  Subtitrări românești pe YouTube, redare în fundal și setări SafeSearch limitate la Google/Bing/DDG
+// @match        https://www.youtube.com/*
+// @match        https://m.youtube.com/*
+// @match        https://www.youtube-nocookie.com/*
+// @match        https://*.vimeo.com/*
+// @match        https://*.google.com/search*
+// @match        https://*.google.*/search*
+// @match        https://www.bing.com/search*
+// @match        https://duckduckgo.com/*
+// @run-at       document-idle
+// @grant        GM_getValue
+// @grant        GM_setValue
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const host = location.hostname;
+  const isYouTube = /(^|\.)youtube(-nocookie)?\.com$/.test(host);
+  const isVimeo = /(^|\.)vimeo\.com$/.test(host);
+
+  // SafeSearch: modifică doar parametrul potrivit pentru motorul curent.
+  function setSearchPreference() {
+    const url = new URL(location.href);
+
+    if (host.includes('google.')) {
+      if (url.pathname !== '/search') return;
+      if (url.searchParams.get('safe') !== 'off') {
+        url.searchParams.set('safe', 'off');
+        location.replace(url.toString());
+      }
+      return;
+    }
+
+    if (host === 'www.bing.com') {
+      if (url.pathname !== '/search') return;
+      if (url.searchParams.get('adlt') !== 'off') {
+        url.searchParams.set('adlt', 'off');
+        location.replace(url.toString());
+      }
+      return;
+    }
+
+    if (host === 'duckduckgo.com') {
+      if (url.searchParams.get('safe') !== 'off') {
+        url.searchParams.set('safe', 'off');
+        location.replace(url.toString());
+      }
+    }
+  }
+
+  // YouTube/Vimeo: împiedică page-visibility să întrerupă redarea.
+  function enableBackgroundPlayback() {
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMobileYouTube = host === 'm.youtube.com';
+
+    if (isAndroid || !isYouTube || isMobileYouTube) {
+      try {
+        Object.defineProperty(document, 'hidden', {
+          configurable: true,
+          get: () => false
+        });
+        Object.defineProperty(document, 'visibilityState', {
+          configurable: true,
+          get: () => 'visible'
+        });
+      } catch (_) {}
+    }
+
+    document.addEventListener('visibilitychange', event => {
+      event.stopImmediatePropagation();
+    }, true);
+
+    if (isVimeo) {
+      window.addEventListener('fullscreenchange', event => {
+        event.stopImmediatePropagation();
+      }, true);
+    }
+  }
+
+  // Respinge doar butoane/linkuri vizibile cu text explicit de respingere.
+  function enableExplicitRejectButtons() {
+    const rejectText =
+      /\b(reject all|reject|decline|refuse|deny|no thanks|respinge tot|respinge|refuz|refuză|nu accept|nu mulțumesc)\b/i;
+
+    function visible(el) {
+      const r = el.getBoundingClientRect();
+      const s = getComputedStyle(el);
+      return r.width > 8 && r.height > 8 &&
+        s.display !== 'none' &&
+        s.visibility !== 'hidden' &&
+        Number(s.opacity) !== 0;
+    }
+
+    function findAndClick() {
+      const elements = document.querySelectorAll(
+        '[role="dialog"] button, [aria-modal="true"] button, ' +
+        '[id*="cookie"] button, [class*="cookie"] button, ' +
+        '[id*="consent"] button, [class*="consent"] button, ' +
+        '[id*="banner"] button, [class*="banner"] button'
+      );
+
+      for (const el of elements) {
+        const text = (el.innerText || el.getAttribute('aria-label') || '').trim();
+        if (visible(el) && rejectText.test(text)) {
+          el.click();
+          observer.disconnect();
+          return;
+        }
+      }
+    }
+
+    const observer = new MutationObserver(findAndClick);
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+    findAndClick();
+    setTimeout(() => observer.disconnect(), 15000);
+  }
+
+  // YouTube: activează CC și încearcă traducerea automată în română.
+  function enableRomanianCaptions() {
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const menuSelector =
+      '.ytp-panel-menu .ytp-menuitem, .ytp-settings-menu .ytp-menuitem';
+
+    function settingsButton() {
+      return document.querySelector('.ytp-settings-button');
+    }
+
+    function click(el) {
+      if (el) el.click();
+    }
+
+    function menuItem(matches) {
+      return [...document.querySelectorAll(menuSelector)]
+        .find(el => matches.some(term =>
+          (el.innerText || '').toLowerCase().includes(term)
+        ));
+    }
+
+    async function run() {
+      const videoId = new URL(location.href).searchParams.get('v') || location.pathname;
+      const attemptedKey = `yt-ro-attempted-${videoId}`;
+      if (sessionStorage.getItem(attemptedKey)) return;
+      sessionStorage.setItem(attemptedKey, '1');
+
+      for (let i = 0; i < 12; i++) {
+        if (document.querySelector('video')) break;
+        await sleep(500);
+      }
+
+      const cc = document.querySelector('.ytp-subtitles-button');
+      if (cc && cc.getAttribute('aria-pressed') !== 'true') {
+        click(cc);
+        await sleep(500);
+      }
+
+      const settings = settingsButton();
+      if (!settings) return;
+
+      click(settings);
+      await sleep(300);
+
+      let subtitles = menuItem(['subtitles', 'captions', 'subtitr']);
+      if (!subtitles) {
+        click(settings);
+        return;
+      }
+
+      click(subtitles);
+      await sleep(300);
+
+      // YouTube may show Auto-translate only when captions are available.
+      let autoTranslate = menuItem(['auto-translate', 'translate automatically', 'traducere automată']);
+      if (!autoTranslate) return;
+
+      click(autoTranslate);
+      await sleep(300);
+
+      const romanian = [...document.querySelectorAll(menuSelector)]
+        .find(el => /^(română|romanian)$/i.test((el.innerText || '').trim()));
+
+      if (romanian) click(romanian);
+    }
+
+    run().catch(error => console.warn('[YT-CC-RO]', error));
+  }
+
+  if (isYouTube || isVimeo) enableBackgroundPlayback();
+  if (isYouTube) enableRomanianCaptions();
+  if (/google\.|bing\.com|duckduckgo\.com/.test(host)) setSearchPreference();
+
+  // Bannerul este căutat pe pagini YouTube, nu pe toate site-urile.
+  if (isYouTube) enableExplicitRejectButtons();
+})();

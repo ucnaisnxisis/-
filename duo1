@@ -109,6 +109,67 @@ www.google.com##lb
 m.google.com##lb
 www.google.com##.lb
 m.google.com##.lb
+spotmedia.ro###mbm-dripples-miscellaneous-abonare-newsletter-promo-box
+www.ziare.ro##ul:nth-of-type(4)
+www.veridica.ro##li.float-lg-right:nth-of-type(7)
+www.observatorulzilei.ro##.oz-header-promo
+www.observatorulzilei.ro##.oz-header-leaderboard.edge-padding
+www.observatorulzilei.ro##.oz-rail--left.oz-rail
+www.observatorulzilei.ro##.oz-rail--right.oz-rail
+www.observatorulzilei.ro##.ozp-box--card.ozp-box
+www.observatorulzilei.ro##div.oz-band-wrap:nth-of-type(5)
+www.observatorulzilei.ro##.e-lazyloaded.e-parent.e-con.e-con-boxed.e-flex.elementor-element-1f6dc61.elementor-element
+www.observatorulzilei.ro##.ozf-cta
+www.observatorulzilei.ro##.ozf-social
+www.observatorulzilei.ro##[href="https://www.observatorulzilei.ro/privacy-policy/"]
+www.observatorulzilei.ro##nav.ozf-col:nth-of-type(3) > ul > li:nth-of-type(5)
+www.observatorulzilei.ro##nav.ozf-col:nth-of-type(3) > ul > li:nth-of-type(6)
+www.observatorulzilei.ro##.ozf-top
+bucurestiri.ro##.g1-sticky-widget-wrapper
+jurnalulnational.ro##.psk-google
+zcj.ro##[href="https://zcj.ro/publicitate.html"]
+zcj.ro##nav.hidden-xs.top-navbar.light.navbar-static-top.navbar:nth-of-type(2) > .container > .navbar-collapse.collapse > .navbar-right.navbar-nav.nav > li:nth-of-type(4)
+zcj.ro##.dt-divider.hidden-sm
+zcj.ro##li.hidden-sm:nth-of-type(7)
+zcj.ro##li.hidden-sm:nth-of-type(8)
+zcj.ro##li.hidden-sm:nth-of-type(9)
+zcj.ro##li.hidden-sm:nth-of-type(10)
+zcj.ro##[href="https://www.zcj.ro/politica-de-confidentialitate.html"]
+zcj.ro##div.col-md-3.col-sm-4:nth-of-type(3) > .footer-box > ul > li:nth-of-type(7)
+zcj.ro##div.col-md-3.col-sm-4:nth-of-type(3) > .footer-box > ul > li:nth-of-type(2)
+zcj.ro##div.col-md-3.col-sm-4:nth-of-type(3) > .footer-box > ul > li:nth-of-type(1)
+www.jurnal.md###deskLastNewsPanelTrigger
+www.jurnal.md##.single-footer-widget > .useful-links-list > li:nth-of-type(2)
+www.jurnal.md##.single-footer-widget > p:nth-of-type(2)
+stiri.botosani.ro##.most-read-items.widget
+www.petitchef.ro##div.box-sidebar
+www.petitchef.ro###page-right > div
+jamilacuisine.ro##div.penci-infeed-fullwidth-ads.penci-infeed-vcele.penci-infeed-data.grid-style
+pofta-buna.com##.author-box-socials
+pofta-buna.com##.ERRatingComment
+bucataria-romaneasca.ro##.elementor-element-1693eb0a.elementor-element.elementor-inner-column.elementor-col-100.elementor-column
+bucataria-romaneasca.ro##.elementor-spacer
+www.auchan.ro##.flex.vtex-flex-layout-0-x-stretchChildrenWidth.items-stretch.pr0 > .vtex-store-components-3-x-imageElement--anpcInfo.vtex-store-components-3-x-imageElement
+www.candystore.ro##.h-100.justify-content-end.align-items-center.d-flex.o_header_social_links
+www.candystore.ro##div.o_colored_level.pb16.col-lg-2:nth-of-type(4)
+www.candymagic.ro##.header-wishlist
+www.candymagic.ro##[href="https://www.candymagic.ro/confidentialitate"]
+www.dm.ro##li.edico_linkCollectionItem-blU1K:nth-of-type(8)
+www.bucuria.ro##[href="https://www.bucuria.ro/politica-de-confidentialitate"]
+adygio.com###ssb
+adygio.com##.wp-block-post-content-is-layout-constrained.is-layout-constrained.has-global-padding.wp-block-post-content.alignwide.entry-content > div
+www.cofetariamonalisa.ro##.tN_ggS
+www.cofetariamonalisa.ro###comp-mansl4b3 > .wixui-rich-text__text.font_0
+www.cofetariamonalisa.ro###comp-manskbj6
+www.cofetariamonalisa.ro###comp-mansl4bk
+www.cofetariamonalisa.ro###comp-kgm5weq3
+www.cofetariamonalisa.ro##.jUcJ2u.Frk6TZ.MNUFxS.consent-banner-root
+www.floria.ro##.vtex-wish-list-1-x-wishlistIconContainer--wishlistAddShelf.vtex-wish-list-1-x-wishlistIconContainer
+www.floria.ro##.vtex-flex-layout-0-x-flexRow--rowSocialFooter.vtex-flex-layout-0-x-flexRow
+www.floria.ro##.c-on-base.t-mini.justify-start.items-start.tl.flex.vtex-rich-text-0-x-container--wishlistLink.vtex-rich-text-0-x-container
+www.floria.ro##.vtex-render__container-id-online-flowers
+www.floria.ro##.vtex-render__container-id-google-reviews
+www.floria.ro##.w-100.items-stretch.vtex-flex-layout-0-x-flexRowContent--testimonialsTitle.vtex-flex-layout-0-x-flexRowContent.justify-start.pb0.pt0.mb0.mt8.flex
 www.foreca.net##.links > section:nth-of-type(3)
 www.foreca.net##section:nth-of-type(1) > ul > li:nth-of-type(5)
 www.foreca.net##[href="#"]

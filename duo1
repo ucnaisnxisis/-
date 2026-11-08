@@ -42,6 +42,9 @@ pubads.g.doubleclick.net/gampad/ads
 /pagead.js$domain=d3ward.github.io
 /widget/ads.
 stirileprotv.ro##.article--share
+profi.ro##svg:nth-child(1)
+profi.ro###svg:nth-child(1)
+www.hen-games.com##.promo-img
 hotnews.ro##div.xl\:min-w-0.xl\:max-w-48.xl\:flex-1.lg\:w-auto.w-full.flex-col.flex:nth-of-type(4)
 hotnews.ro##div.xl\:min-w-0.xl\:max-w-48.xl\:flex-1.lg\:w-auto.w-full.flex-col.flex:nth-of-type(1) > .lg\:border-b-0.border-hotnews-black\/15.border-b.flex-col.flex > .\!flex.lg\:\!flex.hidden.lg\:pt-1.lg\:pb-0.pb-4.list-none.p-0.m-0.gap-1.flex-col.flex > li.list-none.items-center.gap-2.flex:nth-of-type(6) > .leading-snug.no-underline.text-hotnews-black.font-jakarta.font-bold.text-xs
 www.mediafax.ro##.single__social

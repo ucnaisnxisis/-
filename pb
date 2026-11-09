@@ -9,6 +9,7 @@
 @@stackpath.bootstrapcdn.com
 @@encrypted-tbn0.gstatic.com
 @@bysedikamoum.com
+@@cloudflare.com
 @@cdnjs.cloudflare.com
 @@cdn.jsdelivr.net
 @@redditmedia.com

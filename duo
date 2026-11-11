@@ -4,6 +4,33 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Discontinued in 2026! But usefull. Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 1,99 MB rules, github >> Try clewanweb-duo1)
 
+www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(5)
+www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(4)
+www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(3)
+www.romania-actualitati.ro##.footer__row > ul
+www.sport.ro##.nav__a11y.sport-header__item
+gov.ro##.facebookFooter
+stiri.md##.ConsentBanner-module__c65Ewa__banner__accept
+stiri.md##.ConsentBanner-module__c65Ewa__banner__content
+www.biziday.ro###bd-support
+umfcd.ro###cya11y-container
+old.umfcd.ro##.element-scheme--light.elm-socialicons--light.sc-icon--center.text-center.hidden-zn_dummy_value.eluid601bd09a.elm-socialicons
+stirileprotv.ro##.nav__a11y.bg-secondary.menu--button
+www.xtb.com##.risk-warning-collapse.risk-warning.js-risk-warning-top.js-risk-warning
+www.xtb.com##.overall-footer-copyright.overall-footer-notes
+www.xtb.com##ul.overall-footer-btns-list:nth-of-type(2)
+www.xtb.com##.overall-footer-top
+www.replicahd.ro##.cm-footer-cols
+oportunitati-ue.gov.ro##.icon-accessibility
+oportunitati-ue.gov.ro##.accessibility-btn
+oportunitati-ue.gov.ro##[href="https://oportunitati-ue.gov.ro/politica-gdpr/"]
+oportunitati-ue.gov.ro##[href="https://oportunitati-ue.gov.ro/politica-de-confidentialitate/"]
+oportunitati-ue.gov.ro##.widget_custom_html.widget.widget_text
+oportunitati-ue.gov.ro###text-2
+m.bvb.ro##.text-right.col-xs-12
+m.bvb.ro##.pull-right > .d-flex > [href]
+stiridetimisoara.ro##[href="https://stiridetimisoara.ro/politica-de-confidentialitate"]
+stiridetimisoara.ro##[href="https://stiridetimisoara.ro/politica-de-cookie-uri"]
 ##share-buttonswww.stirilepescurt.ro##.primary-footer
 defapt.ro##a.font-semibold.text-base.hover\:text-zinc-400.text-white:nth-of-type(5)
 defapt.ro##.text-center.md\:p-4.p-2.border-zinc-200.border.bg-white

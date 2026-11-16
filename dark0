@@ -1,0 +1,112 @@
+// ==UserScript==
+// @name         Dark Mode agresiv — site-uri selectate
+// @namespace    local.darkmode
+// @version      2.0
+// @description  Forțează culori întunecate pe domeniile alese
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+(() => {
+    'use strict';
+
+    const domains = [
+        'porngameshub.com',
+        'itch.io',
+        'www.accuweather.com',
+        'www.meteoblue.com',
+        'meteofor.ro',
+        'ziare.com',
+        'www.biziday.ro',
+        'newsweek.ro',
+        'www.ziuanews.ro',
+        'www.capital.ro',
+        'www.e-politic.ro',
+        'video.mediafax.ro',
+        'www.xda-developers.com'
+        // Adaugă domenii aici, de exemplu:
+        // 'exemplu.ro',
+    ];
+
+    const host = location.hostname.toLowerCase();
+    if (!domains.some(d => host === d || host.endsWith('.' + d))) return;
+
+    const css = `
+        :root {
+            color-scheme: dark !important;
+            background: #111 !important;
+            color: #eee !important;
+        }
+
+        html, body {
+            background: #111 !important;
+            background-color: #111 !important;
+            color: #eee !important;
+        }
+
+        /* Suprascrie fundalurile și textele definite de site */
+        body * {
+            border-color: #444 !important;
+        }
+
+        body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #e5e5e5 !important;
+        }
+
+        body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            background-color: transparent !important;
+        }
+
+        /* Zonele principale și suprafețele care trebuie să rămână vizibile */
+        body, main, article, section, header, footer, nav, aside,
+        [role="main"], [role="dialog"], .container, .content, .card,
+        .panel, .modal, .dropdown-menu, .popover {
+            background-color: #171717 !important;
+        }
+
+        input, textarea, select, button {
+            background: #252525 !important;
+            color: #f2f2f2 !important;
+            border: 1px solid #555 !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #aaa !important;
+        }
+
+        a, a * {
+            color: #8ab4f8 !important;
+        }
+
+        img, video, canvas, iframe, svg, picture {
+            background-color: transparent !important;
+        }
+
+        table, th, td, hr {
+            border-color: #444 !important;
+        }
+
+        ::selection {
+            background: #345780 !important;
+            color: #fff !important;
+        }
+    `;
+
+    function installStyle() {
+        if (document.getElementById('tm-aggressive-dark-mode')) return;
+
+        const style = document.createElement('style');
+        style.id = 'tm-aggressive-dark-mode';
+        style.textContent = css;
+        (document.head || document.documentElement).appendChild(style);
+    }
+
+    installStyle();
+
+    // Reinstalează stilul dacă pagina îl elimină sau își reconstruiește head-ul.
+    new MutationObserver(installStyle).observe(document.documentElement, {
+        childList: true,
+        subtree: true
+    });
+})();

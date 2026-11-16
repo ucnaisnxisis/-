@@ -1,0 +1,325 @@
+// ==UserScript==
+// @name         YouTube – subtitrări română + dialog Kids
+// @namespace    local.youtube.tools
+// @version      1.0
+// @description  Activează subtitrările și încearcă traducerea automată în română; gestionează dialoguri Kids pe desktop. (Unificand 3 scripturi>> Traducere Android + PC + Kids)
+// @match        https://www.youtube.com/*
+// @match        https://m.youtube.com/*
+// @grant        none
+// @run-at       document-idle
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const DEBUG = false;
+  const MENU_TIMEOUT_MS = 7000;
+  const POLL_MS = 250;
+  const LANG_ATTEMPTS = 2;
+
+  const attemptedVideos = new Set();
+  let running = false;
+
+  const log = (...args) => {
+    if (DEBUG) console.log('[YT RO]', ...args);
+  };
+
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+  function videoId() {
+    return new URL(location.href).searchParams.get('v') || location.pathname;
+  }
+
+  function isVisible(el) {
+    if (!el) return false;
+    const rect = el.getBoundingClientRect();
+    const style = getComputedStyle(el);
+
+    return rect.width > 0 &&
+      rect.height > 0 &&
+      style.display !== 'none' &&
+      style.visibility !== 'hidden' &&
+      style.opacity !== '0';
+  }
+
+  function textOf(el) {
+    return [
+      el?.innerText,
+      el?.getAttribute?.('aria-label'),
+      el?.getAttribute?.('title')
+    ].filter(Boolean).join(' ').trim().toLowerCase();
+  }
+
+  function click(el) {
+    if (!el || !isVisible(el)) return false;
+
+    try {
+      el.scrollIntoView({ block: 'center', behavior: 'auto' });
+      el.click();
+      return true;
+    } catch (e) {
+      log('Click nereușit:', e);
+      return false;
+    }
+  }
+
+  function findButton(test) {
+    return [...document.querySelectorAll(
+      'button, [role="button"], .ytp-button'
+    )].filter(isVisible).find(el => test(textOf(el))) || null;
+  }
+
+  function findMenuItem(test) {
+    return [...document.querySelectorAll(
+      '.ytp-menuitem, [role="menuitem"], [role="option"], yt-list-item-view-model'
+    )].filter(isVisible).find(el => test(textOf(el))) || null;
+  }
+
+  function findSettingsButton() {
+    return document.querySelector(
+      '.ytp-settings-button, button[aria-label*="Settings"], button[aria-label*="Setări"], button[aria-label*="setari"]'
+    );
+  }
+
+  function findCaptionsButton() {
+    return document.querySelector(
+      '.ytp-subtitles-button, button[aria-label*="Captions"], button[aria-label*="Subtitr"]'
+    );
+  }
+
+  function captionsAreOn() {
+    const btn = findCaptionsButton();
+    if (btn?.getAttribute('aria-pressed') === 'true') return true;
+
+    return Boolean(document.querySelector(
+      '.ytp-caption-segment, .ytp-subtitles-text, .caption-window, .captions-text'
+    ));
+  }
+
+  async function waitFor(find, timeout = MENU_TIMEOUT_MS) {
+    const end = Date.now() + timeout;
+
+    while (Date.now() < end) {
+      const result = find();
+      if (result) return result;
+      await sleep(POLL_MS);
+    }
+
+    return null;
+  }
+
+  function sendCaptionShortcut() {
+    const target = document.querySelector('video') ||
+      document.querySelector('.html5-video-player') ||
+      document;
+
+    for (let i = 0; i < 2; i++) {
+      target.dispatchEvent(new KeyboardEvent('keydown', {
+        key: 'c', code: 'KeyC', keyCode: 67, which: 67,
+        bubbles: true, cancelable: true
+      }));
+      target.dispatchEvent(new KeyboardEvent('keyup', {
+        key: 'c', code: 'KeyC', keyCode: 67, which: 67,
+        bubbles: true, cancelable: true
+      }));
+    }
+  }
+
+  function scrollableAncestor(el) {
+    let node = el?.parentElement;
+
+    while (node && node !== document.body) {
+      const style = getComputedStyle(node);
+      if (/(auto|scroll)/.test(style.overflowY) &&
+          node.scrollHeight > node.clientHeight) {
+        return node;
+      }
+      node = node.parentElement;
+    }
+
+    return null;
+  }
+
+  async function findRomanianLanguage() {
+    const selectors =
+      '.ytp-panel-menu .ytp-menuitem, .ytp-panel .ytp-menuitem, ' +
+      '.ytp-settings-menu .ytp-menuitem, [role="menuitem"], [role="option"], ' +
+      'yt-list-item-view-model';
+
+    const isRomanian = el => {
+      const t = textOf(el);
+      return t === 'română' || t === 'romana' || t === 'romanian';
+    };
+
+    for (let step = 0; step < 24; step++) {
+      const items = [...document.querySelectorAll(selectors)].filter(isVisible);
+      const match = items.find(isRomanian);
+      if (match) return match;
+
+      const scrollTarget = items.map(scrollableAncestor).find(Boolean);
+
+      if (scrollTarget) {
+        scrollTarget.scrollTop += Math.max(
+          250,
+          Math.floor(scrollTarget.clientHeight * 0.7)
+        );
+      } else {
+        window.scrollBy(0, Math.max(250, Math.floor(window.innerHeight * 0.7)));
+      }
+
+      await sleep(POLL_MS);
+    }
+
+    return null;
+  }
+
+  async function openSubtitlesMenu() {
+    const settings = findSettingsButton();
+    if (!click(settings)) return false;
+
+    await sleep(200);
+
+    const subtitles = await waitFor(() => findMenuItem(t =>
+      t.includes('subtitles') ||
+      t.includes('captions') ||
+      t.includes('subtitr')
+    ));
+
+    if (!click(subtitles)) return false;
+    await sleep(200);
+
+    return true;
+  }
+
+  async function applyRomanian() {
+    if (captionsAreOn()) {
+      log('Subtitrările sunt deja activate.');
+    } else {
+      sendCaptionShortcut();
+      await sleep(700);
+
+      if (!captionsAreOn()) {
+        const cc = findCaptionsButton();
+        if (cc) click(cc);
+        await sleep(400);
+      }
+    }
+
+    for (let attempt = 0; attempt < LANG_ATTEMPTS; attempt++) {
+      if (!(await openSubtitlesMenu())) {
+        await sleep(300);
+        continue;
+      }
+
+      const autoTranslate = await waitFor(() => findMenuItem(t =>
+        t.includes('auto-translate') ||
+        t.includes('translate automatically') ||
+        t.includes('traducere automată') ||
+        t.includes('traduce automat')
+      ));
+
+      if (!click(autoTranslate)) {
+        click(findSettingsButton());
+        await sleep(300);
+        continue;
+      }
+
+      await sleep(250);
+
+      const language = await findRomanianLanguage();
+      if (click(language)) {
+        await sleep(800);
+        click(findSettingsButton());
+        log('Am selectat română.');
+        return true;
+      }
+
+      click(findSettingsButton());
+      await sleep(300);
+    }
+
+    log('Nu am reușit să selectez româna pentru acest videoclip.');
+    return false;
+  }
+
+  async function runForCurrentVideo() {
+    const id = videoId();
+    if (!id || running || attemptedVideos.has(id)) return;
+
+    running = true;
+    attemptedVideos.add(id);
+
+    try {
+      await sleep(1500);
+      if (id === videoId()) await applyRomanian();
+    } catch (e) {
+      log('Eroare:', e);
+    } finally {
+      running = false;
+    }
+  }
+
+  function checkVideo() {
+    runForCurrentVideo();
+  }
+
+  // Detectează schimbările de videoclip în navigarea YouTube fără reîncărcare.
+  for (const method of ['pushState', 'replaceState']) {
+    const original = history[method];
+    history[method] = function (...args) {
+      const result = original.apply(this, args);
+      setTimeout(checkVideo, 1200);
+      return result;
+    };
+  }
+
+  window.addEventListener('popstate', () => setTimeout(checkVideo, 1200));
+  setTimeout(checkVideo, 1800);
+
+  // Gestionarea dialogului Kids pe desktop. Apasă doar un buton cu text potrivit.
+  function isDesktop() {
+    const mobileUA = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+    return location.hostname !== 'm.youtube.com' &&
+      !mobileUA &&
+      window.matchMedia('(min-width: 768px)').matches;
+  }
+
+  function handleKidsDialog() {
+    if (!isDesktop()) return;
+
+    const dialogs = document.querySelectorAll(
+      'tp-yt-paper-dialog.ytd-popup-container, [role="dialog"]'
+    );
+
+    const acceptedText =
+      /\b(ok|okay|got it|continue|close|dismiss|închide|am înțeles|continuă)\b/i;
+
+    for (const dialog of dialogs) {
+      if (!isVisible(dialog)) continue;
+
+      const buttons = [...dialog.querySelectorAll(
+        'button, [role="button"], tp-yt-paper-button'
+      )].filter(isVisible);
+
+      const target = buttons.find(el => acceptedText.test(textOf(el)));
+      if (target) {
+        click(target);
+        log('Am apăsat butonul de confirmare din dialog.');
+        return;
+      }
+    }
+  }
+
+  let dialogTimer;
+  new MutationObserver(() => {
+    clearTimeout(dialogTimer);
+    dialogTimer = setTimeout(handleKidsDialog, 200);
+  }).observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style', 'class', 'hidden']
+  });
+
+  window.addEventListener('resize', handleKidsDialog);
+})();

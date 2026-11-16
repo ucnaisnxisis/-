@@ -1,0 +1,44 @@
+// ==UserScript==
+// @name         Dark Reader - tema #1b1b1b
+// @namespace    local
+// @version      1.0.0
+// @description  Aplică tema Dark Reader cu fundal antracit și păstrează imaginile în culorile lor.
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// @require      https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const THEME = {
+    mode: 1,
+    brightness: 100,
+    contrast: 90,
+    sepia: 0,
+    darkSchemeBackgroundColor: '#1b1b1b',
+    darkSchemeTextColor: '#e8e8e8',
+    lightSchemeBackgroundColor: '#1b1b1b',
+    lightSchemeTextColor: '#e8e8e8'
+  };
+
+  function toggle() {
+    if (DarkReader.isEnabled()) {
+      DarkReader.disable();
+    } else {
+      DarkReader.enable(THEME);
+    }
+  }
+
+  // Alt+Shift+D comută tema.
+  window.addEventListener('keydown', event => {
+    if (event.altKey && event.shiftKey && event.key.toLowerCase() === 'd') {
+      event.preventDefault();
+      toggle();
+    }
+  }, true);
+
+  // Activează tema după ce pagina începe să se încarce.
+  DarkReader.enable(THEME);
+})();

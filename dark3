@@ -1,0 +1,216 @@
+// ==UserScript==
+// @name         Dark Mode — 3 moduri
+// @namespace    local.darkmode
+// @version      3.0.0
+// @description  Trei moduri de temă întunecată, selectabile prin scurtături.
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// @require      https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js
+// ==/UserScript==
+
+(() => {
+    'use strict';
+
+    const STORAGE_KEY = 'tm-dark-mode-selected';
+    const MARK = 'data-tm-dark-bg';
+
+    // Modul 1: DarkReader pe toate site-urile.
+    const THEME = {
+        mode: 1,
+        brightness: 100,
+        contrast: 90,
+        sepia: 0,
+        darkSchemeBackgroundColor: '#1b1b1b',
+        darkSchemeTextColor: '#e8e8e8',
+        lightSchemeBackgroundColor: '#1b1b1b',
+        lightSchemeTextColor: '#e8e8e8'
+    };
+
+    // Modul 2: stil întunecat agresiv, numai pe aceste domenii.
+    const MODE_2_HOSTS = [
+        'porngameshub.com',
+        'itch.io',
+        'www.accuweather.com',
+        'www.meteoblue.com',
+        'meteofor.ro',
+        'ziare.com',
+        'www.biziday.ro',
+        'newsweek.ro',
+        'www.ziuanews.ro',
+        'www.capital.ro',
+        'www.e-politic.ro',
+        'video.mediafax.ro',
+        'www.xda-developers.com'
+    ];
+
+    // Modul 3: întunecă selectiv fundalurile deschise pe aceste domenii.
+    const MODE_3_HOSTS = [
+        'libertatea.ro'
+    ];
+
+    const host = location.hostname.toLowerCase();
+
+    function matchesHost(domains) {
+        return domains.some(domain =>
+            host === domain || host.endsWith('.' + domain)
+        );
+    }
+
+    let mode = Number(localStorage.getItem(STORAGE_KEY) ?? '1');
+    if (![0, 1, 2, 3].includes(mode)) mode = 1;
+
+    let mode2Style = null;
+    let mode2Observer = null;
+    let mode3Observer = null;
+
+    const MODE_2_CSS = `
+        :root {
+            color-scheme: dark !important;
+            background: #111 !important;
+            color: #eee !important;
+        }
+        html, body {
+            background: #111 !important;
+            background-color: #111 !important;
+            color: #eee !important;
+        }
+        body * { border-color: #444 !important; }
+        body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #e5e5e5 !important;
+            background-color: transparent !important;
+        }
+        body, main, article, section, header, footer, nav, aside,
+        [role="main"], [role="dialog"], .container, .content, .card,
+        .panel, .modal, .dropdown-menu, .popover {
+            background-color: #171717 !important;
+        }
+        input, textarea, select, button {
+            background: #252525 !important;
+            color: #f2f2f2 !important;
+            border: 1px solid #555 !important;
+        }
+        input::placeholder, textarea::placeholder { color: #aaa !important; }
+        a, a * { color: #8ab4f8 !important; }
+        img, video, canvas, iframe, svg, picture {
+            background-color: transparent !important;
+        }
+        table, th, td, hr { border-color: #444 !important; }
+        ::selection { background: #345780 !important; color: #fff !important; }
+    `;
+
+    function isLightBackground(color) {
+        const values = color.match(/[\\d.]+/g);
+        if (!values || values.length < 3) return false;
+
+        const [r, g, b] = values.slice(0, 3).map(Number);
+        const alpha = values.length >= 4 ? Number(values[3]) : 1;
+        if (alpha < 0.15) return false;
+
+        return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 155;
+    }
+
+    function isMediaOrInsideMedia(el) {
+        return el.matches(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ) || Boolean(el.closest(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ));
+    }
+
+    function darkenElement(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
+
+        if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            el.setAttribute(MARK, '1');
+            el.style.setProperty('background-color', '#202124', 'important');
+        }
+    }
+
+    function scan(root) {
+        if (root instanceof Element) darkenElement(root);
+        root.querySelectorAll?.('*').forEach(darkenElement);
+    }
+
+    function clearMode3Marks() {
+        document.querySelectorAll(`[${MARK}]`).forEach(el => {
+            el.style.removeProperty('background-color');
+            el.removeAttribute(MARK);
+        });
+    }
+
+    function stopModes() {
+        if (window.DarkReader?.isEnabled()) DarkReader.disable();
+
+        mode2Observer?.disconnect();
+        mode2Observer = null;
+        mode2Style?.remove();
+        mode2Style = null;
+
+        mode3Observer?.disconnect();
+        mode3Observer = null;
+        clearMode3Marks();
+    }
+
+    function applyMode() {
+        stopModes();
+
+        if (mode === 1) {
+            DarkReader.enable(THEME);
+        } else if (mode === 2 && matchesHost(MODE_2_HOSTS)) {
+            mode2Style = document.createElement('style');
+            mode2Style.id = 'tm-aggressive-dark-mode';
+            mode2Style.textContent = MODE_2_CSS;
+            (document.head || document.documentElement).appendChild(mode2Style);
+
+            mode2Observer = new MutationObserver(() => {
+                if (!document.getElementById('tm-aggressive-dark-mode')) {
+                    (document.head || document.documentElement).appendChild(mode2Style);
+                }
+            });
+            mode2Observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        } else if (mode === 3 && matchesHost(MODE_3_HOSTS)) {
+            scan(document.documentElement);
+
+            mode3Observer = new MutationObserver(records => {
+                for (const record of records) {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) scan(node);
+                    }
+                }
+            });
+            mode3Observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        }
+    }
+
+    function setMode(nextMode) {
+        mode = nextMode;
+        localStorage.setItem(STORAGE_KEY, String(mode));
+        applyMode();
+    }
+
+    applyMode();
+
+    // Alt+Shift+1/2/3 selectează modul; 0 oprește tema; D parcurge modurile.
+    window.addEventListener('keydown', event => {
+        if (!event.altKey || !event.shiftKey) return;
+
+        const key = event.key.toLowerCase();
+        if (['0', '1', '2', '3', 'd'].includes(key)) {
+            event.preventDefault();
+
+            if (key === 'd') {
+                setMode(mode === 3 ? 0 : mode + 1);
+            } else {
+                setMode(Number(key));
+            }
+        }
+    }, true);
+})();

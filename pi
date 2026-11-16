@@ -93,9 +93,7 @@ www.redditstatic.com
 revcontent.com
 assets.revcontent.com
 soma.smaato.net
-soundcloud.com
 ads.soundcloud.com
-spotify.com
 wl.spotify.com
 pixel.tapad.com
 widget.zemanta.com
@@ -236,7 +234,6 @@ s.pinimg.com
 app-measurement.com
 clevertap-prod.com
 crypto-loot.org
-is.com
 jsecoin.com
 shareasale-analytics.com
 tapad.com
@@ -422,7 +419,6 @@ cdn-test.mouseflow.com
 gtm.mouseflow.com
 o2.mouseflow.com
 tools.mouseflow.com
-msn.com
 browser.events.data.msn.com
 mzstatic.com
 metrics.mzstatic.com
@@ -443,7 +439,6 @@ adservetx.media.net
 contextual.media.net
 static.media.net
 liftoff.io
-linkedin.com
 ads.linkedin.com
 dc.ads.linkedin.com
 px.ads.linkedin.com
@@ -611,7 +606,6 @@ ib.adnxs.com
 prebid.adnxs.com
 secure.adnxs.com
 sin3-ib.adnxs.com
-adobe.com
 metrics.adobe.com
 adobe.io
 analytics.adobe.io
@@ -635,7 +629,6 @@ c.amazon-adsystem.com
 ir-na.amazon-adsystem.com
 rcm-na.amazon-adsystem.com
 ws-na.amazon-adsystem.com
-amazon.com
 aan.amazon.com
 advertising-api-eu.amazon.com
 device-metrics-us.amazon.com
@@ -648,7 +641,6 @@ api2.amplitude.com
 analyticsengine.s3.amazonaws.com
 anrdoezrs.net
 www.anrdoezrs.net
-apple.com
 advertising.apple.com
 api-adservices.apple.com
 books-analytics-events.apple.com
@@ -666,7 +658,6 @@ app.appsflyer.com
 awin1.com
 www.awin1.com
 bidswitch.net
-bing.com
 bat.bing.com
 c.bing.com
 bluekai.com
@@ -701,8 +692,6 @@ clarity.ms
 c.clarity.ms
 s.clarity.ms
 clickadu.com
-cloudflare.com
-cdnjs.cloudflare.com
 cloudflareinsights.com
 static.cloudflareinsights.com
 coinimp.com

@@ -1,0 +1,82 @@
+// ==UserScript==
+// @name         Fundal întunecat selectiv
+// @namespace    local.dark-background
+// @version      1.0
+// @description  Întunecă fundalurile deschise fără să inverseze pozele și videoclipurile
+// @match        *://*/*
+// @run-at       document-end
+// @grant        none
+// ==/UserScript==
+
+(() => {
+    'use strict';
+
+    // Adaugă aici domeniile dorite, câte unul pe linie.
+    // Pentru subdomenii, scrie domeniul principal: exemplu.ro
+    const SITE_HOSTS = [
+        'libertatea.ro',
+        // 'exemplu.ro',
+        // 'alt-site.com',
+    ];
+
+    const host = location.hostname.toLowerCase();
+    const enabled = SITE_HOSTS.some(domain =>
+        host === domain || host.endsWith('.' + domain)
+    );
+
+    if (!enabled) return;
+
+    const MARK = 'data-tm-dark-bg';
+
+    function isLightBackground(color) {
+        const values = color.match(/[\d.]+/g);
+        if (!values || values.length < 3) return false;
+
+        const [r, g, b] = values.slice(0, 3).map(Number);
+        // Ignoră fundalurile aproape transparente.
+        const alpha = values.length >= 4 ? Number(values[3]) : 1;
+        if (alpha < 0.15) return false;
+
+        // Întunecă doar culorile deschise.
+        return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 155;
+    }
+
+    function isMediaOrInsideMedia(el) {
+        return el.matches(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ) || Boolean(el.closest(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ));
+    }
+
+    function darken(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
+
+        const bg = getComputedStyle(el).backgroundColor;
+        if (!isLightBackground(bg)) return;
+
+        el.setAttribute(MARK, '1');
+        el.style.setProperty('background-color', '#202124', 'important');
+    }
+
+    function scan(root) {
+        if (root instanceof Element) darken(root);
+        root.querySelectorAll?.('*').forEach(darken);
+    }
+
+    scan(document.documentElement);
+
+    const observer = new MutationObserver(records => {
+        for (const record of records) {
+            for (const node of record.addedNodes) {
+                if (node.nodeType === Node.ELEMENT_NODE) scan(node);
+            }
+        }
+    });
+
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true
+    });
+})();

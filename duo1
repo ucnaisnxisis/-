@@ -1210,7 +1210,7 @@ www.youtube.com###consent-text
 www.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-consent.youtube.com##form:nth-of-type(1)
+consent.youtube.com##form:nth-of-type(2)
 consent.youtube.com##.CqMh6b > div:nth-of-type(2)
 consent.youtube.com##.rjfsgd.K7564e
 consent.youtube.com###login-banner
@@ -4931,7 +4931,7 @@ www.youtube.com###consent-text
 www.youtube.com##+js(json-prune, overlay.cosentBumpV2Renderer)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 www.youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
-consent.youtube.com##form:nth-of-type(1)
+consent.youtube.com##form:nth-of-type(2)
 consent.youtube.com##.CqMh6b > div:nth-of-type(2)
 consent.youtube.com##.rjfsgd.K7564e
 consent.youtube.com###login-banner

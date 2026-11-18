@@ -24,7 +24,8 @@
         'www.capital.ro',
         'www.e-politic.ro',
         'video.mediafax.ro',
-        'www.xda-developers.com'
+        'www.xda-developers.com',
+        'cutremurromania.ro'
         // Adaugă domenii aici, de exemplu:
         // 'exemplu.ro',
     ];

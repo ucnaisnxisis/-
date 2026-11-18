@@ -610,3 +610,12 @@ www.treehousetv.com###notificationBar
 www.vietnam.vn##.flex.justify-between.items-center.my-4
 www.ytv.com##[href="https://www.corusent.com/privacy-policy/"]
 www.ziaruldeiasi.ro##[src="https://www.ziaruldeiasi.ro/wp-content/themes/ziarul-de-iasi/images/icon_whatsapp.svg"][alt=""]
+liceunet.ro##._webbookRating_6yryk_149
+limbaromana.net##[href="https://limbaromana.net/politica-de-confidentialitate/"]
+ro.xhamster.com##[href="https://ro.xhamster.com/info/cookie-policy"]
+wwwfuq.com##.bottom-1
+wwwfuq.com##.videoDetailBlock
+pornhub.com##div.videoDetailsBlock > div
+pornhub.com##span:nth-of-type(3)
+www.xnxx.com##.thumb-inside > .qtt
+xgroovy.com##.rating

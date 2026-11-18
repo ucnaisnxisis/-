@@ -1,0 +1,305 @@
+// ==UserScript==
+// @name         YouTube: etichete colorate personalizabile
+// @namespace    local.youtube.labels
+// @version      2.6
+// @description  Etichetează rezultatele, recomandările și cardurile din playlist YouTube.
+// @match        https://www.youtube.com/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  "use strict";
+
+  const KIDS_KEYWORDS = [
+    "kid",
+    "kids",
+    "cartoon",
+    "nursery",
+    "jucării"
+  ];
+
+  const ADULT_KEYWORDS = [
+    "hentai",
+    "porno",
+    "porn",
+    "sex",
+    "sexy",
+    "orgasm",
+    "sex-shop",
+    "sex shop",
+    "prezervativ",
+    "erotic",
+    "erotica",
+    "erotică",
+    "nud",
+    "nuditate",
+    "nude",
+    "nudes",
+    "striptease",
+    "onlyfans",
+    "bdsm",
+    "escort",
+    "prostituție",
+    "prostitute",
+    "blowjob",
+    "masturbare",
+    "masturbation",
+    "vibrator",
+    "dildo"
+  ];
+
+  // Potrivirea acestor termeni elimină eticheta „TOATĂ LUMEA”,
+  // dacă videoclipul nu se potrivește altei categorii.
+  const NO_EVERYONE_KEYWORDS = [
+    // Exemplu: "trailer", "teaser"
+  ];
+
+  const CUSTOM_CATEGORIES = [
+    {
+      label: "OTAKU",
+      keywords: [],
+      color: "#E83E9B"
+    },
+    {
+      label: "CATEGORIA MEA 1",
+      keywords: [],
+      color: "#7B2CBF"
+    },
+    {
+      label: "CATEGORIA MEA 2",
+      keywords: [],
+      color: "#008C95"
+    },
+    {
+      label: "CATEGORIA MEA 3",
+      keywords: [],
+      color: "#E67E22"
+    }
+  ];
+
+  // Include carduri noi, recomandări, elemente din playlist și formatul vechi.
+  const CARD_SELECTOR = [
+    "yt-lockup-view-model",
+    "ytd-playlist-panel-video-renderer",
+    "ytd-rich-item-renderer",
+    "ytd-video-renderer",
+    "ytd-grid-video-renderer",
+    "ytd-compact-video-renderer",
+    "ytd-playlist-video-renderer",
+    "ytd-reel-item-renderer"
+  ].join(",");
+
+  const STYLE_ID = "yt-category-label-style";
+  const BLUR_DELAY_MS = 3000;
+  const ADULT_COLOR = "#001A8B";
+  const blurStates = new WeakMap();
+  let updateQueued = false;
+
+  function addStyles() {
+    if (document.getElementById(STYLE_ID)) return;
+
+    const style = document.createElement("style");
+    style.id = STYLE_ID;
+    style.textContent = `
+      .yt-category-label {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 99999;
+        padding: 5px 8px;
+        border-radius: 4px;
+        color: #fff;
+        font: bold 12px/1.2 sans-serif;
+        text-shadow: 0 1px 2px #000;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function matchesKeyword(text, keywords) {
+    return keywords.some(item => {
+      const word = String(item).trim().toLowerCase();
+      return word && text.includes(word);
+    });
+  }
+
+  function getCardText(card) {
+    return (card.innerText || card.textContent || "").toLowerCase();
+  }
+
+  function getThumbnail(card) {
+    // Selectori pentru miniaturi în formate YouTube noi și vechi.
+    return card.querySelector([
+      "ytd-thumbnail",
+      "yt-thumbnail-view-model",
+      "#thumbnail",
+      "a#thumbnail"
+    ].join(",")) || card.querySelector("img");
+  }
+
+  function getBlurSignature(thumbnail) {
+    const elements = [thumbnail, ...thumbnail.querySelectorAll("*")];
+
+    for (const element of elements) {
+      const filter = getComputedStyle(element).filter || "";
+      const classNames =
+        typeof element.className === "string" ? element.className : "";
+
+      if (
+        /\bblur\s*\(/i.test(filter) ||
+        /\bblur(red)?\b/i.test(classNames)
+      ) {
+        const image = element.matches("img")
+          ? element
+          : element.querySelector("img");
+        const src = image?.currentSrc || image?.src || "";
+        return `${src}|${filter}|${classNames}`;
+      }
+    }
+
+    return null;
+  }
+
+  function blurConfirmed(thumbnail, card) {
+    const signature = getBlurSignature(thumbnail);
+    let state = blurStates.get(thumbnail);
+
+    if (!signature) {
+      if (state?.timer) clearTimeout(state.timer);
+      blurStates.delete(thumbnail);
+      return false;
+    }
+
+    if (!state || state.signature !== signature) {
+      if (state?.timer) clearTimeout(state.timer);
+
+      state = {
+        signature,
+        start: Date.now(),
+        confirmed: false,
+        timer: null
+      };
+      blurStates.set(thumbnail, state);
+
+      state.timer = setTimeout(() => {
+        if (
+          blurStates.get(thumbnail) === state &&
+          getBlurSignature(thumbnail) === signature &&
+          thumbnail.isConnected
+        ) {
+          state.confirmed = true;
+          labelCard(card);
+        }
+      }, BLUR_DELAY_MS);
+
+      return false;
+    }
+
+    if (Date.now() - state.start >= BLUR_DELAY_MS) {
+      state.confirmed = true;
+    }
+
+    return state.confirmed;
+  }
+
+  function getCategory(card, thumbnail) {
+    const text = getCardText(card);
+
+    if (blurConfirmed(thumbnail, card)) {
+      return { label: "18+", color: ADULT_COLOR };
+    }
+
+    if (matchesKeyword(text, ADULT_KEYWORDS)) {
+      return { label: "18+", color: ADULT_COLOR };
+    }
+
+    if (matchesKeyword(text, KIDS_KEYWORDS)) {
+      return { label: "COPII", color: "#D60000" };
+    }
+
+    for (const category of CUSTOM_CATEGORIES) {
+      if (matchesKeyword(text, category.keywords)) {
+        return { label: category.label, color: category.color };
+      }
+    }
+
+    if (matchesKeyword(text, NO_EVERYONE_KEYWORDS)) {
+      return { skip: true };
+    }
+
+    return {
+      label: "TOATĂ LUMEA",
+      color: "#FFD700",
+      darkText: true
+    };
+  }
+
+  function labelCard(card) {
+    if (!card.isConnected) return;
+
+    const thumbnail = getThumbnail(card);
+    if (!thumbnail) return;
+
+    const category = getCategory(card, thumbnail);
+    const oldBadge = thumbnail.querySelector(".yt-category-label");
+
+    if (category.skip) {
+      oldBadge?.remove();
+      thumbnail.style.outline = "";
+      return;
+    }
+
+    if (
+      oldBadge?.dataset.label === category.label &&
+      oldBadge?.dataset.color === category.color
+    ) {
+      return;
+    }
+
+    oldBadge?.remove();
+    thumbnail.style.position = "relative";
+
+    const badge = document.createElement("span");
+    badge.className = "yt-category-label";
+    badge.textContent = category.label;
+    badge.dataset.label = category.label;
+    badge.dataset.color = category.color;
+    badge.style.backgroundColor = category.color;
+
+    if (category.darkText) {
+      badge.style.color = "#111";
+      badge.style.textShadow = "none";
+    }
+
+    thumbnail.appendChild(badge);
+    thumbnail.style.outline = `4px solid ${category.color}`;
+  }
+
+  function updateAll() {
+    updateQueued = false;
+    addStyles();
+    document.querySelectorAll(CARD_SELECTOR).forEach(labelCard);
+  }
+
+  function queueUpdate() {
+    if (updateQueued) return;
+    updateQueued = true;
+    requestAnimationFrame(updateAll);
+  }
+
+  addStyles();
+  updateAll();
+
+  new MutationObserver(queueUpdate).observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ["class", "style", "src"]
+  });
+
+  window.addEventListener("yt-navigate-finish", queueUpdate);
+  window.addEventListener("popstate", queueUpdate);
+  setInterval(queueUpdate, 2000);
+})();

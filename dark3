@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Dark Mode — 3 moduri
+// @name         Dark Mode automat — 3 moduri
 // @namespace    local.darkmode
-// @version      3.0.0
-// @description  Trei moduri de temă întunecată, selectabile prin scurtături.
+// @version      4.0.0
+// @description  Alege automat tema întunecată în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
 // @grant        none
@@ -12,10 +12,10 @@
 (() => {
     'use strict';
 
-    const STORAGE_KEY = 'tm-dark-mode-selected';
     const MARK = 'data-tm-dark-bg';
+    const originalBackgrounds = new Map();
 
-    // Modul 1: DarkReader pe toate site-urile.
+    // Modul 1: DarkReader pentru toate site-urile care nu apar în listele speciale.
     const THEME = {
         mode: 1,
         brightness: 100,
@@ -27,7 +27,7 @@
         lightSchemeTextColor: '#e8e8e8'
     };
 
-    // Modul 2: stil întunecat agresiv, numai pe aceste domenii.
+    // Modul 2: stil întunecat agresiv pentru aceste domenii.
     const MODE_2_HOSTS = [
         'porngameshub.com',
         'itch.io',
@@ -44,25 +44,10 @@
         'www.xda-developers.com'
     ];
 
-    // Modul 3: întunecă selectiv fundalurile deschise pe aceste domenii.
+    // Modul 3: întunecă selectiv fundalurile deschise pentru aceste domenii.
     const MODE_3_HOSTS = [
         'libertatea.ro'
     ];
-
-    const host = location.hostname.toLowerCase();
-
-    function matchesHost(domains) {
-        return domains.some(domain =>
-            host === domain || host.endsWith('.' + domain)
-        );
-    }
-
-    let mode = Number(localStorage.getItem(STORAGE_KEY) ?? '1');
-    if (![0, 1, 2, 3].includes(mode)) mode = 1;
-
-    let mode2Style = null;
-    let mode2Observer = null;
-    let mode3Observer = null;
 
     const MODE_2_CSS = `
         :root {
@@ -70,41 +55,76 @@
             background: #111 !important;
             color: #eee !important;
         }
+
         html, body {
             background: #111 !important;
             background-color: #111 !important;
             color: #eee !important;
         }
-        body * { border-color: #444 !important; }
+
+        body * {
+            border-color: #444 !important;
+        }
+
         body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
             color: #e5e5e5 !important;
             background-color: transparent !important;
         }
+
         body, main, article, section, header, footer, nav, aside,
         [role="main"], [role="dialog"], .container, .content, .card,
         .panel, .modal, .dropdown-menu, .popover {
             background-color: #171717 !important;
         }
+
         input, textarea, select, button {
             background: #252525 !important;
             color: #f2f2f2 !important;
             border: 1px solid #555 !important;
         }
-        input::placeholder, textarea::placeholder { color: #aaa !important; }
-        a, a * { color: #8ab4f8 !important; }
+
+        input::placeholder, textarea::placeholder {
+            color: #aaa !important;
+        }
+
+        a, a * {
+            color: #8ab4f8 !important;
+        }
+
         img, video, canvas, iframe, svg, picture {
             background-color: transparent !important;
         }
-        table, th, td, hr { border-color: #444 !important; }
-        ::selection { background: #345780 !important; color: #fff !important; }
+
+        table, th, td, hr {
+            border-color: #444 !important;
+        }
+
+        ::selection {
+            background: #345780 !important;
+            color: #fff !important;
+        }
     `;
 
+    const host = location.hostname.toLowerCase();
+
+    function matchesHost(domains) {
+        const normalize = value => value.toLowerCase().replace(/^www\./, '');
+        const currentHost = normalize(host);
+
+        return domains.some(domain => {
+            const normalizedDomain = normalize(domain);
+            return currentHost === normalizedDomain ||
+                currentHost.endsWith('.' + normalizedDomain);
+        });
+    }
+
     function isLightBackground(color) {
-        const values = color.match(/[\\d.]+/g);
+        const values = color.match(/[\d.]+/g);
         if (!values || values.length < 3) return false;
 
         const [r, g, b] = values.slice(0, 3).map(Number);
         const alpha = values.length >= 4 ? Number(values[3]) : 1;
+
         if (alpha < 0.15) return false;
 
         return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 155;
@@ -123,94 +143,96 @@
         if (isMediaOrInsideMedia(el)) return;
 
         if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            originalBackgrounds.set(el, {
+                value: el.style.getPropertyValue('background-color'),
+                priority: el.style.getPropertyPriority('background-color')
+            });
+
             el.setAttribute(MARK, '1');
             el.style.setProperty('background-color', '#202124', 'important');
         }
     }
 
     function scan(root) {
-        if (root instanceof Element) darkenElement(root);
+        if (root instanceof Element) {
+            darkenElement(root);
+        }
+
         root.querySelectorAll?.('*').forEach(darkenElement);
     }
 
     function clearMode3Marks() {
         document.querySelectorAll(`[${MARK}]`).forEach(el => {
-            el.style.removeProperty('background-color');
+            const original = originalBackgrounds.get(el);
+
+            if (original?.value) {
+                el.style.setProperty(
+                    'background-color',
+                    original.value,
+                    original.priority
+                );
+            } else {
+                el.style.removeProperty('background-color');
+            }
+
+            originalBackgrounds.delete(el);
             el.removeAttribute(MARK);
         });
     }
 
-    function stopModes() {
-        if (window.DarkReader?.isEnabled()) DarkReader.disable();
-
-        mode2Observer?.disconnect();
-        mode2Observer = null;
-        mode2Style?.remove();
-        mode2Style = null;
-
-        mode3Observer?.disconnect();
-        mode3Observer = null;
-        clearMode3Marks();
-    }
-
     function applyMode() {
-        stopModes();
+        const useMode2 = matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode2 && matchesHost(MODE_3_HOSTS);
 
-        if (mode === 1) {
-            DarkReader.enable(THEME);
-        } else if (mode === 2 && matchesHost(MODE_2_HOSTS)) {
-            mode2Style = document.createElement('style');
-            mode2Style.id = 'tm-aggressive-dark-mode';
-            mode2Style.textContent = MODE_2_CSS;
-            (document.head || document.documentElement).appendChild(mode2Style);
+        if (useMode2) {
+            const style = document.createElement('style');
+            style.id = 'tm-aggressive-dark-mode';
+            style.textContent = MODE_2_CSS;
 
-            mode2Observer = new MutationObserver(() => {
+            (document.head || document.documentElement).appendChild(style);
+
+            const observer = new MutationObserver(() => {
                 if (!document.getElementById('tm-aggressive-dark-mode')) {
-                    (document.head || document.documentElement).appendChild(mode2Style);
+                    (document.head || document.documentElement).appendChild(style);
                 }
             });
-            mode2Observer.observe(document.documentElement, {
+
+            observer.observe(document.documentElement, {
                 childList: true,
                 subtree: true
             });
-        } else if (mode === 3 && matchesHost(MODE_3_HOSTS)) {
+
+            return;
+        }
+
+        if (useMode3) {
             scan(document.documentElement);
 
-            mode3Observer = new MutationObserver(records => {
+            const observer = new MutationObserver(records => {
                 for (const record of records) {
                     for (const node of record.addedNodes) {
-                        if (node.nodeType === Node.ELEMENT_NODE) scan(node);
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scan(node);
+                        }
                     }
                 }
             });
-            mode3Observer.observe(document.documentElement, {
+
+            observer.observe(document.documentElement, {
                 childList: true,
                 subtree: true
             });
+
+            return;
         }
+
+        // Modul 1: metoda implicită pe toate celelalte site-uri.
+        DarkReader.enable(THEME);
     }
 
-    function setMode(nextMode) {
-        mode = nextMode;
-        localStorage.setItem(STORAGE_KEY, String(mode));
+    if (document.documentElement) {
         applyMode();
+    } else {
+        document.addEventListener('DOMContentLoaded', applyMode, { once: true });
     }
-
-    applyMode();
-
-    // Alt+Shift+1/2/3 selectează modul; 0 oprește tema; D parcurge modurile.
-    window.addEventListener('keydown', event => {
-        if (!event.altKey || !event.shiftKey) return;
-
-        const key = event.key.toLowerCase();
-        if (['0', '1', '2', '3', 'd'].includes(key)) {
-            event.preventDefault();
-
-            if (key === 'd') {
-                setMode(mode === 3 ? 0 : mode + 1);
-            } else {
-                setMode(Number(key));
-            }
-        }
-    }, true);
 })();

@@ -41,12 +41,22 @@
         'www.capital.ro',
         'www.e-politic.ro',
         'video.mediafax.ro',
-        'www.xda-developers.com'
+        'www.xda-developers.com',
+        'orchard.tomathouse.com',
+        'www.emag.ro',
+        'www.marcoser.ro'
     ];
 
     // Modul 3: întunecă selectiv fundalurile deschise pentru aceste domenii.
     const MODE_3_HOSTS = [
-        'libertatea.ro'
+        'libertatea.ro',
+        'www.allergyzen.ro',
+        'www.polti.ro',
+        'www.patulmeu.ro',
+        'www.agrinin.ro',
+        'www.plaiurimioritice.ro',
+        'www.academia.edu',
+        'www.cel.ro'
     ];
 
     const MODE_2_CSS = `

@@ -1,0 +1,37 @@
+// ==UserScript==
+// @name         YouTube — ascunde rafturile Shorts
+// @namespace    local.youtube.hide-shorts
+// @version      2.0.0
+// @description  Ascunde rafturile și cardurile Shorts din YouTube
+// @match        https://www.youtube.com/*
+// @match        https://m.youtube.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const style = document.createElement('style');
+  style.textContent = `
+    /* Rafturi Shorts, inclusiv cele din rezultatele căutării */
+    ytd-reel-shelf-renderer,
+    ytm-reel-shelf-renderer,
+    ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+    ytd-rich-section-renderer:has(a[href^="/shorts/"]),
+    ytd-item-section-renderer:has(ytd-reel-shelf-renderer),
+    ytd-item-section-renderer:has(a[href^="/shorts/"]) {
+      display: none !important;
+    }
+
+    /* Carduri Shorts individuale, dacă apar în alte liste */
+    ytd-rich-item-renderer:has(a[href^="/shorts/"]),
+    ytd-video-renderer:has(a[href^="/shorts/"]),
+    ytd-grid-video-renderer:has(a[href^="/shorts/"]),
+    ytm-video-with-context-renderer:has(a[href^="/shorts/"]) {
+      display: none !important;
+    }
+  `;
+
+  (document.documentElement || document).appendChild(style);
+})();

@@ -49,7 +49,7 @@
 
     // Modul 3: întunecă selectiv fundalurile deschise pentru aceste domenii.
     const MODE_3_HOSTS = [
-        'libertatea.ro',
+        'www.libertatea.ro',
         'www.allergyzen.ro',
         'www.polti.ro',
         'www.patulmeu.ro',

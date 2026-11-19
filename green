@@ -1,0 +1,231 @@
+// ==UserScript==
+// @name         Dark Green Mode automat — 3 moduri
+// @namespace    local.darkgreenmode
+// @version      1.0.0
+// @description  Alege automat tema verde închis în funcție de site.
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// @require      https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js
+// ==/UserScript==
+
+(() => {
+    'use strict';
+
+    const MARK = 'data-tm-darkgreen-bg';
+    const originalBackgrounds = new Map();
+
+    const GREEN = '#123524';
+
+    // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
+    const THEME = {
+        mode: 1,
+        brightness: 100,
+        contrast: 90,
+        sepia: 0,
+        darkSchemeBackgroundColor: GREEN,
+        darkSchemeTextColor: '#e5f0e8',
+        lightSchemeBackgroundColor: GREEN,
+        lightSchemeTextColor: '#e5f0e8'
+    };
+
+    // Modul 2: stil verde închis aplicat agresiv acestor domenii.
+    const MODE_2_HOSTS = [
+        'porngameshub.com',
+        'itch.io',
+        'www.accuweather.com',
+        'www.meteoblue.com',
+        'meteofor.ro',
+        'ziare.com',
+        'www.biziday.ro',
+        'newsweek.ro',
+        'www.ziuanews.ro',
+        'www.capital.ro',
+        'www.e-politic.ro',
+        'video.mediafax.ro',
+        'www.xda-developers.com',
+        'orchard.tomathouse.com',
+        'www.emag.ro',
+        'www.marcoser.ro'
+    ];
+
+    // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
+    const MODE_3_HOSTS = [
+        'www.libertatea.ro',
+        'www.allergyzen.ro',
+        'www.polti.ro',
+        'www.patulmeu.ro',
+        'www.agrinin.ro',
+        'www.plaiurimioritice.ro',
+        'www.academia.edu',
+        'www.cel.ro'
+    ];
+
+    const MODE_2_CSS = `
+        :root {
+            color-scheme: dark !important;
+            background: ${GREEN} !important;
+            color: #e5f0e8 !important;
+        }
+
+        html, body {
+            background: ${GREEN} !important;
+            background-color: ${GREEN} !important;
+            color: #e5f0e8 !important;
+        }
+
+        body * {
+            border-color: #426552 !important;
+        }
+
+        body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #e5f0e8 !important;
+            background-color: transparent !important;
+        }
+
+        body, main, article, section, header, footer, nav, aside,
+        [role="main"], [role="dialog"], .container, .content, .card,
+        .panel, .modal, .dropdown-menu, .popover {
+            background-color: #1b4430 !important;
+        }
+
+        input, textarea, select, button {
+            background: #28543d !important;
+            color: #f0f7f2 !important;
+            border: 1px solid #668774 !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #b6c9bb !important;
+        }
+
+        a, a * {
+            color: #a5e6b7 !important;
+        }
+
+        img, video, canvas, iframe, svg, picture {
+            background-color: transparent !important;
+        }
+
+        table, th, td, hr {
+            border-color: #426552 !important;
+        }
+
+        ::selection {
+            background: #397653 !important;
+            color: #fff !important;
+        }
+    `;
+
+    const host = location.hostname.toLowerCase();
+
+    function matchesHost(domains) {
+        const normalize = value => value.toLowerCase().replace(/^www\./, '');
+        const currentHost = normalize(host);
+
+        return domains.some(domain => {
+            const normalizedDomain = normalize(domain);
+            return currentHost === normalizedDomain ||
+                currentHost.endsWith('.' + normalizedDomain);
+        });
+    }
+
+    function isLightBackground(color) {
+        const values = color.match(/[\\d.]+/g);
+        if (!values || values.length < 3) return false;
+
+        const [r, g, b] = values.slice(0, 3).map(Number);
+        const alpha = values.length >= 4 ? Number(values[3]) : 1;
+
+        if (alpha < 0.15) return false;
+
+        return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 155;
+    }
+
+    function isMediaOrInsideMedia(el) {
+        return el.matches(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ) || Boolean(el.closest(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ));
+    }
+
+    function colorLightBackground(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
+
+        if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            originalBackgrounds.set(el, {
+                value: el.style.getPropertyValue('background-color'),
+                priority: el.style.getPropertyPriority('background-color')
+            });
+
+            el.setAttribute(MARK, '1');
+            el.style.setProperty('background-color', GREEN, 'important');
+        }
+    }
+
+    function scan(root) {
+        if (root instanceof Element) {
+            colorLightBackground(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(colorLightBackground);
+    }
+
+    function applyMode() {
+        const useMode2 = matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode2 && matchesHost(MODE_3_HOSTS);
+
+        if (useMode2) {
+            const style = document.createElement('style');
+            style.id = 'tm-aggressive-darkgreen-mode';
+            style.textContent = MODE_2_CSS;
+
+            (document.head || document.documentElement).appendChild(style);
+
+            const observer = new MutationObserver(() => {
+                if (!document.getElementById('tm-aggressive-darkgreen-mode')) {
+                    (document.head || document.documentElement).appendChild(style);
+                }
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        if (useMode3) {
+            scan(document.documentElement);
+
+            const observer = new MutationObserver(records => {
+                for (const record of records) {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scan(node);
+                        }
+                    }
+                }
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        // Modul 1: tema implicită pentru toate celelalte site-uri.
+        DarkReader.enable(THEME);
+    }
+
+    if (document.documentElement) {
+        applyMode();
+    } else {
+        document.addEventListener('DOMContentLoaded', applyMode, { once: true });
+    }
+})();

@@ -33,6 +33,25 @@
     const MODE_2_HOSTS = [
         'porngameshub.com',
         'itch.io',
+        'www.xvideos.com',
+        'hanime.tv',
+        'hentaihaven.xxx',
+        'henvids.com',
+        'hentaiocean.com',
+        'e-hentai.org',
+        'hanime.red',
+        'www.fakku.net',
+        'hstream.moe',
+        'hentai2read.com',
+        'hentai.guru',
+        'www.hentai-foundry.com',
+        'myanimelist.net',
+        'haho.moe',
+        'hentai.io',
+        'www.porn.com',
+        'www.porndig.com',
+        'hentaihorizon.com',
+        'www.tiava.com',
         'www.accuweather.com',
         'www.meteoblue.com',
         'meteofor.ro',
@@ -46,7 +65,9 @@
         'www.xda-developers.com',
         'orchard.tomathouse.com',
         'www.emag.ro',
-        'www.marcoser.ro'
+        'www.marcoser.ro',
+        'www.libertatea.ro'
+        
     ];
 
     // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.

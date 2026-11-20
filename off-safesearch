@@ -1,0 +1,151 @@
+// ==UserScript==
+// @name         SafeSearch Off — motoare selectate
+// @namespace    local.safesearch.off
+// @version      1.1.0
+// @description  Cere SafeSearch dezactivat pe motoarele configurate și încearcă să-l dezactiveze din meniul Startpage.
+// @match        https://www.google.com/search*
+// @match        https://www.google.*/*
+// @match        https://www.bing.com/search*
+// @match        https://www.bing.com/images/search*
+// @match        https://www.bing.com/videos/search*
+// @match        https://www.bing.com/news/search*
+// @match        https://duckduckgo.com/*
+// @match        https://www.duckduckgo.com/*
+// @match        https://noai.duckduckgo.com/*
+// @match        https://search.brave.com/search*
+// @match        https://search.brave.com/images*
+// @match        https://search.brave.com/videos*
+// @match        https://search.brave.com/news*
+// @match        https://www.startpage.com/*
+// @match        https://startpage.com/*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const url = new URL(location.href);
+  const host = url.hostname.toLowerCase();
+  const path = url.pathname.toLowerCase();
+
+  let parameter = null;
+  let value = null;
+
+  // Google, inclusiv domenii localizate.
+  if (
+    /(^|\.)google\.[a-z.]+$/.test(host) &&
+    (path === '/search' || path === '/imgres')
+  ) {
+    parameter = 'safe';
+    value = 'off';
+  }
+
+  // Bing: web, imagini, video și știri.
+  else if (
+    host === 'www.bing.com' &&
+    /^\/(search|images\/search|videos\/search|news\/search)$/.test(path)
+  ) {
+    parameter = 'adlt';
+    value = 'off';
+  }
+
+  // DuckDuckGo.
+  else if (
+    host === 'duckduckgo.com' ||
+    host === 'www.duckduckgo.com' ||
+    host === 'noai.duckduckgo.com'
+  ) {
+    if (url.searchParams.has('q')) {
+      parameter = 'kp';
+      value = '-2';
+    }
+  }
+
+  // Brave Search.
+  else if (
+    host === 'search.brave.com' &&
+    /^\/(search|images|videos|news)$/.test(path)
+  ) {
+    parameter = 'safesearch';
+    value = 'off';
+  }
+
+  // Actualizează parametrul URL, dacă este necesar.
+  if (parameter && url.searchParams.get(parameter) !== value) {
+    url.searchParams.set(parameter, value);
+    location.replace(url.href);
+    return;
+  }
+
+  // Startpage: încearcă să aleagă „Off” din meniul Safe Search.
+  if (
+    (host === 'www.startpage.com' || host === 'startpage.com') &&
+    path.toLowerCase().includes('/search')
+  ) {
+    const norm = text =>
+      (text || '').replace(/\s+/g, ' ').trim().toLowerCase();
+
+    function findSafeSearchControl() {
+      const candidates = [...document.querySelectorAll(
+        'button, [role="button"], [aria-haspopup], [aria-label]'
+      )];
+
+      return candidates.find(el => {
+        const text = norm(
+          `${el.innerText || ''} ${el.getAttribute('aria-label') || ''}`
+        );
+
+        return text.includes('căutare sigură') ||
+               text.includes('safe search');
+      });
+    }
+
+    function findOffOption() {
+      const candidates = [...document.querySelectorAll(
+        '[role="option"], [role="menuitem"], [role="radio"], button, [role="button"]'
+      )];
+
+      return candidates.find(el =>
+        norm(el.innerText || el.textContent) === 'off'
+      );
+    }
+
+    function attempt() {
+      const control = findSafeSearchControl();
+      if (!control) return false;
+
+      const controlText = norm(
+        `${control.innerText || ''} ${control.getAttribute('aria-label') || ''}`
+      );
+
+      if (/\boff\b/.test(controlText)) {
+        console.info('[Startpage SafeSearch] Setarea pare deja Off.');
+        return true;
+      }
+
+      control.click();
+
+      setTimeout(() => {
+        const option = findOffOption();
+
+        if (option) {
+          option.click();
+          console.info('[Startpage SafeSearch] Am selectat „Off”.');
+        } else {
+          console.warn(
+            '[Startpage SafeSearch] Nu am găsit opțiunea „Off”.'
+          );
+        }
+      }, 300);
+
+      return true;
+    }
+
+    let attempts = 0;
+    const timer = setInterval(() => {
+      attempts++;
+      if (attempt() || attempts >= 20) clearInterval(timer);
+    }, 500);
+  }
+})();

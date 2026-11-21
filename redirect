@@ -25,7 +25,7 @@
     // Editează această listă pentru a adăuga sau modifica redirecționări.
     // Cheia este domeniul de origine; valoarea este domeniul de destinație.
     const redirects = {
-    google.com': 'startpage.com',
+    'google.com': 'startpage.com',
     'yahoo.com': 'search.brave.com',
     'duckduckgo.com': 'noai.duckduckgo.com',
     'anime-nexus.ro': 'anime-nexus.io',

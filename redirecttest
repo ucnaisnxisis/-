@@ -1,0 +1,41 @@
+// ==UserScript==
+// @name         Redirecționare site-uri
+// @namespace    local.redirects
+// @version      1.0
+// @description  Redirecționează anumite domenii către altele
+// @match        *://google.com/*
+// @match        *://*.google.com/*
+// @match        *://bing.com/*
+// @match        *://*.bing.com/*
+// @match        *://old.reddit.com/*
+// @grant        none
+// @run-at       document-start
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // Editează această listă pentru a adăuga sau modifica redirecționări.
+    // Cheia este domeniul de origine; valoarea este domeniul de destinație.
+    const redirects = {
+        'google.com': 'duckduckgo.com',
+        'bing.com': 'duckduckgo.com',
+        'old.reddit.com': 'www.reddit.com'
+    };
+
+    const host = window.location.hostname.toLowerCase();
+
+    // Potrivește domeniul exact sau un subdomeniu al acestuia.
+    const sourceDomain = Object.keys(redirects).find(
+        domain => host === domain || host.endsWith('.' + domain)
+    );
+
+    if (sourceDomain) {
+        const destination = redirects[sourceDomain];
+        const newUrl = new URL(window.location.href);
+
+        // Schimbă doar domeniul; păstrează calea, parametrii și fragmentul URL-ului.
+        newUrl.hostname = destination;
+        window.location.replace(newUrl.href);
+    }
+})();

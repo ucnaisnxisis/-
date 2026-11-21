@@ -1,0 +1,55 @@
+// ==UserScript==
+// @name         Redirecționare site-uri
+// @namespace    local.redirects
+// @version      1.0
+// @description  Redirecționează anumite domenii către altele
+// @match        *://google.com/*
+// @match        *://*.google.com/*
+// @match        *://yahoo.com/*
+// @match        *://*.yahoo.com/*
+// @match        *://duckduckgo.com/*
+// @match        *://anime-nexus.ro/*
+// @match        *://animaxtv.com/*
+// @match        *://animax-asia.com/*
+// @match        *://tv.garden/*
+// @match        *://x.com/*
+// @match        *://youtube.com/*
+// @match        *://*.youtube.com/*
+// @grant        none
+// @run-at       document-start
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // Editează această listă pentru a adăuga sau modifica redirecționări.
+    // Cheia este domeniul de origine; valoarea este domeniul de destinație.
+    const redirects = {
+    google.com': 'startpage.com',
+    'yahoo.com': 'search.brave.com',
+    'duckduckgo.com': 'noai.duckduckgo.com',
+    'anime-nexus.ro': 'anime-nexus.io',
+    'anime.ro': 'anime-nexus.io',
+    'animaxtv.com': 'animax-asia.com',
+    'tv.garden': 'famelack.com',
+    'x.com': 'sotwe.com',
+    'youtube.com': 'skipvids.com',
+
+    };
+
+    const host = window.location.hostname.toLowerCase();
+
+    // Potrivește domeniul exact sau un subdomeniu al acestuia.
+    const sourceDomain = Object.keys(redirects).find(
+        domain => host === domain || host.endsWith('.' + domain)
+    );
+
+    if (sourceDomain) {
+        const destination = redirects[sourceDomain];
+        const newUrl = new URL(window.location.href);
+
+        // Schimbă doar domeniul; păstrează calea, parametrii și fragmentul URL-ului.
+        newUrl.hostname = destination;
+        window.location.replace(newUrl.href);
+    }
+})();

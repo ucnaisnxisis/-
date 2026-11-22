@@ -1,0 +1,475 @@
+// ==UserScript==
+// @name         Jurnal scripturi — monitor
+// @namespace    local.script-monitor
+// @version      1.0
+// @description  Panou pentru observarea scripturilor și a stării lor estimate
+// @match        *://*/*
+// @run-at       document-start
+// @grant        GM_getValue
+// @grant        GM_setValue
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const STORE = {
+    position: 'scriptMonitorPosition',
+    size: 'scriptMonitorSize',
+    hiddenUntil: 'scriptMonitorHiddenUntil'
+  };
+
+  const items = new Map();
+  let panel, shadow, list, countLabel;
+  let refreshTimer;
+
+  const get = (key, fallback) => {
+    try {
+      const value = GM_getValue(key, fallback);
+      return value && typeof value.then === 'function' ? fallback : value;
+    } catch {
+      return fallback;
+    }
+  };
+
+  const save = (key, value) => {
+    try {
+      GM_setValue(key, value);
+    } catch {
+      // Dacă stocarea eșuează, panoul rămâne utilizabil pentru fila curentă.
+    }
+  };
+
+  function addItem(url, status = 'unknown', kind = 'extern') {
+    if (!url) return;
+
+    let display = url;
+    try {
+      const parsed = new URL(url, location.href);
+      display = parsed.href;
+    } catch {
+      display = String(url);
+    }
+
+    const existing = items.get(display);
+    if (existing) {
+      // Starea confirmată înlocuiește starea necunoscută, nu invers.
+      if (status !== 'unknown' || existing.status === 'unknown') {
+        existing.status = status;
+      }
+      existing.kind = kind || existing.kind;
+    } else {
+      items.set(display, {
+        url: display,
+        status,
+        kind,
+        seen: new Date().toLocaleTimeString()
+      });
+    }
+
+    renderList();
+  }
+
+  function scanScriptElement(script) {
+    if (!(script instanceof HTMLScriptElement)) return;
+
+    if (script.src) {
+      addItem(script.src, 'unknown', 'extern');
+    } else if (script.textContent.trim()) {
+      const label = `[inline] ${location.hostname} — script în pagină`;
+      addItem(label, 'unknown', 'inline');
+    }
+  }
+
+  // Ascultă rezultatul încărcării scripturilor, inclusiv al celor adăugate dinamic.
+  document.addEventListener('load', event => {
+    if (event.target instanceof HTMLScriptElement && event.target.src) {
+      addItem(event.target.src, 'loaded', 'extern');
+    }
+  }, true);
+
+  document.addEventListener('error', event => {
+    if (event.target instanceof HTMLScriptElement && event.target.src) {
+      addItem(event.target.src, 'error', 'extern');
+    }
+  }, true);
+
+  function collectPerformanceEntries() {
+    try {
+      for (const entry of performance.getEntriesByType('resource')) {
+        if (entry.initiatorType === 'script') {
+          addItem(entry.name, 'unknown', 'extern');
+        }
+      }
+    } catch {
+      // Unele pagini pot limita informațiile disponibile.
+    }
+  }
+
+  function createPanel() {
+    if (!document.documentElement || panel) return;
+
+    panel = document.createElement('div');
+    panel.id = 'tm-script-monitor';
+    shadow = panel.attachShadow({ mode: 'open' });
+
+    shadow.innerHTML = `
+      <style>
+        :host {
+          all: initial;
+          position: fixed;
+          z-index: 2147483647;
+          right: 18px;
+          bottom: 18px;
+          color: #171717;
+          font: 13px/1.4 system-ui, sans-serif;
+        }
+        * { box-sizing: border-box; }
+        .box {
+          width: 360px;
+          height: 310px;
+          min-width: 250px;
+          min-height: 150px;
+          max-width: calc(100vw - 16px);
+          max-height: calc(100vh - 16px);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          resize: both;
+          border: 1px solid #777;
+          border-radius: 9px;
+          background: #fff;
+          box-shadow: 0 3px 18px #0005;
+        }
+        header {
+          min-height: 38px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          padding: 7px 9px;
+          color: #fff;
+          background: #30343b;
+          cursor: move;
+          user-select: none;
+          touch-action: none;
+        }
+        .title { font-weight: 700; }
+        .actions { display: flex; gap: 5px; }
+        button {
+          border: 1px solid #999;
+          border-radius: 5px;
+          padding: 4px 8px;
+          color: inherit;
+          background: #fff;
+          font: inherit;
+          cursor: pointer;
+        }
+        header button { border-color: #777; }
+        .summary {
+          padding: 6px 9px;
+          color: #333;
+          background: #f1f1f1;
+          border-bottom: 1px solid #ddd;
+        }
+        .list {
+          flex: 1;
+          overflow: auto;
+          padding: 5px 8px;
+        }
+        .item {
+          padding: 6px;
+          margin: 3px 0;
+          border-left: 5px solid #c89b00;
+          background: #fff9df;
+          overflow-wrap: anywhere;
+        }
+        .item.loaded {
+          border-left-color: #218739;
+          background: #e9f7ec;
+        }
+        .item.error {
+          border-left-color: #c62828;
+          background: #fdeaea;
+        }
+        .state { font-weight: 700; }
+        .url { margin-top: 2px; color: #333; }
+        .empty { padding: 10px 4px; color: #555; }
+        .note {
+          padding: 6px 9px;
+          border-top: 1px solid #ddd;
+          color: #555;
+          font-size: 11px;
+        }
+        .shade {
+          position: fixed;
+          inset: 0;
+          z-index: 2147483647;
+          display: grid;
+          place-items: center;
+          background: #0007;
+        }
+        .dialog {
+          width: min(340px, calc(100vw - 24px));
+          padding: 16px;
+          border-radius: 10px;
+          background: white;
+          box-shadow: 0 4px 24px #0006;
+        }
+        .dialog h3 { margin: 0 0 8px; font-size: 16px; }
+        .dialog p { margin: 0 0 12px; }
+        .choices { display: flex; flex-wrap: wrap; gap: 7px; }
+        .cancel { margin-top: 12px; }
+      </style>
+
+      <section class="box">
+        <header>
+          <span class="title">Jurnal scripturi</span>
+          <span class="actions">
+            <button class="refresh" title="Actualizează lista">Reîmprospătează</button>
+            <button class="close" title="Ascunde temporar">×</button>
+          </span>
+        </header>
+        <div class="summary"></div>
+        <div class="list"></div>
+        <div class="note">
+          Verde: încărcare confirmată · Roșu: eroare raportată · Galben: necunoscut.
+          Starea nu confirmă dacă uBlock a blocat resursa.
+        </div>
+      </section>
+    `;
+
+    document.documentElement.appendChild(panel);
+    list = shadow.querySelector('.list');
+    countLabel = shadow.querySelector('.summary');
+
+    restoreGeometry();
+    renderList();
+
+    shadow.querySelector('.refresh').addEventListener('click', () => {
+      scanAllScripts();
+      collectPerformanceEntries();
+    });
+
+    shadow.querySelector('.close').addEventListener('click', showHideOptions);
+    setupDragging();
+    setupResizeSaving();
+  }
+
+  function scanAllScripts() {
+    document.querySelectorAll('script').forEach(scanScriptElement);
+  }
+
+  function renderList() {
+    if (!list || !countLabel) return;
+
+    const all = [...items.values()];
+    const loaded = all.filter(item => item.status === 'loaded').length;
+    const errors = all.filter(item => item.status === 'error').length;
+    const unknown = all.length - loaded - errors;
+
+    countLabel.textContent =
+      `${all.length} găsite · ${loaded} încărcate · ${errors} erori · ${unknown} necunoscute`;
+
+    if (!all.length) {
+      list.innerHTML = '<div class="empty">Încă nu au fost observate scripturi.</div>';
+      return;
+    }
+
+    list.replaceChildren();
+
+    for (const item of all) {
+      const row = document.createElement('div');
+      row.className = `item ${item.status}`;
+
+      const state = document.createElement('div');
+      state.className = 'state';
+      state.textContent =
+        item.status === 'loaded' ? 'Încărcat' :
+        item.status === 'error' ? 'Eroare raportată' :
+        'Necunoscut';
+
+      const url = document.createElement('div');
+      url.className = 'url';
+      url.textContent = item.url;
+
+      row.append(state, url);
+      list.appendChild(row);
+    }
+  }
+
+  function restoreGeometry() {
+    const position = get(STORE.position, null);
+    const size = get(STORE.size, null);
+    const box = shadow.querySelector('.box');
+
+    if (position && Number.isFinite(position.left) && Number.isFinite(position.top)) {
+      panel.style.left = `${Math.max(0, position.left)}px`;
+      panel.style.top = `${Math.max(0, position.top)}px`;
+      panel.style.right = 'auto';
+      panel.style.bottom = 'auto';
+    }
+
+    if (size && Number.isFinite(size.width) && Number.isFinite(size.height)) {
+      box.style.width = `${size.width}px`;
+      box.style.height = `${size.height}px`;
+    }
+  }
+
+  function saveGeometry() {
+    if (!panel || !shadow) return;
+
+    const rect = panel.getBoundingClientRect();
+    const box = shadow.querySelector('.box');
+    const boxRect = box.getBoundingClientRect();
+
+    save(STORE.position, { left: rect.left, top: rect.top });
+    save(STORE.size, { width: boxRect.width, height: boxRect.height });
+  }
+
+  function setupDragging() {
+    const header = shadow.querySelector('header');
+    let dragging = false;
+    let startX = 0;
+    let startY = 0;
+    let originX = 0;
+    let originY = 0;
+
+    header.addEventListener('pointerdown', event => {
+      if (event.target.closest('button')) return;
+
+      dragging = true;
+      const rect = panel.getBoundingClientRect();
+      startX = event.clientX;
+      startY = event.clientY;
+      originX = rect.left;
+      originY = rect.top;
+
+      panel.style.left = `${rect.left}px`;
+      panel.style.top = `${rect.top}px`;
+      panel.style.right = 'auto';
+      panel.style.bottom = 'auto';
+
+      header.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+
+    header.addEventListener('pointermove', event => {
+      if (!dragging) return;
+
+      const width = panel.getBoundingClientRect().width;
+      const height = panel.getBoundingClientRect().height;
+      const left = Math.max(0, Math.min(innerWidth - width, originX + event.clientX - startX));
+      const top = Math.max(0, Math.min(innerHeight - height, originY + event.clientY - startY));
+
+      panel.style.left = `${left}px`;
+      panel.style.top = `${top}px`;
+    });
+
+    header.addEventListener('pointerup', () => {
+      if (!dragging) return;
+      dragging = false;
+      saveGeometry();
+    });
+
+    header.addEventListener('pointercancel', () => {
+      dragging = false;
+      saveGeometry();
+    });
+  }
+
+  function setupResizeSaving() {
+    const box = shadow.querySelector('.box');
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(() => saveGeometry()).observe(box);
+    }
+  }
+
+  function showHideOptions() {
+    const shade = document.createElement('div');
+    shade.className = 'shade';
+
+    const dialog = document.createElement('div');
+    dialog.className = 'dialog';
+    dialog.innerHTML = `
+      <h3>Ascunde jurnalul</h3>
+      <p>Cât timp dorești să rămână ascuns?</p>
+      <div class="choices">
+        <button data-minutes="5">5 minute</button>
+        <button data-minutes="60">1 oră</button>
+        <button data-minutes="300">5 ore</button>
+        <button data-minutes="720">12 ore</button>
+        <button data-minutes="1440">24 ore</button>
+      </div>
+      <button class="cancel">Anulează</button>
+    `;
+
+    shade.appendChild(dialog);
+    shadow.appendChild(shade);
+
+    shade.addEventListener('click', event => {
+      if (event.target === shade || event.target.closest('.cancel')) {
+        shade.remove();
+      }
+
+      const choice = event.target.closest('[data-minutes]');
+      if (choice) {
+        const until = Date.now() + Number(choice.dataset.minutes) * 60_000;
+        save(STORE.hiddenUntil, until);
+        panel.remove();
+        panel = shadow = list = countLabel = null;
+        clearInterval(refreshTimer);
+      }
+    });
+  }
+
+  function start() {
+    const hiddenUntil = Number(get(STORE.hiddenUntil, 0));
+    if (hiddenUntil > Date.now()) return;
+
+    if (hiddenUntil) save(STORE.hiddenUntil, 0);
+
+    createPanel();
+    scanAllScripts();
+    collectPerformanceEntries();
+
+    const observer = new MutationObserver(records => {
+      for (const record of records) {
+        for (const node of record.addedNodes) {
+          if (node instanceof HTMLScriptElement) scanScriptElement(node);
+          node.querySelectorAll?.('script').forEach(scanScriptElement);
+        }
+      }
+    });
+
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+
+    try {
+      new PerformanceObserver(list => {
+        for (const entry of list.getEntries()) {
+          if (entry.initiatorType === 'script') addItem(entry.name, 'unknown', 'extern');
+        }
+      }).observe({ type: 'resource', buffered: true });
+    } catch {
+      // PerformanceObserver nu este disponibil peste tot.
+    }
+
+    refreshTimer = setInterval(collectPerformanceEntries, 5000);
+  }
+
+  function boot() {
+    if (Number(get(STORE.hiddenUntil, 0)) > Date.now()) return;
+    start();
+  }
+
+  if (document.documentElement) boot();
+  else {
+    const wait = new MutationObserver(() => {
+      if (document.documentElement) {
+        wait.disconnect();
+        boot();
+      }
+    });
+    wait.observe(document, { childList: true, subtree: true });
+  }
+})();

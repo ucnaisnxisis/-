@@ -1,0 +1,92 @@
+// ==UserScript==
+// @name         Copiază link curat
+// @namespace    local.clean-link
+// @version      1.1
+// @description  Copiază linkuri fără parametrii cunoscuți de urmărire
+// @match        *://*/*
+// @grant        GM_setClipboard
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const trackingParam = /^(utm_.+|fbclid|gclid|dclid|gbraid|wbraid|msclkid|twclid|ttclid|yclid|_ga|_gl|mc_cid|mc_eid|igshid|si|vero_id|oly_anon_id|oly_enc_id|mkt_tok|ref_src|ref_url)$/i;
+  let menu;
+
+  function cleanUrl(rawUrl) {
+    try {
+      const url = new URL(rawUrl, location.href);
+      if (!['http:', 'https:'].includes(url.protocol)) return null;
+
+      for (const key of [...url.searchParams.keys()]) {
+        if (trackingParam.test(key)) url.searchParams.delete(key);
+      }
+
+      // Elimină fragmentul doar dacă pare să conțină un identificator de urmărire.
+      if (/^(#|#!)?(utm_|fbclid|gclid)/i.test(url.hash)) {
+        url.hash = '';
+      }
+
+      return url.href;
+    } catch {
+      return null;
+    }
+  }
+
+  function closeMenu() {
+    menu?.remove();
+    menu = null;
+  }
+
+  function showMenu(link, x, y) {
+    const clean = cleanUrl(link.href);
+    if (!clean) return;
+
+    closeMenu();
+
+    menu = document.createElement('button');
+    menu.type = 'button';
+    menu.textContent = 'Copiază link curat';
+
+    Object.assign(menu.style, {
+      position: 'fixed',
+      zIndex: '2147483647',
+      left: `${Math.max(8, Math.min(x, innerWidth - 210))}px`,
+      top: `${Math.max(8, Math.min(y, innerHeight - 60))}px`,
+      maxWidth: '300px',
+      padding: '12px 16px',
+      border: '1px solid #777',
+      borderRadius: '8px',
+      background: '#fff',
+      color: '#111',
+      font: '16px sans-serif',
+      boxShadow: '0 3px 12px #0005',
+      cursor: 'pointer'
+    });
+
+    menu.addEventListener('click', () => {
+      GM_setClipboard(clean, 'text');
+      menu.textContent = `Copiat: ${clean}`;
+      menu.title = clean;
+      setTimeout(closeMenu, 3000);
+    });
+
+    document.body.appendChild(menu);
+  }
+
+  document.addEventListener('contextmenu', event => {
+    const link = event.target.closest?.('a[href]');
+    if (!link) return;
+
+    event.preventDefault();
+    showMenu(link, event.clientX, event.clientY);
+  }, true);
+
+  document.addEventListener('click', event => {
+    if (menu && !menu.contains(event.target)) closeMenu();
+  }, true);
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+})();

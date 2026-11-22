@@ -76,6 +76,12 @@
         'myip-address.com',
         'whatismyip.live',
         'github.com',
+        'proton.me',
+        'proton.com',
+        'www.pewresearch.org',
+        'breezevpn.com',
+        'www.bangkokpost.com',
+
     ];
 
     // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.

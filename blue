@@ -75,6 +75,7 @@
         'whatsmyip.net',
         'myip-address.com',
         'whatismyip.live',
+        'www.virustotal.com',
         'github.com',
         'proton.me',
         'proton.com',

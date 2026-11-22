@@ -1,0 +1,93 @@
+// ==UserScript==
+// @name         Copiază link curat
+// @namespace    local.clean-link
+// @version      1.0
+// @description  Adaugă un meniu pentru copierea linkurilor fără parametri de urmărire
+// @match        *://*/*
+// @grant        GM_setClipboard
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const trackingParams = /^(utm_.+|fbclid|gclid|dclid|msclkid|mc_cid|mc_eid|igshid|si)$/i;
+  let menu;
+
+  function cleanUrl(rawUrl) {
+    try {
+      const url = new URL(rawUrl, location.href);
+      if (!/^https?:$/.test(url.protocol)) return null;
+
+      for (const key of [...url.searchParams.keys()]) {
+        if (trackingParams.test(key)) url.searchParams.delete(key);
+      }
+
+      return url.href;
+    } catch {
+      return null;
+    }
+  }
+
+  function closeMenu() {
+    menu?.remove();
+    menu = null;
+  }
+
+  function showMenu(link, x, y) {
+    const clean = cleanUrl(link.href);
+    if (!clean) return;
+
+    closeMenu();
+
+    menu = document.createElement('button');
+    menu.type = 'button';
+    menu.textContent = 'Copiază link curat';
+    menu.setAttribute('aria-label', 'Copiază link curat');
+
+    Object.assign(menu.style, {
+      position: 'fixed',
+      zIndex: '2147483647',
+      left: `${Math.max(8, Math.min(x, innerWidth - 190))}px`,
+      top: `${Math.max(8, Math.min(y, innerHeight - 52))}px`,
+      padding: '12px 16px',
+      border: '1px solid #777',
+      borderRadius: '8px',
+      background: '#fff',
+      color: '#111',
+      font: '16px sans-serif',
+      boxShadow: '0 3px 12px #0005',
+      cursor: 'pointer'
+    });
+
+    menu.addEventListener('click', async () => {
+      try {
+        // Metoda Tampermonkey evită unele restricții de clipboard ale paginii.
+        GM_setClipboard(clean, 'text');
+        menu.textContent = 'Link copiat!';
+        setTimeout(closeMenu, 900);
+      } catch {
+        menu.textContent = 'Copierea nu a reușit';
+        setTimeout(closeMenu, 1400);
+      }
+    });
+
+    document.body.appendChild(menu);
+  }
+
+  document.addEventListener('contextmenu', event => {
+    const link = event.target.closest?.('a[href]');
+    if (!link) return;
+
+    // Înlocuiește meniul contextual al browserului doar când clic dreapta e pe un link.
+    event.preventDefault();
+    showMenu(link, event.clientX, event.clientY);
+  }, true);
+
+  document.addEventListener('click', event => {
+    if (menu && !menu.contains(event.target)) closeMenu();
+  }, true);
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
+  });
+})();

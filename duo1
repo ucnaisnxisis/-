@@ -68,6 +68,41 @@ www.9am.ro##.google-news-subscribe.text-right
 www.9am.ro##.progressWrap
 redactia.ro##.fb-btn
 redactia.ro##.cursvalutar-list.col-md-4
+www.startpage.com##.feedback-button__text-container
+www.startpage.com##.css-19wuoi7.feedback-serp-container
+search.yahoo.com##li.sdk:nth-of-type(8)
+search.yahoo.com##li:nth-of-type(9)
+search.yahoo.com###ft > ul > li:nth-of-type(10)
+search.yahoo.com##[href="https://r.search.yahoo.com/_ylt=A2RSlefeLwBr3AIA4xeJzbkF/RV=2/RE=1796383966/RO=10/RU=https%3a%2f%2fguce.yahoo.com%2fprivacy-policy%3flocale%3den-US/RK=2/RS=wJ6R6762dVwUxJD4FB4h2gjd3qQ-"]
+search.yahoo.com##.hover\:shadow-\[0_12px_32px_rgba\(0\,0\,0\,0\.22\)\].shadow-\[0_8px_26px_rgba\(0\,0\,0\,0\.24\)\].bottom-8.right-8.\[\:has\(\>\.is-closing\)\>\&\]\:opacity-0.aria-expanded\:opacity-0.aria-expanded\:invisible.focus-visible\:outline-\[\#7d2eff\].focus-visible\:outline-offset-2.focus-visible\:outline-\[3px\].focus-visible\:outline.motion-safe\:animate-\[scoutfab-in_180ms_cubic-bezier\(0\.2\,0\.8\,0\.2\,1\)\].motion-safe\:hover\:-translate-y-0\.5.motion-reduce\:transition-none.ease-\[ease\].duration-\[160ms\].transition-\[transform\,box-shadow\].cursor-pointer.box-border.justify-center.items-center.flex.bg-primary.rounded-full.border-secondary.border-solid.border.p-0.h-14.w-14.z-\[60\].fixed.group.scout-widget__fab
+search.yahoo.com##.privacy-link-privacy-settings
+search.yahoo.com##li:nth-of-type(8)
+search.yahoo.com##li.sdk:nth-of-type(5)
+search.yahoo.com###ft > ul > li:nth-of-type(3)
+uk.help.yahoo.com##[href^="https://guce.yahoo.com/privacy-policy"]
+uk.help.yahoo.com##[href^="https://guce.yahoo.com/privacy-settings"]
+www.yahoo.com##.ymp-uh-scout-widget-root--tip-end.md\:pl-\[calc\(1\.5rem\+env\(safe-area-inset-left\)\)\].pl-4.justify-start.bottom-\[calc\(1\.5rem\+env\(safe-area-inset-bottom\)\)\].inset-x-0.flex.z-40.fixed.pointer-events-none.ymp-uh-scout-widget-root
+www.yahoo.com##li.flex:nth-of-type(16)
+www.yahoo.com##li.flex:nth-of-type(15)
+noai.duckduckgo.com##.AaJrChOC6jbedaXmuytA
+whatsmyip.net##div.mb-2.gap-y-1.space-x-4.justify-center-safe.flex-wrap.flex:nth-of-type(3) > a.mx-2.hover\:text-gray-400:nth-of-type(2)
+whatsmyip.net##div.mb-2.gap-y-1.space-x-4.justify-center-safe.flex-wrap.flex:nth-of-type(3) > a.mx-2.hover\:text-gray-400:nth-of-type(1)
+whatsmydns.me###cookies-box
+ip-lookup.net##[href="/accessibility"]
+myip-address.com##div.foot__col:nth-of-type(3)
+myip.dk##.footer-consent.text-button
+checkmyip.net##.edt-leaderboard-promo
+nordvpn.com##div:nth-of-type(3) > .gap-4.flex-col.flex > a.body-sm-medium.active\:underline.active\:\!text-neutral-500.hover\:underline.\!text-neutral-300.hover\:\!text-disabled.active\:text-accent.hover\:text-accent-active.text-accent.focus-visible\:shadow-focus.focus-visible\:outline-none.ease-out.transition-colors.align-bottom:nth-of-type(4)
+surfshark.com###popup-timed
+www.yougetsignal.com##div.md\:pb-10.md\:h-full.w-full.col-span-1:nth-of-type(4)
+www.yougetsignal.com##.space-x-6.items-center.flex
+www.liquidweb.com##[href="#footer"]
+whoer.net##.footer__joinus
+whoer.net##.footer__store-links--apps.column
+radar.cloudflare.com##a.\@2xl\/radar-footer\:not-last-of-type\:mr-3.\@2xl\/radar-footer\:not-last-of-type\:pr-3.hover\:text-kumo-default.whitespace-nowrap.text-inherit.relative.wrap-anywhere.group\/link.radar-link:nth-of-type(1)
+www.lenovo.com##.back2top
+www.lenovo.com###lenovofeedbackpopup
+www.manageengine.com##[href^="https://www.manageengine.com/privacy.html"]
 noi.md##.mt-2.row > div.col-12:nth-of-type(2)
 noi.md##[href="md/page/confidence-policy"]
 noi.md##.justify-content-center.footer-link-list.text-center.align-items-center.d-lg-flex.d-none.col-12

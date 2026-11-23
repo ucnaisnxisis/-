@@ -83,7 +83,9 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com'
+        'www.bangkokpost.com',
+        'ublockdns.com',
+
     ];
 
     // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
@@ -96,12 +98,14 @@
         'www.plaiurimioritice.ro',
         'www.academia.edu',
         'www.cel.ro'
+
     ];
 
     // Modul 4: temă mov cu text alb pentru Știripesurse.ro.
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
         'www.stiripesurse.ro'
+
     ];
 
     const MODE_2_CSS = `

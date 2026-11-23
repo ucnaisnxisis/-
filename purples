@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Purple Mode automat — 4 moduri
 // @namespace    local.purplemode
-// @version      4.4.0
+// @version      4.4.1
 // @description  Alege automat tema mov în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
@@ -100,7 +100,8 @@
 
     // Modul 4: temă mov cu text alb pentru Știripesurse.ro.
     const MODE_4_HOSTS = [
-        'stiripesurse.ro'
+        'stiripesurse.ro',
+        'www.stiripesurse.ro'
     ];
 
     const MODE_2_CSS = `
@@ -169,6 +170,19 @@
         body {
             background-color: ${MODE_4_BACKGROUND} !important;
             color: #ffffff !important;
+        }
+
+        /* Fundal mov pentru containerele principale, inclusiv pe versiunea desktop. */
+        body,
+        main,
+        article,
+        section,
+        header,
+        footer,
+        nav,
+        aside,
+        [role="main"] {
+            background-color: ${MODE_4_BACKGROUND} !important;
         }
 
         body *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube: culoare subtitrări după titlu
 // @namespace    local
-// @version      2.2
+// @version      2.3
 // @description  Colorează subtitrările după limba sau cuvintele-cheie din titlu
 // @match        https://www.youtube.com/*
 // @run-at       document-idle
@@ -12,27 +12,25 @@
   'use strict';
 
   const COLORS = {
-    korean:     '#9B59FF', // mov
-    japanese:   '#FF69B4', // roz
-    chinese:    '#FF0000', // roșu
-    romanian:   '#FFD700', // galben
-    russian:    '#1687FF', // albastru
-    french:     '#20CFCF', // turcoaz
-    arabic:     '#FF8C00', // portocaliu
-    spanish:    '#39B54A', // verde
-    german:     '#FF7A00', // portocaliu-închis
-    italian:    '#8A2BE2', // violet-albastru
-    portuguese: '#00A86B', // verde-jad
-    greek:      '#A52A2A'  // maro
+    korean:     '#9B59FF',
+    japanese:   '#FF69B4',
+    chinese:    '#FF0000',
+    romanian:   '#FFD700',
+    russian:    '#1687FF',
+    french:     '#20CFCF',
+    arabic:     '#FF8C00',
+    spanish:    '#39B54A',
+    german:     '#FF7A00',
+    italian:    '#8A2BE2',
+    portuguese: '#00A86B',
+    greek:      '#A52A2A'
   };
 
   // Cuvintele-cheie au prioritate față de detectarea alfabetului.
   const KEYWORDS = [
     {
       color: COLORS.japanese,
-      pattern: /\b(?:anime|manga|j[\s-]?pop|otaku|cosplay|hikikomori|loli|animax\s*tv|film\s+japonez|japanese|japan|jp|chan|shinobi|sayan|ecchi|sworld art online|bakugan|pokemon|digimon|anya forger|spy x family|pinkguy
-     |sayonara|hajimemashite|hashimete|madoka|naruto|Garnidelia|Fuji|Kaze|Kirari|Kiddy Grade|Boruto|detectiv\s+conan|detective\s+conan|sushi|one\s+piece|dragon\s+ball(?:\s+z)?|attack\s+on\s+titan
-     |demon\s+slayer|kimetsu\s+no\s+yaiba|jujutsu\s+kaisen|my\s+hero\s+academia|pokemon|pokémon|sailor\s+moon|death\s+note|bleach|hunter\s*[x×]\s*hunter|fullmetal\s+alchemist|spy\s*x\s*family|studio\s+ghibli)\b/i
+      pattern: /\b(?:anime|manga|j[\s-]?pop|otaku|cosplay|hikikomori|loli|animax\s*tv|film\s+japonez|japanese|japan|jp|chan|shinobi|sayan|ecchi|sworld art online|bakugan|pokemon|anya forger|spy x family|pinkguy|sayonara|hajimemashite|hashimete|madoka|naruto|Garnidelia|Fuji|Kaze|Kirari|Kiddy Grade|Boruto|detectiv\s+conan|detective\s+conan|sushi|one\s+piece|dragon\s+ball(?:\s+z)?|attack\s+on\s+titan|demon\s+slayer|kimetsu\s+no\s+yaiba|jujutsu\s+kaisen|my\s+hero\s+academia|pokemon|pokémon|sailor\s+moon|death\s+note|bleach|hunter\s*[x×]\s*hunter|fullmetal\s+alchemist|spy\s*x\s*family|studio\s+ghibli)\b/i
     },
     {
       color: COLORS.korean,
@@ -44,8 +42,6 @@
     }
   ];
 
-  // Titlul este normalizat pentru a recunoaște, de exemplu,
-  // atât „mulțumesc”, cât și „multumesc”.
   function normalize(text) {
     return text
       .normalize('NFD')
@@ -54,9 +50,7 @@
   }
 
   const ROMANIAN_WORDS =
-    /\b(?:salut|buna|multumesc|prieten(?:a|i|e)?|inamic(?:a|i|e)?|coleg(?:a|i|e)?|liceu|facultate|scoala|colaborare|masterat|master|secret|mistere|secrete|maine|azi|poimaine|saptamana|satul|orasul|oras|satele|judet|judete|
-    judetele|treaba|pisu|goale|goala|fata|baiat|spus|zis|esti|tacut|taci|face|faci|mers|iti|desene|animate|mancam|mananca|serial|filme|filmul|cadou|a venit|cadouri|sarbatoare|sarbatori|a revenit|bunica|bunic
-    |tutorial|joc|jocuri|jucam|jucarii|caine|pisica|donatii|donat|vulgare|vulgar|ceas|sparge|spargem|geam|spusesi|basit|basini|farse|youtuberi|youtuberii|youtuber|tiganesc|tigani|tiganiada|romana|romanesc|romaneasca)\b/;
+    /\b(?:salut|buna|multumesc|prieten(?:a|i|e)?|inamic(?:a|i|e)?|coleg(?:a|i|e)?|liceu|facultate|scoala|colaborare|masterat|master|secret|mistere|secrete|maine|azi|poimaine|saptamana|satul|orasul|oras|satele|judet|judete|judetele|treaba|pisu|goale|goala|fata|baiat|spus|zis|esti|tacut|taci|face|faci|mers|iti|desene|animate|mancam|mananca|serial|filme|filmul|cadou|a venit|cadouri|sarbatoare|sarbatori|a revenit|bunica|bunic|tutorial|joc|jocuri|jucam|jucarii|caine|pisica|donatii|donat|vulgare|vulgar|ceas|sparge|spargem|geam|spusesi|basit|basini|farse|youtuberi|youtuberii|youtuber|tiganesc|tigani|tiganiada|romana|romanesc|romaneasca)\b/;
 
   function getTitle() {
     return document.querySelector('h1.ytd-watch-metadata yt-formatted-string')
@@ -66,14 +60,12 @@
   }
 
   function detectColor(title) {
-    // Mai întâi verifică termenii expliciți din titlu.
     for (const item of KEYWORDS) {
       if (item.pattern.test(title)) {
         return item.color;
       }
     }
 
-    // Apoi verifică alfabetul sau caracterele distinctive.
     if (/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/u.test(title)) {
       return COLORS.korean;
     }
@@ -93,12 +85,10 @@
       return COLORS.russian;
     }
 
-    // Verifică termenii românești după eliminarea diacriticelor.
     if (ROMANIAN_WORDS.test(normalize(title))) {
       return COLORS.romanian;
     }
 
-    // Indicii pentru câteva limbi cu alfabet latin.
     if (/\b(?:bonjour|merci|lolita|quarante|troi|quatre|noeuf|autumm|musique|français|française|avec|pour|film français)\b/i.test(title)) {
       return COLORS.french;
     }
@@ -111,11 +101,10 @@
     if (/\b(?:ciao|grazie|italiano|italiana|buongiorno|film italiano)\b/i.test(title)) {
       return COLORS.italian;
     }
-    if (/\b(?:olá|obrigado|obrigada|português|portuguesa|brasil|protugal|filme brasileiro)\b/i.test(title)) {
+    if (/\b(?:olá|obrigado|obrigada|português|portuguesa|brasil|portugal|filme brasileiro)\b/i.test(title)) {
       return COLORS.portuguese;
     }
 
-    // Fără indicii clare, lasă culoarea implicită a playerului.
     return '';
   }
 

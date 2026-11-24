@@ -1,0 +1,252 @@
+// ==UserScript==
+// @name         Overlay anime / adult cu media
+// @namespace    local-overlay
+// @version      1.5
+// @description  Overlay local, cu excepții pentru motoare de căutare
+// @match        *://*/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(() => {
+    "use strict";
+
+    const EXIT_URL = "https://noai.duckduckgo.com";
+
+    const ANIME_VIDEO =
+        "https://ia600706.us.archive.org/32/items/its-time-to-stop_20261124/Filty%20Frank%20-%20time%20to%20stop%20%28anime%20parody%29.mp4";
+
+    const ADULT_AUDIO =
+        "https://ia600706.us.archive.org/32/items/its-time-to-stop_20261124/its%20time%20to%20stop.mp3";
+
+    const GIF_URL =
+        "https://ia600706.us.archive.org/32/items/its-time-to-stop_20261124/fff.gif";
+
+    // Adaugă aici domenii de motoare de căutare care îți lipsesc.
+    const SEARCH_ENGINE_DOMAINS = [
+        "google.com", "bing.com", "yahoo.com", "yahoo.co.jp",
+        "duckduckgo.com", "brave.com", "search.brave.com",
+        "ecosia.org", "qwant.com", "startpage.com", "yandex.com",
+        "yandex.ru", "baidu.com", "baidu.cn", "naver.com",
+        "sogou.com", "seznam.cz", "mojeek.com", "swisscows.com",
+        "kagi.com", "you.com", "perplexity.ai", "metager.org",
+        "dogpile.com", "webcrawler.com", "lycos.com", "aol.com",
+        "ask.com", "yep.com", "marginalia-search.com",
+        "search.com", "wolframalpha.com"
+    ];
+
+    // Adaugă sau elimină domenii după preferință.
+    // Sunt potrivite și subdomeniile, precum www.pornhub.com.
+    const ADULT_DOMAINS = [
+        "pornhub.com",
+        "xnxx.com",
+        "xvideos.com",
+        "xhamster.com",
+        "eporner.com",
+        "stripchat.com",
+        "chaturbate.com",
+        "onlyfans.com",
+        "erome.com",
+        "spankbang.com",
+        "redtube.com",
+        "youporn.com",
+        "brazzers.com",
+        "rule34.xxx",
+        "hentaihaven.xxx",
+        "hentairead.com",
+        "hentaiera.com"
+    ];
+
+    const host = location.hostname.toLowerCase();
+
+    function domainMatches(hostname, domain) {
+        return hostname === domain || hostname.endsWith(`.${domain}`);
+    }
+
+    function isSearchEngineHost(hostname) {
+        const listedDomain = SEARCH_ENGINE_DOMAINS.some(domain =>
+            domainMatches(hostname, domain)
+        );
+
+        // Acoperă domenii regionale Google, de exemplu google.de sau google.co.uk.
+        const regionalGoogle = /(^|\.)google\.[a-z.]+$/.test(hostname);
+
+        // Unele motoare au instanțe găzduite independent.
+        const selfHostedSearch =
+            /(^|[.-])(searxng?|4get|librey|yacy)([.-]|$)/i.test(hostname);
+
+        return listedDomain || regionalGoogle || selfHostedSearch;
+    }
+
+    // Exclude motoarele de căutare înainte de verificarea cuvintelor-cheie.
+    if (isSearchEngineHost(host)) return;
+
+    // Verifică doar URL-ul, nu titlul și nu conținutul paginii.
+    let urlText = location.href.toLowerCase();
+
+    try {
+        urlText = decodeURIComponent(urlText);
+    } catch {
+        // Dacă URL-ul are secvențe codificate invalide, folosește forma originală.
+    }
+
+    const animeTerms = [
+        "anime", "otaku", "cosplay", "hentai", "ecchi",
+        "manga", "anime music", "anime-music", "anime_music"
+    ];
+
+    const adultTerms = [
+        "porn", "porno", "xxx", "adult", "sex",
+        "adultvideo", "adult video", "sexvideo", "sex video"
+    ];
+
+    // Anime are prioritate, inclusiv pentru domenii care apar și în lista adultă.
+    const isAnime = animeTerms.some(term => urlText.includes(term));
+
+    const isKnownAdultDomain = ADULT_DOMAINS.some(domain =>
+        domainMatches(host, domain)
+    );
+
+    const hasAdultKeyword = adultTerms.some(term => urlText.includes(term));
+
+    const isAdult =
+        !isAnime && (isKnownAdultDomain || hasAdultKeyword);
+
+    if (!isAnime && !isAdult) return;
+    if (document.getElementById("local-media-overlay")) return;
+
+    const overlay = document.createElement("div");
+    overlay.id = "local-media-overlay";
+
+    Object.assign(overlay.style, {
+        position: "fixed",
+        inset: "0",
+        zIndex: "2147483647",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "auto",
+        padding: "16px",
+        boxSizing: "border-box",
+        background: isAnime ? "#ff4fa3" : "#d60000",
+        color: "#fff",
+        fontFamily: "system-ui, sans-serif",
+        textAlign: "center"
+    });
+
+    const panel = document.createElement("div");
+    Object.assign(panel.style, {
+        width: "min(720px, 94vw)",
+        maxHeight: "94vh",
+        overflow: "auto",
+        padding: "24px",
+        borderRadius: "18px",
+        boxSizing: "border-box",
+        background: "rgba(0, 0, 0, 0.78)"
+    });
+
+    const heading = document.createElement("h2");
+    heading.textContent = isAnime
+        ? "Conținut legat de anime"
+        : "Conținut pentru adulți";
+
+    const note = document.createElement("p");
+    note.textContent = "Media se încarcă automat. Alege una dintre opțiuni.";
+
+    const mediaBox = document.createElement("div");
+    mediaBox.style.margin = "16px auto";
+
+    let mediaElement;
+
+    if (isAnime) {
+        // Anime: doar videoclipul, fără GIF.
+        const video = document.createElement("video");
+        video.src = ANIME_VIDEO;
+        video.loop = true;
+        video.autoplay = true;
+        video.preload = "auto";
+        video.controls = true;
+        video.playsInline = true;
+
+        Object.assign(video.style, {
+            display: "block",
+            width: "min(640px, 82vw)",
+            maxHeight: "360px",
+            margin: "0 auto"
+        });
+
+        mediaElement = video;
+        mediaBox.appendChild(video);
+    } else {
+        // 18+: GIF și MP3 împreună.
+        const gif = document.createElement("img");
+        gif.src = GIF_URL;
+        gif.alt = "";
+
+        Object.assign(gif.style, {
+            display: "block",
+            maxWidth: "100%",
+            maxHeight: "180px",
+            margin: "0 auto 12px"
+        });
+
+        const audio = document.createElement("audio");
+        audio.src = ADULT_AUDIO;
+        audio.loop = true;
+        audio.autoplay = true;
+        audio.preload = "auto";
+        audio.controls = true;
+
+        mediaElement = audio;
+        mediaBox.append(gif, audio);
+    }
+
+    const continueButton = document.createElement("button");
+    continueButton.type = "button";
+    continueButton.textContent = isAnime
+        ? "Intră 16+"
+        : "Confirm că sunt adult";
+
+    const exitButton = document.createElement("button");
+    exitButton.type = "button";
+    exitButton.textContent = "Ieșire";
+
+    for (const button of [continueButton, exitButton]) {
+        Object.assign(button.style, {
+            margin: "8px",
+            padding: "12px 18px",
+            border: "0",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontSize: "16px"
+        });
+    }
+
+    function stopMedia() {
+        if (!mediaElement) return;
+
+        mediaElement.pause();
+        mediaElement.removeAttribute("src");
+        mediaElement.load();
+    }
+
+    continueButton.addEventListener("click", () => {
+        stopMedia();
+        overlay.remove();
+    });
+
+    exitButton.addEventListener("click", () => {
+        stopMedia();
+        location.href = EXIT_URL;
+    });
+
+    panel.append(heading, note, mediaBox, continueButton, exitButton);
+    overlay.appendChild(panel);
+    document.documentElement.appendChild(overlay);
+
+    // Încearcă redarea imediată; browserul poate bloca autoplay-ul cu sunet.
+    mediaElement.play().catch(() => {
+        note.textContent =
+            "Media s-a încărcat, dar browserul a blocat redarea automată. Folosește comenzile playerului.";
+    });
+})();

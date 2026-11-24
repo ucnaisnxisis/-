@@ -1,0 +1,162 @@
+// ==UserScript==
+// @name         Anime Walkers — Search Overlay
+// @namespace    local
+// @version      4.1
+// @description  Personaje anime și bule roz animate pe motoare de căutare
+// @include      /^https:\/\/(www\.)?google\.[^/]+\/.*/
+// @match        https://www.bing.com/*
+// @match        https://duckduckgo.com/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  if (document.getElementById("anime-walk-overlay")) return;
+  if (!document.body) return;
+
+  const characters = [
+    "https://media.tenor.com/qKcQ1JXcmPsAAAAj/pink-anime-pink-anime-girl.gif",
+    "https://img1.picmix.com/output/stamp/normal/3/4/9/7/1997943_57e8b.gif"
+  ];
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #anime-walk-overlay {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 2147483647;
+      pointer-events: none;
+    }
+
+    .anime-walker {
+      position: absolute;
+      width: clamp(270px, 39vw, 540px);
+      height: auto;
+      object-fit: contain;
+      transition: left 3.8s ease-in-out, top 3.8s ease-in-out,
+                  transform .35s ease;
+      filter: drop-shadow(0 4px 5px #0004);
+      will-change: left, top;
+      user-select: none;
+    }
+
+    .anime-walker.pink-girl {
+      width: min(90vw, 1400px);
+    }
+
+    .pink-bubble {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      border: 1px solid rgba(255,255,255,.85);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 25%, #ffffff 0 8%, #ffffff8c 10% 17%, transparent 20%),
+        radial-gradient(circle at 65% 70%, #ff69c8a6, #ffaadd52 55%, #ffffffc7);
+      box-shadow: inset -3px -4px 7px #ff46b859, 0 0 9px #ff50be8c;
+      animation: bubble-float-pop 1.25s ease-out forwards;
+    }
+
+    .pink-particle {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, #fff, #ff72c8 60%, #ed36a6);
+      box-shadow: 0 0 7px #ff72c8;
+      animation: particle-burst .55s ease-out forwards;
+    }
+
+    @keyframes bubble-float-pop {
+      0%   { opacity: 0; transform: scale(.35); }
+      15%  { opacity: 1; transform: scale(1); }
+      75%  { opacity: 1; transform: translate(10px,-14px) scale(1.08); }
+      100% { opacity: 0; transform: translate(14px,-18px) scale(1.45); }
+    }
+
+    @keyframes particle-burst {
+      from { opacity: 1; transform: translate(0,0) scale(1); }
+      to {
+        opacity: 0;
+        transform: translate(var(--dx),var(--dy)) scale(.25);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .anime-walker { transition-duration: 8s; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const overlay = document.createElement("div");
+  overlay.id = "anime-walk-overlay";
+  document.body.appendChild(overlay);
+
+  const walkers = characters.map((src, index) => {
+    const img = document.createElement("img");
+    img.className = index === 0 ? "anime-walker pink-girl" : "anime-walker";
+    img.src = src;
+    img.alt = index === 0 ? "Personaj anime roz" : "Personaj anime";
+    img.draggable = false;
+    img.style.left = `${8 + index * 38}vw`;
+    img.style.top = `${12 + index * 30}vh`;
+    overlay.appendChild(img);
+    return img;
+  });
+
+  function moveRandomly(img) {
+    const maxX = Math.max(0, innerWidth - img.offsetWidth);
+    const maxY = Math.max(0, innerHeight - img.offsetHeight);
+    const oldX = parseFloat(img.style.left) || 0;
+    const newX = Math.random() * maxX;
+
+    img.style.transform = newX < oldX ? "scaleX(-1)" : "scaleX(1)";
+    img.style.left = `${newX}px`;
+    img.style.top = `${Math.random() * maxY}px`;
+  }
+
+  function makePinkEffect(img) {
+    if (!img.isConnected) return;
+
+    const rect = img.getBoundingClientRect();
+    const bubble = document.createElement("span");
+    bubble.className = "pink-bubble";
+    bubble.style.left = `${rect.left + rect.width * 0.25}px`;
+    bubble.style.top = `${rect.top + rect.height * 0.72}px`;
+    overlay.appendChild(bubble);
+
+    bubble.addEventListener("animationend", () => {
+      const rect = bubble.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      bubble.remove();
+
+      for (let i = 0; i < 7; i++) {
+        const particle = document.createElement("span");
+        particle.className = "pink-particle";
+        particle.style.left = `${centerX}px`;
+        particle.style.top = `${centerY}px`;
+        particle.style.setProperty("--dx", `${(Math.random() - 0.5) * 54}px`);
+        particle.style.setProperty("--dy", `${(Math.random() - 0.5) * 54}px`);
+        overlay.appendChild(particle);
+        particle.addEventListener("animationend", () => particle.remove(), { once: true });
+      }
+    }, { once: true });
+  }
+
+  walkers.forEach((img, index) => {
+    function wander() {
+      moveRandomly(img);
+      setTimeout(wander, 2500 + Math.random() * 3500);
+    }
+
+    function gag() {
+      makePinkEffect(img);
+      setTimeout(gag, 1800 + Math.random() * 2500);
+    }
+
+    setTimeout(wander, index * 900);
+    setTimeout(gag, 1200 + index * 1000);
+  });
+})();

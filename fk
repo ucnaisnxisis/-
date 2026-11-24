@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Avertizare site 18+ cu audio și GIF
 // @namespace    local
-// @version      1.9
-// @description  Afișează un avertisment cu audio pe paginile recunoscute ca 18+
+// @version      2.0
+// @description  Afișează un avertisment temporar pe paginile recunoscute ca 18+
 // @match        *://*/*
 // @run-at       document-idle
 // @grant        none
@@ -19,7 +19,8 @@
 
     // Pornește doar dacă adresa sau titlul paginii conține unul dintre acești termeni.
     const textPagina = `${location.hostname} ${document.title}`.toLowerCase();
-    const site18Plus = /\b(porn|porno|pornography|xxx|adult|sex)\b|18\+/i.test(textPagina);
+    const site18Plus =
+        /\b(porn|porno|pornography|xamster|xshamster|xtube|xpee|xxx|ixx|pinktube|redtube|xnxx|xvideo|xvideos|pee|ass|pussy|dick|smell|ejaculation|ejaculated|ejaculare|ejaculari|adult|sex)\b|18\+/i.test(textPagina);
 
     if (!site18Plus) return;
 
@@ -61,15 +62,21 @@
     document.documentElement.appendChild(overlay);
 
     let terminat = false;
+    let timerId;
 
     function inchide() {
         if (terminat) return;
+
         terminat = true;
+        clearTimeout(timerId);
         audio.pause();
         overlay.remove();
     }
 
-    // Închide totul cu aproximativ 0,5 secunde înainte de finalul audio-ului.
+    // Închide overlay-ul după 10 secunde, chiar dacă audio-ul sau GIF-ul nu funcționează.
+    timerId = setTimeout(inchide, 10_000);
+
+    // Închide și când audio-ul ajunge la final.
     audio.addEventListener('timeupdate', () => {
         if (
             Number.isFinite(audio.duration) &&
@@ -79,7 +86,6 @@
         }
     });
 
-    // Rezervă: închide overlay-ul când audio-ul se termină.
     audio.addEventListener('ended', inchide, { once: true });
 
     buton.addEventListener('click', () => {
@@ -90,7 +96,7 @@
             });
     });
 
-    // Încearcă redarea automată; unele browsere cer mai întâi un clic.
+    // Încearcă redarea automată; unele browsere cer un clic înainte.
     audio.play()
         .then(() => buton.remove())
         .catch(() => {

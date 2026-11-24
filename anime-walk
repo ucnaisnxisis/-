@@ -6,6 +6,10 @@
 // @include      /^https:\/\/(www\.)?google\.[^/]+\/.*/
 // @match        https://www.bing.com/*
 // @match        https://duckduckgo.com/*
+// @match        https://noai.duckduckgo.com/*
+// @match        https://search.brave.com/*
+// @match        https://www.ecosia.org/*
+// @match        https://www.startpage.com/*
 // @run-at       document-idle
 // @grant        none
 // ==/UserScript==

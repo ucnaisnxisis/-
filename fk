@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Avertizare site 18+ cu audio și GIF
 // @namespace    local
-// @version      1.2
+// @version      1.4
 // @description  Afișează un avertisment cu audio pe paginile recunoscute ca 18+
 // @match        *://*/*
 // @run-at       document-idle
@@ -50,8 +50,8 @@
     imagine.src = GIF_URL;
     imagine.alt = 'Avertisment';
     imagine.style.cssText = `
-        max-width: min(80vw, 360px);
-        max-height: 55vh;
+        max-width: min(160vw, 720px);
+        max-height: 110vh;
         object-fit: contain;
     `;
 
@@ -95,7 +95,7 @@
             });
     });
 
-    // Încearcă redarea automată; unele browsere cer mai întâi o atingere sau un clic.
+    // Încearcă redarea automată; unele browsere cer mai întâi un clic.
     audio.play()
         .then(() => buton.remove())
         .catch(() => {

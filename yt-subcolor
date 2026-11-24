@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         YouTube: culoare subtitrări după titlu
+// @name         YouTube: subtitrări colorate după titlu
 // @namespace    local
-// @version      2.2
-// @description  Colorează subtitrările după limba sau cuvintele-cheie din titlu
+// @version      3.0
+// @description  Colorează subtitrările după limba sau cuvintele-cheie din titlu; poate afișa două culori simultan
 // @match        https://www.youtube.com/*
 // @run-at       document-idle
 // @grant        none
@@ -12,29 +12,29 @@
   'use strict';
 
   const COLORS = {
-    korean:     '#9B59FF', // mov
-    japanese:   '#FF69B4', // roz
-    chinese:    '#FF0000', // roșu
-    romanian:   '#FFD700', // galben
-    russian:    '#1687FF', // albastru
-    french:     '#20CFCF', // turcoaz
-    arabic:     '#FF8C00', // portocaliu
-    spanish:    '#39B54A', // verde
-    german:     '#FF7A00', // portocaliu-închis
-    italian:    '#8A2BE2', // violet-albastru
-    portuguese: '#00A86B', // verde-jad
-    greek:      '#A52A2A'  // maro
+    korean:     '#9B59FF',
+    japanese:   '#FF69B4',
+    chinese:    '#FF0000',
+    romanian:   '#FFD700',
+    russian:    '#1687FF',
+    french:     '#20CFCF',
+    arabic:     '#FF8C00',
+    spanish:    '#39B54A',
+    german:     '#FF7A00',
+    italian:    '#8A2BE2',
+    portuguese: '#00A86B',
+    greek:      '#A52A2A'
   };
 
-  // Cuvintele-cheie au prioritate față de detectarea alfabetului.
+  // Cuvintele-cheie detectate aici au prioritate.
   const KEYWORDS = [
     {
       color: COLORS.japanese,
-      pattern: /\b(?:anime|manga|j[\s-]?pop|otaku|cosplay|hikikomori|loli|animax\s*tv|film\s+japonez|japanese|japan|jp|chan|shinobi|sayan|sayonara|hajimemashite|hashimete|madoka|naruto|Garnidelia|Fuji|Kaze|Kirari|Kiddy Grade|Boruto|Shiki TMNS|detectiv\s+conan|detective\s+conan|sushi|one\s+piece|dragon\s+ball(?:\s+z)?|attack\s+on\s+titan|demon\s+slayer|kimetsu\s+no\s+yaiba|jujutsu\s+kaisen|my\s+hero\s+academia|pokemon|pokémon|sailor\s+moon|death\s+note|bleach|hunter\s*[x×]\s*hunter|fullmetal\s+alchemist|spy\s*x\s*family|studio\s+ghibli)\b/i
+      pattern: /\b(?:anime|manga|j[\s-]?pop|otaku|Takanori|Nishikawa|kawaii|cosplay|hikikomori|loli|animax\s*tv|film\s+japonez|japanese|japan|jp|chan|shinobi|sayan|sayonara|hajimemashite|hashimete|madoka|naruto|Garnidelia|Fuji|Kaze|Kirari|Kiddy Grade|Boruto|Shiki TMNS|detectiv\s+conan|detective\s+conan|sushi|one\s+piece|dragon\s+ball(?:\s+z)?|attack\s+on\s+titan|demon\s+slayer|kimetsu\s+no\s+yaiba|jujutsu\s+kaisen|my\s+hero\s+academia|pokemon|pokémon|sailor\s+moon|death\s+note|bleach|hunter\s*[x×]\s*hunter|fullmetal\s+alchemist|spy\s*x\s*family|studio\s+ghibli)\b/i
     },
     {
       color: COLORS.korean,
-      pattern: /\b(?:k[\s-]?pop|k[\s-]?drama|film\s+coreean(?:ă|ul|a)?|bts|bangtan(?:\s+sonyeondan)?|blackpink|black\s+pink|aoa|twice|stray\s+kids|seventeen|exo|red\s+velvet|itzy|enhypen|aespa|ateez|bigbang|big\s+bang|got7|mamamoo|nct|txt|tomorrow\s*x\s*together|newjeans|le\s+serafim|lesserafim|ive|monsta\s+x|ikon|i[\s-]?kon|2ne1|apink|astro|day6|dreamcatcher|everglow|nmixx|babymonster)\b/i
+      pattern: /\b(?:k[\s-]?pop|k[\s-]?drama|f5ve|film\s+coreean(?:ă|ul|a)?|bts|bangtan(?:\s+sonyeondan)?|blackpink|black\s+pink|aoa|twice|stray\s+kids|seventeen|exo|red\s+velvet|itzy|enhypen|aespa|ateez|bigbang|big\s+bang|got7|mamamoo|nct|txt|tomorrow\s*x\s*together|newjeans|le\s+serafim|lesserafim|ive|monsta\s+x|ikon|i[\s-]?kon|2ne1|apink|astro|day6|dreamcatcher|everglow|nmixx|babymonster)\b/i
     },
     {
       color: COLORS.chinese,
@@ -42,8 +42,7 @@
     }
   ];
 
-  // Titlul este normalizat pentru a recunoaște, de exemplu,
-  // atât „mulțumesc”, cât și „multumesc”.
+  // Normalizarea permite detectarea cuvintelor românești cu sau fără diacritice.
   function normalize(text) {
     return text
       .normalize('NFD')
@@ -61,15 +60,14 @@
       || '';
   }
 
+  // Detectează o singură culoare, inclusiv pentru limbile cu alfabet latin.
   function detectColor(title) {
-    // Mai întâi verifică termenii expliciți din titlu.
     for (const item of KEYWORDS) {
       if (item.pattern.test(title)) {
         return item.color;
       }
     }
 
-    // Apoi verifică alfabetul sau caracterele distinctive.
     if (/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/u.test(title)) {
       return COLORS.korean;
     }
@@ -89,12 +87,10 @@
       return COLORS.russian;
     }
 
-    // Verifică termenii românești după eliminarea diacriticelor.
     if (ROMANIAN_WORDS.test(normalize(title))) {
       return COLORS.romanian;
     }
 
-    // Indicii pentru câteva limbi cu alfabet latin.
     if (/\b(?:bonjour|merci|lolita|quarante|troi|quatre|noeuf|autumm|musique|français|française|avec|pour|film français)\b/i.test(title)) {
       return COLORS.french;
     }
@@ -111,17 +107,68 @@
       return COLORS.portuguese;
     }
 
-    // Fără indicii clare, lasă culoarea implicită a playerului.
     return '';
   }
 
+  // Adună până la două culori atunci când titlul indică mai multe limbi.
+  function getTitleColors(title) {
+    const colors = [];
+
+    // Caută toate cuvintele-cheie japoneze, coreene și chinezești găsite.
+    for (const item of KEYWORDS) {
+      if (item.pattern.test(title) && !colors.includes(item.color)) {
+        colors.push(item.color);
+      }
+    }
+
+    // Detectează și limbile indicate de alfabete distincte.
+    const scripts = [
+      [/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/u, COLORS.korean],
+      [/[\u3040-\u30FF\u31F0-\u31FF]/u, COLORS.japanese],
+      [/[\u4E00-\u9FFF\u3400-\u4DBF]/u, COLORS.chinese],
+      [/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u, COLORS.arabic],
+      [/[\u0370-\u03FF\u1F00-\u1FFF]/u, COLORS.greek],
+      [/[\u0400-\u04FF\u0500-\u052F]/u, COLORS.russian]
+    ];
+
+    for (const [pattern, color] of scripts) {
+      if (pattern.test(title) && !colors.includes(color)) {
+        colors.push(color);
+      }
+    }
+
+    // Adaugă și culoarea detectată prin cuvintele românești sau latine.
+    const detected = detectColor(title);
+    if (detected && !colors.includes(detected)) {
+      colors.push(detected);
+    }
+
+    return colors.slice(0, 2);
+  }
+
   function updateCaptions() {
-    const color = detectColor(getTitle());
+    const colors = getTitleColors(getTitle());
 
     document.querySelectorAll('.ytp-caption-segment').forEach((element) => {
-      if (color) {
-        element.style.setProperty('color', color, 'important');
+      if (colors.length >= 2) {
+        // Prima culoare în stânga, a doua în dreapta.
+        element.style.setProperty(
+          'background-image',
+          `linear-gradient(to right, ${colors[0]} 50%, ${colors[1]} 50%)`,
+          'important'
+        );
+        element.style.setProperty('color', 'transparent', 'important');
+        element.style.setProperty('-webkit-background-clip', 'text', 'important');
+        element.style.setProperty('background-clip', 'text', 'important');
+      } else if (colors.length === 1) {
+        element.style.removeProperty('background-image');
+        element.style.removeProperty('-webkit-background-clip');
+        element.style.removeProperty('background-clip');
+        element.style.setProperty('color', colors[0], 'important');
       } else {
+        element.style.removeProperty('background-image');
+        element.style.removeProperty('-webkit-background-clip');
+        element.style.removeProperty('background-clip');
         element.style.removeProperty('color');
       }
     });

@@ -1,0 +1,648 @@
+// ==UserScript==
+// @name         Hatsune Miku — Chat Overlay v2.1
+// @namespace    local
+// @version      2.1
+// @description  Chat local, animații și comenzi pentru Hatsune Miku
+// @include      /^https:\/\/(www\.)?google\.[^/]+\/.*/
+// @match        https://www.bing.com/*
+// @match        https://duckduckgo.com/*
+// @match        https://*.duckduckgo.com/*
+// @match        https://noai.duckduckgo.com/*
+// @match        https://search.brave.com/*
+// @match        https://www.ecosia.org/*
+// @match        https://startpage.com/*
+// @match        https://www.startpage.com/*
+// @match        https://*.startpage.com/*
+// @resource     mikuDefault https://img1.picmix.com/output/stamp/normal/3/4/9/7/1997943_57e8b.gif
+// @resource     mikuDance https://media.tenor.com/s2kXfVOep1IAAAAm/miku-hatsune-miku.webp
+// @resource     mikuShoot https://media.tenor.com/yz1hrVPqABEAAAAm/miku-shooting-no-background.webp
+// @resource     mikuAdore https://media.tenor.com/ibw_yNLcfrcAAAAm/hatsune-miku-world-is-mine.webp
+// @run-at       document-idle
+// @grant        GM_getResourceURL
+// ==/UserScript==
+
+(() => {
+  if (!document.body || document.getElementById("miku-chat-overlay")) return;
+
+  const directURLs = {
+    default: "https://img1.picmix.com/output/stamp/normal/3/4/9/7/1997943_57e8b.gif",
+    dance: "https://media.tenor.com/s2kXfVOep1IAAAAm/miku-hatsune-miku.webp",
+    shoot: "https://media.tenor.com/yz1hrVPqABEAAAAm/miku-shooting-no-background.webp",
+    adore: "https://media.tenor.com/ibw_yNLcfrcAAAAm/hatsune-miku-world-is-mine.webp"
+  };
+
+  function resource(name, fallback) {
+    try {
+      return GM_getResourceURL(name) || fallback;
+    } catch (error) {
+      console.warn("Nu s-a putut prelua resursa", name, error);
+      return fallback;
+    }
+  }
+
+  const assets = {
+    default: resource("mikuDefault", directURLs.default),
+    dance: resource("mikuDance", directURLs.dance),
+    shoot: resource("mikuShoot", directURLs.shoot),
+    adore: resource("mikuAdore", directURLs.adore)
+  };
+
+  const host = document.createElement("div");
+  host.id = "miku-chat-overlay";
+  const shadow = host.attachShadow({ mode: "open" });
+
+  const style = document.createElement("style");
+  style.textContent = `
+    :host {
+      all: initial;
+      position: fixed;
+      inset: 0;
+      display: block;
+      overflow: hidden;
+      z-index: 2147483647;
+      pointer-events: none;
+      font-family: system-ui, sans-serif;
+    }
+
+    #stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+
+    #avatar-frame {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: clamp(190px, 27vw, 320px);
+      height: clamp(190px, 27vw, 320px);
+      transition: left 2.8s ease-in-out, top 2.8s ease-in-out;
+      will-change: left, top;
+    }
+
+    #avatar {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 6px #0005);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    #speech {
+      position: absolute;
+      display: none;
+      max-width: min(280px, 65vw);
+      padding: 10px 14px;
+      border: 2px solid var(--miku-text, #d52e91);
+      border-radius: 18px;
+      background: var(--miku-bg, #ffe6f4);
+      color: var(--miku-text, #d52e91);
+      box-shadow: 0 4px 14px #0003;
+      font-size: 15px;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      transform: translate(-50%, -100%);
+      z-index: 2;
+    }
+
+    #speech::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      bottom: -9px;
+      width: 14px;
+      height: 14px;
+      background: var(--miku-bg, #ffe6f4);
+      border-right: 2px solid var(--miku-text, #d52e91);
+      border-bottom: 2px solid var(--miku-text, #d52e91);
+      transform: rotate(45deg);
+    }
+
+    .float-emoji {
+      position: absolute;
+      font-size: 26px;
+      line-height: 1;
+      animation: float-up 1.8s ease-out forwards;
+    }
+
+    @keyframes float-up {
+      0% { opacity: 0; transform: translateY(0) scale(.65); }
+      15% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-95px) scale(1.3); }
+    }
+
+    #chat {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      width: min(370px, calc(100vw - 32px));
+      height: min(500px, calc(100vh - 32px));
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid #d8c5ee;
+      border-radius: 16px;
+      background: #ffffffed;
+      box-shadow: 0 8px 30px #0003;
+      pointer-events: auto;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    #header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px;
+      background: #f2e7ff;
+      color: #563478;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #header-actions { display: flex; gap: 6px; }
+
+    .small-button {
+      border: 0;
+      border-radius: 8px;
+      padding: 5px 8px;
+      background: #ffffffc9;
+      color: #563478;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    #settings {
+      display: none;
+      padding: 9px 10px;
+      border-bottom: 1px solid #eadff2;
+      background: white;
+    }
+
+    #settings.open { display: block; }
+
+    .color-row {
+      display: grid;
+      grid-template-columns: 1fr 34px 1fr 34px;
+      align-items: center;
+      gap: 6px;
+      margin: 5px 0;
+      font-size: 12px;
+      color: #49365b;
+    }
+
+    .color-row input {
+      width: 32px;
+      height: 26px;
+      padding: 1px;
+      border: 1px solid #cbb5df;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+    }
+
+    #messages { flex: 1; overflow-y: auto; padding: 10px; }
+
+    .message {
+      width: fit-content;
+      max-width: 88%;
+      margin: 7px 0;
+      padding: 8px 11px;
+      border-radius: 14px;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .message.user {
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+      background: var(--user-bg, #eee2ff);
+      color: var(--user-text, #7138ad);
+    }
+
+    .message.miku {
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+      background: var(--miku-bg, #ffe6f4);
+      color: var(--miku-text, #d52e91);
+    }
+
+    #form {
+      display: flex;
+      gap: 7px;
+      padding: 9px;
+      border-top: 1px solid #eadff2;
+    }
+
+    #input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid #cbb5df;
+      border-radius: 10px;
+      padding: 9px 10px;
+      outline: none;
+      color: #222;
+      background: white;
+      font: 14px system-ui, sans-serif;
+    }
+
+    #send, #restore-button {
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 12px;
+      background: #8d55bd;
+      color: white;
+      cursor: pointer;
+      font: 14px system-ui, sans-serif;
+    }
+
+    #restore-button {
+      position: fixed;
+      left: 16px;
+      bottom: 16px;
+      display: none;
+      pointer-events: auto;
+      z-index: 11;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #avatar-frame { transition: none; }
+      .float-emoji { animation-duration: .01ms; }
+    }
+  `;
+
+  const stage = document.createElement("div");
+  stage.id = "stage";
+
+  const avatarFrame = document.createElement("div");
+  avatarFrame.id = "avatar-frame";
+
+  const avatar = document.createElement("img");
+  avatar.id = "avatar";
+  avatar.alt = "Hatsune Miku";
+  avatar.draggable = false;
+  avatar.src = assets.default;
+  avatarFrame.appendChild(avatar);
+
+  const speech = document.createElement("div");
+  speech.id = "speech";
+  speech.setAttribute("role", "status");
+  stage.append(avatarFrame, speech);
+
+  const chat = document.createElement("section");
+  chat.id = "chat";
+
+  const header = document.createElement("div");
+  header.id = "header";
+
+  const title = document.createElement("span");
+  title.textContent = "Chat cu Hatsune Miku";
+
+  const actions = document.createElement("div");
+  actions.id = "header-actions";
+
+  const settingsButton = document.createElement("button");
+  settingsButton.className = "small-button";
+  settingsButton.type = "button";
+  settingsButton.textContent = "Culori";
+
+  const hideButton = document.createElement("button");
+  hideButton.className = "small-button";
+  hideButton.type = "button";
+  hideButton.textContent = "Ascunde";
+
+  actions.append(settingsButton, hideButton);
+  header.append(title, actions);
+
+  const settings = document.createElement("div");
+  settings.id = "settings";
+
+  function makeColorRow(label, textVar, textDefault, bgVar, bgDefault) {
+    const row = document.createElement("div");
+    row.className = "color-row";
+
+    const textLabel = document.createElement("span");
+    textLabel.textContent = `${label} — text`;
+
+    const textPicker = document.createElement("input");
+    textPicker.type = "color";
+    textPicker.value = textDefault;
+    textPicker.addEventListener("input", () => host.style.setProperty(textVar, textPicker.value));
+
+    const bgLabel = document.createElement("span");
+    bgLabel.textContent = "fundal";
+
+    const bgPicker = document.createElement("input");
+    bgPicker.type = "color";
+    bgPicker.value = bgDefault;
+    bgPicker.addEventListener("input", () => host.style.setProperty(bgVar, bgPicker.value));
+
+    row.append(textLabel, textPicker, bgLabel, bgPicker);
+    return row;
+  }
+
+  settings.append(
+    makeColorRow("Tu", "--user-text", "#7138ad", "--user-bg", "#eee2ff"),
+    makeColorRow("Miku", "--miku-text", "#d52e91", "--miku-bg", "#ffe6f4")
+  );
+
+  const messages = document.createElement("div");
+  messages.id = "messages";
+  messages.setAttribute("aria-live", "polite");
+
+  const form = document.createElement("form");
+  form.id = "form";
+
+  const input = document.createElement("input");
+  input.id = "input";
+  input.type = "text";
+  input.autocomplete = "off";
+  input.placeholder = "Scrie un mesaj sau o comandă…";
+
+  const send = document.createElement("button");
+  send.id = "send";
+  send.type = "submit";
+  send.textContent = "Trimite";
+
+  form.append(input, send);
+  chat.append(header, settings, messages, form);
+
+  const restore = document.createElement("button");
+  restore.id = "restore-button";
+  restore.type = "button";
+  restore.textContent = "Deschide chatul";
+
+  shadow.append(style, stage, chat, restore);
+  document.body.appendChild(host);
+
+  const history = [];
+  let moving = true;
+  let reversed = false;
+  let speechUntil = 0;
+  let speechFrame = 0;
+
+  function renderMessages() {
+    messages.replaceChildren();
+
+    for (const item of history) {
+      const role = reversed
+        ? (item.role === "user" ? "miku" : "user")
+        : item.role;
+
+      const bubble = document.createElement("div");
+      bubble.className = `message ${role}`;
+      bubble.textContent = item.text;
+      messages.appendChild(bubble);
+    }
+
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function addMessage(role, text) {
+    history.push({ role, text });
+    renderMessages();
+  }
+
+  function placeAvatar(x, y) {
+    const maxX = Math.max(0, innerWidth - avatarFrame.offsetWidth);
+    const maxY = Math.max(0, innerHeight - avatarFrame.offsetHeight);
+    avatarFrame.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
+    avatarFrame.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
+  }
+
+  function moveRandomly() {
+    if (!moving) return;
+
+    const maxX = Math.max(0, innerWidth - avatarFrame.offsetWidth);
+    const maxY = Math.max(0, innerHeight - avatarFrame.offsetHeight);
+    const oldX = parseFloat(avatarFrame.style.left) || 0;
+    const nextX = Math.random() * maxX;
+
+    avatar.style.transform = nextX < oldX ? "scaleX(-1)" : "scaleX(1)";
+    placeAvatar(nextX, Math.random() * maxY);
+  }
+
+  function moveDirection(direction) {
+    moving = false;
+
+    const step = Math.max(90, Math.min(innerWidth, innerHeight) * 0.22);
+    let x = parseFloat(avatarFrame.style.left) || 0;
+    let y = parseFloat(avatarFrame.style.top) || 0;
+
+    if (direction === "left") {
+      x -= step;
+      avatar.style.transform = "scaleX(-1)";
+    }
+    if (direction === "right") {
+      x += step;
+      avatar.style.transform = "scaleX(1)";
+    }
+    if (direction === "up") y -= step;
+    if (direction === "down") y += step;
+
+    placeAvatar(x, y);
+  }
+
+  function followSpeech() {
+    if (performance.now() < speechUntil && speech.style.display === "block") {
+      const rect = avatarFrame.getBoundingClientRect();
+      speech.style.left = `${Math.max(100, Math.min(innerWidth - 100, rect.left + rect.width / 2))}px`;
+      speech.style.top = `${Math.max(85, rect.top - 8)}px`;
+      speechFrame = requestAnimationFrame(followSpeech);
+    } else {
+      speech.style.display = "none";
+      speechFrame = 0;
+    }
+  }
+
+  function showSpeech(text) {
+    speech.textContent = text;
+    speech.style.display = "block";
+    speechUntil = performance.now() + 5000;
+
+    if (speechFrame) cancelAnimationFrame(speechFrame);
+    speechFrame = requestAnimationFrame(followSpeech);
+  }
+
+  function showEmojis(list) {
+    const rect = avatarFrame.getBoundingClientRect();
+
+    for (let i = 0; i < 7; i++) {
+      const item = document.createElement("span");
+      item.className = "float-emoji";
+      item.textContent = list[i % list.length];
+      item.style.left = `${rect.left + rect.width * (0.2 + Math.random() * 0.6)}px`;
+      item.style.top = `${rect.top + rect.height * (0.2 + Math.random() * 0.5)}px`;
+      item.style.animationDelay = `${Math.random() * 0.3}s`;
+      stage.appendChild(item);
+      item.addEventListener("animationend", () => item.remove(), { once: true });
+    }
+  }
+
+  function setAvatar(kind) {
+    const next = assets[kind] || assets.default;
+
+    avatar.onerror = () => {
+      console.warn("Avatarul nu s-a încărcat; revin la GIF-ul inițial.");
+      avatar.onerror = null;
+      if (avatar.src !== assets.default) avatar.src = assets.default;
+    };
+
+    avatar.src = next;
+  }
+
+  function reply(text, options = {}) {
+    addMessage("miku", text);
+    showSpeech(text);
+
+    if (options.avatar) setAvatar(options.avatar);
+    if (options.emojis) showEmojis(options.emojis);
+  }
+
+  function handleMessage(raw) {
+    const text = raw.trim();
+    if (!text) return;
+
+    const lower = text.toLocaleLowerCase("ro");
+
+    if (lower === "sterge-tot") {
+      history.length = 0;
+      renderMessages();
+      speech.style.display = "none";
+      return;
+    }
+
+    if (lower === "w") {
+      reversed = !reversed;
+      renderMessages();
+      return;
+    }
+
+    if (lower.startsWith("q ")) {
+      const echo = text.slice(2).trim();
+      if (echo) reply(echo);
+      return;
+    }
+
+    if (lower === "mergi") {
+      moving = true;
+      addMessage("user", text);
+      reply("Am pornit la plimbare!");
+      moveRandomly();
+      return;
+    }
+
+    if (lower === "stop" || lower === "stop nu mai merge") {
+      moving = false;
+      addMessage("user", text);
+      reply("M-am oprit.");
+      return;
+    }
+
+    const directions = [
+      [/miku stai la <|miku stai la stanga/, "left", "Mă deplasez spre stânga."],
+      [/miku stai la >|miku stai la dreapta/, "right", "Mă deplasez spre dreapta."],
+      [/miku stai in sus|miku stai în sus/, "up", "Mă deplasez în sus."],
+      [/miku stai in jos|miku stai în jos/, "down", "Mă deplasez în jos."]
+    ];
+
+    for (const [pattern, direction, answer] of directions) {
+      if (pattern.test(lower)) {
+        addMessage("user", text);
+        moveDirection(direction);
+        reply(answer);
+        return;
+      }
+    }
+
+    if (lower.includes("danseaza kawaii") || lower.includes("dansează kawaii")) {
+      addMessage("user", text);
+      reply("Dans kawaii! ✨", { avatar: "dance", emojis: ["✨", "🎵", "💫"] });
+      return;
+    }
+
+    if (lower.includes("danseaza") || lower.includes("dansează")) {
+      addMessage("user", text);
+      reply("Hai să dansăm! 🎵", { avatar: "dance", emojis: ["🎵", "🎶", "✨"] });
+      return;
+    }
+
+    if (lower.includes("trage cu arma") || lower.includes("miku trage")) {
+      addMessage("user", text);
+      reply("Animație cu efect de acțiune. 💥", {
+        avatar: "shoot",
+        emojis: ["💥", "✨"]
+      });
+      return;
+    }
+
+    if (lower.includes("adora") || lower.includes("adoră")) {
+      addMessage("user", text);
+      reply("Ce frumos! ✨", {
+        avatar: "adore",
+        emojis: ["✨", "💖", "⭐"]
+      });
+      return;
+    }
+
+    if (lower.includes("miku normal") || lower.includes("revino")) {
+      addMessage("user", text);
+      setAvatar("default");
+      reply("Am revenit la animația obișnuită.");
+      return;
+    }
+
+    addMessage("user", text);
+
+    if (lower.includes("te iubesc")) {
+      reply("Mulțumesc, ce mesaj drăguț!", { emojis: ["💖", "✨", "💖"] });
+    } else if (lower.includes("salut") || lower.includes("bună") || lower.includes("buna")) {
+      reply("Bună! 😊");
+    } else if (lower.includes("ce faci")) {
+      reply("Mă plimb pe ecran și citesc mesajele tale! 🎵");
+    } else {
+      reply("Am primit mesajul tău! Poți încerca o comandă sau poți folosi emoji-uri. ✨");
+    }
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const value = input.value;
+    input.value = "";
+    handleMessage(value);
+    input.focus();
+  });
+
+  settingsButton.addEventListener("click", () => settings.classList.toggle("open"));
+
+  hideButton.addEventListener("click", () => {
+    chat.style.display = "none";
+    restore.style.display = "block";
+  });
+
+  restore.addEventListener("click", () => {
+    chat.style.display = "flex";
+    restore.style.display = "none";
+  });
+
+  avatar.onerror = () => {
+    console.error("GIF-ul inițial nu s-a încărcat:", avatar.src);
+  };
+
+  avatar.onload = () => {
+    if (!avatarFrame.style.left) {
+      placeAvatar(innerWidth * 0.35, innerHeight * 0.25);
+    }
+  };
+
+  addEventListener("resize", () => {
+    placeAvatar(
+      parseFloat(avatarFrame.style.left) || 0,
+      parseFloat(avatarFrame.style.top) || 0
+    );
+  });
+
+  setInterval(moveRandomly, 3500);
+})();

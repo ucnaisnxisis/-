@@ -4,6 +4,15 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Experimental New, for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-duo and cleanweb-static (Limit 1,99 MB rules, github >> Try clewanweb-duo1 in future)
 
+##.exitButton
+##.main.age-disclaimer-modal > .content > p
+##.main.age-disclaimer-modal > .logo-wrapper
+###exitButton
+###main.age-disclaimer-modal > .content > p
+###main.age-disclaimer-modal > .logo-wrapper
+##exitButton
+##main.age-disclaimer-modal > .content > p
+##main.age-disclaimer-modal > .logo-wrapper
 ##.Intro__header__1xAHJ9
 ##.Intro__header__1xAHJ8
 ##.Intro__header__1xAHJ7

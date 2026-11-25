@@ -12,23 +12,9 @@
 (() => {
     'use strict';
 
-    const MARK = 'data-tm-orange-bg';
-    const originalBackgrounds = new Map();
-
     const ORANGE = '#ff8c00';
+    const MODE_4_BACKGROUND = '#3b2810';
     const MODE_5_BACKGROUND = '#3b2810';
-
-    // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
-    const THEME = {
-        mode: 1,
-        brightness: 100,
-        contrast: 80,
-        sepia: 0,
-        darkSchemeBackgroundColor: ORANGE,
-        darkSchemeTextColor: '#ffffff',
-        lightSchemeBackgroundColor: ORANGE,
-        lightSchemeTextColor: '#ffd28a'
-    };
 
     const host = location.hostname.toLowerCase();
 
@@ -51,12 +37,6 @@
         'archive.org',
         'www.archive.org'
     ]);
-
-    // Modul 4: stil portocaliu pentru stiripesurse.ro.
-    const MODE_4_HOSTS = [
-        'stiripesurse.ro',
-        'www.stiripesurse.ro'
-    ];
 
     // Modul 2: stil portocaliu aplicat agresiv acestor domenii.
     const MODE_2_HOSTS = [
@@ -125,6 +105,24 @@
         'www.cel.ro'
     ];
 
+    // Modul 4: reguli speciale pentru Știripesurse.
+    const MODE_4_HOSTS = [
+        'stiripesurse.ro',
+        'www.stiripesurse.ro'
+    ];
+
+    // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
+    const THEME = {
+        mode: 1,
+        brightness: 100,
+        contrast: 80,
+        sepia: 0,
+        darkSchemeBackgroundColor: ORANGE,
+        darkSchemeTextColor: '#ffffff',
+        lightSchemeBackgroundColor: ORANGE,
+        lightSchemeTextColor: '#ffd28a'
+    };
+
     const MODE_2_CSS = `
         :root {
             color-scheme: dark !important;
@@ -181,7 +179,68 @@
         }
     `;
 
-    // Modul 5: stiluri pentru document și rădăcinile Shadow deschise.
+    const MODE_4_CSS = `
+        :root,
+        html {
+            color-scheme: dark !important;
+            background-color: ${ORANGE} !important;
+        }
+
+        body,
+        main,
+        article,
+        section,
+        header,
+        footer,
+        nav,
+        aside,
+        [role="main"] {
+            background-color: ${MODE_4_BACKGROUND} !important;
+        }
+
+        body {
+            color: #ffffff !important;
+        }
+
+        body *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #70563b !important;
+        }
+
+        img,
+        video,
+        canvas,
+        iframe,
+        picture,
+        svg {
+            background-color: transparent !important;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #4d3519 !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #877057 !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #e2d8eb !important;
+            -webkit-text-fill-color: #e2d8eb !important;
+            opacity: 1 !important;
+        }
+
+        ::selection {
+            background: #8a5b24 !important;
+            color: #ffffff !important;
+        }
+    `;
+
+    // Modul 5: reguli aplicate în document și în fiecare Shadow Root deschis.
     const MODE_5_CSS = `
         :host {
             color-scheme: dark !important;
@@ -280,6 +339,7 @@
         });
     }
 
+    // Documentul normal al Archive.org primește propriul stil.
     function startMode5() {
         installStyle(
             document,
@@ -289,6 +349,7 @@
 
         scanOpenShadowRoots(document);
 
+        // Caută rădăcini Shadow create ulterior.
         const observer = new MutationObserver(records => {
             for (const record of records) {
                 for (const node of record.addedNodes) {
@@ -322,7 +383,7 @@
         }
     }
 
-    // Prinde rădăcinile Shadow deschise create după pornirea scriptului.
+    // Interceptează Shadow Root-urile deschise create după pornirea scriptului.
     if (isMode5 && Element.prototype.attachShadow) {
         const originalAttachShadow = Element.prototype.attachShadow;
 
@@ -357,22 +418,21 @@
         ));
     }
 
+    // Marcaje folosite de Modurile 3 și 4 pentru a evita reprocesarea elementelor.
+    const MODE_3_MARK = 'data-tm-orange-bg';
+    const MODE_4_MARK = 'data-tm-orange-mode-4-bg';
+
     function colorLightBackground(el) {
-        if (!(el instanceof Element) || el.hasAttribute(MARK)) return;
+        if (!(el instanceof Element) || el.hasAttribute(MODE_3_MARK)) return;
         if (isMediaOrInsideMedia(el)) return;
 
         if (isLightBackground(getComputedStyle(el).backgroundColor)) {
-            originalBackgrounds.set(el, {
-                value: el.style.getPropertyValue('background-color'),
-                priority: el.style.getPropertyPriority('background-color')
-            });
-
-            el.setAttribute(MARK, '1');
+            el.setAttribute(MODE_3_MARK, '1');
             el.style.setProperty('background-color', ORANGE, 'important');
         }
     }
 
-    function scan(root) {
+    function scanMode3(root) {
         if (root instanceof Element) {
             colorLightBackground(root);
         }
@@ -380,35 +440,38 @@
         root.querySelectorAll?.('*').forEach(colorLightBackground);
     }
 
-    function clearMode3Marks() {
-        document.querySelectorAll(`[${MARK}]`).forEach(el => {
-            const original = originalBackgrounds.get(el);
+    function colorMode4LightBackground(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MODE_4_MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
 
-            if (original?.value) {
-                el.style.setProperty(
-                    'background-color',
-                    original.value,
-                    original.priority
-                );
-            } else {
-                el.style.removeProperty('background-color');
-            }
-
-            originalBackgrounds.delete(el);
-            el.removeAttribute(MARK);
-        });
+        if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            el.setAttribute(MODE_4_MARK, '1');
+            el.style.setProperty(
+                'background-color',
+                MODE_4_BACKGROUND,
+                'important'
+            );
+        }
     }
 
-    function applyAggressiveMode(styleId) {
-        const addStyle = () => {
-            if (document.getElementById(styleId)) return;
+    function scanMode4(root) {
+        if (root instanceof Element) {
+            colorMode4LightBackground(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(colorMode4LightBackground);
+    }
+
+    function installPersistentStyle(id, css) {
+        function addStyle() {
+            if (document.getElementById(id)) return;
 
             const style = document.createElement('style');
-            style.id = styleId;
-            style.textContent = MODE_2_CSS;
+            style.id = id;
+            style.textContent = css;
 
             (document.head || document.documentElement).appendChild(style);
-        };
+        }
 
         addStyle();
 
@@ -416,6 +479,39 @@
         observer.observe(document.documentElement, {
             childList: true,
             subtree: true
+        });
+    }
+
+    function startMode4() {
+        installPersistentStyle(
+            'tm-orange-mode-4-stiripesurse',
+            MODE_4_CSS
+        );
+
+        scanMode4(document.documentElement);
+
+        const observer = new MutationObserver(records => {
+            for (const record of records) {
+                if (record.type === 'childList') {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scanMode4(node);
+                        }
+                    }
+                } else if (
+                    record.type === 'attributes' &&
+                    record.target instanceof Element
+                ) {
+                    colorMode4LightBackground(record.target);
+                }
+            }
+        });
+
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
         });
     }
 
@@ -433,23 +529,26 @@
         }
 
         if (useMode4) {
-            applyAggressiveMode('tm-orange-mode-4-stiripesurse');
+            startMode4();
             return;
         }
 
         if (useMode2) {
-            applyAggressiveMode('tm-aggressive-orange-mode');
+            installPersistentStyle(
+                'tm-aggressive-orange-mode',
+                MODE_2_CSS
+            );
             return;
         }
 
         if (useMode3) {
-            scan(document.documentElement);
+            scanMode3(document.documentElement);
 
             const observer = new MutationObserver(records => {
                 for (const record of records) {
                     for (const node of record.addedNodes) {
                         if (node.nodeType === Node.ELEMENT_NODE) {
-                            scan(node);
+                            scanMode3(node);
                         }
                     }
                 }

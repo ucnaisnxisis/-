@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Orange Mode automat — 4 moduri
+// @name         Orange Mode automat — 5 moduri
 // @namespace    local.orangemode
-// @version      5.0.0
+// @version      5.1.0
 // @description  Alege automat tema portocalie în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
@@ -51,6 +51,12 @@
         'archive.org',
         'www.archive.org'
     ]);
+
+    // Modul 4: stil portocaliu pentru stiripesurse.ro.
+    const MODE_4_HOSTS = [
+        'stiripesurse.ro',
+        'www.stiripesurse.ro'
+    ];
 
     // Modul 2: stil portocaliu aplicat agresiv acestor domenii.
     const MODE_2_HOSTS = [
@@ -393,10 +399,32 @@
         });
     }
 
+    function applyAggressiveMode(styleId) {
+        const addStyle = () => {
+            if (document.getElementById(styleId)) return;
+
+            const style = document.createElement('style');
+            style.id = styleId;
+            style.textContent = MODE_2_CSS;
+
+            (document.head || document.documentElement).appendChild(style);
+        };
+
+        addStyle();
+
+        const observer = new MutationObserver(addStyle);
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    }
+
     function applyMode() {
         const useMode5 = isMode5;
-        const useMode2 = !useMode5 && matchesHost(MODE_2_HOSTS);
-        const useMode3 = !useMode5 && !useMode2 &&
+        const useMode4 = !useMode5 && matchesHost(MODE_4_HOSTS);
+        const useMode2 = !useMode5 && !useMode4 &&
+            matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode5 && !useMode4 && !useMode2 &&
             matchesHost(MODE_3_HOSTS);
 
         if (useMode5) {
@@ -404,25 +432,13 @@
             return;
         }
 
+        if (useMode4) {
+            applyAggressiveMode('tm-orange-mode-4-stiripesurse');
+            return;
+        }
+
         if (useMode2) {
-            const style = document.createElement('style');
-            style.id = 'tm-aggressive-orange-mode';
-            style.textContent = MODE_2_CSS;
-
-            (document.head || document.documentElement).appendChild(style);
-
-            const observer = new MutationObserver(() => {
-                if (!document.getElementById('tm-aggressive-orange-mode')) {
-                    (document.head || document.documentElement)
-                        .appendChild(style);
-                }
-            });
-
-            observer.observe(document.documentElement, {
-                childList: true,
-                subtree: true
-            });
-
+            applyAggressiveMode('tm-aggressive-orange-mode');
             return;
         }
 

@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Turquoise Mode automat — 3 moduri
+// @name         Turquoise Mode automat — 4 moduri
 // @namespace    local.turquoisemode
-// @version      4.1.0
+// @version      5.0.0
 // @description  Alege automat tema turcoaz în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
@@ -16,6 +16,26 @@
     const originalBackgrounds = new Map();
 
     const TURQUOISE = '#008080';
+    const MODE_5_BACKGROUND = '#103b3a';
+
+    const host = location.hostname.toLowerCase();
+
+    function normalizeHost(value) {
+        return value.toLowerCase().replace(/^www\./, '');
+    }
+
+    function matchesHost(domains) {
+        const currentHost = normalizeHost(host);
+
+        return domains.some(domain => {
+            const normalizedDomain = normalizeHost(domain);
+
+            return currentHost === normalizedDomain ||
+                currentHost.endsWith('.' + normalizedDomain);
+        });
+    }
+
+    const isMode5 = matchesHost(['archive.org']);
 
     // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
     const THEME = {
@@ -81,8 +101,7 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com',
-
+        'www.bangkokpost.com'
     ];
 
     // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
@@ -94,7 +113,7 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro',
+        'www.cel.ro'
     ];
 
     const MODE_2_CSS = `
@@ -153,21 +172,67 @@
         }
     `;
 
-    const host = location.hostname.toLowerCase();
+    // Modul 5: paletă turcoaz pentru Archive.org și Shadow Root-uri deschise.
+    const MODE_5_CSS = `
+        :host {
+            color-scheme: dark !important;
+            background-color: ${MODE_5_BACKGROUND} !important;
+            color: #e6f5f4 !important;
+        }
 
-    function matchesHost(domains) {
-        const normalize = value => value.toLowerCase().replace(/^www\./, '');
-        const currentHost = normalize(host);
+        :host(*) {
+            color: #e6f5f4 !important;
+            border-color: #436b69 !important;
+        }
 
-        return domains.some(domain => {
-            const normalizedDomain = normalize(domain);
-            return currentHost === normalizedDomain ||
-                currentHost.endsWith('.' + normalizedDomain);
-        });
-    }
+        :host,
+        :host(*) {
+            background-color: ${MODE_5_BACKGROUND} !important;
+        }
+
+        *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path):not(picture) {
+            background-color: ${MODE_5_BACKGROUND} !important;
+            color: #e6f5f4 !important;
+            border-color: #436b69 !important;
+        }
+
+        a,
+        a * {
+            color: #7fe8df !important;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #194d4b !important;
+            color: #effafa !important;
+            border-color: #578782 !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #b3d0ce !important;
+            opacity: 1 !important;
+        }
+
+        img,
+        video,
+        canvas,
+        iframe,
+        svg,
+        picture {
+            background-color: transparent !important;
+        }
+
+        ::selection {
+            background: #287a75 !important;
+            color: #ffffff !important;
+        }
+    `;
 
     function isLightBackground(color) {
-        const values = color.match(/[\\d.]+/g);
+        const values = color.match(/[\d.]+/g);
         if (!values || values.length < 3) return false;
 
         const [r, g, b] = values.slice(0, 3).map(Number);
@@ -228,7 +293,109 @@
         });
     }
 
+    function installMode5Style(root, id) {
+        if (!root || root.querySelector(`#${id}`)) return;
+
+        const style = document.createElement('style');
+        style.id = id;
+        style.textContent = MODE_5_CSS;
+
+        if (root instanceof Document) {
+            (root.head || root.documentElement)?.appendChild(style);
+        } else {
+            root.appendChild(style);
+        }
+    }
+
+    function installMode5InShadowRoot(root) {
+        if (isMode5 && root) {
+            installMode5Style(root, 'tm-turquoise-mode-5-archive-shadow');
+        }
+    }
+
+    function scanMode5ShadowRoots(root) {
+        if (!isMode5 || !root) return;
+
+        if (root instanceof Element && root.shadowRoot) {
+            installMode5InShadowRoot(root.shadowRoot);
+            scanMode5ShadowRoots(root.shadowRoot);
+        }
+
+        if (root instanceof ShadowRoot) {
+            installMode5InShadowRoot(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(element => {
+            if (element.shadowRoot) {
+                installMode5InShadowRoot(element.shadowRoot);
+                scanMode5ShadowRoots(element.shadowRoot);
+            }
+        });
+    }
+
+    function startMode5() {
+        installMode5Style(
+            document,
+            'tm-turquoise-mode-5-archive-document'
+        );
+
+        scanMode5ShadowRoots(document);
+
+        const observer = new MutationObserver(records => {
+            for (const record of records) {
+                for (const node of record.addedNodes) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        scanMode5ShadowRoots(node);
+                    }
+                }
+            }
+        });
+
+        function observeDocument() {
+            if (document.documentElement) {
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        }
+
+        if (document.documentElement) {
+            observeDocument();
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                installMode5Style(
+                    document,
+                    'tm-turquoise-mode-5-archive-document'
+                );
+                scanMode5ShadowRoots(document);
+                observeDocument();
+            }, { once: true });
+        }
+    }
+
+    // Aplică stilul imediat în Shadow Root-urile deschise create ulterior.
+    if (isMode5 && Element.prototype.attachShadow) {
+        const originalAttachShadow = Element.prototype.attachShadow;
+
+        Element.prototype.attachShadow = function(init) {
+            const shadowRoot = originalAttachShadow.call(this, init);
+
+            if (init && init.mode === 'open') {
+                installMode5InShadowRoot(shadowRoot);
+            }
+
+            return shadowRoot;
+        };
+    }
+
     function applyMode() {
+        // Modul 5 are prioritate pentru archive.org.
+        if (isMode5) {
+            startMode5();
+            return;
+        }
+
         const useMode2 = matchesHost(MODE_2_HOSTS);
         const useMode3 = !useMode2 && matchesHost(MODE_3_HOSTS);
 
@@ -241,7 +408,8 @@
 
             const observer = new MutationObserver(() => {
                 if (!document.getElementById('tm-aggressive-turquoise-mode')) {
-                    (document.head || document.documentElement).appendChild(style);
+                    (document.head || document.documentElement)
+                        .appendChild(style);
                 }
             });
 
@@ -281,6 +449,8 @@
     if (document.documentElement) {
         applyMode();
     } else {
-        document.addEventListener('DOMContentLoaded', applyMode, { once: true });
+        document.addEventListener('DOMContentLoaded', applyMode, {
+            once: true
+        });
     }
 })();

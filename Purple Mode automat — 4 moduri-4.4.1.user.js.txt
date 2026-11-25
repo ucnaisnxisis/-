@@ -1,0 +1,425 @@
+// ==UserScript==
+// @name         Purple Mode automat — 4 moduri
+// @namespace    local.purplemode
+// @version      4.4.1
+// @description  Alege automat tema mov în funcție de site.
+// @match        *://*/*
+// @run-at       document-start
+// @grant        none
+// @require      https://cdn.jsdelivr.net/npm/darkreader@4.9.96/darkreader.min.js
+// ==/UserScript==
+
+(() => {
+    'use strict';
+
+    const MARK = 'data-tm-purple-bg';
+    const MODE_4_MARK = 'data-tm-purple-mode-4-bg';
+    const originalBackgrounds = new Map();
+
+    const PURPLE = '#4b0082';
+    const MODE_4_BACKGROUND = '#2b1042';
+
+    // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
+    const THEME = {
+        mode: 1,
+        brightness: 100,
+        contrast: 80,
+        sepia: 0,
+        darkSchemeBackgroundColor: PURPLE,
+        darkSchemeTextColor: '#ffffff',
+        lightSchemeBackgroundColor: PURPLE,
+        lightSchemeTextColor: '#8f00ff'
+    };
+
+    // Modul 2: stil mov aplicat agresiv acestor domenii.
+    const MODE_2_HOSTS = [
+        'porngameshub.com',
+        'itch.io',
+        'www.xvideos.com',
+        'hanime.tv',
+        'hentaihaven.xxx',
+        'henvids.com',
+        'hentaiocean.com',
+        'e-hentai.org',
+        'hanime.red',
+        'www.fakku.net',
+        'hstream.moe',
+        'hentai2read.com',
+        'hentai.guru',
+        'www.hentai-foundry.com',
+        'myanimelist.net',
+        'haho.moe',
+        'hentai.io',
+        'www.porn.com',
+        'www.porndig.com',
+        'hentaihorizon.com',
+        'www.tiava.com',
+        'www.accuweather.com',
+        'www.meteoblue.com',
+        'meteofor.ro',
+        'ziare.com',
+        'www.biziday.ro',
+        'newsweek.ro',
+        'www.ziuanews.ro',
+        'www.capital.ro',
+        'www.e-politic.ro',
+        'video.mediafax.ro',
+        'www.xda-developers.com',
+        'orchard.tomathouse.com',
+        'www.emag.ro',
+        'www.marcoser.ro',
+        'www.libertatea.ro',
+        'ipinfo.io',
+        '2ip.io',
+        'ipmeu.ro',
+        'checkip.me',
+        'ipaddress.to',
+        'whatsmyip.net',
+        'myip-address.com',
+        'whatismyip.live',
+        'www.virustotal.com',
+        'github.com',
+        'proton.me',
+        'proton.com',
+        'www.pewresearch.org',
+        'breezevpn.com',
+        'www.bangkokpost.com'
+    ];
+
+    // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
+    const MODE_3_HOSTS = [
+        'www.libertatea.ro',
+        'www.allergyzen.ro',
+        'www.polti.ro',
+        'www.patulmeu.ro',
+        'www.agrinin.ro',
+        'www.plaiurimioritice.ro',
+        'www.academia.edu',
+        'www.cel.ro'
+    ];
+
+    // Modul 4: temă mov cu text alb pentru Știripesurse.ro.
+    const MODE_4_HOSTS = [
+        'stiripesurse.ro',
+        'www.stiripesurse.ro'
+    ];
+
+    const MODE_2_CSS = `
+        :root {
+            color-scheme: dark !important;
+            background: ${PURPLE} !important;
+            color: #eee6f5 !important;
+        }
+
+        html, body {
+            background: ${PURPLE} !important;
+            background-color: ${PURPLE} !important;
+            color: #eee6f5 !important;
+        }
+
+        body * {
+            border-color: #59436b !important;
+        }
+
+        body :not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #eee6f5 !important;
+            background-color: transparent !important;
+        }
+
+        body, main, article, section, header, footer, nav, aside,
+        [role="main"], [role="dialog"], .container, .content, .card,
+        .panel, .modal, .dropdown-menu, .popover {
+            background-color: #2b1042 !important;
+        }
+
+        input, textarea, select, button {
+            background: #35194d !important;
+            color: #f5effa !important;
+            border: 1px solid #715786 !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #c3b3d0 !important;
+        }
+
+        a, a * {
+            color: #d0a8ff !important;
+        }
+
+        img, video, canvas, iframe, svg, picture {
+            background-color: transparent !important;
+        }
+
+        table, th, td, hr {
+            border-color: #59436b !important;
+        }
+
+        ::selection {
+            background: #68428a !important;
+            color: #fff !important;
+        }
+    `;
+
+    const MODE_4_CSS = `
+        :root,
+        html {
+            color-scheme: dark !important;
+            background-color: ${PURPLE} !important;
+        }
+
+        body {
+            background-color: ${MODE_4_BACKGROUND} !important;
+            color: #ffffff !important;
+        }
+
+        /* Fundal mov pentru containerele principale, inclusiv pe versiunea desktop. */
+        body,
+        main,
+        article,
+        section,
+        header,
+        footer,
+        nav,
+        aside,
+        [role="main"] {
+            background-color: ${MODE_4_BACKGROUND} !important;
+        }
+
+        body *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #59436b !important;
+        }
+
+        img,
+        video,
+        canvas,
+        iframe,
+        picture,
+        svg {
+            background-color: transparent !important;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #35194d !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #715786 !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #e2d8eb !important;
+            -webkit-text-fill-color: #e2d8eb !important;
+            opacity: 1 !important;
+        }
+
+        ::selection {
+            background: #68428a !important;
+            color: #ffffff !important;
+        }
+    `;
+
+    const host = location.hostname.toLowerCase();
+
+    function matchesHost(domains) {
+        const normalize = value => value.toLowerCase().replace(/^www\./, '');
+        const currentHost = normalize(host);
+
+        return domains.some(domain => {
+            const normalizedDomain = normalize(domain);
+
+            return currentHost === normalizedDomain ||
+                currentHost.endsWith('.' + normalizedDomain);
+        });
+    }
+
+    function isLightBackground(color) {
+        const values = color.match(/[\d.]+/g);
+        if (!values || values.length < 3) return false;
+
+        const [r, g, b] = values.slice(0, 3).map(Number);
+        const alpha = values.length >= 4 ? Number(values[3]) : 1;
+
+        if (alpha < 0.15) return false;
+
+        return (0.2126 * r + 0.7152 * g + 0.0722 * b) > 155;
+    }
+
+    function isMediaOrInsideMedia(el) {
+        return el.matches(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ) || Boolean(el.closest(
+            'img, video, canvas, picture, svg, iframe, object, embed'
+        ));
+    }
+
+    function colorLightBackground(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
+
+        if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            originalBackgrounds.set(el, {
+                value: el.style.getPropertyValue('background-color'),
+                priority: el.style.getPropertyPriority('background-color')
+            });
+
+            el.setAttribute(MARK, '1');
+            el.style.setProperty('background-color', PURPLE, 'important');
+        }
+    }
+
+    function scan(root) {
+        if (root instanceof Element) {
+            colorLightBackground(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(colorLightBackground);
+    }
+
+    function colorMode4LightBackground(el) {
+        if (!(el instanceof Element)) return;
+        if (el.hasAttribute(MODE_4_MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
+
+        const background = getComputedStyle(el).backgroundColor;
+
+        if (isLightBackground(background)) {
+            el.setAttribute(MODE_4_MARK, '1');
+            el.style.setProperty(
+                'background-color',
+                MODE_4_BACKGROUND,
+                'important'
+            );
+        }
+    }
+
+    function scanMode4(root) {
+        if (root instanceof Element) {
+            colorMode4LightBackground(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(colorMode4LightBackground);
+    }
+
+    function installPersistentStyle(id, css) {
+        function addStyle() {
+            if (document.getElementById(id)) return;
+
+            const style = document.createElement('style');
+            style.id = id;
+            style.textContent = css;
+
+            (document.head || document.documentElement).appendChild(style);
+        }
+
+        addStyle();
+
+        const observer = new MutationObserver(addStyle);
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    function startMode4() {
+        installPersistentStyle(
+            'tm-purple-mode-4-stiripesurse',
+            MODE_4_CSS
+        );
+
+        // Colorează fundalurile deschise existente, inclusiv conținutul și footer-ul.
+        scanMode4(document.documentElement);
+
+        // Repetă scanarea pentru conținutul adăugat sau actualizat ulterior.
+        const observer = new MutationObserver(records => {
+            for (const record of records) {
+                if (record.type === 'childList') {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scanMode4(node);
+                        }
+                    }
+                } else if (
+                    record.type === 'attributes' &&
+                    record.target instanceof Element
+                ) {
+                    colorMode4LightBackground(record.target);
+                }
+            }
+        });
+
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+    }
+
+    function applyMode() {
+        // Modul 4 are prioritate pe stiripesurse.ro.
+        const useMode4 = matchesHost(MODE_4_HOSTS);
+        const useMode2 = !useMode4 && matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode4 && !useMode2 && matchesHost(MODE_3_HOSTS);
+
+        if (useMode4) {
+            startMode4();
+            return;
+        }
+
+        if (useMode2) {
+            const style = document.createElement('style');
+            style.id = 'tm-aggressive-purple-mode';
+            style.textContent = MODE_2_CSS;
+
+            (document.head || document.documentElement).appendChild(style);
+
+            const observer = new MutationObserver(() => {
+                if (!document.getElementById('tm-aggressive-purple-mode')) {
+                    (document.head || document.documentElement).appendChild(style);
+                }
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        if (useMode3) {
+            scan(document.documentElement);
+
+            const observer = new MutationObserver(records => {
+                for (const record of records) {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scan(node);
+                        }
+                    }
+                }
+            });
+
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+
+            return;
+        }
+
+        // Modul 1: tema implicită pentru toate celelalte site-uri.
+        DarkReader.enable(THEME);
+    }
+
+    if (document.documentElement) {
+        applyMode();
+    } else {
+        document.addEventListener('DOMContentLoaded', applyMode, { once: true });
+    }
+})();

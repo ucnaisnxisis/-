@@ -1,0 +1,303 @@
+// ==UserScript==
+// @name         Temă curcubeu, text colorat și banner
+// @namespace    local.rainbow.complete
+// @version      2.0
+// @description  Temă pastel curcubeu, text colorat, player media protejat și banner închis temporar.
+// @match        *://*/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  "use strict";
+
+  const PROMO_ID = "rainbow-firefox-promo";
+  const MARK = "data-rainbow-combined";
+
+  const protectedMedia = [
+    "ytd-player",
+    "#movie_player",
+    ".html5-video-player",
+    ".video-stream",
+    ".ytp-chrome-bottom",
+    ".ytp-chrome-top",
+    "video",
+    "audio",
+    "canvas",
+    "iframe",
+    "img",
+    "picture",
+    "svg",
+    "object",
+    "embed"
+  ].join(",");
+
+  const excludedTags = new Set([
+    "SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "INPUT",
+    "SELECT", "OPTION", "BUTTON", "CODE", "PRE"
+  ]);
+
+  const categories = [
+    {
+      color: "#e6008d",
+      words: ["anime", "animes", "anime-uri", "animeul", "otaku", "otaci", "otacii", "cosplay", "j-pop"]
+    },
+    {
+      color: "#1769d2",
+      words: [
+        "hardcore", "hardstyle", "rawstyle", "electric", "electricitate",
+        "curent", "curentat", "posedat", "posedata", "posedati",
+        "monștri", "monștrii", "monstru", "zombie", "zombii", "zombies"
+      ]
+    },
+    {
+      color: "#16823b",
+      words: ["om", "oameni", "persoană", "persoane", "npc", "npc-uri"]
+    }
+  ];
+
+  const letterColors = {};
+  for (const letter of "abcdefghijklmnopqrstuvwxyz") {
+    letterColors[letter] = `hsl(${Math.floor(Math.random() * 360)} 78% 32%)`;
+  }
+
+  // Degrade pastelat pentru fundalul paginii.
+  const themeStyle = document.createElement("style");
+  themeStyle.textContent = `
+    html, body {
+      background: linear-gradient(
+        120deg,
+        #fff2f5, #fff4e8, #fffde8, #efffee,
+        #edf8ff, #f3efff, #fff0fb
+      ) fixed !important;
+      background-size: 100% 100% !important;
+    }
+
+    #${PROMO_ID} {
+      box-sizing: border-box;
+      z-index: 2147483647;
+      font: 15px/1.35 system-ui, sans-serif;
+      color: #202020;
+      background: linear-gradient(120deg, #fff1f7, #f0f5ff, #efffee);
+      border: 2px solid #df8cc5;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px #0004;
+      padding: 14px 44px 14px 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      max-width: 440px;
+      text-align: left;
+    }
+
+    #${PROMO_ID}.rainbow-floating {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(440px, calc(100vw - 28px));
+    }
+
+    #${PROMO_ID} .rainbow-art {
+      width: 76px;
+      height: 76px;
+      flex: 0 0 76px;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    #${PROMO_ID} .rainbow-copy {
+      flex: 1;
+      color: #202020 !important;
+    }
+
+    #${PROMO_ID} .rainbow-copy strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #82236d !important;
+      font-size: 16px;
+    }
+
+    #${PROMO_ID} .rainbow-close {
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      border: 0;
+      background: transparent;
+      color: #333 !important;
+      font-size: 25px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 2px 6px;
+    }
+  `;
+  document.documentElement.appendChild(themeStyle);
+
+  function categoryColor(word) {
+    const lower = word.toLocaleLowerCase();
+    for (const category of categories) {
+      if (category.words.some(item => item.toLocaleLowerCase() === lower)) {
+        return category.color;
+      }
+    }
+    return letterColors[lower[0]] || "#333";
+  }
+
+  function isProtected(el) {
+    return !el ||
+      el.closest(protectedMedia) ||
+      el.closest(`#${PROMO_ID}`);
+  }
+
+  function colorBackgrounds(root) {
+    const elements = [];
+    if (root instanceof Element) elements.push(root);
+    if (root.querySelectorAll) elements.push(...root.querySelectorAll("*"));
+
+    for (const el of elements) {
+      if (excludedTags.has(el.tagName) || el.hasAttribute(MARK)) continue;
+      if (isProtected(el)) continue;
+
+      const computed = getComputedStyle(el);
+      if (computed.backgroundImage !== "none") continue;
+
+      const match = computed.backgroundColor.match(
+        /rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:[,\s/]+([\d.]+))?\s*\)/
+      );
+      if (!match) continue;
+
+      const r = Number(match[1]);
+      const g = Number(match[2]);
+      const b = Number(match[3]);
+      const alpha = match[4] === undefined ? 1 : Number(match[4]);
+
+      if (!((r > 238 && g > 238 && b > 238) || alpha < 0.05)) continue;
+
+      const rect = el.getBoundingClientRect();
+      const hue = (rect.left * 0.35 + rect.top * 0.2 + el.tagName.length * 47) % 360;
+
+      el.style.setProperty("background-color", `hsl(${hue} 75% 92%)`, "important");
+      el.setAttribute(MARK, "background");
+    }
+  }
+
+  function colorText(root) {
+    if (!root) return;
+
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const parent = node.parentElement;
+
+      if (!parent || excludedTags.has(parent.tagName)) continue;
+      if (parent.closest("[data-rainbow-word]")) continue;
+      if (isProtected(parent)) continue;
+      if (!node.nodeValue.trim()) continue;
+
+      nodes.push(node);
+    }
+
+    for (const node of nodes) {
+      const text = node.nodeValue;
+      const fragment = document.createDocumentFragment();
+      const wordRegex = /[\p{L}\p{M}]+/gu;
+      let cursor = 0;
+
+      for (const match of text.matchAll(wordRegex)) {
+        const start = match.index;
+        const end = start + match[0].length;
+
+        fragment.append(document.createTextNode(text.slice(cursor, start)));
+
+        const span = document.createElement("span");
+        span.textContent = match[0];
+        span.dataset.rainbowWord = "true";
+        span.style.setProperty("color", categoryColor(match[0]), "important");
+        fragment.append(span);
+
+        cursor = end;
+      }
+
+      if (cursor > 0) {
+        fragment.append(document.createTextNode(text.slice(cursor)));
+        node.replaceWith(fragment);
+      }
+    }
+  }
+
+  function applyTheme(root) {
+    if (!(root instanceof Element)) return;
+    if (root.id === PROMO_ID || root.closest(`#${PROMO_ID}`)) return;
+    colorBackgrounds(root);
+    colorText(root);
+  }
+
+  function createPromo() {
+    if (document.getElementById(PROMO_ID)) return;
+
+    const banner = document.createElement("div");
+    banner.id = PROMO_ID;
+    banner.setAttribute("role", "complementary");
+    banner.setAttribute("aria-label", "Reclamă");
+
+    // Ilustrație SVG originală, în stil anime simplificat, inclusă în script.
+    banner.innerHTML = `
+      <button class="rainbow-close" type="button" aria-label="Închide">×</button>
+      <svg class="rainbow-art" viewBox="0 0 100 100" role="img" aria-label="Ilustrație stilizată">
+        <rect width="100" height="100" rx="14" fill="#f4eaff"/>
+        <path d="M17 91c3-19 14-28 33-28s30 9 33 28" fill="#8f6be8"/>
+        <path d="M25 43c0-20 11-31 27-31s27 11 27 31v13H25z" fill="#3a285d"/>
+        <ellipse cx="50" cy="48" rx="22" ry="25" fill="#ffd8c7"/>
+        <path d="M28 42c3-20 12-30 25-30 13 0 22 10 23 28-8-2-16-8-21-15-6 8-15 14-27 17" fill="#3a285d"/>
+        <ellipse cx="42" cy="49" rx="3" ry="4" fill="#3b3154"/>
+        <ellipse cx="59" cy="49" rx="3" ry="4" fill="#3b3154"/>
+        <path d="M44 60q6 5 12 0" fill="none" stroke="#b84f70" stroke-width="2" stroke-linecap="round"/>
+        <path d="M34 75h32" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div class="rainbow-copy">
+        <strong>Folosește Firefox și uBlock Origin</strong>
+        Navigare cu mai puține reclame și mai mult control.
+      </div>
+    `;
+
+    const adSlot = document.querySelector(
+      '[id*="ad" i], [class*="ad-" i], [class*="ads" i], [aria-label*="advert" i], [data-ad]'
+    );
+
+    if (adSlot && adSlot !== document.body && adSlot !== document.documentElement) {
+      banner.style.position = "relative";
+      banner.style.margin = "10px auto";
+      adSlot.appendChild(banner);
+    } else {
+      banner.classList.add("rainbow-floating");
+      document.body.appendChild(banner);
+    }
+
+    banner.querySelector(".rainbow-close").addEventListener("click", () => {
+      banner.remove();
+    });
+  }
+
+  function start() {
+    applyTheme(document.body);
+    createPromo();
+
+    const observer = new MutationObserver(records => {
+      for (const record of records) {
+        for (const node of record.addedNodes) {
+          if (node instanceof Element) {
+            applyTheme(node);
+          } else if (node.nodeType === Node.TEXT_NODE) {
+            colorText(node.parentElement);
+          }
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.body) start();
+})();

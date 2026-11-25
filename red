@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Red Mode automat — 4 moduri
+// @name         Red Mode automat — 5 moduri
 // @namespace    local.redmode
-// @version      5.0.0
+// @version      5.1.0
 // @description  Alege automat tema roșie în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
@@ -12,11 +12,11 @@
 (() => {
     'use strict';
 
-    const MARK = 'data-tm-red-bg';
-    const originalBackgrounds = new Map();
-
     const RED = '#8b0000';
+    const MODE_4_BACKGROUND = '#3b1010';
     const MODE_5_BACKGROUND = '#3b1010';
+    const MARK = 'data-tm-red-bg';
+    const MODE_4_MARK = 'data-tm-red-mode-4-bg';
 
     const host = location.hostname.toLowerCase();
 
@@ -35,21 +35,11 @@
         });
     }
 
-    const isMode5 = matchesHost(['archive.org']);
+    const isMode5 = matchesHost([
+        'archive.org',
+        'www.archive.org'
+    ]);
 
-    // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
-    const THEME = {
-        mode: 1,
-        brightness: 100,
-        contrast: 80,
-        sepia: 0,
-        darkSchemeBackgroundColor: RED,
-        darkSchemeTextColor: '#ffffff',
-        lightSchemeBackgroundColor: RED,
-        lightSchemeTextColor: '#ff6b6b'
-    };
-
-    // Modul 2: stil roșu aplicat agresiv acestor domenii.
     const MODE_2_HOSTS = [
         'porngameshub.com',
         'itch.io',
@@ -104,7 +94,6 @@
         'www.bangkokpost.com'
     ];
 
-    // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
     const MODE_3_HOSTS = [
         'www.libertatea.ro',
         'www.allergyzen.ro',
@@ -115,6 +104,22 @@
         'www.academia.edu',
         'www.cel.ro'
     ];
+
+    const MODE_4_HOSTS = [
+        'stiripesurse.ro',
+        'www.stiripesurse.ro'
+    ];
+
+    const THEME = {
+        mode: 1,
+        brightness: 100,
+        contrast: 80,
+        sepia: 0,
+        darkSchemeBackgroundColor: RED,
+        darkSchemeTextColor: '#ffffff',
+        lightSchemeBackgroundColor: RED,
+        lightSchemeTextColor: '#ff6b6b'
+    };
 
     const MODE_2_CSS = `
         :root {
@@ -172,7 +177,73 @@
         }
     `;
 
-    // Modul 5: paletă roșie pentru Archive.org și Shadow Root-uri deschise.
+    const MODE_4_CSS = `
+        :root,
+        html {
+            color-scheme: dark !important;
+            background-color: ${RED} !important;
+        }
+
+        body,
+        main,
+        article,
+        section,
+        header,
+        footer,
+        nav,
+        aside,
+        [role="main"] {
+            background-color: ${MODE_4_BACKGROUND} !important;
+        }
+
+        body {
+            color: #ffffff !important;
+        }
+
+        body *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path) {
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #704343 !important;
+        }
+
+        img,
+        video,
+        canvas,
+        iframe,
+        picture,
+        svg {
+            background-color: transparent !important;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #4d1919 !important;
+            color: #ffffff !important;
+            -webkit-text-fill-color: #ffffff !important;
+            border-color: #875757 !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #d0b3b3 !important;
+            -webkit-text-fill-color: #d0b3b3 !important;
+            opacity: 1 !important;
+        }
+
+        a,
+        a * {
+            color: #ff9a9a !important;
+            -webkit-text-fill-color: #ff9a9a !important;
+        }
+
+        ::selection {
+            background: #8a3030 !important;
+            color: #ffffff !important;
+        }
+    `;
+
     const MODE_5_CSS = `
         :host {
             color-scheme: dark !important;
@@ -232,7 +303,7 @@
     `;
 
     function isLightBackground(color) {
-        const values = color.match(/[\d.]+/g);
+        const values = color.match(/[\\d.]+/g);
         if (!values || values.length < 3) return false;
 
         const [r, g, b] = values.slice(0, 3).map(Number);
@@ -256,40 +327,85 @@
         if (isMediaOrInsideMedia(el)) return;
 
         if (isLightBackground(getComputedStyle(el).backgroundColor)) {
-            originalBackgrounds.set(el, {
-                value: el.style.getPropertyValue('background-color'),
-                priority: el.style.getPropertyPriority('background-color')
-            });
-
             el.setAttribute(MARK, '1');
             el.style.setProperty('background-color', RED, 'important');
         }
     }
 
     function scan(root) {
-        if (root instanceof Element) {
-            colorLightBackground(root);
-        }
-
+        if (root instanceof Element) colorLightBackground(root);
         root.querySelectorAll?.('*').forEach(colorLightBackground);
     }
 
-    function clearMode3Marks() {
-        document.querySelectorAll(`[${MARK}]`).forEach(el => {
-            const original = originalBackgrounds.get(el);
+    function colorMode4LightBackground(el) {
+        if (!(el instanceof Element) || el.hasAttribute(MODE_4_MARK)) return;
+        if (isMediaOrInsideMedia(el)) return;
 
-            if (original?.value) {
-                el.style.setProperty(
-                    'background-color',
-                    original.value,
-                    original.priority
-                );
-            } else {
-                el.style.removeProperty('background-color');
+        if (isLightBackground(getComputedStyle(el).backgroundColor)) {
+            el.setAttribute(MODE_4_MARK, '1');
+            el.style.setProperty(
+                'background-color',
+                MODE_4_BACKGROUND,
+                'important'
+            );
+        }
+    }
+
+    function scanMode4(root) {
+        if (root instanceof Element) colorMode4LightBackground(root);
+        root.querySelectorAll?.('*').forEach(colorMode4LightBackground);
+    }
+
+    function installPersistentStyle(id, css) {
+        function addStyle() {
+            if (document.getElementById(id)) return;
+
+            const style = document.createElement('style');
+            style.id = id;
+            style.textContent = css;
+
+            (document.head || document.documentElement).appendChild(style);
+        }
+
+        addStyle();
+
+        const observer = new MutationObserver(addStyle);
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    function startMode4() {
+        installPersistentStyle(
+            'tm-red-mode-4-stiripesurse',
+            MODE_4_CSS
+        );
+
+        scanMode4(document.documentElement);
+
+        const observer = new MutationObserver(records => {
+            for (const record of records) {
+                if (record.type === 'childList') {
+                    for (const node of record.addedNodes) {
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            scanMode4(node);
+                        }
+                    }
+                } else if (
+                    record.type === 'attributes' &&
+                    record.target instanceof Element
+                ) {
+                    colorMode4LightBackground(record.target);
+                }
             }
+        });
 
-            originalBackgrounds.delete(el);
-            el.removeAttribute(MARK);
+        observer.observe(document.documentElement, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
         });
     }
 
@@ -390,14 +506,22 @@
     }
 
     function applyMode() {
-        // Modul 5 are prioritate pentru archive.org.
-        if (isMode5) {
+        const useMode5 = isMode5;
+        const useMode4 = !useMode5 && matchesHost(MODE_4_HOSTS);
+        const useMode2 = !useMode5 && !useMode4 &&
+            matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode5 && !useMode4 && !useMode2 &&
+            matchesHost(MODE_3_HOSTS);
+
+        if (useMode5) {
             startMode5();
             return;
         }
 
-        const useMode2 = matchesHost(MODE_2_HOSTS);
-        const useMode3 = !useMode2 && matchesHost(MODE_3_HOSTS);
+        if (useMode4) {
+            startMode4();
+            return;
+        }
 
         if (useMode2) {
             const style = document.createElement('style');
@@ -442,7 +566,7 @@
             return;
         }
 
-        // Modul 1: tema implicită pentru toate celelalte site-uri.
+        // Modul 1: DarkReader pentru site-urile care nu sunt în listele speciale.
         DarkReader.enable(THEME);
     }
 

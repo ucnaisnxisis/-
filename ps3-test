@@ -1,0 +1,205 @@
+// ==UserScript==
+// @name         PS3 Controller to Keyboard
+// @namespace    local-controller-remap
+// @version      1.0
+// @description  Remapare locală controller -> taste, cu panou editabil
+// @match        https://example.com/*
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const STORAGE_KEY = 'ps3-controller-key-map-v1';
+
+  // Indicii standard ai butoanelor Gamepad API.
+  const controls = [
+    ['Sus', 12, 'w'],
+    ['Jos', 13, 's'],
+    ['Stânga', 14, 'a'],
+    ['Dreapta', 15, 'd'],
+    ['Start', 9, ' '],
+    ['R1', 5, 'o'],
+    ['R2', 7, 'p'],
+    ['L2', 6, 'l'],
+    ['L1', 4, 'k'],
+    ['R3', 11, 'n'],
+    ['L3', 10, 'm'],
+    ['Select', 8, 'g'],
+  ];
+
+  const defaults = Object.fromEntries(controls.map(([, index, key]) => [index, key]));
+  let mapping;
+
+  try {
+    mapping = { ...defaults, ...JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') };
+  } catch {
+    mapping = { ...defaults };
+  }
+
+  const keyCodes = {
+    ' ': 'Space',
+    ArrowUp: 'ArrowUp',
+    ArrowDown: 'ArrowDown',
+    ArrowLeft: 'ArrowLeft',
+    ArrowRight: 'ArrowRight',
+  };
+
+  const pressed = new Set();
+
+  function sendKey(type, key) {
+    const code = keyCodes[key] || (key.length === 1 ? `Key${key.toUpperCase()}` : key);
+    window.dispatchEvent(new KeyboardEvent(type, {
+      key,
+      code,
+      bubbles: true,
+      cancelable: true,
+    }));
+  }
+
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(mapping));
+  }
+
+  function buildPanel() {
+    const panel = document.createElement('div');
+    Object.assign(panel.style, {
+      position: 'fixed', right: '12px', top: '12px', zIndex: '2147483647',
+      background: '#20242b', color: '#fff', padding: '12px',
+      border: '1px solid #777', borderRadius: '8px',
+      font: '13px sans-serif', maxHeight: '80vh', overflow: 'auto',
+      boxShadow: '0 3px 14px #0008',
+    });
+
+    const title = document.createElement('div');
+    title.textContent = 'Controller → tastatură';
+    title.style.fontWeight = 'bold';
+    title.style.marginBottom = '8px';
+    panel.appendChild(title);
+
+    const status = document.createElement('div');
+    status.textContent = 'Aștept controllerul…';
+    status.style.marginBottom = '8px';
+    panel.appendChild(status);
+
+    controls.forEach(([label, index]) => {
+      const row = document.createElement('label');
+      Object.assign(row.style, {
+        display: 'flex', justifyContent: 'space-between',
+        alignItems: 'center', gap: '12px', margin: '5px 0',
+      });
+
+      const name = document.createElement('span');
+      name.textContent = label;
+
+      const input = document.createElement('input');
+      input.value = mapping[index] === ' ' ? 'Space' : mapping[index];
+      input.title = 'Apasă aici, apoi apasă tasta dorită';
+      input.readOnly = true;
+      input.style.width = '70px';
+
+      input.addEventListener('keydown', event => {
+        event.preventDefault();
+        event.stopPropagation();
+        const key = event.key;
+        mapping[index] = key;
+        input.value = key === ' ' ? 'Space' : key;
+        save();
+        input.blur();
+      });
+
+      input.addEventListener('focus', () => {
+        input.value = 'Apasă o tastă…';
+      });
+
+      row.append(name, input);
+      panel.appendChild(row);
+    });
+
+    const reset = document.createElement('button');
+    reset.textContent = 'Restabilește valorile implicite';
+    reset.style.marginTop = '8px';
+    reset.addEventListener('click', () => {
+      mapping = { ...defaults };
+      save();
+      panel.remove();
+      buildPanel();
+    });
+    panel.appendChild(reset);
+
+    const note = document.createElement('div');
+    note.textContent = 'Închidere: butonul ×. Tastele simulate pot fi ignorate de unele jocuri.';
+    note.style.marginTop = '8px';
+    note.style.maxWidth = '230px';
+    panel.appendChild(note);
+
+    const close = document.createElement('button');
+    close.textContent = '×';
+    close.title = 'Închide panoul';
+    Object.assign(close.style, { position: 'absolute', right: '5px', top: '5px' });
+    close.addEventListener('click', () => {
+      panel.remove();
+      showButton.style.display = 'block';
+    });
+    panel.appendChild(close);
+
+    document.body.appendChild(panel);
+    status.textContent = navigator.getGamepads().some(Boolean)
+      ? 'Controller detectat'
+      : 'Aștept controllerul…';
+  }
+
+  const showButton = document.createElement('button');
+  showButton.textContent = '🎮 Remapare';
+  Object.assign(showButton.style, {
+    position: 'fixed', right: '12px', top: '12px', zIndex: '2147483647',
+  });
+  showButton.addEventListener('click', () => {
+    showButton.style.display = 'none';
+    buildPanel();
+  });
+
+  function addButton() {
+    if (document.body && !document.getElementById('controller-remap-button')) {
+      showButton.id = 'controller-remap-button';
+      document.body.appendChild(showButton);
+    }
+  }
+
+  addButton();
+  new MutationObserver(addButton).observe(document.documentElement, { childList: true, subtree: true });
+
+  function poll() {
+    const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+
+    for (const pad of pads) {
+      if (!pad) continue;
+
+      controls.forEach(([, index]) => {
+        const isDown = Boolean(pad.buttons[index]?.pressed);
+        const key = mapping[index];
+        const id = `${pad.index}:${index}`;
+
+        if (isDown && !pressed.has(id)) {
+          pressed.add(id);
+          sendKey('keydown', key);
+        } else if (!isDown && pressed.has(id)) {
+          pressed.delete(id);
+          sendKey('keyup', key);
+        }
+      });
+    }
+
+    requestAnimationFrame(poll);
+  }
+
+  window.addEventListener('blur', () => {
+    for (const id of pressed) {
+      const index = Number(id.split(':')[1]);
+      sendKey('keyup', mapping[index]);
+    }
+    pressed.clear();
+  });
+
+  requestAnimationFrame(poll);
+})();

@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Brown Mode automat — 3 moduri
+// @name         Brown Mode automat — 4 moduri
 // @namespace    local.brownmode
-// @version      4.1.0
+// @version      5.0.0
 // @description  Alege automat tema maro în funcție de site.
 // @match        *://*/*
 // @run-at       document-start
@@ -16,6 +16,7 @@
     const originalBackgrounds = new Map();
 
     const BROWN = '#6b3e26';
+    const MODE_5_BACKGROUND = '#34241b';
 
     // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.
     const THEME = {
@@ -28,6 +29,28 @@
         lightSchemeBackgroundColor: BROWN,
         lightSchemeTextColor: '#d2a679'
     };
+
+    const host = location.hostname.toLowerCase();
+
+    function normalizeHost(value) {
+        return value.toLowerCase().replace(/^www\./, '');
+    }
+
+    function matchesHost(domains) {
+        const currentHost = normalizeHost(host);
+
+        return domains.some(domain => {
+            const normalizedDomain = normalizeHost(domain);
+
+            return currentHost === normalizedDomain ||
+                currentHost.endsWith('.' + normalizedDomain);
+        });
+    }
+
+    const isMode5 = matchesHost([
+        'archive.org',
+        'www.archive.org'
+    ]);
 
     // Modul 2: stil maro aplicat agresiv acestor domenii.
     const MODE_2_HOSTS = [
@@ -81,8 +104,7 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com',
-
+        'www.bangkokpost.com'
     ];
 
     // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
@@ -94,7 +116,7 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro',
+        'www.cel.ro'
     ];
 
     const MODE_2_CSS = `
@@ -153,21 +175,164 @@
         }
     `;
 
-    const host = location.hostname.toLowerCase();
+    // Modul 5: stiluri pentru document și rădăcinile Shadow deschise.
+    const MODE_5_CSS = `
+        :host {
+            color-scheme: dark !important;
+            background-color: ${MODE_5_BACKGROUND} !important;
+            color: #f2e9e3 !important;
+        }
 
-    function matchesHost(domains) {
-        const normalize = value => value.toLowerCase().replace(/^www\./, '');
-        const currentHost = normalize(host);
+        :host(*) {
+            color: #f2e9e3 !important;
+            border-color: #70594b !important;
+        }
 
-        return domains.some(domain => {
-            const normalizedDomain = normalize(domain);
-            return currentHost === normalizedDomain ||
-                currentHost.endsWith('.' + normalizedDomain);
+        :host,
+        :host(*) {
+            background-color: ${MODE_5_BACKGROUND} !important;
+        }
+
+        *:not(img):not(video):not(canvas):not(iframe):not(svg):not(path):not(picture) {
+            background-color: ${MODE_5_BACKGROUND} !important;
+            color: #f2e9e3 !important;
+            border-color: #70594b !important;
+        }
+
+        a,
+        a * {
+            color: #d2a679 !important;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            background-color: #493326 !important;
+            color: #faf5f0 !important;
+            border-color: #806b5c !important;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #cbb9ac !important;
+            opacity: 1 !important;
+        }
+
+        img,
+        video,
+        canvas,
+        iframe,
+        svg,
+        picture {
+            background-color: transparent !important;
+        }
+
+        ::selection {
+            background: #805633 !important;
+            color: #ffffff !important;
+        }
+    `;
+
+    function installStyle(target, id, css) {
+        if (!target || target.querySelector(`#${id}`)) return;
+
+        const style = document.createElement('style');
+        style.id = id;
+        style.textContent = css;
+
+        target.appendChild(style);
+    }
+
+    function installMode5InRoot(root) {
+        if (!isMode5 || !root) return;
+
+        installStyle(
+            root,
+            'tm-brown-mode-5-archive-shadow',
+            MODE_5_CSS
+        );
+    }
+
+    function scanOpenShadowRoots(root) {
+        if (!isMode5 || !root) return;
+
+        if (root instanceof Element && root.shadowRoot) {
+            installMode5InRoot(root.shadowRoot);
+            scanOpenShadowRoots(root.shadowRoot);
+        }
+
+        if (root instanceof ShadowRoot) {
+            installMode5InRoot(root);
+        }
+
+        root.querySelectorAll?.('*').forEach(element => {
+            if (element.shadowRoot) {
+                installMode5InRoot(element.shadowRoot);
+                scanOpenShadowRoots(element.shadowRoot);
+            }
         });
     }
 
+    function startMode5() {
+        installStyle(
+            document,
+            'tm-brown-mode-5-archive-document',
+            MODE_5_CSS
+        );
+
+        scanOpenShadowRoots(document);
+
+        const observer = new MutationObserver(records => {
+            for (const record of records) {
+                for (const node of record.addedNodes) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        scanOpenShadowRoots(node);
+                    }
+                }
+            }
+        });
+
+        if (document.documentElement) {
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                installStyle(
+                    document,
+                    'tm-brown-mode-5-archive-document',
+                    MODE_5_CSS
+                );
+
+                scanOpenShadowRoots(document);
+
+                observer.observe(document.documentElement, {
+                    childList: true,
+                    subtree: true
+                });
+            }, { once: true });
+        }
+    }
+
+    // Prinde rădăcinile Shadow deschise create după pornirea scriptului.
+    if (isMode5 && Element.prototype.attachShadow) {
+        const originalAttachShadow = Element.prototype.attachShadow;
+
+        Element.prototype.attachShadow = function(init) {
+            const shadowRoot = originalAttachShadow.call(this, init);
+
+            if (init && init.mode === 'open') {
+                installMode5InRoot(shadowRoot);
+            }
+
+            return shadowRoot;
+        };
+    }
+
     function isLightBackground(color) {
-        const values = color.match(/[\\d.]+/g);
+        const values = color.match(/[\d.]+/g);
         if (!values || values.length < 3) return false;
 
         const [r, g, b] = values.slice(0, 3).map(Number);
@@ -229,8 +394,15 @@
     }
 
     function applyMode() {
-        const useMode2 = matchesHost(MODE_2_HOSTS);
-        const useMode3 = !useMode2 && matchesHost(MODE_3_HOSTS);
+        const useMode5 = isMode5;
+        const useMode2 = !useMode5 && matchesHost(MODE_2_HOSTS);
+        const useMode3 = !useMode5 && !useMode2 &&
+            matchesHost(MODE_3_HOSTS);
+
+        if (useMode5) {
+            startMode5();
+            return;
+        }
 
         if (useMode2) {
             const style = document.createElement('style');
@@ -241,7 +413,8 @@
 
             const observer = new MutationObserver(() => {
                 if (!document.getElementById('tm-aggressive-brown-mode')) {
-                    (document.head || document.documentElement).appendChild(style);
+                    (document.head || document.documentElement)
+                        .appendChild(style);
                 }
             });
 
@@ -281,6 +454,8 @@
     if (document.documentElement) {
         applyMode();
     } else {
-        document.addEventListener('DOMContentLoaded', applyMode, { once: true });
+        document.addEventListener('DOMContentLoaded', applyMode, {
+            once: true
+        });
     }
 })();

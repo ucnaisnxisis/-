@@ -4,6 +4,34 @@
 ! Info: Personal use, non-comercial, no-copyright claim, individual
 ! Warning: Discontinued in 2026! But usefull. Experimental for Chromium, Gecko and Adblockers. If doesn't work good, Try: cleanweb-gecko; cleanweb-chromium and cleanweb-pi (Limit 1,99 MB rules, github >> Try clewanweb-duo1)
 
+chat.mistral.ai##[href="https://legal.mistral.ai/terms/privacy-policy"]
+stirileprotv.ro##.top-section
+stirileprotv.ro##.bottom-section
+hotnews.ro###piano-follow-cta
+www.libertatea.ro##.comment-actions
+www.libertatea.ro##.widget-feed-three.RroFeed.piano-partner.HtmlInsert
+www.avocatdivort.com.ro##.site-footer
+acasa.ro##[href="https://acasa.ro/info/politica-de-confidentialitate"]
+acasa.ro##.d-md-flex.d-none.me-1.user-favorites
+zilnicuderomania.ro##div.zilnicu-footer__col:nth-of-type(4)
+zilnicuderomania.ro##[href="/politica-de-cookies/"]
+zilnicuderomania.ro###slide_top
+www.mediafax.ro##.footer
+www.mediafax.ro##.sgb-google-buttons
+www.finantistii.ro##[href="https://www.finantistii.ro/politica-de-confidentialitate/"]
+www.finantistii.ro##[href="https://www.finantistii.ro/parteneri/"]
+www.finantistii.ro##[href="https://www.finantistii.ro/despre-cookie/"]
+www.finantistii.ro##[href="https://www.finantistii.ro/publicitate-pe-acest-site/"]
+www.manager.ro##.mesher
+www.manager.ro##.bottom_news_art
+www.manager.ro##body > .onlyDesktop
+www.rs.ro##.rs-header-newsletter
+www.rs.ro###newsletter_box
+www.rs.ro##.advent-badge
+www.rs.ro##[href="https://www.rs.ro/pag/politica-de-confidentialitate-20.html"]
+www.rs.ro##[href="https://www.facebook.com/RSclienti"]
+www.rs.ro##.product_rating
+www.rs.ro###menu_newsletter
 www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(5)
 www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(4)
 www.romania-actualitati.ro##.footer__row > ul > li:nth-of-type(3)

@@ -36,7 +36,6 @@
     const isMode5 = matchesHost([
         'archive.org',
         'www.archive.org',
-        'adblocktester.pages.dev',
 
     ]);
 
@@ -108,6 +107,7 @@
         'www.plaiurimioritice.ro',
         'www.academia.edu',
         'www.cel.ro',
+        'adblocktester.pages.dev',
 
     ];
 

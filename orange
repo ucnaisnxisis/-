@@ -35,10 +35,10 @@
 
     const isMode5 = matchesHost([
         'archive.org',
-        'www.archive.org'
+        'www.archive.org',
+
     ]);
 
-    // Modul 2: stil portocaliu aplicat agresiv acestor domenii.
     const MODE_2_HOSTS = [
         'porngameshub.com',
         'itch.io',
@@ -90,10 +90,15 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com'
+        'www.bangkokpost.com',
+        'ublockdns.com',
+        'pornone.com',
+        'www.best-hentai-games.com',
+        'www.comdotgame.com',
+        'basilica.ro',
+
     ];
 
-    // Modul 3: schimbă selectiv fundalurile deschise pentru aceste domenii.
     const MODE_3_HOSTS = [
         'www.libertatea.ro',
         'www.allergyzen.ro',
@@ -102,13 +107,17 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro'
+        'www.cel.ro',
+        'adblocktester.pages.dev',
+
     ];
 
-    // Modul 4: reguli speciale pentru Știripesurse.
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
-        'www.stiripesurse.ro'
+        'www.stiripesurse.ro',
+        'superadblocktest.com',
+        'getblocktest.com',
+
     ];
 
     // Modul 1: DarkReader pentru site-urile care nu apar în listele speciale.

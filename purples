@@ -35,7 +35,9 @@
 
     const isMode5 = matchesHost([
         'archive.org',
-        'www.archive.org'
+        'www.archive.org',
+        'adblocktester.pages.dev',
+
     ]);
 
     const MODE_2_HOSTS = [
@@ -94,7 +96,6 @@
         'pornone.com',
         'www.best-hentai-games.com',
         'www.comdotgame.com',
-        'adblocktester.pages.dev',
 
     ];
 
@@ -106,12 +107,14 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro'
+        'www.cel.ro',
+
     ];
 
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
-        'www.stiripesurse.ro'
+        'www.stiripesurse.ro',
+
     ];
 
     const THEME = {

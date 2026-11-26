@@ -1,0 +1,292 @@
+// ==UserScript==
+// @name         YouTube: subtitrări colorate după titlu
+// @namespace    local
+// @version      8.0
+// @description  Colorează succesiv segmentele subtitrării după genul sau cuvintele din titlu
+// @match        https://www.youtube.com/*
+// @run-at       document-idle
+// @grant        none
+// ==/UserScript==
+
+(() => {
+  'use strict';
+
+  const COLORS = {
+    korean:     '#9B59FF',
+    japanese:   '#FF69B4',
+    chinese:    '#FF0000',
+    romanian:   '#FFD700',
+    russian:    '#1687FF',
+    french:     '#20CFCF',
+    arabic:     '#FF8C00',
+    spanish:    '#39B54A',
+    german:     '#FF7A00',
+    italian:    '#8A2BE2',
+    portuguese: '#00A86B',
+    greek:      '#A52A2A',
+
+    red:        '#FF3030',
+    blue:       '#1687FF',
+    purple:     '#9B59FF',
+    pink:       '#FF69B4',
+    green:      '#39B54A',
+    yellow:     '#FFD700',
+    orange:     '#FF8C00',
+    cyan:       '#20CFCF',
+    brown:      '#A52A2A',
+    black:      '#000000',
+    white:      '#FFFFFF',
+    gray:       '#808080'
+  };
+
+  /*
+   * Ordinea culorilor din fiecare regulă este ordinea ciclului.
+   * Mai multe genuri în titlu se combină în ordinea apariției lor.
+   *
+   * Metal Dubstep      -> negru, roșu
+   * Dubstep Metal      -> roșu, negru
+   * Bass House Dubstep -> portocaliu, roșu, verde
+   */
+  const GENRE_RULES = [
+    { words: ['metalstep'], colors: [COLORS.black, COLORS.red] },
+    { words: ['deathstep', 'death step'], colors: [COLORS.black, COLORS.red] },
+
+    { words: ['metalcore'], colors: [COLORS.black, COLORS.blue] },
+    { words: ['metalterror', 'metal terror'], colors: [COLORS.black, COLORS.blue] },
+    { words: ['rawmetal', 'raw metal'], colors: [COLORS.black, COLORS.blue] },
+    { words: ['metalstyle', 'metal style'], colors: [COLORS.black, COLORS.blue] },
+
+    { words: ['future bass', 'futurebass'], colors: [COLORS.pink] },
+    { words: ['future step', 'futurestep'], colors: [COLORS.pink, COLORS.red] },
+    { words: ['bass house', 'basshouse'], colors: [COLORS.orange, COLORS.red, COLORS.green] },
+
+    { words: ['dubstep'], colors: [COLORS.red] }
+  ];
+
+  const KEYWORDS = [
+    { color: COLORS.japanese, words: [
+      'anime', 'manga', 'j-pop', 'jpop', 'otaku', 'kawaii', 'cosplay',
+      'japanese', 'japan', 'japonia', 'film japonez', 'naruto',
+      'detective conan', 'one piece', 'dragon ball', 'attack on titan',
+      'demon slayer', 'kimetsu no yaiba', 'jujutsu kaisen', 'pokemon',
+      'pokémon', 'sailor moon', 'death note', 'bleach', 'studio ghibli',
+      'takanori nishikawa', 'garnidelia', 'kiddy grade', 'boruto',
+      'yuyu hackusho', 'sushi'
+    ]},
+
+    { color: COLORS.korean, words: [
+      'k-pop', 'kpop', 'k-drama', 'kdrama', 'f5ve', 'boa', 'nct 127',
+      'exid', 'iz*one', 'film coreean', 'bts', 'bangtan sonyeondan',
+      'blackpink', 'black pink', 'aoa', 'twice', 'stray kids', 'seventeen',
+      'exo', 'red velvet', 'itzy', 'enhypen', 'aespa', 'ateez', 'bigbang',
+      'big bang', 'got7', 'mamamoo', 'nct', 'txt', 'tomorrow x together',
+      'newjeans', 'le sserafim', 'lesserafim', 'ive', 'monsta x', 'ikon',
+      '2ne1', 'apink', 'astro', 'day6', 'dreamcatcher', 'everglow',
+      'nmixx', 'babymonster'
+    ]},
+
+    { color: COLORS.chinese, words: [
+      'china', 'chinese', 'c-pop', 'cpop', 'jackie chan', 'kun-li', 'kun li'
+    ]},
+
+    { color: COLORS.romanian, words: [
+      'salut', 'bună', 'buna', 'mulțumesc', 'multumesc', 'prieten',
+      'liceu', 'facultate', 'școală', 'scoala', 'colaborare', 'masterat',
+      'secret', 'mistere', 'secrete', 'mâine', 'maine', 'azi', 'poimâine',
+      'poimaine', 'săptămână', 'saptamana', 'satul', 'orașul', 'orasul',
+      'județ', 'judet', 'treabă', 'treaba', 'fată', 'fata', 'băiat',
+      'baiat', 'ești', 'esti', 'taci', 'desene animate', 'mâncăm',
+      'serial', 'filme', 'filmul', 'tutorial', 'română', 'romana',
+      'românesc', 'romanesc', 'românească', 'romaneasca'
+    ]},
+
+    { color: COLORS.french, words: [
+      'bonjour', 'merci', 'français', 'francaise', 'avec', 'pour',
+      'film français', 'musique'
+    ]},
+
+    { color: COLORS.spanish, words: [
+      'hola', 'gracias', 'español', 'los siento', 'película', 'buenos días'
+    ]},
+
+    { color: COLORS.german, words: [
+      'hallo', 'danke', 'deutsch', 'guten tag', 'film deutsch'
+    ]},
+
+    { color: COLORS.italian, words: [
+      'ciao', 'grazie', 'italiano', 'italiana', 'buongiorno', 'film italiano'
+    ]},
+
+    { color: COLORS.portuguese, words: [
+      'olá', 'obrigado', 'obrigada', 'português', 'portuguesa',
+      'brasil', 'filme brasileiro'
+    ]}
+  ];
+
+  function normalize(text) {
+    return String(text)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      // Punctuația devine separator, nu unește cuvintele între ele.
+      .replace(/[^\p{L}\p{N}]+/gu, ' ')
+      .trim()
+      .replace(/\s+/g, ' ');
+  }
+
+  function getTitle() {
+    return document.querySelector('h1.ytd-watch-metadata yt-formatted-string')
+      ?.textContent?.trim()
+      || document.title
+      || '';
+  }
+
+  function findGenreColors(title) {
+    const normalizedTitle = normalize(title);
+    const matches = [];
+
+    for (const rule of GENRE_RULES) {
+      for (const word of rule.words) {
+        const normalizedWord = normalize(word);
+        const index = normalizedTitle.indexOf(normalizedWord);
+
+        if (index !== -1) {
+          matches.push({
+            index,
+            length: normalizedWord.length,
+            colors: rule.colors
+          });
+        }
+      }
+    }
+
+    // Genurile se procesează în ordinea apariției în titlu.
+    // Pentru aceeași poziție, expresia mai lungă are prioritate.
+    matches.sort((a, b) => a.index - b.index || b.length - a.length);
+
+    const colors = [];
+
+    for (const match of matches) {
+      for (const color of match.colors) {
+        if (!colors.includes(color)) colors.push(color);
+      }
+    }
+
+    return colors;
+  }
+
+  function findKeywordColors(title) {
+    const normalizedTitle = normalize(title);
+    const colors = [];
+
+    for (const group of KEYWORDS) {
+      const matched = group.words.some(word =>
+        normalizedTitle.includes(normalize(word))
+      );
+
+      if (matched && !colors.includes(group.color)) {
+        colors.push(group.color);
+      }
+    }
+
+    return colors;
+  }
+
+  function getScriptColors(title) {
+    const scripts = [
+      [/[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]/u, COLORS.korean],
+      [/[\u3040-\u30FF\u31F0-\u31FF]/u, COLORS.japanese],
+      [/[\u4E00-\u9FFF\u3400-\u4DBF]/u, COLORS.chinese],
+      [/[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/u, COLORS.arabic],
+      [/[\u0370-\u03FF\u1F00-\u1FFF]/u, COLORS.greek],
+      [/[\u0400-\u04FF\u0500-\u052F]/u, COLORS.russian]
+    ];
+
+    return scripts
+      .filter(([pattern]) => pattern.test(title))
+      .map(([, color]) => color);
+  }
+
+  function getTitleColors(title) {
+    // Regulile de gen au prioritate.
+    const genreColors = findGenreColors(title);
+
+    if (genreColors.length > 0) {
+      return genreColors.length > 3 ? [] : genreColors;
+    }
+
+    // În lipsa unui gen, folosește cuvintele-cheie și alfabetele.
+    const colors = findKeywordColors(title);
+
+    for (const color of getScriptColors(title)) {
+      if (!colors.includes(color)) colors.push(color);
+    }
+
+    // Peste trei culori distincte: stil implicit YouTube.
+    if (colors.length > 3) return [];
+
+    return colors;
+  }
+
+  function clearCaptionStyles(element) {
+    element.style.removeProperty('background-image');
+    element.style.removeProperty('-webkit-background-clip');
+    element.style.removeProperty('background-clip');
+    element.style.removeProperty('color');
+    element.style.removeProperty('text-shadow');
+    element.style.removeProperty('-webkit-text-stroke');
+  }
+
+  function addBlackOutline(element) {
+    element.style.setProperty(
+      'text-shadow',
+      '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 2px #fff',
+      'important'
+    );
+    element.style.setProperty(
+      '-webkit-text-stroke',
+      '0.35px #fff',
+      'important'
+    );
+  }
+
+  function updateCaptions() {
+    const colors = getTitleColors(getTitle());
+    const segments = document.querySelectorAll('.ytp-caption-segment');
+
+    segments.forEach((element, index) => {
+      clearCaptionStyles(element);
+
+      // Nicio potrivire sau peste trei culori: stilul implicit YouTube.
+      if (colors.length === 0) return;
+
+      // Reia ciclul după ultima culoare:
+      // 2 culori: 0, 1, 0, 1...
+      // 3 culori: 0, 1, 2, 0, 1, 2...
+      const color = colors[index % colors.length];
+
+      element.style.setProperty('color', color, 'important');
+
+      // Contur alb dacă segmentul este negru.
+      if (color === COLORS.black) {
+        addBlackOutline(element);
+      }
+    });
+  }
+
+  let timer;
+
+  const observer = new MutationObserver(() => {
+    clearTimeout(timer);
+    timer = setTimeout(updateCaptions, 150);
+  });
+
+  observer.observe(document.documentElement, {
+    subtree: true,
+    childList: true,
+    characterData: true
+  });
+
+  document.addEventListener('yt-navigate-finish', updateCaptions);
+  updateCaptions();
+})();

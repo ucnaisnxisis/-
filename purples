@@ -114,6 +114,8 @@
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
         'www.stiripesurse.ro',
+        'superadblocktest.com',
+        'getblocktest.com',
 
     ];
 

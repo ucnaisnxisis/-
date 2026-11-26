@@ -51,6 +51,27 @@ hotnews.ro##div.xl\:min-w-0.xl\:max-w-48.xl\:flex-1.lg\:w-auto.w-full.flex-col.f
 www.mediafax.ro##.single__social
 www.g4media.ro##.single__social
 www.gsp.ro##.respect
+pinkclips.mobi##.rate-dislike.btn
+pinkclips.mobi##.drop-fav
+pinkclips.mobi##.rate-like.btn
+pinkclips.mobi##.action-panel > .list > li:nth-of-type(2)
+pinkclips.mobi##li:nth-of-type(1)
+pinkclips.mobi##[href="https://pinkclips.mobi/privacy-policy/"]
+pinkclips.mobi##.hold > .navigation > li:nth-of-type(5)
+www.tnaflix.com##div.category-item > [href] > span
+www.mycandygames.com##.rating-column.col-sm-4
+www.mycandygames.com##.game-played
+it.fapcat.com##.positive.the-rating
+it.fapcat.com###custom_embed_block_embed_block
+www.comdotgame.com##.ruffle-rating
+hentaigame.to##[href="#main"]
+pornone.com##.text-right.basis-1\/2
+pornone.com##li.footlink:nth-of-type(7)
+pornone.com##div.cursor-pointer.text-center:nth-of-type(2)
+pornone.com##div.cursor-pointer.text-center:nth-of-type(3)
+pornone.com##div.cursor-pointer.text-center:nth-of-type(1)
+pornone.com###playme
+www.hentaigem.com##div.item:nth-of-type(1) > span:nth-of-type(2)
 www.promotor.ro##.single__social
 www.realitatea.net##.\!mb-4.gap-2\.5.sm\:grid-cols-2.grid-cols-1.grid.mb-6
 www.realitatea.net##.shrink-0.gap-2.items-center.flex

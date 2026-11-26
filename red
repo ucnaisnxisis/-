@@ -18,7 +18,7 @@
     const MARK = 'data-tm-red-bg';
     const MODE_4_MARK = 'data-tm-red-mode-4-bg';
 
-    const host = location.hostname.toLowerCase();
+     const host = location.hostname.toLowerCase();
 
     function normalizeHost(value) {
         return value.toLowerCase().replace(/^www\./, '');
@@ -37,7 +37,8 @@
 
     const isMode5 = matchesHost([
         'archive.org',
-        'www.archive.org'
+        'www.archive.org',
+
     ]);
 
     const MODE_2_HOSTS = [
@@ -91,7 +92,13 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com'
+        'www.bangkokpost.com',
+        'ublockdns.com',
+        'pornone.com',
+        'www.best-hentai-games.com',
+        'www.comdotgame.com',
+        'basilica.ro',
+
     ];
 
     const MODE_3_HOSTS = [
@@ -102,12 +109,17 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro'
+        'www.cel.ro',
+        'adblocktester.pages.dev',
+
     ];
 
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
-        'www.stiripesurse.ro'
+        'www.stiripesurse.ro',
+        'superadblocktest.com',
+        'getblocktest.com',
+
     ];
 
     const THEME = {

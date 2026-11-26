@@ -16,7 +16,7 @@
     const MODE_4_BACKGROUND = '#34241b';
     const MODE_5_BACKGROUND = '#34241b';
 
-    const host = location.hostname.toLowerCase();
+     const host = location.hostname.toLowerCase();
 
     function normalizeHost(value) {
         return value.toLowerCase().replace(/^www\./, '');
@@ -33,7 +33,11 @@
         });
     }
 
-    const isMode5 = matchesHost(['archive.org']);
+    const isMode5 = matchesHost([
+        'archive.org',
+        'www.archive.org',
+
+    ]);
 
     const MODE_2_HOSTS = [
         'porngameshub.com',
@@ -86,7 +90,13 @@
         'proton.com',
         'www.pewresearch.org',
         'breezevpn.com',
-        'www.bangkokpost.com'
+        'www.bangkokpost.com',
+        'ublockdns.com',
+        'pornone.com',
+        'www.best-hentai-games.com',
+        'www.comdotgame.com',
+        'basilica.ro',
+
     ];
 
     const MODE_3_HOSTS = [
@@ -97,12 +107,17 @@
         'www.agrinin.ro',
         'www.plaiurimioritice.ro',
         'www.academia.edu',
-        'www.cel.ro'
+        'www.cel.ro',
+        'adblocktester.pages.dev',
+
     ];
 
     const MODE_4_HOSTS = [
         'stiripesurse.ro',
-        'www.stiripesurse.ro'
+        'www.stiripesurse.ro',
+        'superadblocktest.com',
+        'getblocktest.com',
+
     ];
 
     const THEME = {

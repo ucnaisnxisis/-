@@ -90,7 +90,12 @@
         'www.pewresearch.org',
         'breezevpn.com',
         'www.bangkokpost.com',
-        'ublockdns.com'
+        'ublockdns.com',
+        'pornone.com',
+        'www.best-hentai-games.com',
+        'www.comdotgame.com',
+        'adblocktester.pages.dev',
+
     ];
 
     const MODE_3_HOSTS = [

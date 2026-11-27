@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Copiază link curat
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/clean
 // @namespace    local.clean-link
 // @version      1.1
 // @description  Copiază linkuri fără parametrii cunoscuți de urmărire

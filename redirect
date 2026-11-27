@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Redirecționare site-uri
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/redirect
 // @namespace    local.redirects
 // @version      1.0
 // @description  Redirecționează anumite domenii către altele

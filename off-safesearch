@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         SafeSearch Off — motoare selectate
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/off-safesearch
 // @namespace    local.safesearch.off
 // @version      1.1.0
 // @description  Cere SafeSearch dezactivat pe motoarele configurate și încearcă să-l dezactiveze din meniul Startpage.

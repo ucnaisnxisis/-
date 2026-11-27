@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Auto Blur Images & Videos by Keywords (Allowlist + Blocklist)
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/blur
 // @namespace    http://tampermonkey.net/
 // @version      0.6
 // @description  Blur images/videos if they match blocklist keywords, but skip if they match allowlist. Keeps previous features (lazy load, observers, toggle). Configure lists below.

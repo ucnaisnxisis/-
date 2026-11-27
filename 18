@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         Auto Dismiss Banners (Cookies, YouTube, 18+, xnxx.com, BoyFriendTv.com)
 // @namespace    https://github.com
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/18
 // @version      2.4
 // @description  Apasă automat butoanele de respingere/acceptare din bannere (YouTube, 18+, cookie-uri, xnxx.com, BoyFriendTv.com). NU funcționează pe xvideos.com. Optimizat pentru Firefox PC.
 // @author       Le Chat

@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         YouTube: subtitrări colorate după titlu
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/ytsubcolor
 // @namespace    local
 // @version      7.1
 // @description  Colorează subtitrările după genuri, cuvinte-cheie și alfabetul din titlu

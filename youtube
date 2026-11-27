@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         YouTube – subtitrări română + dialog Kids
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/youtube
 // @namespace    local.youtube.tools
 // @version      1.0
 // @description  Activează subtitrările și încearcă traducerea automată în română; gestionează dialoguri Kids pe desktop. (Unificand 3 scripturi>> Traducere Android + PC + Kids)

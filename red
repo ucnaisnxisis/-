@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Red Mode automat — 5 moduri
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/red
 // @namespace    local.redmode
 // @version      5.1.0
 // @description  Alege automat tema roșie în funcție de site.

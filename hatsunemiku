@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Hatsune Miku — Chat Overlay v2.1
+// @name         Hatsune Miku — Chat Overlay v3.1
 // @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/hatsunemiku
 // @namespace    local
-// @version      2.1
-// @description  Chat local, animații și comenzi pentru Hatsune Miku
+// @version      3.1
+// @description  Chat local cu avataruri, animații, comenzi și atașamente
 // @include      /^https:\/\/(www\.)?google\.[^/]+\/.*/
 // @match        https://www.bing.com/*
 // @match        https://duckduckgo.com/*
@@ -25,28 +25,49 @@
 (() => {
   if (!document.body || document.getElementById("miku-chat-overlay")) return;
 
-  const directURLs = {
-    default: "https://img1.picmix.com/output/stamp/normal/3/4/9/7/1997943_57e8b.gif",
-    dance: "https://media.tenor.com/s2kXfVOep1IAAAAm/miku-hatsune-miku.webp",
-    shoot: "https://media.tenor.com/yz1hrVPqABEAAAAm/miku-shooting-no-background.webp",
-    adore: "https://media.tenor.com/ibw_yNLcfrcAAAAm/hatsune-miku-world-is-mine.webp"
-  };
+  const fallback = "https://img1.picmix.com/output/stamp/normal/3/4/9/7/1997943_57e8b.gif";
 
-  function resource(name, fallback) {
+  function getResource(name, url) {
     try {
-      return GM_getResourceURL(name) || fallback;
-    } catch (error) {
-      console.warn("Nu s-a putut prelua resursa", name, error);
-      return fallback;
+      return GM_getResourceURL(name) || url;
+    } catch {
+      return url;
     }
   }
 
   const assets = {
-    default: resource("mikuDefault", directURLs.default),
-    dance: resource("mikuDance", directURLs.dance),
-    shoot: resource("mikuShoot", directURLs.shoot),
-    adore: resource("mikuAdore", directURLs.adore)
+    default: getResource("mikuDefault", fallback),
+    dance: getResource("mikuDance", "https://media.tenor.com/s2kXfVOep1IAAAAm/miku-hatsune-miku.webp"),
+    shoot: getResource("mikuShoot", "https://media.tenor.com/yz1hrVPqABEAAAAm/miku-shooting-no-background.webp"),
+    adore: getResource("mikuAdore", "https://media.tenor.com/ibw_yNLcfrcAAAAm/hatsune-miku-world-is-mine.webp")
   };
+
+  const extraAvatars = [
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/122-1225205_hatsune-miku-transparent-clipart-hatsune-miku-sticker-png-1092602785.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/28829-1-hatsune-miku-transparent-image-2091593626.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/28873-6-hatsune-miku-transparent-picture-930409083.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Anime-Miku-Hatsune-PNG-Image-Background-3049271566.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Blue-Hair-Hatsune-Miku-Free-PNG-Image-2431313334.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Cute-Hatsune-Miku-PNG-High-Quality-Image-891324334.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Cute-Hatsune-Miku-PNG-Pic-1315483572.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Cute-Hatsune-Miku-Transparent-Image-3234163740.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Cute-Miku-Hatsune-PNG-Background-Image-527419469.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Hatsune-Miku-PNG-Free-Image-986555811.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Hatsune-Miku-Transparent-160764061.png",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/Hatsune-Miku-Transparent-Background-PNG-213x279-2277182250.png",
+    "https://ia601400.us.archive.org/27/items/cute-hatsune-miku-png-pic-1315483572/angai313-miku.gif",
+    "https://ia601400.us.archive.org/27/items/cute-hatsune-miku-png-pic-1315483572/hatsune-miku-anime.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/hatsune-miku-fnf.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/hatsune-miku-voc.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/hatsune-miku.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/miku-%3Dpunch-hatsune-miku.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/miku-licking.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/miku-vocaloid.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/miku.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/miku0.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/nurse-miku.gif",
+    "https://archive.org/download/cute-hatsune-miku-png-pic-1315483572/%E5%88%9D%E9%9F%B3%E3%83%9F%E3%82%AF-hatsune-miku.gif"
+  ];
 
   const host = document.createElement("div");
   host.id = "miku-chat-overlay";
@@ -65,7 +86,12 @@
       font-family: system-ui, sans-serif;
     }
 
-    #stage { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    #stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
 
     #avatar-frame {
       position: absolute;
@@ -73,19 +99,23 @@
       top: 0;
       width: clamp(190px, 27vw, 320px);
       height: clamp(190px, 27vw, 320px);
-      transition: left 2.8s ease-in-out, top 2.8s ease-in-out;
+      transition: left 2s ease, top 2s ease;
       will-change: left, top;
     }
 
     #avatar {
+      display: block;
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: contain;
       filter: drop-shadow(0 4px 6px #0005);
       user-select: none;
       -webkit-user-drag: none;
+      opacity: 1;
+      transition: opacity .25s ease;
     }
+
+    #avatar.fade { opacity: 0; }
 
     #speech {
       position: absolute;
@@ -105,17 +135,17 @@
       z-index: 2;
     }
 
-    #speech::after {
-      content: "";
+    .particle {
       position: absolute;
-      left: 22px;
-      bottom: -9px;
-      width: 14px;
-      height: 14px;
-      background: var(--miku-bg, #ffe6f4);
-      border-right: 2px solid var(--miku-text, #d52e91);
-      border-bottom: 2px solid var(--miku-text, #d52e91);
-      transform: rotate(45deg);
+      top: -50px;
+      line-height: 1;
+      animation: fall var(--duration, 5s) linear forwards;
+      filter: drop-shadow(0 2px 2px #0003);
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-40px) rotate(0deg); }
+      to { transform: translateY(110vh) rotate(540deg); }
     }
 
     .float-emoji {
@@ -135,11 +165,12 @@
       position: fixed;
       left: 16px;
       bottom: 16px;
-      width: min(370px, calc(100vw - 32px));
-      height: min(500px, calc(100vh - 32px));
+      width: min(390px, calc(100vw - 32px));
+      height: min(540px, calc(100vh - 32px));
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      isolation: isolate;
       border: 1px solid #d8c5ee;
       border-radius: 16px;
       background: #ffffffed;
@@ -161,21 +192,30 @@
       font-weight: 700;
     }
 
-    #header-actions { display: flex; gap: 6px; }
+    #header-actions, #tools {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .small-button, #send, #file-button, #restore-button {
+      border: 0;
+      border-radius: 9px;
+      padding: 7px 9px;
+      background: #8d55bd;
+      color: white;
+      cursor: pointer;
+      font: 13px system-ui, sans-serif;
+    }
 
     .small-button {
-      border: 0;
-      border-radius: 8px;
-      padding: 5px 8px;
       background: #ffffffc9;
       color: #563478;
-      cursor: pointer;
-      font: inherit;
     }
 
     #settings {
       display: none;
-      padding: 9px 10px;
+      padding: 8px 10px;
       border-bottom: 1px solid #eadff2;
       background: white;
     }
@@ -198,11 +238,13 @@
       padding: 1px;
       border: 1px solid #cbb5df;
       border-radius: 6px;
-      background: white;
-      cursor: pointer;
     }
 
-    #messages { flex: 1; overflow-y: auto; padding: 10px; }
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+    }
 
     .message {
       width: fit-content;
@@ -230,6 +272,14 @@
       color: var(--miku-text, #d52e91);
     }
 
+    .attachment {
+      display: block;
+      max-width: 100%;
+      max-height: 220px;
+      margin-top: 6px;
+      border-radius: 8px;
+    }
+
     #form {
       display: flex;
       gap: 7px;
@@ -246,18 +296,29 @@
       outline: none;
       color: #222;
       background: white;
-      font: 14px system-ui, sans-serif;
+      font: 16px system-ui, sans-serif;
+      pointer-events: auto;
+      user-select: text;
+      -webkit-user-select: text;
+      touch-action: manipulation;
     }
 
-    #send, #restore-button {
-      border: 0;
-      border-radius: 10px;
-      padding: 8px 12px;
-      background: #8d55bd;
-      color: white;
-      cursor: pointer;
-      font: 14px system-ui, sans-serif;
+    #input:focus {
+      border-color: #8d55bd;
+      box-shadow: 0 0 0 2px #8d55bd33;
     }
+
+    #tools { padding: 0 9px 9px; }
+
+    #identity {
+      border: 1px solid #cbb5df;
+      border-radius: 8px;
+      padding: 6px;
+      color: #49365b;
+      background: white;
+    }
+
+    #file-input { display: none; }
 
     #restore-button {
       position: fixed;
@@ -270,7 +331,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       #avatar-frame { transition: none; }
-      .float-emoji { animation-duration: .01ms; }
+      .particle, .float-emoji { animation-duration: .01ms; }
     }
   `;
 
@@ -304,17 +365,19 @@
   const actions = document.createElement("div");
   actions.id = "header-actions";
 
-  const settingsButton = document.createElement("button");
-  settingsButton.className = "small-button";
-  settingsButton.type = "button";
-  settingsButton.textContent = "Culori";
+  function makeButton(label, className = "small-button") {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = className;
+    button.textContent = label;
+    return button;
+  }
 
-  const hideButton = document.createElement("button");
-  hideButton.className = "small-button";
-  hideButton.type = "button";
-  hideButton.textContent = "Ascunde";
+  const infoButton = makeButton("Info");
+  const settingsButton = makeButton("Culori");
+  const hideButton = makeButton("Ascunde");
 
-  actions.append(settingsButton, hideButton);
+  actions.append(infoButton, settingsButton, hideButton);
   header.append(title, actions);
 
   const settings = document.createElement("div");
@@ -330,7 +393,9 @@
     const textPicker = document.createElement("input");
     textPicker.type = "color";
     textPicker.value = textDefault;
-    textPicker.addEventListener("input", () => host.style.setProperty(textVar, textPicker.value));
+    textPicker.addEventListener("input", () => {
+      host.style.setProperty(textVar, textPicker.value);
+    });
 
     const bgLabel = document.createElement("span");
     bgLabel.textContent = "fundal";
@@ -338,7 +403,9 @@
     const bgPicker = document.createElement("input");
     bgPicker.type = "color";
     bgPicker.value = bgDefault;
-    bgPicker.addEventListener("input", () => host.style.setProperty(bgVar, bgPicker.value));
+    bgPicker.addEventListener("input", () => {
+      host.style.setProperty(bgVar, bgPicker.value);
+    });
 
     row.append(textLabel, textPicker, bgLabel, bgPicker);
     return row;
@@ -360,29 +427,79 @@
   input.id = "input";
   input.type = "text";
   input.autocomplete = "off";
+  input.autocapitalize = "off";
+  input.spellcheck = false;
   input.placeholder = "Scrie un mesaj sau o comandă…";
+  input.setAttribute("aria-label", "Mesaj pentru Miku");
 
-  const send = document.createElement("button");
+  const send = makeButton("Trimite", "");
   send.id = "send";
   send.type = "submit";
-  send.textContent = "Trimite";
 
   form.append(input, send);
-  chat.append(header, settings, messages, form);
 
-  const restore = document.createElement("button");
+  const tools = document.createElement("div");
+  tools.id = "tools";
+
+  const identity = document.createElement("select");
+  identity.id = "identity";
+  identity.setAttribute("aria-label", "Identitatea atașamentului");
+  identity.add(new Option("Atașament: Tu", "user"));
+  identity.add(new Option("Atașament: Miku", "miku"));
+
+  const fileButton = makeButton("Atașează fișier", "");
+  fileButton.id = "file-button";
+
+  const fileInput = document.createElement("input");
+  fileInput.id = "file-input";
+  fileInput.type = "file";
+  fileInput.multiple = true;
+  fileInput.accept = "image/*,.txt,.pdf,.json,.csv,.md";
+
+  tools.append(identity, fileButton, fileInput);
+  chat.append(header, settings, messages, form, tools);
+
+  const restore = makeButton("Deschide chatul", "");
   restore.id = "restore-button";
-  restore.type = "button";
-  restore.textContent = "Deschide chatul";
 
   shadow.append(style, stage, chat, restore);
   document.body.appendChild(host);
 
   const history = [];
+  const rainTimers = new Map();
   let moving = true;
   let reversed = false;
   let speechUntil = 0;
   let speechFrame = 0;
+  let avatarIndex = -1;
+
+  function focusInput() {
+    if (chat.style.display !== "none") {
+      try {
+        input.focus({ preventScroll: true });
+      } catch {
+        input.focus();
+      }
+    }
+  }
+
+  // Împiedică pagina din spate să trateze tastele scrise în câmp ca scurtături.
+  function shieldTyping(event) {
+    const path = typeof event.composedPath === "function" ? event.composedPath() : [];
+    if (path.includes(input) || event.target === input) {
+      event.stopPropagation();
+    }
+  }
+
+  for (const eventName of ["keydown", "keyup", "keypress", "beforeinput", "input"]) {
+    input.addEventListener(eventName, shieldTyping);
+  }
+
+  input.addEventListener("pointerdown", event => event.stopPropagation());
+  input.addEventListener("click", event => event.stopPropagation());
+  input.addEventListener("focus", () => {
+    input.style.userSelect = "text";
+  });
 
   function renderMessages() {
     messages.replaceChildren();
@@ -395,14 +512,29 @@
       const bubble = document.createElement("div");
       bubble.className = `message ${role}`;
       bubble.textContent = item.text;
+
+      if (item.file) {
+        if (item.file.type.startsWith("image/") && item.file.url) {
+          const image = document.createElement("img");
+          image.className = "attachment";
+          image.alt = item.file.name;
+          image.src = item.file.url;
+          bubble.appendChild(image);
+        } else {
+          const fileLabel = document.createElement("div");
+          fileLabel.textContent = `📎 ${item.file.name} (${item.file.sizeLabel})`;
+          bubble.appendChild(fileLabel);
+        }
+      }
+
       messages.appendChild(bubble);
     }
 
     messages.scrollTop = messages.scrollHeight;
   }
 
-  function addMessage(role, text) {
-    history.push({ role, text });
+  function addMessage(role, text, file = null) {
+    history.push({ role, text, file });
     renderMessages();
   }
 
@@ -435,13 +567,14 @@
     if (direction === "left") {
       x -= step;
       avatar.style.transform = "scaleX(-1)";
-    }
-    if (direction === "right") {
+    } else if (direction === "right") {
       x += step;
       avatar.style.transform = "scaleX(1)";
+    } else if (direction === "up") {
+      y -= step;
+    } else if (direction === "down") {
+      y += step;
     }
-    if (direction === "up") y -= step;
-    if (direction === "down") y += step;
 
     placeAvatar(x, y);
   }
@@ -482,16 +615,26 @@
     }
   }
 
-  function setAvatar(kind) {
-    const next = assets[kind] || assets.default;
+  function setAvatar(source, index = -1) {
+    const next = assets[source] || source || assets.default;
+    const probe = new Image();
 
-    avatar.onerror = () => {
-      console.warn("Avatarul nu s-a încărcat; revin la GIF-ul inițial.");
-      avatar.onerror = null;
-      if (avatar.src !== assets.default) avatar.src = assets.default;
+    probe.onload = () => {
+      avatar.classList.add("fade");
+
+      setTimeout(() => {
+        avatar.src = next;
+        avatar.alt = index >= 0 ? `Hatsune Miku — poza ${index + 1}` : "Hatsune Miku";
+        avatar.classList.remove("fade");
+        if (index >= 0) avatarIndex = index;
+      }, 180);
     };
 
-    avatar.src = next;
+    probe.onerror = () => {
+      reply("Imaginea nu s-a încărcat. Verifică dacă linkul mai funcționează.");
+    };
+
+    probe.src = next;
   }
 
   function reply(text, options = {}) {
@@ -502,11 +645,108 @@
     if (options.emojis) showEmojis(options.emojis);
   }
 
+  function startRain(name, emojis) {
+    if (rainTimers.has(name)) {
+      reply(`Ploaia ${name} este deja pornită.`);
+      return;
+    }
+
+    const timer = setInterval(() => {
+      for (let i = 0; i < 5; i++) {
+        const particle = document.createElement("span");
+        particle.className = "particle";
+        particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.fontSize = `${20 + Math.random() * 24}px`;
+        particle.style.setProperty("--duration", `${3.5 + Math.random() * 3}s`);
+        stage.appendChild(particle);
+        particle.addEventListener("animationend", () => particle.remove(), { once: true });
+      }
+    }, 250);
+
+    rainTimers.set(name, timer);
+    reply(`A început ploaia ${name}!`);
+  }
+
+  function stopRain(name) {
+    const timer = rainTimers.get(name);
+
+    if (!timer) {
+      reply(`Ploaia ${name} nu este pornită.`);
+      return;
+    }
+
+    clearInterval(timer);
+    rainTimers.delete(name);
+    reply(`Am oprit ploaia ${name}.`);
+  }
+
+  function showHelp() {
+    reply(
+      "COMENZI DISPONIBILE\n" +
+      "• miku poza 1–24 — schimbă avatarul\n" +
+      "• miku urmatoarea / miku anterioara — schimbă poza\n" +
+      "• miku normal / revino — avatarul implicit\n" +
+      "• mergi — pornește plimbarea; stop — oprește mișcarea\n" +
+      "• miku stai la stanga / dreapta / in sus / in jos\n" +
+      "• danseaza / danseaza kawaii / adora\n" +
+      "• ploaie de inimi — stop inimi\n" +
+      "• ploaie poop — stop poop\n" +
+      "• ploaie de culori — stop culori\n" +
+      "• stop toate ploile — oprește toate animațiile de ploaie\n" +
+      "• q mesaj — Miku repetă mesajul\n" +
+      "• w — inversează etichetele mesajelor\n" +
+      "• sterge-tot — șterge conversația\n" +
+      "Poți atașa imagini sau fișiere cu butonul de jos; rămân locale în pagină."
+    );
+  }
+
+  function normalize(text) {
+    return text
+      .trim()
+      .toLocaleLowerCase("ro")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
   function handleMessage(raw) {
     const text = raw.trim();
     if (!text) return;
 
-    const lower = text.toLocaleLowerCase("ro");
+    const lower = normalize(text);
+
+    if (lower === "info" || lower === "ajutor" || lower === "comenzi") {
+      addMessage("user", text);
+      showHelp();
+      return;
+    }
+
+    const imageCommand = lower.match(/^miku poza\s+(\d{1,2})$/);
+    if (imageCommand) {
+      const index = Number(imageCommand[1]) - 1;
+      addMessage("user", text);
+
+      if (index < 0 || index >= extraAvatars.length) {
+        reply(`Alege un număr de la 1 la ${extraAvatars.length}.`);
+      } else {
+        setAvatar(extraAvatars[index], index);
+      }
+      return;
+    }
+
+    if (lower === "miku urmatoarea" || lower === "miku urmatoarea poza") {
+      addMessage("user", text);
+      const index = (avatarIndex + 1) % extraAvatars.length;
+      setAvatar(extraAvatars[index], index);
+      return;
+    }
+
+    if (lower === "miku anterioara" || lower === "miku poza anterioara") {
+      addMessage("user", text);
+      const index = (avatarIndex <= 0 ? extraAvatars.length : avatarIndex) - 1;
+      setAvatar(extraAvatars[index], index);
+      return;
+    }
 
     if (lower === "sterge-tot") {
       history.length = 0;
@@ -522,8 +762,57 @@
     }
 
     if (lower.startsWith("q ")) {
+      addMessage("user", text);
       const echo = text.slice(2).trim();
       if (echo) reply(echo);
+      return;
+    }
+
+    if (lower === "ploaie de inimi" || lower === "ploaie inimi") {
+      addMessage("user", text);
+      startRain("inimi", ["💖", "💗", "💘", "💕", "❤️"]);
+      return;
+    }
+
+    if (lower === "stop inimi") {
+      addMessage("user", text);
+      stopRain("inimi");
+      return;
+    }
+
+    if (lower === "ploaie poop" || lower === "ploaie de poop") {
+      addMessage("user", text);
+      startRain("poop", ["💩"]);
+      return;
+    }
+
+    if (lower === "stop poop") {
+      addMessage("user", text);
+      stopRain("poop");
+      return;
+    }
+
+    if (lower === "ploaie de culori" || lower === "ploaie culori") {
+      addMessage("user", text);
+      startRain("culori", ["🔴", "🟠", "🟡", "🟢", "🔵", "🟣", "🟤"]);
+      return;
+    }
+
+    if (lower === "stop culori") {
+      addMessage("user", text);
+      stopRain("culori");
+      return;
+    }
+
+    if (lower === "stop toate ploile") {
+      addMessage("user", text);
+
+      for (const timer of rainTimers.values()) {
+        clearInterval(timer);
+      }
+      rainTimers.clear();
+
+      reply("Am oprit toate ploile.");
       return;
     }
 
@@ -543,10 +832,10 @@
     }
 
     const directions = [
-      [/miku stai la <|miku stai la stanga/, "left", "Mă deplasez spre stânga."],
-      [/miku stai la >|miku stai la dreapta/, "right", "Mă deplasez spre dreapta."],
-      [/miku stai in sus|miku stai în sus/, "up", "Mă deplasez în sus."],
-      [/miku stai in jos|miku stai în jos/, "down", "Mă deplasez în jos."]
+      [/^miku stai la stanga$/, "left", "Mă deplasez spre stânga."],
+      [/^miku stai la dreapta$/, "right", "Mă deplasez spre dreapta."],
+      [/^miku stai in sus$/, "up", "Mă deplasez în sus."],
+      [/^miku stai in jos$/, "down", "Mă deplasez în jos."]
     ];
 
     for (const [pattern, direction, answer] of directions) {
@@ -558,15 +847,21 @@
       }
     }
 
-    if (lower.includes("danseaza kawaii") || lower.includes("dansează kawaii")) {
+    if (lower.includes("danseaza kawaii")) {
       addMessage("user", text);
-      reply("Dans kawaii! ✨", { avatar: "dance", emojis: ["✨", "🎵", "💫"] });
+      reply("Dans kawaii! ✨", {
+        avatar: "dance",
+        emojis: ["✨", "🎵", "💫"]
+      });
       return;
     }
 
-    if (lower.includes("danseaza") || lower.includes("dansează")) {
+    if (lower.includes("danseaza")) {
       addMessage("user", text);
-      reply("Hai să dansăm! 🎵", { avatar: "dance", emojis: ["🎵", "🎶", "✨"] });
+      reply("Hai să dansăm! 🎵", {
+        avatar: "dance",
+        emojis: ["🎵", "🎶", "✨"]
+      });
       return;
     }
 
@@ -579,7 +874,7 @@
       return;
     }
 
-    if (lower.includes("adora") || lower.includes("adoră")) {
+    if (lower.includes("adora")) {
       addMessage("user", text);
       reply("Ce frumos! ✨", {
         avatar: "adore",
@@ -588,35 +883,71 @@
       return;
     }
 
-    if (lower.includes("miku normal") || lower.includes("revino")) {
+    if (lower.includes("miku normal") || lower === "revino") {
       addMessage("user", text);
-      setAvatar("default");
-      reply("Am revenit la animația obișnuită.");
+      setAvatar(assets.default);
       return;
     }
 
     addMessage("user", text);
 
     if (lower.includes("te iubesc")) {
-      reply("Mulțumesc, ce mesaj drăguț!", { emojis: ["💖", "✨", "💖"] });
-    } else if (lower.includes("salut") || lower.includes("bună") || lower.includes("buna")) {
+      reply("Mulțumesc, ce mesaj drăguț!", {
+        emojis: ["💖", "✨", "💖"]
+      });
+    } else if (lower.includes("salut") || lower.includes("buna")) {
       reply("Bună! 😊");
     } else if (lower.includes("ce faci")) {
       reply("Mă plimb pe ecran și citesc mesajele tale! 🎵");
     } else {
-      reply("Am primit mesajul tău! Poți încerca o comandă sau poți folosi emoji-uri. ✨");
+      reply("Am primit mesajul tău! Scrie „info” ca să vezi comenzile. ✨");
     }
   }
 
   form.addEventListener("submit", event => {
     event.preventDefault();
+    event.stopPropagation();
+
     const value = input.value;
     input.value = "";
     handleMessage(value);
-    input.focus();
+    focusInput();
   });
 
-  settingsButton.addEventListener("click", () => settings.classList.toggle("open"));
+  // Previne scurtăturile paginii din spate când interacționezi cu chatul.
+  chat.addEventListener("keydown", event => {
+    event.stopPropagation();
+
+    if (event.key === "Enter" && event.target === input && !event.isComposing) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  }, true);
+
+  chat.addEventListener("keyup", event => event.stopPropagation(), true);
+  chat.addEventListener("keypress", event => event.stopPropagation(), true);
+  chat.addEventListener("beforeinput", event => event.stopPropagation(), true);
+  chat.addEventListener("input", event => event.stopPropagation(), true);
+
+  chat.addEventListener("pointerdown", event => {
+    event.stopPropagation();
+  }, true);
+
+  input.addEventListener("blur", () => {
+    if (chat.matches(":hover") && chat.style.display !== "none") {
+      setTimeout(focusInput, 0);
+    }
+  });
+
+  infoButton.addEventListener("click", () => {
+    showHelp();
+    focusInput();
+  });
+
+  settingsButton.addEventListener("click", () => {
+    settings.classList.toggle("open");
+    focusInput();
+  });
 
   hideButton.addEventListener("click", () => {
     chat.style.display = "none";
@@ -626,10 +957,37 @@
   restore.addEventListener("click", () => {
     chat.style.display = "flex";
     restore.style.display = "none";
+    focusInput();
+  });
+
+  fileButton.addEventListener("click", () => fileInput.click());
+
+  fileInput.addEventListener("change", () => {
+    for (const file of fileInput.files || []) {
+      const role = identity.value;
+      const url = file.type.startsWith("image/")
+        ? URL.createObjectURL(file)
+        : null;
+
+      const sizeLabel = file.size < 1024 * 1024
+        ? `${Math.max(1, Math.round(file.size / 1024))} KB`
+        : `${(file.size / (1024 * 1024)).toFixed(1)} MB`;
+
+      addMessage(
+        role,
+        role === "user"
+          ? `Am atașat: ${file.name}`
+          : `Miku a atașat: ${file.name}`,
+        { name: file.name, type: file.type || "", sizeLabel, url }
+      );
+    }
+
+    fileInput.value = "";
+    focusInput();
   });
 
   avatar.onerror = () => {
-    console.error("GIF-ul inițial nu s-a încărcat:", avatar.src);
+    console.error("Nu s-a putut încărca avatarul:", avatar.src);
   };
 
   avatar.onload = () => {
@@ -646,4 +1004,5 @@
   });
 
   setInterval(moveRandomly, 3500);
+  focusInput();
 })();

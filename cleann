@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Copiază link curat
+// @homepage     https://raw.githubusercontent.com/ucnaisnxisis/-/refs/heads/main/cleann
 // @namespace    local.clean-link
 // @version      1.0
 // @description  Adaugă un meniu pentru copierea linkurilor fără parametri de urmărire
